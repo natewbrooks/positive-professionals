@@ -1,101 +1,92 @@
-import React from "react";
-import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
+import React, { useState, useEffect } from 'react';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import github from '../img/github-icon.svg';
+import logo from '../img/logo.svg';
+import { FaUserCircle } from 'react-icons/fa';
+import NavDropdownItem from './NavDropdownItem';
 
-const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false,
-      navBarActiveClass: "",
-    };
-  }
+export default function Navbar() {
+	const [activeHash, setActiveHash] = useState('');
 
-  toggleHamburger() {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: "is-active",
-            })
-          : this.setState({
-              navBarActiveClass: "",
-            });
-      }
-    );
-  }
+	const isHashActive = (hash) => {
+		return hash == activeHash;
+	};
 
-  render() {
-    return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              role="menuitem"
-              tabIndex={0}
-              onKeyPress={() => this.toggleHamburger()}
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    );
-  }
-};
+	const servicesDropdownItems = [
+		{ label: 'One on one Session', href: '/services#1v1' },
+		{ label: 'Group Session', href: '/services#group' },
+		{ label: 'Workshops', href: '/services#workshops' },
+		// Add more items here
+	];
 
-export default Navbar;
+	return (
+		<nav
+			className='lg:px-80 fixed bg-light w-full z-40 drop-shadow-md'
+			role='navigation'
+			aria-label='main-navigation'>
+			<div className='flex items-center px-10'>
+				<div className='flex h-full w-fit justify-center'>
+					{/* Hamburger menu */}
+					{/* <div
+							className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+							data-target='navMenu'
+							role='menuitem'
+							tabIndex={0}
+							onKeyPress={() => this.toggleHamburger()}
+							onClick={() => this.toggleHamburger()}>
+							<span />
+							<span />
+							<span />
+						</div> */}
+				</div>
+				<div id='navMenu' className={`flex items-center w-full h-full justify-around`}>
+					<AnchorLink to='/' className='px-4 ' title={'Home'}>
+						{/* <img src={logo} alt='Kaldi' style={{ width: '88px' }} /> */}
+						<div className='flex'>
+							<div className='z-20 relative left-6 bg-secondary p-4 rotate-45'></div>
+							<div className='z-50 bg-primary p-4 rotate-45'></div>
+							<div className='z-40 relative right-6 bg-tertiary p-4 rotate-45'></div>
+							<div className='z-10 relative right-12 bg-four p-4 rotate-45'></div>
+						</div>
+					</AnchorLink>
+					<div className='flex h-full space-x-8 '>
+						{[
+							['Team', '#team', 'secondary'],
+							['Resources', '#resources', 'primary'],
+							['Testimonials', '#testimonials', 'tertiary'],
+							// ['Services', '#services', 'tertiary'],
+							// ['Connect', '#contact', 'four'],
+						].map(([title, hash, color]) => (
+							<AnchorLink
+								key={hash}
+								to={'/' + hash}
+								title={title}
+								onAnchorLinkClick={() => setActiveHash(hash)}
+								className={`w-full h-full sans text-dark text-md p-4 hover:bg-dark/10 text-nowrap ${
+									isHashActive(hash) ? 'border-b-2 border-primary' : ''
+								}`}>
+								{title}
+							</AnchorLink>
+						))}
+						<NavDropdownItem title={'Services'} items={servicesDropdownItems} />
+					</div>
+					<div className='flex items-center w-fit space-x-4'>
+						{/* <h2 className='sans text-md text-nowrap'>Login / Signup</h2>
+							<FaUserCircle size={24} className='text-dark' /> */}
+						{/* <div className='bg-dark px-2 py-1 font-bold text-light'>Log in</div>
+						<span className='sans items-end text-dark'>or</span>
+						<div className='px-2 py-1 font-bold text-dark border-b-2 border-dark'>Sign up</div> */}
+						<div className='bg-four hover:scale-105 active:scale-95 hover:cursor-pointer select-none rounded-xl px-2 py-1 sans font-extrabold text-light'>
+							Connect
+						</div>
+						<span className='text-dark/50'>|</span>
+						<div className='flex items-center w-fit space-x-2'>
+							<FaUserCircle size={22} />
+							<h2 className='sans text-md text-nowrap'>Sign in</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	);
+}
