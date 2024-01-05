@@ -1,115 +1,58 @@
-import * as React from "react";
-import { Link } from "gatsby";
+import React from 'react';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { FaLinkedin } from 'react-icons/fa';
 
-import logo from "../img/logo.svg";
-import facebook from "../img/social/facebook.svg";
-import instagram from "../img/social/instagram.svg";
-import twitter from "../img/social/twitter.svg";
-import vimeo from "../img/social/vimeo.svg";
-
-const Footer = class extends React.Component {
-  render() {
-    return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: "14em", height: "10em" }}
-          />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div style={{ maxWidth: "100vw" }} className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    );
-  }
-};
-
-export default Footer;
+export default function Footer({}) {
+	return (
+		<footer className='bg-dark w-full h-full p-12 flex justify-around'>
+			<div className='flex flex-col space-y-8 items-center justify-center'>
+				<div className='flex items-center justify-center'>
+					<AnchorLink to='/' className='' title={'Home'}>
+						<div className='relative flex'>
+							<div className='z-50 bg-primary p-4 rotate-45'></div>
+							<div className='z-20 absolute -left-2 top-0 bg-secondary p-4 rotate-45'></div>
+							<div className='z-40 absolute -right-2 bg-tertiary p-4 rotate-45'></div>
+							<div className='z-10 absolute -right-4 bg-four p-4 rotate-45'></div>
+						</div>
+					</AnchorLink>
+				</div>
+				<span className='sans text-sm text-center text-light/40'>
+					COPYRIGHT @ 2024 <br></br>POSITIVE PROFESSIONALS LLC.
+				</span>
+			</div>
+			<div className='flex space-x-10'>
+				<div className='flex flex-col space-y-4'>
+					<span className='text-light sans xbold text-md'>NAVIGATION</span>
+					<div className='flex flex-col space-y-2 justify-center items-center'>
+						<AnchorLink to='/#team' className='sans text-sm text-light/40' title={'Team'}>
+							Team
+						</AnchorLink>
+						<AnchorLink
+							to='/#testimonials'
+							className='sans text-sm text-light/40'
+							title={'Testimonials'}>
+							Testimonials
+						</AnchorLink>
+						<AnchorLink to='/#resources' className='sans text-sm text-light/40' title={'Resources'}>
+							Resources
+						</AnchorLink>
+					</div>
+				</div>
+				<div className='flex flex-col space-y-2'>
+					<span className='text-light sans xbold text-md'>LINKS</span>
+					<div className='flex flex-col space-y-2 justify-center items-center'>
+						<FaLinkedin size={24} className='text-light/40 hover:text-light cursor-pointer' />
+					</div>
+				</div>
+			</div>
+			<div className='flex items-end justify-center'>
+				<a
+					href='https://www.natewbrooks.com'
+					target='_blank'
+					className='text-light/20 sans text-md'>
+					site created @ nwb.co
+				</a>
+			</div>
+		</footer>
+	);
+}

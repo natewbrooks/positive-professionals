@@ -8,13 +8,13 @@
     --primary: #34d399;
     --secondary: #fdba74;
     --background: #fafaf9;
-    --text-color: #292524;
+    --text-color: #121212;
 }
 
 .dark {
     --primary: #34d399;
     --secondary: #fdba74;
-    --background: #292524;
+    --background: #121212;
     --text-color: #fafaf9;
 }
 
@@ -26,4 +26,8 @@
 .sans {
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 600;
+}
+
+.xbold {
+    font-weight: 900;
 }

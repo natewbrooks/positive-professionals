@@ -11,6 +11,10 @@ import TeamSection from '../components/TeamSection';
 import ServicesSection from '../components/ServicesSection';
 import { FaUser } from 'react-icons/fa';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
+import ResourcesSection from '../components/ResourcesSection';
+import TestimonialsSection from '../components/TestimonialSection';
+import WorkedWithSection from '../components/WorkedWithSection';
+import SeeMore from '../components/SeeMore';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -25,164 +29,93 @@ export const IndexPageTemplate = ({
 	const heroImage = getImage(image) || image;
 
 	return (
-		<div>
+		<div className='canvas w-full h-full'>
 			<FullWidthImage img={heroImage} title={title} subheading={subheading} />
-			<section className='section section--gradient'>
-				<div className='container'>
-					<div className='section'>
-						<div className='columns'>
-							<div className='column is-10 is-offset-1'>
-								<div className='content'>
-									<div className='flex flex-col space-y-4'>
-										{/* {mainpitch.title} */}
-										<div className='flex flex-col -space-y-1'>
-											<span className='sans text-sm'>WHO WE ARE</span>
-											<span className='serif text-zl'>Uncover our story</span>
-										</div>
-										<p className='sans text-lg'>
-											By strengthening three fundamental mental fitness muscles, leaders enhance
-											their resilience and perseverance, spend less time in anger, regret, or blame,
-											and unleash their creativity and innovation. Mental fitness training helps
-											alleviate the impact of setbacks so personnel can remain resilient, constantly
-											evolving, and contributing to the overall progress of the business.{' '}
-										</p>
-									</div>
-									<TeamSection />
-									<div className='flex flex-col space-y-4 my-20'>
-										{/* {mainpitch.title} */}
-										<div className='flex flex-col -space-y-1'>
-											<span className='sans text-sm'>WHAT WE BELIEVE IN</span>
-											<span className='serif text-zl'>Explore our values</span>
-										</div>
-										<p className='sans text-lg'>
-											Recognize and overcome self-sabotaging behaviors of self-doubt, worry,
-											perfectionism, overachievement, micromanagement, and imposter syndrome.
-											Embrace alternative perspectives, see new possibilities, and make
-											value-centered decisions for yourself and your team. Reframe negative
-											experiences into gifts and opportunities. Increase personal energy and
-											resilience by aligning actions and values. Delight customers with exceptional
-											listening, collaboration, and innovation skills.
-										</p>
-									</div>
 
-									{/* WHO WE'VE WORKED WITH */}
-									<div className='flex flex-col space-y-4 my-20'>
-										{/* {mainpitch.title} */}
-										<div className='flex flex-col -space-y-1 text-end'>
-											<span className='sans text-sm'>WHO WE'VE WORKED WITH</span>
-										</div>
-										<div className='bg-dark/10 flex justify-center w-full h-full p-4 rounded-md'>
-											<div className='grid grid-cols-5 justify-items-center gap-10 w-full'>
-												<FaUser size={100} />
-												<FaUser size={100} />
-												<FaUser size={100} />
-												<FaUser size={100} />
-												<FaUser size={100} />
-												<FaUser size={100} />
-												<FaUser size={100} />
-												<FaUser size={100} />
-												<FaUser size={100} />
-												<FaUser size={100} />
-											</div>
-										</div>
-									</div>
+			<div className='w-full h-full justify-center items-center pt-[4rem] px-[2rem] md:px-[6rem] lg:px-[8rem] xl:px-[12rem] xxl:px-[20rem] xxxl:px-[36rem] flex flex-col space-y-[10rem]'>
+				<div className='flex flex-col space-y-4'>
+					{/* {mainpitch.title} */}
+					<div className='flex flex-col -space-y-1'>
+						<span className='sans text-sm'>WHO WE ARE</span>
+						<span className='serif text-xxl'>Uncover our story</span>
+					</div>
+					<p className='sans text-lg'>
+						Mental fitness is our capacity to handle life’s greatest challenges with a positive
+						mindset rather than getting stressed or upset. When it comes to physical fitness, we are
+						unlikely to be able to climb a mountain if we have not strengthened our muscles and
+						built our stamina in advance. Mental fitness is similar; if we want to overcome
+						stressful situations and view life through a positive mindset, we need to learn and
+						practice the skills that will enable us to do so. In other words, we need to build our
+						mental fitness.
+						<br></br>
+						<br></br>
+						By strengthening three fundamental mental fitness muscles, leaders enhance their
+						resilience and perseverance, spend less time in anger, regret, or blame, and unleash
+						their creativity and innovation. Mental fitness training helps alleviate the impact of
+						setbacks so personnel can remain resilient, constantly evolving, and contributing to the
+						overall progress of the business.{' '}
+					</p>
+					<SeeMore text={'Learn more'} colorClass={'text-primary'} />
+				</div>
+				<TeamSection />
+				<div className='flex flex-col space-y-4 my-20'>
+					{/* {mainpitch.title} */}
+					<div className='flex flex-col -space-y-1 w-full justify-end text-end'>
+						<span className='sans text-sm'>WHAT WE BELIEVE IN</span>
+						<span className='serif text-xxl'>Explore our values</span>
+					</div>
+					<p className='sans text-lg'>
+						Mental fitness is our capacity to handle life’s greatest challenges with a positive
+						mindset rather than getting stressed or upset. When it comes to physical fitness, we are
+						unlikely to be able to climb a mountain if we have not strengthened our muscles and
+						built our stamina in advance. Mental fitness is similar; if we want to overcome
+						stressful situations and view life through a positive mindset, we need to learn and
+						practice the skills that will enable us to do so. In other words, we need to build our
+						mental fitness.
+						<br></br>
+						<br></br>
+						By strengthening three fundamental mental fitness muscles, leaders enhance their
+						resilience and perseverance, spend less time in anger, regret, or blame, and unleash
+						their creativity and innovation. Mental fitness training helps alleviate the impact of
+						setbacks so personnel can remain resilient, constantly evolving, and contributing to the
+						overall progress of the business.
+					</p>
+				</div>
 
-									{/* TESTIMONIALS */}
-									<div className='w-full h-full my-20'>
-										<div className='relative items-center justify-between flex py-2 space-x-1 group cursor-pointer'>
-											<span className='sans text-sm'>TESTIMONIALS</span>
-											<div className='flex items-center'>
-												<span className='sans text-four group-hover:text-four/50 '>See more</span>
-												<MdOutlineKeyboardArrowRight
-													size={16}
-													className='text-four group-hover:text-four/50 absolute opacity-0 translate-x-14 group-hover:translate-x-16 group-hover:opacity-100 transition-all delay-75 duration-300'
-												/>
-											</div>
-										</div>
-										<div className='w-full h-full grid grid-cols-3 gap-4'>
-											<div className='flex flex-col'>
-												<div className='relative flex flex-col -space-y-1 bg-dark/10 w-fit border-l-4 p-4 rounded-r-md border-primary'>
-													<span className='sans text-md'>
-														I loved working with these beautiful gals. So incredibly knowledgeable
-														about coaching and wise beyond their years. They solved my mental
-														health, and manifested $50,000 from thin air!
-													</span>
-												</div>
-												<div className='flex items-center space-x-2 py-2'>
-													<FaUser size={24} />
-													<div className='flex flex-col'>
-														<span className='serif text-md'>Theresa Clark</span>
-														<span className='sans text-sm '>CISCO CYBER OPERATIONS</span>
-													</div>
-												</div>
-											</div>
-											<div className='flex flex-col'>
-												<div className='relative flex flex-col -space-y-1 bg-dark/10 w-fit border-l-4 p-4 rounded-r-md border-primary'>
-													<span className='sans text-md'>
-														I loved working with these beautiful gals. So incredibly knowledgeable
-														about coaching and wise beyond their years. They solved my mental
-														health, and manifested $50,000 from thin air!
-													</span>
-												</div>
-												<div className='flex items-center space-x-2 py-2'>
-													<FaUser size={24} />
-													<div className='flex flex-col'>
-														<span className='serif text-md'>Theresa Clark</span>
-														<span className='sans text-sm '>CISCO CYBER OPERATIONS</span>
-													</div>
-												</div>
-											</div>
-											<div className='flex flex-col'>
-												<div className='relative flex flex-col -space-y-1 bg-dark/10 w-fit border-l-4 p-4 rounded-r-md border-primary'>
-													<span className='sans text-md'>
-														I loved working with these beautiful gals. So incredibly knowledgeable
-														about coaching and wise beyond their years. They solved my mental
-														health, and manifested $50,000 from thin air!
-													</span>
-												</div>
-												<div className='flex items-center space-x-2 py-2'>
-													<FaUser size={24} />
-													<div className='flex flex-col'>
-														<span className='serif text-md'>Theresa Clark</span>
-														<span className='sans text-sm '>CISCO CYBER OPERATIONS</span>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+				{/* WHO WE'VE WORKED WITH */}
+				<div className='flex flex-col space-y-4'>
+					<WorkedWithSection />
+					<TestimonialsSection />
+				</div>
 
-									<ServicesSection />
+				<ServicesSection />
+				<ResourcesSection />
 
-									<div className='columns'>
-										<div className='column is-12'>
-											<h3 className='has-text-weight-semibold is-size-2'>{heading}</h3>
-											<p>{description}</p>
-										</div>
-									</div>
-
-									<Features gridItems={intro.blurbs} />
-									<div className='columns' id='team'>
-										<div className='column is-12 has-text-centered'>
-											<Link className='btn' to='/products'>
-												See all products
-											</Link>
-										</div>
-									</div>
-									<div className='column is-12'>
-										<h3 className='has-text-weight-semibold is-size-2'>Latest stories</h3>
-										<BlogRoll />
-										<div className='column is-12 has-text-centered'>
-											<Link className='btn' to='/blog'>
-												Read more
-											</Link>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+				{/* <div className='columns'>
+					<div className='column is-12'>
+						<h3 className='has-text-weight-semibold is-size-2'>{heading}</h3>
+						<p>{description}</p>
 					</div>
 				</div>
-			</section>
+
+				<Features gridItems={intro.blurbs} />
+				<div className='columns' id='team'>
+					<div className='column is-12 has-text-centered'>
+						<Link className='btn' to='/products'>
+							See all products
+						</Link>
+					</div>
+				</div>
+				<div className='column is-12'>
+					<h3 className='has-text-weight-semibold is-size-2'>Latest stories</h3>
+					<BlogRoll />
+					<div className='column is-12 has-text-centered'>
+						<Link className='btn' to='/blog'>
+							Read more
+						</Link>
+					</div>
+				</div> */}
+			</div>
 		</div>
 	);
 };

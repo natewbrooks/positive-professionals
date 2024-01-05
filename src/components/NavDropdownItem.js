@@ -5,24 +5,27 @@ import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 export default function NavDropdownItem({ title, items }) {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const toggleDropdown = () => {
-		setIsOpen(!isOpen);
+	const toggleDropdown = (bool = isOpen) => {
+		setIsOpen(bool);
 	};
 
 	return (
-		<div className='relative'>
-			<button
-				onClick={toggleDropdown}
-				className='group w-full h-full sans text-dark text-md p-4 hover:bg-dark/10 flex items-center'>
-				{title}{' '}
+		<div className='relative' onMouseEnter={() => toggleDropdown(true)}>
+			<AnchorLink
+				to={'#services'}
+				className='group w-full h-full sans text-dark text-md px-2 py-5 hover:bg-dark/10 flex items-center'>
+				{title}
 				<MdOutlineKeyboardArrowDown
 					className={`relative left-1 top-0 ${
 						isOpen ? 'rotate-0' : 'rotate-180'
 					}  transition-all duration-300`}
 				/>
-			</button>
+			</AnchorLink>
 			{isOpen && (
-				<div className='flex flex-col absolute bg-light border-x-2 border-t-2 border-dark/10 mt-1 rounded-md'>
+				<div
+					onMouseEnter={() => toggleDropdown(true)}
+					onMouseLeave={() => toggleDropdown(false)}
+					className='flex flex-col absolute bg-light border-x-2 border-t-2 border-dark/10 mt-1 rounded-md'>
 					{items.map(({ label, href }) => (
 						<AnchorLink
 							key={href}

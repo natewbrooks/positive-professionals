@@ -6,11 +6,12 @@ import './all.sass';
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
 import '/src/styles/global.css';
+import ContactSection from '../components/ContactSection';
 
 const TemplateWrapper = ({ children }) => {
 	const { title, description } = useSiteMetadata();
 	return (
-		<div>
+		<div className='bg-light dark:bg-dark'>
 			<Helmet>
 				<html lang='en' />
 				<title>{title}</title>
@@ -47,7 +48,8 @@ const TemplateWrapper = ({ children }) => {
 				<meta property='og:image' content={`${withPrefix('/')}img/og-image.jpg`} />
 			</Helmet>
 			<Navbar />
-			<div>{children}</div>
+			{children}
+			<ContactSection />
 			<Footer />
 		</div>
 	);
