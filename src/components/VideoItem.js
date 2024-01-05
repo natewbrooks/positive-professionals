@@ -2,11 +2,15 @@ import React from 'react';
 
 export default function VideoItem({ title, date, description, colorClass }) {
 	return (
-		<div className='flex flex-col '>
-			<div className='bg-dark/10 aspect-video w-84 border-b-2 border-light'>
+		<div className='flex flex-col space-y-1'>
+			<div className='bg-dark/10 aspect-video w-84 '>
 				<iframe
 					className='w-full h-full'
-					src={'https://www.youtube.com/watch?v=jNQXAC9IVRw'}></iframe>
+					src='https://www.youtube.com/embed/jNQXAC9IVRw'
+					title='Me at the zoo'
+					frameborder='0'
+					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+					allowfullscreen></iframe>
 			</div>
 			<div className='bg-dark/10 flex flex-col w-full h-fit p-2 rounded-b-md'>
 				<div className='flex w-full items-center justify-between'>

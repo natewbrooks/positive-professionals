@@ -4,7 +4,7 @@ import { HiCursorClick } from 'react-icons/hi';
 export default function ServicesItem({ Icon, title, description, colorClass }) {
 	return (
 		<div className='group cursor-pointer select-none active:scale-95 flex flex-col space-y-2 text-center rounded-md'>
-			<div className='z-50 relative w-full flex justify-center'>
+			<div className='z-20 relative w-full flex justify-center'>
 				<div
 					className={`group-hover:bg-dark bg-opacity-100 py-2 px-14 rounded-md ${colorClass} transition-all duration-300 relative top-5`}>
 					<Icon size={40} className='text-light rounded-md' />

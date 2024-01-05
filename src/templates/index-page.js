@@ -32,7 +32,7 @@ export const IndexPageTemplate = ({
 		<div className='canvas w-full h-full'>
 			<FullWidthImage img={heroImage} title={title} subheading={subheading} />
 
-			<div className='w-full h-full justify-center items-center pt-[4rem] px-[2rem] md:px-[6rem] lg:px-[8rem] xl:px-[12rem] xxl:px-[20rem] xxxl:px-[36rem] flex flex-col space-y-[10rem]'>
+			<div className='w-full h-full justify-center items-center py-[8rem] px-[2rem] md:px-[6rem] lg:px-[8rem] xl:px-[12rem] xxl:px-[20rem] xxxl:px-[36rem] flex flex-col space-y-[10rem]'>
 				<div className='flex flex-col space-y-4'>
 					{/* {mainpitch.title} */}
 					<div className='flex flex-col -space-y-1'>

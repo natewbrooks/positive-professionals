@@ -17,21 +17,21 @@ export default function ResourcesSection({ content }) {
 				</div>
 				<div className='w-full grid grid-cols-3 gap-2'>
 					<VideoItem
-						title={`Superman sees the skies`}
+						title={`Christmas came early`}
 						date={`Jun 2024`}
 						description={`This is a short and brief non descript description of the video. Should probably be
 								no longer than two sentences.`}
 						colorClass={`text-secondary`}
 					/>
 					<VideoItem
-						title={`Superman sees the skies`}
+						title={`Adam Driver does it again`}
 						date={`Mar 2024`}
 						description={`This is a short and brief non descript description of the video. Should probably be
 								no longer than two sentences.`}
 						colorClass={`text-four`}
 					/>
 					<VideoItem
-						title={`Superman sees the skies`}
+						title={`Robin Williams best moments`}
 						date={`Jan 2024`}
 						description={`This is a short and brief non descript description of the video. Should probably be
 								no longer than two sentences.`}
@@ -55,14 +55,14 @@ export default function ResourcesSection({ content }) {
 						colorClass={`text-primary`}
 					/>
 					<VideoItem
-						title={`Superman sees the skies`}
+						title={`Me at the zoo`}
 						date={`Oct 2023`}
 						description={`This is a short and brief non descript description of the video. Should probably be
 								no longer than two sentences.`}
 						colorClass={`text-secondary`}
 					/>
 					<VideoItem
-						title={`Superman sees the skies`}
+						title={`Garfield eats lasagna`}
 						date={`Sep 2023`}
 						description={`This is a short and brief non descript description of the video. Should probably be
 								no longer than two sentences.`}

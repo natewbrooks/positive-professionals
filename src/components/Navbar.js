@@ -31,7 +31,7 @@ export default function Navbar() {
 
 	return (
 		<nav
-			className='fixed bg-light dark:bg-darkAccent w-full z-40 drop-shadow-md'
+			className='fixed bg-light dark:bg-darkAccent w-full z-50 drop-shadow-md'
 			role='navigation'
 			aria-label='main-navigation'>
 			<div className='flex items-center'>
@@ -65,7 +65,8 @@ export default function Navbar() {
 						{[
 							['Team', '#team', 'secondary'],
 							['Testimonials', '#testimonials', 'primary'],
-							['Resources', '#resources', 'tertiary'],
+							['Services', '#services', 'tertiary'],
+							['Resources', '#resources', 'four'],
 							// ['Services', '#services', 'tertiary'],
 							// ['Connect', '#contact', 'four'],
 						].map(([title, hash, color]) => (
@@ -82,9 +83,9 @@ export default function Navbar() {
 								{title}
 							</AnchorLink>
 						))}
-						<div className='hidden lg:block'>
+						{/* <div className='hidden lg:block'>
 							<NavDropdownItem title={'Services'} items={servicesDropdownItems} />
-						</div>
+						</div> */}
 					</div>
 					<div className='flex items-center w-fit space-x-4'>
 						{/* <h2 className='sans text-md text-nowrap'>Login / Signup</h2>
