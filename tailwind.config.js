@@ -31,6 +31,17 @@ module.exports = {
 				xxl: '36px',
 				xxxl: '48px',
 			},
+			backgroundImage: (theme) => ({
+				'hard-stop-gradient': `linear-gradient(
+          to right,
+          ${theme('colors.secondary')} 25%,
+          ${theme('colors.primary')} 25% 50%,
+          ${theme('colors.tertiary')} 50% 75%,
+          ${theme('colors.four')} 75%
+        )`,
+				'custom-gradient':
+					'linear-gradient(to right, #fdba74, #34d399 25%, #0ea5e9 50%, #a855f7 75%)',
+			}),
 		},
 	},
 	plugins: [],

@@ -38,7 +38,7 @@ export default function ServicesSection({ content }) {
 					Icon={FaDumbbell}
 					title='In-person Workshops'
 					description='Attend an in-person workshop to develop and find meaningful solutions among peers.'
-					colorClass='bg-secondary'
+					colorClass='bg-four'
 				/>
 			</div>
 

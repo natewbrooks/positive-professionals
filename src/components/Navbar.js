@@ -27,7 +27,31 @@ export default function Navbar() {
 		} else {
 			document.documentElement.classList.remove('dark');
 		}
-	}, [darkModeActive, setDarkMode]);
+
+		// Define the callback for IntersectionObserver
+		const observerCallback = (entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					// Set the hash to the ID of the entry target
+					setActiveHash(entry.target.id);
+					console.log(entry.target.id);
+				}
+			});
+		};
+
+		// Create an IntersectionObserver instance
+		const observerOptions = { rootMargin: '0px', threshold: 0.5 };
+		const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+		// Observe all sections that you want to track
+		const sections = document.querySelectorAll('section');
+		sections.forEach((section) => {
+			observer.observe(section);
+		});
+
+		// Disconnect the observer on unmount
+		return () => observer.disconnect();
+	}, [darkModeActive]);
 
 	return (
 		<nav
@@ -63,16 +87,16 @@ export default function Navbar() {
 					</AnchorLink>
 					<div className='flex h-full space-x-8 '>
 						{[
-							['Team', '#team', 'secondary'],
-							['Testimonials', '#testimonials', 'primary'],
-							['Services', '#services', 'tertiary'],
-							['Resources', '#resources', 'four'],
+							['Team', 'team', 'secondary'],
+							['Testimonials', 'testimonials', 'primary'],
+							['Services', 'services', 'tertiary'],
+							['Resources', 'resources', 'four'],
 							// ['Services', '#services', 'tertiary'],
 							// ['Connect', '#contact', 'four'],
 						].map(([title, hash, color]) => (
 							<AnchorLink
-								key={hash}
-								to={'/' + hash}
+								key={'#' + hash}
+								to={'/#' + hash}
 								title={title}
 								onAnchorLinkClick={() => setActiveHash(hash)}
 								className={`w-full h-full hidden lg:block sans  text-dark text-md px-2 sm:py-6 hover:bg-dark/10 text-nowrap ${
@@ -93,9 +117,11 @@ export default function Navbar() {
 						{/* <div className='bg-dark px-2 py-1 font-bold text-light'>Log in</div>
 						<span className='sans items-end text-dark'>or</span>
 						<div className='px-2 py-1 font-bold text-dark border-b-2 border-dark'>Sign up</div> */}
-						<div className='flex  space-x-2 items-center justify-center'>
-							<div className='hidden lg:block bg-four hover:opacity-50 active:scale-95 hover:cursor-pointer select-none rounded-md px-2 py-1 sans text-light'>
-								Contact
+						<div className='flex space-x-2 items-center justify-center'>
+							<div className='hidden lg:block cursor-pointer hover:bg-opacity-50 group bg-hard-stop-gradient p-[0.25rem] rounded-md'>
+								<div className=' bg-light group-active:scale-95  group-hover:text-opacity-50 select-none rounded-md sans px-1 py-1 text-sm text-dark'>
+									GET IN TOUCH
+								</div>
 							</div>
 							{/* <div
 								onMouseEnter={() => setDarkHover(true)}
