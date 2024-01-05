@@ -30,6 +30,7 @@ module.exports = {
 				xl: '28px',
 				xxl: '36px',
 				xxxl: '48px',
+				billboard: '64px',
 			},
 			backgroundImage: (theme) => ({
 				'hard-stop-gradient': `linear-gradient(
