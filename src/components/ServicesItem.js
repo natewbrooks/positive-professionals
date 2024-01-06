@@ -1,5 +1,4 @@
 import React from 'react';
-import { HiCursorClick } from 'react-icons/hi';
 
 export default function ServicesItem({ Icon, title, description, colorClass }) {
 	return (
@@ -13,10 +12,6 @@ export default function ServicesItem({ Icon, title, description, colorClass }) {
 			<div className='relative group-hover:opacity-50 py-12 h-full flex flex-col items-center justify-center space-y-2 bg-dark/10 px-8 rounded-md'>
 				<span className='serif text-xl'>{title}</span>
 				<span className='sans text-md'>{description}</span>
-				<HiCursorClick
-					size={18}
-					className={`hidden group-hover:block absolute top-1 right-1 text-dark/50 animate-pulse`}
-				/>
 			</div>
 		</div>
 	);

@@ -42,11 +42,11 @@ export default function ServicesSection({ content }) {
 				/>
 			</div>
 
-			{/* <div className='w-full text-end my-4'>
-				<span className='text-four sans text-md hover:cursor-pointer select-none'>
+			<div className='w-full text-center my-4'>
+				<span className='text-dark sans text-md hover:cursor-pointer select-none'>
 					Click a service to learn more!
 				</span>
-			</div> */}
+			</div>
 		</section>
 	);
 }

@@ -7,11 +7,17 @@ import VideoItem from './VideoItem';
 export default function ResourcesSection({ content }) {
 	return (
 		<section id='resources' className='w-full h-full'>
-			<div className='flex flex-col text-center -space-y-1 justify-center'>
-				<span className={`text-xxl serif`}>Resources</span>
+			<div className='flex flex-col space-y-2 justify-center items-center'>
+				<div className='flex flex-col -space-y-1 w-full text-start'>
+					<span className={`text-xxl serif`}>Resources</span>
+					<span className={`sans text-md `}>
+						Explore our collection of informative videos and previous webinars.
+					</span>
+				</div>
+				<span className='w-full border-b-2 border-dark/10'></span>
 			</div>
 			<div className='flex flex-col text-start justify-center'>
-				<div className='flex flex-col -space-y-1 my-4'>
+				<div className='flex flex-col -space-y-1 my-4 text-end'>
 					<span className={`sans text-sm `}>SEE US IN ACTION</span>
 					<span className={`text-xl serif`}>Video catalog</span>
 				</div>

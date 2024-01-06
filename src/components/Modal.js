@@ -4,10 +4,10 @@ import { FaXmark } from 'react-icons/fa6';
 
 export default function Modal({ isOpen, onClose, children }) {
 	useEffect(() => {
-		console.log('NO SCROLL ELSEWHERE!');
 		if (isOpen) {
 			document.documentElement.style.overflow = 'hidden';
 			document.body.style.overflow = 'hidden';
+			document.getElementById('canvas').classList.add('mr-10');
 		}
 
 		// Clean up function to reset overflow when component unmounts
@@ -15,14 +15,15 @@ export default function Modal({ isOpen, onClose, children }) {
 			document.documentElement.style.overflow = '';
 			document.body.style.overflow = '';
 			document.body.style.marginRight = '';
+			document.getElementById('canvas').classList.remove('mr-10');
 		};
 	}, [isOpen]);
 
 	return (
 		<>
 			{isOpen && (
-				<div className='fixed inset-0 bg-dark/20 z-50 flex justify-center items-center'>
-					<div className='flex flex-col w-[50%] h-[50%] bg-white p-5 rounded-lg'>
+				<div className='z-50 m-0 drop-shadow-lg fixed w-screen h-screen top-0 right-0  bg-dark/40 flex justify-center items-center'>
+					<div className='flex flex-col max-w-[60%] max-h-[60%] w-fit h-fit bg-white p-5 rounded-lg'>
 						<div className='w-full justify-end text-end'>
 							<button onClick={onClose} className='serif text-md hover:opacity-50'>
 								<FaXmark size={22} />

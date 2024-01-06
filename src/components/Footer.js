@@ -33,6 +33,9 @@ export default function Footer({}) {
 							title={'Testimonials'}>
 							Testimonials
 						</AnchorLink>
+						<AnchorLink to='/#services' className='sans text-sm text-light/40' title={'Resources'}>
+							Services
+						</AnchorLink>
 						<AnchorLink to='/#resources' className='sans text-sm text-light/40' title={'Resources'}>
 							Resources
 						</AnchorLink>

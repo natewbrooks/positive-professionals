@@ -11,7 +11,7 @@ import ContactSection from '../components/ContactSection';
 const TemplateWrapper = ({ children }) => {
 	const { title, description } = useSiteMetadata();
 	return (
-		<div className='bg-light dark:bg-dark'>
+		<div className='w-full h-full bg-light dark:bg-dark'>
 			<Helmet>
 				<html lang='en' />
 				<title>{title}</title>

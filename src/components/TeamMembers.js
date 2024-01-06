@@ -4,8 +4,8 @@ import TeamMember from './TeamMember';
 
 export default function TeamMembers({ gridItems }) {
 	return (
-		<div className='w-full h-full flex justify-center my-12'>
-			<div className='grid grid-cols-2 gap-y-10 gap-x-10 w-fit h-fit'>
+		<div className='w-full h-full flex justify-center'>
+			<div className='grid grid-cols-2 gap-y-8 gap-x-8 w-fit h-fit'>
 				{gridItems.map((item, index) => (
 					<TeamMember key={index} member={item} />
 				))}

@@ -22,7 +22,7 @@ export default function TeamMember({ member }) {
 				/>
 				<FaUser size={180} className='' />
 			</div>
-			<div className='flex flex-col text-start py-1'>
+			<div className='flex flex-col text-start py-1' onClick={() => setModalOpen(true)}>
 				<span className='serif text-lg'>{member.name}</span>
 				<span className='sans text-sm'>{member.title}</span>
 			</div>
@@ -30,7 +30,7 @@ export default function TeamMember({ member }) {
 			<Modal isOpen={isModalOpen} onClose={closeModal}>
 				<div className='flex w-full justify-between space-x-4 overflow-hidden'>
 					<div className='flex items-center'>
-						<div className='flex flex-col space-y-2 w-full pl-8 pr-4'>
+						<div className='flex flex-col space-y-2 w-full px-8'>
 							<FaUser size={200} />
 							<div className='flex flex-col text-start py-1'>
 								<span className='serif text-lg'>{member.name}</span>
@@ -43,23 +43,23 @@ export default function TeamMember({ member }) {
 						</div>
 					</div>
 					<div className='flex flex-col overflow-y-auto'>
-						<div className='flex flex-col space-y-1 border-l-4 px-2 py-4 border-primary'>
+						<div className='flex flex-col space-y-1 border-l-4 p-4 border-primary'>
 							<span className='sans text-sm xbold'>CAREER BACKGROUND</span>
 							<span className='sans text-md'>{member.background}</span>
 						</div>
-						<div className='flex flex-col space-y-1 border-l-4 px-2 py-4 border-secondary'>
+						<div className='flex flex-col space-y-1 border-l-4 p-4 border-secondary'>
 							<span className='sans text-sm xbold'>SPECIALTIES</span>
 							<span className='sans text-md'>{member.specialties}</span>
 						</div>
-						<div className='flex flex-col space-y-1 border-l-4 px-2 py-4 border-tertiary'>
+						<div className='flex flex-col space-y-1 border-l-4 p-4 border-tertiary'>
 							<span className='sans text-sm xbold'>INDUSTRY EXPERIENCE</span>
 							<span className='sans text-md'>{member.experience}</span>
 						</div>
-						<div className='flex flex-col space-y-1 border-l-4 px-2 py-4 border-four'>
+						<div className='flex flex-col space-y-1 border-l-4 p-4 border-four'>
 							<span className='sans text-sm xbold'>CERTIFICATIONS</span>
 							<span className='sans text-md'>{member.certifications}</span>
 						</div>
-						<div className='flex flex-col space-y-1 border-l-4 px-2 py-4 border-primary'>
+						<div className='flex flex-col space-y-1 border-l-4 p-4 border-primary'>
 							<span className='sans text-sm xbold'>EDUCATION</span>
 							<span className='sans text-md'>{member.education}</span>
 						</div>

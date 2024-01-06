@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import github from '../img/github-icon.svg';
 import logo from '../img/logo.svg';
-import { FaSun, FaMoon, FaUserCircle } from 'react-icons/fa';
+import { FaSun, FaMoon } from 'react-icons/fa';
 import NavDropdownItem from './NavDropdownItem';
+import SigninButton from './SigninButton';
 
 export default function Navbar() {
 	const [activeHash, setActiveHash] = useState('');
@@ -33,7 +34,9 @@ export default function Navbar() {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					// Set the hash to the ID of the entry target
-					setActiveHash(entry.target.id);
+					if (['team', 'testimonials', 'services', 'resources'].includes(entry.target.id)) {
+						setActiveHash(entry.target.id);
+					}
 					console.log(entry.target.id);
 				}
 			});
@@ -55,7 +58,7 @@ export default function Navbar() {
 
 	return (
 		<nav
-			className='fixed bg-light dark:bg-darkAccent w-full z-50 drop-shadow-md'
+			className='fixed m-0 bg-light dark:bg-darkAccent w-full z-50 drop-shadow-md'
 			role='navigation'
 			aria-label='main-navigation'>
 			<div className='flex items-center'>
@@ -99,7 +102,7 @@ export default function Navbar() {
 								to={'/#' + hash}
 								title={title}
 								onAnchorLinkClick={() => setActiveHash(hash)}
-								className={`w-full h-full hidden lg:block sans  text-dark text-md px-2 sm:py-6 hover:bg-dark/10 text-nowrap ${
+								className={`w-full h-full hidden lg:block sans  text-dark text-md px-2 sm:py-4 hover:bg-dark/10 text-nowrap ${
 									isHashActive(hash)
 										? 'border-b-2 border-primary hover:border-primary'
 										: 'hover:border-dark/10'
@@ -118,9 +121,11 @@ export default function Navbar() {
 						<span className='sans items-end text-dark'>or</span>
 						<div className='px-2 py-1 font-bold text-dark border-b-2 border-dark'>Sign up</div> */}
 						<div className='flex space-x-2 items-center justify-center'>
-							<div className='hidden lg:block cursor-pointer hover:bg-opacity-50 group bg-hard-stop-gradient p-[0.25rem] rounded-md'>
-								<div className=' bg-light group-active:scale-95  group-hover:text-opacity-50 select-none rounded-md sans px-1 py-1 text-sm text-dark'>
-									GET IN TOUCH
+							<div className='select-none hidden lg:flex cursor-pointer hover:bg-opacity-50 group bg-hard-stop-gradient p-[0.25rem] rounded-md items-center'>
+								<div className=' bg-light group-active:scale-95 sans px-1'>
+									<span className='text-dark text-sm xbold  group-hover:text-opacity-50'>
+										CONTACT US
+									</span>
 								</div>
 							</div>
 							{/* <div
@@ -145,10 +150,7 @@ export default function Navbar() {
 							</div> */}
 						</div>
 						<span className='text-dark/50'>|</span>
-						<div className='flex items-center w-fit space-x-2'>
-							<FaUserCircle size={22} />
-							<h2 className='sans text-sm text-nowrap'>SIGN IN</h2>
-						</div>
+						<SigninButton />
 					</div>
 				</div>
 			</div>

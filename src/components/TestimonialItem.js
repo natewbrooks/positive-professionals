@@ -11,7 +11,7 @@ export default function TestimonialItem({ quote, name, workplace, borderColorCla
 			<div className='flex items-center space-x-2 py-2'>
 				<FaUser size={24} />
 				<div className='flex flex-col'>
-					<span className='serif text-md'>{name}</span>
+					<span className='sans xbold text-md'>{name}</span>
 					<span className='sans text-sm '>{workplace}</span>
 				</div>
 			</div>

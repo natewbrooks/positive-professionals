@@ -14,10 +14,14 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				primary: '#34d399',
-				secondary: '#fdba74',
+				// primary: '#34d399',
+				// secondary: '#fdba74',
+				// tertiary: '#0ea5e9',
+				// four: '#a855f7',
+				primary: '#22d3ee',
+				secondary: '#8b5cf6',
 				tertiary: '#0ea5e9',
-				four: '#a855f7',
+				four: '#6366f1',
 				light: '#f2f2f2',
 				dark: '#121212',
 				darkAccent: '#27272a',
@@ -40,8 +44,9 @@ module.exports = {
           ${theme('colors.tertiary')} 50% 75%,
           ${theme('colors.four')} 75%
         )`,
-				'custom-gradient':
-					'linear-gradient(to right, #fdba74, #34d399 25%, #0ea5e9 50%, #a855f7 75%)',
+				'custom-gradient': `linear-gradient(to right,  ${theme('colors.secondary')}, ${theme(
+					'colors.primary'
+				)} 25%, ${theme('colors.tertiary')} 50%, ${theme('colors.four')} 75%)`,
 			}),
 		},
 	},

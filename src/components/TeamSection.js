@@ -1,5 +1,6 @@
 import React from 'react';
 import TeamMembers from './TeamMembers';
+import SeeMore from './SeeMore';
 
 const teamData = [
 	{
@@ -51,7 +52,7 @@ const teamData = [
 		colorClass: 'bg-tertiary',
 	},
 	{
-		name: 'Placeholder Name',
+		name: 'Angela',
 		title: 'Executive Leadership Specialist',
 		description: 'Description here',
 		background:
@@ -70,15 +71,49 @@ const teamData = [
 
 export default function TeamSection() {
 	return (
-		<section id='team' className='w-full h-full'>
-			<div className='flex flex-col text-center justify-center'>
-				<span className='text-xxl serif'>The Team</span>
-				<span className='sans text-md'>
-					With over 120 years of combined experience, we are prepared to handle anything thrown our
-					way.
-				</span>
+		<section id='team' className='w-full h-full flex space-x-20 space-y-40'>
+			<div className='flex flex-col space-y-4 max-w-[50%]'>
+				<div className='flex flex-col -space-y-1'>
+					<span className='sans text-sm'>WHO WE ARE</span>
+					<span className='serif text-xxl'>Uncover our history</span>
+				</div>
+				<p className='sans text-lg'>
+					Mental fitness is our capacity to handle life’s greatest challenges with a positive
+					mindset rather than getting stressed or upset. When it comes to physical fitness, we are
+					unlikely to be able to climb a mountain if we have not strengthened our muscles and built
+					our stamina in advance. Mental fitness is similar; if we want to overcome stressful
+					situations and view life through a positive mindset, we need to learn and practice the
+					skills that will enable us to do so. In other words, we need to build our mental fitness.
+					<br></br>
+					<br></br>
+					By strengthening three fundamental mental fitness muscles, leaders enhance their
+					resilience and perseverance, spend less time in anger, regret, or blame, and unleash their
+					creativity and innovation. Mental fitness training helps alleviate the impact of setbacks
+					so personnel can remain resilient, constantly evolving, and contributing to the overall
+					progress of the business.
+					<br></br>
+					<br></br>
+					By strengthening three fundamental mental fitness muscles, leaders enhance their
+					resilience and perseverance, spend less time in anger, regret, or blame, and unleash their
+					creativity and innovation. Mental fitness training helps alleviate the impact of setbacks
+					so personnel can remain resilient, constantly evolving, and contributing to the overall
+					progress of the business.
+				</p>
+				<SeeMore text={'Learn more'} colorClass={'text-primary'} />
 			</div>
-			<TeamMembers gridItems={teamData} />
+			<div className='flex flex-col items-center justify-center space-y-4'>
+				<div className='flex w-full flex-col -space-y-1 text-end'>
+					{/* <span className='sans text-md'>
+						With over 120 years of combined experience, we are prepared to handle anything thrown
+						our way.
+					</span> */}
+					<span className='sans text-sm'>OVER 120 YEARS OF EXPERIENCE</span>
+
+					<span className='text-xxl serif'>The Team</span>
+				</div>
+
+				<TeamMembers gridItems={teamData} />
+			</div>
 		</section>
 	);
 }
