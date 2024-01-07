@@ -1,6 +1,7 @@
 import React from 'react';
 import TeamMembers from './TeamMembers';
 import SeeMore from './SeeMore';
+import { FaHammer } from 'react-icons/fa';
 
 const teamData = [
 	{
@@ -71,8 +72,10 @@ const teamData = [
 
 export default function TeamSection() {
 	return (
-		<section id='team' className='w-full h-full flex space-x-20 space-y-40'>
-			<div className='flex flex-col space-y-4 max-w-[50%]'>
+		<section
+			id='team'
+			className='w-full h-full flex flex-col space-y-40 justify-center items-center xxl:items-start xxl:flex-row xl:space-x-20'>
+			<div className='flex flex-col space-y-4 xxl:max-w-[50%]'>
 				<div className='flex flex-col -space-y-1'>
 					<span className='sans text-sm'>WHO WE ARE</span>
 					<span className='serif text-xxl'>Uncover our history</span>

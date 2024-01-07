@@ -34,7 +34,7 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 								SUBMIT
 							</div>
 						</form>
-						<div className='flex space-x-2 w-full border-t-2 border-dark/10 pt-5'>
+						<div className='justify-center flex space-x-2 w-full border-t-2 border-dark/10 pt-5'>
 							<span className='text-sm sans'>Don't have an account?</span>
 							<span
 								onClick={() => setRegisterShown(true)}
@@ -89,7 +89,7 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 								CREATE ACCOUNT
 							</div>
 						</form>
-						<div className='flex space-x-2 w-full border-t-2 border-dark/10 pt-5'>
+						<div className='justify-center md:justify-start flex space-x-2 w-full border-t-2 border-dark/10 pt-5'>
 							<span className='text-sm sans'>Already have an account?</span>
 							<span
 								onClick={() => setRegisterShown(false)}

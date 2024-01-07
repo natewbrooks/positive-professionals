@@ -8,7 +8,7 @@ export default function WorkedWithSection({ content }) {
 				<span className='sans text-sm'>WHO WE'VE WORKED WITH</span>
 			</div>
 			<div className='bg-dark/10 flex justify-center w-full h-full p-4 rounded-md'>
-				<div className='grid grid-cols-5 justify-items-center gap-10 w-full'>
+				<div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 justify-items-center gap-10 w-full'>
 					<FaUser size={100} />
 					<FaUser size={100} />
 					<FaUser size={100} />

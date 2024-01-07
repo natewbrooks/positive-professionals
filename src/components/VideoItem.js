@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function VideoItem({ title, date, description, colorClass }) {
+export default function VideoItem({ video }) {
 	return (
 		<div className='flex flex-col space-y-1'>
 			<div className='bg-dark/10 aspect-video w-84 '>
@@ -14,10 +14,10 @@ export default function VideoItem({ title, date, description, colorClass }) {
 			</div>
 			<div className='bg-dark/10 flex flex-col w-full h-fit p-2 rounded-b-md'>
 				<div className='flex w-full items-center justify-between'>
-					<span className={`sans text-md xbold `}>{title}</span>
-					<span className='sans text-xs text-dark xbold'>{date}</span>
+					<span className={`sans text-md xbold `}>{video.title}</span>
+					<span className='sans text-xs text-dark xbold'>{video.date}</span>
 				</div>
-				<span className='sans text-xs text-dark/50'>{description}</span>
+				<span className='sans text-xs text-dark/50'>{video.description}</span>
 			</div>
 		</div>
 	);

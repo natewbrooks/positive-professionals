@@ -44,7 +44,7 @@ export default function ServicesSection({ content }) {
 				and resilience by aligning actions and values. Delight customers with exceptional listening,
 				collaboration, and innovation skills.
 			</span>
-			<div className='grid grid-cols-3 gap-10 h-full'>
+			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 h-full'>
 				{services.map((service, index) => (
 					<ServicesItem key={index} service={service} />
 				))}
