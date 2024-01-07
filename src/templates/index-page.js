@@ -34,7 +34,7 @@ export const IndexPageTemplate = ({
 	const heroImage = getImage(image) || image;
 
 	return (
-		<div id='canvas' className='w-full h-full'>
+		<div id='canvas' className='w-full h-full overflow-x-hidden'>
 			{/* <FullWidthImage img={heroImg} title={title} subheading={subheading} /> */}
 			<Hero />
 
