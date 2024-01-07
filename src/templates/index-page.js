@@ -1,22 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
-import Features from '../components/Features';
-import BlogRoll from '../components/BlogRoll';
-import FullWidthImage from '../components/FullWidthImage';
 import TeamSection from '../components/TeamSection';
 import ServicesSection from '../components/ServicesSection';
-import { FaHammer, FaUser } from 'react-icons/fa';
-import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import ResourcesSection from '../components/ResourcesSection';
 import TestimonialsSection from '../components/TestimonialSection';
 import WorkedWithSection from '../components/WorkedWithSection';
-import SeeMore from '../components/SeeMore';
 
-import bkg from '../img/bkg.png';
 import Hero from '../components/Hero';
 import CoreValuesSection from '../components/CoreValuesSection';
 import FirstStepsSection from '../components/FirstStepsSection';
@@ -34,7 +27,9 @@ export const IndexPageTemplate = ({
 	const heroImage = getImage(image) || image;
 
 	return (
-		<div id='canvas' className='w-full h-full overflow-x-hidden'>
+		<div
+			id='canvas'
+			className='w-full h-full overflow-x-hidden'>
 			{/* <FullWidthImage img={heroImg} title={title} subheading={subheading} /> */}
 			<Hero />
 

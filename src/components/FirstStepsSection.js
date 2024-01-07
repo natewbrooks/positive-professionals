@@ -24,7 +24,7 @@ export default function FirstStepsSection({ content }) {
 							</span>
 						</div>
 					</div>
-					<span className='hidden md:block text-lg sans xbold'>{`>`}</span>
+					<span className='hidden lg:block text-lg sans xbold'>{`>`}</span>
 				</div>
 				<div className='flex flex-row space-x-8 items-center'>
 					<div className='flex flex-col space-y-4 items-center justify-center'>
@@ -37,7 +37,7 @@ export default function FirstStepsSection({ content }) {
 							</span>
 						</div>
 					</div>
-					<span className='hidden md:block text-lg sans xbold'>{`>`}</span>
+					<span className='hidden lg:block text-lg sans xbold'>{`>`}</span>
 				</div>
 				<div className='flex flex-row space-x-8 items-center'>
 					<div className='flex flex-col space-y-4 items-center justify-center'>

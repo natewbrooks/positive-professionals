@@ -13,7 +13,7 @@ export default function UpcomingWebinars({ webinars }) {
 
 	return (
 		<>
-			<div className='flex flex-col w-full lg:w-[50%] h-full space-y-4 items-center px-20 justify-center overflow-hidden'>
+			<div className='flex flex-col w-full lg:w-[50%] h-full space-y-4 items-center px-20 justify-center'>
 				<div className='flex flex-col -space-y-4'>
 					<span className='serif text-xl md:text-xxl text-dark w-[480px] text-center'>
 						Register to save your seat in our
@@ -30,16 +30,26 @@ export default function UpcomingWebinars({ webinars }) {
 				<div className='flex w-full h-full items-center justify-center'>
 					<div className='flex w-full justify-between items-end border-b-2 border-dark/10'>
 						<span className='sans xbold text-md text-nowrap text-dark'>UPCOMING WEBINARS</span>
-						<SeeMore text='See all' colorClass='text-four' />
+						<SeeMore
+							text='See all'
+							colorClass='text-four'
+						/>
 					</div>
 				</div>
-				<div className='flex w-full h-full space-x-4 justify-center overflow-x-auto'>
+				<div className='overflow-x-auto flex w-full h-full space-x-4 pb-4 px-4 justify-start'>
 					{webinars.map((webinar, index) => (
-						<UpcomingWebinarItem key={index} webinar={webinar} />
+						<UpcomingWebinarItem
+							key={index}
+							webinar={webinar}
+						/>
 					))}
 				</div>
 			</div>
-			<SigninModal isModalOpen={isModalOpen} closeModal={closeModal} showSignin={false} />
+			<SigninModal
+				isModalOpen={isModalOpen}
+				closeModal={closeModal}
+				showSignin={false}
+			/>
 		</>
 	);
 }
