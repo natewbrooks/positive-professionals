@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import Modal from './Modal';
-import { HiCursorClick } from 'react-icons/hi';
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 export default function TeamMember({ member }) {
@@ -16,10 +15,6 @@ export default function TeamMember({ member }) {
 			<div
 				onClick={() => setModalOpen(true)}
 				className={`relative bg-dark/10 group-hover:bg-opacity-50 transition-all duration-300 ${member.colorClass} bg-opacity-70 flex items-center py-12 px-20 rounded-md`}>
-				<HiCursorClick
-					size={18}
-					className={`hidden group-hover:block absolute top-1 right-1 text-dark/50 animate-pulse`}
-				/>
 				<FaUser size={180} className='' />
 			</div>
 			<div className='flex flex-col text-start py-1' onClick={() => setModalOpen(true)}>

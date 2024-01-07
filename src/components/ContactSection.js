@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SeeMore from './SeeMore';
 import { FaCalendar } from 'react-icons/fa';
+import SigninModal from './SigninModal';
 
 export default function ContactSection({ content }) {
+	const [isModalOpen, setModalOpen] = useState(false);
+
+	const openModal = () => setModalOpen(true);
+	const closeModal = () => {
+		setModalOpen(false);
+	};
+
 	return (
 		<section
 			id='contact'
@@ -56,7 +64,9 @@ export default function ContactSection({ content }) {
 						next free weekly webinar.
 					</span>
 				</div>
-				<div className='text-lg bg-dark xbold select-none hover:opacity-50 active:scale-95 cursor-pointer text-light mt-20 p-2 rounded-md w-fit sans'>
+				<div
+					onClick={() => openModal()}
+					className='text-lg bg-dark xbold select-none hover:opacity-50 active:scale-95 cursor-pointer text-light mt-20 p-2 rounded-md w-fit sans'>
 					REGISTER NOW
 				</div>
 				<div className='flex w-full h-full items-center justify-center'>
@@ -112,6 +122,7 @@ export default function ContactSection({ content }) {
 					Create Account
 				</div>
 			</div> */}
+			<SigninModal isModalOpen={isModalOpen} closeModal={closeModal} showSignin={false} />
 		</section>
 	);
 }
