@@ -6,7 +6,7 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 
 	return (
 		<Modal isOpen={isModalOpen} onClose={closeModal}>
-			<div className='flex flex-col space-y-4 w-full h-full'>
+			<div className='flex flex-col space-y-4 w-full h-full justify-center items-center'>
 				{!registerShown && (
 					<>
 						<div className='flex flex-col text-center'>
@@ -48,7 +48,7 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 				{registerShown && (
 					<>
 						<div className='flex flex-col text-center'>
-							<span className='serif text-xl'>Register</span>
+							<span className='serif text-xl'>Register Account</span>
 						</div>
 						<form className='w-fit flex flex-col justify-center space-y-8 items-center'>
 							<div className='w-[60%] flex flex-col space-y-2'>

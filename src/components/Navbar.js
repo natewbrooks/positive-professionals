@@ -58,7 +58,7 @@ export default function Navbar() {
 
 	return (
 		<nav
-			className='fixed m-0 bg-light dark:bg-darkAccent w-full z-50 drop-shadow-md'
+			className='fixed bg-light dark:bg-darkAccent w-full z-50 drop-shadow-md'
 			role='navigation'
 			aria-label='main-navigation'>
 			<div className='flex items-center'>

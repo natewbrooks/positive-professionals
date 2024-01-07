@@ -50,7 +50,7 @@ export default function ContactSection({ content }) {
 								className='select-none bg-dark/10 rounded-md text-dark placeholder:text-dark py-1 px-2 sans'></input>
 						</div>
 					</div>
-					<div className='hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-dark text-light p-1 items-center flex justify-center sans text-sm w-[50%] rounded-md'>
+					<div className='text-lg hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-dark text-light p-1 items-center flex justify-center sans w-[50%] rounded-md'>
 						SUBMIT
 					</div>
 				</form>

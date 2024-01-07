@@ -7,6 +7,29 @@ import { FaPeopleGroup } from 'react-icons/fa6';
 import ServicesItem from './ServicesItem';
 
 export default function ServicesSection({ content }) {
+	const services = [
+		{
+			Icon: FaComments,
+			title: 'Personal Sessions',
+			description: 'Schedule a one-on-one intimate meeting catered to your needs.',
+			colorClass: 'bg-tertiary',
+		},
+		{
+			Icon: FaPeopleGroup,
+			title: 'Group Sessions',
+			description:
+				'Explore different avenues and engage with a group of people to stimulate your own personal growth.',
+			colorClass: 'bg-primary',
+		},
+		{
+			Icon: FaDumbbell,
+			title: 'In-person Workshops',
+			description:
+				'Attend an in-person workshop to develop and find meaningful solutions among peers.',
+			colorClass: 'bg-four',
+		},
+	];
+
 	return (
 		<section id='services' className='w-full h-full flex flex-col space-y-4'>
 			<div className='flex flex-col text-start -space-y-1'>
@@ -22,24 +45,9 @@ export default function ServicesSection({ content }) {
 				collaboration, and innovation skills.
 			</span>
 			<div className='grid grid-cols-3 gap-10 h-full'>
-				<ServicesItem
-					Icon={FaComments}
-					title='Personal Sessions'
-					description='Schedule a one-on-one intimate meeting catered to your needs.'
-					colorClass='bg-tertiary'
-				/>
-				<ServicesItem
-					Icon={FaPeopleGroup}
-					title='Group Sessions'
-					description='Explore different avenues and engage with a group of people to stimulate your own personal growth.'
-					colorClass='bg-primary'
-				/>
-				<ServicesItem
-					Icon={FaDumbbell}
-					title='In-person Workshops'
-					description='Attend an in-person workshop to develop and find meaningful solutions among peers.'
-					colorClass='bg-four'
-				/>
+				{services.map((service, index) => (
+					<ServicesItem key={index} service={service} />
+				))}
 			</div>
 
 			<div className='w-full text-center my-4'>

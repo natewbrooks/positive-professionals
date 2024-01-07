@@ -18,14 +18,14 @@ export default function TeamMember({ member }) {
 				<FaUser size={180} className='' />
 			</div>
 			<div className='flex flex-col text-start py-1' onClick={() => setModalOpen(true)}>
-				<span className='serif text-lg'>{member.name}</span>
+				<span className='sans xbold text-lg'>{member.name}</span>
 				<span className='sans text-sm'>{member.title}</span>
 			</div>
 
 			<Modal isOpen={isModalOpen} onClose={closeModal}>
-				<div className='flex w-full justify-between space-x-4 overflow-hidden'>
-					<div className='flex items-center'>
-						<div className='flex flex-col space-y-2 w-full px-8'>
+				<div className='flex w-full justify-between flex-col space-y-4 xl:flex-row xl:space-x-4 overflow-hidden'>
+					<div className='flex items-center border-b-2 border-dark/10 pb-4 xl:border-none xl:pb-0'>
+						<div className='flex flex-col justify-center items-center space-y-2 w-full px-8'>
 							<FaUser size={200} />
 							<div className='flex flex-col text-start py-1'>
 								<span className='serif text-lg'>{member.name}</span>
