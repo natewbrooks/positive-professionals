@@ -5,8 +5,10 @@ import SeeMore from './SeeMore';
 
 export default function FirstStepsSection({ content }) {
 	return (
-		<section id='firstSteps' className='w-full h-full'>
-			<div className='flex flex-col -space-y-1 mb-8 items-center justify-center'>
+		<section
+			id='firstSteps'
+			className='w-full h-full'>
+			<div className='flex flex-col -space-y-1 mb-8 items-center text-center justify-center'>
 				<span className='serif text-xxl'>Let's get started.</span>
 				<span className='sans text-md'>
 					Take your first steps and get involved with the betterment of your future.

@@ -133,16 +133,8 @@ export default function Navbar() {
 									{link.title}
 								</AnchorLink>
 							))}
-							{/* <div className='hidden lg:block'>
-							<NavDropdownItem title={'Services'} items={servicesDropdownItems} />
-						</div> */}
 						</div>
 						<div className='flex items-center w-fit space-x-4'>
-							{/* <h2 className='sans text-md text-nowrap'>Login / Signup</h2>
-							<FaUserCircle size={24} className='text-dark' /> */}
-							{/* <div className='bg-dark px-2 py-1 font-bold text-light'>Log in</div>
-						<span className='sans items-end text-dark'>or</span>
-						<div className='px-2 py-1 font-bold text-dark border-b-2 border-dark'>Sign up</div> */}
 							<div className='flex space-x-2 items-center justify-center'>
 								<div className='select-none hidden lg:flex cursor-pointer hover:bg-opacity-50 group bg-hard-stop-gradient p-[0.25rem] rounded-md items-center'>
 									<div className=' bg-light group-active:scale-95 sans px-1'>
@@ -215,9 +207,6 @@ export default function Navbar() {
 							{link.title}
 						</AnchorLink>
 					))}
-					{/* <div className='hidden lg:block'>
-							<NavDropdownItem title={'Services'} items={servicesDropdownItems} />
-						</div> */}
 				</div>
 			</nav>
 		</>
