@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
-// import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-// import { app } from '../firebase';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { app } from 'gatsby-plugin-firebase-v9.0';
 
 export default function SigninModal({
 	isModalOpen,
@@ -17,67 +17,67 @@ export default function SigninModal({
 	const [password, setPassword] = useState('');
 	const [firstName, setFirstName] = useState('');
 	const [lastName, setLastName] = useState('');
-	// const auth = getAuth(app);
+	const auth = getAuth(app);
 
 	const [errorMsgShown, setErrorMsgShown] = useState(false);
 
 	const register = (email, password) => {
-		// return createUserWithEmailAndPassword(auth, email, password);
+		return createUserWithEmailAndPassword(auth, email, password);
 	};
 
 	const signIn = (email, password) => {
-		// return signInWithEmailAndPassword(auth, email, password);
+		return signInWithEmailAndPassword(auth, email, password);
 	};
 
 	const registerAccount = (e) => {
-		// console.log(password);
-		// console.log('TRYING');
-		// e.preventDefault();
-		// register(email, password)
-		// 	.then((userCredential) => {
-		// 		// Handle new user
-		// 		const user = userCredential.user;
-		// 		console.log('USER CREDS:' + user);
-		// 		closeModal();
-		// 	})
-		// 	.catch((error) => {
-		// 		const errorCode = error.code;
-		// 		const errorMessage = error.message;
-		// 	});
+		console.log(password);
+		console.log('TRYING');
+		e.preventDefault();
+		register(email, password)
+			.then((userCredential) => {
+				// Handle new user
+				const user = userCredential.user;
+				console.log('USER CREDS:' + user);
+				closeModal();
+			})
+			.catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+			});
 	};
 
 	const login = (e) => {
-		// console.log('TRYING');
-		// e.preventDefault();
-		// signIn(email, password)
-		// 	.then((userCredential) => {
-		// 		// Handle signed in user
-		// 		const user = userCredential.user;
-		// 		handleUserSignIn({
-		// 			email: email,
-		// 			firstName: firstName,
-		// 			lastName: lastName,
-		// 			phoneNumber: phoneNumber,
-		// 			uid: user.uid,
-		// 		});
-		// 		closeModal();
-		// 		console.log('LOGGED IN:', userCredential);
-		// 	})
-		// 	.catch((error) => {
-		// 		const errorCode = error.code;
-		// 		const errorMessage = error.message;
-		// 	});
+		console.log('TRYING');
+		e.preventDefault();
+		signIn(email, password)
+			.then((userCredential) => {
+				// Handle signed in user
+				const user = userCredential.user;
+				handleUserSignIn({
+					email: email,
+					firstName: firstName,
+					lastName: lastName,
+					phoneNumber: phoneNumber,
+					uid: user.uid,
+				});
+				closeModal();
+				console.log('LOGGED IN:', userCredential);
+			})
+			.catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+			});
 	};
 
 	const signOut = (e) => {
-		// e.preventDefault();
-		// signOut(auth)
-		// 	.then(() => {
-		// 		handleUserSignOut();
-		// 	})
-		// 	.catch((error) => {
-		// 		// An error happened.
-		// 	});
+		e.preventDefault();
+		signOut(auth)
+			.then(() => {
+				handleUserSignOut();
+			})
+			.catch((error) => {
+				// An error happened.
+			});
 	};
 
 	useEffect(() => {
@@ -88,7 +88,6 @@ export default function SigninModal({
 				// User is signed out
 			}
 		});
-
 		// Cleanup subscription on unmount
 		return () => unsubscribe();
 	}, []);
