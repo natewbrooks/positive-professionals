@@ -1,95 +1,89 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { app } from 'gatsby-plugin-firebase-v9.0';
+// import app from '../firebase';
+// import { getAuth, onAuthStateChanged } from 'firebase/auth';
+// import firebase from 'gatsby-plugin-firebase';
 
-export default function SigninModal({
-	isModalOpen,
-	setModalOpen,
-	closeModal,
-	showSignin,
-	handleUserSignIn,
-	handleUserSignOut,
-}) {
+export default function SigninModal({ isModalOpen, setModalOpen, closeModal, showSignin }) {
 	const [registerShown, setRegisterShown] = useState(!showSignin);
 	const [email, setEmail] = useState('');
 	const [phoneNumber, setPhoneNumber] = useState('');
 	const [password, setPassword] = useState('');
 	const [firstName, setFirstName] = useState('');
 	const [lastName, setLastName] = useState('');
-	const auth = getAuth(app);
+
+	const [isLoggedIn, setIsLoggedIn] = useState('');
 
 	const [errorMsgShown, setErrorMsgShown] = useState(false);
+	// const currentAuth = useState(getAuth());
 
-	const register = (email, password) => {
-		return createUserWithEmailAndPassword(auth, email, password);
-	};
+	function registerAccount(user) {
+		// firebase
+		// 	.auth()
+		// 	.createUserWithEmailAndPassword(user.email, user.password)
+		// 	.then((userCredential) => {
+		// 		// Handle new user
+		// 		console.log('! USER CREATED', userCredential.user);
+		// 	})
+		// 	.catch((error) => {
+		// 		// Handle Errors here.
+		// 		console.error('! ERROR', error.message);
+		// 	});
+	}
 
-	const signIn = (email, password) => {
-		return signInWithEmailAndPassword(auth, email, password);
-	};
+	function signIn(email, password) {
+		// firebase
+		// 	.auth()
+		// 	.signInWithEmailAndPassword(email, password)
+		// 	.then((userCredential) => {
+		// 		// Handle signed in user
+		// 		console.log('! USER SIGNED IN', userCredential.user);
+		// 	})
+		// 	.catch((error) => {
+		// 		// Handle Errors here.
+		// 		console.error('! ERROR', error.message);
+		// 	});
+	}
 
-	const registerAccount = (e) => {
-		console.log(password);
-		console.log('TRYING');
-		e.preventDefault();
-		register(email, password)
-			.then((userCredential) => {
-				// Handle new user
-				const user = userCredential.user;
-				console.log('USER CREDS:' + user);
-				closeModal();
-			})
-			.catch((error) => {
-				const errorCode = error.code;
-				const errorMessage = error.message;
-			});
-	};
+	function login() {
+		// firebase
+		// 	.auth()
+		// 	.signOut()
+		// 	.then(() => {
+		// 		// Sign-out successful.
+		// 		console.log('! SIGNED OUT');
+		// 	})
+		// 	.catch((error) => {
+		// 		// An error happened.
+		// 		console.error('! ERROR', error.message);
+		// 	});
+	}
 
-	const login = (e) => {
-		console.log('TRYING');
-		e.preventDefault();
-		signIn(email, password)
-			.then((userCredential) => {
-				// Handle signed in user
-				const user = userCredential.user;
-				handleUserSignIn({
-					email: email,
-					firstName: firstName,
-					lastName: lastName,
-					phoneNumber: phoneNumber,
-					uid: user.uid,
-				});
-				closeModal();
-				console.log('LOGGED IN:', userCredential);
-			})
-			.catch((error) => {
-				const errorCode = error.code;
-				const errorMessage = error.message;
-			});
-	};
+	// const registerAccount = (e) => {
+	// 	e.preventDefault();
+	// 	register({
+	// 		email: email,
+	// 		firstName: firstName,
+	// 		lastName: lastName,
+	// 		phoneNumber: phoneNumber,
+	// 	});
+	// };
 
-	const signOut = (e) => {
-		e.preventDefault();
-		signOut(auth)
-			.then(() => {
-				handleUserSignOut();
-			})
-			.catch((error) => {
-				// An error happened.
-			});
-	};
+	// const login = (e) => {
+	// 	e.preventDefault();
+	// 	signIn(email, password);
+	// 	closeModal();
+	// };
 
 	useEffect(() => {
-		const unsubscribe = auth.onAuthStateChanged((user) => {
-			if (user) {
-				// User is signed in
-			} else {
-				// User is signed out
-			}
-		});
-		// Cleanup subscription on unmount
-		return () => unsubscribe();
+		// const auth = getAuth(app);
+		// onAuthStateChanged(auth, (user) => {
+		// 	if (user) {
+		// 		// User is signed in.
+		// 	} else {
+		// 		// User is signed out.
+		// 	}
+		// });
 	}, []);
 
 	return (

@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
 import SigninModal from './SigninModal';
 
-export default function SigninButton({
-	handleUserSignIn,
-	handleUserSignOut,
-	isLoggedIn,
-	userData,
-}) {
+export default function SigninButton({ isLoggedIn, userData }) {
 	const [isModalOpen, setModalOpen] = useState(false);
 
 	const openModal = () => setModalOpen(true);
@@ -31,8 +26,6 @@ export default function SigninButton({
 				isModalOpen={isModalOpen}
 				closeModal={closeModal}
 				showSignin={true}
-				handleUserSignIn={handleUserSignIn}
-				handleUserSignOut={handleUserSignOut}
 			/>
 		</>
 	);

@@ -7,7 +7,6 @@ export default function Navbar() {
 	const [activeHash, setActiveHash] = useState('');
 	const [darkModeActive, setDarkMode] = useState(false);
 	const [darkHover, setDarkHover] = useState(false);
-	const [isLoggedIn, setLoggedIn] = useState(false);
 	const [userData, setUserData] = useState();
 
 	const [isBurgerNavShown, setBurgerNavShown] = useState(false);
@@ -47,7 +46,6 @@ export default function Navbar() {
 	];
 
 	useEffect(() => {
-		console.log('Logged in state is now:', isLoggedIn);
 		if (darkModeActive) {
 			document.documentElement.classList.add('dark');
 		} else {
@@ -79,22 +77,7 @@ export default function Navbar() {
 
 		// Disconnect the observer on unmount
 		return () => observer.disconnect();
-	}, [darkModeActive, isLoggedIn]);
-
-	const handleUserSignIn = (userData) => {
-		// Process the user data received from SigninModal
-		console.log('User Data Received in Navbar:', userData);
-		setLoggedIn(true);
-		setUserData(userData);
-		console.log('LOGGED IN: ' + isLoggedIn);
-		// You can set state here if you want to use this data in Navbar
-	};
-
-	const handleUserSignOut = () => {
-		// Process the user data received from SigninModal
-		// You can set state here if you want to use this data in Navbar
-		setLoggedIn(false);
-	};
+	}, [darkModeActive]);
 
 	return (
 		<>
@@ -173,12 +156,7 @@ export default function Navbar() {
 							</div> */}
 							</div>
 							<span className='text-dark/50'>|</span>
-							<SigninButton
-								isLoggedIn={isLoggedIn}
-								userData={userData}
-								handleUserSignIn={handleUserSignIn}
-								handleUserSignOut={handleUserSignOut}
-							/>
+							<SigninButton userData={userData} />
 						</div>
 					</div>
 				</div>
