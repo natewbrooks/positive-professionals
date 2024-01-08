@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
-// import app from '../firebase';
-// import { getAuth, onAuthStateChanged } from 'firebase/auth';
-// import firebase from 'gatsby-plugin-firebase';
 
 export default function SigninModal({ isModalOpen, setModalOpen, closeModal, showSignin }) {
 	const [registerShown, setRegisterShown] = useState(!showSignin);
@@ -17,73 +14,22 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 	const [errorMsgShown, setErrorMsgShown] = useState(false);
 	// const currentAuth = useState(getAuth());
 
-	function registerAccount(user) {
-		// firebase
-		// 	.auth()
-		// 	.createUserWithEmailAndPassword(user.email, user.password)
-		// 	.then((userCredential) => {
-		// 		// Handle new user
-		// 		console.log('! USER CREATED', userCredential.user);
-		// 	})
-		// 	.catch((error) => {
-		// 		// Handle Errors here.
-		// 		console.error('! ERROR', error.message);
-		// 	});
-	}
+	const login = (e) => {
+		e.preventDefault();
+		//
+		closeModal();
+	};
 
-	function signIn(email, password) {
-		// firebase
-		// 	.auth()
-		// 	.signInWithEmailAndPassword(email, password)
-		// 	.then((userCredential) => {
-		// 		// Handle signed in user
-		// 		console.log('! USER SIGNED IN', userCredential.user);
-		// 	})
-		// 	.catch((error) => {
-		// 		// Handle Errors here.
-		// 		console.error('! ERROR', error.message);
-		// 	});
-	}
-
-	function login() {
-		// firebase
-		// 	.auth()
-		// 	.signOut()
-		// 	.then(() => {
-		// 		// Sign-out successful.
-		// 		console.log('! SIGNED OUT');
-		// 	})
-		// 	.catch((error) => {
-		// 		// An error happened.
-		// 		console.error('! ERROR', error.message);
-		// 	});
-	}
-
-	// const registerAccount = (e) => {
-	// 	e.preventDefault();
-	// 	register({
-	// 		email: email,
-	// 		firstName: firstName,
-	// 		lastName: lastName,
-	// 		phoneNumber: phoneNumber,
-	// 	});
-	// };
-
-	// const login = (e) => {
-	// 	e.preventDefault();
-	// 	signIn(email, password);
-	// 	closeModal();
-	// };
+	const register = (e) => {
+		e.preventDefault();
+		//
+		closeModal();
+	};
 
 	useEffect(() => {
-		// const auth = getAuth(app);
-		// onAuthStateChanged(auth, (user) => {
-		// 	if (user) {
-		// 		// User is signed in.
-		// 	} else {
-		// 		// User is signed out.
-		// 	}
-		// });
+		if (typeof window !== 'undefined') {
+			// Firebase related code here
+		}
 	}, []);
 
 	return (
@@ -143,7 +89,7 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 							<span className='serif text-xl'>Register Account</span>
 						</div>
 						<form
-							onSubmit={registerAccount}
+							onSubmit={register}
 							className='w-fit flex flex-col justify-center space-y-8 items-center'>
 							<div className='w-[60%] flex flex-col space-y-2'>
 								<div className='flex space-x-2 justify-evenly'>
