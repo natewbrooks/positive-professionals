@@ -1,7 +1,6 @@
 import React from 'react';
 import TeamMembers from './TeamMembers';
 import SeeMore from './SeeMore';
-import { FaHammer } from 'react-icons/fa';
 
 const teamData = [
 	{
@@ -53,7 +52,7 @@ const teamData = [
 		colorClass: 'bg-tertiary',
 	},
 	{
-		name: 'Angela',
+		name: 'Angela Satchell',
 		title: 'Executive Leadership Specialist',
 		description: 'Description here',
 		background:
@@ -102,7 +101,10 @@ export default function TeamSection() {
 					so personnel can remain resilient, constantly evolving, and contributing to the overall
 					progress of the business.
 				</p>
-				<SeeMore text={'Learn more'} colorClass={'text-primary'} />
+				<SeeMore
+					text={'Learn more'}
+					colorClass={'text-primary'}
+				/>
 			</div>
 			<div className='flex flex-col items-center justify-center space-y-4'>
 				<div className='flex w-full flex-col -space-y-1 text-end'>

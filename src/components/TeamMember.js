@@ -15,25 +15,34 @@ export default function TeamMember({ member }) {
 			<div
 				onClick={() => setModalOpen(true)}
 				className={`relative bg-dark/10 group-hover:bg-opacity-50 transition-all duration-300 ${member.colorClass} bg-opacity-70 flex items-center py-12 px-20 rounded-md`}>
-				<FaUser size={180} className='' />
+				<FaUser
+					size={180}
+					className=''
+				/>
 			</div>
-			<div className='flex flex-col text-start py-1' onClick={() => setModalOpen(true)}>
+			<div
+				className='flex flex-col text-start py-1'
+				onClick={() => setModalOpen(true)}>
 				<span className='sans xbold text-lg'>{member.name}</span>
 				<span className='sans text-sm'>{member.title}</span>
 			</div>
 
-			<Modal isOpen={isModalOpen} onClose={closeModal}>
+			<Modal
+				isOpen={isModalOpen}
+				onClose={closeModal}>
 				<div className='flex w-full justify-between flex-col space-y-4 xl:flex-row xl:space-x-4 overflow-hidden'>
 					<div className='flex items-center border-b-2 border-dark/10 pb-4 xl:border-none xl:pb-0'>
-						<div className='flex flex-col justify-center items-center space-y-2 w-full px-8'>
+						<div className='flex flex-col justify-center items-center space-y-4 w-full px-8'>
 							<FaUser size={200} />
-							<div className='flex flex-col text-start py-1'>
-								<span className='serif text-lg'>{member.name}</span>
-								<span className='sans text-sm'>{member.title}</span>
-							</div>
-							<div className='flex flex-row space-x-2'>
-								<FaLinkedin size={24} />
-								<FaEnvelope size={24} />
+							<div className='flex flex-col items-center space-y-2'>
+								<div className='flex flex-col items-center text-center'>
+									<span className='sans xbold text-lg'>{member.name}</span>
+									<span className='sans text-sm'>{member.title}</span>
+								</div>
+								<div className='flex flex-row space-x-2'>
+									<FaLinkedin size={24} />
+									<FaEnvelope size={24} />
+								</div>
 							</div>
 						</div>
 					</div>
