@@ -162,8 +162,8 @@ export default function Navbar() {
 				</div>
 			</nav>
 			<nav
-				className={`fixed z-40 lg:hidden w-full h-fit bg-dark/80 ${
-					isBurgerNavShown ? 'translate-y-16' : '-translate-y-[100%]'
+				className={`transform fixed z-40 lg:hidden w-full h-fit bg-dark/80 ${
+					isBurgerNavShown ? 'translate-y-16' : '-translate-y-full'
 				} duration-300 ease-in-out transition-all`}>
 				<div className='flex flex-col sm:flex-row w-full h-full'>
 					{navLinks.map((link, index) => (

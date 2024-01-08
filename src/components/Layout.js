@@ -11,11 +11,14 @@ import ContactSection from '../components/ContactSection';
 const TemplateWrapper = ({ children }) => {
 	const { title, description } = useSiteMetadata();
 	return (
-		<div className='w-full h-full bg-light dark:bg-dark'>
+		<div className='w-full h-full bg-light dark:bg-dark overflow-x-hidden'>
 			<Helmet>
 				<html lang='en' />
 				<title>{title}</title>
-				<meta name='description' content={description} />
+				<meta
+					name='description'
+					content={description}
+				/>
 
 				<link
 					rel='apple-touch-icon'
@@ -40,12 +43,27 @@ const TemplateWrapper = ({ children }) => {
 					href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
 					color='#ff4400'
 				/>
-				<meta name='theme-color' content='#fff' />
+				<meta
+					name='theme-color'
+					content='#fff'
+				/>
 
-				<meta property='og:type' content='business.business' />
-				<meta property='og:title' content={title} />
-				<meta property='og:url' content='/' />
-				<meta property='og:image' content={`${withPrefix('/')}img/og-image.jpg`} />
+				<meta
+					property='og:type'
+					content='business.business'
+				/>
+				<meta
+					property='og:title'
+					content={title}
+				/>
+				<meta
+					property='og:url'
+					content='/'
+				/>
+				<meta
+					property='og:image'
+					content={`${withPrefix('/')}img/og-image.jpg`}
+				/>
 			</Helmet>
 			<Navbar />
 			{children}
