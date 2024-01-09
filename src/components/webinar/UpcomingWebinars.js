@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import SigninModal from './SigninModal';
+import SigninModal from '../sign in/SigninModal';
 import UpcomingWebinarItem from './UpcomingWebinarItem';
-import SeeMore from './SeeMore';
+import SeeMore from '../pieces/SeeMore';
 
 export default function UpcomingWebinars({ webinars }) {
 	const [isModalOpen, setModalOpen] = useState(false);
@@ -14,7 +14,7 @@ export default function UpcomingWebinars({ webinars }) {
 	return (
 		<>
 			<div className='flex flex-col w-full lg:w-[50%] h-full space-y-4 items-center px-20 justify-center'>
-				<div className='flex flex-col -space-y-4'>
+				<div className='flex flex-col -space-y-3'>
 					<span className='serif text-xl md:text-xxl text-dark w-[480px] text-center'>
 						Register to save your seat in our
 					</span>

@@ -1,10 +1,10 @@
 import React from 'react';
-import groupIcon from '../img/services/groupIcon.svg';
-import oneononeIcon from '../img/services/oneononeIcon.svg';
-import workshopIcon from '../img/services/workshopIcon.svg';
+import groupIcon from '../../img/services/groupIcon.svg';
+import oneononeIcon from '../../img/services/oneononeIcon.svg';
+import workshopIcon from '../../img/services/workshopIcon.svg';
 import { FaDumbbell, FaComments } from 'react-icons/fa';
 import { FaPeopleGroup } from 'react-icons/fa6';
-import ServicesItem from './ServicesItem';
+import ServicesItem from '../services/ServicesItem';
 
 export default function ServicesSection({ content }) {
 	const services = [
@@ -31,7 +31,9 @@ export default function ServicesSection({ content }) {
 	];
 
 	return (
-		<section id='services' className='w-full h-full flex flex-col space-y-4'>
+		<section
+			id='services'
+			className='w-full h-full flex flex-col space-y-4'>
 			<div className='flex flex-col text-start -space-y-1'>
 				<span className='sans text-sm'>WHAT WE CAN DO FOR YOU</span>
 				<span className='serif text-xxl'>Our services</span>
@@ -46,7 +48,10 @@ export default function ServicesSection({ content }) {
 			</span>
 			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 h-full'>
 				{services.map((service, index) => (
-					<ServicesItem key={index} service={service} />
+					<ServicesItem
+						key={index}
+						service={service}
+					/>
 				))}
 			</div>
 

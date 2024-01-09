@@ -1,11 +1,11 @@
 import React from 'react';
-import TeamMembers from './TeamMembers';
-import SeeMore from './SeeMore';
 import { FaHammer } from 'react-icons/fa';
 
 export default function CoreValuesSection() {
 	return (
-		<section id='values' className='w-full h-full flex justify-center items-center'>
+		<section
+			id='values'
+			className='w-full h-full flex justify-center items-center'>
 			<div className='flex flex-col space-y-4'>
 				<div className='flex flex-col -space-y-2 w-full text-center'>
 					<span className='sans text-sm'>WHAT WE BELIEVE IN</span>

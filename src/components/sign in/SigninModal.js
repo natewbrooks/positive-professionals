@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Modal from './Modal';
+import Modal from '../Modal';
 
 export default function SigninModal({ isModalOpen, setModalOpen, closeModal, showSignin }) {
 	const [registerShown, setRegisterShown] = useState(!showSignin);

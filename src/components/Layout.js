@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import Footer from './sections/Footer';
+import Navbar from './nav/Navbar';
 import './all.sass';
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
 import '/src/styles/global.css';
-import ContactSection from '../components/ContactSection';
+import ContactSection from './sections/ContactSection';
 
 const TemplateWrapper = ({ children }) => {
 	const { title, description } = useSiteMetadata();

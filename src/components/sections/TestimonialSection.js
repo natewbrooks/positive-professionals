@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
-import TestimonialItem from '../components/TestimonialItem';
-import SeeMore from './SeeMore';
+import TestimonialItem from '../testimonials/TestimonialItem';
+import SeeMore from '../pieces/SeeMore';
 
 export default function TestimonialsSection({ content }) {
 	const testimonials = [
@@ -32,13 +32,18 @@ export default function TestimonialsSection({ content }) {
 	];
 
 	return (
-		<section id='testimonials' className='w-full h-full'>
+		<section
+			id='testimonials'
+			className='w-full h-full'>
 			<div className='relative items-center justify-between flex py-2 space-x-1 group cursor-pointer'>
 				<span className='sans text-sm'>TESTIMONIALS</span>
 			</div>
 			<div className='w-full h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
 				{testimonials.map((testimonial, index) => (
-					<TestimonialItem key={index} testimonial={testimonial} />
+					<TestimonialItem
+						key={index}
+						testimonial={testimonial}
+					/>
 				))}
 			</div>
 			<SeeMore />

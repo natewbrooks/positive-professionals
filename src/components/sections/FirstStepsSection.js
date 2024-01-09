@@ -1,7 +1,6 @@
 import React from 'react';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
-import TestimonialItem from './TestimonialItem';
-import SeeMore from './SeeMore';
+import SeeMore from '../pieces/SeeMore';
 
 export default function FirstStepsSection({ content }) {
 	return (
@@ -39,6 +38,7 @@ export default function FirstStepsSection({ content }) {
 							</span>
 						</div>
 					</div>
+					<MdOutlineKeyboardArrowRight />
 					<span className='hidden lg:block text-lg sans xbold'>{`>`}</span>
 				</div>
 				<div className='flex flex-row space-x-8 items-center'>

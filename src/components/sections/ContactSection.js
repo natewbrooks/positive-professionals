@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import UpcomingWebinars from './UpcomingWebinars';
+import UpcomingWebinars from '../webinar/UpcomingWebinars';
 
 export default function ContactSection({ content }) {
 	const webinars = [

@@ -1,8 +1,8 @@
 import React from 'react';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import SeeMore from './SeeMore';
-import VideoItem from './VideoItem';
+import SeeMore from '../pieces/SeeMore';
+import VideoItem from '../webinar/VideoItem';
 
 export default function ResourcesSection({ content }) {
 	const videoCatalog = [
@@ -56,7 +56,9 @@ export default function ResourcesSection({ content }) {
 	];
 
 	return (
-		<section id='resources' className='w-full h-full'>
+		<section
+			id='resources'
+			className='w-full h-full'>
 			<div className='flex flex-col space-y-2 justify-center items-center'>
 				<div className='flex flex-col -space-y-1 w-full text-start'>
 					<span className={`text-xxl serif`}>Resources</span>
@@ -73,7 +75,10 @@ export default function ResourcesSection({ content }) {
 				</div>
 				<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2'>
 					{videoCatalog.map((video, index) => (
-						<VideoItem key={index} video={video} />
+						<VideoItem
+							key={index}
+							video={video}
+						/>
 					))}
 				</div>
 				<SeeMore />
@@ -86,7 +91,10 @@ export default function ResourcesSection({ content }) {
 
 				<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2'>
 					{previousWebinars.map((video, index) => (
-						<VideoItem key={index} video={video} />
+						<VideoItem
+							key={index}
+							video={video}
+						/>
 					))}
 				</div>
 

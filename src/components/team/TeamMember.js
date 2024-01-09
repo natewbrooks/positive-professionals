@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import PropTypes from 'prop-types';
-import Modal from './Modal';
+import Modal from '../Modal';
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 export default function TeamMember({ member }) {

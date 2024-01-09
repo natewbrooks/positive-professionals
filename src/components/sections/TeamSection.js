@@ -1,6 +1,6 @@
 import React from 'react';
-import TeamMembers from './TeamMembers';
-import SeeMore from './SeeMore';
+import TeamMembers from '../team/TeamMembers';
+import SeeMore from '../pieces/SeeMore';
 
 const teamData = [
 	{

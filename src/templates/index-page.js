@@ -4,15 +4,14 @@ import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
-import TeamSection from '../components/TeamSection';
-import ServicesSection from '../components/ServicesSection';
-import ResourcesSection from '../components/ResourcesSection';
-import TestimonialsSection from '../components/TestimonialSection';
-import WorkedWithSection from '../components/WorkedWithSection';
-
-import Hero from '../components/Hero';
-import CoreValuesSection from '../components/CoreValuesSection';
-import FirstStepsSection from '../components/FirstStepsSection';
+import TeamSection from '../components/sections/TeamSection';
+import ServicesSection from '../components/sections/ServicesSection';
+import ResourcesSection from '../components/sections/ResourcesSection';
+import TestimonialsSection from '../components/sections/TestimonialSection';
+import WorkedWithSection from '../components/sections/WorkedWithSection';
+import CoreValuesSection from '../components/sections/CoreValuesSection';
+import FirstStepsSection from '../components/sections/FirstStepsSection';
+import Hero from '../components/sections/Hero';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({

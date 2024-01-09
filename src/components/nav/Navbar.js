@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FaBars } from 'react-icons/fa';
-import SigninButton from './SigninButton';
+import SigninButton from '../sign in/SigninButton';
 
 export default function Navbar() {
 	const [activeHash, setActiveHash] = useState('');
