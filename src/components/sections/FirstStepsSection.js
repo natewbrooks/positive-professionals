@@ -25,7 +25,9 @@ export default function FirstStepsSection({ content }) {
 							</span>
 						</div>
 					</div>
-					<span className='hidden lg:block text-lg sans xbold'>{`>`}</span>
+					<div className='hidden lg:block'>
+						<MdOutlineKeyboardArrowRight size={32} />
+					</div>
 				</div>
 				<div className='flex flex-row space-x-8 items-center'>
 					<div className='flex flex-col space-y-4 items-center justify-center'>
@@ -38,8 +40,9 @@ export default function FirstStepsSection({ content }) {
 							</span>
 						</div>
 					</div>
-					<MdOutlineKeyboardArrowRight />
-					<span className='hidden lg:block text-lg sans xbold'>{`>`}</span>
+					<div className='hidden lg:block'>
+						<MdOutlineKeyboardArrowRight size={32} />
+					</div>
 				</div>
 				<div className='flex flex-row space-x-8 items-center'>
 					<div className='flex flex-col space-y-4 items-center justify-center'>

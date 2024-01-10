@@ -11,6 +11,7 @@
     --text-color: #121212;
 }
 
+
 .dark {
     --primary: #34d399;
     --secondary: #fdba74;
@@ -30,4 +31,35 @@
 
 .xbold {
     font-weight: 900;
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 7))
+    }
+}
+
+
+.slider {
+    height: 100px;
+    position: absolute;
+    margin: auto;
+    overflow: hidden;
+    width: fit-content;
+
+    .slide-track {
+        animation: scroll 45s linear infinite;
+        display: flex;
+        width: calc(250px * 14);
+    }
+
+    .slide {
+        height: 100px;
+        width: 250px;
+    }
 }

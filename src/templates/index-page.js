@@ -12,6 +12,7 @@ import WorkedWithSection from '../components/sections/WorkedWithSection';
 import CoreValuesSection from '../components/sections/CoreValuesSection';
 import FirstStepsSection from '../components/sections/FirstStepsSection';
 import Hero from '../components/sections/Hero';
+import ScrollingLogoSection from '../components/sections/ScrollingLogoSection';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -28,11 +29,11 @@ export const IndexPageTemplate = ({
 	return (
 		<div
 			id='canvas'
-			className='w-full h-full overflow-x-hidden'>
+			className='relative w-full h-full overflow-x-hidden'>
 			{/* <FullWidthImage img={heroImg} title={title} subheading={subheading} /> */}
 			<Hero />
 
-			<div className='w-full h-full justify-center items-center py-[4rem] lg:py-[6rem]  px-[2rem] md:px-[4rem] lg:px-[8rem] xl:px-[16rem] xxl:px-[20rem] xxxl:px-[36rem] flex flex-col space-y-[10rem]'>
+			<div className='overflow-x-hidden w-full h-full justify-center items-center py-[4rem] lg:py-[6rem]  px-[2rem] md:mx-auto lg:px-[8rem] xl:px-[16rem] xxl:px-[20rem] xxxl:px-[36rem] flex flex-col space-y-[10rem]'>
 				{/* <div className='flex flex-col space-y-4'>
 					<div className='flex flex-col -space-y-1'>
 						<span className='sans text-sm'>WHO WE ARE</span>
@@ -58,7 +59,6 @@ export const IndexPageTemplate = ({
 				</div> */}
 				<TeamSection />
 				<CoreValuesSection />
-
 				{/* WHO WE'VE WORKED WITH */}
 				<div className='flex flex-col space-y-4'>
 					<WorkedWithSection />

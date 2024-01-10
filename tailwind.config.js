@@ -1,3 +1,5 @@
+const { transform } = require('lodash');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	darkMode: 'class',
@@ -13,6 +15,15 @@ module.exports = {
 			xxxl: '2400px',
 		},
 		extend: {
+			animation: {
+				'spin-slow': 'spin 3s linear infinite',
+			},
+			keyframes: {
+				scroll: {
+					'0%': { transform: 'translateX(0);' },
+					'100%': { transform: 'translateX()' },
+				},
+			},
 			colors: {
 				// primary: '#34d399',
 				// secondary: '#fdba74',
