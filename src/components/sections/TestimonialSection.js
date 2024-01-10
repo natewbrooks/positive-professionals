@@ -128,8 +128,8 @@ export default function TestimonialsSection({ content }) {
 	const [visibleItems, setVisibleItems] = useState(3);
 	const [height, setHeight] = useState(200);
 	const [firstRender, setFirstRender] = useState(true);
-	const [translateX, setTranslateX] = useState([0, 0]); // Start with some default value
 	const [itemWidth, setItemWidth] = useState(400); // Fixed width for each testimonial item
+	const [translateX, setTranslateX] = useState([0, -itemWidth * testimonials.length]); // Start with some default value
 	const [isIntervalActive, setIntervalActive] = useState(true);
 	const [isScrollingRight, setScrollingRight] = useState(true);
 	const [isUserInteracting, setIsUserInteracting] = useState(false);
@@ -174,9 +174,7 @@ export default function TestimonialsSection({ content }) {
 		// Direct DOM manipulation before browser paint.
 		// WORKS
 		if (firstItemRef.current) {
-			const totalWidth = itemWidth * testimonials.length;
 			setDisableTransition([false, true]); // Disable transition for initial teleport
-			setTranslateX([0, -totalWidth]);
 		}
 	}, [testimonials.length]);
 
