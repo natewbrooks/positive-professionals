@@ -6,16 +6,18 @@ const TestimonialItem = forwardRef(({ id, testimonial, style }, ref) => {
 		<div
 			ref={ref}
 			id={'testimonial' + id}
-			className='flex flex-col w-fit h-full'>
+			className={`flex flex-col w-full h-full`}>
 			<div
 				style={style}
-				className={`rounded-r-md rounded-l-sm h-full justify-center text-start relative flex flex-col -space-y-1 bg-dark/10 border-l-4 p-4 ${testimonial.borderColorClass}`}>
+				className={`rounded-r-md rounded-l-sm h-full justify-center text-start relative flex flex-col -space-y-1 bg-dark/10 border-l-4 p-4 ${
+					id === 0 ? testimonial.borderColorClass : 'border-red-400'
+				}`}>
 				<span className='sans text-md'>{testimonial.quote}</span>
 			</div>
 			<div className='h-fit flex items-center space-x-2 py-2'>
 				<FaUser size={24} />
-				<div className='flex flex-col'>
-					<span className='sans text-md text-nowrap'>{testimonial.name}</span>
+				<div className='flex flex-col -space-y-1'>
+					<span className='sans text-md text-nowrap xbold'>{testimonial.name}</span>
 					<span className='sans text-sm '>{testimonial.workplace}</span>
 				</div>
 			</div>

@@ -21,7 +21,7 @@ export default function TeamMember({ member }) {
 				/>
 			</div>
 			<div
-				className='flex flex-col text-start py-1'
+				className='flex flex-col text-start py-1 -space-y-1'
 				onClick={() => setModalOpen(true)}>
 				<span className='sans xbold text-lg'>{member.name}</span>
 				<span className='sans text-sm'>{member.title}</span>
@@ -35,7 +35,7 @@ export default function TeamMember({ member }) {
 						<div className='flex flex-col justify-center items-center space-y-4 w-full px-8'>
 							<FaUser size={200} />
 							<div className='flex flex-col items-center space-y-2'>
-								<div className='flex flex-col items-center text-center'>
+								<div className='flex flex-col items-center text-center -space-y-1'>
 									<span className='sans xbold text-lg'>{member.name}</span>
 									<span className='sans text-sm'>{member.title}</span>
 								</div>
