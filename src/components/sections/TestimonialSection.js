@@ -36,12 +36,12 @@ export default function TestimonialsSection({ content }) {
 			workplace: 'Rotiserry',
 			borderColorClass: 'border-secondary',
 		},
-		{
-			quote: `Flagrant Violation`,
-			name: 'Skim Milk',
-			workplace: 'Cumberland Farms',
-			borderColorClass: 'border-four',
-		},
+		// {
+		// 	quote: `Flagrant Violation`,
+		// 	name: 'Skim Milk',
+		// 	workplace: 'Cumberland Farms',
+		// 	borderColorClass: 'border-four',
+		// },
 		// {
 		// 	quote: `Rupert fuentes strikes again`,
 		// 	name: 'Rodney Copperbottom',
@@ -123,7 +123,7 @@ export default function TestimonialsSection({ content }) {
 		// },
 	]);
 
-	const [disableTransition, setDisableTransition] = useState(false);
+	const [disableTransition, setDisableTransition] = useState([false, false]);
 	const firstItemRef = useRef(null);
 	const [visibleItems, setVisibleItems] = useState(3);
 	const [height, setHeight] = useState(200);
@@ -131,49 +131,86 @@ export default function TestimonialsSection({ content }) {
 	const [translateX, setTranslateX] = useState([0, 0]); // Start with some default value
 	const [itemWidth, setItemWidth] = useState(400); // Fixed width for each testimonial item
 	const [isIntervalActive, setIntervalActive] = useState(true);
-	const [inactiveScrollRight, setScrollRight] = useState(true);
+	const [isScrollingRight, setScrollingRight] = useState(true);
+	const [isUserInteracting, setIsUserInteracting] = useState(false);
+	const [transitioningRow, setTransitioningRow] = useState([false, false]);
+
+	function recalcPos() {
+		const totalWidth = itemWidth * testimonials.length;
+
+		if (isScrollingRight) {
+			// IF LEFT SIDE OF FIRST ROW
+			if (translateX[0] === -itemWidth) {
+				setDisableTransition([false, true]);
+				setTranslateX([translateX[0], -totalWidth - itemWidth]);
+			}
+
+			// IF LEFT SIDE OF SECOND ROW
+			if (translateX[1] === -itemWidth) {
+				setDisableTransition([true, false]);
+				setTranslateX([-totalWidth - itemWidth, translateX[1]]);
+			}
+		} else {
+			// IF RIGHT SIDE OF FIRST ROW
+
+			if (translateX[0] === -totalWidth + visibleItems * itemWidth + itemWidth) {
+				setDisableTransition([false, true]);
+				setTranslateX([translateX[0], itemWidth * visibleItems + itemWidth]);
+			}
+
+			// IF RIGHT SIDE OF SECOND ROW
+			if (translateX[1] === -totalWidth + visibleItems * itemWidth + itemWidth) {
+				setDisableTransition([true, false]);
+				setTranslateX([itemWidth * visibleItems + itemWidth, translateX[1]]);
+			}
+		}
+
+		setTimeout(() => {
+			setDisableTransition([false, false]);
+		}, 0);
+	}
 
 	useLayoutEffect(() => {
 		// Direct DOM manipulation before browser paint.
 		// WORKS
 		if (firstItemRef.current) {
 			const totalWidth = itemWidth * testimonials.length;
-			setDisableTransition(true); // Disable transition for initial teleport
+			setDisableTransition([false, true]); // Disable transition for initial teleport
 			setTranslateX([0, -totalWidth]);
 		}
 	}, [testimonials.length]);
 
+	let interval;
 	useEffect(() => {
-		let interval;
-
 		if (isIntervalActive) {
 			interval = setInterval(() => {
-				setTranslateX((translateX) =>
-					translateX.map((x) => (inactiveScrollRight ? x + itemWidth : x - itemWidth))
-				);
-			}, 3000);
+				setTranslateX(translateX.map((x) => (isScrollingRight ? x + itemWidth : x - itemWidth)));
+			}, 4000);
 		}
 
-		const totalWidth = itemWidth * testimonials.length;
-
-		if (inactiveScrollRight) {
-			if (translateX[0] >= totalWidth) {
-				// scrolling right
-				setTranslateX([-totalWidth, translateX[1]]);
-			} else if (translateX[1] >= totalWidth) {
-				setTranslateX([translateX[0], -totalWidth]);
-			}
-		} else {
-			if (translateX[0] - itemWidth <= -totalWidth) {
-				// Scrolling left
-				setTranslateX([totalWidth, translateX[1]]);
-			}
-			// Check if the second translateX is out of bounds on the left side
-			else if (translateX[1] <= -totalWidth) {
-				setTranslateX([translateX[0], totalWidth]);
-			}
+		if (isUserInteracting) {
+			recalcPos();
 		}
 
+		return () => {
+			if (interval) {
+				clearInterval(interval);
+			}
+		};
+	}, [
+		testimonials.length,
+		translateX,
+		disableTransition,
+		itemWidth,
+		isUserInteracting,
+		visibleItems,
+		transitioningRow,
+		isScrollingRight,
+		isIntervalActive,
+		recalcPos,
+	]);
+
+	useEffect(() => {
 		function resizeWindow() {
 			if (window.innerWidth <= 400) {
 				setItemWidth(260);
@@ -203,20 +240,14 @@ export default function TestimonialsSection({ content }) {
 		// WORKS
 		if (firstRender) {
 			setTimeout(() => {
-				setDisableTransition(true);
 				resizeWindow();
-				setDisableTransition(false);
 				setFirstRender(false);
+				setDisableTransition([false, false]);
 			}, 0);
 		}
 
 		window.addEventListener('resize', resizeWindow);
-		return () => {
-			window.removeEventListener('resize', resizeWindow);
-			if (interval) {
-				clearInterval(interval);
-			}
-		};
+		return () => window.removeEventListener('resize', resizeWindow);
 	}, [
 		testimonials.length,
 		height,
@@ -227,52 +258,32 @@ export default function TestimonialsSection({ content }) {
 		visibleItems,
 	]);
 
-	useEffect(() => {
-		const totalWidth = itemWidth * testimonials.length;
-
-		if (inactiveScrollRight) {
-			if (translateX[0] >= totalWidth) {
-				setTranslateX([-totalWidth, translateX[1]]);
-			} else if (translateX[1] >= totalWidth) {
-				setTranslateX([translateX[0], -totalWidth]);
-			}
-		} else {
-			if (translateX[0] <= -totalWidth) {
-				setTranslateX([totalWidth, translateX[1]]);
-			}
-			// Check if the second translateX is out of bounds on the left side
-			else if (translateX[1] <= -totalWidth) {
-				setTranslateX([translateX[0], totalWidth]);
-			}
-		}
-	}, [
-		testimonials.length,
-		disableTransition,
-		translateX,
-		itemWidth,
-		visibleItems,
-		inactiveScrollRight,
-	]);
-
 	const resetIntervalAfterSwipe = () => {
 		setIntervalActive(false);
 		setTimeout(() => {
 			setIntervalActive(true);
-		}, 2000); // Resume after 2 seconds of no swiping
+		}, 1000); // Resume after 2 seconds of no swiping
 	};
 
 	const handleSwipe = useSwipeable({
+		onSwiping: (eventData) => {
+			setIsUserInteracting(true);
+			clearInterval(interval);
+		},
+		onSwiped: (eventData) => {
+			setIsUserInteracting(false);
+		},
 		onSwipedLeft: (e) => {
 			// stop timer
 			// change translateX to left
-			setScrollRight(false);
+			setScrollingRight(false);
 			setTranslateX(translateX.map((x) => x - itemWidth));
 			resetIntervalAfterSwipe();
 		},
 		onSwipedRight: (e) => {
 			// stop timer
 			// change translateX to left
-			setScrollRight(true);
+			setScrollingRight(true);
 			setTranslateX(translateX.map((x) => x + itemWidth));
 			resetIntervalAfterSwipe();
 		},
@@ -300,22 +311,22 @@ export default function TestimonialsSection({ content }) {
 			<div className=''></div>
 
 			<div
+				onTransitionEnd={() => {
+					recalcPos();
+				}}
 				{...handleSwipe}
 				style={testimonialContainerStyle}
-				className={`relative flex flex-row  w-full`}>
+				className={`relative flex flex-row w-full`}>
 				{[0, 1].map((i) => (
 					<div
-						onTransitionEnd={() => {
-							console.log('YO');
-							setDisableTransition(false);
-						}}
 						key={i}
 						style={{
 							transform: `translateX(${translateX[i]}px)`,
 							height: `${height}px`,
-							transitionDuration: `${disableTransition ? '0ms' : '700ms'}`,
+							transitionDuration: `${disableTransition[i] ? '0ms' : '600ms'}`,
+							transitionProperty: `${disableTransition[i] ? '' : 'transform'}`,
 						}}
-						className={`absolute top-0 transition-transform ease-in-out
+						className={`absolute top-0 ease-in-out
 						w-auto flex flex-row`}>
 						{testimonials.map((testimonial, index) => (
 							<TestimonialItem
