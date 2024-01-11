@@ -36,18 +36,18 @@ export default function TestimonialsSection({ content }) {
 			workplace: 'Rotiserry',
 			borderColorClass: 'border-secondary',
 		},
-		// {
-		// 	quote: `Flagrant Violation`,
-		// 	name: 'Skim Milk',
-		// 	workplace: 'Cumberland Farms',
-		// 	borderColorClass: 'border-four',
-		// },
-		// {
-		// 	quote: `Rupert fuentes strikes again`,
-		// 	name: 'Rodney Copperbottom',
-		// 	workplace: 'Robots',
-		// 	borderColorClass: 'border-tertiary',
-		// },
+		{
+			quote: `Flagrant Violation`,
+			name: 'Skim Milk',
+			workplace: 'Cumberland Farms',
+			borderColorClass: 'border-four',
+		},
+		{
+			quote: `Rupert fuentes strikes again`,
+			name: 'Rodney Copperbottom',
+			workplace: 'Robots',
+			borderColorClass: 'border-tertiary',
+		},
 		// {
 		// 	quote:
 		// 		'Unparalleled expertise in network security, providing innovative and robust solutions.',
@@ -133,7 +133,7 @@ export default function TestimonialsSection({ content }) {
 	const [isIntervalActive, setIntervalActive] = useState(true);
 	const [isScrollingRight, setScrollingRight] = useState(true);
 	const [isUserInteracting, setIsUserInteracting] = useState(false);
-	const [transitioningRow, setTransitioningRow] = useState([false, false]);
+	const [allowSwipe, setAllowSwipe] = useState(true);
 
 	function recalcPos() {
 		const totalWidth = itemWidth * testimonials.length;
@@ -176,6 +176,7 @@ export default function TestimonialsSection({ content }) {
 		if (firstItemRef.current) {
 			setDisableTransition([false, true]); // Disable transition for initial teleport
 		}
+		recalcPos();
 	}, [testimonials.length]);
 
 	let interval;
@@ -202,7 +203,6 @@ export default function TestimonialsSection({ content }) {
 		itemWidth,
 		isUserInteracting,
 		visibleItems,
-		transitioningRow,
 		isScrollingRight,
 		isIntervalActive,
 		recalcPos,
@@ -231,6 +231,7 @@ export default function TestimonialsSection({ content }) {
 				setItemWidth(400);
 				setVisibleItems(3);
 			}
+			recalcPos();
 			setTranslateX([0, -itemWidth * testimonials.length]);
 		}
 
@@ -265,15 +266,24 @@ export default function TestimonialsSection({ content }) {
 
 	const handleSwipe = useSwipeable({
 		onSwiping: (eventData) => {
+			if (!allowSwipe) return;
+
 			setIsUserInteracting(true);
 			clearInterval(interval);
 		},
 		onSwiped: (eventData) => {
+			recalcPos();
 			setIsUserInteracting(false);
+			setAllowSwipe(false);
+			setTimeout(() => {
+				setAllowSwipe(true);
+			}, 1000);
 		},
 		onSwipedLeft: (e) => {
 			// stop timer
 			// change translateX to left
+			if (!allowSwipe) return;
+
 			setScrollingRight(false);
 			setTranslateX(translateX.map((x) => x - itemWidth));
 			resetIntervalAfterSwipe();
@@ -281,10 +291,13 @@ export default function TestimonialsSection({ content }) {
 		onSwipedRight: (e) => {
 			// stop timer
 			// change translateX to left
+			if (!allowSwipe) return;
+
 			setScrollingRight(true);
 			setTranslateX(translateX.map((x) => x + itemWidth));
 			resetIntervalAfterSwipe();
 		},
+		trackMouse: true,
 	});
 
 	const testimonialContainerStyle = {
