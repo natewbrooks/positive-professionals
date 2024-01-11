@@ -179,12 +179,12 @@ export default function Navbar() {
 			<nav
 				style={{ translate: isBurgerNavShown ? `0px ${navHeight}px` : `0px -200%` }}
 				className={`transform fixed z-40 lg:hidden w-full h-fit bg-dark duration-[600ms] ease-in-out transition-all`}>
-				<div className='flex flex-col mobile:flex-row w-full h-full'>
+				<div className='flex flex-col mobile:flex-row w-full h-full items-center'>
 					{navLinks.map((link, index) => (
 						<div
-							className={`bg-dark w-full h-full py-4 ${
-								index != 0 ? 'border-l-2 border-light/10' : ''
-							} text-center sans hover:text-light/50 hover:bg-dark/20  text-light text-md p-4 text-nowrap ${
+							className={`bg-dark border-b-2 border-light/10 w-full h-full py-8 justify-center items-center text-center ${
+								index != 0 ? 'xs:border-l-2 ' : ''
+							} text-center sans hover:text-light/50 hover:bg-dark/20  text-light text-md text-nowrap ${
 								isHashActive(link.hash)
 									? 'border-l-light/10 border-b-2 border-b-primary hover:border-b-primary'
 									: 'hover:border-dark/10'
