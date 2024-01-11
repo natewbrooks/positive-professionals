@@ -101,10 +101,10 @@ export default function TeamSection() {
 					so personnel can remain resilient, constantly evolving, and contributing to the overall
 					progress of the business.
 				</p>
-				<SeeMore
+				{/* <SeeMore
 					text={'Learn more'}
 					colorClass={'text-primary'}
-				/>
+				/> */}
 			</div>
 			<div className='flex flex-col items-center justify-center space-y-4'>
 				<div className='flex w-full flex-col -space-y-1 text-end'>

@@ -33,6 +33,13 @@
     font-weight: 900;
 }
 
+.stroke {
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
 
 @keyframes scroll {
     0% {

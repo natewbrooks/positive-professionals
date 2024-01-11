@@ -1,5 +1,41 @@
 import React from 'react';
-import { FaHammer } from 'react-icons/fa';
+import {
+	FaHammer,
+	FaLightbulb,
+	FaHandshake,
+	FaTrophy,
+	FaUsers,
+	FaBalanceScale,
+} from 'react-icons/fa';
+
+import CoreValuesItem from '../../core values/CoreValueItem';
+
+const coreValues = [
+	{
+		text: 'Persistence',
+		Icon: FaHammer,
+	},
+	{
+		text: 'Innovation',
+		Icon: FaLightbulb,
+	},
+	{
+		text: 'Integrity',
+		Icon: FaHandshake,
+	},
+	{
+		text: 'Excellence',
+		Icon: FaTrophy,
+	},
+	{
+		text: 'Collaboration',
+		Icon: FaUsers,
+	},
+	{
+		text: 'Respect',
+		Icon: FaBalanceScale,
+	},
+];
 
 export default function CoreValuesSection() {
 	return (
@@ -12,35 +48,18 @@ export default function CoreValuesSection() {
 					<span className='serif text-xxl'>Our core values</span>
 				</div>
 
-				<div className='flex flex-col space-y-4 justify-center items-center'>
-					<div className='grid grid-cols-3 gap-2 justify-ite lg:flex  w-full justify-center'>
-						<div className='bg-dark/10 p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
-							<FaHammer size={42} />
-							<span className='sans xbold text-sm'>PERSISTENCE</span>
-						</div>
-						<div className='bg-dark/10 p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
-							<FaHammer size={42} />
-							<span className='sans xbold text-sm'>PERSISTENCE</span>
-						</div>
-						<div className='bg-dark/10 p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
-							<FaHammer size={42} />
-							<span className='sans xbold text-sm'>PERSISTENCE</span>
-						</div>
-						<div className='bg-dark/10 p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
-							<FaHammer size={42} />
-							<span className='sans xbold text-sm'>PERSISTENCE</span>
-						</div>
-						<div className='bg-dark/10 p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
-							<FaHammer size={42} />
-							<span className='sans xbold text-sm'>PERSISTENCE</span>
-						</div>
-						<div className='bg-dark/10 p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
-							<FaHammer size={42} />
-							<span className='sans xbold text-sm'>PERSISTENCE</span>
-						</div>
+				<div className='md:px-20 lg:px-40 2xl:px-80 flex flex-col space-y-4 justify-center items-center'>
+					<div className='grid grid-cols-3 gap-2 justify-items-center  w-full justify-center'>
+						{coreValues.map((value, index) => (
+							<CoreValuesItem
+								key={index}
+								text={value.text}
+								Icon={value.Icon}
+							/>
+						))}
 					</div>
 
-					<p className='sans text-lg lg:px-20 xl:px-60 xxl:px-80 text-center flex'>
+					<p className='sans text-lg text-center flex'>
 						Mental fitness is our capacity to handle life’s greatest challenges with a positive
 						mindset rather than getting stressed or upset. When it comes to physical fitness, we are
 						unlikely to be able to climb a mountain if we have not strengthened our muscles and

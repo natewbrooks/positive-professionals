@@ -56,7 +56,7 @@ export default function ServicesSection({ content }) {
 			</div>
 
 			<div className='w-full text-center my-4'>
-				<span className='text-dark sans text-md hover:cursor-pointer select-none'>
+				<span className='text-dark/50 sans text-md select-none'>
 					Click a service to learn more!
 				</span>
 			</div>

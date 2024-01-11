@@ -128,7 +128,7 @@ export default function TestimonialsSection({ content }) {
 	const [visibleItems, setVisibleItems] = useState(3);
 	const [height, setHeight] = useState(200);
 	const [firstRender, setFirstRender] = useState(true);
-	const [itemWidth, setItemWidth] = useState(400); // Fixed width for each testimonial item
+	const [itemWidth, setItemWidth] = useState(460); // Fixed width for each testimonial item
 	const [translateX, setTranslateX] = useState([0, -itemWidth * testimonials.length]); // Start with some default value
 	const [isIntervalActive, setIntervalActive] = useState(true);
 	const [isScrollingRight, setScrollingRight] = useState(true);
@@ -170,6 +170,44 @@ export default function TestimonialsSection({ content }) {
 		}, 0);
 	}
 
+	function resizeWindow() {
+		if (window.innerWidth <= 400) {
+			setItemWidth(260);
+			setHeight(320);
+			setVisibleItems(1);
+		} else if (window.innerWidth <= 600) {
+			setHeight(300);
+			setItemWidth(360);
+			setVisibleItems(1);
+		} else if (window.innerWidth <= 872) {
+			setItemWidth(500);
+			setHeight(200);
+			setVisibleItems(1);
+		} else if (window.innerWidth <= 1172) {
+			setItemWidth(400);
+			setHeight(200);
+			setVisibleItems(2);
+		} else if (window.innerWidth <= 1450) {
+			setHeight(240);
+			setItemWidth(540);
+			setVisibleItems(2);
+		} else {
+			setHeight(200);
+			setItemWidth(460);
+			setVisibleItems(3);
+		}
+		setTranslateX([0, -itemWidth * testimonials.length]);
+	}
+
+	const handleVisibilityChange = () => {
+		if (document.visibilityState === 'visible') {
+			recalcPos();
+			// Perform actions when the user returns to the page
+		} else {
+			clearInterval(interval);
+		}
+	};
+
 	useLayoutEffect(() => {
 		// Direct DOM manipulation before browser paint.
 		// WORKS
@@ -177,10 +215,14 @@ export default function TestimonialsSection({ content }) {
 			// was false, true
 			setDisableTransition([true, true]); // Disable transition for initial teleport
 		}
+		resizeWindow();
+		recalcPos();
 	}, [testimonials.length]);
 
 	let interval;
 	useEffect(() => {
+		document.addEventListener('visibilitychange', handleVisibilityChange);
+
 		if (isIntervalActive) {
 			interval = setInterval(() => {
 				setTranslateX(translateX.map((x) => (isScrollingRight ? x + itemWidth : x - itemWidth)));
@@ -195,6 +237,7 @@ export default function TestimonialsSection({ content }) {
 			if (interval) {
 				clearInterval(interval);
 			}
+			document.removeEventListener('visibilitychange', handleVisibilityChange);
 		};
 	}, [
 		testimonials.length,
@@ -209,31 +252,6 @@ export default function TestimonialsSection({ content }) {
 	]);
 
 	useEffect(() => {
-		function resizeWindow() {
-			if (window.innerWidth <= 400) {
-				setItemWidth(260);
-				setHeight(320);
-				setVisibleItems(1);
-			} else if (window.innerWidth <= 600) {
-				setHeight(300);
-				setItemWidth(360);
-				setVisibleItems(1);
-			} else if (window.innerWidth <= 872) {
-				setItemWidth(500);
-				setHeight(200);
-				setVisibleItems(1);
-			} else if (window.innerWidth <= 1450) {
-				setHeight(240);
-				setItemWidth(400);
-				setVisibleItems(2);
-			} else {
-				setHeight(200);
-				setItemWidth(400);
-				setVisibleItems(3);
-			}
-			setTranslateX([0, -itemWidth * testimonials.length]);
-		}
-
 		// Delay re-enabling transition after the initial render
 		// WORKS
 		if (firstRender) {
@@ -313,12 +331,10 @@ export default function TestimonialsSection({ content }) {
 	return (
 		<section
 			id='testimonials'
-			className='w-full h-full overflow-hidden'>
+			className='relative w-full h-full overflow-hidden'>
 			<div className='relative items-center justify-between flex py-2 group cursor-pointer'>
 				<span className='sans text-sm'>TESTIMONIALS</span>
 			</div>
-
-			<div className=''></div>
 
 			<div
 				onTransitionEnd={() => {

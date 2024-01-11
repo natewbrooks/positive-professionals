@@ -110,10 +110,14 @@ export default function Navbar() {
 							title={'Home'}>
 							{/* <img src={logo} alt='Kaldi' style={{ width: '88px' }} /> */}
 							<div className='relative flex'>
-								<div className='z-50 bg-primary p-4 rotate-45'></div>
+								<div className='z-40 bg-primary p-4 rotate-45'></div>
 								<div className='z-20 absolute -left-2 top-0 bg-secondary p-4 rotate-45'></div>
-								<div className='z-40 absolute -right-2 bg-tertiary p-4 rotate-45'></div>
+								<div className='z-30 absolute -right-2 bg-tertiary p-4 rotate-45'></div>
 								<div className='z-10 absolute -right-4 bg-four p-4 rotate-45'></div>
+								<div className='absolute  -translate-y-[0.6px] -translate-x-2 z-50 drop-shadow-lg'>
+									<span className='text-lg xbold text-nowrap  text-light'>+</span>
+									<span className=' z-50 text-md xbold text-nowrap  text-light'>PRO</span>
+								</div>
 							</div>
 						</AnchorLink>
 						<div className='flex h-full space-x-8 '>
