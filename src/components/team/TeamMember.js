@@ -30,14 +30,14 @@ export default function TeamMember({ member }) {
 			<Modal
 				isOpen={isModalOpen}
 				onClose={closeModal}>
-				<div className='flex w-full justify-between flex-col space-y-4 xl:flex-row xl:space-x-4 overflow-hidden'>
-					<div className='flex items-center border-b-2 border-dark/10 pb-4 xl:border-none xl:pb-0'>
-						<div className='flex flex-col justify-center items-center space-y-4 w-full px-8'>
+				<div className='flex w-full justify-between flex-col space-y-4 lg:flex-row lg:space-x-4 overflow-hidden'>
+					<div className='flex items-center border-b-2 border-dark/10 pb-4 lg:border-none xl:pb-0'>
+						<div className='relative flex flex-col justify-center items-center space-y-4 w-full px-8'>
 							<FaUser
-								className={`w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] lg:w-[200px] lg:h-[200px]`}
+								className={`w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] md:w-[160px] md:h-[160px] xl:w-[200px] xl:h-[200px]`}
 							/>
 							<div className='flex flex-col items-center space-y-2'>
-								<div className='flex flex-col items-center text-center -space-y-1'>
+								<div className='flex flex-col items-center text-center text-nowrap -space-y-1'>
 									<span className='sans xbold text-lg'>{member.name}</span>
 									<span className='sans text-sm'>{member.title}</span>
 								</div>

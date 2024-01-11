@@ -8,6 +8,7 @@ export default function Navbar() {
 	const [darkModeActive, setDarkMode] = useState(false);
 	const [darkHover, setDarkHover] = useState(false);
 	const [userData, setUserData] = useState();
+	const [navHeight, setNavHeight] = useState(0);
 
 	const [isBurgerNavShown, setBurgerNavShown] = useState(false);
 
@@ -45,11 +46,22 @@ export default function Navbar() {
 		},
 	];
 
+	function resizeWindow() {
+		setNavHeight(document.getElementById('navMenu').offsetHeight);
+		setBurgerNavShown(false);
+	}
+
 	useEffect(() => {
+		window.addEventListener('resize', resizeWindow);
+
 		if (darkModeActive) {
 			document.documentElement.classList.add('dark');
 		} else {
 			document.documentElement.classList.remove('dark');
+		}
+
+		if (document.getElementById('navMenu')) {
+			setNavHeight(document.getElementById('navMenu').offsetHeight);
 		}
 
 		// Define the callback for IntersectionObserver
@@ -76,8 +88,11 @@ export default function Navbar() {
 		});
 
 		// Disconnect the observer on unmount
-		return () => observer.disconnect();
-	}, [darkModeActive]);
+		return () => {
+			window.removeEventListener('resize', resizeWindow);
+			observer.disconnect();
+		};
+	}, [darkModeActive, navHeight]);
 
 	return (
 		<>
@@ -88,7 +103,7 @@ export default function Navbar() {
 				<div className='flex items-center'>
 					<div
 						id='navMenu'
-						className={`flex xs:py-4 lg:py-0 items-center w-full h-full justify-around`}>
+						className={`flex null:py-4 lg:py-0 items-center w-full h-full justify-around`}>
 						<AnchorLink
 							to='/'
 							className='px-4 '
@@ -108,7 +123,7 @@ export default function Navbar() {
 									to={'/#' + link.hash}
 									title={link.title}
 									onAnchorLinkClick={() => setActiveHash(link.hash)}
-									className={`w-full h-full hidden lg:block sans  text-dark text-md px-2 sm:py-4 hover:bg-dark/10 text-nowrap ${
+									className={`w-full h-full hidden lg:block sans  text-dark text-md px-2 py-5 hover:bg-dark/10 text-nowrap ${
 										isHashActive(link.hash)
 											? 'border-b-2 border-primary hover:border-primary'
 											: 'hover:border-dark/10'
@@ -162,10 +177,9 @@ export default function Navbar() {
 				</div>
 			</nav>
 			<nav
-				className={`transform fixed z-40 lg:hidden w-full h-fit bg-dark/80 ${
-					isBurgerNavShown ? 'translate-y-16' : '-translate-y-full'
-				} duration-300 ease-in-out transition-all`}>
-				<div className='flex flex-col sm:flex-row w-full h-full'>
+				style={{ translate: isBurgerNavShown ? `0px ${navHeight}px` : `0px -200%` }}
+				className={`transform fixed z-40 lg:hidden w-full h-fit bg-dark duration-[600ms] ease-in-out transition-all`}>
+				<div className='flex flex-col mobile:flex-row w-full h-full'>
 					{navLinks.map((link, index) => (
 						<AnchorLink
 							key={'#' + link.hash}
