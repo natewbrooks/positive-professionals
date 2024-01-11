@@ -215,7 +215,7 @@ export default function TestimonialsSection({ content }) {
 				setHeight(300);
 				setVisibleItems(1);
 			} else if (window.innerWidth <= 600) {
-				setHeight(200);
+				setHeight(300);
 				setItemWidth(360);
 				setVisibleItems(1);
 			} else if (window.innerWidth <= 816) {
@@ -231,7 +231,6 @@ export default function TestimonialsSection({ content }) {
 				setItemWidth(400);
 				setVisibleItems(3);
 			}
-			recalcPos();
 			setTranslateX([0, -itemWidth * testimonials.length]);
 		}
 
@@ -262,7 +261,7 @@ export default function TestimonialsSection({ content }) {
 		setIntervalActive(false);
 		setTimeout(() => {
 			setIntervalActive(true);
-		}, 5000); // Resume after 2 seconds of no swiping
+		}, 2000); // Resume after 2 seconds of no swiping
 	};
 
 	const handleSwipe = useSwipeable({
@@ -272,11 +271,10 @@ export default function TestimonialsSection({ content }) {
 			clearInterval(interval);
 		},
 		onSwiped: (eventData) => {
-			recalcPos();
 			setIsUserInteracting(false);
 			setTimeout(() => {
 				setAllowSwipe(true);
-			}, 3000);
+			}, 500);
 		},
 		onSwipedLeft: (e) => {
 			// stop timer
