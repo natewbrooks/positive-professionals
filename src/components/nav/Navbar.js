@@ -181,23 +181,26 @@ export default function Navbar() {
 				className={`transform fixed z-40 lg:hidden w-full h-fit bg-dark duration-[600ms] ease-in-out transition-all`}>
 				<div className='flex flex-col mobile:flex-row w-full h-full'>
 					{navLinks.map((link, index) => (
-						<AnchorLink
-							key={'#' + link.hash}
-							to={'/#' + link.hash}
-							title={link.title}
-							onAnchorLinkClick={() => {
-								setActiveHash(link.hash);
-								setBurgerNavShown(false);
-							}}
-							className={`${
+						<div
+							className={`bg-dark w-full h-full py-4 ${
 								index != 0 ? 'border-l-2 border-light/10' : ''
-							} w-full h-full text-center sans hover:text-light/50 hover:bg-dark/20  text-light text-md p-4 text-nowrap ${
+							} text-center sans hover:text-light/50 hover:bg-dark/20  text-light text-md p-4 text-nowrap ${
 								isHashActive(link.hash)
 									? 'border-l-light/10 border-b-2 border-b-primary hover:border-b-primary'
 									: 'hover:border-dark/10'
 							}`}>
-							{link.title}
-						</AnchorLink>
+							<AnchorLink
+								key={'#' + link.hash}
+								to={'/#' + link.hash}
+								title={link.title}
+								onAnchorLinkClick={() => {
+									setActiveHash(link.hash);
+									setBurgerNavShown(false);
+								}}
+								className={``}>
+								{link.title}
+							</AnchorLink>
+						</div>
 					))}
 				</div>
 			</nav>
