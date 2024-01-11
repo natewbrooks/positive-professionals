@@ -27,8 +27,11 @@ export default function ContactSection({ content }) {
 			className='relative w-full h-full py-12 bg-dark/10 space-y-10 lg:space-y-0 flex flex-col justify-center items-center lg:flex-row'>
 			<div className='border-b-2 lg:border-b-0 lg:border-r-2 pb-10 lg:pb-0 border-dark/10  flex flex-col justify-center items-center w-full lg:w-[50%] h-full space-y-2'>
 				<div className='flex flex-col items-center text-center justify-center text-dark'>
-					<span className={`text-xl md:text-xxl serif`}>Start your journey to success</span>
-					<span className={`sans text-md w-[320px] lg:w-[370px]`}>
+					<span
+						className={`null:text-lg sm:text-[24px] mobile:text-xl md:text-xxl text-nowrap serif`}>
+						Start your journey to success
+					</span>
+					<span className={`sans null:text-sm sm:text-md null:w-[240px] sm:w-[320px] lg:w-[370px]`}>
 						Interested in working with us? Fill in your information and we will reach out to
 						schedule a free consultation!
 					</span>
@@ -60,7 +63,7 @@ export default function ContactSection({ content }) {
 								className='select-none bg-dark/10 rounded-md text-dark placeholder:text-dark py-1 px-2 sans'></input>
 						</div>
 					</div>
-					<div className='text-lg hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-dark text-light p-1 items-center flex justify-center sans w-[50%] rounded-md'>
+					<div className='null:text-md sm:text-lg hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-dark text-light p-1 items-center flex justify-center sans w-[50%] rounded-md'>
 						SUBMIT
 					</div>
 				</form>

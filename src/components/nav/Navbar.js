@@ -105,7 +105,7 @@ export default function Navbar() {
 						id='navMenu'
 						className={`flex null:py-4 lg:py-0 items-center w-full h-full justify-around`}>
 						<AnchorLink
-							to='/'
+							to='/#canvas'
 							className='px-4 '
 							title={'Home'}>
 							{/* <img src={logo} alt='Kaldi' style={{ width: '88px' }} /> */}

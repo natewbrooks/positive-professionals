@@ -4,10 +4,13 @@ import { FaLinkedin } from 'react-icons/fa';
 
 export default function Footer({}) {
 	return (
-		<footer className='bg-dark w-full h-full p-12 flex justify-around'>
+		<footer className='bg-dark w-full h-full p-12 flex-col sm:flex-row  flex justify-around'>
 			<div className='flex flex-col space-y-8 items-center justify-center'>
 				<div className='flex items-center justify-center'>
-					<AnchorLink to='/' className='' title={'Home'}>
+					<AnchorLink
+						to='/#canvas'
+						className=''
+						title={'Home'}>
 						<div className='relative flex'>
 							<div className='z-50 bg-primary p-4 rotate-45'></div>
 							<div className='z-20 absolute -left-2 top-0 bg-secondary p-4 rotate-45'></div>
@@ -20,11 +23,14 @@ export default function Footer({}) {
 					COPYRIGHT @ 2024 <br></br>POSITIVE PROFESSIONALS LLC.
 				</span>
 			</div>
-			<div className='flex space-x-10'>
+			<div className='flex space-x-10 justify-center py-8 sm:justify-normal sm:py-0'>
 				<div className='flex flex-col space-y-4'>
 					<span className='text-light sans xbold text-md'>NAVIGATION</span>
 					<div className='flex flex-col space-y-2 justify-center items-center'>
-						<AnchorLink to='/#team' className='sans text-sm text-light/40' title={'Team'}>
+						<AnchorLink
+							to='/#team'
+							className='sans text-sm text-light/40'
+							title={'Team'}>
 							Team
 						</AnchorLink>
 						<AnchorLink
@@ -33,10 +39,16 @@ export default function Footer({}) {
 							title={'Testimonials'}>
 							Testimonials
 						</AnchorLink>
-						<AnchorLink to='/#services' className='sans text-sm text-light/40' title={'Resources'}>
+						<AnchorLink
+							to='/#services'
+							className='sans text-sm text-light/40'
+							title={'Resources'}>
 							Services
 						</AnchorLink>
-						<AnchorLink to='/#resources' className='sans text-sm text-light/40' title={'Resources'}>
+						<AnchorLink
+							to='/#resources'
+							className='sans text-sm text-light/40'
+							title={'Resources'}>
 							Resources
 						</AnchorLink>
 					</div>
@@ -44,7 +56,10 @@ export default function Footer({}) {
 				<div className='flex flex-col space-y-2'>
 					<span className='text-light sans xbold text-md'>LINKS</span>
 					<div className='flex flex-col space-y-2 justify-center items-center'>
-						<FaLinkedin size={24} className='text-light/40 hover:text-light cursor-pointer' />
+						<FaLinkedin
+							size={24}
+							className='text-light/40 hover:text-light cursor-pointer'
+						/>
 					</div>
 				</div>
 			</div>
