@@ -174,9 +174,9 @@ export default function TestimonialsSection({ content }) {
 		// Direct DOM manipulation before browser paint.
 		// WORKS
 		if (firstItemRef.current) {
-			setDisableTransition([false, true]); // Disable transition for initial teleport
+			// was false, true
+			setDisableTransition([true, true]); // Disable transition for initial teleport
 		}
-		recalcPos();
 	}, [testimonials.length]);
 
 	let interval;
@@ -255,29 +255,28 @@ export default function TestimonialsSection({ content }) {
 		disableTransition,
 		itemWidth,
 		visibleItems,
+		allowSwipe,
 	]);
 
 	const resetIntervalAfterSwipe = () => {
 		setIntervalActive(false);
 		setTimeout(() => {
 			setIntervalActive(true);
-		}, 1000); // Resume after 2 seconds of no swiping
+		}, 5000); // Resume after 2 seconds of no swiping
 	};
 
 	const handleSwipe = useSwipeable({
 		onSwiping: (eventData) => {
 			if (!allowSwipe) return;
-
 			setIsUserInteracting(true);
 			clearInterval(interval);
 		},
 		onSwiped: (eventData) => {
 			recalcPos();
 			setIsUserInteracting(false);
-			setAllowSwipe(false);
 			setTimeout(() => {
 				setAllowSwipe(true);
-			}, 1000);
+			}, 3000);
 		},
 		onSwipedLeft: (e) => {
 			// stop timer
@@ -287,6 +286,7 @@ export default function TestimonialsSection({ content }) {
 			setScrollingRight(false);
 			setTranslateX(translateX.map((x) => x - itemWidth));
 			resetIntervalAfterSwipe();
+			setAllowSwipe(false);
 		},
 		onSwipedRight: (e) => {
 			// stop timer
@@ -296,6 +296,7 @@ export default function TestimonialsSection({ content }) {
 			setScrollingRight(true);
 			setTranslateX(translateX.map((x) => x + itemWidth));
 			resetIntervalAfterSwipe();
+			setAllowSwipe(false);
 		},
 		trackMouse: true,
 	});
