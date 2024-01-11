@@ -127,10 +127,10 @@ export default function Navbar() {
 									to={'/#' + link.hash}
 									title={link.title}
 									onAnchorLinkClick={() => setActiveHash(link.hash)}
-									className={`w-full h-full hidden lg:block sans  text-dark text-md px-2 py-5 hover:bg-dark/10 text-nowrap ${
+									className={`w-full h-full hidden lg:block sans  text-dark text-md px-2 py-5 border-b-2 text-nowrap ${
 										isHashActive(link.hash)
-											? 'border-b-2 border-primary hover:border-primary'
-											: 'hover:border-dark/10'
+											? ' border-four hover:border-four'
+											: 'border-light hover:border-four/50'
 									}`}>
 									{link.title}
 								</AnchorLink>
@@ -185,26 +185,23 @@ export default function Navbar() {
 				className={`transform fixed z-40 lg:hidden w-full h-fit bg-dark duration-[600ms] ease-in-out transition-all`}>
 				<div className='flex flex-col mobile:flex-row w-full h-full items-center'>
 					{navLinks.map((link, index) => (
-						<div
-							className={`bg-dark border-b-2 border-light/10 w-full h-full py-8 justify-center items-center text-center ${
+						<AnchorLink
+							key={'#' + link.hash}
+							to={'/#' + link.hash}
+							title={link.title}
+							onAnchorLinkClick={() => {
+								setActiveHash(link.hash);
+								setBurgerNavShown(false);
+							}}
+							className={`bg-dark border-b-2 hover:text-light/50  text-light text-sm border-light/10 ${
 								index != 0 ? 'xs:border-l-2 ' : ''
-							} text-center sans hover:text-light/50 hover:bg-dark/20  text-light text-md text-nowrap ${
-								isHashActive(link.hash)
-									? 'border-l-light/10 border-b-2 border-b-primary hover:border-b-primary'
-									: 'hover:border-dark/10'
-							}`}>
-							<AnchorLink
-								key={'#' + link.hash}
-								to={'/#' + link.hash}
-								title={link.title}
-								onAnchorLinkClick={() => {
-									setActiveHash(link.hash);
-									setBurgerNavShown(false);
-								}}
-								className={``}>
-								{link.title}
-							</AnchorLink>
-						</div>
+							}  w-full h-full py-6 hover:bg-dark/20 justify-center items-center text-center ${
+								isHashActive(link.hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
+							} `}>
+							<span className={`text-center sans xbold text-nowrap `}>
+								{link.title.toUpperCase()}
+							</span>
+						</AnchorLink>
 					))}
 				</div>
 			</nav>
