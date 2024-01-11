@@ -212,18 +212,18 @@ export default function TestimonialsSection({ content }) {
 		function resizeWindow() {
 			if (window.innerWidth <= 400) {
 				setItemWidth(260);
-				setHeight(300);
+				setHeight(320);
 				setVisibleItems(1);
 			} else if (window.innerWidth <= 600) {
 				setHeight(300);
 				setItemWidth(360);
 				setVisibleItems(1);
-			} else if (window.innerWidth <= 816) {
+			} else if (window.innerWidth <= 872) {
 				setItemWidth(500);
 				setHeight(200);
 				setVisibleItems(1);
 			} else if (window.innerWidth <= 1450) {
-				setHeight(200);
+				setHeight(240);
 				setItemWidth(400);
 				setVisibleItems(2);
 			} else {
