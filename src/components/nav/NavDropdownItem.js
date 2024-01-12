@@ -106,7 +106,7 @@ export default function NavDropdownItem({
 							onMouseLeave={() => toggleDropdown(false)}
 							className={`${
 								isOpen ? 'translate-y-0' : '-translate-y-full'
-							} -z-20 transform transition-transform duration-300 flex flex-col w-fit absolute bg-dark border-x-2 border-light/10 rounded-b-md`}>
+							} -z-20 transform transition-transform duration-300 flex flex-col w-full absolute bg-dark border-x-2 border-light/10 rounded-b-md`}>
 							{items.map(({ label, href }, index) => (
 								<AnchorLink
 									key={index}
@@ -117,7 +117,7 @@ export default function NavDropdownItem({
 										toggleDropdown(false);
 										setBurgerNavShown(false);
 									}}
-									className='sans xbold p-4 text-sm text-light flex justify-center items-center border-b-2 border-light/10  hover:border-four'>
+									className='w-fit sans xbold p-4 text-sm text-light flex justify-center items-center border-b-2 border-light/10  hover:border-four'>
 									{label.toUpperCase()}
 								</AnchorLink>
 							))}

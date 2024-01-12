@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FaBars } from 'react-icons/fa';
 import SigninButton from '../sign in/SigninButton';
@@ -46,6 +46,10 @@ export default function Navbar() {
 		setNavHeight(document.getElementById('navMenu').offsetHeight);
 		setBurgerNavShown(false);
 	}
+
+	useLayoutEffect(() => {
+		setNavHeight(document.getElementById('navMenu').offsetHeight);
+	});
 
 	useEffect(() => {
 		window.addEventListener('resize', resizeWindow);
