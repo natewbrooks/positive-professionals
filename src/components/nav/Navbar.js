@@ -92,7 +92,7 @@ export default function Navbar() {
 	return (
 		<>
 			<nav
-				className='fixed bg-light dark:bg-darkAccent w-full z-50 drop-shadow-md'
+				className='fixed bg-light dark:bg-darkAccent w-full z-50 drop-shadow-md overflow-visible'
 				role='navigation'
 				aria-label='main-navigation'>
 				<div className='flex items-center'>
@@ -181,8 +181,8 @@ export default function Navbar() {
 					</div>
 				</div>
 			</nav>
-			<nav
-				style={{ translate: isBurgerNavShown ? `0px ${navHeight}px` : `0px -200%` }}
+			<div
+				style={{ transform: isBurgerNavShown ? `translateY(${navHeight}px)` : `translateY(-200%)` }}
 				className={`z-40 transform fixed lg:hidden w-full h-fit bg-dark duration-[600ms] ease-in-out transition-all`}>
 				<div className='flex flex-col mobile:flex-row w-full h-full items-center'>
 					{navLinks.map((link, index) => (
@@ -214,7 +214,7 @@ export default function Navbar() {
 						setBurgerNavShown={setBurgerNavShown}
 					/>
 				</div>
-			</nav>
+			</div>
 		</>
 	);
 }

@@ -13,8 +13,8 @@ export default function FirstStepsSection({ content }) {
 					Take your first steps and get involved with the betterment of your future.
 				</span>
 			</div>
-			<div className='flex flex-col space-y-12 md:space-y-0 md:flex-row lg:space-x-8 justify-center items-center'>
-				<div className='flex flex-row space-x-8 items-center'>
+			<div className='flex flex-col space-y-12 md:space-y-0 md:flex-row md:space-x-0 lg:space-x-8 justify-center items-center'>
+				<div className='flex flex-row md:space-x-4 lg:space-x-8 items-center'>
 					<div className='flex flex-col space-y-4 items-center justify-center'>
 						<div className='bg-dark/10 rounded-full p-12'></div>
 						<div className='flex flex-col items-center justify-center'>
@@ -25,7 +25,7 @@ export default function FirstStepsSection({ content }) {
 							</span>
 						</div>
 					</div>
-					<div className='hidden lg:block'>
+					<div className='hidden md:block'>
 						<MdOutlineKeyboardArrowRight size={32} />
 					</div>
 				</div>
@@ -40,7 +40,7 @@ export default function FirstStepsSection({ content }) {
 							</span>
 						</div>
 					</div>
-					<div className='hidden lg:block'>
+					<div className='hidden md:block'>
 						<MdOutlineKeyboardArrowRight size={32} />
 					</div>
 				</div>
