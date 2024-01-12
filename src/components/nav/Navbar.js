@@ -49,7 +49,7 @@ export default function Navbar() {
 
 	useLayoutEffect(() => {
 		setNavHeight(document.getElementById('navMenu').offsetHeight);
-	});
+	}, [navHeight]);
 
 	useEffect(() => {
 		window.addEventListener('resize', resizeWindow);
@@ -158,26 +158,6 @@ export default function Navbar() {
 										className='text-dark'
 									/>
 								</div>
-								{/* <div
-								onMouseEnter={() => setDarkHover(true)}
-								onMouseLeave={() => setDarkHover(false)}
-								onClick={() => setDarkMode(!darkModeActive)}
-								className={`group cursor-pointer rounded-md py-2 px-2 ${
-									darkModeActive ? 'bg-light hover:bg-dark' : 'bg-dark hover:bg-light'
-								} bg-dark`}>
-								{darkModeActive && (
-									<FaSun
-										size={14}
-										className={'text-dark group-hover:text-light transition-all duration-300'}
-									/>
-								)}
-								{!darkModeActive && (
-									<FaMoon
-										size={14}
-										className={'text-light group-hover:text-dark transition-all duration-300'}
-									/>
-								)}
-							</div> */}
 							</div>
 							<span className='text-dark/50'>|</span>
 							<SigninButton userData={userData} />
@@ -185,40 +165,36 @@ export default function Navbar() {
 					</div>
 				</div>
 				<div
-					style={{ transform: isBurgerNavShown ? `translateX(0px)` : `translateX(100%)` }}
-					className={`translate-y-[${navHeight}px] transform fixed lg:hidden w-full h-fit bg-dark duration-[600ms] ease-in-out transition-all`}>
-					<div className='flex flex-col mobile:flex-row w-full h-full items-center'>
-						{navLinks.map((link, index) => (
-							<AnchorLink
-								key={'#' + link.hash}
-								to={'/#' + link.hash}
-								title={link.title}
-								onAnchorLinkClick={() => {
-									setActiveHash(link.hash);
-									setBurgerNavShown(false);
-								}}
-								className={`bg-dark border-b-2 hover:text-light/50  text-light text-sm border-light/10 ${
-									index != 0 ? 'xs:border-l-2 ' : ''
-								}  w-full h-full py-6 hover:bg-dark/20 justify-center items-center text-center ${
-									isHashActive(link.hash)
-										? 'border-b-2 border-b-primary hover:border-b-primary'
-										: ''
-								} `}>
-								<span className={`text-center sans xbold text-nowrap px-4`}>
-									{link.title.toUpperCase()}
-								</span>
-							</AnchorLink>
-						))}
-						<NavDropdownItem
-							items={resourcesDropdown}
-							title='Resources'
-							hash='#resources'
-							isHashActive={isHashActive}
-							isBurgerNavShown={isBurgerNavShown}
-							setActiveHash={setActiveHash}
-							setBurgerNavShown={setBurgerNavShown}
-						/>
-					</div>
+					style={{
+						transform: isBurgerNavShown ? `translateY(-100%) ` : `translateY(0px)`,
+					}}
+					className={`space-x-[0.15rem] flex flex-col mobile:flex-row w-full h-fit items-center transform fixed lg:hidden bg-red-400 duration-[600ms] ease-in-out transition-all`}>
+					{navLinks.map((link, index) => (
+						<AnchorLink
+							key={'#' + link.hash}
+							to={'/#' + link.hash}
+							title={link.title}
+							onAnchorLinkClick={() => {
+								setActiveHash(link.hash);
+								setBurgerNavShown(false);
+							}}
+							className={`bg-dark border-b-2 py-6 hover:text-light/50  text-light text-sm w-full h-full hover:bg-dark/20 justify-center items-center text-center ${
+								isHashActive(link.hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
+							} `}>
+							<span className={`text-center sans xbold text-nowrap px-4`}>
+								{link.title.toUpperCase()}
+							</span>
+						</AnchorLink>
+					))}
+					<NavDropdownItem
+						items={resourcesDropdown}
+						title='Resources'
+						hash='#resources'
+						isHashActive={isHashActive}
+						isBurgerNavShown={!isBurgerNavShown}
+						setActiveHash={setActiveHash}
+						setBurgerNavShown={setBurgerNavShown}
+					/>
 				</div>
 			</nav>
 		</>

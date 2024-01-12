@@ -76,37 +76,29 @@ export default function NavDropdownItem({
 			)}
 
 			{isBurgerNavShown && (
-				<div className='w-full'>
+				<>
 					<div
-						onMouseEnter={stopCloseTimer}
-						onMouseLeave={startCloseTimer}
-						className='w-full overflow-hidden h-full'>
-						<AnchorLink
-							key={'#' + hash}
-							to={hash}
-							title={title}
-							onAnchorLinkClick={() => {
-								toggleDropdown(!isOpen);
-							}}
-							className={`px-4 z-40 flex flex-row items-center bg-dark border-b-2 text-light text-sm border-light/10 ${
-								index != 0 ? 'xs:border-l-2 ' : ''
-							}  w-full h-full py-6 justify-center items-center text-center ${
-								isHashActive(hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
-							} `}>
-							<span className={`text-center sans xbold text-nowrap`}>{title.toUpperCase()}</span>
-							<MdOutlineKeyboardArrowDown
-								onClick={() => toggleDropdown(!isOpen)}
-								className={`w-[18px] h-[18px] relative left-1 top-0 ${
-									isOpen ? 'rotate-0' : 'rotate-180'
-								}  transition-all duration-300`}
-							/>
-						</AnchorLink>
-						<div
+						// onMouseEnter={stopCloseTimer}
+						// onMouseLeave={startCloseTimer}
+						key={'#' + hash}
+						title={title}
+						className={`bg-dark border-b-2 py-6 hover:text-light/50  text-light text-sm flex w-full h-full hover:bg-dark/20 justify-center items-center text-center ${
+							isHashActive(hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
+						} `}>
+						<span className={`text-center sans xbold text-nowrap`}>{title.toUpperCase()}</span>
+						<MdOutlineKeyboardArrowDown
+							onClick={() => toggleDropdown(!isOpen)}
+							className={`w-[18px] h-[18px] relative left-1 top-0 ${
+								isOpen ? 'rotate-0' : 'rotate-180'
+							}  transition-all duration-300`}
+						/>
+						{/* DROPDOWN MENU */}
+						{/* <div
 							onMouseEnter={stopCloseTimer}
 							onMouseLeave={() => toggleDropdown(false)}
 							className={`${
 								isOpen ? 'translate-y-0' : '-translate-y-full'
-							} -z-20 transform transition-transform duration-300 flex flex-col w-full absolute bg-dark border-x-2 border-light/10 rounded-b-md`}>
+							} -z-20 transform transition-transform duration-300 flex flex-col absolute px-2 bg-dark border-x-2 border-light/10 rounded-b-md`}>
 							{items.map(({ label, href }, index) => (
 								<AnchorLink
 									key={index}
@@ -117,13 +109,13 @@ export default function NavDropdownItem({
 										toggleDropdown(false);
 										setBurgerNavShown(false);
 									}}
-									className='w-fit sans xbold p-4 text-sm text-light flex justify-center items-center border-b-2 border-light/10  hover:border-four'>
+									className='sans xbold p-4 text-sm text-light flex justify-center items-center border-b-2 border-light/10  hover:border-four'>
 									{label.toUpperCase()}
 								</AnchorLink>
 							))}
-						</div>
+						</div> */}
 					</div>
-				</div>
+				</>
 			)}
 		</>
 	);

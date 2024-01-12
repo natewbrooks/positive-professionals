@@ -61,6 +61,10 @@ const TemplateWrapper = ({ children }) => {
 					color='#ff4400'
 				/>
 				<meta
+					name='viewport'
+					content='width=device-width, initial-scale=1'
+				/>
+				<meta
 					name='theme-color'
 					content='#fff'
 				/>
