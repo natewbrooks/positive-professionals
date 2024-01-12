@@ -11,7 +11,6 @@ export default function NavDropdownItem({
 	isHashActive,
 	isBurgerNavShown,
 	setActiveHash,
-	setBurgerNavShown,
 }) {
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -36,92 +35,83 @@ export default function NavDropdownItem({
 		}
 	};
 
-	useEffect(() => {
-		setIsOpen(isBurgerNavShown);
-	}, [isBurgerNavShown]);
-
 	return (
 		<>
-			{!isBurgerNavShown && (
+			<div
+				onMouseEnter={stopCloseTimer}
+				onMouseLeave={startCloseTimer}
+				className='hidden lg:block w-full relative'>
+				<AnchorLink
+					onAnchorLinkClick={() => toggleDropdown(!isOpen)}
+					to={hash}
+					className={`flex w-full h-full items-center sans  text-dark text-md px-2 py-5 border-b-2 text-nowrap ${
+						isHashActive(hash)
+							? ' border-four hover:border-four'
+							: 'border-light hover:border-four/50'
+					}`}>
+					{title}
+					<MdOutlineKeyboardArrowDown
+						className={`relative left-1 top-0 ${
+							isOpen ? 'rotate-0' : 'rotate-180'
+						}  transition-all duration-300`}
+					/>
+				</AnchorLink>
+				{isOpen && (
+					<div
+						onMouseLeave={() => toggleDropdown(false)}
+						className='flex flex-col absolute bg-light border-t-2 border-dark/10 rounded-md'>
+						{items.map(({ label, href }, index) => (
+							<AnchorLink
+								key={index}
+								to={href}
+								title={label}
+								className='text-center px-4 py-2 text-sm text-dark sans border-b-2 hover:bg-dark/10 hover:border-four'>
+								{label}
+							</AnchorLink>
+						))}
+					</div>
+				)}
+			</div>
+
+			{/* MOBILE MENU */}
+
+			<div
+				// onMouseEnter={stopCloseTimer}
+				// onMouseLeave={startCloseTimer}
+				onClick={() => toggleDropdown(!isOpen)}
+				key={'#' + hash}
+				title={title}
+				className={`lg:hidden relative bg-dark border-b-2 py-5 px-4 text-light border-light/10  text-sm flex w-full h-full justify-center items-center text-center ${
+					isHashActive(hash) ? 'border-b-primary hover:border-b-primary' : ''
+				} `}>
+				<span className={`text-center sans xbold text-nowrap`}>{title.toUpperCase()}</span>
+				<MdOutlineKeyboardArrowDown
+					className={`w-[18px] h-[18px] relative left-1 top-0 ${
+						isOpen ? 'rotate-0' : 'rotate-180'
+					}  transition-all duration-300`}
+				/>
+				{/* DROPDOWN MENU */}
 				<div
 					onMouseEnter={stopCloseTimer}
-					onMouseLeave={startCloseTimer}
-					className='w-full relative'>
-					<AnchorLink
-						onAnchorLinkClick={() => toggleDropdown(true)}
-						to={hash}
-						className={`w-full h-full hidden lg:flex items-center sans  text-dark text-md px-2 py-5 border-b-2 text-nowrap ${
-							isHashActive(hash)
-								? ' border-four hover:border-four'
-								: 'border-light hover:border-four/50'
-						}`}>
-						{title}
-						<MdOutlineKeyboardArrowDown
-							className={`relative left-1 top-0 ${
-								isOpen ? 'rotate-0' : 'rotate-180'
-							}  transition-all duration-300`}
-						/>
-					</AnchorLink>
-					{isOpen && (
-						<div
-							onMouseLeave={() => toggleDropdown(false)}
-							className='flex flex-col absolute bg-light border-x-2 border-t-2 border-dark/10 rounded-md'>
-							{items.map(({ label, href }, index) => (
-								<AnchorLink
-									key={index}
-									to={href}
-									title={label}
-									className='text-center px-4 py-2 text-sm text-dark sans border-b-2 hover:bg-dark/10 hover:border-four'>
-									{label}
-								</AnchorLink>
-							))}
-						</div>
-					)}
+					onMouseLeave={() => toggleDropdown(false)}
+					className={`w-full absolute bottom-0 ${
+						isOpen ? 'translate-y-full' : ''
+					} bg-dark/90 -z-50 rounded-b-md transform transition-transform duration-[600ms]`}>
+					{items.map(({ label, href }, index) => (
+						<AnchorLink
+							key={index}
+							to={href}
+							title={label}
+							onAnchorLinkClick={() => {
+								setActiveHash('#' + label.toLowerCase());
+								toggleDropdown(false);
+							}}
+							className='sans xbold p-4 text-sm text-light flex justify-center items-center border-b-2 border-light/10  hover:border-four'>
+							{label.toUpperCase()}
+						</AnchorLink>
+					))}
 				</div>
-			)}
-
-			{isBurgerNavShown && (
-				<>
-					<div
-						// onMouseEnter={stopCloseTimer}
-						// onMouseLeave={startCloseTimer}
-						key={'#' + hash}
-						title={title}
-						className={`relative bg-dark border-b-2 py-5 hover:text-light/50  text-light text-sm flex w-full h-full hover:bg-dark/20 justify-center items-center text-center ${
-							isHashActive(hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
-						} `}>
-						<span className={`text-center sans xbold text-nowrap`}>{title.toUpperCase()}</span>
-						<MdOutlineKeyboardArrowDown
-							onClick={() => toggleDropdown(!isOpen)}
-							className={`w-[18px] h-[18px] relative left-1 top-0 ${
-								isOpen ? 'rotate-0' : 'rotate-180'
-							}  transition-all duration-300`}
-						/>
-						{/* DROPDOWN MENU */}
-						<div
-							onMouseEnter={stopCloseTimer}
-							onMouseLeave={() => toggleDropdown(false)}
-							className={`${
-								isOpen ? 'translate-y-0' : '-translate-y-full'
-							} transform transition-transform duration-300 flex flex-col absolute px-2 bg-dark border-x-2 border-light/10 rounded-b-md`}>
-							{items.map(({ label, href }, index) => (
-								<AnchorLink
-									key={index}
-									to={href}
-									title={label}
-									onAnchorLinkClick={() => {
-										setActiveHash('#' + label.toLowerCase());
-										toggleDropdown(false);
-										setBurgerNavShown(false);
-									}}
-									className='sans xbold p-4 text-sm text-light flex justify-center items-center border-b-2 border-light/10  hover:border-four'>
-									{label.toUpperCase()}
-								</AnchorLink>
-							))}
-						</div>
-					</div>
-				</>
-			)}
+			</div>
 		</>
 	);
 }

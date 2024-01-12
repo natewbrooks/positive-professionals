@@ -6,11 +6,8 @@ import NavDropdownItem from './NavDropdownItem';
 
 export default function Navbar() {
 	const [activeHash, setActiveHash] = useState('');
-	const [darkModeActive, setDarkMode] = useState(false);
-	const [darkHover, setDarkHover] = useState(false);
 	const [userData, setUserData] = useState();
 	const [navHeight, setNavHeight] = useState(0);
-
 	const [isBurgerNavShown, setBurgerNavShown] = useState(false);
 
 	const isHashActive = (hash) => {
@@ -44,7 +41,6 @@ export default function Navbar() {
 
 	function resizeWindow() {
 		setNavHeight(document.getElementById('navMenu').offsetHeight);
-		setBurgerNavShown(false);
 	}
 
 	useLayoutEffect(() => {
@@ -54,11 +50,11 @@ export default function Navbar() {
 	useEffect(() => {
 		window.addEventListener('resize', resizeWindow);
 
-		if (darkModeActive) {
-			document.documentElement.classList.add('dark');
-		} else {
-			document.documentElement.classList.remove('dark');
-		}
+		// if (darkModeActive) {
+		// 	document.documentElement.classList.add('dark');
+		// } else {
+		// 	document.documentElement.classList.remove('dark');
+		// }
 
 		if (document.getElementById('navMenu')) {
 			setNavHeight(document.getElementById('navMenu').offsetHeight);
@@ -91,7 +87,7 @@ export default function Navbar() {
 			window.removeEventListener('resize', resizeWindow);
 			observer.disconnect();
 		};
-	}, [darkModeActive, navHeight]);
+	}, [navHeight, isBurgerNavShown]);
 
 	return (
 		<>
@@ -134,12 +130,15 @@ export default function Navbar() {
 									{link.title}
 								</AnchorLink>
 							))}
-							<NavDropdownItem
-								items={resourcesDropdown}
-								title='Resources'
-								hash='#resources'
-								isHashActive={isHashActive}
-							/>
+							<div className='hidden lg:block'>
+								<NavDropdownItem
+									items={resourcesDropdown}
+									title='Resources'
+									hash='#resources'
+									isHashActive={isHashActive}
+									isMobile={false}
+								/>
+							</div>
 						</div>
 						<div className='flex items-center w-fit space-x-4'>
 							<div className='flex space-x-2 items-center justify-center'>
@@ -151,7 +150,9 @@ export default function Navbar() {
 									</div>
 								</div>
 								<div
-									onClick={() => setBurgerNavShown(!isBurgerNavShown)}
+									onClick={() => {
+										setBurgerNavShown(!isBurgerNavShown);
+									}}
 									className='flex lg:hidden select-none cursor-pointer hover:opacity-50 active:scale-95'>
 									<FaBars
 										size={24}
@@ -166,9 +167,9 @@ export default function Navbar() {
 				</div>
 				<div
 					style={{
-						transform: isBurgerNavShown ? `translateY(-100%) ` : `translateY(0px)`,
+						transform: isBurgerNavShown ? `translateX(0px)` : `translateX(100%)`,
 					}}
-					className={`space-x-[0.15rem] flex flex-col mobile:flex-row w-full h-fit items-center transform fixed lg:hidden bg-red-400 duration-[600ms] ease-in-out transition-all`}>
+					className={`overflow-visible mobile:space-x-[0.15rem] flex flex-col mobile:flex-row w-full h-full items-center transform fixed lg:hidden bg-dark/90 duration-[600ms] ease-in-out transition-all`}>
 					{navLinks.map((link, index) => (
 						<AnchorLink
 							key={'#' + link.hash}
@@ -176,9 +177,8 @@ export default function Navbar() {
 							title={link.title}
 							onAnchorLinkClick={() => {
 								setActiveHash(link.hash);
-								setBurgerNavShown(false);
 							}}
-							className={`bg-dark border-b-2 py-5 hover:text-light/50  text-light text-sm w-full h-full hover:bg-dark/20 justify-center items-center text-center ${
+							className={`bg-dark border-b-2 border-light/10 py-5 text-light text-sm flex px-4 w-full h-full justify-center items-center text-center ${
 								isHashActive(link.hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
 							} `}>
 							<span className={`text-center sans xbold text-nowrap`}>
@@ -191,9 +191,8 @@ export default function Navbar() {
 						title='Resources'
 						hash='#resources'
 						isHashActive={isHashActive}
-						isBurgerNavShown={!isBurgerNavShown}
+						isBurgerNavShown={isBurgerNavShown}
 						setActiveHash={setActiveHash}
-						setBurgerNavShown={setBurgerNavShown}
 					/>
 				</div>
 			</nav>
