@@ -98,7 +98,7 @@ export default function Navbar() {
 				<div className='flex items-center'>
 					<div
 						id='navMenu'
-						className={`flex null:py-4 lg:py-0 items-center w-full h-full justify-around`}>
+						className={`flex null:py-4 lg:py-0 z-50 bg-light items-center w-full h-full justify-around`}>
 						<AnchorLink
 							to='/'
 							className='px-4 '
@@ -180,41 +180,43 @@ export default function Navbar() {
 						</div>
 					</div>
 				</div>
-			</nav>
-			<div
-				style={{ transform: isBurgerNavShown ? `translateY(${navHeight}px)` : `translateY(-200%)` }}
-				className={`z-40 transform fixed lg:hidden w-full h-fit bg-dark duration-[600ms] ease-in-out transition-all`}>
-				<div className='flex flex-col mobile:flex-row w-full h-full items-center'>
-					{navLinks.map((link, index) => (
-						<AnchorLink
-							key={'#' + link.hash}
-							to={'/#' + link.hash}
-							title={link.title}
-							onAnchorLinkClick={() => {
-								setActiveHash(link.hash);
-								setBurgerNavShown(false);
-							}}
-							className={`bg-dark border-b-2 hover:text-light/50  text-light text-sm border-light/10 ${
-								index != 0 ? 'xs:border-l-2 ' : ''
-							}  w-full h-full py-6 hover:bg-dark/20 justify-center items-center text-center ${
-								isHashActive(link.hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
-							} `}>
-							<span className={`text-center sans xbold text-nowrap px-4`}>
-								{link.title.toUpperCase()}
-							</span>
-						</AnchorLink>
-					))}
-					<NavDropdownItem
-						items={resourcesDropdown}
-						title='Resources'
-						hash='#resources'
-						isHashActive={isHashActive}
-						isBurgerNavShown={isBurgerNavShown}
-						setActiveHash={setActiveHash}
-						setBurgerNavShown={setBurgerNavShown}
-					/>
+				<div
+					style={{ transform: isBurgerNavShown ? `translateX(0px)` : `translateX(100%)` }}
+					className={`translate-y-[${navHeight}px] transform fixed lg:hidden w-full h-fit bg-dark duration-[600ms] ease-in-out transition-all`}>
+					<div className='flex flex-col mobile:flex-row w-full h-full items-center'>
+						{navLinks.map((link, index) => (
+							<AnchorLink
+								key={'#' + link.hash}
+								to={'/#' + link.hash}
+								title={link.title}
+								onAnchorLinkClick={() => {
+									setActiveHash(link.hash);
+									setBurgerNavShown(false);
+								}}
+								className={`bg-dark border-b-2 hover:text-light/50  text-light text-sm border-light/10 ${
+									index != 0 ? 'xs:border-l-2 ' : ''
+								}  w-full h-full py-6 hover:bg-dark/20 justify-center items-center text-center ${
+									isHashActive(link.hash)
+										? 'border-b-2 border-b-primary hover:border-b-primary'
+										: ''
+								} `}>
+								<span className={`text-center sans xbold text-nowrap px-4`}>
+									{link.title.toUpperCase()}
+								</span>
+							</AnchorLink>
+						))}
+						<NavDropdownItem
+							items={resourcesDropdown}
+							title='Resources'
+							hash='#resources'
+							isHashActive={isHashActive}
+							isBurgerNavShown={isBurgerNavShown}
+							setActiveHash={setActiveHash}
+							setBurgerNavShown={setBurgerNavShown}
+						/>
+					</div>
 				</div>
-			</div>
+			</nav>
 		</>
 	);
 }
