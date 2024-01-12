@@ -169,7 +169,7 @@ export default function Navbar() {
 					style={{
 						transform: isBurgerNavShown ? `translateX(0px)` : `translateX(100%)`,
 					}}
-					className={`overflow-visible mobile:space-x-[0.15rem] flex flex-col mobile:flex-row w-full h-full items-center transform fixed lg:hidden bg-dark/90 duration-[600ms] ease-in-out transition-all`}>
+					className={`overflow-visible mobile:space-x-[0.15rem] flex flex-col mobile:flex-row w-full h-fit items-center transform fixed lg:hidden bg-dark/90 duration-[600ms] ease-in-out transition-all`}>
 					{navLinks.map((link, index) => (
 						<AnchorLink
 							key={'#' + link.hash}
@@ -178,7 +178,7 @@ export default function Navbar() {
 							onAnchorLinkClick={() => {
 								setActiveHash(link.hash);
 							}}
-							className={`bg-dark border-b-2 border-light/10 py-5 text-light text-sm flex px-4 w-full h-full justify-center items-center text-center ${
+							className={`bg-dark border-b-2 border-light/10 w-full py-5 text-light text-sm flex px-4 justify-center items-center text-center ${
 								isHashActive(link.hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
 							} `}>
 							<span className={`text-center sans xbold text-nowrap`}>
