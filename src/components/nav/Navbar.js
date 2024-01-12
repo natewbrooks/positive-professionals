@@ -17,12 +17,12 @@ export default function Navbar() {
 		return hash == activeHash;
 	};
 
-	// const servicesDropdownItems = [
-	// 	{ label: 'One on one Session', href: '/services#1v1' },
-	// 	{ label: 'Group Session', href: '/services#group' },
-	// 	{ label: 'Workshops', href: '/services#workshops' },
-	// 	// Add more items here
-	// ];
+	const resourcesDropdown = [
+		{ label: 'Blog', href: '/resources#blog' },
+		{ label: 'Videos', href: '/resources#videos' },
+		{ label: 'Webinars', href: '/resources#webinars' },
+		// Add more items here
+	];
 
 	const navLinks = [
 		{
@@ -39,11 +39,6 @@ export default function Navbar() {
 			title: 'Services',
 			hash: 'services',
 			colorClass: 'tertiary',
-		},
-		{
-			title: 'Resources',
-			hash: 'resources',
-			colorClass: 'four',
 		},
 	];
 
@@ -73,7 +68,6 @@ export default function Navbar() {
 					if (['team', 'testimonials', 'services', 'resources'].includes(entry.target.id)) {
 						setActiveHash(entry.target.id);
 					}
-					console.log(entry.target.id);
 				}
 			});
 		};
@@ -106,7 +100,7 @@ export default function Navbar() {
 						id='navMenu'
 						className={`flex null:py-4 lg:py-0 items-center w-full h-full justify-around`}>
 						<AnchorLink
-							to='/#canvas'
+							to='/'
 							className='px-4 '
 							title={'Home'}>
 							{/* <img src={logo} alt='Kaldi' style={{ width: '88px' }} /> */}
@@ -136,6 +130,12 @@ export default function Navbar() {
 									{link.title}
 								</AnchorLink>
 							))}
+							<NavDropdownItem
+								items={resourcesDropdown}
+								title='Resources'
+								hash='#resources'
+								isHashActive={isHashActive}
+							/>
 						</div>
 						<div className='flex items-center w-fit space-x-4'>
 							<div className='flex space-x-2 items-center justify-center'>
@@ -183,7 +183,7 @@ export default function Navbar() {
 			</nav>
 			<nav
 				style={{ translate: isBurgerNavShown ? `0px ${navHeight}px` : `0px -200%` }}
-				className={`transform fixed z-40 lg:hidden w-full h-fit bg-dark duration-[600ms] ease-in-out transition-all`}>
+				className={`z-40 transform fixed lg:hidden w-full h-fit bg-dark duration-[600ms] ease-in-out transition-all`}>
 				<div className='flex flex-col mobile:flex-row w-full h-full items-center'>
 					{navLinks.map((link, index) => (
 						<AnchorLink
@@ -199,11 +199,20 @@ export default function Navbar() {
 							}  w-full h-full py-6 hover:bg-dark/20 justify-center items-center text-center ${
 								isHashActive(link.hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
 							} `}>
-							<span className={`text-center sans xbold text-nowrap `}>
+							<span className={`text-center sans xbold text-nowrap px-4`}>
 								{link.title.toUpperCase()}
 							</span>
 						</AnchorLink>
 					))}
+					<NavDropdownItem
+						items={resourcesDropdown}
+						title='Resources'
+						hash='#resources'
+						isHashActive={isHashActive}
+						isBurgerNavShown={isBurgerNavShown}
+						setActiveHash={setActiveHash}
+						setBurgerNavShown={setBurgerNavShown}
+					/>
 				</div>
 			</nav>
 		</>
