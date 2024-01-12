@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import { useEffect } from 'react';
 
 export default function NavDropdownItem({
 	index,
@@ -34,6 +35,10 @@ export default function NavDropdownItem({
 			startCloseTimer();
 		}
 	};
+
+	useEffect(() => {
+		setIsOpen(isBurgerNavShown);
+	}, [isBurgerNavShown]);
 
 	return (
 		<>
@@ -82,7 +87,7 @@ export default function NavDropdownItem({
 						// onMouseLeave={startCloseTimer}
 						key={'#' + hash}
 						title={title}
-						className={`bg-dark border-b-2 py-6 hover:text-light/50  text-light text-sm flex w-full h-full hover:bg-dark/20 justify-center items-center text-center ${
+						className={`relative bg-dark border-b-2 py-5 hover:text-light/50  text-light text-sm flex w-full h-full hover:bg-dark/20 justify-center items-center text-center ${
 							isHashActive(hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
 						} `}>
 						<span className={`text-center sans xbold text-nowrap`}>{title.toUpperCase()}</span>
@@ -93,12 +98,12 @@ export default function NavDropdownItem({
 							}  transition-all duration-300`}
 						/>
 						{/* DROPDOWN MENU */}
-						{/* <div
+						<div
 							onMouseEnter={stopCloseTimer}
 							onMouseLeave={() => toggleDropdown(false)}
 							className={`${
 								isOpen ? 'translate-y-0' : '-translate-y-full'
-							} -z-20 transform transition-transform duration-300 flex flex-col absolute px-2 bg-dark border-x-2 border-light/10 rounded-b-md`}>
+							} transform transition-transform duration-300 flex flex-col absolute px-2 bg-dark border-x-2 border-light/10 rounded-b-md`}>
 							{items.map(({ label, href }, index) => (
 								<AnchorLink
 									key={index}
@@ -113,7 +118,7 @@ export default function NavDropdownItem({
 									{label.toUpperCase()}
 								</AnchorLink>
 							))}
-						</div> */}
+						</div>
 					</div>
 				</>
 			)}

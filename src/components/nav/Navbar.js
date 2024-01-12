@@ -178,10 +178,10 @@ export default function Navbar() {
 								setActiveHash(link.hash);
 								setBurgerNavShown(false);
 							}}
-							className={`bg-dark border-b-2 py-6 hover:text-light/50  text-light text-sm w-full h-full hover:bg-dark/20 justify-center items-center text-center ${
+							className={`bg-dark border-b-2 py-5 hover:text-light/50  text-light text-sm w-full h-full hover:bg-dark/20 justify-center items-center text-center ${
 								isHashActive(link.hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
 							} `}>
-							<span className={`text-center sans xbold text-nowrap px-4`}>
+							<span className={`text-center sans xbold text-nowrap`}>
 								{link.title.toUpperCase()}
 							</span>
 						</AnchorLink>
