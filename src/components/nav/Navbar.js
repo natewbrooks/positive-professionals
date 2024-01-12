@@ -177,6 +177,7 @@ export default function Navbar() {
 							title={link.title}
 							onAnchorLinkClick={() => {
 								setActiveHash(link.hash);
+								setBurgerNavShown(false);
 							}}
 							className={`bg-dark border-b-2 border-light/10 w-full py-5 text-light text-sm flex px-4 justify-center items-center text-center ${
 								isHashActive(link.hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''

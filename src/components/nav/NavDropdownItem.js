@@ -81,7 +81,7 @@ export default function NavDropdownItem({
 				onClick={() => toggleDropdown(!isOpen)}
 				key={'#' + hash}
 				title={title}
-				className={`lg:hidden relative bg-dark border-b-2 py-5 px-4 text-light border-light/10  text-sm flex w-full h-full justify-center items-center text-center ${
+				className={`lg:hidden relative bg-dark border-b-2 py-5 px-4 text-light border-light/10  text-sm flex w-full justify-center items-center text-center ${
 					isHashActive(hash) ? 'border-b-primary hover:border-b-primary' : ''
 				} `}>
 				<span className={`text-center sans xbold text-nowrap`}>{title.toUpperCase()}</span>
