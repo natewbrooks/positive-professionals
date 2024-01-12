@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function VideoItem({ video }) {
 	return (
-		<div className='flex flex-col space-y-1'>
+		<div className='flex flex-col'>
 			<div className='bg-dark/10 aspect-video w-84 '>
 				<iframe
 					className='w-full h-full'
@@ -18,7 +18,7 @@ export default function VideoItem({ video }) {
 						className={`sans text-md xbold overflow-hidden whitespace-nowrap overflow-ellipsis pr-4`}>
 						{video.title}
 					</span>
-					<span className='sans text-md text-dark xbold text-nowrap'>@ {video.date}</span>
+					<span className='sans text-md text-dark/50 xbold text-nowrap'>@ {video.date}</span>
 				</div>
 				<span className='py-2 sans text-sm text-dark/50'>{video.description}</span>
 			</div>

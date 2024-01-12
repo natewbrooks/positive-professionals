@@ -1,10 +1,12 @@
 import React from 'react';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
-export default function SeeMore({ text = 'See more', colorClass = 'text-four' }) {
+export default function SeeMore({ text = 'See more', colorClass = 'text-four', onClick }) {
 	return (
 		<div className='flex w-full justify-end items-center mt-4'>
-			<div className='group hover:cursor-pointer relative flex items-center select-none'>
+			<div
+				onClick={onClick}
+				className='group hover:cursor-pointer relative flex items-center select-none'>
 				<span className={`${colorClass} sans group-hover:opacity-50 text-nowrap`}>{text}</span>
 				<MdOutlineKeyboardArrowRight
 					size={16}

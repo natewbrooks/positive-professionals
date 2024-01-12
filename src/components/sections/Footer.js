@@ -11,7 +11,7 @@ export default function Footer({}) {
 						to='/#canvas'
 						className=''
 						title={'Home'}>
-						<div className='relative flex'>
+						<div className='relative flex z-10'>
 							<div className='z-50 bg-primary p-4 rotate-45'></div>
 							<div className='z-20 absolute -left-2 top-0 bg-secondary p-4 rotate-45'></div>
 							<div className='z-40 absolute -right-2 bg-tertiary p-4 rotate-45'></div>

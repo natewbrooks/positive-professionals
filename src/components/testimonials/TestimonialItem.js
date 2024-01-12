@@ -9,7 +9,7 @@ const TestimonialItem = forwardRef(({ id, testimonial, style }, ref) => {
 			className={`flex flex-col w-full h-full`}>
 			<div
 				style={style}
-				className={`active:cursor-grab hover:cursor-pointer select-none rounded-r-md rounded-l-sm h-full justify-center text-start relative flex flex-col -space-y-1 bg-dark/10 border-l-4 p-4 ${
+				className={`active:cursor-grabbing hover:cursor-grab select-none rounded-r-md rounded-l-sm h-full justify-center text-start relative flex flex-col -space-y-1 bg-dark/10 border-l-4 p-4 ${
 					id === 0 ? testimonial.borderColorClass : 'border-red-400'
 				}`}>
 				<span className='sans text-md'>{testimonial.quote}</span>

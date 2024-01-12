@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FaBars } from 'react-icons/fa';
 import SigninButton from '../sign in/SigninButton';
+import NavDropdownItem from './NavDropdownItem';
 
 export default function Navbar() {
 	const [activeHash, setActiveHash] = useState('');

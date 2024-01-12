@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from './sections/Footer';
 import Navbar from './nav/Navbar';
@@ -9,6 +9,23 @@ import '/src/styles/global.css';
 import ContactSection from './sections/ContactSection';
 
 const TemplateWrapper = ({ children }) => {
+	const [navHeight, setNavHeight] = useState();
+
+	function handleRefresh() {
+		setNavHeight(document.getElementById('navMenu').offsetHeight);
+	}
+
+	useEffect(() => {
+		window.addEventListener('resize', handleRefresh);
+
+		const navHeight = document.getElementById('navMenu').offsetHeight;
+		if (navHeight) {
+			setNavHeight(navHeight);
+		}
+
+		return window.removeEventListener('resize', handleRefresh);
+	}, [navHeight]);
+
 	const { title, description } = useSiteMetadata();
 	return (
 		<div className='w-full h-full bg-light dark:bg-dark overflow-x-hidden'>
@@ -66,7 +83,12 @@ const TemplateWrapper = ({ children }) => {
 				/>
 			</Helmet>
 			<Navbar />
-			{children}
+
+			<div
+				style={{ paddingTop: `${navHeight}px` }}
+				className='relative w-full h-full'>
+				{children}
+			</div>
 			<ContactSection />
 			<Footer />
 		</div>
