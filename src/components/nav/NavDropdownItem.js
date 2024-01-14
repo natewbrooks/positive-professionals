@@ -58,14 +58,15 @@ export default function NavDropdownItem({
 				</AnchorLink>
 				{isOpen && (
 					<div
+						onMouseEnter={stopCloseTimer}
 						onMouseLeave={() => toggleDropdown(false)}
-						className='flex flex-col absolute bg-light border-t-2 border-dark/10 rounded-md'>
+						className='w-full flex flex-col absolute bg-dark/80 border-t-2 border-light/10 rounded-md'>
 						{items.map(({ label, href }, index) => (
 							<AnchorLink
 								key={index}
 								to={href}
 								title={label}
-								className='text-center px-4 py-2 text-sm text-dark sans border-b-2 hover:bg-dark/10 hover:border-four'>
+								className='text-center px-4 py-2 text-sm text-light sans border-b-2 border-light/10 hover:border-four'>
 								{label}
 							</AnchorLink>
 						))}
@@ -76,8 +77,8 @@ export default function NavDropdownItem({
 			{/* MOBILE MENU */}
 
 			<div
-				// onMouseEnter={stopCloseTimer}
-				// onMouseLeave={startCloseTimer}
+				onMouseEnter={stopCloseTimer}
+				onMouseLeave={startCloseTimer}
 				onClick={() => toggleDropdown(!isOpen)}
 				key={'#' + hash}
 				title={title}
@@ -106,7 +107,7 @@ export default function NavDropdownItem({
 								setActiveHash('#' + label.toLowerCase());
 								toggleDropdown(false);
 							}}
-							className='sans xbold p-4 text-sm text-light flex justify-center items-center border-b-2 border-light/10  hover:border-four'>
+							className='sans xbold p-4 text-sm text-light flex justify-center items-center border-b-2 border-light/10 hover:border-four'>
 							{label.toUpperCase()}
 						</AnchorLink>
 					))}

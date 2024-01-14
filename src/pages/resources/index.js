@@ -205,7 +205,26 @@ const Resources = ({}) => {
 					<div
 						id={activeFilter}
 						className='w-full h-full p-8 pb-40 space-y-4'>
-						<span className='text-xxl serif text-dark'>{activeFilter}</span>
+						<div className='flex null:flex-col md:flex-row md:justify-between items-center'>
+							<span className='text-xxl serif text-dark'>{activeFilter}</span>
+							<div className='sans text-md px-2 flex flex-row h-full border-y-2 border-light/10 text-dark w-fit justify-evenly items-center text-center rounded-full'>
+								{categories.map((category, index) => (
+									<div
+										className={`w-full px-2 flex justify-center select-none items-center text-center ${
+											index !== 0 ? 'border-l-2 border-light/10' : ''
+										} `}>
+										<span
+											key={index}
+											onClick={() => setActiveFilter(category)}
+											className={`text-dark xbold cursor-pointer border-b-2 transition-colors duration-500 ${
+												activeFilter === category ? 'border-dark/10' : 'border-transparent'
+											}`}>
+											{category.toUpperCase()}
+										</span>
+									</div>
+								))}
+							</div>
+						</div>
 						<div className='w-fit h-fit grid null:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
 							{getFilteredItems().map((item, index) => {
 								return activeFilter === 'Blog' ? (
@@ -229,23 +248,7 @@ const Resources = ({}) => {
 					</div>
 				</section>
 			</Layout>
-			<div className='z-50 w-full flex justify-center fixed bottom-10 left-0 rounded-full'>
-				<div className='sans text-md flex flex-row px-2 h-full border-y-2 border-light/10 w-[90%] justify-evenly items-center text-center bg-dark drop-shadow-md rounded-full'>
-					{categories.map((category, index) => (
-						<div
-							className={`w-full px-2 py-4 flex justify-center items-center text-center ${
-								index !== 0 ? 'border-l-2 border-light/10' : ' px-4'
-							} `}>
-							<span
-								key={index}
-								onClick={() => setActiveFilter(category)}
-								className={`text-light xbold`}>
-								{category.toUpperCase()}
-							</span>
-						</div>
-					))}
-				</div>
-			</div>
+			<div className='z-50 w-full flex justify-center fixed bottom-10 left-0 rounded-full'></div>
 		</>
 	);
 };

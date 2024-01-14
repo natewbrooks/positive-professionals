@@ -101,6 +101,7 @@ export default function Navbar() {
 						className={`flex null:py-4 lg:py-0 z-50 bg-light items-center w-full h-full justify-around`}>
 						<AnchorLink
 							to='/'
+							onAnchorLinkClick={() => window.scrollTo(0, 0)}
 							className='px-4 '
 							title={'Home'}>
 							{/* <img src={logo} alt='Kaldi' style={{ width: '88px' }} /> */}
@@ -167,7 +168,7 @@ export default function Navbar() {
 				</div>
 				<div
 					style={{
-						transform: isBurgerNavShown ? `translateX(0px)` : `translateX(100%)`,
+						transform: isBurgerNavShown ? `translateY(0px)` : `translateY(-100%)`,
 					}}
 					className={`overflow-visible mobile:space-x-[0.15rem] flex flex-col mobile:flex-row w-full h-fit items-center transform fixed lg:hidden bg-dark/90 duration-[600ms] ease-in-out transition-all`}>
 					{navLinks.map((link, index) => (

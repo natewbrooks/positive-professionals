@@ -1,5 +1,5 @@
 import React from 'react';
-import groupIcon from '../../img/logo.svg';
+import pic from '../../img/bkg.png';
 
 export default function BlogPostItem({ post }) {
 	return (
@@ -15,7 +15,7 @@ export default function BlogPostItem({ post }) {
 			</div>
 			<div className='w-full h-fit p-8 flex flex-col space-y-2 items-center justify-center'>
 				<div className='w-full h-full max-h-[33%] bg-dark/10 p-4 rounded-md'>
-					<img src={groupIcon}></img>
+					<img src={pic}></img>
 				</div>
 				<span className='sans text-md text-dark/50 h-full pb-6'>{post.excerpt}</span>
 			</div>

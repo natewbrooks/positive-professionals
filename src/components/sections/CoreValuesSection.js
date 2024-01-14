@@ -8,7 +8,7 @@ import {
 	FaBalanceScale,
 } from 'react-icons/fa';
 
-import CoreValuesItem from '../../core values/CoreValueItem';
+import CoreValuesItem from '../core values/CoreValueItem';
 
 const coreValues = [
 	{
