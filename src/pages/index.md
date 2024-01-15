@@ -325,7 +325,7 @@ getStarted:
         This is the explanation for step one and it could be very long
         potentially. This is the explanation for step one and it could be very
         long potentially.
-      name: Create personalized plan This is the explanation for step one an
+      name: Create personalized plan
   subtext: Take your first steps and get involved with the betterment of your future.
 ---
 
