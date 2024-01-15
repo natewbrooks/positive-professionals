@@ -87,17 +87,17 @@ export default function ResourcesSection({ content }) {
 	return (
 		<section
 			id='resources'
-			className='w-full h-full flex flex-col space-y-12'>
+			className='w-full h-full flex flex-col space-y-8'>
 			<div className='flex flex-col space-y-2 justify-center items-center'>
 				<AnchorLink
 					to='/resources'
-					className='group text-center justify-center items-center flex flex-col -space-y-1 w-full'>
+					className='group text-start flex flex-col -space-y-1 w-full'>
 					<span className={`group-hover:opacity-50 text-xxl serif`}>Resources</span>
 					<span className={`null:hidden md:block sans text-md w-full`}>
 						Explore our collection of informative videos and previous webinars.
 					</span>
 				</AnchorLink>
-				<span className='border-b-2 border-dark/10'></span>
+				<span className='border-b-2 border-dark/10 w-full'></span>
 			</div>
 			<div className='flex flex-col text-start justify-center'>
 				<AnchorLink
