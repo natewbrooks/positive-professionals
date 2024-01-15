@@ -13,101 +13,111 @@ import CoreValuesSection from '../components/sections/CoreValuesSection';
 import FirstStepsSection from '../components/sections/FirstStepsSection';
 import Hero from '../components/sections/Hero';
 import ScrollingLogoSection from '../components/sections/ScrollingLogoSection';
+import WhoWeAreSection from '../components/sections/WhoWeAreSection';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
-	image,
-	title,
-	heading,
-	subheading,
-	mainpitch,
-	description,
-	intro,
+	hero,
+	whoWeAre,
+	team,
+	coreValues,
+	workedWith,
+	services,
+	getStarted,
 }) => {
-	const heroImage = getImage(image) || image;
-
 	return (
 		<div
 			id='canvas'
 			className='relative w-full h-full overflow-x-hidden'>
-			{/* <FullWidthImage img={heroImg} title={title} subheading={subheading} /> */}
-			<Hero />
+			<Hero data={hero} />
 
-			<div className='overflow-x-hidden w-full h-full justify-center items-center py-[4rem] lg:py-[6rem]  px-[2rem] md:mx-auto lg:px-[8rem] xl:px-[16rem] xxl:px-[20rem] xxxl:px-[36rem] flex flex-col space-y-[10rem]'>
-				{/* <div className='flex flex-col space-y-4'>
-					<div className='flex flex-col -space-y-1'>
-						<span className='sans text-sm'>WHO WE ARE</span>
-						<span className='serif text-xxl'>Uncover our history</span>
-					</div>
-					<p className='sans text-lg'>
-						Mental fitness is our capacity to handle life’s greatest challenges with a positive
-						mindset rather than getting stressed or upset. When it comes to physical fitness, we are
-						unlikely to be able to climb a mountain if we have not strengthened our muscles and
-						built our stamina in advance. Mental fitness is similar; if we want to overcome
-						stressful situations and view life through a positive mindset, we need to learn and
-						practice the skills that will enable us to do so. In other words, we need to build our
-						mental fitness.
-						<br></br>
-						<br></br>
-						By strengthening three fundamental mental fitness muscles, leaders enhance their
-						resilience and perseverance, spend less time in anger, regret, or blame, and unleash
-						their creativity and innovation. Mental fitness training helps alleviate the impact of
-						setbacks so personnel can remain resilient, constantly evolving, and contributing to the
-						overall progress of the business.
-					</p>
-					<SeeMore text={'Learn more'} colorClass={'text-primary'} />
-				</div> */}
-				<TeamSection />
-				<CoreValuesSection />
-				{/* WHO WE'VE WORKED WITH */}
+			<div className='overflow-x-hidden w-full h-full justify-center items-center py-[4rem] lg:py-[6rem] px-[2rem] md:mx-auto lg:px-[8rem] xl:px-[16rem] xxl:px-[20rem] xxxl:px-[36rem] flex flex-col space-y-[10rem]'>
+				<div className='w-full h-full flex flex-col space-y-40 justify-center items-center xxl:items-start xxl:flex-row xl:space-x-20'>
+					<WhoWeAreSection data={whoWeAre} />
+					<TeamSection data={team} />
+				</div>
+				<CoreValuesSection data={coreValues} />
 				<div className='flex flex-col space-y-4'>
 					<WorkedWithSection />
-					<TestimonialsSection />
+					<TestimonialsSection data={workedWith} />
 				</div>
-
-				<ServicesSection />
-				<FirstStepsSection />
+				<ServicesSection data={services} />
+				<FirstStepsSection data={getStarted} />
 				<ResourcesSection />
-
-				{/* <div className='columns'>
-					<div className='column is-12'>
-						<h3 className='has-text-weight-semibold is-size-2'>{heading}</h3>
-						<p>{description}</p>
-					</div>
-				</div>
-
-				<Features gridItems={intro.blurbs} />
-				<div className='columns' id='team'>
-					<div className='column is-12 has-text-centered'>
-						<Link className='btn' to='/products'>
-							See all products
-						</Link>
-					</div>
-				</div>
-				<div className='column is-12'>
-					<h3 className='has-text-weight-semibold is-size-2'>Latest stories</h3>
-					<BlogRoll />
-					<div className='column is-12 has-text-centered'>
-						<Link className='btn' to='/blog'>
-							Read more
-						</Link>
-					</div>
-				</div> */}
 			</div>
 		</div>
 	);
 };
 
 IndexPageTemplate.propTypes = {
-	image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-	title: PropTypes.string,
-	heading: PropTypes.string,
-	subheading: PropTypes.string,
-	mainpitch: PropTypes.object,
-	description: PropTypes.string,
-	intro: PropTypes.shape({
-		blurbs: PropTypes.array,
+	hero: PropTypes.shape({
+		header: PropTypes.string,
+		subtext: PropTypes.string,
 	}),
+	whoWeAre: PropTypes.shape({
+		header: PropTypes.string,
+		subtext: PropTypes.string,
+		body: PropTypes.string,
+	}),
+	team: PropTypes.shape({
+		header: PropTypes.string,
+		subtext: PropTypes.string,
+		members: PropTypes.arrayOf(
+			PropTypes.shape({
+				name: PropTypes.string,
+				position: PropTypes.string,
+				careerBackground: PropTypes.string,
+				specialities: PropTypes.string,
+				industryExperience: PropTypes.string,
+				certifications: PropTypes.string,
+				education: PropTypes.string,
+			})
+		),
+	}),
+	coreValues: PropTypes.shape({
+		header: PropTypes.string,
+		subtext: PropTypes.string,
+		body: PropTypes.string,
+		values: PropTypes.arrayOf(
+			PropTypes.shape({
+				name: PropTypes.string,
+			})
+		),
+	}),
+	workedWith: PropTypes.shape({
+		header: PropTypes.string,
+		subtext: PropTypes.string,
+		testimonials: PropTypes.arrayOf(
+			PropTypes.shape({
+				quote: PropTypes.string,
+				name: PropTypes.string,
+				company: PropTypes.string,
+			})
+		),
+	}),
+	services: PropTypes.shape({
+		header: PropTypes.string,
+		subtext: PropTypes.string,
+		body: PropTypes.string,
+		services: PropTypes.arrayOf(
+			PropTypes.shape({
+				name: PropTypes.string,
+				pitch: PropTypes.string,
+				description: PropTypes.string,
+			})
+		),
+	}),
+	getStarted: PropTypes.shape({
+		header: PropTypes.string,
+		subtext: PropTypes.string,
+		steps: PropTypes.arrayOf(
+			PropTypes.shape({
+				name: PropTypes.string,
+				explanation: PropTypes.string,
+			})
+		),
+	}),
+	// Include other sections as needed
 };
 
 const IndexPage = ({ data }) => {
@@ -116,13 +126,13 @@ const IndexPage = ({ data }) => {
 	return (
 		<Layout>
 			<IndexPageTemplate
-				image={frontmatter.image}
-				title={frontmatter.title}
-				heading={frontmatter.heading}
-				subheading={frontmatter.subheading}
-				mainpitch={frontmatter.mainpitch}
-				description={frontmatter.description}
-				intro={frontmatter.intro}
+				hero={frontmatter.hero}
+				whoWeAre={frontmatter.whoWeAre}
+				team={frontmatter.team}
+				coreValues={frontmatter.coreValues}
+				workedWith={frontmatter.workedWith}
+				services={frontmatter.services}
+				getStarted={frontmatter.getStarted}
 			/>
 		</Layout>
 	);
@@ -143,29 +153,62 @@ export const pageQuery = graphql`
 		markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
 			frontmatter {
 				title
-				image {
-					childImageSharp {
-						gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+				hero {
+					header
+					subtext
+				}
+				whoWeAre {
+					header
+					subtext
+					body
+				}
+				team {
+					header
+					subtext
+					members {
+						name
+						position
+						careerBackground
+						specialities
+						industryExperience
+						certifications
+						education
 					}
 				}
-				heading
-				subheading
-				mainpitch {
-					title
-					description
-				}
-				description
-				intro {
-					blurbs {
-						image {
-							childImageSharp {
-								gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
-							}
-						}
-						text
+				coreValues {
+					header
+					subtext
+					body
+					values {
+						name
 					}
-					heading
-					description
+				}
+				workedWith {
+					header
+					subtext
+					testimonials {
+						quote
+						name
+						company
+					}
+				}
+				services {
+					header
+					subtext
+					body
+					services {
+						name
+						pitch
+						description
+					}
+				}
+				getStarted {
+					header
+					subtext
+					steps {
+						name
+						explanation
+					}
 				}
 			}
 		}

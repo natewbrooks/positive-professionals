@@ -4,124 +4,9 @@ import TestimonialItem from '../testimonials/TestimonialItem';
 import SeeMore from '../pieces/SeeMore';
 import { useSwipeable } from 'react-swipeable';
 
-export default function TestimonialsSection({ content }) {
-	const [testimonials, setTestimonials] = useState([
-		{
-			quote: `I loved working with these beautiful gals. So incredibly knowledgeable about coaching
-                    and wise beyond their years. They solved my mental health, and manifested $50,000 from
-                    thin air!`,
-			name: 'Theresa Clark',
-			workplace: 'CISCO CYBER OPERATIONS',
-			borderColorClass: 'border-four',
-		},
-		{
-			quote: `I loved working with these beautiful gals. So incredibly knowledgeable about coaching
-                    and wise beyond their years. They solved my mental health, and manifested $50,000 from
-                    thin air!`,
-			name: 'Rupert Purdy',
-			workplace: 'NSA DOD',
-			borderColorClass: 'border-secondary',
-		},
-		{
-			quote: `I loved working with these beautiful gals. So incredibly knowledgeable about coaching
-                    and wise beyond their years. They solved my mental health, and manifested $50,000 from
-                    thin air!`,
-			name: 'Clarence Rondy',
-			workplace: 'Amazon CEO',
-			borderColorClass: 'border-primary',
-		},
-		{
-			quote: `Rupert fuentes strikes again`,
-			name: 'Skimbi Blambini',
-			workplace: 'Rotiserry',
-			borderColorClass: 'border-secondary',
-		},
-		{
-			quote: `Flagrant Violation`,
-			name: 'Skim Milk',
-			workplace: 'Cumberland Farms',
-			borderColorClass: 'border-four',
-		},
-		{
-			quote: `Rupert fuentes strikes again`,
-			name: 'Rodney Copperbottom',
-			workplace: 'Robots',
-			borderColorClass: 'border-tertiary',
-		},
-		// {
-		// 	quote:
-		// 		'Unparalleled expertise in network security, providing innovative and robust solutions.',
-		// 	name: 'Jordan Michaels',
-		// 	workplace: 'CyberTech Innovations',
-		// 	borderColorClass: 'border-primary',
-		// },
-
-		// {
-		// 	quote: 'Revolutionized our approach to cybersecurity, setting new industry standards.',
-		// 	name: 'Samantha Wright',
-		// 	workplace: 'Quantum Secure Corp',
-		// 	borderColorClass: 'border-secondary',
-		// },
-
-		// {
-		// 	quote: 'Exceptional skills in system architecture, leading to groundbreaking advancements.',
-		// 	name: 'Michael Torres',
-		// 	workplace: 'Global Defense Network',
-		// 	borderColorClass: 'border-tertiary',
-		// },
-
-		// {
-		// 	quote: 'Transformed our system integration processes, achieving unprecedented efficiency.',
-		// 	name: 'Leslie Chen',
-		// 	workplace: 'Advanced Network Strategies',
-		// 	borderColorClass: 'border-four',
-		// },
-
-		// {
-		// 	quote: 'A visionary in network architecture, navigating complex challenges with ease.',
-		// 	name: 'Richard Blake',
-		// 	workplace: 'Elite Cyber Solutions',
-		// 	borderColorClass: 'border-primary',
-		// },
-
-		// {
-		// 	quote:
-		// 		'Their expertise in managing federal security systems is unparalleled in the industry.',
-		// 	name: 'Emily Grant',
-		// 	workplace: 'National Security Agency',
-		// 	borderColorClass: 'border-secondary',
-		// },
-		// {
-		// 	quote: 'Innovative and strategic approach to cybersecurity, always ahead of the curve.',
-		// 	name: 'Aaron Smith',
-		// 	workplace: 'TechGuardian Ltd.',
-		// 	borderColorClass: 'border-tertiary',
-		// },
-
-		// {
-		// 	quote:
-		// 		'Strategic and effective in network security, consistently delivering top-tier results.',
-		// 	name: 'Nicole Lee',
-		// 	workplace: 'SecureNet Technologies',
-		// 	borderColorClass: 'border-four',
-		// },
-
-		// {
-		// 	quote:
-		// 		'A leading expert in enterprise firewalls, providing exceptional solutions to complex challenges.',
-		// 	name: 'David Kim',
-		// 	workplace: 'Firewall Masters Inc.',
-		// 	borderColorClass: 'border-primary',
-		// },
-
-		// {
-		// 	quote:
-		// 		'Outstanding in deploying secure networks for government agencies, a true industry leader.',
-		// 	name: 'Sarah Lopez',
-		// 	workplace: 'Federal Systems Integrators',
-		// 	borderColorClass: 'border-secondary',
-		// },
-	]);
+export default function TestimonialsSection({ data }) {
+	const borderColors = ['border-primary', 'border-secondary', 'border-tertiary', 'border-four'];
+	const testimonials = data.testimonials;
 
 	const [disableTransition, setDisableTransition] = useState([false, false]);
 	const firstItemRef = useRef(null);
@@ -354,11 +239,12 @@ export default function TestimonialsSection({ content }) {
 						}}
 						className={`absolute top-0 ease-in-out
 						w-auto flex flex-row`}>
-						{testimonials.map((testimonial, index) => (
+						{data.testimonials.map((testimonial, index) => (
 							<TestimonialItem
 								id={i}
 								key={`${i}-${index}`}
 								testimonial={testimonial}
+								borderColor={borderColors[index % borderColors.length]}
 								ref={index === 0 && i === 0 ? firstItemRef : undefined}
 								style={testimonialItemStyle}
 							/>

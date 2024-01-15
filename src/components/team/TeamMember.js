@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Modal from '../Modal';
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
-export default function TeamMember({ member }) {
+export default function TeamMember({ member, color }) {
 	const [isModalOpen, setModalOpen] = useState(false);
 
 	const openModal = () => setModalOpen(true);
@@ -14,7 +14,7 @@ export default function TeamMember({ member }) {
 		<div className='w-full h-full group hover:select-none hover:cursor-pointer'>
 			<div
 				onClick={() => setModalOpen(true)}
-				className={`relative bg-dark/10 group-hover:bg-opacity-50 transition-all duration-300 ${member.colorClass} bg-opacity-70 flex items-center py-12 px-20 rounded-md`}>
+				className={`relative bg-dark/10 group-hover:bg-opacity-50 transition-all duration-300 ${color} bg-opacity-70 flex items-center py-12 px-20 rounded-md`}>
 				<FaUser
 					size={180}
 					className=''
@@ -24,7 +24,7 @@ export default function TeamMember({ member }) {
 				className='flex flex-col text-start py-1 -space-y-1'
 				onClick={() => setModalOpen(true)}>
 				<span className='sans xbold text-lg'>{member.name}</span>
-				<span className='sans text-sm'>{member.title}</span>
+				<span className='sans text-sm'>{member.position}</span>
 			</div>
 
 			<Modal
@@ -39,7 +39,7 @@ export default function TeamMember({ member }) {
 							<div className='flex flex-col items-center space-y-2'>
 								<div className='flex flex-col items-center text-center text-nowrap -space-y-1'>
 									<span className='sans xbold text-lg'>{member.name}</span>
-									<span className='sans text-sm'>{member.title}</span>
+									<span className='sans text-sm'>{member.position}</span>
 								</div>
 								<div className='flex flex-row space-x-2'>
 									<FaLinkedin size={24} />
@@ -51,15 +51,15 @@ export default function TeamMember({ member }) {
 					<div className='flex flex-col overflow-y-auto'>
 						<div className='flex flex-col space-y-1 border-l-4 p-4 border-primary'>
 							<span className='sans text-sm xbold'>CAREER BACKGROUND</span>
-							<span className='sans text-md'>{member.background}</span>
+							<span className='sans text-md'>{member.careerBackground}</span>
 						</div>
 						<div className='flex flex-col space-y-1 border-l-4 p-4 border-secondary'>
 							<span className='sans text-sm xbold'>SPECIALTIES</span>
-							<span className='sans text-md'>{member.specialties}</span>
+							<span className='sans text-md'>{member.specialities}</span>
 						</div>
 						<div className='flex flex-col space-y-1 border-l-4 p-4 border-tertiary'>
 							<span className='sans text-sm xbold'>INDUSTRY EXPERIENCE</span>
-							<span className='sans text-md'>{member.experience}</span>
+							<span className='sans text-md'>{member.industryExperience}</span>
 						</div>
 						<div className='flex flex-col space-y-1 border-l-4 p-4 border-four'>
 							<span className='sans text-sm xbold'>CERTIFICATIONS</span>
