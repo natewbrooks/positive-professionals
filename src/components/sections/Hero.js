@@ -6,13 +6,13 @@ export default function Hero({ data }) {
 	return (
 		<div className='relative flex justify-center items-center w-full h-fit py-40 bg-custom-gradient'>
 			<div className='pt-8 flex flex-col space-y-8 items-center justify-center h-full'>
-				<div className='text-center flex flex-col space-y-2'>
+				<div className='text-center flex flex-col space-y-2 px-4'>
 					<div className='flex flex-col -space-y-8'>
-						<span className='serif text-billboard text-center xbold text-dark px-8 rounded-full'>
+						<span className='break-words null:w-fit sm:w-[500px] lg:w-[700px] leading-none serif null:text-xxxl lg:text-billboard text-center xbold text-dark px-8 rounded-full'>
 							{data.header}
 						</span>
 					</div>
-					<p className='sans text-lg text-dark'>{data.subtext}</p>
+					<p className='break-words sans null:text-md lg:text-lg text-dark'>{data.subtext}</p>
 				</div>
 				<div className='sans text-md xbold text-dark bg-light cursor-pointer select-none hover:opacity-50 active:scale-95 p-2 rounded-md'>
 					GET STARTED

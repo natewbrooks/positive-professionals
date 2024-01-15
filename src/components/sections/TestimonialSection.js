@@ -57,7 +57,7 @@ export default function TestimonialsSection({ data }) {
 
 	function resizeWindow() {
 		if (window.innerWidth <= 400) {
-			setItemWidth(260);
+			setItemWidth(280);
 			setHeight(320);
 			setVisibleItems(1);
 		} else if (window.innerWidth <= 600) {
@@ -227,7 +227,7 @@ export default function TestimonialsSection({ data }) {
 				}}
 				{...handleSwipe}
 				style={testimonialContainerStyle}
-				className={`relative flex flex-row w-full`}>
+				className={`relative flex flex-row w-full h-full`}>
 				{[0, 1].map((i) => (
 					<div
 						key={i}
@@ -238,7 +238,7 @@ export default function TestimonialsSection({ data }) {
 							transitionProperty: `${disableTransition[i] ? '' : 'transform'}`,
 						}}
 						className={`absolute top-0 ease-in-out
-						w-auto flex flex-row`}>
+						w-full flex flex-row`}>
 						{data.testimonials.map((testimonial, index) => (
 							<TestimonialItem
 								id={i}
