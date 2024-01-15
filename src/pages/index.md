@@ -83,7 +83,7 @@ workedWith:
   subtext: w
 hero:
   header: Transform potential into performance.
-  subtext: Cultivate your imagination from home.
+  subtext: Cultivate your imagination from home
 image: /img/home-jumbotron.jpg
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
