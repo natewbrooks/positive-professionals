@@ -153,13 +153,13 @@ const Resources = ({}) => {
 	useEffect(() => {
 		// Function to check if the current hash matches any of the categories
 		const updateActiveFilterBasedOnHash = () => {
-			const currentHash = window.location.hash;
-
-			categories.forEach((category) => {
-				if (currentHash === `/resources#${category.toLowerCase()}`) {
-					setActiveFilter(category);
-				}
-			});
+			const currentHash = window.location.hash.replace('#', '');
+			const foundCategory = categories.find(
+				(category) => kebabCase(category).toLowerCase() === currentHash
+			);
+			if (foundCategory) {
+				setActiveFilter(foundCategory);
+			}
 		};
 
 		// Call the function when the component mounts
@@ -196,15 +196,27 @@ const Resources = ({}) => {
 		return items.slice(0, itemsToShow);
 	};
 
+	function setHash(current) {
+		const lc = current.toLowerCase();
+		window.location.hash = '#' + lc;
+		setActiveFilter(current);
+	}
+
 	const hasMoreItems = getFilteredItems().length < blogPosts.length;
 
 	return (
 		<>
 			<Layout>
-				<section className='null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60  2xl:px-80 h-full w-full'>
+				<section className='py-10 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60  2xl:px-80 h-full w-full'>
+					<div className='border-b-2 border-dark/10 pb-10 flex flex-col -space-y-2 justify-center w-full items-center'>
+						<span className='text-xxxl serif text-dark'>Resources</span>
+						<span className={`sans text-md `}>
+							Explore our collection of informative videos and previous webinars.
+						</span>
+					</div>
 					<div
 						id={activeFilter}
-						className='w-full h-full p-8 pb-40 space-y-4'>
+						className='w-full h-full p-4 pb-40 space-y-4'>
 						<div className='flex null:flex-col md:flex-row md:justify-between items-center'>
 							<span className='text-xxl serif text-dark'>{activeFilter}</span>
 							<div className='sans text-md px-2 flex flex-row h-full border-y-2 border-light/10 text-dark w-fit justify-evenly items-center text-center rounded-full'>
@@ -215,7 +227,10 @@ const Resources = ({}) => {
 										} `}>
 										<span
 											key={index}
-											onClick={() => setActiveFilter(category)}
+											onClick={() => {
+												setActiveFilter(category);
+												setHash(category);
+											}}
 											className={`text-dark xbold cursor-pointer border-b-2 transition-colors duration-500 ${
 												activeFilter === category ? 'border-dark/10' : 'border-transparent'
 											}`}>

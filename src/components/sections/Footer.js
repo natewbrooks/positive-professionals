@@ -46,7 +46,7 @@ export default function Footer({}) {
 							Services
 						</AnchorLink>
 						<AnchorLink
-							to='/#resources'
+							to='/resources'
 							className='sans text-sm text-light/40'
 							title={'Resources'}>
 							Resources

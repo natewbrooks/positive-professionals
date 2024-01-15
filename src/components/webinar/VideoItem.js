@@ -18,7 +18,9 @@ export default function VideoItem({ video }) {
 						className={`sans text-md xbold overflow-hidden whitespace-nowrap overflow-ellipsis pr-4`}>
 						{video.title}
 					</span>
-					<span className='sans text-md text-dark/50 xbold text-nowrap'>@ {video.date}</span>
+					<span className='sans text-md text-dark/50 xbold text-nowrap whitespace-nowrap'>
+						{video.date}
+					</span>
 				</div>
 				<span className='py-2 sans text-sm text-dark/50'>{video.description}</span>
 			</div>

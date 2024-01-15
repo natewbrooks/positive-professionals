@@ -3,21 +3,29 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FaBars } from 'react-icons/fa';
 import SigninButton from '../sign in/SigninButton';
 import NavDropdownItem from './NavDropdownItem';
+import { useLocation } from '@reach/router';
+import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 
 export default function Navbar() {
 	const [activeHash, setActiveHash] = useState('');
 	const [userData, setUserData] = useState();
 	const [navHeight, setNavHeight] = useState(0);
 	const [isBurgerNavShown, setBurgerNavShown] = useState(false);
+	const [currentPath, setCurrentPath] = useState('');
+	const location = useLocation();
+
+	useEffect(() => {
+		setCurrentPath(location.pathname);
+	}, [location.pathname]);
 
 	const isHashActive = (hash) => {
 		return hash == activeHash;
 	};
 
 	const resourcesDropdown = [
-		{ label: 'Blog', href: '/resources#blog' },
-		{ label: 'Videos', href: '/resources#videos' },
-		{ label: 'Webinars', href: '/resources#webinars' },
+		{ label: 'Blog', href: '/resources/#blog' },
+		{ label: 'Videos', href: '/resources/#videos' },
+		{ label: 'Webinars', href: '/resources/#webinars' },
 		// Add more items here
 	];
 
@@ -131,15 +139,37 @@ export default function Navbar() {
 									{link.title}
 								</AnchorLink>
 							))}
-							<div className='hidden lg:block'>
+							{currentPath.includes('/resources') ? (
+								<div className='hidden lg:block'>
+									{/* Non-interactive item */}
+									<div
+										className={`relative text-opacity-50 w-full h-full hidden lg:block sans  text-dark text-md px-2 py-5 border-b-2 text-nowrap border-four hover:border-four`}>
+										Resources
+									</div>
+								</div>
+							) : (
+								<div className='hidden lg:block'>
+									<NavDropdownItem
+										items={resourcesDropdown}
+										title='Resources'
+										hash={'/#resources'}
+										isHashActive={isHashActive}
+										isBurgerNavShown={isBurgerNavShown}
+										setActiveHash={setActiveHash}
+									/>
+								</div>
+							)}
+
+							{/* {!currentPath.includes('resources') && (
 								<NavDropdownItem
 									items={resourcesDropdown}
 									title='Resources'
-									hash='#resources'
+									hash={'/#resources'}
 									isHashActive={isHashActive}
-									isMobile={false}
+									isBurgerNavShown={isBurgerNavShown}
+									setActiveHash={setActiveHash}
 								/>
-							</div>
+							)} */}
 						</div>
 						<div className='flex items-center w-fit space-x-4'>
 							<div className='flex space-x-2 items-center justify-center'>
@@ -188,14 +218,22 @@ export default function Navbar() {
 							</span>
 						</AnchorLink>
 					))}
-					<NavDropdownItem
-						items={resourcesDropdown}
-						title='Resources'
-						hash='#resources'
-						isHashActive={isHashActive}
-						isBurgerNavShown={isBurgerNavShown}
-						setActiveHash={setActiveHash}
-					/>
+
+					{currentPath.includes('/resources') ? (
+						<div
+							className={`lg:hidden relative text-opacity-50 bg-dark border-b-2 py-5 px-4 text-light border-light/10  text-sm flex w-full justify-center items-center text-center border-b-primary hover:border-b-primary sans xbold p-4 hover:border-four`}>
+							RESOURCES
+						</div>
+					) : (
+						<NavDropdownItem
+							items={resourcesDropdown}
+							title='Resources'
+							hash={'/#resources'}
+							isHashActive={isHashActive}
+							isBurgerNavShown={isBurgerNavShown}
+							setActiveHash={setActiveHash}
+						/>
+					)}
 				</div>
 			</nav>
 		</>

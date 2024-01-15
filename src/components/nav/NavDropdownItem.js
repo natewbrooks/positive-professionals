@@ -60,7 +60,7 @@ export default function NavDropdownItem({
 					<div
 						onMouseEnter={stopCloseTimer}
 						onMouseLeave={() => toggleDropdown(false)}
-						className='w-full flex flex-col absolute bg-dark/80 border-t-2 border-light/10 rounded-md'>
+						className='w-fit flex flex-col absolute bg-dark border-t-2 border-light/10 rounded-md'>
 						{items.map(({ label, href }, index) => (
 							<AnchorLink
 								key={index}
