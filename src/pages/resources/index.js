@@ -210,7 +210,7 @@ const Resources = ({}) => {
 				<section className='py-10 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60  2xl:px-80 h-full w-full'>
 					<div className='border-b-2 border-dark/10 pb-4 flex flex-col -space-y-2 justify-center w-full items-center'>
 						<span className='text-xxxl serif text-dark'>Resources</span>
-						<span className={`hidden md:block sans text-md text-center`}>
+						<span className={`px-2 hidden xs:block sans text-md text-center`}>
 							Explore our collection of informative videos and previous webinars.
 						</span>
 					</div>
@@ -218,7 +218,7 @@ const Resources = ({}) => {
 						id={activeFilter}
 						className='w-full h-full p-4 pb-40 space-y-4'>
 						<div className='flex null:flex-col md:flex-row md:justify-between items-center'>
-							<span className='hidden md:block text-xxl serif text-dark'>{activeFilter}</span>
+							<span className='null:hidden md:block text-xxl serif text-dark'>{activeFilter}</span>
 							<div className='sans text-md px-2 flex flex-row h-full border-y-2 border-light/10 text-dark w-fit justify-evenly items-center text-center rounded-full'>
 								{categories.map((category, index) => (
 									<div
@@ -240,7 +240,7 @@ const Resources = ({}) => {
 								))}
 							</div>
 						</div>
-						<div className='w-fit h-fit grid null:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4'>
+						<div className='w-full h-full justify-items-center grid null:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4'>
 							{getFilteredItems().map((item, index) => {
 								return activeFilter === 'Blog' ? (
 									<BlogPostItem

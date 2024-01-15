@@ -93,7 +93,7 @@ export default function ResourcesSection({ content }) {
 					to='/resources'
 					className='group text-start flex flex-col -space-y-1 w-full'>
 					<span className={`group-hover:opacity-50 text-xxl serif`}>Resources</span>
-					<span className={`null:hidden md:block sans text-md w-full`}>
+					<span className={`sans text-md w-full`}>
 						Explore our collection of informative videos and previous webinars.
 					</span>
 				</AnchorLink>
