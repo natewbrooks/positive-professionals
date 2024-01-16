@@ -4,114 +4,55 @@ import Layout from '../../../components/Layout';
 import ResourcesNav from '../../../components/resources/ResourcesNav';
 import ResourcesGridLayout from '../../../components/resources/ResourcesGridLayout';
 
-const Blog = ({}) => {
-	const blogPosts = [
-		{
-			title: 'Navigating Career Transitions: Insights from a Professional Coach',
-			date: 'Sep 2024',
-			excerpt:
-				'Explore key strategies for successful career transitions and how professional coaching can guide you through these pivotal moments.',
-			colorClass: 'text-tertiary',
-			isVideo: false,
-		},
-		{
-			title: 'Maximizing Leadership Potential with Executive Coaching',
-			date: 'Aug 2024',
-			excerpt:
-				'Discover how executive coaching can unlock your leadership abilities and drive organizational success. Discover how executive coaching can unlock your leadership abilities and drive organizational success. Discover how executive coaching can unlock your leadership abilities and drive organizational success.',
-			colorClass: 'text-secondary',
-			isVideo: false,
-		},
-		{
-			title: 'The Power of Mindset in Professional Development',
-			date: 'Jul 2024',
-			excerpt:
-				'Uncover the critical role of mindset in professional growth and how coaching can help in reshaping your thought patterns for success.',
-			colorClass: 'text-primary',
-			isVideo: false,
-		},
-		{
-			title: 'Navigating Career Transitions: Insights from a Professional Coach',
-			date: 'Sep 2024',
-			excerpt:
-				'Explore key strategies for successful career transitions and how professional coaching can guide you through these pivotal moments.',
-			colorClass: 'text-tertiary',
-			isVideo: false,
-		},
-		{
-			title: 'Maximizing Leadership Potential with Executive Coaching',
-			date: 'Aug 2024',
-			excerpt:
-				'Discover how executive coaching can unlock your leadership abilities and drive organizational success. Discover how executive coaching can unlock your leadership abilities and drive organizational success. Discover how executive coaching can unlock your leadership abilities and drive organizational success.',
-			colorClass: 'text-secondary',
-			isVideo: false,
-		},
-		{
-			title: 'The Power of Mindset in Professional Development',
-			date: 'Jul 2024',
-			excerpt:
-				'Uncover the critical role of mindset in professional growth and how coaching can help in reshaping your thought patterns for success.',
-			colorClass: 'text-primary',
-			isVideo: false,
-		},
-		{
-			title: 'Navigating Career Transitions: Insights from a Professional Coach',
-			date: 'Sep 2024',
-			excerpt:
-				'Explore key strategies for successful career transitions and how professional coaching can guide you through these pivotal moments.',
-			colorClass: 'text-tertiary',
-			isVideo: false,
-		},
-		{
-			title: 'Maximizing Leadership Potential with Executive Coaching',
-			date: 'Aug 2024',
-			excerpt:
-				'Discover how executive coaching can unlock your leadership abilities and drive organizational success. Discover how executive coaching can unlock your leadership abilities and drive organizational success. Discover how executive coaching can unlock your leadership abilities and drive organizational success.',
-			colorClass: 'text-secondary',
-			isVideo: false,
-		},
-		{
-			title: 'The Power of Mindset in Professional Development',
-			date: 'Jul 2024',
-			excerpt:
-				'Uncover the critical role of mindset in professional growth and how coaching can help in reshaping your thought patterns for success.',
-			colorClass: 'text-primary',
-			isVideo: false,
-		},
-		{
-			title: 'Navigating Career Transitions: Insights from a Professional Coach',
-			date: 'Sep 2024',
-			excerpt:
-				'Explore key strategies for successful career transitions and how professional coaching can guide you through these pivotal moments.',
-			colorClass: 'text-tertiary',
-			isVideo: false,
-		},
-		{
-			title: 'Maximizing Leadership Potential with Executive Coaching',
-			date: 'Aug 2024',
-			excerpt:
-				'Discover how executive coaching can unlock your leadership abilities and drive organizational success. Discover how executive coaching can unlock your leadership abilities and drive organizational success. Discover how executive coaching can unlock your leadership abilities and drive organizational success.',
-			colorClass: 'text-secondary',
-			isVideo: false,
-		},
-		{
-			title: 'The Power of Mindset in Professional Development',
-			date: 'Jul 2024',
-			excerpt:
-				'Uncover the critical role of mindset in professional growth and how coaching can help in reshaping your thought patterns for success.',
-			colorClass: 'text-primary',
-			isVideo: false,
-		},
-	];
+const Blog = ({ data }) => {
+	const blogs = data.allMarkdownRemark.nodes.map((node) => ({
+		title: node.frontmatter.title,
+		date: node.frontmatter.date,
+		description: node.frontmatter.description,
+		featuredpost: node.frontmatter.featuredpost,
+		image: node.frontmatter.image,
+		body: node.frontmatter.html,
+		slug: node.fields.slug,
+		authors: node.frontmatter.authors,
+		isVideo: false,
+	}));
 
 	return (
 		<>
 			<Layout>
 				<ResourcesNav pageTitle={'Blog Posts'} />
-				<ResourcesGridLayout mediaItems={blogPosts} />
+				<ResourcesGridLayout mediaItems={blogs} />
 			</Layout>
 		</>
 	);
 };
 
 export default Blog;
+
+export const query = graphql`
+	query BlogQuery {
+		allMarkdownRemark(
+			sort: { order: DESC, fields: [frontmatter___date] }
+			filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+		) {
+			nodes {
+				frontmatter {
+					title
+					date(formatString: "DD MMM YYYY")
+					description
+					featuredpost
+					authors
+					image {
+						childImageSharp {
+							gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+						}
+					}
+				}
+				fields {
+					slug
+				}
+				html
+			}
+		}
+	}
+`;

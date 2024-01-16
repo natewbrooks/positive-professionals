@@ -6,21 +6,29 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import ResourcesNav from '../components/resources/ResourcesNav';
 
-export const BlogPostTemplate = ({
-	description,
-	title,
-	helmet,
-	date,
-	featuredpost,
-	image,
-	body,
-}) => {
+export const VideoPostTemplate = ({ description, title, helmet, date, videofile }) => {
+	const renderVideo = () => {
+		if (videofile) {
+			return (
+				<video
+					className={`w-full h-full`}
+					src={videofile.publicURL}
+					controls
+				/>
+			);
+		}
+		return null;
+	};
+
 	return (
 		<>
 			{helmet || ''}
 			<ResourcesNav pageTitle={'Return'} />
 			<section className='null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full mb-20 flex flex-col  items-center justify-center'>
 				<div className='p-4 w-[40%] h-full flex flex-col space-y-4 justify-center items-center'>
+					<div className='outline-dashed outline-four/50 outline-offset-8 bg-dark/10 border-b-2 border-dark/10 w-full h-full text-dark aspect-video'>
+						{renderVideo()}
+					</div>
 					<div className='w-full h-full flex flex-col py-2'>
 						<div className='w-full flex flex-col border-b-2 border-dark/10 pb-1'>
 							<div className='text-md sans xbold text-dark/50'>PUBLISHED {date.toUpperCase()}</div>
@@ -34,23 +42,21 @@ export const BlogPostTemplate = ({
 	);
 };
 
-BlogPostTemplate.propTypes = {
+VideoPostTemplate.propTypes = {
 	description: PropTypes.string,
 	title: PropTypes.string,
 	helmet: PropTypes.object,
-	featuredpost: PropTypes.bool,
-	image: PropTypes.object,
-	authors: PropTypes.object,
+	videofile: PropTypes.object,
 };
 
-const BlogPost = ({ data }) => {
+const VideoPost = ({ data }) => {
 	const { markdownRemark: post } = data;
 
 	return (
 		<Layout>
-			<BlogPostTemplate
+			<VideoPostTemplate
 				helmet={
-					<Helmet titleTemplate='%s | Blog'>
+					<Helmet titleTemplate='%s | Video'>
 						<title>{`${post.frontmatter.title}`}</title>
 						<meta
 							name='description'
@@ -61,22 +67,19 @@ const BlogPost = ({ data }) => {
 				description={post.frontmatter.description}
 				date={post.frontmatter.date}
 				title={post.frontmatter.title}
-				featuredpost={post.frontmatter.featuredpost}
-				image={post.frontmatter.image}
-				authors={post.frontmatter.authors}
-				body={post.html}
+				videofile={post.frontmatter.videofile}
 			/>
 		</Layout>
 	);
 };
 
-BlogPost.propTypes = {
+VideoPost.propTypes = {
 	data: PropTypes.shape({
 		markdownRemark: PropTypes.object,
 	}),
 };
 
-export default BlogPost;
+export default VideoPost;
 
 export const pageQuery = graphql`
 	query VideoPostByID($id: String!) {
@@ -84,15 +87,11 @@ export const pageQuery = graphql`
 			id
 			html
 			frontmatter {
-				title
 				date(formatString: "DD MMM YYYY")
+				title
 				description
-				featuredpost
-				authors
-				image {
-					childImageSharp {
-						gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-					}
+				videofile {
+					publicURL
 				}
 			}
 		}

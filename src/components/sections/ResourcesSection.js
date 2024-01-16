@@ -1,88 +1,14 @@
 import React from 'react';
-import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { graphql } from 'gatsby';
 import SeeMore from '../pieces/SeeMore';
 import VideoItem from '../webinar/VideoItem';
 import BlogPostItem from '../blog/BlogPostItem';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
-export default function ResourcesSection({ content }) {
-	const blogPosts = [
-		{
-			title: 'Navigating Career Transitions: Insights from a Professional Coach',
-			date: '16 SEP 2024',
-			excerpt:
-				'Explore key strategies for successful career transitions and how professional coaching can guide you through these pivotal moments.',
-			colorClass: 'text-tertiary',
-			authors: 'Jennifer Anderson, Kim Harris',
-		},
-		{
-			title: 'Maximizing Leadership Potential with Executive Coaching',
-			date: 'AUG 2024',
-			excerpt:
-				'Discover how executive coaching can unlock your leadership abilities and drive organizational success. Discover how executive coaching can unlock your leadership abilities and drive organizational success. Discover how executive coaching can unlock your leadership abilities and drive organizational success.',
-			colorClass: 'text-secondary',
-			authors: 'Angela Satchell, Kim Harris',
-		},
-		{
-			title: 'The Power of Mindset in Professional Development',
-			date: '1 JUL 2024',
-			excerpt:
-				'Uncover the critical role of mindset in professional growth and how coaching can help in reshaping your thought patterns for success.',
-			colorClass: 'text-primary',
-			authors: 'Liz Brooks',
-		},
-	];
-
-	const videoCatalog = [
-		{
-			title: 'Christmas came early',
-			date: '17 FEB 2024',
-			description:
-				'This is a short and brief non descript description of the video. Should probably be no longer than two sentences.',
-			colorClass: 'text-secondary',
-		},
-		{
-			title: 'Adam Driver does it again',
-			date: 'MAR 2024',
-			description:
-				'This is a short and brief non descript description of the video. Should probably be no longer than two sentences.',
-			colorClass: 'text-four',
-		},
-		{
-			title: 'Robin Williams best moments',
-			date: 'OCT 2024',
-			description:
-				'This is a short and brief non descript description of the video. Should probably be no longer than two sentences.',
-			colorClass: 'text-primary',
-		},
-		// Add more video items as needed
-	];
-
-	const previousWebinars = [
-		{
-			title: 'Superman sees the skies',
-			date: '27 DEC 2023',
-			description:
-				'This is a short and brief non descript description of the video. Should probably be no longer than two sentences.',
-			colorClass: 'text-primary',
-		},
-		{
-			title: 'Me at the zoo',
-			date: 'NOV 2023',
-			description:
-				'This is a short and brief non descript description of the video. Should probably be no longer than two sentences.',
-			colorClass: 'text-secondary',
-		},
-		{
-			title: 'Garfield eats lasagna Garfield eats lasagna Garfield eats lasagna',
-			date: '13 SEP 2023',
-			description:
-				'This is a short and brief non descript description of the video. Should probably be no longer than two sentences.',
-			colorClass: 'text-tertiary',
-		},
-		// Add more video items as needed
-	];
+export default function ResourcesSection({ data }) {
+	const blogPosts = data.blogs;
+	const videoCatalog = data.videos;
+	const previousWebinars = data.videos;
 
 	return (
 		<section
@@ -110,7 +36,17 @@ export default function ResourcesSection({ content }) {
 					{blogPosts.map((post, index) => (
 						<BlogPostItem
 							key={index}
-							post={post}
+							post={{
+								title: post.frontmatter.title,
+								date: post.frontmatter.date,
+								description: post.frontmatter.description,
+								featuredpost: post.frontmatter.featuredpost,
+								image: post.frontmatter.image,
+								body: post.frontmatter.html,
+								slug: post.fields.slug,
+								authors: post.frontmatter.authors,
+								isVideo: false,
+							}}
 						/>
 					))}
 				</div>
@@ -131,7 +67,16 @@ export default function ResourcesSection({ content }) {
 					{videoCatalog.map((video, index) => (
 						<VideoItem
 							key={index}
-							video={video}
+							video={{
+								title: video.frontmatter.title,
+								date: video.frontmatter.date,
+								description: video.frontmatter.description,
+								videofile: video.frontmatter.videofile
+									? video.frontmatter.videofile.publicURL
+									: null,
+								slug: video.fields.slug,
+								isVideo: false,
+							}}
 						/>
 					))}
 				</div>
@@ -153,7 +98,16 @@ export default function ResourcesSection({ content }) {
 					{previousWebinars.map((video, index) => (
 						<VideoItem
 							key={index}
-							video={video}
+							video={{
+								title: video.frontmatter.title,
+								date: video.frontmatter.date,
+								description: video.frontmatter.description,
+								videofile: video.frontmatter.videofile
+									? video.frontmatter.videofile.publicURL
+									: null,
+								slug: video.fields.slug,
+								isVideo: false,
+							}}
 						/>
 					))}
 				</div>

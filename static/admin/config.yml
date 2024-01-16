@@ -15,7 +15,7 @@ public_folder: /img
 collections:
   - name: 'blog'
     label: 'Blog'
-    folder: 'src/pages/blog'
+    folder: 'src/pages/resources/blog'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
@@ -24,21 +24,26 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Featured Post', name: 'featuredpost', widget: 'boolean' }
-      - { label: 'Featured Image', name: 'featuredimage', widget: image }
+      - { label: 'Image', name: 'image', widget: image, required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - {
+          label: 'Authors',
+          name: 'authors',
+          widget: 'list',
+          field: { label: 'Author Name', name: 'name', widget: 'string' },
+        }
 
   - label: 'Videos'
     name: 'videos'
-    folder: 'src/pages/videos'
+    folder: 'src/pages/resources/videos'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'video-post' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Video File', name: 'videofile', widget: 'file' }
-      - { label: 'Video URL', name: 'videoURL', widget: 'string', required: false }
 
   - name: 'pages'
     label: 'Pages'

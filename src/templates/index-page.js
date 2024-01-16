@@ -24,6 +24,7 @@ export const IndexPageTemplate = ({
 	workedWith,
 	services,
 	getStarted,
+	resources,
 }) => {
 	return (
 		<div
@@ -43,7 +44,7 @@ export const IndexPageTemplate = ({
 				</div>
 				<ServicesSection data={services} />
 				<FirstStepsSection data={getStarted} />
-				<ResourcesSection />
+				<ResourcesSection data={resources} />
 			</div>
 		</div>
 	);
@@ -121,7 +122,8 @@ IndexPageTemplate.propTypes = {
 };
 
 const IndexPage = ({ data }) => {
-	const { frontmatter } = data.markdownRemark;
+	const { markdownRemark, blogs, videos } = data;
+	const frontmatter = markdownRemark.frontmatter;
 
 	return (
 		<Layout>
@@ -133,6 +135,7 @@ const IndexPage = ({ data }) => {
 				workedWith={frontmatter.workedWith}
 				services={frontmatter.services}
 				getStarted={frontmatter.getStarted}
+				resources={{ blogs: blogs.nodes, videos: videos.nodes }}
 			/>
 		</Layout>
 	);
@@ -209,6 +212,49 @@ export const pageQuery = graphql`
 						name
 						explanation
 					}
+				}
+			}
+		}
+		blogs: allMarkdownRemark(
+			filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+			sort: { fields: [frontmatter___date], order: DESC }
+			limit: 3
+		) {
+			nodes {
+				frontmatter {
+					title
+					date(formatString: "DD MMM YYYY")
+					description
+					featuredpost
+					authors
+					image {
+						childImageSharp {
+							gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+						}
+					}
+				}
+				fields {
+					slug
+				}
+			}
+		}
+
+		videos: allMarkdownRemark(
+			filter: { frontmatter: { templateKey: { eq: "video-post" } } }
+			sort: { fields: [frontmatter___date], order: DESC }
+			limit: 3
+		) {
+			nodes {
+				frontmatter {
+					title
+					date(formatString: "DD MMM YYYY")
+					description
+					videofile {
+						publicURL
+					}
+				}
+				fields {
+					slug
 				}
 			}
 		}

@@ -4,34 +4,16 @@ import Layout from '../../../components/Layout';
 import ResourcesNav from '../../../components/resources/ResourcesNav';
 import ResourcesGridLayout from '../../../components/resources/ResourcesGridLayout';
 
-const Videos = ({}) => {
-	const videoCatalog = [
-		{
-			title: 'Christmas came early',
-			date: 'Jun 2024',
-			description:
-				'This is a short and brief non descript description of the video. Should probably be no longer than two sentences.',
-			colorClass: 'text-secondary',
-			isVideo: true,
-		},
-		{
-			title: 'Adam Driver does it again',
-			date: 'Mar 2024',
-			description:
-				'This is a short and brief non descript description of the video. Should probably be no longer than two sentences.',
-			colorClass: 'text-four',
-			isVideo: true,
-		},
-		{
-			title: 'Robin Williams best moments',
-			date: 'Jan 2024',
-			description:
-				'This is a short and brief non descript description of the video. Should probably be no longer than two sentences.',
-			colorClass: 'text-primary',
-			isVideo: true,
-		},
-		// Add more video items as needed
-	];
+const Videos = ({ data }) => {
+	const videoCatalog = data.allMarkdownRemark.nodes.map((node) => ({
+		title: node.frontmatter.title,
+		date: node.frontmatter.date,
+		description: node.frontmatter.description,
+		// Assuming you want to link to a video file that was uploaded
+		videofile: node.frontmatter.videofile ? node.frontmatter.videofile.publicURL : null,
+		slug: node.fields.slug,
+		isVideo: true,
+	}));
 
 	return (
 		<>
@@ -44,3 +26,26 @@ const Videos = ({}) => {
 };
 
 export default Videos;
+
+export const query = graphql`
+	query VideoQuery {
+		allMarkdownRemark(
+			sort: { order: DESC, fields: [frontmatter___date] }
+			filter: { frontmatter: { templateKey: { eq: "video-post" } } }
+		) {
+			nodes {
+				frontmatter {
+					title
+					date(formatString: "DD MMM YYYY")
+					description
+					videofile {
+						publicURL
+					}
+				}
+				fields {
+					slug
+				}
+			}
+		}
+	}
+`;

@@ -3,6 +3,18 @@ import TeamMembers from '../team/TeamMembers';
 import SeeMore from '../pieces/SeeMore';
 
 export default function WhoWeAreSection({ data }) {
+	const renderParagraphs = (text) => {
+		return text.split('\n').map((item, key) => {
+			return (
+				<p
+					key={key}
+					className='sans text-lg'>
+					{item}
+				</p>
+			);
+		});
+	};
+
 	return (
 		<section
 			id='whoWeAre'
@@ -11,7 +23,7 @@ export default function WhoWeAreSection({ data }) {
 				<span className='sans text-sm'>{data.subtext.toUpperCase()}</span>
 				<span className='serif text-xxl'>{data.header}</span>
 			</div>
-			<p className='sans text-lg'>{data.body}</p>
+			{renderParagraphs(data.body)}
 		</section>
 	);
 }
