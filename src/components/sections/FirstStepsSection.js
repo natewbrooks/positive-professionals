@@ -17,7 +17,7 @@ export default function FirstStepsSection({ data }) {
 					<div className='flex flex-row md:space-x-4 lg:space-x-8 items-center'>
 						<div className='flex flex-col space-y-4 items-center justify-center'>
 							<div className='bg-dark/10 rounded-full p-12'></div>
-							<div className='flex flex-col items-center justify-center'>
+							<div className='flex flex-col items-center justify-center text-center'>
 								<span className='sans text-lg md:text-md xbold'>{step.name}</span>
 								<span className='sans text-md md:text-sm w-[240px] xl:w-[400px] text-center'>
 									{step.explanation}

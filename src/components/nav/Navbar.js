@@ -23,9 +23,9 @@ export default function Navbar() {
 	};
 
 	const resourcesDropdown = [
-		{ label: 'Blog', href: '/resources/#blog' },
-		{ label: 'Videos', href: '/resources/#videos' },
-		{ label: 'Webinars', href: '/resources/#webinars' },
+		{ label: 'Blog', href: '/resources/blog/' },
+		{ label: 'Videos', href: '/resources/videos/' },
+		{ label: 'Webinars', href: '/resources/webinars/' },
 		// Add more items here
 	];
 
@@ -141,11 +141,14 @@ export default function Navbar() {
 							))}
 							{currentPath.includes('/resources') ? (
 								<div className='hidden lg:block'>
-									{/* Non-interactive item */}
-									<div
-										className={`relative text-opacity-50 w-full h-full hidden lg:block sans  text-dark text-md px-2 py-5 border-b-2 text-nowrap border-four hover:border-four`}>
-										Resources
-									</div>
+									<NavDropdownItem
+										items={resourcesDropdown}
+										title='Resources'
+										hash={''}
+										isHashActive={isHashActive}
+										isBurgerNavShown={isBurgerNavShown}
+										setActiveHash={setActiveHash}
+									/>
 								</div>
 							) : (
 								<div className='hidden lg:block'>
@@ -159,17 +162,6 @@ export default function Navbar() {
 									/>
 								</div>
 							)}
-
-							{/* {!currentPath.includes('resources') && (
-								<NavDropdownItem
-									items={resourcesDropdown}
-									title='Resources'
-									hash={'/#resources'}
-									isHashActive={isHashActive}
-									isBurgerNavShown={isBurgerNavShown}
-									setActiveHash={setActiveHash}
-								/>
-							)} */}
 						</div>
 						<div className='flex items-center w-fit space-x-4'>
 							<div className='flex space-x-2 items-center justify-center'>
@@ -220,10 +212,14 @@ export default function Navbar() {
 					))}
 
 					{currentPath.includes('/resources') ? (
-						<div
-							className={`lg:hidden relative text-opacity-50 bg-dark border-b-2 py-5 px-4 text-light border-light/10  text-sm flex w-full justify-center items-center text-center border-b-primary hover:border-b-primary sans xbold p-4 hover:border-four`}>
-							RESOURCES
-						</div>
+						<NavDropdownItem
+							items={resourcesDropdown}
+							title='Resources'
+							hash={''}
+							isHashActive={isHashActive}
+							isBurgerNavShown={isBurgerNavShown}
+							setActiveHash={setActiveHash}
+						/>
 					) : (
 						<NavDropdownItem
 							items={resourcesDropdown}

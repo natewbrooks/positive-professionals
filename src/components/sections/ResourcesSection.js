@@ -90,7 +90,7 @@ export default function ResourcesSection({ content }) {
 			className='w-full h-full flex flex-col space-y-8'>
 			<div className='flex flex-col space-y-2 justify-center items-center'>
 				<AnchorLink
-					to='/resources'
+					to='/resources/'
 					className='group text-start flex flex-col -space-y-1 w-full'>
 					<span className={`group-hover:opacity-50 text-xxl serif`}>Resources</span>
 					<span className={`sans text-md w-full`}>
@@ -101,7 +101,7 @@ export default function ResourcesSection({ content }) {
 			</div>
 			<div className='flex flex-col text-start justify-center'>
 				<AnchorLink
-					to='/resources#blog'
+					to='/resources/blog/'
 					className='group flex flex-col -space-y-1 my-4 text-end'>
 					<span className={`sans text-sm `}>READ OUR STORIES</span>
 					<span className={`group-hover:opacity-50 text-xl serif`}>Blog posts</span>
@@ -114,11 +114,15 @@ export default function ResourcesSection({ content }) {
 						/>
 					))}
 				</div>
-				<SeeMore />
+				<AnchorLink
+					title='Blog'
+					to='/resources/blog/'>
+					<SeeMore />
+				</AnchorLink>
 			</div>
 			<div className='flex flex-col text-start justify-center'>
 				<AnchorLink
-					to='/resources#videos'
+					to='/resources/videos/'
 					className='group flex flex-col -space-y-1 my-4 text-end'>
 					<span className={`sans text-sm `}>SEE US IN ACTION</span>
 					<span className={`group-hover:opacity-50 text-xl serif`}>Video catalog</span>
@@ -131,11 +135,15 @@ export default function ResourcesSection({ content }) {
 						/>
 					))}
 				</div>
-				<SeeMore />
+				<AnchorLink
+					title='Videos'
+					to='/resources/videos/'>
+					<SeeMore />
+				</AnchorLink>
 			</div>
 			<div className='w-full flex flex-col justify-center'>
 				<AnchorLink
-					to='/resources#webinars'
+					to='/resources/webinars/'
 					className='group flex flex-col -space-y-1 my-4 text-end'>
 					<span className={`sans text-sm `}>FREE WEEKLY WEBINARS</span>
 					<span className={`group-hover:opacity-50 text-xl serif`}>Previous webinars</span>
@@ -150,7 +158,11 @@ export default function ResourcesSection({ content }) {
 					))}
 				</div>
 
-				<SeeMore />
+				<AnchorLink
+					title='Webinars'
+					to='/resources/webinars/'>
+					<SeeMore />
+				</AnchorLink>
 			</div>
 		</section>
 	);

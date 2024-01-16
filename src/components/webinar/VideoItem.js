@@ -12,15 +12,14 @@ export default function VideoItem({ video }) {
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 					allowFullScreen></iframe>
 			</div>
-			<div className='bg-dark/10 flex flex-col w-full h-fit p-2 rounded-b-md'>
-				<div className='flex w-full items-center justify-between py-1 border-b-2 border-dark/10 '>
-					<span
-						className={`sans text-md xbold overflow-hidden whitespace-nowrap overflow-ellipsis pr-4`}>
-						{video.title}
+			<div className='bg-dark/10 flex flex-col h-fit w-full p-2 rounded-b-md'>
+				<div className='pb-2 w-full flex flex-col overflow-hidden border-b-2 border-dark/10'>
+					<span className='w-full sans text-sm text-dark/50 xbold text-nowrap whitespace-nowrap'>
+						PUBLISHED {video.date}
 					</span>
-					<span className='sans text-md text-dark/50 xbold text-nowrap whitespace-nowrap'>
-						{video.date}
-					</span>
+					<div className={`w-full sans text-md xbold leading-tight`}>
+						<span>{video.title}</span>
+					</div>
 				</div>
 				<span className='py-2 sans text-sm text-dark/50'>{video.description}</span>
 			</div>
