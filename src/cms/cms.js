@@ -12,3 +12,4 @@ CMS.registerMediaLibrary(cloudinary);
 CMS.registerPreviewTemplate('index', IndexPagePreview);
 CMS.registerPreviewTemplate('blog', BlogPostPreview);
 CMS.registerPreviewTemplate('videos', VideoPostPreview);
+CMS.registerPreviewStyle('../styles/blog-post.css');

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { FaXmark } from 'react-icons/fa6';
 
 export default function Modal({ isOpen, onClose, children }) {

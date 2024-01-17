@@ -23,10 +23,10 @@ export const VideoPostTemplate = ({ description, title, helmet, date, videofile 
 	return (
 		<>
 			{helmet || ''}
-			<div className='pt-10 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
+			<div className='pt-4 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
 				<ResourcesNav
 					pageTitle={'Return'}
-					showTitle={true}
+					showTitle={false}
 				/>
 				<section className='flex flex-col  items-center justify-center mb-10'>
 					<div className='p-4 null:w-full lg:w-[60%] xxl:w-[50%] h-full flex flex-col space-y-4 justify-center items-center'>

@@ -3,7 +3,6 @@ import pic from '../../img/bkg.png';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 export default function BlogPostItem({ post }) {
-	const [showDescription, setShowDescription] = useState(false);
 	const isNewPost = () => {
 		if (post.date) {
 			const postDate = new Date(post.date);
@@ -16,22 +15,22 @@ export default function BlogPostItem({ post }) {
 	};
 
 	return (
-		<div className='w-full h-full relative aspect-video space-y-[0.15rem]'>
-			<div className='absolute -top-3 -left-0 flex space-x-1'>
+		<AnchorLink
+			to={post.slug}
+			className='group hover:opacity-80 w-full h-full relative transition-all duration-300  bg-dark/10 pb-2 rounded-b-md '>
+			<div className='absolute -top-5 -left-0 flex space-x-1'>
 				{isNewPost() && (
-					<div className='bg-red-400 rounded-md px-2 text-sm sans xbold text-light'>NEW</div>
+					<div className='bg-red-400 rounded-md px-2 py-1 text-sm sans xbold text-light'>NEW</div>
 				)}
 				{post.featuredpost && (
-					<div className='bg-four rounded-md px-2 text-sm sans xbold text-light'>FEATURED</div>
+					<div className='bg-four rounded-md px-2 py-1 text-sm sans xbold text-light'>FEATURED</div>
 				)}
 			</div>
-			<div className='transition-all duration-300 w-full h-fit bg-dark/10 flex flex-col rounded-b-md'>
-				<div className='w-full flex flex-col px-2 pt-2 rounded-t-md overflow-hidden'>
-					<AnchorLink
-						to={post.slug}
-						className='group cursor-pointer flex flex-col'>
+			<div className='w-full h-full flex flex-col'>
+				<div className='w-full h-full flex flex-col px-4 pt-4 rounded-t-md'>
+					<div className='h-fit cursor-pointer flex flex-col'>
 						<div className='flex flex-col w-full overflow-hidden '>
-							<div className='w-full flex null:flex-col md:flex-row justify-between'>
+							<div className='w-full flex flex-col '>
 								<span className='w-full sans text-sm text-dark/50 xbold text-nowrap'>
 									PUBLISHED {post.date.toUpperCase()}
 								</span>
@@ -42,31 +41,23 @@ export default function BlogPostItem({ post }) {
 								)}
 							</div>
 							<span
-								className={`max-h-[42px] h-full overflow-hidden w-full sans text-md xbold leading-tight xbold line-clamp`}>
+								className={`h-[48px] overflow-hidden w-full sans text-lg xbold leading-tight xbold line-clamp-2`}>
 								{post.title}
 							</span>
 						</div>
 
-						<div className='px-4 py-2 drop-shadow-md group-hover:opacity-80 cursor-pointer w-full h-fit'>
-							<img src={pic}></img>
+						<div className='px-4 py-2 drop-shadow-md cursor-pointer w-full '>
+							<img
+								src={pic}
+								className='max-h-[320px]'></img>
 						</div>
-					</AnchorLink>
-					<div
-						onClick={() => setShowDescription(!showDescription)}
-						className='hover:opacity-50 active:scale-95 cursor-pointer w-full justify-center rounded-md flex bg-dark/10'>
-						<span className='py-1 sans xbold text-sm text-dark'>
-							{showDescription ? 'CLOSE EXCERPT' : 'OPEN EXCERPT'}
-						</span>
-					</div>
-					<div
-						style={{
-							maxHeight: showDescription ? '600px' : '0px',
-						}}
-						className={`transform transition-all duration-300 py-1 px-2 text-dark/50 w-full sans text-sm `}>
-						{post.description}
+						<div
+							className={`max-h-[200px] transform transition-all duration-300 py-1 px-2 text-dark/50 w-fit sans text-sm line-clamp-4`}>
+							{post.description}
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</AnchorLink>
 	);
 }

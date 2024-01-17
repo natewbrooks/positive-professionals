@@ -3,11 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary: #34d399;
+    --secondary: #fdba74;
+    --light: #fafaf9;
+    --dark: #121212;
+}
 
 .blog-post-container p {
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
     text-align: start;
     padding: 0.5rem 0rem;
     max-width: 900px;
@@ -30,29 +36,32 @@ article {
 .blog-post-container li {
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 800;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .blog-post-container ol {
-    margin: 1rem 0px;
+    margin: 2rem 0px;
+    list-style-type: decimal;
 }
 
 .blog-post-container h1,
 .blog-post-container h2,
 .blog-post-container h3 {
     font-family: 'Alegreya', serif;
-    font-weight: 700;
+    font-weight: 800;
     text-align: left;
     width: 100%;
     max-width: 900px;
+    line-height: 1.25;
+    padding-top: 1rem;
 }
 
 .blog-post-container h1 {
-    font-size: 48px;
+    font-size: 46px;
 }
 
 .blog-post-container h2 {
-    font-size: 36px;
+    font-size: 32px;
 }
 
 .blog-post-container h3 {

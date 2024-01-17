@@ -4,12 +4,20 @@ import { VideoPostTemplate } from '../../templates/video-post';
 
 const VideoPostPreview = ({ entry, widgetFor }) => {
 	const tags = entry.getIn(['data', 'tags']);
+	const title = entry.getIn(['data', 'title']);
+	const description = entry.getIn(['data', 'description']);
+	const date = entry.getIn(['data', 'date']);
+	const videofile = entry.getIn(['data', 'videofile']);
+
 	return (
 		<VideoPostTemplate
 			content={widgetFor('body')}
-			description={entry.getIn(['data', 'description'])}
+			description={description}
 			tags={tags && tags.toJS()}
-			title={entry.getIn(['data', 'title'])}
+			title={title}
+			helmet={null} // Helmet not needed for preview
+			date={date}
+			videofile={videofile} // Adjust based on how videofile data is structured in your CMS
 		/>
 	);
 };

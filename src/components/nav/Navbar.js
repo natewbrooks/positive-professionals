@@ -106,7 +106,7 @@ export default function Navbar() {
 				<div className='flex items-center'>
 					<div
 						id='navMenu'
-						className={`flex null:py-4 lg:py-0 z-50 bg-light items-center w-full h-full justify-around`}>
+						className={`flex null:py-4 lg:py-0 md:px-0 lg:px-10 xl:px-40 xxl:px-80 z-50 bg-light items-center w-full h-full justify-around`}>
 						<AnchorLink
 							to='/'
 							onAnchorLinkClick={() => window.scrollTo(0, 0)}
@@ -124,7 +124,7 @@ export default function Navbar() {
 								</div>
 							</div>
 						</AnchorLink>
-						<div className='flex h-full space-x-8 '>
+						<div className='flex h-full space-x-4 '>
 							{navLinks.map((link) => (
 								<AnchorLink
 									key={'#' + link.hash}
@@ -165,13 +165,13 @@ export default function Navbar() {
 						</div>
 						<div className='flex items-center w-fit space-x-4'>
 							<div className='flex space-x-2 items-center justify-center'>
-								<div className='select-none hidden lg:flex cursor-pointer hover:bg-opacity-50 group bg-hard-stop-gradient p-[0.25rem] rounded-md items-center'>
+								{/* <div className='select-none hidden lg:flex cursor-pointer hover:bg-opacity-50 group bg-hard-stop-gradient p-[0.25rem] rounded-md items-center'>
 									<div className=' bg-light group-active:scale-95 sans px-1'>
 										<span className='text-dark text-sm xbold  group-hover:text-opacity-50'>
 											CONTACT US
 										</span>
 									</div>
-								</div>
+								</div> */}
 								<div
 									onClick={() => {
 										setBurgerNavShown(!isBurgerNavShown);
@@ -183,7 +183,7 @@ export default function Navbar() {
 									/>
 								</div>
 							</div>
-							<span className='text-dark/50'>|</span>
+							{/* <span className='text-dark/50'>|</span> */}
 							<SigninButton userData={userData} />
 						</div>
 					</div>

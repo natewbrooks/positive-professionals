@@ -27,6 +27,7 @@ const TemplateWrapper = ({ children }) => {
 	}, [navHeight]);
 
 	const { title, description } = useSiteMetadata();
+
 	return (
 		<div className='w-full h-full bg-light dark:bg-dark overflow-x-hidden'>
 			<Helmet>
