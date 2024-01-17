@@ -21,7 +21,7 @@ export default function TeamMember({ member, color }) {
 				/>
 			</div>
 			<div
-				className='flex flex-col text-start py-1 -space-y-1'
+				className='flex flex-col text-start py-1 leading-tight'
 				onClick={() => setModalOpen(true)}>
 				<span className='sans xbold text-lg'>{member.name}</span>
 				<span className='sans text-sm'>{member.position}</span>
@@ -48,7 +48,7 @@ export default function TeamMember({ member, color }) {
 							</div>
 						</div>
 					</div>
-					<div className='flex flex-col overflow-y-auto'>
+					<div className='null:w-fit lg:w-[800px] flex flex-col overflow-y-auto'>
 						<div className='flex flex-col space-y-1 border-l-4 p-4 border-primary'>
 							<span className='sans text-sm xbold'>CAREER BACKGROUND</span>
 							<span className='sans text-md'>{member.careerBackground}</span>

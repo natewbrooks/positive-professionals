@@ -217,7 +217,7 @@ export default function TestimonialsSection({ data }) {
 		<section
 			id='testimonials'
 			className='relative w-full h-full overflow-hidden'>
-			<div className='relative items-center justify-between flex py-2 group cursor-pointer'>
+			<div className='relative items-center justify-between flex py-2 group cursor-pointer leading-tight'>
 				<span className='sans text-sm'>TESTIMONIALS</span>
 			</div>
 
@@ -252,7 +252,7 @@ export default function TestimonialsSection({ data }) {
 					</div>
 				))}
 			</div>
-			<SeeMore />
+			{/* <SeeMore /> */}
 		</section>
 	);
 }

@@ -19,7 +19,7 @@ export default function WhoWeAreSection({ data }) {
 		<section
 			id='whoWeAre'
 			className='flex flex-col space-y-4 xxl:max-w-[50%]'>
-			<div className='flex flex-col -space-y-1'>
+			<div className='flex flex-col leading-tight'>
 				<span className='sans text-sm'>{data.subtext.toUpperCase()}</span>
 				<span className='serif text-xxl'>{data.header}</span>
 			</div>

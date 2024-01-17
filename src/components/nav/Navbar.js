@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
-import { FaBars } from 'react-icons/fa';
 import SigninButton from '../sign in/SigninButton';
 import NavDropdownItem from './NavDropdownItem';
 import { useLocation } from '@reach/router';
-import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 
 export default function Navbar() {
 	const [activeHash, setActiveHash] = useState('');
@@ -176,11 +174,19 @@ export default function Navbar() {
 									onClick={() => {
 										setBurgerNavShown(!isBurgerNavShown);
 									}}
-									className='flex lg:hidden select-none cursor-pointer md:hover:opacity-50 active:scale-95'>
-									<FaBars
-										size={24}
-										className='text-dark'
-									/>
+									className='lg:hidden select-none cursor-pointer active:scale-95 w-[24px] h-[20px] flex flex-col justify-between'>
+									<div
+										className={`transition-all duration-300 ease-in-out h-[4px] w-full bg-dark rounded-full ${
+											isBurgerNavShown ? '-rotate-45 translate-y-2' : 'rotate-0'
+										}`}></div>
+									<div
+										className={`transition-all duration-500 ease-in-out h-[4px] w-full bg-dark rounded-full ${
+											isBurgerNavShown ? 'rotate-45' : 'rotate-0'
+										}`}></div>
+									<div
+										className={`transition-all duration-300 ease-in-out h-[4px] w-full bg-dark rounded-full ${
+											isBurgerNavShown ? '-rotate-45 -translate-y-2' : 'rotate-0'
+										}`}></div>
 								</div>
 							</div>
 							{/* <span className='text-dark/50'>|</span> */}

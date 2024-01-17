@@ -1,4 +1,8 @@
 module.exports = {
+	proxy: {
+		prefix: '/api',
+		url: 'http://localhost:8000/api/',
+	},
 	siteMetadata: {
 		title: 'Positive Professionals',
 		description:

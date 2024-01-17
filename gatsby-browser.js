@@ -1,20 +1,35 @@
 import React from 'react';
-import { Auth0Provider } from '@auth0/auth0-react';
-import { navigate } from 'gatsby';
+import { LocationProvider } from '@reach/router';
+import SuperTokens, { SuperTokensWrapper } from 'supertokens-auth-react';
+import ThirdPartyEmailPassword, {
+	Google,
+} from 'supertokens-auth-react/recipe/thirdpartyemailpassword';
+import Session from 'supertokens-auth-react/recipe/session';
 
-const onRedirectCallback = (appState) => {
-	// Use Gatsby's navigate method to replace the url
-	navigate(appState?.returnTo || '/', { replace: true });
-};
+SuperTokens.init({
+	appInfo: {
+		appName: 'Positive Professionals',
+		apiDomain: 'http://localhost:8000/api/',
+		websiteDomain: 'http://localhost:8000',
+		apiBasePath: '/auth',
+		websiteBasePath: '/login',
+	},
+	recipeList: [
+		ThirdPartyEmailPassword.init({
+			signInAndUpFeature: {
+				providers: [Google.init()],
+			},
+		}),
+		Session.init(),
+	],
+});
 
 export const wrapRootElement = ({ element }) => {
+	console.log(SuperTokensWrapper);
+
 	return (
-		<Auth0Provider
-			domain='dev-jb5ricg5balgauhu.us.auth0.com'
-			clientId='FAOg0P1EZpvhPjaH6PKJipUdNPyq1pkC'
-			redirectUri={window.location.origin}
-			onRedirectCallback={onRedirectCallback}>
-			{element}
-		</Auth0Provider>
+		<SuperTokensWrapper>
+			<LocationProvider>{element}</LocationProvider>
+		</SuperTokensWrapper>
 	);
 };
