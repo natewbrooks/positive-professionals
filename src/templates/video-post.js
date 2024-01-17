@@ -23,21 +23,30 @@ export const VideoPostTemplate = ({ description, title, helmet, date, videofile 
 	return (
 		<>
 			{helmet || ''}
-			<ResourcesNav pageTitle={'Return'} />
-			<section className='null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full mb-20 flex flex-col  items-center justify-center'>
-				<div className='p-4 w-[40%] h-full flex flex-col space-y-4 justify-center items-center'>
-					<div className='outline-dashed outline-four/50 outline-offset-8 bg-dark/10 border-b-2 border-dark/10 w-full h-full text-dark aspect-video'>
-						{renderVideo()}
-					</div>
-					<div className='w-full h-full flex flex-col py-2'>
-						<div className='w-full flex flex-col border-b-2 border-dark/10 pb-1'>
-							<div className='text-md sans xbold text-dark/50'>PUBLISHED {date.toUpperCase()}</div>
-							<div className='text-xl sans xbold text-dark leading-tight'>{title}</div>
+			<div className='pt-10 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
+				<ResourcesNav
+					pageTitle={'Return'}
+					showTitle={true}
+				/>
+				<section className='flex flex-col  items-center justify-center mb-10'>
+					<div className='p-4 null:w-full lg:w-[60%] xxl:w-[50%] h-full flex flex-col space-y-4 justify-center items-center'>
+						<div className='outline-dashed outline-four/50 outline-offset-8 bg-dark/10 border-b-2 border-dark/10 w-full h-full text-dark aspect-video'>
+							{renderVideo()}
 						</div>
-						<div className='text-md sans text-dark/50 py-2'>{description}</div>
+						<div className='w-full h-full flex flex-col py-2'>
+							<div className='w-full flex flex-col border-b-2 border-dark/10 pb-1'>
+								<div className='null:text-sm md:text-md sans xbold text-dark/50'>
+									PUBLISHED {date.toUpperCase()}
+								</div>
+								<div className='null:text-lg md:text-xl sans xbold text-dark leading-tight'>
+									{title}
+								</div>
+							</div>
+							<div className='null:text-sm md:text-md sans text-dark/50 py-2'>{description}</div>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</div>
 		</>
 	);
 };

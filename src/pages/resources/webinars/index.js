@@ -36,8 +36,13 @@ const Webinars = ({}) => {
 	return (
 		<>
 			<Layout>
-				<ResourcesNav pageTitle={'Previous Webinars'} />
-				<ResourcesGridLayout mediaItems={previousWebinars} />
+				<div className='pt-10 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
+					<ResourcesNav
+						pageTitle={'Previous Webinars'}
+						showTitle={true}
+					/>
+					<ResourcesGridLayout mediaItems={previousWebinars} />
+				</div>
 			</Layout>
 		</>
 	);

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { kebabCase } from 'lodash';
 import { Helmet } from 'react-helmet';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import ResourcesNav from '../components/resources/ResourcesNav';
+import '../styles/blog-post.css';
 
 export const BlogPostTemplate = ({
 	description,
@@ -18,18 +18,34 @@ export const BlogPostTemplate = ({
 	return (
 		<>
 			{helmet || ''}
-			<ResourcesNav pageTitle={'Return'} />
-			<section className='null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full mb-20 flex flex-col  items-center justify-center'>
-				<div className='p-4 w-[40%] h-full flex flex-col space-y-4 justify-center items-center'>
-					<div className='w-full h-full flex flex-col py-2'>
-						<div className='w-full flex flex-col border-b-2 border-dark/10 pb-1'>
-							<div className='text-md sans xbold text-dark/50'>PUBLISHED {date.toUpperCase()}</div>
-							<div className='text-xl sans xbold text-dark leading-tight'>{title}</div>
-						</div>
-						<div className='text-md sans text-dark/50 py-2'>{description}</div>
+			<div className='pt-10 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
+				<div className='hidden sm:flex justify-center items-center text-center w-full flex-col pb-2'>
+					<div className='w-full text-md sans xbold text-dark/50'>
+						PUBLISHED {date.toUpperCase()}
 					</div>
+					<div className='w-full text-xxl serif xbold text-dark leading-tight'>{title}</div>
 				</div>
-			</section>
+				<ResourcesNav
+					pageTitle={'Return'}
+					showTitle={false}
+				/>
+				<div className='flex sm:hidden justify-center items-center text-center w-full flex-col'>
+					<div className='w-full text-md sans xbold text-dark/50'>
+						PUBLISHED {date.toUpperCase()}
+					</div>
+					<div className='w-full text-xxl serif xbold text-dark leading-tight'>{title}</div>
+				</div>
+				<section className='w-full h-full mb-20 flex flex-col  items-center justify-center'>
+					<div className='p-4 w-full h-full flex flex-col space-y-4 justify-center items-center'>
+						<div className='w-full h-full flex flex-col'>
+							<article
+								className='blog-post-container xl:px-[4rem] xxl:px-[24rem]'
+								dangerouslySetInnerHTML={{ __html: body }}
+							/>
+						</div>
+					</div>
+				</section>
+			</div>
 		</>
 	);
 };

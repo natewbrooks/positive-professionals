@@ -18,8 +18,13 @@ const Videos = ({ data }) => {
 	return (
 		<>
 			<Layout>
-				<ResourcesNav pageTitle={'Video Catalog'} />
-				<ResourcesGridLayout mediaItems={videoCatalog} />
+				<div className='pt-10 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
+					<ResourcesNav
+						pageTitle={'Video Catalog'}
+						showTitle={true}
+					/>
+					<ResourcesGridLayout mediaItems={videoCatalog} />
+				</div>
 			</Layout>
 		</>
 	);

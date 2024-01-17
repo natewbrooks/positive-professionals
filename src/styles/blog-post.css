@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;700;800&family=Source+Sans+3:wght@100;200;300;400;500;600;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.blog-post-container p {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: start;
+    padding: 0.5rem 0rem;
+    max-width: 900px;
+    text-align: left;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-post-container img {
+    width: max-content;
+    max-height: 900px;
+    align-self: center;
+}
+
+.blog-post-container li {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.blog-post-container ol {
+    margin: 1rem 0px;
+}
+
+.blog-post-container h1,
+.blog-post-container h2,
+.blog-post-container h3 {
+    font-family: 'Alegreya', serif;
+    font-weight: 700;
+    text-align: left;
+    width: 100%;
+    max-width: 900px;
+}
+
+.blog-post-container h1 {
+    font-size: 48px;
+}
+
+.blog-post-container h2 {
+    font-size: 36px;
+}
+
+.blog-post-container h3 {
+    font-size: 24px;
+}

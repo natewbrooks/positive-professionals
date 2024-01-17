@@ -20,11 +20,13 @@ export default function VideoItem({ video }) {
 					<span className='w-full sans text-sm text-dark/50 xbold text-nowrap whitespace-nowrap'>
 						PUBLISHED {video.date.toUpperCase()}
 					</span>
-					<div className={`w-full sans text-md xbold leading-tight`}>
+					<div className={`max-h-[42px] h-full w-full sans text-md xbold leading-tight line-clamp`}>
 						<span>{video.title}</span>
 					</div>
 				</AnchorLink>
-				<span className='pt-2 sans text-sm text-dark/50'>{video.description}</span>
+				<span className='h-[48px] pt-2 sans text-sm text-dark/50 line-clamp'>
+					{video.description}
+				</span>
 			</div>
 		</div>
 	);

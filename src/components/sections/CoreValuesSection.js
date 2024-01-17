@@ -23,7 +23,7 @@ export default function CoreValuesSection({ data }) {
 				</div>
 
 				<div className='md:px-20 lg:px-40 2xl:px-80 flex flex-col space-y-4 justify-center items-center'>
-					<div className='grid grid-cols-3 gap-2 justify-items-center  w-full justify-center'>
+					<div className='grid grid-cols-3 gap-2 justify-items-center max-w-[80%]  w-full justify-center'>
 						{data.values.map((value, index) => (
 							<CoreValuesItem
 								key={index}

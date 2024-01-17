@@ -5,16 +5,19 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 export default function BlogPostItem({ post }) {
 	const [showDescription, setShowDescription] = useState(false);
 	const isNewPost = () => {
-		const postDate = new Date(post.date);
-		const currentDate = new Date();
-		const threeDaysAgo = new Date(currentDate.setDate(currentDate.getDate() - 3));
+		if (post.date) {
+			const postDate = new Date(post.date);
+			const currentDate = new Date();
+			const threeDaysAgo = new Date(currentDate.setDate(currentDate.getDate() - 3));
 
-		return postDate >= threeDaysAgo;
+			return postDate >= threeDaysAgo;
+		}
+		return false;
 	};
 
 	return (
 		<div className='w-full h-full relative aspect-video space-y-[0.15rem]'>
-			<div className='absolute -top-4 -left-0 flex space-x-1'>
+			<div className='absolute -top-3 -left-0 flex space-x-1'>
 				{isNewPost() && (
 					<div className='bg-red-400 rounded-md px-2 text-sm sans xbold text-light'>NEW</div>
 				)}
@@ -22,12 +25,12 @@ export default function BlogPostItem({ post }) {
 					<div className='bg-four rounded-md px-2 text-sm sans xbold text-light'>FEATURED</div>
 				)}
 			</div>
-			<div className='transition-all duration-300 w-full bg-dark/10 flex flex-col rounded-b-md'>
+			<div className='transition-all duration-300 w-full h-fit bg-dark/10 flex flex-col rounded-b-md'>
 				<div className='w-full flex flex-col px-2 pt-2 rounded-t-md overflow-hidden'>
 					<AnchorLink
 						to={post.slug}
 						className='group cursor-pointer flex flex-col'>
-						<div className='flex flex-col w-full '>
+						<div className='flex flex-col w-full overflow-hidden '>
 							<div className='w-full flex null:flex-col md:flex-row justify-between'>
 								<span className='w-full sans text-sm text-dark/50 xbold text-nowrap'>
 									PUBLISHED {post.date.toUpperCase()}
@@ -38,18 +41,19 @@ export default function BlogPostItem({ post }) {
 									</span>
 								)}
 							</div>
-							<span className={`pb-2 w-full sans text-md xbold leading-tight xbold`}>
+							<span
+								className={`max-h-[42px] h-full overflow-hidden w-full sans text-md xbold leading-tight xbold line-clamp`}>
 								{post.title}
 							</span>
 						</div>
 
-						<div className='group-hover:opacity-80 cursor-pointer w-full h-fit bg-dark/10'>
+						<div className='px-4 py-2 drop-shadow-md group-hover:opacity-80 cursor-pointer w-full h-fit'>
 							<img src={pic}></img>
 						</div>
 					</AnchorLink>
 					<div
 						onClick={() => setShowDescription(!showDescription)}
-						className='hover:opacity-50 active:scale-95 cursor-pointer w-full justify-center rounded-b-md flex bg-dark/10'>
+						className='hover:opacity-50 active:scale-95 cursor-pointer w-full justify-center rounded-md flex bg-dark/10'>
 						<span className='py-1 sans xbold text-sm text-dark'>
 							{showDescription ? 'CLOSE EXCERPT' : 'OPEN EXCERPT'}
 						</span>

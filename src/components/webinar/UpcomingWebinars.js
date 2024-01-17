@@ -14,7 +14,7 @@ export default function UpcomingWebinars({ webinars }) {
 	return (
 		<>
 			<div className='flex flex-col w-full lg:w-[50%] h-full space-y-4 items-center null:px-4 mobile:px-8 sm:px-20 justify-center'>
-				<div className='flex flex-col -space-y-2 sm:-space-y-3 null:text-lg sm:text-[24px] mobile:text-xl md:text-xxl'>
+				<div className='flex flex-col -space-y-2 sm:-space-y-3 null:text-lg xs:text-[24px] mobile:text-xl md:text-xxl'>
 					<span className='serif  text-dark w-[480px] text-center'>
 						Register to save your seat in our
 					</span>

@@ -28,7 +28,7 @@ export default function ContactSection({ content }) {
 			<div className='border-b-2 lg:border-b-0 lg:border-r-2 pb-10 lg:pb-0 border-dark/10  flex flex-col justify-center items-center w-full lg:w-[50%] h-full space-y-2'>
 				<div className='flex flex-col items-center text-center justify-center text-dark'>
 					<span
-						className={`null:text-lg sm:text-[24px] mobile:text-xl md:text-xxl text-nowrap serif`}>
+						className={`null:text-lg xs:text-[24px] mobile:text-xl md:text-xxl text-nowrap serif`}>
 						Start your journey to success
 					</span>
 					<span className={`sans null:text-sm sm:text-md null:w-[240px] sm:w-[320px] lg:w-[370px]`}>
