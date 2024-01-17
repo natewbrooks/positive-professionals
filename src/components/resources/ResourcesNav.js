@@ -41,7 +41,7 @@ const ResourcesNav = ({ pageTitle, showTitle }) => {
 				{pageTitle === 'Return' && (
 					<AnchorLink
 						to={lastURL()}
-						className='flex sm:hidden hover:opacity-50 items-center justify-center sm:justify-start w-full text-center'>
+						className='flex sm:hidden md:hover:opacity-50 items-center justify-center sm:justify-start w-full text-center'>
 						<span className='relative text-lg xbold sans text-dark'>
 							BACK
 							<MdOutlineKeyboardArrowLeft
@@ -57,7 +57,7 @@ const ResourcesNav = ({ pageTitle, showTitle }) => {
 					<div className='w-full'>
 						<AnchorLink
 							to={lastURL()}
-							className='hidden sm:flex hover:opacity-50 items-center justify-center sm:justify-start w-fit text-center'>
+							className='hidden sm:flex md:hover:opacity-50 items-center justify-center sm:justify-start w-fit text-center'>
 							<MdOutlineKeyboardArrowLeft
 								size={24}
 								className='text-dark'
@@ -77,7 +77,7 @@ const ResourcesNav = ({ pageTitle, showTitle }) => {
 							className={` text-dark xbold cursor-pointer border-b-2 transition-colors duration-500 ${
 								location.pathname === '/resources/'
 									? 'border-four'
-									: 'border-transparent group-hover:opacity-50'
+									: 'border-transparent group-md:hover:opacity-50'
 							}`}>
 							RECENT
 						</span>
@@ -95,7 +95,7 @@ const ResourcesNav = ({ pageTitle, showTitle }) => {
 								className={` text-dark xbold cursor-pointer border-b-2 transition-colors duration-500 ${
 									location.pathname.includes(category.toLowerCase())
 										? 'border-four'
-										: 'border-transparent group-hover:opacity-50'
+										: 'border-transparent group-md:hover:opacity-50'
 								}`}>
 								{category.toUpperCase()}
 							</span>

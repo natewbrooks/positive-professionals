@@ -23,7 +23,7 @@ export default function ServicesItem({ service }) {
 						/>
 					</div>
 				</div>
-				<div className='relative group-hover:opacity-50 py-12 h-full flex flex-col items-center justify-center space-y-2 bg-dark/10 px-8 rounded-md'>
+				<div className='relative group-md:hover:opacity-50 py-12 h-full flex flex-col items-center justify-center space-y-2 bg-dark/10 px-8 rounded-md'>
 					<span className='serif text-xl'>{service.title}</span>
 					<span className='sans text-md'>{service.description}</span>
 				</div>

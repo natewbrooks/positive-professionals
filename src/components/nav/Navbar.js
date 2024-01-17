@@ -176,7 +176,7 @@ export default function Navbar() {
 									onClick={() => {
 										setBurgerNavShown(!isBurgerNavShown);
 									}}
-									className='flex lg:hidden select-none cursor-pointer hover:opacity-50 active:scale-95'>
+									className='flex lg:hidden select-none cursor-pointer md:hover:opacity-50 active:scale-95'>
 									<FaBars
 										size={24}
 										className='text-dark'

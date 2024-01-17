@@ -14,7 +14,7 @@ export default function Hero({ data }) {
 					</div>
 					<p className='break-words sans null:text-md lg:text-lg text-dark'>{data.subtext}</p>
 				</div>
-				<div className='sans text-md xbold text-dark bg-light cursor-pointer select-none hover:opacity-50 active:scale-95 p-2 rounded-md'>
+				<div className='sans text-md xbold text-dark bg-light cursor-pointer select-none md:hover:opacity-50 active:scale-95 p-2 rounded-md'>
 					GET STARTED
 				</div>
 			</div>

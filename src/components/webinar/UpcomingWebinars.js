@@ -22,7 +22,7 @@ export default function UpcomingWebinars({ webinars }) {
 				</div>
 				<div
 					onClick={() => openModal()}
-					className='null:text-md sm:text-lg bg-dark xbold select-none hover:opacity-50 active:scale-95 cursor-pointer text-light mt-20 p-2 rounded-md w-fit sans'>
+					className='null:text-md sm:text-lg bg-dark xbold select-none md:hover:opacity-50 active:scale-95 cursor-pointer text-light mt-20 p-2 rounded-md w-fit sans'>
 					REGISTER NOW
 				</div>
 				<div className='flex w-full h-full items-center justify-center'>

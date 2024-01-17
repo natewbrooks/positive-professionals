@@ -17,7 +17,7 @@ export default function BlogPostItem({ post }) {
 	return (
 		<AnchorLink
 			to={post.slug}
-			className='group hover:opacity-80 w-full h-full relative transition-all duration-300  bg-dark/10 pb-2 rounded-b-md '>
+			className='group md:hover:opacity-80 w-full h-full relative transition-all duration-300  bg-dark/10 pb-2 rounded-b-md '>
 			<div className='absolute -top-5 -left-0 flex space-x-1'>
 				{isNewPost() && (
 					<div className='bg-red-400 rounded-md px-2 py-1 text-sm sans xbold text-light'>NEW</div>

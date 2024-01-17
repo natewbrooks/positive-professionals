@@ -61,14 +61,14 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 										value={password}
 										onChange={(e) => setPassword(e.target.value)}
 										className='select-none bg-dark/10 rounded-md text-dark placeholder:text-dark py-1 px-2 sans'></input>
-									<span className='text-end sans text-sm xbold select-none cursor-pointer active:scale-95 text-dark/50 hover:opacity-50'>
+									<span className='text-end sans text-sm xbold select-none cursor-pointer active:scale-95 text-dark/50 md:hover:opacity-50'>
 										Forgot password?
 									</span>
 								</div>
 							</div>
 							<button
 								type='submit'
-								className='hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-dark text-light p-1 items-center flex justify-center sans text-sm w-[50%] rounded-md'>
+								className='md:hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-dark text-light p-1 items-center flex justify-center sans text-sm w-[50%] rounded-md'>
 								SUBMIT
 							</button>
 						</form>
@@ -76,7 +76,7 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 							<span className='text-sm sans'>Don't have an account?</span>
 							<span
 								onClick={() => setRegisterShown(true)}
-								className='hover:opacity-50 cursor-pointer select-none active:scale-95 text-sm sans xbold border-b-2  border-dark/10'>
+								className='md:hover:opacity-50 cursor-pointer select-none active:scale-95 text-sm sans xbold border-b-2  border-dark/10'>
 								REGISTER NOW
 							</span>
 						</div>
@@ -137,7 +137,7 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 							</div>
 							<button
 								type='submit'
-								className='hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-dark text-light p-1 items-center flex justify-center sans text-sm w-[40%] rounded-md'>
+								className='md:hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-dark text-light p-1 items-center flex justify-center sans text-sm w-[40%] rounded-md'>
 								CREATE ACCOUNT
 							</button>
 						</form>
@@ -145,7 +145,7 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 							<span className='text-sm sans'>Already have an account?</span>
 							<span
 								onClick={() => setRegisterShown(false)}
-								className='hover:opacity-50 cursor-pointer select-none active:scale-95 text-sm sans xbold border-b-2  border-dark/10'>
+								className='md:hover:opacity-50 cursor-pointer select-none active:scale-95 text-sm sans xbold border-b-2  border-dark/10'>
 								SIGN IN
 							</span>
 						</div>

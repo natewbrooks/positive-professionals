@@ -18,7 +18,7 @@ export default function ResourcesSection({ data }) {
 				<AnchorLink
 					to='/resources/'
 					className='group text-start flex flex-col -space-y-1 w-full'>
-					<span className={`group-hover:opacity-50 text-xxl serif`}>Resources</span>
+					<span className={`group-md:hover:opacity-50 text-xxl serif`}>Resources</span>
 					<span className={`sans text-md w-full`}>
 						Explore our collection of informative videos and previous webinars.
 					</span>
@@ -30,7 +30,7 @@ export default function ResourcesSection({ data }) {
 					to='/resources/blog/'
 					className='group flex flex-col -space-y-1 my-4 text-end'>
 					<span className={`sans text-sm `}>READ OUR STORIES</span>
-					<span className={`group-hover:opacity-50 text-xl serif`}>Blog posts</span>
+					<span className={`group-md:hover:opacity-50 text-xl serif`}>Blog posts</span>
 				</AnchorLink>
 				<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2'>
 					{blogPosts.map((post, index) => (
@@ -61,7 +61,7 @@ export default function ResourcesSection({ data }) {
 					to='/resources/videos/'
 					className='group flex flex-col -space-y-1 my-4 text-end'>
 					<span className={`sans text-sm `}>SEE US IN ACTION</span>
-					<span className={`group-hover:opacity-50 text-xl serif`}>Video catalog</span>
+					<span className={`group-md:hover:opacity-50 text-xl serif`}>Video catalog</span>
 				</AnchorLink>
 				<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2'>
 					{videoCatalog.map((video, index) => (
@@ -91,7 +91,7 @@ export default function ResourcesSection({ data }) {
 					to='/resources/webinars/'
 					className='group flex flex-col -space-y-1 my-4 text-end'>
 					<span className={`sans text-sm `}>FREE WEEKLY WEBINARS</span>
-					<span className={`group-hover:opacity-50 text-xl serif`}>Previous webinars</span>
+					<span className={`group-md:hover:opacity-50 text-xl serif`}>Previous webinars</span>
 				</AnchorLink>
 
 				<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2'>

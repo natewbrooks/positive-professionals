@@ -24,7 +24,7 @@ export default function Modal({ isOpen, onClose, children }) {
 						<div className='w-full justify-end text-end'>
 							<button
 								onClick={onClose}
-								className='serif text-md hover:opacity-50'>
+								className='serif text-md md:hover:opacity-50'>
 								<FaXmark size={22} />
 							</button>
 						</div>
