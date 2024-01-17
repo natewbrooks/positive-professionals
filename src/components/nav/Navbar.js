@@ -170,24 +170,25 @@ export default function Navbar() {
 										</span>
 									</div>
 								</div> */}
-								<div
-									onClick={() => {
+								<button
+									onClick={(e) => {
+										e.preventDefault();
 										setBurgerNavShown(!isBurgerNavShown);
 									}}
 									className='lg:hidden select-none cursor-pointer active:scale-95 w-[24px] h-[20px] flex flex-col justify-between'>
 									<div
-										className={`transition-all duration-300 ease-in-out h-[4px] w-full bg-dark rounded-full ${
+										className={`transform transition-all duration-300 ease-in-out h-[4px] w-full bg-dark rounded-full ${
 											isBurgerNavShown ? '-rotate-45 translate-y-2' : 'rotate-0'
 										}`}></div>
 									<div
-										className={`transition-all duration-500 ease-in-out h-[4px] w-full bg-dark rounded-full ${
+										className={`transform transition-all duration-500 ease-in-out h-[4px] w-full bg-dark rounded-full ${
 											isBurgerNavShown ? 'rotate-45' : 'rotate-0'
 										}`}></div>
 									<div
-										className={`transition-all duration-300 ease-in-out h-[4px] w-full bg-dark rounded-full ${
+										className={`transform transition-all duration-300 ease-in-out h-[4px] w-full bg-dark rounded-full ${
 											isBurgerNavShown ? '-rotate-45 -translate-y-2' : 'rotate-0'
 										}`}></div>
-								</div>
+								</button>
 							</div>
 							{/* <span className='text-dark/50'>|</span> */}
 							<SigninButton userData={userData} />
