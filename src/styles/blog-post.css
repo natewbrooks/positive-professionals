@@ -36,7 +36,7 @@ article {
 .blog-post-container li {
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 800;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .blog-post-container ol {
@@ -47,7 +47,7 @@ article {
 .blog-post-container h1,
 .blog-post-container h2,
 .blog-post-container h3 {
-    font-family: 'Alegreya', serif;
+    font-family: 'Source Sans 3', sans-serif;
     font-weight: 800;
     text-align: left;
     width: 100%;
@@ -66,4 +66,20 @@ article {
 
 .blog-post-container h3 {
     font-size: 24px;
+}
+
+@media (max-width: 798px) {
+    .blog-post-container li {
+        font-family: 'Source Sans 3', sans-serif;
+        font-weight: 800;
+        font-size: 24px;
+        color: var(--dark)
+    }
+
+
+    .blog-post-container ol {
+        margin: 1rem 1rem;
+        list-style-type: decimal;
+
+    }
 }

@@ -5,12 +5,13 @@
 
 /* Config vars */
 :root {
-    --primary: #34d399;
-    --secondary: #fdba74;
+    --primary: #22d3ee;
+    --secondary: #8b5cf6;
+    --tertiary: #0ea5e9;
+    --four: #6366f1;
     --background: #fafaf9;
     --text-color: #121212;
 }
-
 
 .dark {
     --primary: #34d399;
@@ -78,4 +79,16 @@
         height: 100px;
         width: 250px;
     }
+}
+
+.blue-waves-bg {
+    height: 500px;
+    display: block;
+    background-color: var(--tertiary);
+    background-image:
+        url("../img/bg-waves/blue-waves-bottom.svg"),
+        url("../img/bg-waves/blue-waves-top.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center, 0%, 50%;
 }

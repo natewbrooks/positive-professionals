@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useLayoutEffect } from 'react';
+import React, { useEffect, useState, useRef, useLayoutEffect, useCallback } from 'react';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import TestimonialItem from '../testimonials/TestimonialItem';
 import SeeMore from '../pieces/SeeMore';
@@ -83,15 +83,47 @@ export default function TestimonialsSection({ data }) {
 		}
 		setTranslateX([0, -itemWidth * testimonials.length]);
 	}
+	//
 
-	const handleVisibilityChange = () => {
+	const testimonialsContainerRef = useRef(null);
+
+	const handleVisibilityChange = useCallback(() => {
 		if (document.visibilityState === 'visible') {
+			setIntervalActive(true);
 			recalcPos();
-			// Perform actions when the user returns to the page
 		} else {
-			clearInterval(interval);
+			setIntervalActive(false);
 		}
-	};
+	}, [recalcPos]);
+
+	const handleIntersection = useCallback((entries) => {
+		const [entry] = entries;
+		setIntervalActive(entry.isIntersecting);
+	}, []);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(handleIntersection, {
+			root: null,
+			threshold: 0.1,
+		});
+		if (testimonialsContainerRef.current) {
+			observer.observe(testimonialsContainerRef.current);
+		}
+		return () => {
+			if (testimonialsContainerRef.current) {
+				observer.unobserve(testimonialsContainerRef.current);
+			}
+		};
+	}, [handleIntersection]);
+
+	useEffect(() => {
+		document.addEventListener('visibilitychange', handleVisibilityChange);
+		return () => {
+			document.removeEventListener('visibilitychange', handleVisibilityChange);
+		};
+	}, [handleVisibilityChange]);
+
+	//
 
 	useLayoutEffect(() => {
 		// Direct DOM manipulation before browser paint.
@@ -106,8 +138,6 @@ export default function TestimonialsSection({ data }) {
 
 	let interval;
 	useEffect(() => {
-		document.addEventListener('visibilitychange', handleVisibilityChange);
-
 		if (isIntervalActive) {
 			interval = setInterval(() => {
 				setTranslateX(translateX.map((x) => (isScrollingRight ? x + itemWidth : x - itemWidth)));
@@ -122,7 +152,6 @@ export default function TestimonialsSection({ data }) {
 			if (interval) {
 				clearInterval(interval);
 			}
-			document.removeEventListener('visibilitychange', handleVisibilityChange);
 		};
 	}, [
 		testimonials.length,
@@ -216,7 +245,8 @@ export default function TestimonialsSection({ data }) {
 	return (
 		<section
 			id='testimonials'
-			className='relative w-full h-full overflow-hidden'>
+			ref={testimonialsContainerRef}
+			className='relative w-full h-full overflow-hidden z-20'>
 			<div className='relative items-center justify-between flex py-2 group cursor-pointer leading-tight'>
 				<span className='sans text-sm'>TESTIMONIALS</span>
 			</div>

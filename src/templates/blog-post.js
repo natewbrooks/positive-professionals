@@ -51,7 +51,7 @@ export const BlogPostTemplate = ({
 					</div>
 				</div>
 				<section className='w-full h-full mt-8 mb-20 flex flex-col  items-center justify-center'>
-					<div className='p-4 w-full h-full flex flex-col space-y-4 justify-center items-center'>
+					<div className='px-4 w-full h-full flex flex-col space-y-4 justify-center items-center'>
 						<div className='w-full h-full flex flex-col'>
 							<article
 								className='blog-post-container xl:px-[4rem] xxl:px-[24rem] text-dark'

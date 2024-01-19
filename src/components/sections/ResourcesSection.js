@@ -86,7 +86,7 @@ export default function ResourcesSection({ data }) {
 					<SeeMore />
 				</AnchorLink>
 			</div>
-			<div className='w-full flex flex-col justify-center'>
+			{/* <div className='w-full flex flex-col justify-center'>
 				<AnchorLink
 					to='/resources/webinars/'
 					className='group flex flex-col -space-y-1 my-4 text-end'>
@@ -117,7 +117,7 @@ export default function ResourcesSection({ data }) {
 					to='/resources/webinars/'>
 					<SeeMore />
 				</AnchorLink>
-			</div>
+			</div> */}
 		</section>
 	);
 }

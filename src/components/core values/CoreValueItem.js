@@ -12,12 +12,12 @@ export default function CoreValuesItem({ text, Icon }) {
 				}}
 				className='transition-all duration-300 w-full bg-dark/10 select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
 				<Icon size={42} />
-				<span className='sans xbold text-sm'>{text}</span>
+				<span className='sans xbold null:text-xs md:text-sm'>{text}</span>
 			</div>
 			<Modal
 				isOpen={isModalOpen}
 				onClose={() => setModalOpen(false)}>
-				<div className='null:w-fit xl:w-[600px] h-full flex flex-col text-dark pb-8'>
+				<div className='null:w-fit xl:w-[600px] h-full flex flex-col text-dark null:pb-8 md:pb-4'>
 					<div className='flex flex-col leading-tight pb-4'>
 						<span className='sans text-md text-dark/50 xbold text-center'>CORE VALUE</span>
 						<span className='serif text-xxl text-center'>{text}</span>

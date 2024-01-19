@@ -1,10 +1,12 @@
 import React from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FaLinkedin } from 'react-icons/fa';
+import bkg from '../../img/pprobackground2.png';
+import FullWidthImage from '../FullWidthImage';
 
 export default function Hero({ data }) {
 	return (
-		<div className='relative flex justify-center items-center w-full h-fit py-40 bg-custom-gradient'>
+		<div className='relative flex justify-center items-center w-full h-fit py-40'>
 			<div className='pt-8 flex flex-col space-y-8 items-center justify-center h-full'>
 				<div className='text-center flex flex-col space-y-2 px-4'>
 					<div className='flex flex-col -space-y-8'>

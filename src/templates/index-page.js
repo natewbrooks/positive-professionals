@@ -14,7 +14,6 @@ import FirstStepsSection from '../components/sections/FirstStepsSection';
 import Hero from '../components/sections/Hero';
 import ScrollingLogoSection from '../components/sections/ScrollingLogoSection';
 import WhoWeAreSection from '../components/sections/WhoWeAreSection';
-
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
 	hero,
@@ -29,7 +28,7 @@ export const IndexPageTemplate = ({
 	return (
 		<div
 			id='canvas'
-			className='relative w-full h-full overflow-x-hidden'>
+			className='relative w-full h-full'>
 			<Hero data={hero} />
 
 			<div className='overflow-x-hidden w-full h-full justify-center items-center py-[4rem] lg:py-[6rem] px-[2rem] md:mx-auto lg:px-[8rem] xl:px-[16rem] xxl:px-[20rem] xxxl:px-[36rem] flex flex-col space-y-[10rem]'>
@@ -37,13 +36,24 @@ export const IndexPageTemplate = ({
 					<WhoWeAreSection data={whoWeAre} />
 					<TeamSection data={team} />
 				</div>
+
 				<CoreValuesSection data={coreValues} />
-				<div className='flex flex-col space-y-4'>
+
+				<div className='flex flex-col top-0  space-y-4'>
 					<WorkedWithSection />
 					<TestimonialsSection data={workedWith} />
 				</div>
 				<ServicesSection data={services} />
 				<FirstStepsSection data={getStarted} />
+
+				{/* <div className='z-10 absolute bg-tertiary w-full h-[500px] -translate-y-[1050px]'>
+					<img
+						src={blueWavesTop}
+						className='w-full bottom-0 translate-y-[400px]'></img>
+					<img
+						src={blueWavesBottom}
+						className='w-full top-0 -translate-y-[1000px] '></img>
+				</div> */}
 				<ResourcesSection data={resources} />
 			</div>
 		</div>
