@@ -3,7 +3,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import SigninButton from '../sign in/SigninButton';
 import NavDropdownItem from './NavDropdownItem';
 import { useLocation } from '@reach/router';
-import puzzleTree from '../../img/logo.svg';
+import logo from '../../img/logo/pp-bg.svg';
 import { has } from 'lodash';
 
 export default function Navbar() {
@@ -121,14 +121,14 @@ export default function Navbar() {
 							title={'Home'}>
 							<div className='flex flex-col justify-center h-full items-center'>
 								<img
-									src={puzzleTree}
+									src={logo}
 									alt='logo'
-									className='w-[48px] h-[48px]'
+									className='transition-all duration-[500ms] ease-in-out w-[48px] h-[48px] mobile:w-[52px] mobile:h-[52px] '
 								/>
 								<div
 									style={{
 										maxHeight: hasScrolled ? '0px' : '30px',
-										paddingTop: hasScrolled ? '0px' : '6px',
+										paddingTop: hasScrolled ? '0px' : '2px',
 										transform: hasScrolled ? 'translateY(20px)' : 'translateY(0px)',
 									}}
 									className={`relative transition-all duration-[500ms] ease-in-out flex text-sm text-dark flex-col text-center w-fit leading-none`}>

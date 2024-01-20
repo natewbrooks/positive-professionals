@@ -1,8 +1,6 @@
 import React from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FaLinkedin } from 'react-icons/fa';
-import bkg from '../../img/pprobackground2.png';
-import FullWidthImage from '../FullWidthImage';
 
 export default function Hero({ data }) {
 	return (

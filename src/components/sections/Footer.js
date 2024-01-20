@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FaLinkedin } from 'react-icons/fa';
-import logo from '../../img/pp.svg';
+import logo from '../../img/logo/pp-outline.svg';
 
 export default function Footer({}) {
 	return (
@@ -15,7 +15,7 @@ export default function Footer({}) {
 						<img
 							src={logo}
 							alt='logo'
-							style={{ width: '76px', height: '76px' }}
+							style={{ width: '100px', height: '100px' }}
 						/>
 						{/* <div className='relative flex z-10'>
 							<div className='z-50 bg-primary p-4 rotate-45'></div>
