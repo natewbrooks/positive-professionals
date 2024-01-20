@@ -117,9 +117,9 @@ export default function Navbar() {
 						<AnchorLink
 							to='/'
 							onAnchorLinkClick={() => window.scrollTo(0, 0)}
-							className='bg-light overflow-hidden w-fit  h-fit transition-all duration-[600ms] ease-in-out pt-1'
+							className='py-2 bg-light overflow-hidden w-fit h-fit transition-all duration-[600ms] ease-in-out '
 							title={'Home'}>
-							<div className='flex flex-col justify-center h-full items-center space-y-1'>
+							<div className='flex flex-col justify-center h-full items-center'>
 								<img
 									src={puzzleTree}
 									alt='logo'
@@ -128,7 +128,7 @@ export default function Navbar() {
 								<div
 									style={{
 										maxHeight: hasScrolled ? '0px' : '30px',
-										paddingBottom: hasScrolled ? '1px' : '4px',
+										paddingTop: hasScrolled ? '0px' : '6px',
 										transform: hasScrolled ? 'translateY(20px)' : 'translateY(0px)',
 									}}
 									className={`relative transition-all duration-[500ms] ease-in-out flex text-sm text-dark flex-col text-center w-fit leading-none`}>
