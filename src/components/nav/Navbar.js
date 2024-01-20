@@ -119,7 +119,7 @@ export default function Navbar() {
 							onAnchorLinkClick={() => window.scrollTo(0, 0)}
 							className='py-2 bg-light overflow-hidden w-fit h-fit transition-all duration-[600ms] ease-in-out '
 							title={'Home'}>
-							<div className='flex flex-col justify-center h-full items-center'>
+							<div className='flex flex-col justify-center w-full h-full items-center'>
 								<img
 									src={logo}
 									alt='logo'
@@ -128,8 +128,10 @@ export default function Navbar() {
 								<div
 									style={{
 										maxHeight: hasScrolled ? '0px' : '30px',
+										maxWidth: hasScrolled ? '0px' : '100px',
 										paddingTop: hasScrolled ? '0px' : '2px',
 										transform: hasScrolled ? 'translateY(20px)' : 'translateY(0px)',
+										transform: hasScrolled ? 'translateX(40px)' : 'translateX(0px)',
 									}}
 									className={`relative transition-all duration-[500ms] ease-in-out flex text-sm text-dark flex-col text-center w-fit leading-none`}>
 									<span className='sans xbold'>POSITIVE</span>
