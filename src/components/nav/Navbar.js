@@ -3,7 +3,8 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import SigninButton from '../sign in/SigninButton';
 import NavDropdownItem from './NavDropdownItem';
 import { useLocation } from '@reach/router';
-import puzzleTree from '../../img/pp.svg';
+import puzzleTree from '../../img/logo.svg';
+import { has } from 'lodash';
 
 export default function Navbar() {
 	const [activeHash, setActiveHash] = useState('');
@@ -109,25 +110,26 @@ export default function Navbar() {
 				className='fixed bg-light dark:bg-darkAccent w-full z-50 drop-shadow-md overflow-visible'
 				role='navigation'
 				aria-label='main-navigation'>
-				<div className='flex items-center'>
+				<div className='flex flex-col items-center'>
 					<div
 						id='navMenu'
-						className={`transition-all duration-[600ms] ease-in-out flex null:py-4 lg:py-0 md:px-0 lg:px-10 xl:px-40 xxl:px-80 z-50 bg-light overflow-hidden items-center w-full h-full justify-around`}>
+						className={`flex py-0 md:px-0 lg:px-10 xl:px-40 xxl:px-80 z-50 bg-light items-center w-full h-full justify-around`}>
 						<AnchorLink
 							to='/'
 							onAnchorLinkClick={() => window.scrollTo(0, 0)}
-							className='px-4 '
+							className='bg-light overflow-hidden w-fit  h-fit transition-all duration-[600ms] ease-in-out pt-1'
 							title={'Home'}>
-							<div className='py-2 flex flex-col justify-center h-full items-center space-y-1'>
+							<div className='flex flex-col justify-center h-full items-center space-y-1'>
 								<img
 									src={puzzleTree}
 									alt='logo'
-									style={{ width: '48px', height: '48px' }}
+									className='w-[48px] h-[48px]'
 								/>
 								<div
 									style={{
-										transform: hasScrolled ? 'translateY(50px)' : 'translateY(0px)',
-										maxHeight: hasScrolled ? '0px' : '300px',
+										maxHeight: hasScrolled ? '0px' : '30px',
+										paddingBottom: hasScrolled ? '1px' : '4px',
+										transform: hasScrolled ? 'translateY(20px)' : 'translateY(0px)',
 									}}
 									className={`relative transition-all duration-[500ms] ease-in-out flex text-sm text-dark flex-col text-center w-fit leading-none`}>
 									<span className='sans xbold'>POSITIVE</span>
@@ -141,14 +143,16 @@ export default function Navbar() {
 								<div className='z-10 absolute -right-4 bg-four p-4 rotate-45 rounded-sm'></div>
 							</div> */}
 						</AnchorLink>
-						<div className='flex h-full space-x-4 '>
+						<div className='flex h-full space-x-4'>
 							{navLinks.map((link) => (
 								<AnchorLink
 									key={'#' + link.hash}
 									to={'/#' + link.hash}
 									title={link.title}
 									onAnchorLinkClick={() => setActiveHash(link.hash)}
-									className={`w-full h-full hidden lg:block sans  text-dark text-md px-2 py-5 border-b-2 text-nowrap ${
+									className={`w-full h-full hidden lg:block sans transition-all duration-[300ms] text-dark text-md px-2 ${
+										hasScrolled ? 'py-5' : 'py-8'
+									} border-b-2 text-nowrap ${
 										isHashActive(link.hash)
 											? ' border-four hover:border-four'
 											: 'border-light hover:border-four/50'
@@ -165,6 +169,7 @@ export default function Navbar() {
 										isHashActive={isHashActive}
 										isBurgerNavShown={isBurgerNavShown}
 										setActiveHash={setActiveHash}
+										hasScrolled={hasScrolled}
 									/>
 								</div>
 							) : (
@@ -176,6 +181,7 @@ export default function Navbar() {
 										isHashActive={isHashActive}
 										isBurgerNavShown={isBurgerNavShown}
 										setActiveHash={setActiveHash}
+										hasScrolled={hasScrolled}
 									/>
 								</div>
 							)}
@@ -245,6 +251,7 @@ export default function Navbar() {
 							isHashActive={isHashActive}
 							isBurgerNavShown={isBurgerNavShown}
 							setActiveHash={setActiveHash}
+							hasScrolled={hasScrolled}
 						/>
 					) : (
 						<NavDropdownItem
@@ -254,6 +261,7 @@ export default function Navbar() {
 							isHashActive={isHashActive}
 							isBurgerNavShown={isBurgerNavShown}
 							setActiveHash={setActiveHash}
+							hasScrolled={hasScrolled}
 						/>
 					)}
 				</div>

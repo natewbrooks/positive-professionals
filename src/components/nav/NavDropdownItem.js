@@ -11,6 +11,7 @@ export default function NavDropdownItem({
 	isHashActive,
 	isBurgerNavShown,
 	setActiveHash,
+	hasScrolled,
 }) {
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -33,6 +34,8 @@ export default function NavDropdownItem({
 		} else {
 			startCloseTimer();
 		}
+
+		console.log(bool);
 	};
 
 	return (
@@ -40,11 +43,13 @@ export default function NavDropdownItem({
 			<div
 				onMouseEnter={stopCloseTimer}
 				onMouseLeave={startCloseTimer}
-				className='hidden lg:block w-full relative'>
+				className='hidden lg:block w-full relative overflow-visible'>
 				<AnchorLink
 					onAnchorLinkClick={() => toggleDropdown(!isOpen)}
 					to={hash}
-					className={`flex w-full h-full items-center sans  text-dark text-md px-2 py-5 border-b-2 text-nowrap ${
+					className={`transition-all duration-[300ms] flex w-full h-full items-center sans text-dark text-md px-2 ${
+						hasScrolled ? 'py-5' : 'py-8'
+					}  border-b-2 text-nowrap ${
 						isHashActive(hash)
 							? ' border-four hover:border-four'
 							: 'border-light hover:border-four/50'
@@ -82,7 +87,9 @@ export default function NavDropdownItem({
 				onClick={() => toggleDropdown(!isOpen)}
 				key={'#' + hash}
 				title={title}
-				className={`lg:hidden relative bg-dark border-b-2 py-5 px-4 text-light border-light/10  text-sm flex w-full justify-center items-center text-center ${
+				className={`lg:hidden relative bg-dark border-b-2 ${
+					hasScrolled ? 'py-5' : 'py-8'
+				} px-4 text-light border-light/10  text-sm flex w-full justify-center items-center text-center ${
 					isHashActive(hash) ? 'border-b-primary hover:border-b-primary' : ''
 				} `}>
 				<span className={`text-center sans xbold text-nowrap`}>{title.toUpperCase()}</span>
