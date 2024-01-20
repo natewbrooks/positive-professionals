@@ -3,7 +3,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import SigninButton from '../sign in/SigninButton';
 import NavDropdownItem from './NavDropdownItem';
 import { useLocation } from '@reach/router';
-import puzzleTree from '../../img/Puzzletree.svg';
+import puzzleTree from '../../img/pp.svg';
 
 export default function Navbar() {
 	const [activeHash, setActiveHash] = useState('');
@@ -111,11 +111,17 @@ export default function Navbar() {
 							onAnchorLinkClick={() => window.scrollTo(0, 0)}
 							className='px-4 '
 							title={'Home'}>
-							<img
-								src={puzzleTree}
-								alt='logo'
-								style={{ width: '80px' }}
-							/>
+							<div className='py-2 flex flex-col justify-center h-full items-center space-y-1'>
+								<img
+									src={puzzleTree}
+									alt='logo'
+									style={{ width: '64px', height: '64px' }}
+								/>
+								<div className='flex text-sm text-dark flex-col text-center w-fit leading-none'>
+									<span className='sans xbold'>POSITIVE</span>
+									<span className='sans'>PROFESSIONALS</span>
+								</div>
+							</div>
 							{/* <div className='relative flex'>
 								<div className='z-20 absolute -left-2 top-0 bg-secondary p-4 rotate-45 rounded-sm'></div>
 								<div className='z-40 bg-primary p-4 rotate-45 rounded-md'></div>
