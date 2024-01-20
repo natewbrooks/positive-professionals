@@ -1,22 +1,28 @@
 import React from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FaLinkedin } from 'react-icons/fa';
+import logo from '../../img/pp.svg';
 
 export default function Footer({}) {
 	return (
 		<footer className='bg-dark w-full h-full p-12 flex-col sm:flex-row  flex justify-around'>
-			<div className='flex flex-col space-y-8 items-center justify-center'>
+			<div className='flex flex-col space-y-4 items-center justify-center'>
 				<div className='flex items-center justify-center'>
 					<AnchorLink
 						to='/#canvas'
 						className=''
 						title={'Home'}>
-						<div className='relative flex z-10'>
+						<img
+							src={logo}
+							alt='logo'
+							style={{ width: '76px', height: '76px' }}
+						/>
+						{/* <div className='relative flex z-10'>
 							<div className='z-50 bg-primary p-4 rotate-45'></div>
 							<div className='z-20 absolute -left-2 top-0 bg-secondary p-4 rotate-45'></div>
 							<div className='z-40 absolute -right-2 bg-tertiary p-4 rotate-45'></div>
 							<div className='z-10 absolute -right-4 bg-four p-4 rotate-45'></div>
-						</div>
+						</div> */}
 					</AnchorLink>
 				</div>
 				<span className='sans text-sm text-center text-light/40'>

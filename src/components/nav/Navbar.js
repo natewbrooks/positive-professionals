@@ -12,6 +12,11 @@ export default function Navbar() {
 	const [isBurgerNavShown, setBurgerNavShown] = useState(false);
 	const [currentPath, setCurrentPath] = useState('');
 	const location = useLocation();
+	const [hasScrolled, setHasScrolled] = useState(false);
+
+	const handleScroll = () => {
+		setHasScrolled(window.scrollY > 0);
+	};
 
 	useEffect(() => {
 		setCurrentPath(location.pathname);
@@ -56,6 +61,7 @@ export default function Navbar() {
 
 	useEffect(() => {
 		window.addEventListener('resize', resizeWindow);
+		window.addEventListener('scroll', handleScroll);
 
 		// if (darkModeActive) {
 		// 	document.documentElement.classList.add('dark');
@@ -92,6 +98,7 @@ export default function Navbar() {
 		// Disconnect the observer on unmount
 		return () => {
 			window.removeEventListener('resize', resizeWindow);
+			window.removeEventListener('scroll', handleScroll);
 			observer.disconnect();
 		};
 	}, [navHeight, isBurgerNavShown]);
@@ -105,7 +112,7 @@ export default function Navbar() {
 				<div className='flex items-center'>
 					<div
 						id='navMenu'
-						className={`flex null:py-4 lg:py-0 md:px-0 lg:px-10 xl:px-40 xxl:px-80 z-50 bg-light items-center w-full h-full justify-around`}>
+						className={`transition-all duration-[600ms] ease-in-out flex null:py-4 lg:py-0 md:px-0 lg:px-10 xl:px-40 xxl:px-80 z-50 bg-light overflow-hidden items-center w-full h-full justify-around`}>
 						<AnchorLink
 							to='/'
 							onAnchorLinkClick={() => window.scrollTo(0, 0)}
@@ -115,9 +122,14 @@ export default function Navbar() {
 								<img
 									src={puzzleTree}
 									alt='logo'
-									style={{ width: '64px', height: '64px' }}
+									style={{ width: '48px', height: '48px' }}
 								/>
-								<div className='flex text-sm text-dark flex-col text-center w-fit leading-none'>
+								<div
+									style={{
+										transform: hasScrolled ? 'translateY(50px)' : 'translateY(0px)',
+										maxHeight: hasScrolled ? '0px' : '300px',
+									}}
+									className={`relative transition-all duration-[500ms] ease-in-out flex text-sm text-dark flex-col text-center w-fit leading-none`}>
 									<span className='sans xbold'>POSITIVE</span>
 									<span className='sans'>PROFESSIONALS</span>
 								</div>
