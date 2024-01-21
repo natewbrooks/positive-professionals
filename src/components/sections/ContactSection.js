@@ -24,9 +24,9 @@ export default function ContactSection({ content }) {
 	return (
 		<section
 			id='contact'
-			className='relative w-full h-full py-12 bg-dark/10 space-y-10 lg:space-y-0 flex flex-col justify-center items-center lg:flex-row'>
+			className='relative w-full h-full py-12 bg-dark/10 dark:bg-darkAccent space-y-10 lg:space-y-0 flex flex-col justify-center items-center lg:flex-row'>
 			<div className='border-b-2 lg:border-b-0 lg:border-r-2 pb-10 lg:pb-0 border-dark/10  flex flex-col justify-center items-center w-full lg:w-[50%] h-full space-y-2'>
-				<div className='flex flex-col items-center text-center justify-center text-dark'>
+				<div className='flex flex-col items-center text-center justify-center text-dark dark:text-light/70 '>
 					<span
 						className={`null:text-lg xs:text-[24px] mobile:text-xl md:text-xxl text-nowrap serif`}>
 						Start your journey to success
@@ -39,31 +39,31 @@ export default function ContactSection({ content }) {
 				<form className='flex flex-col bg-transparent p-4 rounded-md justify-center items-center space-y-8'>
 					<div className='flex flex-col space-y-2'>
 						<div className='flex flex-col'>
-							<span className='sans text-sm text-dark'>
+							<span className='sans text-sm text-dark dark:text-light/70'>
 								<span className='text-four'>* </span>Name
 							</span>
 							<input
 								type='text'
-								className='select-none bg-dark/10 rounded-md text-dark placeholder:text-dark py-1 px-2 sans'></input>
+								className='select-none bg-dark/10 dark:bg-light/10 rounded-md text-dark dark:text-light/70 placeholder:text-dark py-1 px-2 sans'></input>
 						</div>
 						<div className='flex flex-col'>
-							<span className='sans text-sm text-dark'>
+							<span className='sans text-sm text-dark dark:text-light/70'>
 								<span className='text-four'>* </span>Email
 							</span>
 							<input
 								type='email'
-								className='select-none bg-dark/10 rounded-md text-dark placeholder:text-dark py-1 px-2 sans'></input>
+								className='select-none bg-dark/10 dark:bg-light/10 rounded-md text-dark dark:text-light/70 placeholder:text-dark py-1 px-2 sans'></input>
 						</div>
 						<div className='flex flex-col'>
-							<span className='sans text-sm text-dark'>
+							<span className='sans text-sm text-dark dark:text-light/70'>
 								<span className='text-four'>* </span>Phone Number
 							</span>
 							<input
 								type='tel'
-								className='select-none bg-dark/10 rounded-md text-dark placeholder:text-dark py-1 px-2 sans'></input>
+								className='select-none bg-dark/10 dark:bg-light/10 rounded-md text-dark dark:text-light/70 placeholder:text-dark py-1 px-2 sans'></input>
 						</div>
 					</div>
-					<div className='null:text-md sm:text-lg md:hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-dark text-light p-1 items-center flex justify-center sans w-[50%] rounded-md'>
+					<div className='null:text-md sm:text-lg md:hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-dark text-light dark:bg-light/70 dark:text-darkAccent p-1 items-center flex justify-center sans w-[50%] rounded-md'>
 						SUBMIT
 					</div>
 				</form>

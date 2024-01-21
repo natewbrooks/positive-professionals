@@ -14,7 +14,7 @@ export default function CoreValuesSection({ data }) {
 	return (
 		<section
 			id='values'
-			className='blue-waves-bg z-20 pt-40 pb-60 relative w-full h-fit flex justify-center items-center'>
+			className='blue-waves-bg pt-40 pb-60 relative w-full h-fit flex justify-center items-center'>
 			<div className='flex flex-col space-y-4 items-center justify-center'>
 				<div className='flex flex-col leading-tight w-full text-center'>
 					<span className='sans text-sm'>{data.subtext.toUpperCase()}</span>

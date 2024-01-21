@@ -10,9 +10,14 @@ export default function CoreValuesItem({ text, Icon }) {
 				onClick={() => {
 					setModalOpen(true);
 				}}
-				className='transition-all duration-300 w-full bg-dark/10 select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
-				<Icon size={42} />
-				<span className='sans xbold null:text-xs md:text-sm'>{text}</span>
+				className='transition-all duration-300 w-full bg-light dark:bg-dark select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
+				<Icon
+					size={42}
+					className='text-dark dark:text-light/50'
+				/>
+				<span className='sans xbold null:text-xs md:text-sm text-dark dark:text-light/70'>
+					{text}
+				</span>
 			</div>
 			<Modal
 				isOpen={isModalOpen}
@@ -22,7 +27,7 @@ export default function CoreValuesItem({ text, Icon }) {
 						<span className='sans text-md text-dark/50 xbold text-center'>CORE VALUE</span>
 						<span className='serif text-xxl text-center'>{text}</span>
 					</div>
-					<div className='border-b-2 border-dark/10 pb-2 sans text-md'>
+					<div className='pb-2 sans text-md'>
 						As executive coaches, "Persistence" is a core value that underpins our approach to
 						leadership development and professional growth. In the ever-evolving landscape of
 						business and leadership, persistence is not just about steadfastness or endurance; it's
@@ -30,9 +35,8 @@ export default function CoreValuesItem({ text, Icon }) {
 						face of challenges and setbacks. We see persistence as a multi-dimensional trait that
 						encompasses several key aspects:
 					</div>
-					<div className='null:h-full md:h-[400px] sans text-md overflow-y-auto'>
+					<div className='null:h-full md:h-[400px] bg-dark/10 py-4 px-2 rounded-x-md rounded-b-md sans text-md overflow-y-auto'>
 						<div className='h-full px-4 flex flex-col space-y-4'>
-							<br />
 							<span className='xbold'>1. Resilience in Adversity:</span> In the fast-paced and often
 							unpredictable business environment, challenges and obstacles are inevitable.
 							Persistence empowers leaders to navigate these with resilience, turning potential

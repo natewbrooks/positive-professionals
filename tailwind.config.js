@@ -37,7 +37,7 @@ module.exports = {
 				four: '#6366f1',
 				light: '#f2f2f2',
 				dark: '#121212',
-				darkAccent: '#27272a',
+				darkAccent: '#292929',
 			},
 			fontSize: {
 				xs: '12px',

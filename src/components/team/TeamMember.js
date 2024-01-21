@@ -14,10 +14,10 @@ export default function TeamMember({ member, color }) {
 		<div className='w-full h-full group hover:select-none hover:cursor-pointer'>
 			<div
 				onClick={() => setModalOpen(true)}
-				className={`relative bg-dark/10 group-hover:bg-opacity-50 transition-all duration-300 ${color} bg-opacity-70 flex items-center py-12 px-20 rounded-md`}>
+				className={`relative bg-dark/10 group-hover:bg-opacity-50 transition-all duration-300 ${color} flex items-center py-12 px-20 rounded-md`}>
 				<FaUser
 					size={180}
-					className=''
+					className='text-light dark:text-dark'
 				/>
 			</div>
 			<div

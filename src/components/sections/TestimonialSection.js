@@ -246,9 +246,9 @@ export default function TestimonialsSection({ data }) {
 		<section
 			id='testimonials'
 			ref={testimonialsContainerRef}
-			className='relative w-full h-full overflow-hidden z-20'>
+			className='relative w-full h-full overflow-hidden z-10'>
 			<div className='relative items-center justify-between flex py-2 group cursor-pointer leading-tight'>
-				<span className='sans text-sm'>TESTIMONIALS</span>
+				<span className='sans text-sm text-dark dark:text-light/60'>TESTIMONIALS</span>
 			</div>
 
 			<div

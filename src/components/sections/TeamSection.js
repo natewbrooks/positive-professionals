@@ -8,7 +8,7 @@ export default function TeamSection({ data }) {
 	return (
 		<section
 			id='team'
-			className='flex flex-col items-center justify-center space-y-4'>
+			className='text-dark dark:text-light/60 flex flex-col items-center justify-center space-y-4'>
 			<div className='flex w-full flex-col leading-tight text-end'>
 				<span className='sans text-sm'>{data.subtext.toUpperCase()}</span>
 

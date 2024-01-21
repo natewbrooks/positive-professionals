@@ -47,12 +47,12 @@ export default function NavDropdownItem({
 				<AnchorLink
 					onAnchorLinkClick={() => toggleDropdown(!isOpen)}
 					to={hash}
-					className={`transition-all duration-[300ms] flex w-full h-full items-center sans text-dark text-md px-2 ${
+					className={`w-full h-full hidden lg:flex items-center sans transition-all duration-[300ms] text-dark dark:text-light/60 text-md px-2  ${
 						hasScrolled ? 'py-5' : 'py-8'
 					}  border-b-2 text-nowrap ${
 						isHashActive(hash)
 							? ' border-four hover:border-four'
-							: 'border-light hover:border-four/50'
+							: 'border-light dark:border-light/70 hover:border-four/50'
 					}`}>
 					{title}
 					<MdOutlineKeyboardArrowDown
@@ -87,9 +87,7 @@ export default function NavDropdownItem({
 				onClick={() => toggleDropdown(!isOpen)}
 				key={'#' + hash}
 				title={title}
-				className={`lg:hidden relative bg-dark border-b-2 ${
-					hasScrolled ? 'py-5' : 'py-8'
-				} px-4 text-light border-light/10  text-sm flex w-full justify-center items-center text-center ${
+				className={`lg:hidden relative bg-dark dark:bg-darkAccent border-b-2 py-5 px-4 text-light border-light/10 dark:border-light/70 text-sm flex w-full justify-center items-center text-center ${
 					isHashActive(hash) ? 'border-b-primary hover:border-b-primary' : ''
 				} `}>
 				<span className={`text-center sans xbold text-nowrap`}>{title.toUpperCase()}</span>

@@ -80,15 +80,3 @@
         width: 250px;
     }
 }
-
-.blue-waves-bg {
-    height: 500px;
-    display: block;
-    background-color: var(--tertiary);
-    background-image:
-        url("../img/bg-waves/blue-waves-bottom.svg"),
-        url("../img/bg-waves/blue-waves-top.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom center, 0%, 50%;
-}

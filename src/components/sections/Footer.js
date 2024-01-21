@@ -15,7 +15,7 @@ export default function Footer({}) {
 						<img
 							src={logo}
 							alt='logo'
-							style={{ width: '100px', height: '100px' }}
+							style={{ width: '84px', height: '84px' }}
 						/>
 						{/* <div className='relative flex z-10'>
 							<div className='z-50 bg-primary p-4 rotate-45'></div>
@@ -25,8 +25,8 @@ export default function Footer({}) {
 						</div> */}
 					</AnchorLink>
 				</div>
-				<span className='sans text-sm text-center text-light/40'>
-					COPYRIGHT @ 2024 <br></br>POSITIVE PROFESSIONALS LLC.
+				<span className='sans text-sm text-center text-light/50'>
+					COPYRIGHT @ 2024 <br></br>POSITIVE PROFESSIONALS.
 				</span>
 			</div>
 			<div className='flex space-x-10 justify-center py-8 sm:justify-normal sm:py-0'>

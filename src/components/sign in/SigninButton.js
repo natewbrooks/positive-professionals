@@ -32,8 +32,11 @@ export default function SigninButton({ isLoggedIn, userData, onLogin, onLogout }
 					isLoggedIn ? handleLogout() : handleLogin();
 				}}
 				className='cursor-pointer active:scale-95 select-none flex items-center w-fit space-x-2'>
-				<FaUserCircle size={22} />
-				<h2 className='sans hidden sm:block text-sm text-nowrap xbold'>
+				<FaUserCircle
+					size={22}
+					className='text-dark dark:text-light/60'
+				/>
+				<h2 className='sans text-dark dark:text-light/60 hidden sm:block text-sm text-nowrap xbold'>
 					{!isLoggedIn ? 'SIGN IN' : 'SIGN OUT'}
 				</h2>
 			</div>

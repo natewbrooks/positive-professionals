@@ -5,8 +5,10 @@ import NavDropdownItem from './NavDropdownItem';
 import { useLocation } from '@reach/router';
 import logo from '../../img/logo/pp-bg.svg';
 import { has } from 'lodash';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 export default function Navbar() {
+	const [darkModeActive, setDarkModeActive] = useState(false);
 	const [activeHash, setActiveHash] = useState('');
 	const [userData, setUserData] = useState();
 	const [navHeight, setNavHeight] = useState(0);
@@ -64,11 +66,11 @@ export default function Navbar() {
 		window.addEventListener('resize', resizeWindow);
 		window.addEventListener('scroll', handleScroll);
 
-		// if (darkModeActive) {
-		// 	document.documentElement.classList.add('dark');
-		// } else {
-		// 	document.documentElement.classList.remove('dark');
-		// }
+		if (darkModeActive) {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.remove('dark');
+		}
 
 		if (document.getElementById('navMenu')) {
 			setNavHeight(document.getElementById('navMenu').offsetHeight);
@@ -102,22 +104,22 @@ export default function Navbar() {
 			window.removeEventListener('scroll', handleScroll);
 			observer.disconnect();
 		};
-	}, [navHeight, isBurgerNavShown]);
+	}, [navHeight, isBurgerNavShown, darkModeActive]);
 
 	return (
 		<>
 			<nav
-				className='fixed bg-light dark:bg-darkAccent w-full z-50 drop-shadow-md overflow-visible'
+				className='fixed bg-light dark:bg-dark w-full z-20 drop-shadow-md overflow-visible'
 				role='navigation'
 				aria-label='main-navigation'>
 				<div className='flex flex-col items-center'>
 					<div
 						id='navMenu'
-						className={`flex py-0 md:px-0 lg:px-10 xl:px-40 xxl:px-80 z-50 bg-light items-center w-full h-full justify-around`}>
+						className={`flex py-0 md:px-0 lg:px-10 xl:px-40 xxl:px-80 z-20 bg-light dark:bg-dark items-center w-full h-full justify-around`}>
 						<AnchorLink
 							to='/'
 							onAnchorLinkClick={() => window.scrollTo(0, 0)}
-							className='py-2 bg-light overflow-hidden w-fit h-fit transition-all duration-[600ms] ease-in-out '
+							className='py-2 bg-light dark:bg-dark text-dark dark:text-light/60 overflow-hidden w-fit h-fit '
 							title={'Home'}>
 							<div className='flex flex-col justify-center w-full h-full items-center'>
 								<img
@@ -133,7 +135,7 @@ export default function Navbar() {
 										transform: hasScrolled ? 'translateY(20px)' : 'translateY(0px)',
 										transform: hasScrolled ? 'translateX(40px)' : 'translateX(0px)',
 									}}
-									className={`relative transition-all duration-[500ms] ease-in-out flex text-sm text-dark flex-col text-center w-fit leading-none`}>
+									className={`relative transition-all duration-[500ms] ease-in-out flex text-sm text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
 									<span className='sans xbold'>POSITIVE</span>
 									<span className='sans'>PROFESSIONALS</span>
 								</div>
@@ -152,12 +154,12 @@ export default function Navbar() {
 									to={'/#' + link.hash}
 									title={link.title}
 									onAnchorLinkClick={() => setActiveHash(link.hash)}
-									className={`w-full h-full hidden lg:block sans transition-all duration-[300ms] text-dark text-md px-2 ${
+									className={`w-full h-full hidden lg:block sans transition-all duration-[300ms] text-dark dark:text-light/60 text-md px-2 ${
 										hasScrolled ? 'py-5' : 'py-8'
 									} border-b-2 text-nowrap ${
 										isHashActive(link.hash)
 											? ' border-four hover:border-four'
-											: 'border-light hover:border-four/50'
+											: 'border-light dark:border-light/70 hover:border-four/50'
 									}`}>
 									{link.title}
 								</AnchorLink>
@@ -204,20 +206,30 @@ export default function Navbar() {
 									}}
 									className='lg:hidden select-none cursor-pointer active:scale-95 w-[24px] h-[20px] flex flex-col justify-between'>
 									<div
-										className={`transform transition-all duration-300 ease-in-out h-[4px] w-full bg-dark rounded-full ${
+										className={`transform transition-all duration-300 ease-in-out h-[4px] w-full bg-dark dark:bg-light/70 rounded-full ${
 											isBurgerNavShown ? '-rotate-45 translate-y-2' : 'rotate-0'
 										}`}></div>
 									<div
-										className={`transform transition-all duration-500 ease-in-out h-[4px] w-full bg-dark rounded-full ${
+										className={`transform transition-all duration-500 ease-in-out h-[4px] w-full bg-dark dark:bg-light/70 rounded-full ${
 											isBurgerNavShown ? 'rotate-45' : 'rotate-0'
 										}`}></div>
 									<div
-										className={`transform transition-all duration-300 ease-in-out h-[4px] w-full bg-dark rounded-full ${
+										className={`transform transition-all duration-300 ease-in-out h-[4px] w-full bg-dark dark:bg-light/70 rounded-full ${
 											isBurgerNavShown ? '-rotate-45 -translate-y-2' : 'rotate-0'
 										}`}></div>
 								</button>
 							</div>
-							{/* <span className='text-dark/50'>|</span> */}
+							<span className='lg:hidden text-dark/50 dark:text-light/50'>|</span>
+							<FaSun
+								onClick={() => setDarkModeActive(true)}
+								size={24}
+								className='select-none dark:hidden text-dark cursor-pointer md:hover:opacity-50 active:scale-95'
+							/>
+							<FaMoon
+								onClick={() => setDarkModeActive(false)}
+								size={20}
+								className='select-none hidden dark:block text-light/70 cursor-pointer md:hover:opacity-50 active:scale-95'
+							/>
 							<SigninButton userData={userData} />
 						</div>
 					</div>
@@ -236,7 +248,7 @@ export default function Navbar() {
 								setActiveHash(link.hash);
 								setBurgerNavShown(false);
 							}}
-							className={`bg-dark border-b-2 border-light/10 w-full py-5 text-light text-sm flex px-4 justify-center items-center text-center ${
+							className={`bg-dark dark:bg-darkAccent border-b-2 border-darkAccent dark:border-light/70 w-full py-5 text-light text-sm flex px-4 justify-center items-center text-center ${
 								isHashActive(link.hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
 							} `}>
 							<span className={`text-center sans xbold text-nowrap`}>

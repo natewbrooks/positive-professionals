@@ -14,6 +14,9 @@ import FirstStepsSection from '../components/sections/FirstStepsSection';
 import Hero from '../components/sections/Hero';
 import ScrollingLogoSection from '../components/sections/ScrollingLogoSection';
 import WhoWeAreSection from '../components/sections/WhoWeAreSection';
+import blueWavesBg from '../img/bg-waves/blue-waves-bg.svg';
+import purpleWavesBg from '../img/bg-waves/purple-waves-bg.svg';
+
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
 	hero,
@@ -31,7 +34,14 @@ export const IndexPageTemplate = ({
 			className='relative w-full h-full'>
 			<Hero data={hero} />
 
-			<div className='overflow-x-hidden w-full h-full justify-center items-center py-[4rem] lg:py-[6rem] px-[2rem] md:mx-auto lg:px-[8rem] xl:px-[16rem] xxl:px-[20rem] xxxl:px-[36rem] flex flex-col space-y-[10rem]'>
+			<img
+				src={blueWavesBg}
+				className=' absolute w-full translate-y-[925px]'></img>
+			<img
+				src={purpleWavesBg}
+				className=' absolute w-full translate-y-[4000px] lg:translate-y-[2600px]'></img>
+
+			<div className='overflow-x-hidden z-10 w-full h-full justify-center items-center py-[4rem] lg:py-[6rem] px-[2rem] md:mx-auto lg:px-[8rem] xl:px-[16rem] xxl:px-[20rem] xxxl:px-[36rem] flex flex-col space-y-[9rem]'>
 				<div className='w-full h-full flex flex-col space-y-40 justify-center items-center xxl:items-start xxl:flex-row xl:space-x-20'>
 					<WhoWeAreSection data={whoWeAre} />
 					<TeamSection data={team} />
@@ -39,21 +49,13 @@ export const IndexPageTemplate = ({
 
 				<CoreValuesSection data={coreValues} />
 
-				<div className='flex flex-col top-0  space-y-4'>
+				<div className='flex flex-col top-0 space-y-4 pb-40'>
 					<WorkedWithSection />
 					<TestimonialsSection data={workedWith} />
 				</div>
 				<ServicesSection data={services} />
 				<FirstStepsSection data={getStarted} />
 
-				{/* <div className='z-10 absolute bg-tertiary w-full h-[500px] -translate-y-[1050px]'>
-					<img
-						src={blueWavesTop}
-						className='w-full bottom-0 translate-y-[400px]'></img>
-					<img
-						src={blueWavesBottom}
-						className='w-full top-0 -translate-y-[1000px] '></img>
-				</div> */}
 				<ResourcesSection data={resources} />
 			</div>
 		</div>
