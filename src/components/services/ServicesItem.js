@@ -14,7 +14,7 @@ export default function ServicesItem({ service }) {
 			<div
 				onClick={() => openModal()}
 				className='group cursor-pointer select-none active:scale-95 flex flex-col space-y-2 text-center rounded-md'>
-				<div className='z-10 relative w-full flex justify-center'>
+				<div className='relative w-full flex justify-center z-10'>
 					<div
 						className={`group-hover:bg-dark bg-opacity-100 py-2 px-14 rounded-md bg-secondary dark:bg-darkAccent  transition-all duration-300 relative top-5`}>
 						<service.Icon

@@ -17,7 +17,7 @@ export default function TeamMember({ member, color }) {
 				className={`relative bg-dark/10 group-hover:bg-opacity-50 transition-all duration-300 ${color} flex items-center py-12 px-20 rounded-md`}>
 				<FaUser
 					size={180}
-					className='text-light dark:text-dark'
+					className='text-dark'
 				/>
 			</div>
 			<div

@@ -7,9 +7,9 @@ export default function UpcomingWebinarItem({ webinar }) {
 			<div className='w-full flex justify-between'>
 				<FaCalendar
 					size={14}
-					className='text-dark dark:text-light/20'
+					className='text-dark dark:text-darkAccent'
 				/>
-				<span className='sans xbold text-sm text-dark dark:text-light/20'>{webinar.date}</span>
+				<span className='sans xbold text-sm text-dark dark:text-light/50'>{webinar.date}</span>
 			</div>
 			<div className='flex flex-col text-center space-y-1 text-dark dark:text-light/70'>
 				<span className='sans text-md xbold'>{webinar.title}</span>

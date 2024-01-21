@@ -207,7 +207,7 @@ export default function Navbar() {
 									className='lg:hidden select-none cursor-pointer active:scale-95 w-[24px] h-[20px] flex flex-col justify-between'>
 									<div
 										className={`transform transition-all duration-300 ease-in-out h-[4px] w-full bg-dark dark:bg-light/70 rounded-full ${
-											isBurgerNavShown ? '-rotate-45 translate-y-2' : 'rotate-0'
+											isBurgerNavShown ? '-rotate-45 translate-y-2 opacity-0' : 'rotate-0'
 										}`}></div>
 									<div
 										className={`transform transition-all duration-500 ease-in-out h-[4px] w-full bg-dark dark:bg-light/70 rounded-full ${
@@ -248,7 +248,7 @@ export default function Navbar() {
 								setActiveHash(link.hash);
 								setBurgerNavShown(false);
 							}}
-							className={`bg-dark dark:bg-darkAccent border-b-2 border-darkAccent dark:border-light/70 w-full py-5 text-light text-sm flex px-4 justify-center items-center text-center ${
+							className={`bg-dark dark:bg-darkAccent border-b-2 border-light/10 w-full py-5 text-light text-sm flex px-4 justify-center items-center text-center ${
 								isHashActive(link.hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
 							} `}>
 							<span className={`text-center sans xbold text-nowrap`}>

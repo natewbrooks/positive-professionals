@@ -87,7 +87,7 @@ export default function NavDropdownItem({
 				onClick={() => toggleDropdown(!isOpen)}
 				key={'#' + hash}
 				title={title}
-				className={`lg:hidden relative bg-dark dark:bg-darkAccent border-b-2 py-5 px-4 text-light border-light/10 dark:border-light/70 text-sm flex w-full justify-center items-center text-center ${
+				className={`lg:hidden relative bg-dark dark:bg-darkAccent border-b-2 py-5 px-4 text-light border-light/10 text-sm flex w-full justify-center items-center text-center ${
 					isHashActive(hash) ? 'border-b-primary hover:border-b-primary' : ''
 				} `}>
 				<span className={`text-center sans xbold text-nowrap`}>{title.toUpperCase()}</span>
@@ -102,7 +102,7 @@ export default function NavDropdownItem({
 					onMouseLeave={() => toggleDropdown(false)}
 					className={`w-full absolute bottom-0 ${
 						isOpen ? 'translate-y-full' : ''
-					} bg-dark/90 -z-50 rounded-b-md transform transition-transform duration-[600ms]`}>
+					} bg-dark/90 dark:bg-dark -z-50 rounded-b-md transform transition-transform duration-[600ms]`}>
 					{items.map(({ label, href }, index) => (
 						<AnchorLink
 							key={index}
