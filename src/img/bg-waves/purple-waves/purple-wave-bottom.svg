@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 960 168" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-491.324,-48.4797)">
+        <g id="layered-waves-haikei--13-.svg" serif:id="layered-waves-haikei (13).svg" transform="matrix(1,0,0,1,971.324,318.48)">
+            <g transform="matrix(1,0,0,1,-480,-270)">
+                <path d="M0,118L22.8,118.5C45.7,119 91.3,120 137,116.8C182.7,113.7 228.3,106.3 274,117.2C319.7,128 365.3,157 411.2,157.8C457,158.7 503,131.3 548.8,123.3C594.7,115.3 640.3,126.7 686,133.2C731.7,139.7 777.3,141.3 823,145.5C868.7,149.7 914.3,156.3 937.2,159.7L960,163L960,0L0,0L0,118Z" style="fill:rgb(14,165,233);fill-rule:nonzero;"/>
+                <path d="M0,141L22.8,132.2C45.7,123.3 91.3,105.7 137,94.5C182.7,83.3 228.3,78.7 274,83.2C319.7,87.7 365.3,101.3 411.2,110.7C457,120 503,125 548.8,128C594.7,131 640.3,132 686,129.5C731.7,127 777.3,121 823,118.8C868.7,116.7 914.3,118.3 937.2,119.2L960,120L960,0L0,0L0,141Z" style="fill:rgb(32,138,254);fill-rule:nonzero;"/>
+                <path d="M0,71L22.8,70.5C45.7,70 91.3,69 137,64.7C182.7,60.3 228.3,52.7 274,55.2C319.7,57.7 365.3,70.3 411.2,69.8C457,69.3 503,55.7 548.8,55.3C594.7,55 640.3,68 686,70.7C731.7,73.3 777.3,65.7 823,60C868.7,54.3 914.3,50.7 937.2,48.8L960,47L960,0L0,0L0,71Z" style="fill:rgb(139,92,246);fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+</svg>

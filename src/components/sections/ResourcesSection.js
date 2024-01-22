@@ -4,6 +4,8 @@ import SeeMore from '../pieces/SeeMore';
 import VideoItem from '../webinar/VideoItem';
 import BlogPostItem from '../blog/BlogPostItem';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import bgTop from '../../img/bg-waves/dark-purple-waves/dark-purple-wave-top.svg';
+import bgBottom from '../../img/bg-waves/dark-purple-waves/dark-purple-wave-bottom.svg';
 
 export default function ResourcesSection({ data }) {
 	const blogPosts = data.blogs;
@@ -13,7 +15,12 @@ export default function ResourcesSection({ data }) {
 	return (
 		<section
 			id='resources'
-			className='bg-four w-full h-full flex flex-col space-y-8 text-light dark:text-dark'>
+			className='z-10 bg-four w-full h-full flex flex-col space-y-8 text-light dark:text-dark'>
+			<img
+				src={bgTop}
+				style={{ transform: 'translateY(-60%)' }}
+				className='absolute w-full left-0 top-0 -z-10'></img>
+
 			<div className='flex flex-col space-y-2 justify-center items-center'>
 				<AnchorLink
 					to='/resources/'

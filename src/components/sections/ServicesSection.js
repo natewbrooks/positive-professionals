@@ -5,6 +5,8 @@ import workshopIcon from '../../img/services/workshopIcon.svg';
 import { FaDumbbell, FaComments } from 'react-icons/fa';
 import { FaPeopleGroup } from 'react-icons/fa6';
 import ServicesItem from '../services/ServicesItem';
+import bgTop from '../../img/bg-waves/purple-waves/purple-wave-top.svg';
+import bgBottom from '../../img/bg-waves/purple-waves/purple-wave-bottom.svg';
 
 export default function ServicesSection({ content }) {
 	const services = [
@@ -33,7 +35,16 @@ export default function ServicesSection({ content }) {
 	return (
 		<section
 			id='services'
-			className='bg-secondary text-dark w-full h-full flex flex-col space-y-4 py-20'>
+			className='z-10 relative bg-secondary text-dark w-full h-full flex flex-col space-y-4'>
+			<img
+				src={bgTop}
+				style={{ transform: 'translateY(-65%)' }}
+				className='absolute w-full left-0 top-0 -z-10'></img>
+			<img
+				src={bgBottom}
+				style={{ transform: 'translateY(70%)' }}
+				className='absolute w-full left-0 bottom-0 -z-10'></img>
+
 			<div className='flex flex-col text-start -space-y-1 leading-tight'>
 				<span className='sans text-sm'>WHAT WE CAN DO FOR YOU</span>
 				<span className='serif text-xxl'>Our services</span>

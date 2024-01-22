@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 960 189" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-346.946,-370.188)">
+        <g id="blue-wave-top.svg" transform="matrix(1,0,0,1,826.946,465.688)">
+            <clipPath id="_clip1">
+                <rect x="-480" y="-95.5" width="960" height="188.169"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(1,0,0,1,-480,-95.5)">
+                    <clipPath id="_clip2">
+                        <rect x="0" y="0" width="960" height="191"/>
+                    </clipPath>
+                    <g clip-path="url(#_clip2)">
+                        <g transform="matrix(1,0,0,1,-0.0003,-349.62)">
+                            <g id="purple-waves-top.svg">
+                                <g>
+                                    <g>
+                                        <clipPath id="_clip3">
+                                            <rect x="0" y="0" width="960" height="540"/>
+                                        </clipPath>
+                                        <g clip-path="url(#_clip3)">
+                                            <path d="M0,354L22.8,355.5C45.7,357 91.3,360 137,371.8C182.7,383.7 228.3,404.3 274,411.8C319.7,419.3 365.3,413.7 411.2,401.3C457,389 503,370 548.8,371.8C594.7,373.7 640.3,396.3 686,404C731.7,411.7 777.3,404.3 823,395.8C868.7,387.3 914.3,377.7 937.2,372.8L960,368L960,541L0,541L0,354Z" style="fill:rgb(34,211,238);fill-rule:nonzero;"/>
+                                            <path d="M0,450L22.8,453C45.7,456 91.3,462 137,452.7C182.7,443.3 228.3,418.7 274,408.8C319.7,399 365.3,404 411.2,406C457,408 503,407 548.8,413C594.7,419 640.3,432 686,438.5C731.7,445 777.3,445 823,447.2C868.7,449.3 914.3,453.7 937.2,455.8L960,458L960,541L0,541L0,450Z" style="fill:rgb(0,189,238);fill-rule:nonzero;"/>
+                                            <path d="M0,459L22.8,459.7C45.7,460.3 91.3,461.7 137,464.8C182.7,468 228.3,473 274,476C319.7,479 365.3,480 411.2,477.8C457,475.7 503,470.3 548.8,470.8C594.7,471.3 640.3,477.7 686,477.5C731.7,477.3 777.3,470.7 823,464.2C868.7,457.7 914.3,451.3 937.2,448.2L960,445L960,541L0,541L0,459Z" style="fill:rgb(14,165,233);fill-rule:nonzero;"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

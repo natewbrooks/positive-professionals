@@ -13,7 +13,7 @@ export default function CoreValuesItem({ text, Icon }) {
 				className='transition-all duration-300 w-full bg-light/50 dark:bg-dark/50 select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
 				<Icon
 					size={42}
-					className='dark:text-dark text-light'
+					className='text-dark dark:text-light/80'
 				/>
 				<span className='sans xbold null:text-xs md:text-sm text-dark dark:text-light/50'>
 					{text}

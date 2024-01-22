@@ -8,17 +8,23 @@ import {
 	FaBalanceScale,
 } from 'react-icons/fa';
 import CoreValuesItem from '../core values/CoreValueItem';
-import blueWavesBg from '../../img/bg-waves/blue-waves-bg.svg';
+import bgTop from '../../img/bg-waves/blue-waves/blue-wave-top.svg';
+import bgBottom from '../../img/bg-waves/blue-waves/blue-wave-bottom.svg';
 
 const coreValues = [FaHammer, FaLightbulb, FaHandshake, FaTrophy, FaUsers, FaBalanceScale];
 export default function CoreValuesSection({ data }) {
 	return (
 		<section
 			id='values'
-			className='w-full h-full bg-tertiary relative flex justify-center items-center text-dark'>
-			{/* <img
-				src={blueWavesBg}
-				className='absolute -z-10 h-[100vh]'></img> */}
+			className='z-10 w-full h-full relative bg-tertiary flex justify-center items-center text-dark'>
+			<img
+				src={bgTop}
+				style={{ transform: 'translateY(-60%)' }}
+				className='absolute w-full top-0 -z-10'></img>
+			<img
+				src={bgBottom}
+				style={{ transform: 'translateY(70%)' }}
+				className='absolute w-full bottom-0 -z-10'></img>
 			<div className='flex flex-col space-y-4 items-center justify-center'>
 				<div className='flex flex-col leading-tight w-full text-center'>
 					<span className='sans text-sm'>{data.subtext.toUpperCase()}</span>

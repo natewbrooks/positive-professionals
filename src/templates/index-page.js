@@ -13,7 +13,6 @@ import CoreValuesSection from '../components/sections/CoreValuesSection';
 import FirstStepsSection from '../components/sections/FirstStepsSection';
 import Hero from '../components/sections/Hero';
 import WhoWeAreSection from '../components/sections/team/WhoWeAreSection';
-import purpleWavesBg from '../img/bg-waves/purple-waves-bg.svg';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -29,7 +28,7 @@ export const IndexPageTemplate = ({
 	return (
 		<div
 			id='canvas'
-			className='relative w-full h-full flex flex-col pt-0 mt-0 null:space-y-[4rem] lg:space-y-[8rem] xl:space-y-[10rem]'>
+			className='relative w-full h-full flex flex-col pt-0 mt-0 null:space-y-[4rem] lg:space-y-[8rem] xl:space-y-[14rem]'>
 			<Hero data={hero} />
 
 			<section
