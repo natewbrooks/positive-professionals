@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 hero:
-  header: Converting intentions into results, together.
+  header: Transforming intentions into results,
   subtext: Start actualizing your dreams today
 whoWeAre:
   body: >-
