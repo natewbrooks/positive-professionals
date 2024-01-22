@@ -80,3 +80,54 @@
         width: 250px;
     }
 }
+
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* This assumes your custom class is used within a flex or grid container */
+    /* This also assumes your custom class is used within a flex or grid container */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+@media (min-width: 1024px) {
+
+    /* lg: '1024px' */
+    section {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+}
+
+@media (min-width: 1440px) {
+
+    /* xl: '1440px' */
+    section {
+        padding-left: 16rem;
+        padding-right: 16rem;
+    }
+}
+
+@media (min-width: 1920px) {
+
+    /* xxl: '1920px' */
+    section {
+        padding-left: 20rem;
+        padding-right: 20rem;
+    }
+}
+
+@media (min-width: 2400px) {
+
+    /* xxxl: '2400px' */
+    section {
+        padding-left: 36rem;
+        padding-right: 36rem;
+    }
+}

@@ -30,7 +30,7 @@ const ResourcesNav = ({ pageTitle, showTitle }) => {
 	}
 
 	return (
-		<section
+		<nav
 			id='resourcesNav'
 			className=' h-full w-full mb-8'>
 			<div className='border-b-2 border-dark/10 pb-4 flex flex-col -space-y-2 justify-center w-full items-center'>
@@ -103,7 +103,7 @@ const ResourcesNav = ({ pageTitle, showTitle }) => {
 					))}
 				</div>
 			</div>
-		</section>
+		</nav>
 	);
 };
 

@@ -109,13 +109,13 @@ export default function Navbar() {
 	return (
 		<>
 			<nav
-				className='fixed bg-light dark:bg-dark w-full z-20 drop-shadow-md overflow-visible'
+				className='fixed bg-light dark:bg-dark w-full z-30 drop-shadow-md overflow-visible'
 				role='navigation'
 				aria-label='main-navigation'>
 				<div className='flex flex-col items-center'>
 					<div
 						id='navMenu'
-						className={`flex py-0 md:px-0 lg:px-10 xl:px-40 xxl:px-80 z-20 bg-light dark:bg-dark items-center w-full h-full justify-around`}>
+						className={`flex py-0 md:px-0 lg:px-10 xl:px-40 xxl:px-80 z-30 bg-light dark:bg-dark items-center w-full h-full justify-around`}>
 						<AnchorLink
 							to='/'
 							onAnchorLinkClick={() => window.scrollTo(0, 0)}

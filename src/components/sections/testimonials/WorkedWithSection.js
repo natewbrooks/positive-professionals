@@ -3,7 +3,7 @@ import { FaUser } from 'react-icons/fa';
 
 export default function WorkedWithSection({ content }) {
 	return (
-		<section
+		<div
 			id='workedWith'
 			className='flex flex-col space-y-4'>
 			<div className='flex flex-col leading-tight text-end'>
@@ -18,6 +18,6 @@ export default function WorkedWithSection({ content }) {
 					<FaUser size={100} />
 				</div>
 			</div>
-		</section>
+		</div>
 	);
 }

@@ -16,6 +16,9 @@ const TemplateWrapper = ({ children }) => {
 	}
 
 	useEffect(() => {
+		document.body.classList.add('bg-light');
+		document.body.classList.add('dark:bg-dark');
+
 		window.addEventListener('resize', handleRefresh);
 
 		const navHeight = document.getElementById('navMenu').offsetHeight;
@@ -29,7 +32,7 @@ const TemplateWrapper = ({ children }) => {
 	const { title, description } = useSiteMetadata();
 
 	return (
-		<div className='w-full h-full bg-light dark:bg-dark overflow-x-hidden'>
+		<div className='w-full h-full overflow-x-hidden'>
 			<Helmet>
 				<html lang='en' />
 				<title>{title}</title>

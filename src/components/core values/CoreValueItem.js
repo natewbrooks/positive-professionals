@@ -22,9 +22,11 @@ export default function CoreValuesItem({ text, Icon }) {
 			<Modal
 				isOpen={isModalOpen}
 				onClose={() => setModalOpen(false)}>
-				<div className='null:w-fit xl:w-[600px] h-full flex flex-col text-dark null:pb-8 md:pb-4'>
+				<div className='null:w-fit xl:w-[600px] h-full flex flex-col text-dark dark:text-light/70 null:pb-8 md:pb-4'>
 					<div className='flex flex-col leading-tight pb-4'>
-						<span className='sans text-md text-dark/50 xbold text-center'>CORE VALUE</span>
+						<span className='sans text-md text-dark/50 dark:text-light/80  xbold text-center'>
+							CORE VALUE
+						</span>
 						<span className='serif text-xxl text-center'>{text}</span>
 					</div>
 					<div className='pb-2 sans text-md'>
@@ -35,41 +37,44 @@ export default function CoreValuesItem({ text, Icon }) {
 						face of challenges and setbacks. We see persistence as a multi-dimensional trait that
 						encompasses several key aspects:
 					</div>
-					<div className='null:h-full md:h-[400px] bg-dark/10 py-4 px-2 rounded-x-md rounded-b-md sans text-md overflow-y-auto'>
+					<div className='null:h-full md:h-[400px] bg-dark/10 dark:bg-light/10 py-4 px-2 rounded-x-md rounded-b-md sans text-md overflow-y-auto'>
 						<div className='h-full px-4 flex flex-col space-y-4'>
-							<span className='xbold'>1. Resilience in Adversity:</span> In the fast-paced and often
-							unpredictable business environment, challenges and obstacles are inevitable.
-							Persistence empowers leaders to navigate these with resilience, turning potential
-							setbacks into opportunities for learning and growth.
+							<span className='xbold dark:text-light/80 '>1. Resilience in Adversity:</span> In the
+							fast-paced and often unpredictable business environment, challenges and obstacles are
+							inevitable. Persistence empowers leaders to navigate these with resilience, turning
+							potential setbacks into opportunities for learning and growth.
 							<br />
-							<span className='xbold'>2. Long-Term Vision:</span> Persistence is closely tied to
-							having a long-term vision. It involves staying committed to goals that may take years
-							to achieve, keeping the bigger picture in mind while managing day-to-day
-							responsibilities.
+							<span className='xbold dark:text-light/80 '>2. Long-Term Vision:</span> Persistence is
+							closely tied to having a long-term vision. It involves staying committed to goals that
+							may take years to achieve, keeping the bigger picture in mind while managing
+							day-to-day responsibilities.
 							<br />
-							<span className='xbold'>3. Continuous Learning:</span> The landscape of business is
-							constantly changing. Persistence in the context of executive coaching means a
-							commitment to continuous learning and adaptation. It's about persistently upgrading
-							one's skills and knowledge base to stay relevant and effective.
+							<span className='xbold dark:text-light/80 '>3. Continuous Learning:</span> The
+							landscape of business is constantly changing. Persistence in the context of executive
+							coaching means a commitment to continuous learning and adaptation. It's about
+							persistently upgrading one's skills and knowledge base to stay relevant and effective.
 							<br />
-							<span className='xbold'>4. Consistency in Effort and Standards: </span>
+							<span className='xbold dark:text-light/80 '>
+								4. Consistency in Effort and Standards:{' '}
+							</span>
 							Persistence translates into maintaining high standards of performance consistently.
 							It's about regular, disciplined effort towards personal and professional development
 							goals, not just in bursts of enthusiasm.
 							<br />
-							<span className='xbold'>5. Overcoming Complacency:</span> In leadership, it's easy to
-							become complacent, especially after achieving a certain level of success. Persistence
-							involves pushing oneself and one's team out of the comfort zone, striving for
-							continuous improvement.
+							<span className='xbold dark:text-light/80 '>5. Overcoming Complacency:</span> In
+							leadership, it's easy to become complacent, especially after achieving a certain level
+							of success. Persistence involves pushing oneself and one's team out of the comfort
+							zone, striving for continuous improvement.
 							<br />
-							<span className='xbold'>6. Motivation and Inspiration:</span> As coaches, we use the
-							principle of persistence to motivate and inspire. By embodying this value, we set an
-							example for leaders to emulate, creating a culture of perseverance and dedication
-							within their organizations. In essence, persistence is a driving force in our coaching
-							philosophy. It's about more than just enduring; it's about actively striving for
-							excellence, learning and adapting, and maintaining the discipline and motivation to
-							achieve long-term success. This value deeply influences how we guide leaders in
-							navigating their careers and organizations towards sustained growth and effectiveness.
+							<span className='xbold dark:text-light/80 '>6. Motivation and Inspiration:</span> As
+							coaches, we use the principle of persistence to motivate and inspire. By embodying
+							this value, we set an example for leaders to emulate, creating a culture of
+							perseverance and dedication within their organizations. In essence, persistence is a
+							driving force in our coaching philosophy. It's about more than just enduring; it's
+							about actively striving for excellence, learning and adapting, and maintaining the
+							discipline and motivation to achieve long-term success. This value deeply influences
+							how we guide leaders in navigating their careers and organizations towards sustained
+							growth and effectiveness.
 						</div>
 					</div>
 				</div>

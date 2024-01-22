@@ -33,7 +33,7 @@ export default function ServicesSection({ content }) {
 	return (
 		<section
 			id='services'
-			className='text-dark w-full h-full flex flex-col space-y-4 py-20'>
+			className='bg-secondary text-dark w-full h-full flex flex-col space-y-4 py-20'>
 			<div className='flex flex-col text-start -space-y-1 leading-tight'>
 				<span className='sans text-sm'>WHAT WE CAN DO FOR YOU</span>
 				<span className='serif text-xxl'>Our services</span>

@@ -1,8 +1,8 @@
 ---
 templateKey: index-page
 hero:
-  header: Transform potential into performance.
-  subtext: Cultivate your imagination from home
+  header: Converting intentions into results, together.
+  subtext: Start actualizing your dreams today
 whoWeAre:
   body: >-
     Mental fitness is our capacity to handle life’s greatest challenges with a
@@ -328,4 +328,3 @@ getStarted:
       name: Create personalized plan
   subtext: Take your first steps and get involved with the betterment of your future.
 ---
-

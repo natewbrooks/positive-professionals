@@ -4,17 +4,15 @@ import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
-import TeamSection from '../components/sections/TeamSection';
+import TeamSection from '../components/sections/team/TeamSection';
 import ServicesSection from '../components/sections/ServicesSection';
 import ResourcesSection from '../components/sections/ResourcesSection';
-import TestimonialsSection from '../components/sections/TestimonialSection';
-import WorkedWithSection from '../components/sections/WorkedWithSection';
+import TestimonialsSection from '../components/sections/testimonials/TestimonialSection';
+import WorkedWithSection from '../components/sections/testimonials/WorkedWithSection';
 import CoreValuesSection from '../components/sections/CoreValuesSection';
 import FirstStepsSection from '../components/sections/FirstStepsSection';
 import Hero from '../components/sections/Hero';
-import ScrollingLogoSection from '../components/sections/ScrollingLogoSection';
-import WhoWeAreSection from '../components/sections/WhoWeAreSection';
-import blueWavesBg from '../img/bg-waves/blue-waves-bg.svg';
+import WhoWeAreSection from '../components/sections/team/WhoWeAreSection';
 import purpleWavesBg from '../img/bg-waves/purple-waves-bg.svg';
 
 // eslint-disable-next-line
@@ -31,33 +29,31 @@ export const IndexPageTemplate = ({
 	return (
 		<div
 			id='canvas'
-			className='relative w-full h-full'>
+			className='relative w-full h-full flex flex-col pt-0 mt-0 null:space-y-[4rem] lg:space-y-[8rem] xl:space-y-[10rem]'>
 			<Hero data={hero} />
 
-			<img
-				src={blueWavesBg}
-				className=' absolute w-full translate-y-[925px]'></img>
-			<img
-				src={purpleWavesBg}
-				className=' absolute w-full translate-y-[4000px] lg:translate-y-[2600px]'></img>
+			<section
+				id='team'
+				className='w-full h-full flex flex-col space-y-40 justify-center items-center xxl:items-start xxl:flex-row xxl:space-x-20'>
+				<WhoWeAreSection data={whoWeAre} />
+				<TeamSection data={team} />
+			</section>
 
-			<div className='overflow-x-hidden z-10 w-full h-full justify-center items-center py-[4rem] lg:py-[6rem] px-[2rem] md:mx-auto lg:px-[8rem] xl:px-[16rem] xxl:px-[20rem] xxxl:px-[36rem] flex flex-col space-y-[9rem]'>
-				<div className='w-full h-full flex flex-col space-y-40 justify-center items-center xxl:items-start xxl:flex-row xl:space-x-20'>
-					<WhoWeAreSection data={whoWeAre} />
-					<TeamSection data={team} />
-				</div>
+			<CoreValuesSection data={coreValues} />
 
-				<CoreValuesSection data={coreValues} />
+			<section
+				id='testimonials'
+				className='flex flex-col'>
+				<WorkedWithSection />
+				<TestimonialsSection data={workedWith} />
+				{/* <img
+					src={purpleWavesBg}
+					className='absolute w-full'></img> */}
+			</section>
 
-				<div className='flex flex-col top-0 space-y-4 pb-40'>
-					<WorkedWithSection />
-					<TestimonialsSection data={workedWith} />
-				</div>
-				<ServicesSection data={services} />
-				<FirstStepsSection data={getStarted} />
-
-				<ResourcesSection data={resources} />
-			</div>
+			<ServicesSection data={services} />
+			<FirstStepsSection data={getStarted} />
+			<ResourcesSection data={resources} />
 		</div>
 	);
 };

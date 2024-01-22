@@ -13,7 +13,7 @@ export default function ResourcesSection({ data }) {
 	return (
 		<section
 			id='resources'
-			className='w-full h-full flex flex-col space-y-8 text-dark dark:text-light/70'>
+			className='bg-four w-full h-full flex flex-col space-y-8 text-dark dark:text-light/70'>
 			<div className='flex flex-col space-y-2 justify-center items-center'>
 				<AnchorLink
 					to='/resources/'
