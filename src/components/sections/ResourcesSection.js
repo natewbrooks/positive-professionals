@@ -13,7 +13,7 @@ export default function ResourcesSection({ data }) {
 	return (
 		<section
 			id='resources'
-			className='bg-four w-full h-full flex flex-col space-y-8 text-dark'>
+			className='bg-four w-full h-full flex flex-col space-y-8 text-light dark:text-dark'>
 			<div className='flex flex-col space-y-2 justify-center items-center'>
 				<AnchorLink
 					to='/resources/'
@@ -28,7 +28,7 @@ export default function ResourcesSection({ data }) {
 			<div className='flex flex-col text-start justify-center'>
 				<AnchorLink
 					to='/resources/blog/'
-					className='group flex flex-col -space-y-1 my-4 text-end'>
+					className='w-full group flex flex-col -space-y-1 my-4 text-end'>
 					<span className={`sans text-sm `}>READ OUR STORIES</span>
 					<span className={`group-md:hover:opacity-50 text-xl serif`}>Blog posts</span>
 				</AnchorLink>

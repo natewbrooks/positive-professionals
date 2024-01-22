@@ -23,7 +23,7 @@ export default function TeamMember({ member, color }) {
 			<div
 				className='flex flex-col text-start py-1 leading-tight'
 				onClick={() => setModalOpen(true)}>
-				<span className='sans xbold text-lg'>{member.name}</span>
+				<span className='sans xbold text-lg dark:text-light/80'>{member.name}</span>
 				<span className='sans text-sm'>{member.position}</span>
 			</div>
 

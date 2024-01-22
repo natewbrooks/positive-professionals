@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
-export default function SeeMore({ text = 'See more', colorClass = 'text-four', onClick }) {
+export default function SeeMore({ text = 'See more', colorClass = 'text-light/50', onClick }) {
 	return (
 		<div className='flex w-full justify-end items-center mt-4'>
 			<div

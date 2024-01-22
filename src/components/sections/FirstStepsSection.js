@@ -13,7 +13,7 @@ export default function FirstStepsSection({ data }) {
 			id='firstSteps'
 			className='w-full h-full'>
 			<div className='flex flex-col -space-y-1 mb-8 items-center text-center justify-center text-dark dark:text-light/70'>
-				<span className='serif text-xxl'>{data.header}</span>
+				<span className='serif text-xxxl dark:text-light/80'>{data.header}</span>
 				<span className='sans text-md'>{data.subtext}</span>
 			</div>
 

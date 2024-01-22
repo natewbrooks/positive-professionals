@@ -23,30 +23,32 @@ export const VideoPostTemplate = ({ description, title, helmet, date, videofile 
 	return (
 		<>
 			{helmet || ''}
-			<div className='pt-4 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
+			<section className='pt-4 w-full h-full'>
 				<ResourcesNav
 					pageTitle={'Return'}
 					showTitle={false}
 				/>
-				<section className='flex flex-col  items-center justify-center mb-10'>
+				<div className='flex flex-col  items-center justify-center'>
 					<div className='p-4 null:w-full lg:w-[60%] xxl:w-[50%] h-full flex flex-col space-y-4 justify-center items-center'>
-						<div className='outline-dashed outline-four/50 outline-offset-8 bg-dark/10 border-b-2 border-dark/10 w-full h-full text-dark aspect-video'>
+						<div className='outline rounded-sm outline-four outline-offset-8 bg-dark/10 border-b-2 border-dark/10 w-full h-full text-dark aspect-video'>
 							{renderVideo()}
 						</div>
 						<div className='w-full h-full flex flex-col py-2'>
-							<div className='w-full flex flex-col border-b-2 border-dark/10 pb-1'>
-								<div className='null:text-sm md:text-md sans xbold text-dark/50'>
+							<div className='w-full flex flex-col border-b-2 border-dark/10 dark:border-light/10 pb-1'>
+								<div className='null:text-sm md:text-md sans xbold text-dark/50 dark:text-light/50'>
 									PUBLISHED {date.toUpperCase()}
 								</div>
-								<div className='null:text-lg md:text-xl sans xbold text-dark leading-tight'>
+								<div className='null:text-lg md:text-xl sans xbold text-dark leading-tight dark:text-light/80'>
 									{title}
 								</div>
 							</div>
-							<div className='null:text-sm md:text-md sans text-dark/50 py-2'>{description}</div>
+							<div className='null:text-sm md:text-md sans text-dark/50 py-2 dark:text-light/50'>
+								{description}
+							</div>
 						</div>
 					</div>
-				</section>
-			</div>
+				</div>
+			</section>
 		</>
 	);
 };

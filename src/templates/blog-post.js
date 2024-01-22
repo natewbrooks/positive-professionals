@@ -37,13 +37,13 @@ export const BlogPostTemplate = ({
 			{helmet || ''}
 			<section className='pt-4 w-full h-full'>
 				<ResourcesNav pageTitle={'Return'} />
-				<div className='justify-center items-center text-center flex w-full flex-col bg-dark/10 rounded-md null:py-20 md:px-20'>
+				<div className='justify-center items-center text-center flex w-full flex-col bg-dark/10 dark:bg-darkAccent rounded-md null:py-20 md:px-20'>
 					<div className='dark:text-light/80 max-w-[80%] w-full null:text-xxl md:text-xxxl xl:text-billboard serif xbold text-dark leading-tight'>
 						<div className='flex flex-col w-full px-8 text-dark/40 dark:text-light/50 '>
 							<div className='text-center w-full null:text-md sm:text-lg sans xbold'>
 								PUBLISHED {daet()}
 							</div>
-							<div className='text-center  w-full null:text-md sm:text-lg sans xbold text-dark/40'>
+							<div className='text-center  w-full null:text-md sm:text-lg sans xbold text-secondary'>
 								{autuers()}
 							</div>
 						</div>

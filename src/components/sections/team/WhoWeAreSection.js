@@ -18,10 +18,10 @@ export default function WhoWeAreSection({ data }) {
 	return (
 		<div
 			id='whoWeAre'
-			className='text-dark dark:text-light/60 flex flex-col space-y-4 xl:max-w-[50%]'>
+			className='text-dark dark:text-light/60 flex flex-col space-y-4 xxl:max-w-[50%]'>
 			<div className='flex flex-col leading-tight'>
 				<span className='sans text-sm'>{data.subtext.toUpperCase()}</span>
-				<span className='serif text-xxl'>{data.header}</span>
+				<span className='serif text-xxl dark:text-light/80'>{data.header}</span>
 			</div>
 			{renderParagraphs(data.body)}
 		</div>
