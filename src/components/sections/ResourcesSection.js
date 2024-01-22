@@ -13,7 +13,7 @@ export default function ResourcesSection({ data }) {
 	return (
 		<section
 			id='resources'
-			className='bg-four w-full h-full flex flex-col space-y-8 text-dark dark:text-light/70'>
+			className='bg-four w-full h-full flex flex-col space-y-8 text-dark'>
 			<div className='flex flex-col space-y-2 justify-center items-center'>
 				<AnchorLink
 					to='/resources/'
@@ -23,7 +23,7 @@ export default function ResourcesSection({ data }) {
 						Explore our collection of informative videos and previous webinars.
 					</span>
 				</AnchorLink>
-				<span className='border-b-2 border-dark/10 dark:border-light/10 w-full'></span>
+				<span className='border-b-2 dark:border-dark/10 border-light/10 w-full'></span>
 			</div>
 			<div className='flex flex-col text-start justify-center'>
 				<AnchorLink

@@ -15,7 +15,7 @@ export default function CoreValuesSection({ data }) {
 	return (
 		<section
 			id='values'
-			className='w-full h-full bg-tertiary relative flex justify-center items-center'>
+			className='w-full h-full bg-tertiary relative flex justify-center items-center text-dark'>
 			{/* <img
 				src={blueWavesBg}
 				className='absolute -z-10 h-[100vh]'></img> */}

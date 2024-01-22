@@ -17,6 +17,28 @@ export default function Navbar() {
 	const location = useLocation();
 	const [hasScrolled, setHasScrolled] = useState(false);
 
+	const toggleDarkMode = () => {
+		const newMode = !darkModeActive;
+		setDarkModeActive(newMode);
+		localStorage.setItem('darkMode', newMode ? 'dark' : 'light');
+		if (newMode) {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.remove('dark');
+		}
+	};
+
+	useEffect(() => {
+		const savedMode = localStorage.getItem('darkMode');
+		const isDarkMode = savedMode === 'dark';
+		setDarkModeActive(isDarkMode);
+		if (isDarkMode) {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.remove('dark');
+		}
+	}, []);
+
 	const handleScroll = () => {
 		setHasScrolled(window.scrollY > 0);
 	};
@@ -66,12 +88,6 @@ export default function Navbar() {
 		window.addEventListener('resize', resizeWindow);
 		window.addEventListener('scroll', handleScroll);
 
-		if (darkModeActive) {
-			document.documentElement.classList.add('dark');
-		} else {
-			document.documentElement.classList.remove('dark');
-		}
-
 		if (document.getElementById('navMenu')) {
 			setNavHeight(document.getElementById('navMenu').offsetHeight);
 		}
@@ -104,7 +120,7 @@ export default function Navbar() {
 			window.removeEventListener('scroll', handleScroll);
 			observer.disconnect();
 		};
-	}, [navHeight, isBurgerNavShown, darkModeActive]);
+	}, [navHeight, isBurgerNavShown]);
 
 	return (
 		<>
@@ -221,12 +237,12 @@ export default function Navbar() {
 							</div>
 							<span className='lg:hidden text-dark/50 dark:text-light/50'>|</span>
 							<FaSun
-								onClick={() => setDarkModeActive(true)}
+								onClick={toggleDarkMode}
 								size={24}
 								className='select-none dark:hidden text-dark cursor-pointer md:hover:opacity-50 active:scale-95'
 							/>
 							<FaMoon
-								onClick={() => setDarkModeActive(false)}
+								onClick={toggleDarkMode}
 								size={20}
 								className='select-none hidden dark:block text-light/70 cursor-pointer md:hover:opacity-50 active:scale-95'
 							/>

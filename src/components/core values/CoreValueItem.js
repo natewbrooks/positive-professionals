@@ -10,12 +10,12 @@ export default function CoreValuesItem({ text, Icon }) {
 				onClick={() => {
 					setModalOpen(true);
 				}}
-				className='transition-all duration-300 w-full bg-light dark:bg-dark select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
+				className='transition-all duration-300 w-full bg-light/50 dark:bg-dark/50 select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
 				<Icon
 					size={42}
-					className='text-dark dark:text-light/50'
+					className='text-dark dark:text-light/70'
 				/>
-				<span className='sans xbold null:text-xs md:text-sm text-dark dark:text-light/70'>
+				<span className='sans xbold null:text-xs md:text-sm text-dark dark:text-light/50'>
 					{text}
 				</span>
 			</div>
@@ -37,7 +37,7 @@ export default function CoreValuesItem({ text, Icon }) {
 						face of challenges and setbacks. We see persistence as a multi-dimensional trait that
 						encompasses several key aspects:
 					</div>
-					<div className='null:h-full md:h-[400px] bg-dark/10 dark:bg-light/10 py-4 px-2 rounded-x-md rounded-b-md sans text-md overflow-y-auto'>
+					<div className='null:h-full md:h-[400px] bg-dark/10 dark:bg-dark py-4 px-2 rounded-md rounded-b-md sans text-md overflow-y-auto'>
 						<div className='h-full px-4 flex flex-col space-y-4'>
 							<span className='xbold dark:text-light/80 '>1. Resilience in Adversity:</span> In the
 							fast-paced and often unpredictable business environment, challenges and obstacles are

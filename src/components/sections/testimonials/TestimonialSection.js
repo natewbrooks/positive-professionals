@@ -112,13 +112,35 @@ export default function TestimonialsSection({ data }) {
 		recalcPos();
 	}, [itemWidth, visibleItems]); // Add dependencies to recalculate position when these change
 
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				if (entries[0].isIntersecting) {
+					resizeWindow();
+					recalcPos();
+				}
+			},
+			{ threshold: 0.1 } // Adjust this value as needed
+		);
+
+		if (rowRef.current) {
+			observer.observe(rowRef.current);
+		}
+
+		return () => {
+			if (rowRef.current) {
+				observer.unobserve(rowRef.current);
+			}
+		};
+	}, []);
+
 	let interval;
 	useEffect(() => {
 		if (isIntervalActive) {
 			interval = setInterval(() => {
 				setAllowSwipe(false);
 				setTranslateX(translateX.map((x) => (isScrollingRight ? x + itemWidth : x - itemWidth)));
-			}, 4000);
+			}, 2500);
 		}
 
 		return () => {
