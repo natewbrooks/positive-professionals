@@ -23,7 +23,7 @@ export default function BlogPostItem({ post }) {
 			className='group md:hover:opacity-80 w-full h-full relative transition-all duration-300  bg-light/50 dark:bg-dark/50 pb-2 rounded-b-md '>
 			<div className='absolute -top-5 -left-0 flex space-x-1'>
 				{isNewPost() && (
-					<div className='bg-tertiary rounded-md px-2 py-1 text-sm sans xbold text-light dark:text-darkAccent'>
+					<div className='bg-light rounded-md px-2 py-1 text-sm sans xbold text-secondary dark:text-darkAccent'>
 						NEW
 					</div>
 				)}

@@ -4,7 +4,7 @@ import SigninButton from '../sign in/SigninButton';
 import NavDropdownItem from './NavDropdownItem';
 import { useLocation } from '@reach/router';
 import logo from '../../img/logo/pp-logo-bg.svg';
-import { has } from 'lodash';
+import { useModal } from '../ModalContext';
 import { FaMoon, FaSun } from 'react-icons/fa';
 
 export default function Navbar() {
@@ -16,6 +16,13 @@ export default function Navbar() {
 	const [currentPath, setCurrentPath] = useState('');
 	const location = useLocation();
 	const [hasScrolled, setHasScrolled] = useState(false);
+	const { currentModal } = useModal();
+	const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+
+	useEffect(() => {
+		setIsNavbarVisible(!currentModal);
+		console.log(currentModal);
+	}, [currentModal]);
 
 	const toggleDarkMode = () => {
 		const newMode = !darkModeActive;
@@ -136,7 +143,9 @@ export default function Navbar() {
 	return (
 		<>
 			<nav
-				className='fixed bg-light dark:bg-dark w-full z-30 drop-shadow-md overflow-visible'
+				className={`${
+					isNavbarVisible ? 'translate-y-0' : '-translate-y-full'
+				} transform transition-all duration-500 ease-in-out fixed bg-light dark:bg-dark w-full z-30 drop-shadow-md overflow-visible`}
 				role='navigation'
 				aria-label='main-navigation'>
 				<div className='flex flex-col items-center'>

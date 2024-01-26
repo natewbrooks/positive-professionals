@@ -81,6 +81,9 @@
     }
 }
 
+img {
+    aspect-ratio: initial;
+}
 
 section {
     position: relative;
@@ -88,18 +91,16 @@ section {
     height: 100%;
     /* This assumes your custom class is used within a flex or grid container */
     /* This also assumes your custom class is used within a flex or grid container */
-    padding-top: 4rem;
-    padding-bottom: 4rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 @media (min-width: 1024px) {
 
     /* lg: '1024px' */
     section {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
         padding-left: 8rem;
         padding-right: 8rem;
     }

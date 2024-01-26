@@ -28,31 +28,33 @@ export const IndexPageTemplate = ({
 	return (
 		<div
 			id='canvas'
-			className='relative w-full h-full flex flex-col pt-0 mt-0 null:space-y-[4rem] lg:space-y-[8rem] xl:space-y-[14rem]'>
+			className='relative w-full h-full'>
 			<Hero data={hero} />
 
-			<section
-				id='team'
-				className='w-full h-full flex flex-col space-y-40 justify-center items-center xxl:items-start xxl:flex-row xxl:space-x-20'>
-				<WhoWeAreSection data={whoWeAre} />
-				<TeamSection data={team} />
-			</section>
+			<div className='w-full h-full flex flex-col null:space-y-[6rem] sm:space-y-[10rem] md:space-y-[12rem] lg:space-y-[14rem] xl:space-y-[22rem]'>
+				<section
+					id='team'
+					className='w-full h-full flex flex-col space-y-40 justify-center items-center xxl:items-start xxl:flex-row xxl:space-x-20'>
+					<WhoWeAreSection data={whoWeAre} />
+					<TeamSection data={team} />
+				</section>
 
-			<CoreValuesSection data={coreValues} />
+				<CoreValuesSection data={coreValues} />
 
-			<section
-				id='testimonials'
-				className='flex flex-col'>
-				<WorkedWithSection />
-				<TestimonialsSection data={workedWith} />
-				{/* <img
+				<section
+					id='testimonials'
+					className='flex flex-col'>
+					<WorkedWithSection />
+					<TestimonialsSection data={workedWith} />
+					{/* <img
 					src={purpleWavesBg}
 					className='absolute w-full'></img> */}
-			</section>
+				</section>
 
-			<ServicesSection data={services} />
-			<FirstStepsSection data={getStarted} />
-			<ResourcesSection data={resources} />
+				<ServicesSection data={services} />
+				<FirstStepsSection data={getStarted} />
+				<ResourcesSection data={resources} />
+			</div>
 		</div>
 	);
 };

@@ -24,14 +24,14 @@ export default function ContactSection({ content }) {
 	return (
 		<section
 			id='contact'
-			className='relative w-full h-full py-12 bg-dark/10 dark:bg-darkAccent space-y-10 lg:space-y-0 flex flex-col justify-center items-center lg:flex-row'>
-			<div className='border-b-2 lg:border-b-0 lg:border-r-2 pb-10 lg:pb-0 border-dark/10 dark:border-light/10 flex flex-col justify-center items-center w-full lg:w-[50%] h-full space-y-2'>
+			className='overflow-hidden relative w-full h-full py-12 bg-lightAccent dark:bg-darkAccent space-y-10 xl:space-y-0 flex flex-col justify-center items-center xl:flex-row'>
+			<div className='border-b-2 xl:border-b-0 xl:border-r-2 pb-10 xl:pb-0 border-dark/10 dark:border-light/10 flex flex-col justify-center items-center w-full xl:w-[50%] h-full space-y-2'>
 				<div className='flex flex-col items-center text-center justify-center text-dark dark:text-light/70 '>
 					<span
 						className={`null:text-lg xs:text-[24px] mobile:text-xl md:text-xxl text-nowrap serif`}>
 						Start your journey to success
 					</span>
-					<span className={`sans null:text-sm sm:text-md null:w-[240px] sm:w-[320px] lg:w-[370px]`}>
+					<span className={`sans null:text-sm sm:text-md null:w-[240px] sm:w-[320px] xl:w-[370px]`}>
 						Interested in working with us? Fill in your information and we will reach out to
 						schedule a free consultation!
 					</span>
@@ -69,14 +69,6 @@ export default function ContactSection({ content }) {
 				</form>
 			</div>
 			<UpcomingWebinars webinars={webinars} />
-			{/* <div className='flex flex-col space-y-8 w-full h-full justify-center items-center '>
-				<span className='serif text-xxl text-dark w-[480px] text-center'>
-					Register now to save your seat for our free weekly webinar.
-				</span>
-				<div className='bg-dark select-none md:hover:opacity-50 active:scale-95 cursor-pointer text-light p-2 rounded-md w-fit sans'>
-					Create Account
-				</div>
-			</div> */}
 		</section>
 	);
 }

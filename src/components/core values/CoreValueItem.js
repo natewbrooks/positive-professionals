@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import Modal from '../Modal';
+import { useModal } from '../ModalContext';
 
-export default function CoreValuesItem({ text, Icon }) {
-	const [isModalOpen, setModalOpen] = useState(false);
+export default function CoreValuesItem({ text, Icon, modalId }) {
+	const { openModal } = useModal();
 
 	return (
 		<>
 			<div
 				onClick={() => {
-					setModalOpen(true);
+					openModal(modalId);
 				}}
 				className='transition-all duration-300 w-full bg-light/50 dark:bg-dark/50 select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
 				<Icon
@@ -19,9 +20,7 @@ export default function CoreValuesItem({ text, Icon }) {
 					{text}
 				</span>
 			</div>
-			<Modal
-				isOpen={isModalOpen}
-				onClose={() => setModalOpen(false)}>
+			<Modal modalId={modalId}>
 				<div className='null:w-fit xl:w-[600px] h-full flex flex-col text-dark dark:text-light/70 null:pb-8 md:pb-4'>
 					<div className='flex flex-col leading-tight pb-4'>
 						<span className='sans text-md text-dark/50 dark:text-light/80  xbold text-center'>

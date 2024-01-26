@@ -8,6 +8,8 @@
     --secondary: #fdba74;
     --light: #fafaf9;
     --dark: #121212;
+    --lightAccent: #dbdbdb;
+    --darkAccent: #292929;
 }
 
 .blog-post-container p {
@@ -36,12 +38,32 @@ article {
 .blog-post-container li {
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 800;
-    font-size: 22px;
+    font-size: 20px;
+    text-align: start;
+    max-width: 900px;
+    padding: 0rem 2rem;
+    text-align: left;
 }
 
 .blog-post-container ol {
     margin: 2rem 0px;
+    width: fit-content;
     list-style-type: decimal;
+}
+
+.blog-post-container ul {
+    margin: 2rem 0px;
+    list-style-type: disc;
+}
+
+.blog-post-container blockquote {
+    padding: 2rem 4rem;
+
+    p {
+        border-radius: 4px;
+        padding-left: 2rem;
+        border-left: 4px solid var(--lightAccent);
+    }
 }
 
 .blog-post-container h1,

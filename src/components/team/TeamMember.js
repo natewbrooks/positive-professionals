@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import { FaUser } from 'react-icons/fa';
-import PropTypes from 'prop-types';
 import Modal from '../Modal';
+import { useModal } from '../ModalContext';
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
-export default function TeamMember({ member, color }) {
-	const [isModalOpen, setModalOpen] = useState(false);
-
-	const openModal = () => setModalOpen(true);
-	const closeModal = () => setModalOpen(false);
+export default function TeamMember({ member, color, modalId }) {
+	const { openModal } = useModal();
 
 	return (
 		<div className='w-full h-full group'>
 			<div
-				onClick={() => setModalOpen(true)}
+				onClick={() => openModal(modalId)}
 				className={`relative group-hover:cursor-pointer bg-dark/10 group-hover:bg-opacity-50 transition-all duration-300 ${color} flex items-center py-12 px-20 rounded-md`}>
 				<FaUser
 					size={180}
@@ -22,14 +19,12 @@ export default function TeamMember({ member, color }) {
 			</div>
 			<div
 				className='flex flex-col text-start py-1 leading-tight'
-				onClick={() => setModalOpen(true)}>
+				onClick={() => openModal(modalId)}>
 				<span className='sans xbold text-lg dark:text-light/80'>{member.name}</span>
 				<span className='sans text-sm'>{member.position}</span>
 			</div>
 
-			<Modal
-				isOpen={isModalOpen}
-				onClose={closeModal}>
+			<Modal modalId={member.name}>
 				<div className='flex w-full justify-between flex-col space-y-4 lg:flex-row lg:space-x-4 overflow-hidden'>
 					<div className='flex items-center border-b-2 border-dark/10 dark:border-light/10 pb-4 lg:border-none xl:pb-0'>
 						<div className='relative flex flex-col justify-center items-center space-y-4 w-full px-8'>

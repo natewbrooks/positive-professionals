@@ -258,7 +258,7 @@ export default function TestimonialsSection({ data }) {
 						onTransitionEnd={() => {
 							recalcPos();
 							setAllowSwipe(true);
-							console.log(translateX);
+							// console.log(translateX);
 						}}
 						className={`absolute top-0 ease-in-out w-full flex flex-row`}>
 						{data.testimonials.map((testimonial, index) => (

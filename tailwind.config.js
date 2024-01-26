@@ -36,6 +36,7 @@ module.exports = {
 				tertiary: '#0ea5e9',
 				four: '#6366f1',
 				light: '#f2f2f2',
+				lightAccent: '#dbdbdb',
 				dark: '#121212',
 				darkAccent: '#292929',
 			},

@@ -64,41 +64,47 @@ export default function ServicesSection({ content }) {
 	return (
 		<section
 			id='services'
-			className='relative bg-secondary text-dark w-full h-full flex flex-col space-y-4'>
-			<img
-				src={bgTop}
-				style={{ transform: 'translateY(-65%)' }}
-				className='absolute w-full left-0 top-0 '></img>
-			<img
-				src={bgBottom}
-				style={{ transform: 'translateY(70%)' }}
-				className='absolute w-full left-0 bottom-0 '></img>
-
-			<div className='flex flex-col text-start -space-y-1 leading-tight'>
-				<span className='sans text-sm'>WHAT WE CAN DO FOR YOU</span>
-				<span className='serif text-xxl'>Our services</span>
-			</div>
-			<span className='sans text-lg'>
-				We help you recognize and overcome self-sabotaging behaviors of self-doubt, worry,
-				perfectionism, overachievement, micromanagement, and imposter syndrome. Embrace alternative
-				perspectives, see new possibilities, and make value-centered decisions for yourself and your
-				team. Reframe negative experiences into gifts and opportunities. Increase personal energy
-				and resilience by aligning actions and values. Delight customers with exceptional listening,
-				collaboration, and innovation skills.
-			</span>
-			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 h-full'>
-				{services.map((service, index) => (
-					<ServicesItem
-						key={index}
-						service={service}
-					/>
-				))}
+			className='relative w-full h-full'>
+			<div className='z-0 absolute w-full h-full left-0'>
+				<img
+					src={bgTop}
+					style={{ transform: 'translateY(-75%)' }}
+					className='absolute w-full top-0 -z-[10] '></img>
+				<div className='absolute bg-secondary w-full h-full -z-[10]'></div>
+				<img
+					src={bgBottom}
+					style={{ transform: 'translateY(70%)' }}
+					className='absolute w-full h-fit bottom-0 -z-[10]'></img>
 			</div>
 
-			<div className='w-full text-center my-4'>
-				<span className='text-dark/50 sans text-md select-none'>
-					Click a service to learn more!
+			<div className='z-10 text-dark w-full h-full flex flex-col space-y-4'>
+				<div className='z-10 text-dark flex flex-col text-start -space-y-1 leading-tight'>
+					<span className='sans text-sm'>WHAT WE CAN DO FOR YOU</span>
+					<span className='serif text-xxl'>Our services</span>
+				</div>
+				<span className='z-10 sans text-lg'>
+					We help you recognize and overcome self-sabotaging behaviors of self-doubt, worry,
+					perfectionism, overachievement, micromanagement, and imposter syndrome. Embrace
+					alternative perspectives, see new possibilities, and make value-centered decisions for
+					yourself and your team. Reframe negative experiences into gifts and opportunities.
+					Increase personal energy and resilience by aligning actions and values. Delight customers
+					with exceptional listening, collaboration, and innovation skills.
 				</span>
+				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 h-full'>
+					{services.map((service, index) => (
+						<ServicesItem
+							key={index}
+							service={service}
+							modalId={'service' + index}
+						/>
+					))}
+				</div>
+
+				<div className='w-full text-center'>
+					<span className='text-dark/50 sans text-md select-none'>
+						Click a service to learn more!
+					</span>
+				</div>
 			</div>
 		</section>
 	);

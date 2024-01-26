@@ -11,6 +11,7 @@ export default function TeamMembers({ gridItems, colors }) {
 						key={index}
 						member={item}
 						color={colors[index % colors.length]}
+						modalId={item.name}
 					/>
 				))}
 			</div>

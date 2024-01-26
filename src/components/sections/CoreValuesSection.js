@@ -16,16 +16,19 @@ export default function CoreValuesSection({ data }) {
 	return (
 		<section
 			id='values'
-			className='w-full h-full relative bg-tertiary flex justify-center items-center text-dark'>
-			<img
-				src={bgTop}
-				style={{ transform: 'translateY(-60%)' }}
-				className='absolute w-full top-0 '></img>
-			<img
-				src={bgBottom}
-				style={{ transform: 'translateY(70%)' }}
-				className='absolute w-full bottom-0 '></img>
-			<div className='flex flex-col space-y-4 items-center justify-center'>
+			className='w-full h-full relative flex justify-center items-center text-dark'>
+			<div className='z-0 absolute w-full h-full left-0'>
+				<img
+					src={bgTop}
+					style={{ transform: 'translateY(-70%)' }}
+					className='absolute w-full top-0 '></img>
+				<div className='absolute bg-tertiary w-full h-full'></div>
+				<img
+					src={bgBottom}
+					style={{ transform: 'translateY(85%)' }}
+					className='absolute w-full bottom-0'></img>
+			</div>
+			<div className='z-10 flex flex-col space-y-4 items-center justify-center'>
 				<div className='flex flex-col leading-tight w-full text-center'>
 					<span className='sans text-sm'>{data.subtext.toUpperCase()}</span>
 					<span className='serif text-xxl'>{data.header}</span>
@@ -38,6 +41,7 @@ export default function CoreValuesSection({ data }) {
 								key={index}
 								text={value.name.toUpperCase()}
 								Icon={coreValues[index]}
+								modalId={'coreValue' + index}
 							/>
 						))}
 					</div>
