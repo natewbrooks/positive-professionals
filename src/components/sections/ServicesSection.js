@@ -35,15 +35,15 @@ export default function ServicesSection({ content }) {
 	return (
 		<section
 			id='services'
-			className='z-10 relative bg-secondary text-dark w-full h-full flex flex-col space-y-4'>
+			className='relative bg-secondary text-dark w-full h-full flex flex-col space-y-4'>
 			<img
 				src={bgTop}
 				style={{ transform: 'translateY(-65%)' }}
-				className='absolute w-full left-0 top-0 -z-10'></img>
+				className='absolute w-full left-0 top-0 '></img>
 			<img
 				src={bgBottom}
 				style={{ transform: 'translateY(70%)' }}
-				className='absolute w-full left-0 bottom-0 -z-10'></img>
+				className='absolute w-full left-0 bottom-0 '></img>
 
 			<div className='flex flex-col text-start -space-y-1 leading-tight'>
 				<span className='sans text-sm'>WHAT WE CAN DO FOR YOU</span>

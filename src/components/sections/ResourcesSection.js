@@ -15,11 +15,11 @@ export default function ResourcesSection({ data }) {
 	return (
 		<section
 			id='resources'
-			className='z-10 bg-four w-full h-full flex flex-col space-y-8 text-light dark:text-dark'>
+			className='bg-four w-full h-full flex flex-col space-y-8 text-light dark:text-dark'>
 			<img
 				src={bgTop}
 				style={{ transform: 'translateY(-60%)' }}
-				className='absolute w-full left-0 top-0 -z-10'></img>
+				className='absolute w-full left-0 top-0 '></img>
 
 			<div className='flex flex-col space-y-2 justify-center items-center'>
 				<AnchorLink

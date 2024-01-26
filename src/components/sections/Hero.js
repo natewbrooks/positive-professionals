@@ -12,7 +12,7 @@ export default function Hero({ data }) {
 							<span className='relative w-fit h-fit inline-block'>
 								together.
 								<img
-									className='-z-10  absolute -bottom-1 right-3 opacity-80 dark:opacity-50 w-[105%] ' // Adjust these properties
+									className='  absolute -bottom-1 right-3 opacity-80 dark:opacity-50 w-[105%] ' // Adjust these properties
 									src={purpleMarkerStripe}
 									alt='Marker Stripe Background'></img>
 							</span>

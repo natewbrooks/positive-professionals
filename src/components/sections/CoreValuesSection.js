@@ -16,15 +16,15 @@ export default function CoreValuesSection({ data }) {
 	return (
 		<section
 			id='values'
-			className='z-10 w-full h-full relative bg-tertiary flex justify-center items-center text-dark'>
+			className='w-full h-full relative bg-tertiary flex justify-center items-center text-dark'>
 			<img
 				src={bgTop}
 				style={{ transform: 'translateY(-60%)' }}
-				className='absolute w-full top-0 -z-10'></img>
+				className='absolute w-full top-0 '></img>
 			<img
 				src={bgBottom}
 				style={{ transform: 'translateY(70%)' }}
-				className='absolute w-full bottom-0 -z-10'></img>
+				className='absolute w-full bottom-0 '></img>
 			<div className='flex flex-col space-y-4 items-center justify-center'>
 				<div className='flex flex-col leading-tight w-full text-center'>
 					<span className='sans text-sm'>{data.subtext.toUpperCase()}</span>
