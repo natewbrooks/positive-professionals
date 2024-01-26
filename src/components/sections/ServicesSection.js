@@ -70,14 +70,14 @@ export default function ServicesSection({ content }) {
 					src={bgTop}
 					style={{ transform: 'translateY(-75%)' }}
 					className='absolute w-full top-0 -z-[10] '></img>
-				<div className='absolute bg-secondary w-full h-full -z-[10]'></div>
+				<div className='absolute bg-secondary w-full h-full -z-[1]'></div>
 				<img
 					src={bgBottom}
 					style={{ transform: 'translateY(70%)' }}
 					className='absolute w-full h-fit bottom-0 -z-[10]'></img>
 			</div>
 
-			<div className='z-10 text-dark w-full h-full flex flex-col space-y-4'>
+			<div className='z-10 text-dark w-full h-full flex flex-col space-y-4 null:py-8 md:py-0'>
 				<div className='z-10 text-dark flex flex-col text-start -space-y-1 leading-tight'>
 					<span className='sans text-sm'>WHAT WE CAN DO FOR YOU</span>
 					<span className='serif text-xxl'>Our services</span>

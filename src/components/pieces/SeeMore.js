@@ -6,11 +6,11 @@ export default function SeeMore({ text = 'See more', colorClass = 'text-light/50
 		<div className='flex w-full justify-end items-center mt-4'>
 			<div
 				onClick={onClick}
-				className='group hover:cursor-pointer relative flex items-center select-none'>
+				className='group cursor-pointer relative flex items-center select-none'>
 				<span className={`${colorClass} sans group-md:hover:opacity-50 text-nowrap`}>{text}</span>
 				<MdOutlineKeyboardArrowRight
 					size={16}
-					className={`${colorClass} absolute right-0 opacity-0 translate-x-2 group-hover:translate-x-4 group-md:hover:opacity-50 transition-all delay-75 duration-300`}
+					className={`text-light absolute right-0 opacity-0 translate-x-2 group-hover:translate-x-4 md:group-hover:opacity-50 transition-all delay-75 duration-300`}
 				/>
 			</div>
 		</div>

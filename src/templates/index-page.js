@@ -31,7 +31,7 @@ export const IndexPageTemplate = ({
 			className='relative w-full h-full'>
 			<Hero data={hero} />
 
-			<div className='w-full h-full flex flex-col null:space-y-[6rem] sm:space-y-[10rem] md:space-y-[12rem] lg:space-y-[14rem] xl:space-y-[22rem]'>
+			<div className='w-full h-full flex flex-col null:space-y-[8rem] sm:space-y-[10rem] md:space-y-[12rem] lg:space-y-[14rem] xl:space-y-[22rem]'>
 				<section
 					id='team'
 					className='w-full h-full flex flex-col space-y-40 justify-center items-center xxl:items-start xxl:flex-row xxl:space-x-20'>
