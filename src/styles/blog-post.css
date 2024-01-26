@@ -51,7 +51,7 @@ article {
     font-weight: 800;
     text-align: left;
     width: 100%;
-    max-width: 900px;
+    max-width: 500px;
     line-height: 1.25;
     padding-top: 1rem;
 }
@@ -81,5 +81,9 @@ article {
         margin: 1rem 1rem;
         list-style-type: decimal;
 
+    }
+
+    .blog-post-container ul {
+        margin: 1rem 1rem;
     }
 }

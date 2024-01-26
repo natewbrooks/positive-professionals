@@ -39,9 +39,22 @@ export default function Navbar() {
 		}
 	}, []);
 
+	const [lastScrollY, setLastScrollY] = useState(0);
+
 	const handleScroll = () => {
-		setHasScrolled(window.scrollY > 0);
+		// Set hasScrolled to true if scrolling up, false if scrolling down
+		// hardcode or use lastScrollY?
+		setHasScrolled(window.scrollY > 800);
+		setLastScrollY(window.scrollY);
 	};
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, [lastScrollY]);
 
 	useEffect(() => {
 		setCurrentPath(location.pathname);
@@ -86,7 +99,6 @@ export default function Navbar() {
 
 	useEffect(() => {
 		window.addEventListener('resize', resizeWindow);
-		window.addEventListener('scroll', handleScroll);
 
 		if (document.getElementById('navMenu')) {
 			setNavHeight(document.getElementById('navMenu').offsetHeight);
@@ -117,7 +129,6 @@ export default function Navbar() {
 		// Disconnect the observer on unmount
 		return () => {
 			window.removeEventListener('resize', resizeWindow);
-			window.removeEventListener('scroll', handleScroll);
 			observer.disconnect();
 		};
 	}, [navHeight, isBurgerNavShown]);
@@ -175,7 +186,7 @@ export default function Navbar() {
 									} border-b-2 text-nowrap ${
 										isHashActive(link.hash)
 											? ' border-four hover:border-four'
-											: 'border-light dark:border-light/70 hover:border-four/50'
+											: 'border-dark/20 dark:border-light/70 hover:border-four/50'
 									}`}>
 									{link.title}
 								</AnchorLink>

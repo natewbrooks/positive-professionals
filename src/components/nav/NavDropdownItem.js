@@ -50,9 +50,7 @@ export default function NavDropdownItem({
 					className={`w-full h-full hidden lg:flex items-center sans transition-all duration-[300ms] text-dark dark:text-light/60 text-md px-2  ${
 						hasScrolled ? 'py-5' : 'py-8'
 					}  border-b-2 text-nowrap ${
-						isHashActive(hash)
-							? ' border-four hover:border-four'
-							: 'border-light dark:border-light/70 hover:border-four/50'
+						isHashActive(hash) ? ' border-four hover:border-four' : ' border-transparent'
 					}`}>
 					{title}
 					<MdOutlineKeyboardArrowDown

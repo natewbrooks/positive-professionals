@@ -16,7 +16,7 @@ whoWeAre:
     teams, negotiated alliances, developed motivating visions, led large
     organizations, turned around poor performers, and driven change to achieve
     unprecedented mission successes. But our story is about more than
-    professional achievements. And yet our\r proudest accomplishments and
+    professional achievements. Our\r proudest accomplishments and
     greatest joys center\r around our families.\n"
   header: Our story
   subtext: WHO WE ARE
