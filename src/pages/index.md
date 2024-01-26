@@ -62,7 +62,7 @@ team:
         coach women, people of color and advocates for diversity, equality,
         inclusion and accessibility.
       name: Angela Satchell
-      position: Executive Leadership Specialist
+      position: Executive Leader
       specialities: As an energetic mom of six, a people-focused senior executive in
         the Department of Defense, and a committed church and school volunteer,
         Liz has always found purpose in serving others and making an impact
@@ -96,7 +96,7 @@ team:
         Applied Physics Laboratory, Council for State Governments, Loyola
         University Maryland, Virginia Tech, and corporate clients.
       name: Jennifer Anderson
-      position: Executive Leadership Specialist
+      position: Professional Certified Coach, SES (ret)
       specialities: Jennifer became a coach because she loves getting to work with
         folks who make a positive difference in the world and who want to
         continue to improve themselves and the world around them. As an engineer
@@ -133,7 +133,7 @@ team:
         working with individuals from the automotive, engineering, software,
         healthcare, and business/finance industries.
       name: Kim Harris
-      position: Executive Leadership Specialist
+      position: Associate Certified Coach, SES (ret)
       specialities: As an executive coach, Kim connects with motivated professionals
         who are ready to build new paths to accomplish their goals. For her, it
         is all about the client – their agenda, their choices, their
@@ -185,7 +185,7 @@ team:
         coach women, people of color and advocates for diversity, equality,
         inclusion and accessibility.
       name: Liz Brooks
-      position: Executive Leadership Specialist
+      position: Associate Certified Coach, SES (ret)
       specialities: As an energetic mom of six, a people-focused senior executive in
         the Department of Defense, and a committed church and school volunteer,
         Liz has always found purpose in serving others and making an impact
