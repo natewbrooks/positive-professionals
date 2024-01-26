@@ -8,6 +8,10 @@ import bgTop from '../../img/bg-waves/dark-purple-waves/dark-purple-wave-top.svg
 import bgBottom from '../../img/bg-waves/dark-purple-waves/dark-purple-wave-bottom.svg';
 
 export default function ResourcesSection({ data }) {
+	if (!data) {
+		return <div>Loading...</div>;
+	}
+
 	const blogPosts = data.blogs;
 	const videoCatalog = data.videos;
 	const previousWebinars = data.videos;

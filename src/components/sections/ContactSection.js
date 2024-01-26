@@ -24,7 +24,7 @@ export default function ContactSection({ content }) {
 	return (
 		<section
 			id='contact'
-			className='relative w-full h-full py-12 bg-light dark:bg-darkAccent space-y-10 lg:space-y-0 flex flex-col justify-center items-center lg:flex-row'>
+			className='relative w-full h-full py-12 bg-dark/10 dark:bg-darkAccent space-y-10 lg:space-y-0 flex flex-col justify-center items-center lg:flex-row'>
 			<div className='border-b-2 lg:border-b-0 lg:border-r-2 pb-10 lg:pb-0 border-dark/10 dark:border-light/10 flex flex-col justify-center items-center w-full lg:w-[50%] h-full space-y-2'>
 				<div className='flex flex-col items-center text-center justify-center text-dark dark:text-light/70 '>
 					<span

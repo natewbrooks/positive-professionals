@@ -7,15 +7,18 @@ const IndexPagePreview = ({ entry, getAsset }) => {
 
 	if (data) {
 		return (
-			<IndexPageTemplate
-				hero={data.hero}
-				whoWeAre={data.whoWeAre}
-				team={data.team}
-				coreValues={data.coreValues}
-				workedWith={data.workedWith}
-				services={data.services}
-				getStarted={data.getStarted}
-			/>
+			<LocationProvider>
+				<IndexPageTemplate
+					hero={data.hero}
+					whoWeAre={data.whoWeAre}
+					team={data.team}
+					coreValues={data.coreValues}
+					workedWith={data.workedWith}
+					services={data.services}
+					getStarted={data.getStarted}
+					resources={data.resources}
+				/>
+			</LocationProvider>
 		);
 	} else {
 		return <div>Loading...</div>;

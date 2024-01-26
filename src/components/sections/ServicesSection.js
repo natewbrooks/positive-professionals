@@ -2,7 +2,14 @@ import React from 'react';
 import groupIcon from '../../img/services/groupIcon.svg';
 import oneononeIcon from '../../img/services/oneononeIcon.svg';
 import workshopIcon from '../../img/services/workshopIcon.svg';
-import { FaDumbbell, FaComments } from 'react-icons/fa';
+import {
+	FaUserTie,
+	FaUsersCog,
+	FaChalkboardTeacher,
+	FaLightbulb,
+	FaBrain,
+	FaVideo,
+} from 'react-icons/fa';
 import { FaPeopleGroup } from 'react-icons/fa6';
 import ServicesItem from '../services/ServicesItem';
 import bgTop from '../../img/bg-waves/purple-waves/purple-wave-top.svg';
@@ -11,23 +18,45 @@ import bgBottom from '../../img/bg-waves/purple-waves/purple-wave-bottom.svg';
 export default function ServicesSection({ content }) {
 	const services = [
 		{
-			Icon: FaComments,
-			title: 'Personal Sessions',
-			description: 'Schedule a one-on-one intimate meeting catered to your needs.',
+			Icon: FaUserTie,
+			title: 'Individual Coaching',
+			description:
+				'Personalized, one-on-one sessions to help you navigate your career and personal growth objectives.',
 			colorClass: 'bg-tertiary',
 		},
 		{
-			Icon: FaPeopleGroup,
-			title: 'Group Sessions',
+			Icon: FaUsersCog,
+			title: 'Individual & Team Assessments',
 			description:
-				'Explore different avenues and engage with a group of people to stimulate your own personal growth.',
+				'Comprehensive evaluations to identify strengths and areas for development, fostering team synergy and individual excellence.',
+			colorClass: 'bg-four',
+		},
+		{
+			Icon: FaChalkboardTeacher,
+			title: 'Team Coaching',
+			description:
+				'Collaborative coaching designed to enhance team dynamics, communication, and collective performance.',
 			colorClass: 'bg-primary',
 		},
 		{
-			Icon: FaDumbbell,
-			title: 'In-person Workshops',
+			Icon: FaLightbulb,
+			title: 'Workshops',
 			description:
-				'Attend an in-person workshop to develop and find meaningful solutions among peers.',
+				'Interactive, skill-building sessions focused on professional development and innovative thinking.',
+			colorClass: 'bg-four',
+		},
+		{
+			Icon: FaBrain,
+			title: 'Positive Intelligence™ Bootcamp',
+			description:
+				'A mental fitness program to boost resilience, improve performance, and enhance well-being.',
+			colorClass: 'bg-four',
+		},
+		{
+			Icon: FaVideo,
+			title: 'Webinars',
+			description:
+				'Engaging online seminars covering the latest trends and insights in leadership and performance.',
 			colorClass: 'bg-four',
 		},
 	];

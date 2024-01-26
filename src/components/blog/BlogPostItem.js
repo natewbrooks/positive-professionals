@@ -3,11 +3,14 @@ import pic from '../../img/bkg.png';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 export default function BlogPostItem({ post }) {
+	const howManyDaysIsAPostStillNew = 7;
 	const isNewPost = () => {
 		if (post.date) {
 			const postDate = new Date(post.date);
 			const currentDate = new Date();
-			const threeDaysAgo = new Date(currentDate.setDate(currentDate.getDate() - 3));
+			const threeDaysAgo = new Date(
+				currentDate.setDate(currentDate.getDate() - howManyDaysIsAPostStillNew)
+			);
 
 			return postDate >= threeDaysAgo;
 		}
