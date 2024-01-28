@@ -155,7 +155,7 @@ export default function Navbar() {
 						<AnchorLink
 							to='/'
 							onAnchorLinkClick={() => window.scrollTo(0, 0)}
-							className='py-2 bg-light dark:bg-dark text-dark dark:text-light/60 overflow-hidden w-fit h-fit '
+							className='bg-light dark:bg-dark text-dark dark:text-light/60 overflow-hidden w-fit h-fit '
 							title={'Home'}>
 							<div className='flex flex-col justify-center w-full h-full items-center'>
 								<img
@@ -195,7 +195,7 @@ export default function Navbar() {
 									} border-b-2 text-nowrap ${
 										isHashActive(link.hash)
 											? ' border-four hover:border-four'
-											: 'border-dark/20 dark:border-light/70 hover:border-four/50'
+											: 'border-dark/10 dark:border-light/10 hover:border-four/50'
 									}`}>
 									{link.title}
 								</AnchorLink>

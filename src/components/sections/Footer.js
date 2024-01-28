@@ -74,7 +74,7 @@ export default function Footer({}) {
 					href='https://www.natewbrooks.com'
 					target='_blank'
 					className='text-light/20 sans text-md'>
-					site created @ nwb.co
+					site created @ nwb co.
 				</a>
 			</div>
 		</footer>

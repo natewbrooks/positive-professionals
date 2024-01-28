@@ -20,15 +20,15 @@ export default function CoreValuesSection({ data }) {
 			<div className='z-0 absolute w-full h-full left-0'>
 				<img
 					src={bgTop}
-					style={{ transform: 'translateY(-70%) -z-10' }}
-					className='absolute w-full top-0 -z-[1]'></img>
+					style={{ transform: 'translateY(-70%)' }}
+					className='absolute w-full top-0  -z-10'></img>
 				<div className='absolute bg-tertiary w-full h-full -z-[1]'></div>
 				<img
 					src={bgBottom}
 					style={{ transform: 'translateY(85%)' }}
 					className='absolute w-full bottom-0 -z-10'></img>
 			</div>
-			<div className='z-10 flex flex-col space-y-4 items-center justify-center null:py-8 md:py-0'>
+			<div className='z-10 flex flex-col space-y-4 items-center justify-center null:py-8 md:py-4'>
 				<div className='flex flex-col leading-tight w-full text-center'>
 					<span className='sans text-sm'>{data.subtext.toUpperCase()}</span>
 					<span className='serif text-xxl'>{data.header}</span>
