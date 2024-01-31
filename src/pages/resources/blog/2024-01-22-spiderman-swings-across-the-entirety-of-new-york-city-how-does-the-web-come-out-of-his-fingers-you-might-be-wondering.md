@@ -4,7 +4,7 @@ title: Spiderman swings across the entirety of New York City! How does the web
   come out of his fingers you might be wondering?
 date: 2024-01-22T02:15:09.141Z
 description: The secrets of Spiderman unveiled!
-featuredpost: true
+featuredpost: false
 authors:
   - Nate Brooks
 ---

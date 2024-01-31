@@ -12,7 +12,20 @@ export default function ResourcesSection({ data }) {
 		return <div>Loading...</div>;
 	}
 
-	const blogPosts = data.blogs;
+	let blogPosts = [...data.blogs];
+
+	blogPosts.sort((a, b) => {
+		// Check the featured status
+		if (a.frontmatter.featuredpost && !b.frontmatter.featuredpost) {
+			return -1;
+		}
+		if (!a.frontmatter.featuredpost && b.frontmatter.featuredpost) {
+			return 1;
+		}
+		// If both posts are either featured or not, then sort by date
+		return new Date(b.frontmatter.date) - new Date(a.frontmatter.date);
+	});
+
 	const videoCatalog = data.videos;
 	const previousWebinars = data.videos;
 

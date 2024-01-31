@@ -50,7 +50,7 @@ export const BlogPostTemplate = ({
 						{title}
 					</div>
 				</div>
-				<div className='pt-4 mb-40 w-full h-full flex flex-col text-start'>
+				<div className='pt-4 null:mb-20 lg:mb-40 w-full h-full flex flex-col text-start'>
 					<article
 						className='blog-post-container text-dark dark:text-light/70'
 						dangerouslySetInnerHTML={{ __html: body }}

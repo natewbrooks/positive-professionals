@@ -5,7 +5,7 @@ import ResourcesNav from '../../../components/resources/ResourcesNav';
 import ResourcesGridLayout from '../../../components/resources/ResourcesGridLayout';
 
 const Blog = ({ data }) => {
-	const blogs = data.allMarkdownRemark.nodes.map((node) => ({
+	let blogs = data.allMarkdownRemark.nodes.map((node) => ({
 		title: node.frontmatter.title,
 		date: node.frontmatter.date,
 		description: node.frontmatter.description,
@@ -16,6 +16,18 @@ const Blog = ({ data }) => {
 		authors: node.frontmatter.authors,
 		isVideo: false,
 	}));
+
+	blogs = blogs.sort((a, b) => {
+		// Featured posts sort
+		if (a.featuredpost && !b.featuredpost) {
+			return -1;
+		}
+		if (!a.featuredpost && b.featuredpost) {
+			return 1;
+		}
+		// If both posts have the same featured status, then sort by date
+		return new Date(b.date) - new Date(a.date);
+	});
 
 	return (
 		<>
