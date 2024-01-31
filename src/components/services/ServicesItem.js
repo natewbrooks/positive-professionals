@@ -18,13 +18,13 @@ export default function ServicesItem({ service, modalId }) {
 					<span className='serif text-xl'>{service.title}</span>
 					<service.Icon
 						size={120}
-						className='p-4 my-4 bg-light/10 dark:bg-dark/10 text-secondary dark:text-secondary group-hover:text-light rounded-md'
+						className='p-4 my-4 bg-light/10 dark:bg-dark/10 text-dark dark:text-light/70 group-hover:text-light rounded-md'
 					/>
 					<span className='sans text-md'>{service.description}</span>
 				</div>
 			</div>
 			<Modal modalId={modalId}>
-				<div className='flex w-full h-full text-dark dark:text-light/70 '>
+				<div className='z-50 flex w-full h-full text-dark dark:text-light/70 '>
 					<div className='flex flex-col'>
 						<span className='text-xl serif'>{service.title}</span>
 					</div>

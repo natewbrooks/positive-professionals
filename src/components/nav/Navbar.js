@@ -155,7 +155,7 @@ export default function Navbar() {
 						<AnchorLink
 							to='/'
 							onAnchorLinkClick={() => window.scrollTo(0, 0)}
-							className='bg-light dark:bg-dark text-dark dark:text-light/60 overflow-hidden w-fit h-fit '
+							className='bg-light dark:bg-dark text-dark dark:text-light/60 overflow-hidden w-fit h-fit null:py-2 md:py-0'
 							title={'Home'}>
 							<div className='flex flex-col justify-center w-full h-full items-center'>
 								<img

@@ -19,7 +19,7 @@ export default function ResourcesSection({ data }) {
 	return (
 		<section
 			id='resources'
-			className='w-full h-full '>
+			className='w-full h-full pb-10'>
 			<div className='z-0 absolute w-full h-full left-0'>
 				<img
 					src={bgTop}

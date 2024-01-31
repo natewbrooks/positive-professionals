@@ -15,10 +15,10 @@ const ResourcesGridLayout = ({ mediaItems }) => {
 
 	return (
 		<div className='w-full h-full mb-20'>
-			<div className='w-full text-end sans xbold text-md'>
+			<div className='w-full null:text-center sm:text-end text-dark/50 dark:text-light/50 sans xbold text-md pb-2'>
 				SHOWING {hasMoreItems ? itemsToShow : mediaItems.length} OF {mediaItems.length}
 			</div>
-			<div className='w-full h-full justify-items-center grid null:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 null:gap-y-8 md:gap-y-6 '>
+			<div className='w-full h-full justify-items-center grid null:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4 gap-x-3 null:gap-y-8 md:gap-y-6 '>
 				{mediaItems.slice(0, itemsToShow).map((item, index) => {
 					return item.isVideo === false ? (
 						<BlogPostItem
@@ -35,9 +35,15 @@ const ResourcesGridLayout = ({ mediaItems }) => {
 			</div>
 			{hasMoreItems && (
 				<SeeMore
+					colorClass={`text-secondary`}
 					text={'Load More'}
 					onClick={handleLoadMore}
 				/>
+			)}
+			{!hasMoreItems && (
+				<div className='w-full null:text-center sm:text-end pt-4'>
+					<span className={`text-secondary xbold sans text-nowrap`}>END OF RESULTS</span>
+				</div>
 			)}
 		</div>
 	);

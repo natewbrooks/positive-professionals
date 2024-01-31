@@ -29,7 +29,7 @@ export const VideoPostTemplate = ({ description, title, helmet, date, videofile 
 					showTitle={false}
 				/>
 				<div className='flex flex-col  items-center justify-center'>
-					<div className='p-4 null:w-full lg:w-[60%] xxl:w-[50%] h-full flex flex-col space-y-4 justify-center items-center'>
+					<div className='p-4 null:w-full xl:w-[70%] xxl:w-[50%] h-full flex flex-col space-y-4 justify-center items-center'>
 						<div className='outline rounded-sm outline-four outline-offset-8 bg-dark/10 border-b-2 border-dark/10 w-full h-full text-dark aspect-video'>
 							{renderVideo()}
 						</div>

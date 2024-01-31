@@ -16,10 +16,7 @@
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 600;
     font-size: 20px;
-    text-align: start;
     padding: 0.5rem 0rem;
-    max-width: 900px;
-    text-align: left;
 }
 
 article {
@@ -27,6 +24,13 @@ article {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.blog-post-container {
+    display: flex;
+    list-style-type: decimal;
+    margin: 0px 12rem;
+    align-items: start;
 }
 
 .blog-post-container img {
@@ -39,25 +43,21 @@ article {
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 800;
     font-size: 20px;
-    text-align: start;
-    max-width: 900px;
-    padding: 0rem 2rem;
-    text-align: left;
 }
 
 .blog-post-container ol {
-    margin: 2rem 0px;
+    margin: 2rem 2rem;
     width: fit-content;
     list-style-type: decimal;
 }
 
 .blog-post-container ul {
-    margin: 2rem 0px;
+    margin: 2rem 2rem;
     list-style-type: disc;
 }
 
 .blog-post-container blockquote {
-    padding: 2rem 4rem;
+    padding: 2rem 0rem;
 
     p {
         border-radius: 4px;
@@ -71,9 +71,6 @@ article {
 .blog-post-container h3 {
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 800;
-    text-align: left;
-    width: 100%;
-    max-width: 900px;
     line-height: 1.25;
     padding-top: 1rem;
 }
@@ -90,22 +87,37 @@ article {
     font-size: 24px;
 }
 
-@media (max-width: 798px) {
+@media (min-width: 0px) {
+    .blog-post-container {
+        margin: 0px 0rem;
+    }
+}
+
+@media (min-width: 798px) {
     .blog-post-container li {
         font-family: 'Source Sans 3', sans-serif;
         font-weight: 800;
         font-size: 24px;
-        color: var(--dark)
     }
 
 
     .blog-post-container ol {
-        margin: 1rem 1rem;
+        margin: 1rem 2rem;
         list-style-type: decimal;
 
     }
 
-    .blog-post-container ul {
-        margin: 1rem 1rem;
+
+}
+
+@media (min-width: 1300px) {
+    .blog-post-container {
+        margin: 0px 4rem;
+    }
+}
+
+@media (min-width: 1620px) {
+    .blog-post-container {
+        margin: 0px 12rem;
     }
 }

@@ -34,8 +34,8 @@ export default function CoreValuesSection({ data }) {
 					<span className='serif text-xxl'>{data.header}</span>
 				</div>
 
-				<div className='null:w-full md:max-w-[80%] xl:max-w-[60%] flex flex-col space-y-4 justify-center items-center'>
-					<div className='w-full grid grid-cols-3 gap-2 justify-items-center justify-center'>
+				<div className='null:w-full md:max-w-[80%] xl:max-w-[60%] h-full flex flex-col space-y-4 justify-center items-center'>
+					<div className='w-full h-full grid grid-cols-3 gap-2 justify-items-center justify-center'>
 						{data.values.map((value, index) => (
 							<CoreValuesItem
 								key={index}
