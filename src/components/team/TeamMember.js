@@ -4,14 +4,14 @@ import Modal from '../Modal';
 import { useModal } from '../ModalContext';
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
-export default function TeamMember({ member, color, modalId }) {
+export default function TeamMember({ member, color, modalId, className }) {
 	const { openModal } = useModal();
 
 	return (
-		<div className='w-full h-full group'>
+		<div className={`${className} w-full h-full justify-center items-center group`}>
 			<div
 				onClick={() => openModal(modalId)}
-				className={`relative group-hover:cursor-pointer bg-dark/10 group-hover:bg-opacity-50 transition-all duration-300 ${color} flex items-center py-12 px-20 rounded-md`}>
+				className={`relative group-hover:cursor-pointer bg-dark/10 group-hover:bg-opacity-50 transition-all duration-300 ${color} flex items-center justify-center py-12 px-20 rounded-md`}>
 				<FaUser
 					size={180}
 					className='text-dark'

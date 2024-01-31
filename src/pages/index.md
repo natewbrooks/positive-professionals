@@ -95,43 +95,43 @@ team:
         of Defense (civilian and military personnel), Johns Hopkins University
         Applied Physics Laboratory, Council for State Governments, Loyola
         University Maryland, Virginia Tech, and corporate clients.
-      name: Jennifer Anderson
-      position: Professional Certified Coach, SES (ret)
-      specialities: Jennifer became a coach because she loves getting to work with
-        folks who make a positive difference in the world and who want to
-        continue to improve themselves and the world around them. As an engineer
-        and problem solver, she focuses on outcomes and results. She teaches
-        practical techniques to gain clarity on what’s important, define
-        meaningful goals, and take action to achieve real results that last and
-        energize – even, and especially, during stressful, uncertain conditions.
-        She genuinely believes in her clients and trusts their abilities to
-        discover possibilities, develop skills, gain confidence, and build
-        strong teams at home and at work. One leader to another, growing from
-        one level of leadership to the next.
-    - careerBackground: In addition to coaching, Kim has 35 years of experience in the
-        U.S. Department of Defense. As a member of the Defense Intelligence
-        Senior Executive Service, she served both overseas and within the United
-        States, as well as across the Intelligence Community, to accomplish her
-        agency’s goals. Kim has worked with both civilian and military leaders
-        at all levels of her agency and brings first-hand knowledge of working
-        successfully in a high stress environment to move mission forward.
-      certifications: Kim is an accredited coach through ACT Performance and
-        Leadership Coaching and is credentialed as an Associate Certified Coach
-        (ACC) through the International Coaching Federation. She is also
-        certified in the Hogan Assessment, the Positive Intelligence Saboteur
-        Assessment (PQ)®, and Global DISC™ Cultural Intelligence Assessment.
-      education: Kim has her Master of Business Administration (MBA) from Johns
-        Hopkins University, Bachelor of Arts in Russian Studies and Economics,
-        Minor in History, from University of Virginia.
-      industryExperience: Kim provided coaching services in the Intelligence Community
-        for over 15 years, focusing on individuals serving as first-line through
-        mid-level leaders. She helped grow the next generation of senior
-        leaders, especially within her agency. She turned her focus to women of
-        color over the course of the last 5 years, providing coaching to prepare
-        them to successfully rise through the leadership ranks in an equitable
-        fashion. Kim has also been successful coaching in the private sector,
-        working with individuals from the automotive, engineering, software,
-        healthcare, and business/finance industries.
+      #   name: Jennifer Anderson
+      #   position: Professional Certified Coach, SES (ret)
+      #   specialities: Jennifer became a coach because she loves getting to work with
+      #     folks who make a positive difference in the world and who want to
+      #     continue to improve themselves and the world around them. As an engineer
+      #     and problem solver, she focuses on outcomes and results. She teaches
+      #     practical techniques to gain clarity on what’s important, define
+      #     meaningful goals, and take action to achieve real results that last and
+      #     energize – even, and especially, during stressful, uncertain conditions.
+      #     She genuinely believes in her clients and trusts their abilities to
+      #     discover possibilities, develop skills, gain confidence, and build
+      #     strong teams at home and at work. One leader to another, growing from
+      #     one level of leadership to the next.
+      # - careerBackground: In addition to coaching, Kim has 35 years of experience in the
+      #     U.S. Department of Defense. As a member of the Defense Intelligence
+      #     Senior Executive Service, she served both overseas and within the United
+      #     States, as well as across the Intelligence Community, to accomplish her
+      #     agency’s goals. Kim has worked with both civilian and military leaders
+      #     at all levels of her agency and brings first-hand knowledge of working
+      #     successfully in a high stress environment to move mission forward.
+      #   certifications: Kim is an accredited coach through ACT Performance and
+      #     Leadership Coaching and is credentialed as an Associate Certified Coach
+      #     (ACC) through the International Coaching Federation. She is also
+      #     certified in the Hogan Assessment, the Positive Intelligence Saboteur
+      #     Assessment (PQ)®, and Global DISC™ Cultural Intelligence Assessment.
+      #   education: Kim has her Master of Business Administration (MBA) from Johns
+      #     Hopkins University, Bachelor of Arts in Russian Studies and Economics,
+      #     Minor in History, from University of Virginia.
+      #   industryExperience: Kim provided coaching services in the Intelligence Community
+      #     for over 15 years, focusing on individuals serving as first-line through
+      #     mid-level leaders. She helped grow the next generation of senior
+      #     leaders, especially within her agency. She turned her focus to women of
+      #     color over the course of the last 5 years, providing coaching to prepare
+      #     them to successfully rise through the leadership ranks in an equitable
+      #     fashion. Kim has also been successful coaching in the private sector,
+      #     working with individuals from the automotive, engineering, software,
+      #     healthcare, and business/finance industries.
       name: Kim Harris
       position: Associate Certified Coach, SES (ret)
       specialities: As an executive coach, Kim connects with motivated professionals
