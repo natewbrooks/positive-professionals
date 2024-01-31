@@ -4,8 +4,8 @@ import purpleMarkerStripe from '../../img/overlays/purple-marker-stripe.svg';
 export default function Hero({ data }) {
 	return (
 		<header className='relative flex justify-center items-center w-full h-fit py-20 md:py-40 xl:py-60'>
-			<div className='pt-8 flex flex-col space-y-16 items-center justify-center h-full'>
-				<div className='text-center flex flex-col space-y-2 px-4'>
+			<div className='pt-8 flex flex-col space-y-14 items-center justify-center h-full'>
+				<div className='text-center flex flex-col px-4'>
 					<div className='relative flex flex-col -space-y-8'>
 						<span className='z-10 break-words null:w-fit sm:w-[500px] lg:w-[740px] leading-none serif null:text-xxxl mobile:text-billboard text-center xbold text-dark dark:text-light/80  px-8 rounded-full'>
 							{data.header}{' '}
@@ -18,7 +18,7 @@ export default function Hero({ data }) {
 							</span>
 						</span>
 					</div>
-					<p className='break-words sans null:text-md mobile:text-lg text-dark dark:text-light/70'>
+					<p className='pt-4 break-words sans null:text-md mobile:text-lg text-dark dark:text-light/70'>
 						{data.subtext}
 					</p>
 				</div>
