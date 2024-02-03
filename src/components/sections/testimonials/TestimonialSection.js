@@ -21,10 +21,77 @@ export default function TestimonialsSection({ data }) {
 	const [isUserInteracting, setIsUserInteracting] = useState(false);
 	const [allowSwipe, setAllowSwipe] = useState(true);
 
+	const [isInView, setIsInView] = useState(true);
+
+	const checkIfInView = useCallback(() => {
+		if (rowRef.current) {
+			const rect = rowRef.current.getBoundingClientRect();
+			setIsInView(rect.top < window.innerHeight && rect.bottom >= 0);
+		}
+	}, []);
+
+	useEffect(() => {
+		// Existing resizeWindow function with added functionality to stop transitions
+		const originalResizeWindow = resizeWindow;
+		resizeWindow = () => {
+			setDisableTransition([true, true]);
+			originalResizeWindow();
+			setTimeout(() => {
+				// Add a slight delay before recalculating positions and resuming transitions
+				recalcPos();
+				setDisableTransition([false, false]);
+			}, 100);
+		};
+
+		// Event listener for scrolling to manage isInView state
+		window.addEventListener('scroll', checkIfInView);
+		window.addEventListener('resize', resizeWindow);
+		return () => {
+			window.removeEventListener('scroll', checkIfInView);
+			window.removeEventListener('resize', resizeWindow);
+		};
+	}, [checkIfInView]);
+
+	useEffect(() => {
+		if (!isInView) {
+			setIntervalActive(false); // Stop the automatic scrolling if testimonials are out of view
+		} else {
+			setIntervalActive(true); // Resume automatic scrolling if testimonials are in view
+		}
+	}, [isInView]);
+
 	function inThreshold(a, b, threshold = 0.5) {
 		let diff = Math.abs(a - b);
 		return diff <= threshold;
 	}
+
+	const resetPositioning = () => {
+		// Reset translateX to its initial state or any specific starting position you desire
+		setTranslateX([0, -itemWidth * data.testimonials.length]);
+		// Optionally reset other states as needed
+	};
+
+	// Function to handle page visibility change
+	const handleVisibilityChange = () => {
+		if (!document.hidden) {
+			setDisableTransition([true, true]);
+			resetPositioning(); // Reset positioning only when the page becomes visible again
+
+			setTimeout(() => {
+				setDisableTransition([false, false]);
+			}, 0);
+		}
+	};
+
+	useEffect(() => {
+		// Page Visibility API event listener
+		document.addEventListener('visibilitychange', handleVisibilityChange);
+
+		// Cleanup
+		return () => {
+			document.removeEventListener('visibilitychange', handleVisibilityChange);
+		};
+	}, [data.testimonials.length, itemWidth]);
 
 	function recalcPos() {
 		if (rowRef.current && firstItemRef.current) {
@@ -97,48 +164,19 @@ export default function TestimonialsSection({ data }) {
 		}
 	}
 
-	useEffect(() => {
-		resizeWindow();
-		recalcPos();
-		window.addEventListener('resize', resizeWindow);
-		return () => window.removeEventListener('resize', resizeWindow);
-	}, []);
-
 	useLayoutEffect(() => {
 		setDisableTransition([true, true]); // Disable transition initially
 	}, []);
 
-	useEffect(() => {
-		recalcPos();
-	}, [itemWidth, visibleItems]); // Add dependencies to recalculate position when these change
-
-	useEffect(() => {
-		// const observer = new IntersectionObserver(
-		// 	(entries) => {
-		// 		if (entries[0].isIntersecting) {
-		// 			resizeWindow();
-		// 			recalcPos();
-		// 		}
-		// 	},
-		// 	{ threshold: 0.1 } // Adjust this value as needed
-		// );
-		// if (rowRef.current) {
-		// 	observer.observe(rowRef.current);
-		// }
-		// return () => {
-		// 	if (rowRef.current) {
-		// 		observer.unobserve(rowRef.current);
-		// 	}
-		// };
-	}, []);
-
 	let interval;
 	useEffect(() => {
-		if (isIntervalActive) {
+		if (isIntervalActive && isInView) {
 			interval = setInterval(() => {
 				setAllowSwipe(false);
 				setTranslateX(translateX.map((x) => (isScrollingRight ? x + itemWidth : x - itemWidth)));
-			}, 2500);
+			}, 4000);
+		} else {
+			clearInterval(interval);
 		}
 
 		return () => {
@@ -156,6 +194,7 @@ export default function TestimonialsSection({ data }) {
 		isScrollingRight,
 		isIntervalActive,
 		recalcPos,
+		isInView,
 	]);
 
 	useEffect(() => {
@@ -240,7 +279,7 @@ export default function TestimonialsSection({ data }) {
 			</div>
 
 			<div
-				// {...handleSwipe}
+				{...handleSwipe}
 				style={testimonialContainerStyle}
 				className={`relative flex flex-row w-full h-full`}>
 				{[0, 1].map((i) => (
