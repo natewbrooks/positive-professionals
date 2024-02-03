@@ -5,6 +5,8 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import ResourcesNav from '../components/resources/ResourcesNav';
 import '../styles/blog-post.css';
+import { useModal } from '../components/ModalContext';
+import TeamMemberModal from '../components/team/TeamMemberModal';
 
 export const BlogPostTemplate = ({
 	description,
@@ -15,22 +17,16 @@ export const BlogPostTemplate = ({
 	image,
 	body,
 	authors,
+	membersInfo,
 }) => {
-	const autuers = () => {
-		if (authors !== undefined && Array.isArray(authors)) {
-			return authors.join(', ').toUpperCase();
-		} else if (authors !== undefined && typeof authors === 'string') {
-			return authors.toUpperCase();
-		}
-		return '';
-	};
-
 	const daet = () => {
 		if (typeof date === 'string') {
 			return date.toUpperCase();
 		}
 		return '';
 	};
+
+	const { openModal } = useModal();
 
 	return (
 		<>
@@ -46,8 +42,32 @@ export const BlogPostTemplate = ({
 							<div className='text-center w-full null:text-md sm:text-lg sans xbold'>
 								PUBLISHED {daet()}
 							</div>
-							<div className='text-center  w-full null:text-md sm:text-lg sans xbold text-secondary'>
-								{autuers()}
+							<div className='text-center w-full null:text-md sm:text-lg sans xbold text-secondary '>
+								{authors.map((author, index) => {
+									let memberIndex = membersInfo.findIndex((member) => member.name === author);
+									let infoExists = memberIndex != -1;
+									return (
+										<>
+											<span
+												onClick={() => {
+													if (infoExists) {
+														openModal(author);
+													}
+												}}
+												className={`${
+													infoExists ? 'hover:opacity-80 cursor-pointer active:scale-95' : ''
+												}`}>
+												{author.toUpperCase() + (authors.length - 1 === index ? '' : ', ')}
+											</span>
+											{infoExists && (
+												<TeamMemberModal
+													key={index}
+													member={membersInfo[memberIndex]}
+												/>
+											)}
+										</>
+									);
+								})}
 							</div>
 						</div>
 						{title}
@@ -74,7 +94,10 @@ BlogPostTemplate.propTypes = {
 };
 
 const BlogPost = ({ data }) => {
-	const { markdownRemark: post } = data;
+	const { markdownRemark: post, team } = data; // Assuming 'team' contains 'membersInfo'
+	const membersInfo = team.frontmatter.team.members;
+
+	console.log(post.frontmatter);
 
 	return (
 		<Layout>
@@ -94,6 +117,7 @@ const BlogPost = ({ data }) => {
 				featuredpost={post.frontmatter.featuredpost}
 				image={post.frontmatter.image}
 				authors={post.frontmatter.authors}
+				membersInfo={membersInfo}
 				body={post.html}
 			/>
 		</Layout>
@@ -122,6 +146,23 @@ export const pageQuery = graphql`
 				image {
 					childImageSharp {
 						gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+					}
+				}
+			}
+		}
+		team: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+			frontmatter {
+				team {
+					header
+					subtext
+					members {
+						name
+						position
+						careerBackground
+						specialities
+						industryExperience
+						certifications
+						education
 					}
 				}
 			}

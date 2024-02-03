@@ -87,12 +87,12 @@ export default function Navbar() {
 		{
 			title: 'Testimonials',
 			hash: 'testimonials',
-			colorClass: 'secondary',
+			colorClass: 'tertiary',
 		},
 		{
 			title: 'Services',
 			hash: 'services',
-			colorClass: 'tertiary',
+			colorClass: 'four',
 		},
 	];
 
@@ -151,11 +151,11 @@ export default function Navbar() {
 				<div className='flex flex-col items-center'>
 					<div
 						id='navMenu'
-						className={`flex py-0 md:px-0 lg:px-10 xl:px-40 xxl:px-80 z-30 bg-light dark:bg-dark items-center w-full h-full justify-around`}>
+						className={`relative flex py-0 md:px-0 lg:px-10 xl:px-40 xxl:px-80 bg-light dark:bg-dark items-center w-full h-full null:justify-around lg:justify-center`}>
 						<AnchorLink
 							to='/'
 							onAnchorLinkClick={() => window.scrollTo(0, 0)}
-							className='bg-light dark:bg-dark text-dark dark:text-light/60 overflow-hidden w-fit h-fit null:py-2 lg:py-0'
+							className='lg:absolute null:translate-x-0 lg:translate-x-[8rem] xl:translate-x-[14rem] xxl:translate-x-[40rem] left-0 overflow-hidden w-fit h-fit null:py-2 lg:py-0'
 							title={'Home'}>
 							<div className='flex flex-col justify-center w-full h-full items-center'>
 								<img
@@ -166,22 +166,16 @@ export default function Navbar() {
 								<div
 									style={{
 										maxHeight: hasScrolled ? '0px' : '30px',
-										maxWidth: hasScrolled ? '0px' : '100px',
+										width: '100px',
 										paddingTop: hasScrolled ? '0px' : '2px',
-										transform: hasScrolled ? 'translateY(20px)' : 'translateY(0px)',
-										transform: hasScrolled ? 'translateX(40px)' : 'translateX(0px)',
+										transform: hasScrolled ? 'translateY(-40px)' : 'translateY(0px)',
+										transform: hasScrolled ? 'scale(0%)' : 'scale(100%)',
 									}}
-									className={`relative transition-all duration-[500ms] ease-in-out flex text-sm text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
+									className={`relative transition-all duration-[300ms] ease-in-out flex text-sm text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
 									<span className='sans xbold'>POSITIVE</span>
 									<span className='sans'>PROFESSIONALS</span>
 								</div>
 							</div>
-							{/* <div className='relative flex'>
-								<div className='z-20 absolute -left-2 top-0 bg-secondary p-4 rotate-45 rounded-sm'></div>
-								<div className='z-40 bg-primary p-4 rotate-45 rounded-md'></div>
-								<div className='z-30 absolute -right-2 bg-tertiary p-4 rotate-45 rounded-md'></div>
-								<div className='z-10 absolute -right-4 bg-four p-4 rotate-45 rounded-sm'></div>
-							</div> */}
 						</AnchorLink>
 						<div className='flex h-full space-x-4'>
 							{navLinks.map((link) => (
@@ -195,7 +189,7 @@ export default function Navbar() {
 									} border-b-2 text-nowrap ${
 										isHashActive(link.hash)
 											? ' border-four hover:border-four'
-											: 'border-dark/10 dark:border-light/10 hover:border-four/50'
+											: 'border-transparent hover:border-four/50'
 									}`}>
 									{link.title}
 								</AnchorLink>
@@ -226,15 +220,8 @@ export default function Navbar() {
 								</div>
 							)}
 						</div>
-						<div className='flex items-center w-fit space-x-4'>
+						<div className='lg:absolute right-0 py-0 null:-translate-x-0 lg:-translate-x-[8rem] xl:-translate-x-[14rem] xxl:-translate-x-[40rem] flex items-center w-fit space-x-4'>
 							<div className='flex space-x-2 items-center justify-center'>
-								{/* <div className='select-none hidden lg:flex cursor-pointer hover:bg-opacity-50 group bg-hard-stop-gradient p-[0.25rem] rounded-md items-center'>
-									<div className=' bg-light group-active:scale-95 sans px-1'>
-										<span className='text-dark text-sm xbold  group-hover:text-opacity-50'>
-											CONTACT US
-										</span>
-									</div>
-								</div> */}
 								<button
 									onClick={(e) => {
 										e.preventDefault();
@@ -274,7 +261,7 @@ export default function Navbar() {
 					style={{
 						transform: isBurgerNavShown ? `translateY(0px)` : `translateY(-100%)`,
 					}}
-					className={`overflow-visible mobile:space-x-[0.15rem] flex flex-col mobile:flex-row w-full h-fit items-center transform fixed lg:hidden bg-dark/90 duration-[600ms] ease-in-out transition-all`}>
+					className={`-z-20 overflow-visible mobile:space-x-[0.15rem] flex flex-col mobile:flex-row w-full h-fit items-center transform fixed lg:hidden bg-dark/90 duration-[600ms] ease-in-out transition-all`}>
 					{navLinks.map((link, index) => (
 						<AnchorLink
 							key={'#' + link.hash}

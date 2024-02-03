@@ -41,13 +41,12 @@ export default function NavDropdownItem({
 	return (
 		<>
 			<div
-				onMouseEnter={stopCloseTimer}
-				onMouseLeave={startCloseTimer}
-				className='hidden lg:block w-full relative overflow-visible'>
-				<AnchorLink
-					onAnchorLinkClick={() => toggleDropdown(!isOpen)}
-					to={hash}
-					className={`w-full h-full hidden lg:flex items-center sans transition-all duration-[300ms] text-dark dark:text-light/60 text-md px-2  ${
+				// onMouseEnter={stopCloseTimer}
+				// onMouseLeave={startCloseTimer}
+				className='hidden lg:block w-full'>
+				<div
+					onClick={() => toggleDropdown(!isOpen)}
+					className={`cursor-pointer w-full h-full hidden lg:flex items-center sans transition-all duration-[300ms] text-dark dark:text-light/60 text-md px-2  ${
 						hasScrolled ? 'py-5' : 'py-8'
 					}  border-b-2 text-nowrap ${
 						isHashActive(hash) ? ' border-four hover:border-four' : ' border-transparent'
@@ -58,30 +57,32 @@ export default function NavDropdownItem({
 							isOpen ? 'rotate-0' : 'rotate-180'
 						}  transition-all duration-300`}
 					/>
-				</AnchorLink>
-				{isOpen && (
-					<div
-						onMouseEnter={stopCloseTimer}
-						onMouseLeave={() => toggleDropdown(false)}
-						className='my-1 w-full flex flex-col absolute bg-dark border-t-2 border-light/10 rounded-md'>
-						{items.map(({ label, href }, index) => (
-							<AnchorLink
-								key={index}
-								to={href}
-								title={label}
-								className='text-center px-4 py-2 text-sm text-light sans border-b-2 border-light/10 hover:border-four'>
-								{label}
-							</AnchorLink>
-						))}
-					</div>
-				)}
+				</div>
+				<div
+					// onMouseEnter={stopCloseTimer}
+					// onMouseLeave={() => toggleDropdown(false)}
+					className={`-z-40 flex space-x-4 justify-center transition-all duration-300 w-full absolute bottom-0 left-0 ${
+						isOpen ? 'translate-y-full' : 'translate-y-0'
+					} bg-dark dark:bg-darkAccent rounded-b-md `}>
+					{items.map(({ label, href }, index) => (
+						<AnchorLink
+							key={index}
+							to={href}
+							title={label}
+							onAnchorLinkClick={() => {
+								setActiveHash('#' + label.toLowerCase());
+								toggleDropdown(false);
+							}}
+							className='sans xbold p-4 text-sm text-light dark:text-light/70 flex justify-center items-center border-b-2  dark:border-light/70 hover:border-secondary'>
+							{label.toUpperCase()}
+						</AnchorLink>
+					))}
+				</div>
 			</div>
 
 			{/* MOBILE MENU */}
 
 			<div
-				onMouseEnter={stopCloseTimer}
-				onMouseLeave={startCloseTimer}
 				onClick={() => toggleDropdown(!isOpen)}
 				key={'#' + hash}
 				title={title}
@@ -96,8 +97,6 @@ export default function NavDropdownItem({
 				/>
 				{/* DROPDOWN MENU */}
 				<div
-					onMouseEnter={stopCloseTimer}
-					onMouseLeave={() => toggleDropdown(false)}
 					className={`w-full absolute bottom-0 ${
 						isOpen ? 'translate-y-full' : ''
 					} bg-dark/90 dark:bg-dark -z-50 rounded-b-md transform transition-transform duration-[600ms]`}>
