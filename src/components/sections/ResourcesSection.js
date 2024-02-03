@@ -60,7 +60,7 @@ export default function ResourcesSection({ data }) {
 						<span className={`sans text-sm `}>READ OUR STORIES</span>
 						<span className={`group-md:hover:opacity-50 text-xl serif`}>Blog posts</span>
 					</AnchorLink>
-					<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 lg:gap-y-6 gap-x-4'>
+					<div className=' w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 lg:gap-y-6 gap-x-4'>
 						{blogPosts.map((post, index) => (
 							<BlogPostItem
 								key={index}

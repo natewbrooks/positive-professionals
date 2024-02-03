@@ -20,7 +20,7 @@ export default function BlogPostItem({ post }) {
 	return (
 		<AnchorLink
 			to={post.slug}
-			className='group md:hover:opacity-80 w-full h-full relative  bg-light dark:bg-dark duration-300 transition-colors pb-2 rounded-md '>
+			className='group md:hover:opacity-80 w-full h-full relative  duration-300 transition-colors pb-2 rounded-md '>
 			<div className='absolute -top-5 -left-0 flex space-x-1'>
 				{isNewPost() && (
 					<div className='bg-light rounded-md px-2 py-1 text-sm sans xbold text-secondary dark:text-darkAccent'>
@@ -33,7 +33,7 @@ export default function BlogPostItem({ post }) {
 					</div>
 				)}
 			</div>
-			<div className='w-full h-full flex flex-col'>
+			<div className='bg-light/30 dark:bg-dark/30 rounded-md w-full h-full flex flex-col'>
 				<div className='w-full h-full flex flex-col px-4 pt-4 rounded-t-md'>
 					<div className='h-fit cursor-pointer flex flex-col'>
 						<div className='flex flex-col w-full overflow-hidden '>

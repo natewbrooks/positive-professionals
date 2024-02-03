@@ -11,14 +11,12 @@ export default function CoreValuesItem({ text, Icon, modalId }) {
 				onClick={() => {
 					openModal(modalId);
 				}}
-				className='transition-all duration-300 w-full bg-light dark:bg-dark select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
+				className='transition-all duration-300 w-full bg-light/30 select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
 				<Icon
 					size={42}
-					className='text-dark dark:text-light/80'
+					className='text-dark'
 				/>
-				<span className='sans xbold null:text-xs md:text-sm text-dark dark:text-light/50'>
-					{text}
-				</span>
+				<span className='sans xbold null:text-xs md:text-sm text-dark'>{text}</span>
 			</div>
 			<Modal modalId={modalId}>
 				<div className='null:w-fit xl:w-[600px] h-full flex flex-col text-dark dark:text-light/70 null:pb-8 md:pb-4  overflow-hidden'>
