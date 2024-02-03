@@ -57,6 +57,7 @@ export default function TestimonialsSection({ data }) {
 
 		setInterval(() => {
 			setDisableTransition([false, false]);
+			setAllowSwipe(true);
 		}, [0]);
 	};
 
@@ -90,7 +91,7 @@ export default function TestimonialsSection({ data }) {
 
 		setTimeout(() => {
 			setDisableTransition([false, false]);
-			allowSwipe(true);
+			setAllowSwipe(true);
 		}, 0);
 	};
 
@@ -116,6 +117,7 @@ export default function TestimonialsSection({ data }) {
 	// Interval for automatic scrolling
 	useEffect(() => {
 		let interval;
+		console.log(isInView);
 		if (isInView && allowSwipe) {
 			interval = setInterval(() => {
 				const nextIndex = (activeIndex + 1) % testimonials.length;
