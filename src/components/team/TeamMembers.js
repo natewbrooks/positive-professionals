@@ -7,7 +7,7 @@ export default function TeamMembers({ gridItems, colors }) {
 	console.log(isOdd);
 
 	return (
-		<div className='h-full flex justify-center'>
+		<div className='w-full h-full flex justify-center'>
 			<div className='flex flex-col sm:grid sm:grid-cols-2 gap-y-4 sm:gap-x-4 w-fit h-fit place-items-center justify-items-center '>
 				{gridItems.map((item, index) => {
 					const lastItemClasses = isOdd && index === gridItems.length - 1 ? 'col-span-2' : '';
@@ -18,6 +18,7 @@ export default function TeamMembers({ gridItems, colors }) {
 							color={colors[index % colors.length]}
 							modalId={item.name}
 							className={lastItemClasses}
+							isLastItem={isOdd && index === gridItems.length - 1}
 						/>
 					);
 				})}

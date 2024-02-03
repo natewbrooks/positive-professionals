@@ -113,25 +113,23 @@ export default function TestimonialsSection({ data }) {
 	}, [itemWidth, visibleItems]); // Add dependencies to recalculate position when these change
 
 	useEffect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				if (entries[0].isIntersecting) {
-					resizeWindow();
-					recalcPos();
-				}
-			},
-			{ threshold: 0.1 } // Adjust this value as needed
-		);
-
-		if (rowRef.current) {
-			observer.observe(rowRef.current);
-		}
-
-		return () => {
-			if (rowRef.current) {
-				observer.unobserve(rowRef.current);
-			}
-		};
+		// const observer = new IntersectionObserver(
+		// 	(entries) => {
+		// 		if (entries[0].isIntersecting) {
+		// 			resizeWindow();
+		// 			recalcPos();
+		// 		}
+		// 	},
+		// 	{ threshold: 0.1 } // Adjust this value as needed
+		// );
+		// if (rowRef.current) {
+		// 	observer.observe(rowRef.current);
+		// }
+		// return () => {
+		// 	if (rowRef.current) {
+		// 		observer.unobserve(rowRef.current);
+		// 	}
+		// };
 	}, []);
 
 	let interval;
@@ -242,7 +240,7 @@ export default function TestimonialsSection({ data }) {
 			</div>
 
 			<div
-				{...handleSwipe}
+				// {...handleSwipe}
 				style={testimonialContainerStyle}
 				className={`relative flex flex-row w-full h-full`}>
 				{[0, 1].map((i) => (
