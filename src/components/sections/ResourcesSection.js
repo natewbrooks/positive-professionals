@@ -4,7 +4,7 @@ import SeeMore from '../pieces/SeeMore';
 import VideoItem from '../webinar/VideoItem';
 import BlogPostItem from '../blog/BlogPostItem';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
-import bgTop from '../../img/bg-waves/dark-purple-waves/dark-purple-wave-top.svg';
+import bgTop from '../../img/bg-waves/dark-purple-waves/dark-purple-wave-top-2.svg';
 import bgBottom from '../../img/bg-waves/dark-purple-waves/dark-purple-wave-bottom.svg';
 
 export default function ResourcesSection({ data }) {

@@ -53,6 +53,7 @@ export default function TestimonialsSection({ data }) {
 		setItemHeight(newHeight);
 		setDisableTransition([true, true]);
 		setTranslateX([0, -newWidth * testimonials.length]);
+		setActiveIndex(0);
 
 		setInterval(() => {
 			setDisableTransition([false, false]);

@@ -15,7 +15,7 @@ export default function VideoItem({ video }) {
 			</div>
 			<AnchorLink
 				to={video.slug}
-				className='md:hover:opacity-70 bg-light/50 dark:bg-dark/50 transition-all duration-300 flex flex-col h-fit w-full p-2 rounded-b-md'>
+				className='md:hover:opacity-70 bg-light dark:bg-dark transition-all duration-300 flex flex-col h-fit w-full p-2 rounded-b-md'>
 				<div className='pb-2 w-full flex flex-col overflow-hidden border-b-2 border-dark/10 dark:border-light/10 text-dark/50 dark:text-light/50'>
 					<span className='w-full sans text-sm xbold text-nowrap whitespace-nowrap'>
 						PUBLISHED {video.date.toUpperCase()}

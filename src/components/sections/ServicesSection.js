@@ -12,8 +12,8 @@ import {
 } from 'react-icons/fa';
 import { FaPeopleGroup } from 'react-icons/fa6';
 import ServicesItem from '../services/ServicesItem';
-import bgTop from '../../img/bg-waves/purple-waves/purple-wave-top.svg';
-import bgBottom from '../../img/bg-waves/purple-waves/purple-wave-bottom.svg';
+import bgTop from '../../img/bg-waves/purple-waves/purple-wave-top-2.svg';
+import bgBottom from '../../img/bg-waves/purple-waves/purple-wave-bottom-2.svg';
 
 export default function ServicesSection({ content }) {
 	const services = [
@@ -68,17 +68,17 @@ export default function ServicesSection({ content }) {
 			<div className='z-0 absolute w-full h-full left-0'>
 				<img
 					src={bgTop}
-					style={{ transform: 'translateY(-75%)' }}
+					style={{ transform: 'translateY(-80%)' }}
 					className='absolute w-full top-0 -z-[10] '></img>
 				<div className='absolute bg-secondary w-full h-full -z-[1]'></div>
 				<img
 					src={bgBottom}
-					style={{ transform: 'translateY(70%)' }}
+					style={{ transform: 'translateY(80%)' }}
 					className='absolute w-full h-fit bottom-0 -z-[10]'></img>
 			</div>
 
 			<div className='z-10 text-dark w-full h-full flex flex-col space-y-4 null:py-8 md:py-0'>
-				<div className='z-10 text-dark flex flex-col text-start -space-y-1 leading-tight'>
+				<div className='z-10 flex flex-col text-start -space-y-1 leading-tight'>
 					<span className='sans text-sm'>WHAT WE CAN DO FOR YOU</span>
 					<span className='serif text-xxl'>Our services</span>
 				</div>
@@ -90,7 +90,7 @@ export default function ServicesSection({ content }) {
 					Increase personal energy and resilience by aligning actions and values. Delight customers
 					with exceptional listening, collaboration, and innovation skills.
 				</span>
-				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 h-full'>
+				<div className='text-dark grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 h-full'>
 					{services.map((service, index) => (
 						<ServicesItem
 							key={index}
