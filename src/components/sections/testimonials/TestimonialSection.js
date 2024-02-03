@@ -90,6 +90,7 @@ export default function TestimonialsSection({ data }) {
 
 		setTimeout(() => {
 			setDisableTransition([false, false]);
+			allowSwipe(true);
 		}, 0);
 	};
 
@@ -117,7 +118,6 @@ export default function TestimonialsSection({ data }) {
 		let interval;
 		if (isInView && allowSwipe) {
 			interval = setInterval(() => {
-				if (!allowSwipe) return;
 				const nextIndex = (activeIndex + 1) % testimonials.length;
 				setActiveIndex(nextIndex);
 
