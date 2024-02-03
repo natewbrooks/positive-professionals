@@ -25,8 +25,8 @@ export default function Footer({}) {
 						</div> */}
 					</AnchorLink>
 				</div>
-				<span className='sans text-sm text-center text-light/50'>
-					COPYRIGHT @ 2024 <br></br>POSITIVE PROFESSIONALS.
+				<span className='sans text-sm text-center text-light/50 xbold'>
+					COPYRIGHT @ 2024 <br></br>POSITIVE PROFESSIONALS
 				</span>
 			</div>
 			<div className='flex space-x-10 justify-center py-8 sm:justify-normal sm:py-0'>
@@ -69,7 +69,7 @@ export default function Footer({}) {
 					</div>
 				</div>
 			</div>
-			<div className='flex items-end justify-center'>
+			<div className='flex items-end justify-center '>
 				<a
 					href='https://www.natewbrooks.com'
 					target='_blank'
