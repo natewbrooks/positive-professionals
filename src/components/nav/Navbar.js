@@ -144,8 +144,8 @@ export default function Navbar() {
 		<>
 			<nav
 				className={`${
-					isNavbarVisible ? 'translate-y-0' : '-translate-y-full'
-				} transform transition-all duration-500 ease-in-out fixed bg-light dark:bg-dark w-full z-30 drop-shadow-md overflow-visible`}
+					isNavbarVisible ? 'null:translate-y-0' : 'null:-translate-y-full'
+				} transform transition-all duration-300 ease-in-out fixed bg-light dark:bg-dark w-full z-30 drop-shadow-md overflow-visible`}
 				role='navigation'
 				aria-label='main-navigation'>
 				<div className='flex flex-col items-center'>

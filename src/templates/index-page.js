@@ -46,9 +46,6 @@ export const IndexPageTemplate = ({
 					className='flex flex-col'>
 					<WorkedWithSection />
 					<TestimonialsSection data={workedWith} />
-					{/* <img
-					src={purpleWavesBg}
-					className='absolute w-full'></img> */}
 				</section>
 
 				<ServicesSection data={services} />

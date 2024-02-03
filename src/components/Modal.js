@@ -45,12 +45,12 @@ export default function Modal({ children, modalId }) {
 			{currentModal === modalId && (
 				<div
 					id='modal'
-					className='z-50 m-0 drop-shadow-lg fixed w-screen h-screen top-0 right-0 bg-dark/60 flex justify-center items-center select-none'>
-					<div className='z-50 flex flex-col max-h-screen w-full h-full md:max-w-[60%] md:max-h-[60%] md:w-fit md:h-fit bg-light dark:bg-darkAccent p-5 md:rounded-lg'>
-						<div className='z-50 w-full justify-end text-end'>
+					className='z-20 m-0 drop-shadow-lg fixed w-screen h-screen top-0 right-0 bg-dark/60 flex justify-center items-center select-none'>
+					<div className='flex flex-col max-h-screen w-full h-full md:max-w-[60%] md:max-h-[60%] md:w-fit md:h-fit bg-light dark:bg-darkAccent p-5 md:rounded-lg'>
+						<div className='w-full justify-end text-end'>
 							<button
 								onClick={() => closeModal()}
-								className='z-50 serif text-md md:hover:opacity-50'>
+								className='serif text-md md:hover:opacity-50'>
 								<FaXmark
 									size={22}
 									className='text-dark dark:text-light/70'

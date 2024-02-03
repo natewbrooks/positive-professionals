@@ -19,7 +19,7 @@ export default function CoreValuesItem({ text, Icon, modalId }) {
 				<span className='sans xbold null:text-xs md:text-sm text-dark'>{text}</span>
 			</div>
 			<Modal modalId={modalId}>
-				<div className='null:w-fit xl:w-[600px] h-full flex flex-col text-dark dark:text-light/70 null:pb-8 md:pb-4  overflow-hidden'>
+				<div className='null:w-full xl:w-[600px] h-full flex flex-col text-dark dark:text-light/70 null:pb-8 md:pb-4 overflow-hidden'>
 					<div className='flex flex-col leading-tight pb-4'>
 						<span className='sans text-md text-dark/50 dark:text-light/80 xbold text-center'>
 							CORE VALUE
