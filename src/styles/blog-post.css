@@ -121,13 +121,12 @@ article {
 
 .blog-post-container blockquote {
     background-color: var(--accent);
+    border-left: 4px solid var(--border);
     margin: 1rem 0rem;
+    padding: 1rem;
     border-radius: 4px;
 
-    p {
-        border-radius: 4px;
-        padding: 1rem;
-        border-left: 4px solid var(--border);
+    blockquote p {
         color: var(--text-color);
     }
 }

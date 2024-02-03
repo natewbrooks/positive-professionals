@@ -73,7 +73,7 @@ export default function ServicesSection({ content }) {
 				<div className='absolute bg-secondary w-full h-full -z-[1]'></div>
 				<img
 					src={bgBottom}
-					style={{ transform: 'translateY(80%)' }}
+					style={{ transform: 'translateY(75%)' }}
 					className='absolute w-full h-fit bottom-0 -z-[10]'></img>
 			</div>
 
