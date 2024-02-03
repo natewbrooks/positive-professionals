@@ -99,7 +99,6 @@ export default function TestimonialsSection({ data }) {
 		const handleVisibilityChange = () => {
 			if (!document.hidden) {
 				adjustLayout();
-				setDisableTransition([false, false]);
 			}
 		};
 
@@ -182,7 +181,6 @@ export default function TestimonialsSection({ data }) {
 							onTransitionEnd={() => {
 								recalcPos();
 								setAllowSwipe(true);
-								setDisableTransition([false, false]);
 							}}
 							className={`absolute top-0 ease-in-out w-full flex flex-row`}>
 							{data.testimonials.map((testimonial, index) => (
@@ -200,10 +198,10 @@ export default function TestimonialsSection({ data }) {
 				{/* <SeeMore /> */}
 			</div>
 			<div className='absolute null:-bottom-10 lg:-bottom-16 w-full flex space-x-1 justify-center'>
-				{data.testimonials.map((testimonial, index) => (
+				{[...Array(data.testimonials.length)].map((x, index) => (
 					<div
 						key={index}
-						className={`text-xxxl transform transition-all duration-300 cursor-default select-none ${
+						className={`text-xxxl transform transition-all duration-[500ms] ease-in-out cursor-default select-none ${
 							index === activeIndex
 								? 'text-dark dark:text-light/70'
 								: 'text-dark/20 dark:text-light/20'
