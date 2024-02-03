@@ -10,6 +10,16 @@
     --dark: #121212;
     --lightAccent: #dbdbdb;
     --darkAccent: #292929;
+
+    --accent: #dbdbdb;
+    --text-color: #121212;
+    --border: #121212;
+}
+
+html.dark {
+    --accent: #292929;
+    --text-color: #afafaf;
+    --border: #dbdbdb;
 }
 
 .blog-post-container p {
@@ -39,30 +49,86 @@ article {
     align-self: center;
 }
 
-.blog-post-container li {
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: 800;
-    font-size: 20px;
+.blog-post-container ol,
+.blog-post-container ul {
+    padding: 2rem 0rem;
+    margin: 0 auto;
+    /* Center the list */
+    max-width: fit-content;
+    /* Fit the width to its content */
+    list-style: none;
+    /* Remove the default list styling */
+    text-align: center;
+    /* Center text alignment for the list */
 }
 
 .blog-post-container ol {
-    margin: 2rem 2rem;
-    width: fit-content;
-    list-style-type: decimal;
+    counter-reset: list-counter;
 }
 
-.blog-post-container ul {
-    margin: 2rem 2rem;
-    list-style-type: disc;
+.blog-post-container li {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+    /* Space between list items */
+    text-align: left;
+    /* Align the text to the left for LI */
+}
+
+/* Style for ordered list items */
+.blog-post-container ol li {
+    display: block;
+    position: relative;
+    /* Needed for positioning the pseudo-element */
+}
+
+.blog-post-container ol li::before {
+    counter-increment: list-counter;
+    content: counter(list-counter) ". ";
+    /* Add a period and space after the number */
+    display: inline-block;
+    /* Allocate space for the number */
+    margin-right: 0.25em;
+    /* Negative margin to pull numbers into their own column */
+    text-align: right;
+    /* Align the numbers to the right within their space */
+}
+
+/* Style for unordered list items */
+.blog-post-container ul li {
+    display: flex;
+    align-items: center;
+    /* Center items vertically */
+}
+
+.blog-post-container ul li::before {
+    content: '\2022';
+    /* Unicode character for bullet */
+    display: inline-block;
+    /* Allocate space for the bullet */
+    margin-right: 0.25em;
+    /* Negative margin to pull bullet into its own column */
+    text-align: right;
+    /* Align the bullet to the right within their space */
+}
+
+/* Center the list within the blog post container */
+.blog-post-container {
+    display: flex;
+    justify-content: center;
 }
 
 .blog-post-container blockquote {
-    padding: 2rem 0rem;
+    background-color: var(--accent);
+    margin: 1rem 0rem;
+    border-radius: 4px;
 
     p {
         border-radius: 4px;
-        padding-left: 2rem;
-        border-left: 4px solid var(--lightAccent);
+        padding: 1rem;
+        border-left: 4px solid var(--border);
+        color: var(--text-color);
     }
 }
 
@@ -93,22 +159,7 @@ article {
     }
 }
 
-@media (min-width: 798px) {
-    .blog-post-container li {
-        font-family: 'Source Sans 3', sans-serif;
-        font-weight: 800;
-        font-size: 24px;
-    }
-
-
-    .blog-post-container ol {
-        margin: 1rem 2rem;
-        list-style-type: decimal;
-
-    }
-
-
-}
+@media (min-width: 798px) {}
 
 @media (min-width: 1300px) {
     .blog-post-container {
