@@ -6,19 +6,37 @@ export default function Modal({ children, modalId }) {
 	const { currentModal, closeModal } = useModal();
 
 	useEffect(() => {
+		// Function to calculate the width of the scrollbar
+		const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
+		const scrollbarWidth = getScrollbarWidth();
+
 		if (currentModal === modalId) {
+			const modalElement = document.getElementById('modal');
+
+			// Increase body's padding right by the scrollbar width to prevent layout shift
+			document.body.style.paddingRight = `${scrollbarWidth}px`;
+			if (modalElement) {
+				modalElement.style.paddingRight = `${scrollbarWidth}px`;
+			}
 			document.documentElement.style.overflow = 'hidden';
 			document.body.style.overflow = 'hidden';
-		}
 
-		// Clean up function to reset overflow when component unmounts
-		return () => {
-			if (currentModal === modalId) {
-				document.documentElement.style.overflow = '';
-				document.body.style.overflow = '';
-			}
-		};
-	}, [currentModal]);
+			// Clean up function to reset overflow and padding when component unmounts or modal closes
+			return () => {
+				if (currentModal === modalId) {
+					document.body.style.paddingRight = '0px';
+					if (modalElement) {
+						modalElement.style.paddingRight = '';
+					}
+
+					document.documentElement.style.overflow = '';
+					document.body.style.overflow = '';
+				}
+			};
+		}
+	}, [currentModal, modalId]); // Re-run effect only if currentModal or modalId changes
+
+	if (currentModal !== modalId) return null;
 
 	if (currentModal !== modalId) return null;
 
@@ -27,8 +45,8 @@ export default function Modal({ children, modalId }) {
 			{currentModal === modalId && (
 				<div
 					id='modal'
-					className='z-50 m-0 drop-shadow-lg fixed w-screen h-screen top-0 right-0 bg-dark/60 flex justify-center items-center'>
-					<div className='z-50 flex flex-col max-h-screen w-full h-full md:max-w-[60%] md:max-h-[60%] md:w-fit md:h-fit bg-light dark:bg-darkAccent p-5 rounded-lg'>
+					className='z-50 m-0 drop-shadow-lg fixed w-screen h-screen top-0 right-0 bg-dark/60 flex justify-center items-center select-none'>
+					<div className='z-50 flex flex-col max-h-screen w-full h-full md:max-w-[60%] md:max-h-[60%] md:w-fit md:h-fit bg-light dark:bg-darkAccent p-5 md:rounded-lg'>
 						<div className='z-50 w-full justify-end text-end'>
 							<button
 								onClick={() => closeModal()}
