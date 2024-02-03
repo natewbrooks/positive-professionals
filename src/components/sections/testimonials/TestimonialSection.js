@@ -97,7 +97,10 @@ export default function TestimonialsSection({ data }) {
 		adjustLayout();
 		const handleResize = () => adjustLayout();
 		const handleVisibilityChange = () => {
-			if (!document.hidden) adjustLayout();
+			if (!document.hidden) {
+				adjustLayout();
+				setDisableTransition([false, false]);
+			}
 		};
 
 		window.addEventListener('resize', handleResize);
@@ -179,6 +182,7 @@ export default function TestimonialsSection({ data }) {
 							onTransitionEnd={() => {
 								recalcPos();
 								setAllowSwipe(true);
+								setDisableTransition([false, false]);
 							}}
 							className={`absolute top-0 ease-in-out w-full flex flex-row`}>
 							{data.testimonials.map((testimonial, index) => (
