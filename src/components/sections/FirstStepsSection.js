@@ -21,7 +21,9 @@ export default function FirstStepsSection({ data }) {
 				{data.steps.map((step, index) => {
 					const IconComponent = icons[index];
 					return (
-						<div className='flex flex-row md:space-x-4 lg:space-x-8 items-center'>
+						<div
+							key={index}
+							className='flex flex-row md:space-x-4 lg:space-x-8 items-center'>
 							<div className='flex flex-col space-y-4 items-center justify-center text-dark dark:text-light/70'>
 								<div className='bg-dark/10 dark:bg-light/10 rounded-full p-8'>
 									{<IconComponent size={48} />}

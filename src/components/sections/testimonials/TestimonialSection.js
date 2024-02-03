@@ -117,7 +117,6 @@ export default function TestimonialsSection({ data }) {
 	// Interval for automatic scrolling
 	useEffect(() => {
 		let interval;
-		console.log(isInView);
 		if (isInView && allowSwipe) {
 			interval = setInterval(() => {
 				const nextIndex = (activeIndex + 1) % testimonials.length;
@@ -129,15 +128,7 @@ export default function TestimonialsSection({ data }) {
 		}
 
 		return () => clearInterval(interval);
-	}, [
-		translateX,
-		itemWidth,
-		isScrollingRight,
-		allowSwipe,
-		isInView,
-		activeIndex,
-		testimonials.length,
-	]);
+	}, [allowSwipe, isInView, activeIndex, testimonials.length]);
 
 	// Swipe handling
 	const handleSwipe = useSwipeable({

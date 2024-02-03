@@ -4,7 +4,6 @@ import TeamMember from './TeamMember';
 
 export default function TeamMembers({ gridItems, colors }) {
 	const isOdd = gridItems.length % 2 !== 0;
-	console.log(isOdd);
 
 	return (
 		<div className='w-full h-full flex justify-center'>

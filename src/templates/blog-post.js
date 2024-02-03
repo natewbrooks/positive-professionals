@@ -97,8 +97,6 @@ const BlogPost = ({ data }) => {
 	const { markdownRemark: post, team } = data; // Assuming 'team' contains 'membersInfo'
 	const membersInfo = team.frontmatter.team.members;
 
-	console.log(post.frontmatter);
-
 	return (
 		<Layout>
 			<BlogPostTemplate

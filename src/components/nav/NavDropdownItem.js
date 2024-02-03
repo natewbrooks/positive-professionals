@@ -15,35 +15,13 @@ export default function NavDropdownItem({
 }) {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const closeTimer = useRef(null);
-
-	const startCloseTimer = () => {
-		closeTimer.current = setTimeout(() => {
-			setIsOpen(false);
-		}, 3000);
-	};
-
-	const stopCloseTimer = () => {
-		clearTimeout(closeTimer.current);
-	};
-
 	const toggleDropdown = (bool) => {
 		setIsOpen(bool);
-		if (bool) {
-			stopCloseTimer();
-		} else {
-			startCloseTimer();
-		}
-
-		console.log(bool);
 	};
 
 	return (
 		<>
-			<div
-				// onMouseEnter={stopCloseTimer}
-				// onMouseLeave={startCloseTimer}
-				className='hidden lg:block w-full'>
+			<div className='hidden lg:block w-full'>
 				<div
 					onClick={() => toggleDropdown(!isOpen)}
 					className={`cursor-pointer w-full h-full hidden lg:flex items-center sans transition-all duration-[300ms] text-dark dark:text-light/60 text-md px-2  ${
@@ -59,8 +37,6 @@ export default function NavDropdownItem({
 					/>
 				</div>
 				<div
-					// onMouseEnter={stopCloseTimer}
-					// onMouseLeave={() => toggleDropdown(false)}
 					className={`-z-40 flex space-x-4 justify-center transition-all duration-300 w-full absolute bottom-0 left-0 ${
 						isOpen ? 'translate-y-full' : 'translate-y-0'
 					} bg-dark dark:bg-darkAccent rounded-b-md `}>

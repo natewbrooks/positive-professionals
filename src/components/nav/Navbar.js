@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useCallback } from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import SigninButton from '../sign in/SigninButton';
 import NavDropdownItem from './NavDropdownItem';
@@ -6,139 +6,85 @@ import { useLocation } from '@reach/router';
 import logo from '../../img/logo/pp-logo-bg.svg';
 import { useModal } from '../ModalContext';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import { func } from 'prop-types';
 
 export default function Navbar() {
-	const [darkModeActive, setDarkModeActive] = useState(false);
+	const location = useLocation();
+	const { currentModal } = useModal();
+
+	const [darkModeActive, setDarkModeActive] = useState(localStorage.getItem('darkMode') === 'dark');
 	const [activeHash, setActiveHash] = useState('');
-	const [userData, setUserData] = useState();
 	const [navHeight, setNavHeight] = useState(0);
 	const [isBurgerNavShown, setBurgerNavShown] = useState(false);
-	const [currentPath, setCurrentPath] = useState('');
-	const location = useLocation();
 	const [hasScrolled, setHasScrolled] = useState(false);
-	const { currentModal } = useModal();
-	const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
-	useEffect(() => {
-		setIsNavbarVisible(!currentModal);
-		console.log(currentModal);
-	}, [currentModal]);
+	// Reacting to currentModal change to toggle Navbar visibility
+	const isNavbarVisible = !currentModal;
 
-	const toggleDarkMode = () => {
+	const toggleDarkMode = useCallback(() => {
 		const newMode = !darkModeActive;
-		setDarkModeActive(newMode);
 		localStorage.setItem('darkMode', newMode ? 'dark' : 'light');
-		if (newMode) {
-			document.documentElement.classList.add('dark');
-		} else {
-			document.documentElement.classList.remove('dark');
-		}
-	};
+		document.documentElement.classList.toggle('dark', newMode);
+		setDarkModeActive(newMode);
+	}, [darkModeActive]);
 
 	useEffect(() => {
-		const savedMode = localStorage.getItem('darkMode');
-		const isDarkMode = savedMode === 'dark';
-		setDarkModeActive(isDarkMode);
-		if (isDarkMode) {
-			document.documentElement.classList.add('dark');
-		} else {
-			document.documentElement.classList.remove('dark');
-		}
+		const handleScroll = () => setHasScrolled(window.scrollY > 800);
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
-	const [lastScrollY, setLastScrollY] = useState(0);
-
-	const handleScroll = () => {
-		// Set hasScrolled to true if scrolling up, false if scrolling down
-		// hardcode or use lastScrollY?
-		setHasScrolled(window.scrollY > 800);
-		setLastScrollY(window.scrollY);
-	};
-
+	// Adjust navHeight based on the size of the navbar
 	useEffect(() => {
-		window.addEventListener('scroll', handleScroll);
+		const updateNavHeight = () =>
+			setNavHeight(document.getElementById('navMenu')?.offsetHeight || 0);
+		window.addEventListener('resize', updateNavHeight);
+		updateNavHeight(); // Call on mount to set initial value
+		return () => window.removeEventListener('resize', updateNavHeight);
+	}, []);
 
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
+	// Monitor location changes and update currentPath state
+	useEffect(() => {
+		setActiveHash(location.hash);
+	}, [location]);
+
+	// Intersection Observer to track active section
+	useEffect(() => {
+		const observerCallback = (entries, observer) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) setActiveHash(entry.target.id);
+			});
 		};
-	}, [lastScrollY]);
 
-	useEffect(() => {
-		setCurrentPath(location.pathname);
-	}, [location.pathname]);
+		const observerOptions = { rootMargin: '0px', threshold: 0.5 };
+		const observer = new IntersectionObserver(observerCallback, observerOptions);
+		const sections = document.querySelectorAll('section');
+		sections.forEach((section) => observer.observe(section));
 
-	const isHashActive = (hash) => {
-		return hash == activeHash;
-	};
+		return () => observer.disconnect();
+	}, []);
 
+	function isHashActive(hash) {
+		return activeHash === hash;
+	}
+
+	// Resources Dropdown - Simplified for brevity
 	const resourcesDropdown = [
 		{ label: 'Blog', href: '/resources/blog/' },
 		{ label: 'Videos', href: '/resources/videos/' },
 		{ label: 'Webinars', href: '/resources/webinars/' },
-		// Add more items here
 	];
 
+	// Nav Links - Simplified for brevity
 	const navLinks = [
-		{
-			title: 'Team',
-			hash: 'team',
-			colorClass: 'primary',
-		},
-		{
-			title: 'Testimonials',
-			hash: 'testimonials',
-			colorClass: 'tertiary',
-		},
-		{
-			title: 'Services',
-			hash: 'services',
-			colorClass: 'four',
-		},
+		{ title: 'Team', hash: 'team', colorClass: 'primary' },
+		{ title: 'Testimonials', hash: 'testimonials', colorClass: 'tertiary' },
+		{ title: 'Services', hash: 'services', colorClass: 'four' },
 	];
-
-	function resizeWindow() {
-		setNavHeight(document.getElementById('navMenu').offsetHeight);
-	}
 
 	useLayoutEffect(() => {
 		setNavHeight(document.getElementById('navMenu').offsetHeight);
 	}, [navHeight]);
-
-	useEffect(() => {
-		window.addEventListener('resize', resizeWindow);
-
-		if (document.getElementById('navMenu')) {
-			setNavHeight(document.getElementById('navMenu').offsetHeight);
-		}
-
-		// Define the callback for IntersectionObserver
-		const observerCallback = (entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					// Set the hash to the ID of the entry target
-					if (['team', 'testimonials', 'services', 'resources'].includes(entry.target.id)) {
-						setActiveHash(entry.target.id);
-					}
-				}
-			});
-		};
-
-		// Create an IntersectionObserver instance
-		const observerOptions = { rootMargin: '0px', threshold: 0.5 };
-		const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-		// Observe all sections that you want to track
-		const sections = document.querySelectorAll('section');
-		sections.forEach((section) => {
-			observer.observe(section);
-		});
-
-		// Disconnect the observer on unmount
-		return () => {
-			window.removeEventListener('resize', resizeWindow);
-			observer.disconnect();
-		};
-	}, [navHeight, isBurgerNavShown]);
 
 	return (
 		<>
@@ -194,31 +140,17 @@ export default function Navbar() {
 									{link.title}
 								</AnchorLink>
 							))}
-							{currentPath.includes('/resources') ? (
-								<div className='hidden lg:block'>
-									<NavDropdownItem
-										items={resourcesDropdown}
-										title='Resources'
-										hash={''}
-										isHashActive={isHashActive}
-										isBurgerNavShown={isBurgerNavShown}
-										setActiveHash={setActiveHash}
-										hasScrolled={hasScrolled}
-									/>
-								</div>
-							) : (
-								<div className='hidden lg:block'>
-									<NavDropdownItem
-										items={resourcesDropdown}
-										title='Resources'
-										hash={'/#resources'}
-										isHashActive={isHashActive}
-										isBurgerNavShown={isBurgerNavShown}
-										setActiveHash={setActiveHash}
-										hasScrolled={hasScrolled}
-									/>
-								</div>
-							)}
+							<div className='hidden lg:block'>
+								<NavDropdownItem
+									items={resourcesDropdown}
+									title='Resources'
+									hash={''}
+									isHashActive={isHashActive}
+									isBurgerNavShown={isBurgerNavShown}
+									setActiveHash={setActiveHash}
+									hasScrolled={hasScrolled}
+								/>
+							</div>
 						</div>
 						<div className='lg:absolute right-0 py-0 null:-translate-x-0 lg:-translate-x-[8rem] xl:-translate-x-[14rem] xxl:-translate-x-[40rem] flex items-center w-fit space-x-4'>
 							<div className='flex space-x-2 items-center justify-center'>
@@ -253,7 +185,7 @@ export default function Navbar() {
 								size={20}
 								className='select-none hidden dark:block text-light/70 cursor-pointer md:hover:opacity-50 active:scale-95'
 							/>
-							<SigninButton userData={userData} />
+							<SigninButton />
 						</div>
 					</div>
 				</div>
@@ -280,27 +212,15 @@ export default function Navbar() {
 						</AnchorLink>
 					))}
 
-					{currentPath.includes('/resources') ? (
-						<NavDropdownItem
-							items={resourcesDropdown}
-							title='Resources'
-							hash={''}
-							isHashActive={isHashActive}
-							isBurgerNavShown={isBurgerNavShown}
-							setActiveHash={setActiveHash}
-							hasScrolled={hasScrolled}
-						/>
-					) : (
-						<NavDropdownItem
-							items={resourcesDropdown}
-							title='Resources'
-							hash={'/#resources'}
-							isHashActive={isHashActive}
-							isBurgerNavShown={isBurgerNavShown}
-							setActiveHash={setActiveHash}
-							hasScrolled={hasScrolled}
-						/>
-					)}
+					<NavDropdownItem
+						items={resourcesDropdown}
+						title='Resources'
+						hash={''}
+						isHashActive={isHashActive}
+						isBurgerNavShown={isBurgerNavShown}
+						setActiveHash={setActiveHash}
+						hasScrolled={hasScrolled}
+					/>
 				</div>
 			</nav>
 		</>
