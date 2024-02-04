@@ -159,6 +159,7 @@ export default function Navbar() {
 						<div className='lg:absolute right-0 py-0 null:-translate-x-0 lg:-translate-x-[8rem] xl:-translate-x-[14rem] xxl:-translate-x-[40rem] flex items-center w-fit space-x-4'>
 							<div className='flex space-x-2 items-center justify-center'>
 								<button
+									aria-label='Hamburger Menu Button'
 									onClick={(e) => {
 										e.preventDefault();
 										setBurgerNavShown(!isBurgerNavShown);

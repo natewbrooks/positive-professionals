@@ -44,6 +44,7 @@ export default function ContactSection({ content }) {
 							</span>
 							<input
 								type='text'
+								aria-label='Name Input'
 								className='select-none bg-dark/10 dark:bg-light/10 rounded-md text-dark dark:text-light/70 placeholder:text-dark py-1 px-2 sans'></input>
 						</div>
 						<div className='flex flex-col'>
@@ -52,6 +53,7 @@ export default function ContactSection({ content }) {
 							</span>
 							<input
 								type='email'
+								aria-label='Email Input'
 								className='select-none bg-dark/10 dark:bg-light/10 rounded-md text-dark dark:text-light/70 placeholder:text-dark py-1 px-2 sans'></input>
 						</div>
 						<div className='flex flex-col'>
@@ -60,6 +62,7 @@ export default function ContactSection({ content }) {
 							</span>
 							<input
 								type='tel'
+								aria-label='Phone Number Input'
 								className='select-none bg-dark/10 dark:bg-light/10 rounded-md text-dark dark:text-light/70 placeholder:text-dark py-1 px-2 sans'></input>
 						</div>
 					</div>

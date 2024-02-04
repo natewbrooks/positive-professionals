@@ -35,25 +35,25 @@ export default function Footer({}) {
 					<div className='flex flex-col space-y-2 justify-center items-center'>
 						<AnchorLink
 							to='/#team'
-							className='sans text-sm text-light/40'
+							className='sans text-md text-light/40'
 							title='Navigate to the Team section'>
 							Team
 						</AnchorLink>
 						<AnchorLink
 							to='/#testimonials'
-							className='sans text-sm text-light/40'
+							className='sans text-md text-light/40'
 							title='Navigate to the Testimonials section'>
 							Testimonials
 						</AnchorLink>
 						<AnchorLink
 							to='/#services'
-							className='sans text-sm text-light/40'
+							className='sans text-md	 text-light/40'
 							title='Navigate to the Services section'>
 							Services
 						</AnchorLink>
 						<AnchorLink
 							to='/resources'
-							className='sans text-sm text-light/40'
+							className='sans text-md text-light/40'
 							title='Access Resources page'>
 							Resources
 						</AnchorLink>
