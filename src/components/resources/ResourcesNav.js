@@ -43,6 +43,7 @@ const ResourcesNav = ({ pageTitle, showTitle }) => {
 				{pageTitle === 'Return' && (
 					<AnchorLink
 						to={lastURL()}
+						title='Go back to the previous page'
 						className='flex sm:hidden md:hover:opacity-50 items-center justify-center sm:justify-start w-full text-center'>
 						<span className='relative text-lg xbold sans text-dark dark:text-light/70'>
 							BACK

@@ -56,6 +56,7 @@ export default function BlogPostItem({ post }) {
 						<div className='px-4 py-2 drop-shadow-md cursor-pointer w-full '>
 							<img
 								src={pic}
+								alt={post.title + ' picture'}
 								className='max-h-[320px]'></img>
 						</div>
 						<div

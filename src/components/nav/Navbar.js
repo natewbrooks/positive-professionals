@@ -132,7 +132,7 @@ export default function Navbar() {
 								<AnchorLink
 									key={'#' + link.hash}
 									to={'/#' + link.hash}
-									title={link.title}
+									title={`Go to ${link.title}`}
 									onAnchorLinkClick={() => setActiveHash(link.hash)}
 									className={`w-full h-full hidden lg:block sans transition-all duration-[300ms] text-dark dark:text-light/60 text-md px-2 ${
 										hasScrolled ? 'py-5' : 'py-8'

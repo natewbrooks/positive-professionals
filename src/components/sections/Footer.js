@@ -36,25 +36,25 @@ export default function Footer({}) {
 						<AnchorLink
 							to='/#team'
 							className='sans text-sm text-light/40'
-							title={'Team'}>
+							title='Navigate to the Team section'>
 							Team
 						</AnchorLink>
 						<AnchorLink
 							to='/#testimonials'
 							className='sans text-sm text-light/40'
-							title={'Testimonials'}>
+							title='Navigate to the Testimonials section'>
 							Testimonials
 						</AnchorLink>
 						<AnchorLink
 							to='/#services'
 							className='sans text-sm text-light/40'
-							title={'Resources'}>
+							title='Navigate to the Services section'>
 							Services
 						</AnchorLink>
 						<AnchorLink
 							to='/resources'
 							className='sans text-sm text-light/40'
-							title={'Resources'}>
+							title='Access Resources page'>
 							Resources
 						</AnchorLink>
 					</div>

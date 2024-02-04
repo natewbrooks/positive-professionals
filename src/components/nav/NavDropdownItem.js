@@ -44,7 +44,7 @@ export default function NavDropdownItem({
 						<AnchorLink
 							key={index}
 							to={href}
-							title={label}
+							title={`Navigate to ${label}`}
 							onAnchorLinkClick={() => {
 								setActiveHash('#' + label.toLowerCase());
 								toggleDropdown(false);
@@ -80,7 +80,7 @@ export default function NavDropdownItem({
 						<AnchorLink
 							key={index}
 							to={href}
-							title={label}
+							title={`Navigate to ${label}`}
 							onAnchorLinkClick={() => {
 								setActiveHash('#' + label.toLowerCase());
 								toggleDropdown(false);

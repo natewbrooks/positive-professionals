@@ -36,6 +36,7 @@ export default function ResourcesSection({ data }) {
 			<div className='z-0 absolute w-full h-full left-0'>
 				<img
 					src={bgTop}
+					alt='dark-purple-wave-bg-top'
 					style={{ transform: 'translateY(-90%)' }}
 					className='absolute w-full top-0'></img>
 				<div className='absolute bg-four w-full h-full'></div>

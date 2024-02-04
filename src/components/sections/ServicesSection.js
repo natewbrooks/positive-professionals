@@ -68,11 +68,13 @@ export default function ServicesSection({ content }) {
 			<div className='z-0 absolute w-full h-full left-0'>
 				<img
 					src={bgTop}
+					alt='purple-wave-bg-top'
 					style={{ transform: 'translateY(-80%)' }}
 					className='absolute w-full top-0 -z-[10] '></img>
 				<div className='absolute bg-secondary w-full h-full -z-[1]'></div>
 				<img
 					src={bgBottom}
+					alt='purple-wave-bg-bottom'
 					className='null:translate-y-[70%] mobile:translate-y-[75%] absolute w-full h-fit bottom-0 -z-[10]'></img>
 			</div>
 

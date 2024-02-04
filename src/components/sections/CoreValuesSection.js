@@ -20,11 +20,13 @@ export default function CoreValuesSection({ data }) {
 			<div className='z-0 absolute w-full h-full left-0'>
 				<img
 					src={bgTop}
+					alt='blue-wave-bg-top'
 					style={{ transform: 'translateY(-80%)' }}
 					className='absolute w-full top-0 -z-[10]'></img>
 				<div className='absolute bg-tertiary w-full h-full -z-[1]'></div>
 				<img
 					src={bgBottom}
+					alt='blue-wave-bg-bottom'
 					style={{ transform: 'translateY(85%)' }}
 					className='absolute w-full bottom-0 -z-[10]'></img>
 			</div>
