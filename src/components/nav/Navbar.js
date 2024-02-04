@@ -12,7 +12,7 @@ export default function Navbar() {
 	const location = useLocation();
 	const { currentModal } = useModal();
 
-	const [darkModeActive, setDarkModeActive] = useState(localStorage.getItem('darkMode') === 'dark');
+	const [darkModeActive, setDarkModeActive] = useState(false);
 	const [activeHash, setActiveHash] = useState('');
 	const [navHeight, setNavHeight] = useState(0);
 	const [isBurgerNavShown, setBurgerNavShown] = useState(false);
@@ -21,12 +21,16 @@ export default function Navbar() {
 	// Reacting to currentModal change to toggle Navbar visibility
 	const isNavbarVisible = !currentModal;
 
-	const toggleDarkMode = useCallback(() => {
+	const toggleDarkMode = () => {
 		const newMode = !darkModeActive;
-		localStorage.setItem('darkMode', newMode ? 'dark' : 'light');
-		document.documentElement.classList.toggle('dark', newMode);
 		setDarkModeActive(newMode);
-	}, [darkModeActive]);
+		localStorage.setItem('darkMode', newMode ? 'dark' : 'light');
+		if (newMode) {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.remove('dark');
+		}
+	};
 
 	useEffect(() => {
 		const handleScroll = () => setHasScrolled(window.scrollY > 800);

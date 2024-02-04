@@ -8,8 +8,8 @@ export default function Footer({}) {
 		<footer className='bg-dark w-full h-full p-12 flex-col sm:flex-row  flex justify-around'>
 			<div className='flex flex-col space-y-4 items-center justify-center'>
 				<div className='flex items-center justify-center'>
-					<AnchorLink
-						to='/#canvas'
+					<div
+						onClick={() => window.scrollTo(0, 0)}
 						className=''
 						title={'Home'}>
 						<img
@@ -23,7 +23,7 @@ export default function Footer({}) {
 							<div className='z-40 absolute -right-2 bg-tertiary p-4 rotate-45'></div>
 							<div className='z-10 absolute -right-4 bg-four p-4 rotate-45'></div>
 						</div> */}
-					</AnchorLink>
+					</div>
 				</div>
 				<span className='sans text-sm text-center text-light/50 xbold'>
 					COPYRIGHT @ 2024 <br></br>POSITIVE PROFESSIONALS
