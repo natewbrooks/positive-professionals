@@ -10,7 +10,7 @@ export default function TeamMemberModal({ member }) {
 				<div className='flex items-center border-b-2 border-dark/10 dark:border-light/10 pb-4 lg:border-none xl:pb-0'>
 					<div className='relative flex flex-col justify-center items-center space-y-4 w-full px-8'>
 						<FaUser
-							className={`w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] md:w-[140px] md:h-[140px] xl:w-[200px] xl:h-[200px]`}
+							className={`w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] md:w-[140px] md:h-[140px] xxl:w-[200px] xxl:h-[200px]`}
 						/>
 						<div className='flex flex-col items-center space-y-2'>
 							<div className='flex flex-col items-center text-center text-nowrap -space-y-1'>

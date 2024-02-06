@@ -46,7 +46,7 @@ export default function TestimonialsSection({ data }) {
 		const width = window.innerWidth;
 		const visibleItems = width <= 600 ? 1 : width <= 1172 ? 2 : 3;
 		const newHeight = width <= 600 ? 300 : 240;
-		const newWidth = rowRef.current ? rowRef.current.offsetWidth / visibleItems : 460;
+		let newWidth = rowRef.current ? rowRef.current.offsetWidth / visibleItems : 460;
 
 		setVisibleItems(visibleItems);
 		setItemWidth(newWidth);
@@ -134,7 +134,7 @@ export default function TestimonialsSection({ data }) {
 	const handleSwipe = useSwipeable({
 		onSwipedLeft: () => {
 			if (!allowSwipe) return;
-			const nextIndex = (activeIndex + 1) % testimonials.length;
+			const nextIndex = (activeIndex + 1 + testimonials.length) % testimonials.length;
 			setActiveIndex(nextIndex);
 			setScrollingRight(false);
 			setTranslateX(translateX.map((x) => x - itemWidth));
@@ -142,7 +142,7 @@ export default function TestimonialsSection({ data }) {
 		},
 		onSwipedRight: () => {
 			if (!allowSwipe) return;
-			const prevIndex = (activeIndex - 1 + testimonials.length) % testimonials.length;
+			const prevIndex = (activeIndex - 1) % testimonials.length;
 			setActiveIndex(prevIndex);
 			setScrollingRight(true);
 			setTranslateX(translateX.map((x) => x + itemWidth));
@@ -191,6 +191,7 @@ export default function TestimonialsSection({ data }) {
 
 				{/* <SeeMore /> */}
 			</div>
+			{/* INDICATOR DOTS */}
 			<div className='absolute null:-bottom-10 lg:-bottom-16 w-full flex space-x-1 justify-center'>
 				{[...Array(data.testimonials.length)].map((x, index) => (
 					<div
