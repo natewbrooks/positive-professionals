@@ -57,7 +57,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 					</div>
 				)}
 			</div>
-			<div className='bg-light/30 dark:bg-dark/30 rounded-md w-full h-full justify-center items-center flex flex-col'>
+			<div className='px-2 bg-light/30 dark:bg-dark/30 rounded-md w-full h-full justify-center items-center flex flex-col'>
 				<div className='w-full h-full flex flex-col pt-4 rounded-t-md'>
 					<div className='h-fit cursor-pointer flex flex-col'>
 						<div className='flex flex-col w-full overflow-hidden '>
