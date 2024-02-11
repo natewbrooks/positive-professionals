@@ -1,34 +1,55 @@
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
 
-export default function VideoItem({ video }) {
+const highlightSearchTerm = (text, searchTerm) => {
+	if (!searchTerm) return text;
+
+	const parts = text.split(new RegExp(`(${searchTerm})`, 'gi'));
+	return parts.map((part, index) =>
+		part.toLowerCase() === searchTerm.toLowerCase() ? (
+			<span
+				key={index}
+				className='bg-tertiary px-1 text-light dark:text-lightAccent'>
+				{part}
+			</span>
+		) : (
+			part
+		)
+	);
+};
+
+export default function VideoItem({ video, searchTerm }) {
+	const titleHighlighted = highlightSearchTerm(video.title, searchTerm);
+	const descriptionHighlighted = highlightSearchTerm(video.description, searchTerm);
+	const dateHighlighted = highlightSearchTerm(video.date.toUpperCase(), searchTerm);
+
 	return (
-		<div className='bg-light/30 dark:bg-dark/30 rounded-md w-full h-full flex flex-col'>
-			<div className='bg-dark/10 aspect-video w-84 '>
+		<div className='pt-4 bg-light/30 dark:bg-dark/30 rounded-md w-full h-full flex flex-col'>
+			<AnchorLink
+				to={video.slug}
+				className='md:hover:opacity-70 flex flex-col h-fit w-full rounded-b-md'>
+				<div className='pb-2 w-full flex flex-col   text-dark/50 dark:text-light/50'>
+					<span className='w-full sans text-sm xbold text-nowrap whitespace-nowrap'>
+						PUBLISHED {dateHighlighted}
+					</span>
+					<span
+						className={`dark:text-light/70 text-dark h-[54px] sans text-lg xbold leading-snug line-clamp`}>
+						{titleHighlighted}
+					</span>
+				</div>
+			</AnchorLink>
+			<div className='bg-dark/10 aspect-video w-full h-fit'>
 				<iframe
-					className='w-full h-full'
+					className='w-full h-full aspect-video'
 					src='https://www.youtube.com/embed/jNQXAC9IVRw'
 					title='Me at the zoo'
 					frameBorder='0'
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 					allowFullScreen></iframe>
 			</div>
-			<AnchorLink
-				to={video.slug}
-				className='md:hover:opacity-70 flex flex-col h-fit w-full p-2 rounded-b-md'>
-				<div className='pb-2 w-full flex flex-col overflow-hidden border-b-2 border-dark/10 dark:border-light/10 text-dark/50 dark:text-light/50'>
-					<span className='w-full sans text-sm xbold text-nowrap whitespace-nowrap'>
-						PUBLISHED {video.date.toUpperCase()}
-					</span>
-					<div
-						className={`dark:text-light/70 text-dark h-[50px] w-full sans text-lg xbold leading-tight line-clamp`}>
-						<span>{video.title}</span>
-					</div>
-				</div>
-				<span className='h-max pt-2 sans text-sm line-clamp text-dark/50 dark:text-light/50'>
-					{video.description}
-				</span>
-			</AnchorLink>
+			<span className='pt-2 sans text-sm line-clamp text-dark dark:text-light/50 '>
+				{descriptionHighlighted}
+			</span>
 		</div>
 	);
 }
