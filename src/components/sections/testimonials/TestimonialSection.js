@@ -3,6 +3,7 @@ import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import TestimonialItem from '../../testimonials/TestimonialItem';
 import SeeMore from '../../pieces/SeeMore';
 import { useSwipeable } from 'react-swipeable';
+import { forEach } from 'lodash';
 
 export default function TestimonialsSection({ data }) {
 	const borderColors = ['border-primary', 'border-secondary', 'border-tertiary', 'border-four'];
@@ -24,6 +25,7 @@ export default function TestimonialsSection({ data }) {
 		if (rowRef.current) {
 			const rect = rowRef.current.getBoundingClientRect();
 			setIsInView(rect.top < window.innerHeight && rect.bottom >= 0);
+			adjustLayout();
 		}
 	}, []);
 
@@ -41,31 +43,56 @@ export default function TestimonialsSection({ data }) {
 		};
 	}, [checkIfInView]);
 
-	// Dynamically adjust item width and visible items based on window size
+	function closestNumber(n, m) {
+		// find the quotient
+		let q = Math.floor(n / m);
+
+		// 1st possible closest number
+		let n1 = m * q;
+
+		// 2nd possible closest number
+		let n2 = n * m > 0 ? m * (q + 1) : m * (q - 1);
+
+		// if true, then n1 is the required closest number
+		if (Math.abs(n - n1) < Math.abs(n - n2)) return n1;
+
+		// else n2 is the required closest number
+		return n2;
+	}
+
 	const adjustLayout = () => {
 		const width = window.innerWidth;
 		const visibleItems = width <= 600 ? 1 : width <= 1172 ? 2 : 3;
 		const newHeight = width <= 600 ? 300 : 240;
-		let newWidth = rowRef.current ? rowRef.current.offsetWidth / visibleItems : 460;
 
+		let newWidth = Math.floor(
+			closestNumber(rowRef.current.offsetWidth, visibleItems) / visibleItems
+		);
+
+		setDisableTransition([true, true]);
 		setVisibleItems(visibleItems);
 		setItemWidth(newWidth);
 		setItemHeight(newHeight);
-		setDisableTransition([true, true]);
 		setTranslateX([0, -newWidth * testimonials.length]);
 		setActiveIndex(0);
 
 		setInterval(() => {
 			setDisableTransition([false, false]);
 			setAllowSwipe(true);
-		}, [0]);
+		}, 500);
 	};
 
-	const inThreshold = (a, b, threshold = 0.5) => Math.abs(a - b) <= threshold;
+	const inThreshold = (a, b, threshold = 0.1) => Math.abs(a - b) <= threshold;
 
 	const recalcPos = () => {
 		if (rowRef.current) {
-			let newWidth = rowRef.current.offsetWidth / visibleItems; // Recalculate item width based on visible items
+			document.getElementById('testimonialContainer').style.width = Math.floor(
+				closestNumber(rowRef.current.offsetWidth, visibleItems)
+			);
+
+			let newWidth = Math.ceil(
+				closestNumber(rowRef.current.offsetWidth, visibleItems) / visibleItems
+			); // Recalculate item width based on visible items
 			setItemWidth(newWidth);
 		}
 
@@ -92,7 +119,7 @@ export default function TestimonialsSection({ data }) {
 		setTimeout(() => {
 			setDisableTransition([false, false]);
 			setAllowSwipe(true);
-		}, 0);
+		}, 500);
 	};
 
 	// Initial layout adjustment and event listeners for resizing and visibility change
@@ -115,20 +142,23 @@ export default function TestimonialsSection({ data }) {
 	}, []);
 
 	// Interval for automatic scrolling
-	useEffect(() => {
-		let interval;
-		if (isInView && allowSwipe) {
-			interval = setInterval(() => {
-				const nextIndex = (activeIndex + 1) % testimonials.length;
-				setActiveIndex(nextIndex);
+	// useEffect(() => {
+	// 	let interval;
+	// 	if (isInView && allowSwipe) {
+	// 		interval = setInterval(() => {
+	// 			if (!allowSwipe) return;
+	// 			const nextIndex = (activeIndex + 1) % testimonials.length;
+	// 			setActiveIndex(nextIndex);
+	// 			setScrollingRight(false);
+	// 			setTranslateX(translateX.map((x) => x - itemWidth));
+	// 			setAllowSwipe(false);
+	// 		}, 4000);
+	// 	} else {
+	// 		return () => clearInterval(interval);
+	// 	}
 
-				const offset = isScrollingRight ? itemWidth : -itemWidth;
-				setTranslateX(translateX.map((x) => x + offset));
-			}, 4000);
-		}
-
-		return () => clearInterval(interval);
-	}, [allowSwipe, isInView, activeIndex, testimonials.length]);
+	// 	return () => clearInterval(interval);
+	// }, [isInView, allowSwipe, activeIndex, testimonials.length, itemWidth]);
 
 	// Swipe handling
 	const handleSwipe = useSwipeable({
@@ -142,7 +172,7 @@ export default function TestimonialsSection({ data }) {
 		},
 		onSwipedRight: () => {
 			if (!allowSwipe) return;
-			const prevIndex = (activeIndex - 1) % testimonials.length;
+			const prevIndex = (activeIndex - 1 + testimonials.length) % testimonials.length;
 			setActiveIndex(prevIndex);
 			setScrollingRight(true);
 			setTranslateX(translateX.map((x) => x + itemWidth));
@@ -161,6 +191,7 @@ export default function TestimonialsSection({ data }) {
 				<div
 					{...handleSwipe}
 					style={{ height: `${itemHeight}px` }}
+					id='testimonialContainer'
 					className={`relative flex flex-row w-full`}>
 					{[0, 1].map((i) => (
 						<div
@@ -173,12 +204,14 @@ export default function TestimonialsSection({ data }) {
 								transitionProperty: `${disableTransition[i] ? '' : 'transform'}`,
 							}}
 							onTransitionEnd={() => {
+								console.log('RECALC POS');
 								recalcPos();
 								setAllowSwipe(true);
 							}}
 							className={`absolute top-0 ease-in-out w-full flex flex-row`}>
 							{data.testimonials.map((testimonial, index) => (
 								<TestimonialItem
+									id={index}
 									key={`${i}-${index}`}
 									testimonial={testimonial}
 									borderColor={borderColors[index % borderColors.length]}
@@ -192,7 +225,7 @@ export default function TestimonialsSection({ data }) {
 				{/* <SeeMore /> */}
 			</div>
 			{/* INDICATOR DOTS */}
-			<div className='absolute null:-bottom-10 lg:-bottom-16 w-full flex space-x-1 justify-center'>
+			<div className='absolute -bottom-8 w-full flex space-x-1 justify-center'>
 				{[...Array(data.testimonials.length)].map((x, index) => (
 					<div
 						key={index}

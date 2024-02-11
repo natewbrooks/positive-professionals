@@ -9,7 +9,7 @@ const highlightSearchTerm = (text, searchTerm) => {
 		part.toLowerCase() === searchTerm.toLowerCase() ? (
 			<span
 				key={index}
-				className='bg-secondary rounded-md px-1 text-light dark:text-dark'>
+				className='bg-four rounded-md px-1 text-light dark:text-dark'>
 				{part}
 			</span>
 		) : (
