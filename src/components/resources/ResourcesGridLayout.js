@@ -39,7 +39,7 @@ const ResourcesGridLayout = ({ mediaItems }) => {
 						placeholder='Search keywords...'
 						value={searchTerm}
 						onChange={(e) => setSearchTerm(e.target.value)}
-						className='w-[180px] text-md placeholder:text-md lg:text-sm lg:placeholder:text-sm xbold sans px-2 border-2 border-l-0 border-darkAccent dark:border-light/70 rounded-r-full outline-none bg-light dark:bg-dark text-dark placeholder:text-dark/50 dark:placeholder:text-light/50 dark:text-light/70'
+						className='w-[180px] text-md placeholder:text-md lg:text-sm lg:placeholder:text-sm xbold sans px-2 border-2 border-l-0 border-dark dark:border-light/70 rounded-r-full outline-none bg-light dark:bg-dark text-dark placeholder:text-dark/50 dark:placeholder:text-light/50 dark:text-light/70'
 					/>
 				</div>
 			</div>

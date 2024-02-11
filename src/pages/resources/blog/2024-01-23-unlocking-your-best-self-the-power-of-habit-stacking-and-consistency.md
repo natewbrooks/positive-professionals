@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: 'Unlocking Your Best Self: The Power of Habit Stacking and Consistency'
-date: 2024-01-23T09:56:08-05:00
+date: 2024-02-11T09:56:08-05:00
 description: As a leadership and performance coach, I frequently encounter
   individuals and teams grappling with the quest to harmonize the demands of
   their professional and personal lives while still leaving room for joy and

@@ -10,7 +10,7 @@ const highlightSearchTerm = (text, searchTerm) => {
 		part.toLowerCase() === searchTerm.toLowerCase() ? (
 			<span
 				key={index}
-				className='bg-four px-1 text-light dark:text-lightAccent'>
+				className='bg-four rounded-md px-1 text-light dark:text-dark'>
 				{part}
 			</span>
 		) : (
@@ -45,21 +45,21 @@ export default function BlogPostItem({ post, searchTerm }) {
 		<AnchorLink
 			to={post.slug}
 			className='group md:hover:opacity-80 w-full h-full justify-center items-center relative  duration-300 transition-colors pb-2 rounded-md '>
-			<div className='absolute -top-5 -left-0 flex space-x-1'>
-				{isNewPost() && (
-					<div className='bg-light rounded-md px-2 py-1 text-sm sans xbold text-secondary dark:text-darkAccent'>
-						NEW
-					</div>
-				)}
-				{post.featuredpost && (
-					<div className='bg-secondary rounded-md px-2 py-1 text-sm sans xbold text-light dark:text-darkAccent'>
-						FEATURED
-					</div>
-				)}
-			</div>
 			<div className='px-2 bg-light/30 dark:bg-dark/30 rounded-md w-full h-full justify-center items-center flex flex-col'>
 				<div className='w-full h-full flex flex-col pt-4 rounded-t-md'>
 					<div className='h-fit cursor-pointer flex flex-col'>
+						<div className='flex space-x-1 '>
+							{isNewPost() && (
+								<div className='bg-secondary rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark'>
+									NEW
+								</div>
+							)}
+							{post.featuredpost && (
+								<div className='bg-tertiary rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark'>
+									FEATURED
+								</div>
+							)}
+						</div>
 						<div className='flex flex-col w-full overflow-hidden '>
 							<div className='w-full flex flex-col text-dark/50 dark:text-light/50'>
 								<span className='w-full sans text-sm xbold text-nowrap'>
@@ -83,6 +83,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 								alt={post.title + ' picture'}
 								className='max-h-[320px]'></img>
 						</div>
+
 						<div
 							className={`max-h-[200px] transform transition-all duration-300 py-1 px-2 text-dark dark:text-light/50 w-fit sans text-sm line-clamp-4`}>
 							{descriptionHighlighted}
