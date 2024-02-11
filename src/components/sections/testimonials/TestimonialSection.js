@@ -1,9 +1,6 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
+import React, { useEffect, useState, useRef } from 'react';
 import TestimonialItem from '../../testimonials/TestimonialItem';
-import SeeMore from '../../pieces/SeeMore';
 import { useSwipeable } from 'react-swipeable';
-import { forEach } from 'lodash';
 
 export default function TestimonialsSection({ data }) {
 	const borderColors = ['border-primary', 'border-secondary', 'border-tertiary', 'border-four'];
@@ -19,29 +16,6 @@ export default function TestimonialsSection({ data }) {
 	const [translateX, setTranslateX] = useState([0, -itemWidth * testimonials.length]);
 	const [isScrollingRight, setScrollingRight] = useState(true);
 	const [allowSwipe, setAllowSwipe] = useState(true);
-	const [isInView, setIsInView] = useState(false);
-
-	const checkIfInView = useCallback(() => {
-		if (rowRef.current) {
-			const rect = rowRef.current.getBoundingClientRect();
-			setIsInView(rect.top < window.innerHeight && rect.bottom >= 0);
-			adjustLayout();
-		}
-	}, []);
-
-	useEffect(() => {
-		// Check if in view on initial load
-		checkIfInView();
-
-		// Event listeners for scroll and resize events to update isInView state
-		window.addEventListener('scroll', checkIfInView);
-		window.addEventListener('resize', checkIfInView);
-
-		return () => {
-			window.removeEventListener('scroll', checkIfInView);
-			window.removeEventListener('resize', checkIfInView);
-		};
-	}, [checkIfInView]);
 
 	function closestNumber(n, m) {
 		// find the quotient
@@ -127,7 +101,7 @@ export default function TestimonialsSection({ data }) {
 		adjustLayout();
 		const handleResize = () => adjustLayout();
 		const handleVisibilityChange = () => {
-			if (!document.hidden) {
+			if (!document.hidden && window.width > 600) {
 				adjustLayout();
 			}
 		};
@@ -140,25 +114,6 @@ export default function TestimonialsSection({ data }) {
 			document.removeEventListener('visibilitychange', handleVisibilityChange);
 		};
 	}, []);
-
-	// Interval for automatic scrolling
-	// useEffect(() => {
-	// 	let interval;
-	// 	if (isInView && allowSwipe) {
-	// 		interval = setInterval(() => {
-	// 			if (!allowSwipe) return;
-	// 			const nextIndex = (activeIndex + 1) % testimonials.length;
-	// 			setActiveIndex(nextIndex);
-	// 			setScrollingRight(false);
-	// 			setTranslateX(translateX.map((x) => x - itemWidth));
-	// 			setAllowSwipe(false);
-	// 		}, 4000);
-	// 	} else {
-	// 		return () => clearInterval(interval);
-	// 	}
-
-	// 	return () => clearInterval(interval);
-	// }, [isInView, allowSwipe, activeIndex, testimonials.length, itemWidth]);
 
 	// Swipe handling
 	const handleSwipe = useSwipeable({
@@ -192,7 +147,7 @@ export default function TestimonialsSection({ data }) {
 					{...handleSwipe}
 					style={{ height: `${itemHeight}px` }}
 					id='testimonialContainer'
-					className={`relative flex flex-row w-full`}>
+					className={`relative flex flex-row w-full overflow-hidden`}>
 					{[0, 1].map((i) => (
 						<div
 							key={i}
