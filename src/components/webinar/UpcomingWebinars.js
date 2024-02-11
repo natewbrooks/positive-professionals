@@ -13,8 +13,8 @@ export default function UpcomingWebinars({ webinars }) {
 
 	return (
 		<>
-			<div className='flex flex-col w-full xl:w-[50%] h-full space-y-4 items-center null:px-4 mobile:px-8 sm:px-20 justify-center'>
-				<div className='text-dark dark:text-light/70 flex flex-col -space-y-2 sm:-space-y-3 null:text-lg xs:text-[24px] mobile:text-xl md:text-xxl'>
+			<div className='flex flex-col w-full xl:w-1/2 h-full pt-10 xl:pt-0 xl:ml-20 space-y-4 items-center justify-center'>
+				<div className='text-dark dark:text-light/70 flex flex-col -space-y-2 sm:-space-y-3 null:text-lg xs:text-[24px] mobile:text-xl md:text-xxl px-10'>
 					<span className='serif w-[480px] text-center'>Register to save your seat in our</span>
 					<span className='serif w-[480px] text-center'>next free weekly webinar.</span>
 				</div>

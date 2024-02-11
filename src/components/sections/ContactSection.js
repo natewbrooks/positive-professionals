@@ -24,8 +24,8 @@ export default function ContactSection({ content }) {
 	return (
 		<section
 			id='contact'
-			className='overflow-hidden relative w-full h-full py-12 bg-lightAccent dark:bg-darkAccent space-y-10 xl:space-y-0 flex flex-col justify-center items-center xl:flex-row'>
-			<div className='border-b-2 xl:border-b-0 xl:border-r-2 pb-10 xl:pb-0 border-dark/10 dark:border-light/10 flex flex-col justify-center items-center w-full xl:w-[50%] h-full space-y-2'>
+			className='overflow-hidden relative w-full h-full py-12 bg-lightAccent dark:bg-darkAccent xl:space-y-0 xl:justify-evenly flex flex-col items-center xl:flex-row'>
+			<div className='border-b-2 xl:border-b-0 xl:border-r-2 pb-10 xl:pb-0 xl:pr-20 border-dark/10 dark:border-light/10 flex flex-col justify-center items-center w-full xl:w-1/2 h-full space-y-2'>
 				<div className='flex flex-col items-center text-center justify-center text-dark dark:text-light/70 '>
 					<span
 						className={`null:text-lg xs:text-[24px] mobile:text-xl md:text-xxl text-nowrap serif`}>
