@@ -1,34 +1,39 @@
 ---
 templateKey: blog-post
-title: Making sense of the SCAA’s new Flavor Wheel
-date: 2016-12-17T15:04:10.000Z
 featuredpost: true
-description: The Coffee Taster’s Flavor Wheel, the official resource used by coffee tasters, has been revised for the first time this year.
+title: "Embracing Change: The Journey to Resilience and Adaptability"
+date: 2016-12-17T15:04:10.000Z
+description: Change is an inevitable part of life, yet it often comes with its
+  set of challenges. Whether it's a career transition, a move to a new city, or
+  a change in personal relationships, navigating these waters can be daunting.
+  However, with the right mindset and strategies, it's possible to embrace
+  change with resilience and adaptability, leading to personal growth and
+  improved well-being.
 authors:
-  - Kim Harris
-  - Liz Brooks
+  - Angela Satchell
 tags:
   - flavor
   - tasting
 ---
+Change is an inevitable part of life, yet it often comes with its set of challenges. Whether it's a career transition, a move to a new city, or a change in personal relationships, navigating these waters can be daunting. However, with the right mindset and strategies, it's possible to embrace change with resilience and adaptability, leading to personal growth and improved well-being.
 
-The SCAA updated the wheel to reflect the finer nuances needed to describe flavors more precisely. The new descriptions are more detailed and hence allow cuppers to distinguish between more flavors.
+As a coach with a background in government and program management, I've seen firsthand the importance of adaptability in both personal and professional settings. The ability to adapt to changing circumstances not only ensures survival but also paves the way for success and fulfillment.
 
-While this is going to be a big change for professional coffee tasters, it means a lot to you as a consumer as well. We’ll explain how the wheel came to be, how pros use it and what the flavors actually mean.
+> "The only constant in life is change." - Heraclitus
 
-## What the updates mean to you
+This ancient wisdom holds true today, reminding us that change is not something to be feared but rather embraced. Here are strategies to help you navigate life's transitions with grace and strength:
 
-The Specialty Coffee Association of America (SCAA), founded in 1982, is a non-profit trade organization for the specialty coffee industry. With members located in more than 40 countries, SCAA represents every segment of the specialty coffee industry, including:
 
-- producers
-- roasters
-- importers/exporters
-- retailers
-- manufacturers
-- baristas
+1. **Acknowledge Your Feelings**: It's normal to have mixed emotions about change. Allow yourself to feel these emotions without judgment. Acknowledging your feelings is the first step towards managing them effectively.
+2. **Stay Positive**: Focus on the opportunities that change can bring. A positive outlook can help you see the potential for growth and development, even in challenging times.
+3. **Develop Flexibility**: Being flexible helps you adjust more easily to new situations. Try to be open to different outcomes and remain fluid in your approach to challenges.
+4. **Build Your Support Network**: Surround yourself with people who understand and support you. A strong support network can provide encouragement and perspective when you need it most.
+5. **Set Small, Achievable Goals**: Break down the change into smaller, manageable steps. Achieving these smaller goals can provide a sense of progress and build confidence.
+6. **Practice Self-Care**: Take care of your physical, emotional, and mental health. Regular exercise, a healthy diet, and sufficient sleep can bolster your resilience against stress.
+7. **Seek Professional Support**: Sometimes, professional guidance can make a significant difference. Coaches and therapists can provide tools and strategies to help you navigate change more effectively.
 
-For over 30 years, SCAA has been dedicated to creating a vibrant specialty coffee community by recognizing, developing and promoting specialty coffee. SCAA sets and maintains quality standards for the industry, conducts market research, and provides education, training, resources, and business services for its members.
+Change can be challenging, but it also offers a unique opportunity for growth and learning. By embracing change with resilience and adaptability, you can navigate life's transitions with confidence and grace.
 
-Coffee cupping, or coffee tasting, is the practice of observing the tastes and aromas of brewed coffee. It is a professional practice but can be done informally by anyone or by professionals known as "Q Graders". A standard coffee cupping procedure involves deeply sniffing the coffee, then loudly slurping the coffee so it spreads to the back of the tongue.
+**If you're seeking guidance on your journey through change, our team at Positive Professionals is here to support you.** Our diverse backgrounds in executive roles, engineering, and program management, coupled with our passion for Diversity, Equity & Belonging (DEB), make us uniquely equipped to help you embrace change and unlock your full potential.
 
-The coffee taster attempts to measure aspects of the coffee's taste, specifically the body (the texture or mouthfeel, such as oiliness), sweetness, acidity (a sharp and tangy feeling, like when biting into an orange), flavour (the characters in the cup), and aftertaste. Since coffee beans embody telltale flavours from the region where they were grown, cuppers may attempt to identify the coffee's origin.
+Remember, the path to resilience and adaptability is a journey, not a destination. Embrace the journey and discover the strength within you to adapt and thrive in the face of change.
