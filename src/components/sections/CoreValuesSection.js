@@ -38,16 +38,14 @@ export default function CoreValuesSection({ data }) {
 				</div>
 
 				<div className='null:w-full md:max-w-[80%] xl:max-w-[60%] flex flex-col space-y-4 justify-center items-center'>
-					<div className='bg-primary outline outline-primary rounded-md w-full grid grid-cols-3 gap-1 justify-items-center justify-center'>
+					<div className='bg-primary/50 outline outline-primary/50 rounded-md w-full grid grid-cols-3 gap-1 justify-items-center justify-center'>
 						{data.values.map((value, index) => (
-							<div className='bg-light/30 dark:bg-dark/50 w-full h-full'>
-								<CoreValuesItem
-									key={index}
-									text={value.name.toUpperCase()}
-									Icon={coreValues[index]}
-									modalId={'coreValue' + index}
-								/>
-							</div>
+							<CoreValuesItem
+								key={index}
+								text={value.name.toUpperCase()}
+								Icon={coreValues[index]}
+								modalId={'coreValue' + index}
+							/>
 						))}
 					</div>
 

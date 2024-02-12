@@ -11,7 +11,7 @@ export default function CoreValuesItem({ text, Icon, modalId }) {
 				onClick={() => {
 					openModal(modalId);
 				}}
-				className='transition-all duration-300 w-full select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center'>
+				className='transition-all duration-300 bg-light/30 dark:bg-dark/50 w-full select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center'>
 				<Icon
 					size={42}
 					className='text-dark dark:text-light/70'

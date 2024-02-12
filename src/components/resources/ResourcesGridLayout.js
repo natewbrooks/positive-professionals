@@ -5,9 +5,9 @@ import SeeMore from '../pieces/SeeMore';
 import { FaSearch } from 'react-icons/fa';
 
 const ResourcesGridLayout = ({ mediaItems }) => {
-	const [itemsToShow, setItemsToShow] = useState(6); // Adjust this to 4 if each row should contain 2 items
+	const [itemsToShow, setItemsToShow] = useState(8); // Adjust this to 4 if each row should contain 2 items
 	const [searchTerm, setSearchTerm] = useState('');
-	const itemsPerRow = 3; // Adjust based on your row definition
+	const itemsPerRow = 4; // Adjust based on your row definition
 
 	const handleLoadMore = () => {
 		setItemsToShow((prevItemsToShow) => prevItemsToShow + itemsPerRow * 2); // Load 2 more rows each time
@@ -46,7 +46,7 @@ const ResourcesGridLayout = ({ mediaItems }) => {
 			<div className='w-full null:text-center sm:text-end text-dark/50 dark:text-light/50 sans xbold text-md pb-4 sm:pb-2'>
 				SHOWING {showingCount} OF {mediaItems.length}
 			</div>
-			<div className='w-full h-full justify-items-center grid null:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4 null:gap-y-8 sm:gap-y-6 gap-x-4 '>
+			<div className='w-full h-full justify-items-center grid null:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4 null:gap-y-6 gap-x-4 '>
 				{filteredItems.slice(0, itemsToShow).map((item, index) => {
 					return item.isVideo === false ? (
 						<BlogPostItem

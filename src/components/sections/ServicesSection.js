@@ -91,7 +91,7 @@ export default function ServicesSection({ content }) {
 					Increase personal energy and resilience by aligning actions and values. Delight customers
 					with exceptional listening, collaboration, and innovation skills.
 				</span>
-				<div className='z-10 bg-tertiary outline  outline-tertiary rounded-md text-dark grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1 h-full'>
+				<div className='z-10 bg-tertiary/50 outline  outline-tertiary/50 rounded-md text-dark grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1 h-full'>
 					{services.map((service, index) => (
 						<div className={`bg-light/30 dark:bg-dark/50`}>
 							<ServicesItem
