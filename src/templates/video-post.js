@@ -6,18 +6,29 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import ResourcesNav from '../components/resources/ResourcesNav';
 
-export const VideoPostTemplate = ({ description, title, helmet, date, videofile }) => {
+export const VideoPostTemplate = ({ description, title, helmet, date, videofile, videoURL }) => {
 	const renderVideo = () => {
-		if (videofile) {
+		if (videofile?.publicURL) {
 			return (
 				<video
-					className={`w-full h-full`}
+					className='w-full h-auto'
 					src={videofile.publicURL}
 					controls
 				/>
 			);
+		} else if (videoURL) {
+			return (
+				<iframe
+					className='w-full h-auto'
+					src={videoURL}
+					frameBorder='0'
+					allow='autoplay; encrypted-media'
+					allowFullScreen
+					title={title}
+				/>
+			);
 		}
-		return null;
+		return <div>No video available</div>;
 	};
 
 	return (
@@ -28,7 +39,7 @@ export const VideoPostTemplate = ({ description, title, helmet, date, videofile 
 					pageTitle={'Return'}
 					showTitle={false}
 				/>
-				<div className='flex flex-col  items-center justify-center'>
+				<div className='flex flex-col items-center justify-center'>
 					<div className='p-4 null:w-full xl:w-[70%] xxl:w-[50%] h-full flex flex-col space-y-4 justify-center items-center'>
 						<div className='outline rounded-sm outline-four outline-offset-8 bg-dark/10 border-b-2 border-dark/10 w-full h-full text-dark aspect-video'>
 							{renderVideo()}
@@ -57,11 +68,15 @@ VideoPostTemplate.propTypes = {
 	description: PropTypes.string,
 	title: PropTypes.string,
 	helmet: PropTypes.object,
+	date: PropTypes.string,
 	videofile: PropTypes.object,
+	videoURL: PropTypes.string,
 };
 
 const VideoPost = ({ data }) => {
 	const { markdownRemark: post } = data;
+	console.log('HEDAS');
+	console.log(post.frontmatter.videofile);
 
 	return (
 		<Layout>
@@ -79,6 +94,7 @@ const VideoPost = ({ data }) => {
 				date={post.frontmatter.date}
 				title={post.frontmatter.title}
 				videofile={post.frontmatter.videofile}
+				videoURL={post.frontmatter.videoURL}
 			/>
 		</Layout>
 	);
@@ -101,6 +117,7 @@ export const pageQuery = graphql`
 				date(formatString: "DD MMM YYYY")
 				title
 				description
+				videoURL
 				videofile {
 					publicURL
 				}

@@ -36,6 +36,13 @@ module.exports = {
 				name: 'images',
 			},
 		},
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				path: `${__dirname}/src/videoUploads`,
+				name: 'videos',
+			},
+		},
 		`gatsby-plugin-image`,
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',

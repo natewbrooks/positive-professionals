@@ -43,7 +43,20 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Video File', name: 'videofile', widget: 'file' }
+      - {
+          label: 'Video URL',
+          name: 'videoURL',
+          widget: 'string',
+          required: false,
+          hint: 'Enter video URL (e.g., YouTube, Vimeo)',
+        }
+      - {
+          label: 'Video File',
+          name: 'videofile',
+          widget: 'file',
+          required: false,
+          hint: 'Upload a video file',
+        }
 
   - name: 'pages'
     label: 'Pages'

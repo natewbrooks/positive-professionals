@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import pic from '../../img/bkg.png';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const highlightSearchTerm = (text, searchTerm) => {
 	if (!searchTerm) return text;
@@ -41,6 +42,8 @@ export default function BlogPostItem({ post, searchTerm }) {
 	const descriptionHighlighted = highlightSearchTerm(post.description, searchTerm);
 	const dateHighlighted = highlightSearchTerm(post.date.toUpperCase(), searchTerm);
 
+	const imageData = getImage(post.image);
+
 	return (
 		<AnchorLink
 			to={post.slug}
@@ -78,10 +81,18 @@ export default function BlogPostItem({ post, searchTerm }) {
 						</div>
 
 						<div className='py-2 drop-shadow-md cursor-pointer flex justify-center w-fit '>
-							<img
-								src={pic}
-								alt={post.title + ' picture'}
-								className='max-h-[320px]'></img>
+							{imageData && (
+								<GatsbyImage
+									image={imageData}
+									alt={post.title}
+									className='max-h-[320px]'
+								/>
+							)}
+							{!imageData && (
+								<img
+									src={pic}
+									className='max-h-[320px]'></img>
+							)}
 						</div>
 
 						<div

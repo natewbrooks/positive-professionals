@@ -39,7 +39,7 @@ export default function Navbar() {
 	};
 
 	useEffect(() => {
-		const handleScroll = () => setHasScrolled(window.scrollY > 800);
+		const handleScroll = () => setHasScrolled(window.scrollY > 200);
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
@@ -117,7 +117,7 @@ export default function Navbar() {
 								<img
 									src={logo}
 									alt='logo'
-									className='transition-all duration-[500ms] ease-in-out w-[48px] h-[48px] mobile:w-[52px] mobile:h-[52px] '
+									className='transition-all duration-[300ms] ease-in-out w-[48px] h-[48px] mobile:w-[52px] mobile:h-[52px] '
 								/>
 								<div
 									style={{
@@ -127,7 +127,7 @@ export default function Navbar() {
 										transform: hasScrolled ? 'translateY(-40px)' : 'translateY(0px)',
 										transform: hasScrolled ? 'scale(0%)' : 'scale(100%)',
 									}}
-									className={`relative transition-all duration-[300ms] ease-in-out flex text-sm text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
+									className={`relative transition-all duration-[500ms] ease-in-out flex text-sm text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
 									<span className='sans xbold'>POSITIVE</span>
 									<span className='sans'>PROFESSIONALS</span>
 								</div>
