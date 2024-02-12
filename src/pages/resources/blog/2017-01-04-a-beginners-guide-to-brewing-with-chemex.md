@@ -3,14 +3,15 @@ templateKey: blog-post
 featuredpost: false
 title: "Building Effective Teams: The Role of Emotional Intelligence"
 date: 2022-02-09T15:04:10.000Z
-description: In today's fast-paced and interconnected world, building effective
-  teams is more critical than ever. But what sets apart a merely functional team
-  from a truly exceptional one? The answer lies in emotional intelligence (EQ).
 authors:
   - Kim Harris
 tags:
   - brewing
   - chemex
+description: In today's fast-paced and interconnected world, building effective
+  teams is more critical than ever. But what sets apart a merely functional team
+  from a truly exceptional one? The answer lies in emotional intelligence (EQ).
+image: /img/effective-team-blog-img.jpg
 ---
 In today's fast-paced and interconnected world, building effective teams is more critical than ever. But what sets apart a merely functional team from a truly exceptional one? The answer lies in emotional intelligence (EQ).
 
