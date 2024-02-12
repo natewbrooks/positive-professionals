@@ -131,6 +131,8 @@ const IndexPage = ({ data }) => {
 	const { markdownRemark, blogs, videos } = data;
 	const frontmatter = markdownRemark.frontmatter;
 
+	console.log('VIDEOS: ' + videos.nodes);
+
 	return (
 		<Layout>
 			<IndexPageTemplate
@@ -255,9 +257,7 @@ export const pageQuery = graphql`
 					title
 					date(formatString: "DD MMM YYYY")
 					description
-					videofile {
-						publicURL
-					}
+					videoURL
 				}
 				fields {
 					slug

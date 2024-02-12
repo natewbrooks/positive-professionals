@@ -7,7 +7,6 @@ const VideoPostPreview = ({ entry, widgetFor }) => {
 	const title = entry.getIn(['data', 'title']);
 	const description = entry.getIn(['data', 'description']);
 	const date = entry.getIn(['data', 'date']);
-	const videofile = entry.getIn(['data', 'videofile']);
 
 	return (
 		<VideoPostTemplate
@@ -17,7 +16,6 @@ const VideoPostPreview = ({ entry, widgetFor }) => {
 			title={title}
 			helmet={null} // Helmet not needed for preview
 			date={date}
-			videofile={videofile} // Adjust based on how videofile data is structured in your CMS
 		/>
 	);
 };

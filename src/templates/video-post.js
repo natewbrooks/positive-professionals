@@ -5,30 +5,36 @@ import { Helmet } from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import ResourcesNav from '../components/resources/ResourcesNav';
+import { PiMaskSadFill } from 'react-icons/pi';
 
-export const VideoPostTemplate = ({ description, title, helmet, date, videofile, videoURL }) => {
+export const VideoPostTemplate = ({ description, title, helmet, date, videoURL }) => {
+	const embedURL = videoURL.replace('watch?v=', 'embed/');
+
 	const renderVideo = () => {
-		if (videofile?.publicURL) {
-			return (
-				<video
-					className='w-full h-auto'
-					src={videofile.publicURL}
-					controls
-				/>
-			);
-		} else if (videoURL) {
+		if (embedURL) {
 			return (
 				<iframe
-					className='w-full h-auto'
-					src={videoURL}
-					frameBorder='0'
-					allow='autoplay; encrypted-media'
-					allowFullScreen
+					className='w-full h-full aspect-video'
+					src={embedURL}
 					title={title}
+					allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+					frameBorder='0'
+					webkitallowfullscreen='true'
+					mozallowfullscreen='true'
+					allowFullScreen
 				/>
 			);
 		}
-		return <div>No video available</div>;
+		return (
+			<div className='flex flex-col w-full justify-center'>
+				<PiMaskSadFill
+					size={48}
+					className='text-dark dark:text-light/70'
+				/>
+				<span className='text-xxl sans xbold'>SOMETHING WENT WRONG...</span>
+				{!videoURL && <span className='text-sm sans xbold'>(there is no video linked!)</span>}
+			</div>
+		);
 	};
 
 	return (
@@ -69,14 +75,11 @@ VideoPostTemplate.propTypes = {
 	title: PropTypes.string,
 	helmet: PropTypes.object,
 	date: PropTypes.string,
-	videofile: PropTypes.object,
 	videoURL: PropTypes.string,
 };
 
 const VideoPost = ({ data }) => {
 	const { markdownRemark: post } = data;
-	console.log('HEDAS');
-	console.log(post.frontmatter.videofile);
 
 	return (
 		<Layout>
@@ -93,7 +96,6 @@ const VideoPost = ({ data }) => {
 				description={post.frontmatter.description}
 				date={post.frontmatter.date}
 				title={post.frontmatter.title}
-				videofile={post.frontmatter.videofile}
 				videoURL={post.frontmatter.videoURL}
 			/>
 		</Layout>
@@ -112,15 +114,11 @@ export const pageQuery = graphql`
 	query VideoPostByID($id: String!) {
 		markdownRemark(id: { eq: $id }) {
 			id
-			html
 			frontmatter {
 				date(formatString: "DD MMM YYYY")
 				title
 				description
 				videoURL
-				videofile {
-					publicURL
-				}
 			}
 		}
 	}

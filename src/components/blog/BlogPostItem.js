@@ -47,21 +47,23 @@ export default function BlogPostItem({ post, searchTerm }) {
 	return (
 		<AnchorLink
 			to={post.slug}
-			className='group md:hover:opacity-80 w-full h-full justify-center items-center relative  duration-300 transition-colors pb-2 rounded-md '>
-			<div className='bg-light/30 dark:bg-dark/30 rounded-md w-full h-full justify-center items-center flex flex-col'>
-				<div className='w-full h-full flex flex-col sm:p-4 md:p-6 rounded-t-md'>
+			className='group md:hover:opacity-80 w-full h-full justify-center items-center relative  duration-300 transition-colors px-2'>
+			<div className='w-full h-full justify-center items-center flex flex-col'>
+				<div className='w-full h-full flex flex-col'>
 					<div className='h-fit cursor-pointer flex flex-col'>
 						<div className='flex space-x-1 '>
 							{isNewPost() && (
-								<div className='bg-secondary rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark'>
+								<div className='bg-secondary rounded-md px-2 mb-1 text-xs sans xbold text-light/70'>
 									NEW
 								</div>
 							)}
-							{post.featuredpost && (
-								<div className='bg-tertiary rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark'>
-									FEATURED
-								</div>
-							)}
+
+							<div
+								className={`${
+									post.featuredpost ? 'visible' : 'invisible'
+								} bg-tertiary rounded-md px-2 mb-1 text-xs sans xbold text-dark/70`}>
+								FEATURED
+							</div>
 						</div>
 						<div className='flex flex-col w-full overflow-hidden '>
 							<div className='w-full flex flex-col text-dark/50 dark:text-light/50'>
@@ -96,7 +98,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 						</div>
 
 						<div
-							className={`max-h-[200px] transform transition-all duration-300 py-1 px-2 text-dark dark:text-light/50 w-fit sans text-sm line-clamp-4`}>
+							className={`max-h-[200px] transform transition-all duration-300 py-1  text-dark dark:text-light/50 w-fit sans text-sm line-clamp-4`}>
 							{descriptionHighlighted}
 						</div>
 					</div>

@@ -47,15 +47,8 @@ collections:
           label: 'Video URL',
           name: 'videoURL',
           widget: 'string',
-          required: false,
+          required: true,
           hint: 'Enter video URL (e.g., YouTube, Vimeo)',
-        }
-      - {
-          label: 'Video File',
-          name: 'videofile',
-          widget: 'file',
-          required: false,
-          hint: 'Upload a video file',
         }
 
   - name: 'pages'

@@ -27,6 +27,7 @@ export default function ResourcesSection({ data }) {
 	});
 
 	const videoCatalog = data.videos;
+	console.log(videoCatalog);
 	const previousWebinars = data.videos;
 
 	return (
@@ -61,7 +62,7 @@ export default function ResourcesSection({ data }) {
 						<span className={`sans text-sm `}>READ OUR STORIES</span>
 						<span className={`group-md:hover:opacity-50 text-xl serif`}>Blog posts</span>
 					</AnchorLink>
-					<div className=' w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 lg:gap-y-6 gap-x-4'>
+					<div className='dark:bg-dark p-4 rounded-md w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6'>
 						{blogPosts.map((post, index) => (
 							<BlogPostItem
 								key={index}
@@ -92,7 +93,7 @@ export default function ResourcesSection({ data }) {
 						<span className={`sans text-sm `}>SEE US IN ACTION</span>
 						<span className={`group-md:hover:opacity-50 text-xl serif`}>Video catalog</span>
 					</AnchorLink>
-					<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-4'>
+					<div className='dark:bg-dark rounded-md p-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6'>
 						{videoCatalog.map((video, index) => (
 							<VideoItem
 								key={index}
@@ -100,12 +101,10 @@ export default function ResourcesSection({ data }) {
 									title: video.frontmatter.title,
 									date: video.frontmatter.date,
 									description: video.frontmatter.description,
-									videofile: video.frontmatter.videofile
-										? video.frontmatter.videofile.publicURL
-										: null,
+									videoURL: video.frontmatter.videoURL,
 									slug: video.fields.slug,
-									isVideo: false,
 								}}
+								searchTerm={''}
 							/>
 						))}
 					</div>
