@@ -80,7 +80,7 @@ export default function ResourcesSection({ data }) {
 						))}
 					</div>
 					<AnchorLink
-						title='Blog'
+						title='Navigate to Blog'
 						to='/resources/blog/'>
 						<SeeMore />
 					</AnchorLink>
@@ -110,7 +110,7 @@ export default function ResourcesSection({ data }) {
 						))}
 					</div>
 					<AnchorLink
-						title='Videos'
+						title='Navigate to Videos'
 						to='/resources/videos/'>
 						<SeeMore />
 					</AnchorLink>
