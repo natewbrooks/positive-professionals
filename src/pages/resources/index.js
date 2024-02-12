@@ -39,6 +39,25 @@ const Resources = ({}) => {
 						title
 						date(formatString: "DD MMM YYYY")
 						description
+						featuredpost
+						presentors
+						videoURL
+					}
+					fields {
+						slug
+					}
+				}
+			}
+			allMarkdownRemarkWebinar: allMarkdownRemark(
+				filter: { frontmatter: { templateKey: { eq: "webinar-post" } } }
+			) {
+				nodes {
+					frontmatter {
+						title
+						date(formatString: "DD MMM YYYY")
+						description
+						featuredpost
+						presentors
 						videoURL
 					}
 					fields {
@@ -60,23 +79,45 @@ const Resources = ({}) => {
 			slug: node.fields.slug,
 			authors: node.frontmatter.authors,
 			isVideo: false,
+			isWebinar: false,
 		}));
 
 		const videos = data.allMarkdownRemarkVideo.nodes.map((node) => ({
 			title: node.frontmatter.title,
 			date: node.frontmatter.date,
 			description: node.frontmatter.description,
+			featuredpost: node.frontmatter.featuredpost,
+			presentors: node.frontmatter.presentors,
 			videoURL: node.frontmatter.videoURL,
 			slug: node.fields.slug,
 			isVideo: true,
+			isWebinar: false,
 		}));
 
-		const combinedMedia = [...blogPosts, ...videos].sort(
-			(a, b) => new Date(b.date) - new Date(a.date)
-		);
+		const webinars = data.allMarkdownRemarkWebinar.nodes.map((node) => ({
+			title: node.frontmatter.title,
+			date: node.frontmatter.date,
+			description: node.frontmatter.description,
+			featuredpost: node.frontmatter.featuredpost,
+			presentors: node.frontmatter.presentors,
+			videoURL: node.frontmatter.videoURL,
+			slug: node.fields.slug,
+			isVideo: true,
+			isWebinar: true,
+		}));
 
-		setRecentMedia(combinedMedia);
+		const combinedMedia = [...blogPosts, ...videos, ...webinars];
+
+		const featured = combinedMedia
+			.filter((post) => post.featuredpost)
+			.sort((a, b) => new Date(b.date) - new Date(a.date));
+		const nonfeatured = combinedMedia
+			.filter((post) => !post.featuredpost)
+			.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+		setRecentMedia([...featured, ...nonfeatured]);
 	}, [data]);
+
 	return (
 		<>
 			<Layout>

@@ -17,6 +17,8 @@ const ResourcesGridLayout = ({ mediaItems }) => {
 		(item) =>
 			(item.date && item.date.toLowerCase().includes(searchTerm.toLowerCase())) ||
 			(item.authors && item.authors.join(', ').toLowerCase().includes(searchTerm.toLowerCase())) ||
+			(item.presentors &&
+				item.presentors.join(', ').toLowerCase().includes(searchTerm.toLowerCase())) ||
 			(item.title && item.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
 			(item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
 	);
@@ -48,16 +50,16 @@ const ResourcesGridLayout = ({ mediaItems }) => {
 			</div>
 			<div className='w-full h-full justify-items-center grid null:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4 null:gap-y-6 gap-x-4 '>
 				{filteredItems.slice(0, itemsToShow).map((item, index) => {
-					return item.isVideo === false ? (
-						<BlogPostItem
-							key={`blog-${index}`}
-							post={item}
-							searchTerm={searchTerm}
-						/>
-					) : (
+					return item.isVideo ? (
 						<VideoItem
 							key={`video-${index}`}
 							video={item}
+							searchTerm={searchTerm}
+						/>
+					) : (
+						<BlogPostItem
+							key={`blog-${index}`}
+							post={item}
 							searchTerm={searchTerm}
 						/>
 					);

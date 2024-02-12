@@ -15,19 +15,21 @@ const Blog = ({ data }) => {
 		slug: node.fields.slug,
 		authors: node.frontmatter.authors,
 		isVideo: false,
+		isWebinar: false,
 	}));
 
-	blogs = blogs.sort((a, b) => {
-		// Featured posts sort
-		if (a.featuredpost && !b.featuredpost) {
-			return -1;
-		}
-		if (!a.featuredpost && b.featuredpost) {
-			return 1;
-		}
-		// If both posts have the same featured status, then sort by date
-		return new Date(b.date) - new Date(a.date);
-	});
+	const [sortedBlogs, setSortedBlogs] = useState(blogs);
+
+	useEffect(() => {
+		const featured = blogs
+			.filter((post) => post.featuredpost)
+			.sort((a, b) => new Date(b.date) - new Date(a.date));
+		const nonfeatured = blogs
+			.filter((post) => !post.featuredpost)
+			.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+		setSortedBlogs([...featured, ...nonfeatured]);
+	}, [data]);
 
 	return (
 		<>
@@ -37,7 +39,7 @@ const Blog = ({ data }) => {
 						pageTitle={'Blog Posts'}
 						showTitle={true}
 					/>
-					<ResourcesGridLayout mediaItems={blogs} />
+					<ResourcesGridLayout mediaItems={sortedBlogs} />
 				</div>
 			</Layout>
 		</>

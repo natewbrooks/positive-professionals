@@ -9,11 +9,26 @@ const Videos = ({ data }) => {
 		title: node.frontmatter.title,
 		date: node.frontmatter.date,
 		description: node.frontmatter.description,
-		// Assuming you want to link to a video file that was uploaded
+		featuredpost: node.frontmatter.featuredpost,
+		presentors: node.frontmatter.presentors,
 		videoURL: node.frontmatter.videoURL,
 		slug: node.fields.slug,
 		isVideo: true,
+		isWebinar: false,
 	}));
+
+	const [sortedVideos, setSortedVideos] = useState(videoCatalog);
+
+	useEffect(() => {
+		const featured = videoCatalog
+			.filter((post) => post.featuredpost)
+			.sort((a, b) => new Date(b.date) - new Date(a.date));
+		const nonfeatured = videoCatalog
+			.filter((post) => !post.featuredpost)
+			.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+		setSortedVideos([...featured, ...nonfeatured]);
+	}, [data]);
 
 	return (
 		<>
@@ -23,7 +38,7 @@ const Videos = ({ data }) => {
 						pageTitle={'Video Catalog'}
 						showTitle={true}
 					/>
-					<ResourcesGridLayout mediaItems={videoCatalog} />
+					<ResourcesGridLayout mediaItems={sortedVideos} />
 				</div>
 			</Layout>
 		</>
@@ -43,7 +58,9 @@ export const query = graphql`
 					title
 					date(formatString: "DD MMM YYYY")
 					description
+					featuredpost
 					videoURL
+					presentors
 				}
 				fields {
 					slug

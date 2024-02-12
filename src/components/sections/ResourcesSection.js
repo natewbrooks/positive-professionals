@@ -28,7 +28,7 @@ export default function ResourcesSection({ data }) {
 
 	const videoCatalog = data.videos;
 	console.log(videoCatalog);
-	const previousWebinars = data.videos;
+	const previousWebinars = data.webinars;
 
 	return (
 		<section
@@ -64,7 +64,7 @@ export default function ResourcesSection({ data }) {
 					</AnchorLink>
 					<div className='bg-secondary/50 outline outline-secondary/50 rounded-md w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
 						{blogPosts.map((post, index) => (
-							<div className={`p-4 bg-light/40 dark:bg-dark/50 w-full h-full`}>
+							<div className={`p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
 								<BlogPostItem
 									key={index}
 									post={{
@@ -77,6 +77,7 @@ export default function ResourcesSection({ data }) {
 										slug: post.fields.slug,
 										authors: post.frontmatter.authors,
 										isVideo: false,
+										isWebinar: false,
 									}}
 								/>
 							</div>
@@ -104,8 +105,11 @@ export default function ResourcesSection({ data }) {
 										title: video.frontmatter.title,
 										date: video.frontmatter.date,
 										description: video.frontmatter.description,
+										presentors: video.frontmatter.presentors,
 										videoURL: video.frontmatter.videoURL,
 										slug: video.fields.slug,
+										isVideo: true,
+										isWebinar: false,
 									}}
 									searchTerm={''}
 								/>
@@ -115,6 +119,39 @@ export default function ResourcesSection({ data }) {
 					<AnchorLink
 						title='Navigate to Videos'
 						to='/resources/videos/'>
+						<SeeMore />
+					</AnchorLink>
+				</div>
+				<div className='z-10 flex flex-col text-start justify-center'>
+					<AnchorLink
+						to='/resources/webinars/'
+						className='group flex flex-col -space-y-1 my-4 text-end'>
+						<span className={`sans text-sm `}>REVIEW OUR EXPANSIVE LIBRARY</span>
+						<span className={`group-md:hover:opacity-50 text-xl serif`}>Previous webinars</span>
+					</AnchorLink>
+					<div className='bg-secondary/50 outline outline-secondary/50 rounded-md w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
+						{previousWebinars.map((video, index) => (
+							<div className={`p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
+								<VideoItem
+									key={index}
+									video={{
+										title: video.frontmatter.title,
+										date: video.frontmatter.date,
+										description: video.frontmatter.description,
+										presentors: video.frontmatter.presentors,
+										videoURL: video.frontmatter.videoURL,
+										slug: video.fields.slug,
+										isVideo: true,
+										isWebinar: true,
+									}}
+									searchTerm={''}
+								/>
+							</div>
+						))}
+					</div>
+					<AnchorLink
+						title='Navigate to Webinars'
+						to='/resources/webinars/'>
 						<SeeMore />
 					</AnchorLink>
 				</div>

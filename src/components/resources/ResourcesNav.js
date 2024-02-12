@@ -3,31 +3,15 @@ import { Link, graphql } from 'gatsby';
 import { useLocation } from '@reach/router';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { MdOutlineKeyboardArrowLeft } from 'react-icons/md';
+import { navigate } from 'gatsby';
 
 const ResourcesNav = ({ pageTitle, showTitle }) => {
 	const categories = ['Blog', 'Videos', 'Webinars'];
 	const location = useLocation();
 
-	function lastURL() {
-		let arr = location.pathname.split('/');
-		arr.pop();
-		arr.pop();
-		let result = '';
-		for (let x of arr) {
-			if (x) {
-				result += '/' + x;
-			}
-		}
-		return result + '/';
-	}
-
-	function lastURLSegment() {
-		let arr = location.pathname.split('/');
-		arr.pop();
-		arr.pop();
-		let lastSegment = arr[arr.length - 1];
-		return lastSegment.charAt(0).toUpperCase() + lastSegment.slice(1);
-	}
+	const goBack = () => {
+		navigate(-1); // One step back in the browser's history stack
+	};
 
 	return (
 		<nav
@@ -41,8 +25,8 @@ const ResourcesNav = ({ pageTitle, showTitle }) => {
 					Explore our collection of informative videos and previous webinars.
 				</span> */}
 				{pageTitle === 'Return' && (
-					<AnchorLink
-						to={lastURL()}
+					<button
+						onClick={() => goBack()}
 						title='Go back to the previous page'
 						className='flex sm:hidden md:hover:opacity-50 items-center justify-center sm:justify-start w-full text-center'>
 						<span className='relative text-lg xbold sans text-dark dark:text-light/70'>
@@ -52,21 +36,21 @@ const ResourcesNav = ({ pageTitle, showTitle }) => {
 								className='absolute -left-6 top-[3px] text-dark dark:text-light/70'
 							/>
 						</span>
-					</AnchorLink>
+					</button>
 				)}
 			</div>
 			<div className='px-2 flex null:flex-col sm:flex-row null:justify-center md:justify-between items-center border-b-2 border-dark/10 dark:border-light/10'>
 				{pageTitle === 'Return' ? (
 					<div className='w-full'>
-						<AnchorLink
-							to={lastURL()}
+						<button
+							onClick={() => goBack()}
 							className='hidden sm:flex md:hover:opacity-50 items-center justify-center sm:justify-start w-fit text-center'>
 							<MdOutlineKeyboardArrowLeft
 								size={24}
 								className='text-dark dark:text-light/70'
 							/>
 							<span className='text-lg xbold sans text-dark dark:text-light/70'>BACK</span>
-						</AnchorLink>
+						</button>
 					</div>
 				) : (
 					<span className='null:hidden md:block text-xxl serif text-dark dark:text-light/70'>

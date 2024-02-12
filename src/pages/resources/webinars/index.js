@@ -4,34 +4,30 @@ import Layout from '../../../components/Layout';
 import ResourcesNav from '../../../components/resources/ResourcesNav';
 import ResourcesGridLayout from '../../../components/resources/ResourcesGridLayout';
 
-const Webinars = ({}) => {
-	const previousWebinars = [
-		{
-			title: 'Superman sees the skies',
-			date: 'Dec 2023',
-			description:
-				'This is a short and brief non descript description of the video. Should probably be no longer than two sentences.',
-			colorClass: 'text-primary',
-			isVideo: true,
-		},
-		{
-			title: 'Me at the zoo',
-			date: 'Oct 2023',
-			description:
-				'This is a short and brief non descript description of the video. Should probably be no longer than two sentences.',
-			colorClass: 'text-secondary',
-			isVideo: true,
-		},
-		{
-			title: 'Garfield eats lasagna Garfield eats lasagna Garfield eats lasagna',
-			date: 'Sep 2023',
-			description:
-				'This is a short and brief non descript description of the video. Should probably be no longer than two sentences.',
-			colorClass: 'text-tertiary',
-			isVideo: true,
-		},
-		// Add more video items as needed
-	];
+const Webinars = ({ data }) => {
+	const webinars = data.allMarkdownRemark.nodes.map((node) => ({
+		title: node.frontmatter.title,
+		date: node.frontmatter.date,
+		description: node.frontmatter.description,
+		featuredpost: node.frontmatter.featuredpost,
+		presentors: node.frontmatter.presentors,
+		videoURL: node.frontmatter.videoURL,
+		slug: node.fields.slug,
+		isVideo: true,
+		isWebinar: true,
+	}));
+	const [sortedWebinars, setSortedWebinars] = useState(webinars);
+
+	useEffect(() => {
+		const featured = webinars
+			.filter((post) => post.featuredpost)
+			.sort((a, b) => new Date(b.date) - new Date(a.date));
+		const nonfeatured = webinars
+			.filter((post) => !post.featuredpost)
+			.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+		setSortedWebinars([...featured, ...nonfeatured]);
+	}, [data]);
 
 	return (
 		<>
@@ -41,7 +37,7 @@ const Webinars = ({}) => {
 						pageTitle={'Previous Webinars'}
 						showTitle={true}
 					/>
-					<ResourcesGridLayout mediaItems={previousWebinars} />
+					<ResourcesGridLayout mediaItems={sortedWebinars} />
 				</div>
 			</Layout>
 		</>
@@ -49,3 +45,26 @@ const Webinars = ({}) => {
 };
 
 export default Webinars;
+
+export const query = graphql`
+	query WebinarQuery {
+		allMarkdownRemark(
+			sort: { order: DESC, fields: [frontmatter___date] }
+			filter: { frontmatter: { templateKey: { eq: "webinar-post" } } }
+		) {
+			nodes {
+				frontmatter {
+					title
+					date(formatString: "DD MMM YYYY")
+					description
+					featuredpost
+					videoURL
+					presentors
+				}
+				fields {
+					slug
+				}
+			}
+		}
+	}
+`;

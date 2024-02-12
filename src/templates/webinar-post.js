@@ -7,7 +7,7 @@ import Layout from '../components/Layout';
 import ResourcesNav from '../components/resources/ResourcesNav';
 import { PiMaskSadFill } from 'react-icons/pi';
 
-export const VideoPostTemplate = ({
+export const WebinarPostTemplate = ({
 	description,
 	title,
 	helmet,
@@ -60,7 +60,7 @@ export const VideoPostTemplate = ({
 						{featuredpost && (
 							<div className='w-full flex justify-center items-center'>
 								<div className='w-fit px-2 rounded-md bg-dark dark:bg-light/70 text-lg sans xbold text-light dark:text-darkAccent'>
-									★ <span className='px-1'>FEATURED VIDEO</span> ★
+									★ <span className='px-1'>FEATURED WEBINAR</span> ★
 								</div>
 							</div>
 						)}
@@ -94,7 +94,7 @@ export const VideoPostTemplate = ({
 	);
 };
 
-VideoPostTemplate.propTypes = {
+WebinarPostTemplate.propTypes = {
 	description: PropTypes.string,
 	title: PropTypes.string,
 	helmet: PropTypes.object,
@@ -104,14 +104,14 @@ VideoPostTemplate.propTypes = {
 	videoURL: PropTypes.string,
 };
 
-const VideoPost = ({ data }) => {
+const WebinarPost = ({ data }) => {
 	const { markdownRemark: post } = data;
 
 	return (
 		<Layout>
-			<VideoPostTemplate
+			<WebinarPostTemplate
 				helmet={
-					<Helmet titleTemplate='%s | Video'>
+					<Helmet titleTemplate='%s | Webinar'>
 						<title>{`${post.frontmatter.title}`}</title>
 						<meta
 							name='description'
@@ -122,24 +122,24 @@ const VideoPost = ({ data }) => {
 				description={post.frontmatter.description}
 				date={post.frontmatter.date}
 				title={post.frontmatter.title}
-				presentors={post.frontmatter.presentors}
 				featuredpost={post.frontmatter.featuredpost}
+				presentors={post.frontmatter.presentors}
 				videoURL={post.frontmatter.videoURL}
 			/>
 		</Layout>
 	);
 };
 
-VideoPost.propTypes = {
+WebinarPost.propTypes = {
 	data: PropTypes.shape({
 		markdownRemark: PropTypes.object,
 	}),
 };
 
-export default VideoPost;
+export default WebinarPost;
 
 export const pageQuery = graphql`
-	query VideoPostByID($id: String!) {
+	query WebinarPostByID($id: String!) {
 		markdownRemark(id: { eq: $id }) {
 			id
 			frontmatter {
