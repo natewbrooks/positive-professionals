@@ -8,6 +8,7 @@ description: In the journey of self-improvement and personal development, the
   wisdom of those who've walked before us can light the way. Below are five
   quotes that resonate deeply with me, each followed by a brief exploration of
   how they can apply to your life.
+image: /img/quotes-blog-img.jpg
 authors:
   - Liz Brooks
 ---
