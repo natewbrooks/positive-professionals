@@ -8,6 +8,7 @@ description: In an era where the lines between work and life blur more each day,
   professionals. Drawing from my experiences in program management and
   government, I've learned the importance of establishing boundaries and
   prioritizing well-being amidst the demands of a bustling career.
+image: /img/worklife-balance-blog-img.jpg
 authors:
   - Angela Satchell
 ---
