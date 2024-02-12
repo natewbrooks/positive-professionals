@@ -2,7 +2,7 @@
 templateKey: blog-post
 featuredpost: true
 title: "Embracing Change: The Journey to Resilience and Adaptability"
-date: 2016-12-17T15:04:10.000Z
+date: 2021-07-15T14:04:10.000Z
 description: Change is an inevitable part of life, yet it often comes with its
   set of challenges. Whether it's a career transition, a move to a new city, or
   a change in personal relationships, navigating these waters can be daunting.
