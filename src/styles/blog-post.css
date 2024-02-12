@@ -43,9 +43,14 @@ article {
     align-items: start;
 }
 
+.blog-post-container strong {
+    width: fit-content;
+    white-space: nowrap;
+}
+
 .blog-post-container img {
     width: max-content;
-    max-height: 900px;
+    max-height: 800px;
     align-self: center;
 }
 
@@ -68,8 +73,9 @@ article {
 
 .blog-post-container li {
     font-family: 'Source Sans 3', sans-serif;
-    font-weight: 800;
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 20px;
+    height: fit-content;
     margin-bottom: 0.5rem;
     /* Space between list items */
     text-align: left;

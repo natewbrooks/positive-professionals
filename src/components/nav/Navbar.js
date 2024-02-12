@@ -78,14 +78,13 @@ export default function Navbar() {
 		return activeHash === hash;
 	}
 
-	// Resources Dropdown - Simplified for brevity
 	const resourcesDropdown = [
+		{ label: 'Timeline', href: '/resources/' },
 		{ label: 'Blog', href: '/resources/blog/' },
 		{ label: 'Videos', href: '/resources/videos/' },
 		{ label: 'Webinars', href: '/resources/webinars/' },
 	];
 
-	// Nav Links - Simplified for brevity
 	const navLinks = [
 		{ title: 'Team', hash: 'team', colorClass: 'primary' },
 		{ title: 'Testimonials', hash: 'testimonials', colorClass: 'tertiary' },

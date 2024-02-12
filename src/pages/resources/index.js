@@ -123,7 +123,7 @@ const Resources = ({}) => {
 			<Layout>
 				<div className='pt-10 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
 					<ResourcesNav
-						pageTitle={'Recent Feed'}
+						pageTitle={'All Media'}
 						showTitle={true}
 					/>
 					<ResourcesGridLayout mediaItems={recentMedia} />

@@ -44,7 +44,7 @@ export const BlogPostTemplate = ({
 						<div className='flex flex-col w-full px-8 text-dark/40 dark:text-light/70 '>
 							{featuredpost && (
 								<div className='w-full flex pb-4 justify-center items-center'>
-									<div className='w-fit px-2 rounded-md bg-dark dark:bg-light/70 text-lg sans xbold text-light dark:text-darkAccent'>
+									<div className='w-fit px-2 rounded-md bg-dark whitespace-nowrap text-nowrap dark:bg-light/70 text-lg sans xbold text-light dark:text-darkAccent'>
 										★ <span className='px-1'>FEATURED POST</span> ★
 									</div>
 								</div>

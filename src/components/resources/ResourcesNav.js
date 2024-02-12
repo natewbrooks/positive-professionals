@@ -59,7 +59,7 @@ const ResourcesNav = ({ pageTitle, showTitle }) => {
 				)}
 				<div className='sans text-md p-2 flex flex-row h-full text-dark dark:text-light/70 w-fit justify-evenly items-center text-center'>
 					<AnchorLink
-						title={'Recent'}
+						title={'Timeline'}
 						to={'/resources/'}
 						className={`group w-full px-2 flex justify-center select-none items-center text-center `}>
 						<span
@@ -68,7 +68,7 @@ const ResourcesNav = ({ pageTitle, showTitle }) => {
 									? 'border-four'
 									: 'border-transparent group-md:hover:opacity-50'
 							}`}>
-							RECENT
+							TIMELINE
 						</span>
 					</AnchorLink>
 					{categories.map((category, index) => (

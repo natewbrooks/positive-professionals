@@ -59,7 +59,7 @@ export const WebinarPostTemplate = ({
 					<div className='p-4 null:w-full xl:w-[70%] xxl:w-[50%] h-full flex flex-col space-y-4 justify-center items-center'>
 						{featuredpost && (
 							<div className='w-full flex justify-center items-center'>
-								<div className='w-fit px-2 rounded-md bg-dark dark:bg-light/70 text-lg sans xbold text-light dark:text-darkAccent'>
+								<div className='w-fit px-2 whitespace-nowrap text-nowrap rounded-md bg-dark dark:bg-light/70 text-lg sans xbold text-light dark:text-darkAccent'>
 									★ <span className='px-1'>FEATURED WEBINAR</span> ★
 								</div>
 							</div>
