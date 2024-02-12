@@ -3,8 +3,6 @@ templateKey: blog-post
 featuredpost: false
 title: "Navigating Career Transitions: Strategies for Success"
 date: 2023-08-08T21:47:41.764Z
-description: We’re proud to announce that we’ll be offering a small batch of
-  Jamaica Blue Mountain coffee beans in our store next week.
 authors:
   - Liz Brooks
 tags:
@@ -12,6 +10,9 @@ tags:
   - green beans
   - flavor
   - tasting
+description: We’re proud to announce that we’ll be offering a small batch of
+  Jamaica Blue Mountain coffee beans in our store next week.
+image: /img/career-transition-blog-img.jpg
 ---
 Transitioning careers is a pivotal moment filled with potential yet peppered with uncertainty. My journey has meandered through the realms of senior executive leadership into the enriching world of coaching, offering me firsthand insights into the complexities of career change.
 
