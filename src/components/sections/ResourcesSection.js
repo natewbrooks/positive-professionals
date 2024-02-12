@@ -62,9 +62,9 @@ export default function ResourcesSection({ data }) {
 						<span className={`sans text-sm `}>READ OUR STORIES</span>
 						<span className={`group-md:hover:opacity-50 text-xl serif`}>Blog posts</span>
 					</AnchorLink>
-					<div className='bg-lightAccent dark:bg-darkAccent rounded-md w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
+					<div className='bg-secondary  outline outline-secondary rounded-md w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
 						{blogPosts.map((post, index) => (
-							<div className='p-4 rounded-md bg-light dark:bg-dark w-full h-full'>
+							<div className={`p-4  bg-light/40 dark:bg-dark/50 w-full h-full`}>
 								<BlogPostItem
 									key={index}
 									post={{
@@ -95,9 +95,9 @@ export default function ResourcesSection({ data }) {
 						<span className={`sans text-sm `}>SEE US IN ACTION</span>
 						<span className={`group-md:hover:opacity-50 text-xl serif`}>Video catalog</span>
 					</AnchorLink>
-					<div className='bg-lightAccent dark:bg-darkAccent rounded-md w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
+					<div className='bg-secondary outline outline-secondary rounded-md w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
 						{videoCatalog.map((video, index) => (
-							<div className='p-4 rounded-md bg-light dark:bg-dark w-full h-full'>
+							<div className={`p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
 								<VideoItem
 									key={index}
 									video={{

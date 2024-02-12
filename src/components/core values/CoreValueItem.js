@@ -11,23 +11,25 @@ export default function CoreValuesItem({ text, Icon, modalId }) {
 				onClick={() => {
 					openModal(modalId);
 				}}
-				className='transition-all duration-300 w-full bg-light/30 select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center rounded-md'>
+				className='transition-all duration-300 w-full select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center'>
 				<Icon
 					size={42}
-					className='text-dark'
+					className='text-dark dark:text-light/70'
 				/>
-				<span className='sans xbold null:text-xs md:text-sm text-dark'>{text}</span>
+				<span className='sans xbold null:text-xs md:text-sm text-dark dark:text-light/80'>
+					{text}
+				</span>
 			</div>
 			<Modal modalId={modalId}>
-				<div className='null:w-full xxl:w-[600px] null:max-h-[800px] md:max-h-[400px] h-full flex null:flex-col sm:flex-row sm:space-x-4 xxl:flex-col justify-center items-center text-dark dark:text-light/70 null:py-2 md:py-4 overflow-hidden'>
-					<div className='flex flex-col w-full h-fit '>
+				<div className='z-30 null:w-full xxl:w-[800px] null:max-h-[800px] md:max-h-[500px] lg:max-h-[600px] xxl:max-h-[800px] h-full flex null:flex-col md:flex-row sm:space-x-4 justify-center items-center text-dark dark:text-light/70 null:py-2 md:py-4 overflow-hidden'>
+					<div className='flex flex-col w-full h-fit'>
 						<div className='flex flex-col leading-tight pb-2'>
 							<span className='sans text-sm sm:text-md text-dark/50 dark:text-light/80 xbold text-center'>
 								CORE VALUE
 							</span>
 							<span className='serif text-xl sm:text-xxl text-center'>{text}</span>
 						</div>
-						<div className='pb-2 sans text-sm sm:text-md text-center xxl:text-start'>
+						<div className='pb-2 sans text-sm sm:text-md text-center '>
 							As executive coaches, "Persistence" is a core value that underpins our approach to
 							leadership development and professional growth. In the ever-evolving landscape of
 							business and leadership, persistence is not just about steadfastness or endurance;
@@ -36,7 +38,7 @@ export default function CoreValuesItem({ text, Icon, modalId }) {
 							that encompasses several key aspects.
 						</div>
 					</div>
-					<div className='null:h-[750px] sm:h-[600px] md:max-h-[350px] py-4 w-fit xxl:w-full bg-dark/10 dark:bg-dark sm:px-2 rounded-md rounded-b-md sans text-sm sm:text-md overflow-y-auto'>
+					<div className='null:h-[750px] sm:h-[600px] md:h-[500px] lg:h-[600px] py-2 w-fit xxl:w-full bg-dark/10 dark:bg-dark sm:px-2 rounded-md rounded-b-md sans text-sm sm:text-md overflow-y-auto'>
 						<div className='h-full px-4 flex flex-col'>
 							<span className='xbold dark:text-light/80 '>1. Resilience in Adversity:</span> In the
 							fast-paced and often unpredictable business environment, challenges and obstacles are

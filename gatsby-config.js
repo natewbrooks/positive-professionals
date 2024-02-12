@@ -2,7 +2,7 @@ module.exports = {
 	siteMetadata: {
 		title: 'Positive Professionals',
 		description:
-			'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+			'Unlock your full potential with our expert coaching services. At Positive Professionals, we specialize in empowering individuals to overcome life and work challenges, fostering personal growth and professional development. Our tailored coaching programs are designed to help you identify and surpass obstacles, achieve your goals, and enhance overall well-being. Whether you are navigating career transitions, seeking personal fulfillment, or aiming to improve leadership skills, our experienced coaches provide the support and strategies you need to thrive. Join us and start your journey towards a more fulfilling and successful life.',
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
@@ -14,12 +14,21 @@ module.exports = {
 				},
 			},
 		},
+
 		{
 			// keep as first gatsby-source-filesystem plugin for gatsby image support
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				path: `${__dirname}/static/img`,
 				name: 'uploads',
+			},
+		},
+		{
+			// keep as first gatsby-source-filesystem plugin for gatsby image support
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				path: `${__dirname}/static/`,
+				name: 'static',
 			},
 		},
 		{

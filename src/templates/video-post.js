@@ -40,7 +40,9 @@ export const VideoPostTemplate = ({ description, title, helmet, date, videoURL }
 	return (
 		<>
 			{helmet || ''}
-			<div className='pt-10 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
+			<section
+				id='video-post'
+				className='mt-4'>
 				<ResourcesNav
 					pageTitle={'Return'}
 					showTitle={false}
@@ -65,7 +67,7 @@ export const VideoPostTemplate = ({ description, title, helmet, date, videoURL }
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 		</>
 	);
 };

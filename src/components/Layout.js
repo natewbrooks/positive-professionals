@@ -49,13 +49,13 @@ const TemplateWrapper = ({ children }) => {
 				<link
 					rel='icon'
 					type='image/png'
-					href={`${withPrefix('/')}img/favicon/32x32-favicon.png`}
+					href={`${withPrefix('/')}img/favicon/favicon-32x32.png`}
 					sizes='32x32'
 				/>
 				<link
 					rel='icon'
 					type='image/png'
-					href={`${withPrefix('/')}img/favicon/16x16-favicon.png`}
+					href={`${withPrefix('/')}img/favicon/favicon-16x16.png`}
 					sizes='16x16'
 				/>
 
@@ -70,7 +70,7 @@ const TemplateWrapper = ({ children }) => {
 				/>
 				<meta
 					name='theme-color'
-					content='#fff'
+					content='#f2f2f2'
 				/>
 
 				<meta
@@ -85,10 +85,10 @@ const TemplateWrapper = ({ children }) => {
 					property='og:url'
 					content='/'
 				/>
-				<meta
+				{/* <meta
 					property='og:image'
 					content={`${withPrefix('/')}img/og-image.jpg`}
-				/>
+				/> */}
 			</Helmet>
 			<Navbar />
 

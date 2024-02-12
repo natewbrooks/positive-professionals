@@ -3,7 +3,7 @@ import purpleMarkerStripe from '../../img/overlays/purple-marker-stripe.svg';
 
 export default function Hero({ data }) {
 	return (
-		<header className='relative flex justify-center items-center w-full h-[90vh]'>
+		<header className='relative flex justify-center items-center w-full h-fit py-20 xl:py-40'>
 			<div className='pt-8 flex flex-col space-y-14 items-center justify-center h-full'>
 				<div className='text-center flex flex-col px-4'>
 					<div className='relative flex flex-col -space-y-8'>

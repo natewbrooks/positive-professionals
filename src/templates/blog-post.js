@@ -8,6 +8,7 @@ import '../styles/blog-post.css';
 import { useModal } from '../components/ModalContext';
 import TeamMemberModal from '../components/team/TeamMemberModal';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import pic from '../img/bkg.png';
 
 export const BlogPostTemplate = ({
 	description,
@@ -34,7 +35,9 @@ export const BlogPostTemplate = ({
 	return (
 		<>
 			{helmet || ''}
-			<div className='pt-10 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
+			<section
+				id='blog-post'
+				className='mt-4'>
 				<ResourcesNav pageTitle={'Return'} />
 				<div className='justify-center items-center text-center flex w-full flex-col bg-dark/10 dark:bg-darkAccent rounded-md null:py-10 md:px-20'>
 					<div className='dark:text-light/80 max-w-[80%] w-full null:text-xxl md:text-xxxl serif xbold text-dark leading-tight'>
@@ -81,17 +84,24 @@ export const BlogPostTemplate = ({
 					</div>
 				</div>
 				<div className='pt-4 null:mb-20 lg:mb-40 w-full h-full flex flex-col text-start'>
-					<GatsbyImage
-						image={imageData}
-						alt={title}
-						className='h-[50%] aspect-video mb-4'
-					/>
+					{imageData && (
+						<GatsbyImage
+							image={imageData}
+							alt={title}
+							className='max-h-[50%] aspect-video mb-4'
+						/>
+					)}
+					{!imageData && (
+						<img
+							src={pic}
+							className='max-h-[50%] aspect-video mb-4'></img>
+					)}
 					<article
 						className='blog-post-container text-dark dark:text-light/70 px-2'
 						dangerouslySetInnerHTML={{ __html: body }}
 					/>
 				</div>
-			</div>
+			</section>
 		</>
 	);
 };

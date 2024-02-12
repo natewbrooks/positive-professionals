@@ -53,7 +53,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 					<div className='h-fit cursor-pointer flex flex-col'>
 						<div className='flex space-x-1 '>
 							{isNewPost() && (
-								<div className='bg-secondary rounded-md px-2 mb-1 text-xs sans xbold text-light/70'>
+								<div className='bg-secondary rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark'>
 									NEW
 								</div>
 							)}
@@ -61,7 +61,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 							<div
 								className={`${
 									post.featuredpost ? 'visible' : 'invisible'
-								} bg-four rounded-md px-2 mb-1 text-xs sans xbold text-light/70`}>
+								} bg-four rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark`}>
 								FEATURED
 							</div>
 						</div>
