@@ -5,30 +5,47 @@ import { Helmet } from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import ResourcesNav from '../components/resources/ResourcesNav';
+import { PiMaskSadFill } from 'react-icons/pi';
 
-export const VideoPostTemplate = ({ description, title, helmet, date, videofile }) => {
+export const VideoPostTemplate = ({ description, title, helmet, date, videoURL }) => {
+	const embedURL = videoURL.replace('watch?v=', 'embed/');
+
 	const renderVideo = () => {
-		if (videofile) {
+		if (embedURL) {
 			return (
-				<video
-					className={`w-full h-full`}
-					src={videofile.publicURL}
-					controls
+				<iframe
+					className='w-full h-full aspect-video'
+					src={embedURL}
+					title={title}
+					allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+					frameBorder='0'
+					webkitallowfullscreen='true'
+					mozallowfullscreen='true'
+					allowFullScreen
 				/>
 			);
 		}
-		return null;
+		return (
+			<div className='flex flex-col w-full justify-center'>
+				<PiMaskSadFill
+					size={48}
+					className='text-dark dark:text-light/70'
+				/>
+				<span className='text-xxl sans xbold'>SOMETHING WENT WRONG...</span>
+				{!videoURL && <span className='text-sm sans xbold'>(there is no video linked!)</span>}
+			</div>
+		);
 	};
 
 	return (
 		<>
 			{helmet || ''}
-			<section className='pt-4 w-full h-full'>
+			<div className='pt-10 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
 				<ResourcesNav
 					pageTitle={'Return'}
 					showTitle={false}
 				/>
-				<div className='flex flex-col  items-center justify-center'>
+				<div className='flex flex-col items-center justify-center'>
 					<div className='p-4 null:w-full xl:w-[70%] xxl:w-[50%] h-full flex flex-col space-y-4 justify-center items-center'>
 						<div className='outline rounded-sm outline-four outline-offset-8 bg-dark/10 border-b-2 border-dark/10 w-full h-full text-dark aspect-video'>
 							{renderVideo()}
@@ -48,7 +65,7 @@ export const VideoPostTemplate = ({ description, title, helmet, date, videofile 
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 		</>
 	);
 };
@@ -57,7 +74,8 @@ VideoPostTemplate.propTypes = {
 	description: PropTypes.string,
 	title: PropTypes.string,
 	helmet: PropTypes.object,
-	videofile: PropTypes.object,
+	date: PropTypes.string,
+	videoURL: PropTypes.string,
 };
 
 const VideoPost = ({ data }) => {
@@ -78,7 +96,7 @@ const VideoPost = ({ data }) => {
 				description={post.frontmatter.description}
 				date={post.frontmatter.date}
 				title={post.frontmatter.title}
-				videofile={post.frontmatter.videofile}
+				videoURL={post.frontmatter.videoURL}
 			/>
 		</Layout>
 	);
@@ -96,14 +114,11 @@ export const pageQuery = graphql`
 	query VideoPostByID($id: String!) {
 		markdownRemark(id: { eq: $id }) {
 			id
-			html
 			frontmatter {
 				date(formatString: "DD MMM YYYY")
 				title
 				description
-				videofile {
-					publicURL
-				}
+				videoURL
 			}
 		}
 	}

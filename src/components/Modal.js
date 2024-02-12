@@ -16,7 +16,7 @@ export default function Modal({ children, modalId }) {
 			// Increase body's padding right by the scrollbar width to prevent layout shift
 			document.body.style.paddingRight = `${scrollbarWidth}px`;
 			if (modalElement) {
-				modalElement.style.paddingRight = `${scrollbarWidth}px`;
+				modalElement.style.transform = `translateX(-${scrollbarWidth}px)`;
 			}
 			document.documentElement.style.overflow = 'hidden';
 			document.body.style.overflow = 'hidden';
@@ -25,9 +25,7 @@ export default function Modal({ children, modalId }) {
 			return () => {
 				if (currentModal === modalId) {
 					document.body.style.paddingRight = '0px';
-					if (modalElement) {
-						modalElement.style.paddingRight = '';
-					}
+					document.body.classList.remove('modalOpen');
 
 					document.documentElement.style.overflow = '';
 					document.body.style.overflow = '';
@@ -59,6 +57,7 @@ export default function Modal({ children, modalId }) {
 						</div>
 						{children}
 					</div>
+					<div className='absolute -right-2 h-full px-1 bg-dark/60'></div>
 				</div>
 			)}
 		</>

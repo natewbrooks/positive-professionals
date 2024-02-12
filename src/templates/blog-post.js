@@ -7,6 +7,7 @@ import ResourcesNav from '../components/resources/ResourcesNav';
 import '../styles/blog-post.css';
 import { useModal } from '../components/ModalContext';
 import TeamMemberModal from '../components/team/TeamMemberModal';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export const BlogPostTemplate = ({
 	description,
@@ -28,16 +29,22 @@ export const BlogPostTemplate = ({
 
 	const { openModal } = useModal();
 
+	const imageData = getImage(image);
+
 	return (
 		<>
 			{helmet || ''}
-			<section className='pt-4 w-full h-full'>
+			<div className='pt-10 null:px-2 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
 				<ResourcesNav pageTitle={'Return'} />
-				<div className='justify-center items-center text-center flex w-full flex-col bg-dark/10 dark:bg-darkAccent rounded-md null:py-20 md:px-20'>
-					<div className='dark:text-light/80 max-w-[80%] w-full null:text-xxl md:text-xxxl xl:text-billboard serif xbold text-dark leading-tight'>
-						<div className='flex flex-col w-full px-8 text-dark/40 dark:text-light/50 '>
+				<div className='justify-center items-center text-center flex w-full flex-col bg-dark/10 dark:bg-darkAccent rounded-md null:py-10 md:px-20'>
+					<div className='dark:text-light/80 max-w-[80%] w-full null:text-xxl md:text-xxxl serif xbold text-dark leading-tight'>
+						<div className='flex flex-col w-full px-8 text-dark/40 dark:text-light/70 '>
 							{featuredpost && (
-								<div className='text-center w-full null:text-md sm:text-lg sans xbold'>* * *</div>
+								<div className='w-full flex pb-4 justify-center items-center'>
+									<div className='w-fit px-2 rounded-md bg-dark dark:bg-light/70 text-md sans xbold text-lightAccent dark:text-darkAccent'>
+										★ <span className='px-1'>FEATURED POST</span> ★
+									</div>
+								</div>
 							)}
 							<div className='text-center w-full null:text-md sm:text-lg sans xbold'>
 								PUBLISHED {daet()}
@@ -74,12 +81,17 @@ export const BlogPostTemplate = ({
 					</div>
 				</div>
 				<div className='pt-4 null:mb-20 lg:mb-40 w-full h-full flex flex-col text-start'>
+					<GatsbyImage
+						image={imageData}
+						alt={title}
+						className='h-[50%] aspect-video mb-4'
+					/>
 					<article
-						className='blog-post-container text-dark dark:text-light/70'
+						className='blog-post-container text-dark dark:text-light/70 px-2'
 						dangerouslySetInnerHTML={{ __html: body }}
 					/>
 				</div>
-			</section>
+			</div>
 		</>
 	);
 };

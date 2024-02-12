@@ -1,12 +1,13 @@
 ---
 templateKey: blog-post
 title: 'Unlocking Your Best Self: The Power of Habit Stacking and Consistency'
-date: 2024-01-23T09:56:08-05:00
-description: As a leadership and performance coach, I frequently encounter
-  individuals and teams grappling with the quest to harmonize the demands of
-  their professional and personal lives while still leaving room for joy and
-  well-being. If you're facing these challenges, rest assured, you're not alone.
+date: 2024-02-11T14:56:08.000Z
+description: >-
+  In the hustle and bustle of life, finding the delicate balance between work,
+  family, health, and personal fulfillment can often feel like an insurmountable
+  challenge. If you're facing these challenges, rest assured, you're not alone.
 featuredpost: true
+image: /img/habit-stacking-blocks-img.png
 authors:
   - Liz Brooks
 ---

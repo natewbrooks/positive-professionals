@@ -21,6 +21,12 @@ export default function Navbar() {
 	// Reacting to currentModal change to toggle Navbar visibility
 	const isNavbarVisible = !currentModal;
 
+	useEffect(() => {
+		if (currentModal) {
+			setBurgerNavShown(false);
+		}
+	}, [currentModal]);
+
 	const toggleDarkMode = () => {
 		const newMode = !darkModeActive;
 		setDarkModeActive(newMode);
@@ -33,7 +39,7 @@ export default function Navbar() {
 	};
 
 	useEffect(() => {
-		const handleScroll = () => setHasScrolled(window.scrollY > 800);
+		const handleScroll = () => setHasScrolled(window.scrollY > 200);
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
@@ -111,7 +117,7 @@ export default function Navbar() {
 								<img
 									src={logo}
 									alt='logo'
-									className='transition-all duration-[500ms] ease-in-out w-[48px] h-[48px] mobile:w-[52px] mobile:h-[52px] '
+									className='transition-all duration-[300ms] ease-in-out w-[48px] h-[48px] mobile:w-[52px] mobile:h-[52px] '
 								/>
 								<div
 									style={{
@@ -121,7 +127,7 @@ export default function Navbar() {
 										transform: hasScrolled ? 'translateY(-40px)' : 'translateY(0px)',
 										transform: hasScrolled ? 'scale(0%)' : 'scale(100%)',
 									}}
-									className={`relative transition-all duration-[300ms] ease-in-out flex text-sm text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
+									className={`relative transition-all duration-[500ms] ease-in-out flex text-sm text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
 									<span className='sans xbold'>POSITIVE</span>
 									<span className='sans'>PROFESSIONALS</span>
 								</div>
@@ -136,7 +142,7 @@ export default function Navbar() {
 									onAnchorLinkClick={() => setActiveHash(link.hash)}
 									className={`w-full h-full hidden lg:block sans transition-all duration-[300ms] text-dark dark:text-light/60 text-md px-2 ${
 										hasScrolled ? 'py-5' : 'py-8'
-									} border-b-2 text-nowrap ${
+									} border-b-[3px]  text-nowrap ${
 										isHashActive(link.hash)
 											? ' border-four hover:border-four'
 											: 'border-transparent hover:border-four/50'
@@ -198,7 +204,7 @@ export default function Navbar() {
 					style={{
 						transform: isBurgerNavShown ? `translateY(0px)` : `translateY(-100%)`,
 					}}
-					className={`-z-20 overflow-visible mobile:space-x-[0.15rem] flex flex-col mobile:flex-row w-full h-fit items-center transform fixed lg:hidden bg-dark/90 duration-[600ms] ease-in-out transition-all`}>
+					className={`-z-20 overflow-visible mobile:space-x-[0.15rem] flex flex-col mobile:flex-row w-full h-fit items-center transform fixed lg:hidden bg-darkAccent duration-[600ms] ease-in-out transition-all`}>
 					{navLinks.map((link, index) => (
 						<AnchorLink
 							key={'#' + link.hash}
@@ -208,8 +214,10 @@ export default function Navbar() {
 								setActiveHash(link.hash);
 								setBurgerNavShown(false);
 							}}
-							className={`bg-dark dark:bg-darkAccent border-b-2 border-light/10 w-full py-5 text-light text-sm flex px-4 justify-center items-center text-center ${
-								isHashActive(link.hash) ? 'border-b-2 border-b-primary hover:border-b-primary' : ''
+							className={`bg-dark border-b-[3px]  border-darkAccent w-full py-5 text-light text-sm flex px-4 justify-center items-center text-center ${
+								isHashActive(link.hash)
+									? 'border-b-[3px]  border-b-primary hover:border-b-primary'
+									: ''
 							} `}>
 							<span className={`text-center sans xbold text-nowrap`}>
 								{link.title.toUpperCase()}

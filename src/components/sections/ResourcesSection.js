@@ -27,6 +27,7 @@ export default function ResourcesSection({ data }) {
 	});
 
 	const videoCatalog = data.videos;
+	console.log(videoCatalog);
 	const previousWebinars = data.videos;
 
 	return (
@@ -61,22 +62,24 @@ export default function ResourcesSection({ data }) {
 						<span className={`sans text-sm `}>READ OUR STORIES</span>
 						<span className={`group-md:hover:opacity-50 text-xl serif`}>Blog posts</span>
 					</AnchorLink>
-					<div className=' w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 lg:gap-y-6 gap-x-4'>
+					<div className='bg-lightAccent dark:bg-darkAccent rounded-md w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
 						{blogPosts.map((post, index) => (
-							<BlogPostItem
-								key={index}
-								post={{
-									title: post.frontmatter.title,
-									date: post.frontmatter.date,
-									description: post.frontmatter.description,
-									featuredpost: post.frontmatter.featuredpost,
-									image: post.frontmatter.image,
-									body: post.frontmatter.html,
-									slug: post.fields.slug,
-									authors: post.frontmatter.authors,
-									isVideo: false,
-								}}
-							/>
+							<div className='p-4 rounded-md bg-light dark:bg-dark w-full h-full'>
+								<BlogPostItem
+									key={index}
+									post={{
+										title: post.frontmatter.title,
+										date: post.frontmatter.date,
+										description: post.frontmatter.description,
+										featuredpost: post.frontmatter.featuredpost,
+										image: post.frontmatter.image,
+										body: post.frontmatter.html,
+										slug: post.fields.slug,
+										authors: post.frontmatter.authors,
+										isVideo: false,
+									}}
+								/>
+							</div>
 						))}
 					</div>
 					<AnchorLink
@@ -92,21 +95,21 @@ export default function ResourcesSection({ data }) {
 						<span className={`sans text-sm `}>SEE US IN ACTION</span>
 						<span className={`group-md:hover:opacity-50 text-xl serif`}>Video catalog</span>
 					</AnchorLink>
-					<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-4'>
+					<div className='bg-lightAccent dark:bg-darkAccent rounded-md w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
 						{videoCatalog.map((video, index) => (
-							<VideoItem
-								key={index}
-								video={{
-									title: video.frontmatter.title,
-									date: video.frontmatter.date,
-									description: video.frontmatter.description,
-									videofile: video.frontmatter.videofile
-										? video.frontmatter.videofile.publicURL
-										: null,
-									slug: video.fields.slug,
-									isVideo: false,
-								}}
-							/>
+							<div className='p-4 rounded-md bg-light dark:bg-dark w-full h-full'>
+								<VideoItem
+									key={index}
+									video={{
+										title: video.frontmatter.title,
+										date: video.frontmatter.date,
+										description: video.frontmatter.description,
+										videoURL: video.frontmatter.videoURL,
+										slug: video.fields.slug,
+									}}
+									searchTerm={''}
+								/>
+							</div>
 						))}
 					</div>
 					<AnchorLink

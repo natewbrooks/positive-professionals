@@ -1,8 +1,26 @@
 import React, { useState } from 'react';
 import pic from '../../img/bkg.png';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-export default function BlogPostItem({ post }) {
+const highlightSearchTerm = (text, searchTerm) => {
+	if (!searchTerm) return text;
+
+	const parts = text.split(new RegExp(`(${searchTerm})`, 'gi'));
+	return parts.map((part, index) =>
+		part.toLowerCase() === searchTerm.toLowerCase() ? (
+			<span
+				key={index}
+				className='bg-four rounded-md px-1 text-light dark:text-dark'>
+				{part}
+			</span>
+		) : (
+			part
+		)
+	);
+};
+
+export default function BlogPostItem({ post, searchTerm }) {
 	const howManyDaysIsAPostStillNew = 7;
 	const isNewPost = () => {
 		if (post.date) {
@@ -17,51 +35,71 @@ export default function BlogPostItem({ post }) {
 		return false;
 	};
 
+	const titleHighlighted = highlightSearchTerm(post.title, searchTerm);
+	const authorsHighlighted = post.authors
+		? highlightSearchTerm(post.authors.join(', ').toUpperCase(), searchTerm)
+		: null;
+	const descriptionHighlighted = highlightSearchTerm(post.description, searchTerm);
+	const dateHighlighted = highlightSearchTerm(post.date.toUpperCase(), searchTerm);
+
+	const imageData = getImage(post.image);
+
 	return (
 		<AnchorLink
 			to={post.slug}
-			className='group md:hover:opacity-80 w-full h-full relative  duration-300 transition-colors pb-2 rounded-md '>
-			<div className='absolute -top-5 -left-0 flex space-x-1'>
-				{isNewPost() && (
-					<div className='bg-light rounded-md px-2 py-1 text-sm sans xbold text-secondary dark:text-darkAccent'>
-						NEW
-					</div>
-				)}
-				{post.featuredpost && (
-					<div className='bg-secondary rounded-md px-2 py-1 text-sm sans xbold text-light dark:text-darkAccent'>
-						FEATURED
-					</div>
-				)}
-			</div>
-			<div className='bg-light/30 dark:bg-dark/30 rounded-md w-full h-full flex flex-col'>
-				<div className='w-full h-full flex flex-col px-4 pt-4 rounded-t-md'>
+			className='group md:hover:opacity-80 w-full h-full justify-center items-center relative  duration-300 transition-colors'>
+			<div className='w-full h-full justify-center items-center flex flex-col'>
+				<div className='w-full h-full flex flex-col'>
 					<div className='h-fit cursor-pointer flex flex-col'>
+						<div className='flex space-x-1 '>
+							{isNewPost() && (
+								<div className='bg-secondary rounded-md px-2 mb-1 text-xs sans xbold text-light/70'>
+									NEW
+								</div>
+							)}
+
+							<div
+								className={`${
+									post.featuredpost ? 'visible' : 'invisible'
+								} bg-four rounded-md px-2 mb-1 text-xs sans xbold text-light/70`}>
+								FEATURED
+							</div>
+						</div>
 						<div className='flex flex-col w-full overflow-hidden '>
 							<div className='w-full flex flex-col text-dark/50 dark:text-light/50'>
 								<span className='w-full sans text-sm xbold text-nowrap'>
-									PUBLISHED {post.date.toUpperCase()}
+									PUBLISHED {dateHighlighted}
 								</span>
 								{post.authors && (
 									<span className='w-fit sans text-sm xbold text-nowrap '>
-										{post.authors.join(', ').toUpperCase()}
+										BY {authorsHighlighted}
 									</span>
 								)}
 							</div>
 							<span
-								className={`h-[48px] text-dark dark:text-light/70 overflow-hidden w-full sans text-lg xbold leading-tight xbold line-clamp-2`}>
-								{post.title}
+								className={`h-[54px] text-dark dark:text-light/70 overflow-hidden w-full sans text-lg xbold leading-snug xbold line-clamp-2`}>
+								{titleHighlighted}
 							</span>
 						</div>
 
-						<div className='px-4 py-2 drop-shadow-md cursor-pointer w-full '>
-							<img
-								src={pic}
-								alt={post.title + ' picture'}
-								className='max-h-[320px]'></img>
+						<div className='py-2 drop-shadow-md cursor-pointer flex justify-center w-fit '>
+							{imageData && (
+								<GatsbyImage
+									image={imageData}
+									alt={post.title}
+									className='max-h-[320px]'
+								/>
+							)}
+							{!imageData && (
+								<img
+									src={pic}
+									className='max-h-[320px]'></img>
+							)}
 						</div>
+
 						<div
-							className={`max-h-[200px] transform transition-all duration-300 py-1 px-2 text-dark dark:text-light/50 w-fit sans text-sm line-clamp-4`}>
-							{post.description}
+							className={`max-h-[200px] transform transition-all duration-300 py-1  text-dark dark:text-light/50 w-fit sans text-sm line-clamp-4`}>
+							{descriptionHighlighted}
 						</div>
 					</div>
 				</div>

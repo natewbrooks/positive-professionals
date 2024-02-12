@@ -10,7 +10,7 @@ const Videos = ({ data }) => {
 		date: node.frontmatter.date,
 		description: node.frontmatter.description,
 		// Assuming you want to link to a video file that was uploaded
-		videofile: node.frontmatter.videofile ? node.frontmatter.videofile.publicURL : null,
+		videoURL: node.frontmatter.videoURL,
 		slug: node.fields.slug,
 		isVideo: true,
 	}));
@@ -43,9 +43,7 @@ export const query = graphql`
 					title
 					date(formatString: "DD MMM YYYY")
 					description
-					videofile {
-						publicURL
-					}
+					videoURL
 				}
 				fields {
 					slug

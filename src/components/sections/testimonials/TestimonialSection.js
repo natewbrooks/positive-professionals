@@ -1,7 +1,5 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
+import React, { useEffect, useState, useRef } from 'react';
 import TestimonialItem from '../../testimonials/TestimonialItem';
-import SeeMore from '../../pieces/SeeMore';
 import { useSwipeable } from 'react-swipeable';
 
 export default function TestimonialsSection({ data }) {
@@ -18,54 +16,57 @@ export default function TestimonialsSection({ data }) {
 	const [translateX, setTranslateX] = useState([0, -itemWidth * testimonials.length]);
 	const [isScrollingRight, setScrollingRight] = useState(true);
 	const [allowSwipe, setAllowSwipe] = useState(true);
-	const [isInView, setIsInView] = useState(false);
 
-	const checkIfInView = useCallback(() => {
-		if (rowRef.current) {
-			const rect = rowRef.current.getBoundingClientRect();
-			setIsInView(rect.top < window.innerHeight && rect.bottom >= 0);
-		}
-	}, []);
+	function closestNumber(n, m) {
+		// find the quotient
+		let q = Math.floor(n / m);
 
-	useEffect(() => {
-		// Check if in view on initial load
-		checkIfInView();
+		// 1st possible closest number
+		let n1 = m * q;
 
-		// Event listeners for scroll and resize events to update isInView state
-		window.addEventListener('scroll', checkIfInView);
-		window.addEventListener('resize', checkIfInView);
+		// 2nd possible closest number
+		let n2 = n * m > 0 ? m * (q + 1) : m * (q - 1);
 
-		return () => {
-			window.removeEventListener('scroll', checkIfInView);
-			window.removeEventListener('resize', checkIfInView);
-		};
-	}, [checkIfInView]);
+		// if true, then n1 is the required closest number
+		if (Math.abs(n - n1) < Math.abs(n - n2)) return n1;
 
-	// Dynamically adjust item width and visible items based on window size
+		// else n2 is the required closest number
+		return n2;
+	}
+
 	const adjustLayout = () => {
 		const width = window.innerWidth;
 		const visibleItems = width <= 600 ? 1 : width <= 1172 ? 2 : 3;
 		const newHeight = width <= 600 ? 300 : 240;
-		const newWidth = rowRef.current ? rowRef.current.offsetWidth / visibleItems : 460;
 
+		let newWidth = Math.floor(
+			closestNumber(rowRef.current.offsetWidth, visibleItems) / visibleItems
+		);
+
+		setDisableTransition([true, true]);
 		setVisibleItems(visibleItems);
 		setItemWidth(newWidth);
 		setItemHeight(newHeight);
-		setDisableTransition([true, true]);
 		setTranslateX([0, -newWidth * testimonials.length]);
 		setActiveIndex(0);
 
 		setInterval(() => {
 			setDisableTransition([false, false]);
 			setAllowSwipe(true);
-		}, [0]);
+		}, 500);
 	};
 
-	const inThreshold = (a, b, threshold = 0.5) => Math.abs(a - b) <= threshold;
+	const inThreshold = (a, b, threshold = 0.1) => Math.abs(a - b) <= threshold;
 
 	const recalcPos = () => {
 		if (rowRef.current) {
-			let newWidth = rowRef.current.offsetWidth / visibleItems; // Recalculate item width based on visible items
+			document.getElementById('testimonialContainer').style.width = Math.floor(
+				closestNumber(rowRef.current.offsetWidth, visibleItems)
+			);
+
+			let newWidth = Math.ceil(
+				closestNumber(rowRef.current.offsetWidth, visibleItems) / visibleItems
+			); // Recalculate item width based on visible items
 			setItemWidth(newWidth);
 		}
 
@@ -92,7 +93,7 @@ export default function TestimonialsSection({ data }) {
 		setTimeout(() => {
 			setDisableTransition([false, false]);
 			setAllowSwipe(true);
-		}, 0);
+		}, 500);
 	};
 
 	// Initial layout adjustment and event listeners for resizing and visibility change
@@ -100,7 +101,7 @@ export default function TestimonialsSection({ data }) {
 		adjustLayout();
 		const handleResize = () => adjustLayout();
 		const handleVisibilityChange = () => {
-			if (!document.hidden) {
+			if (!document.hidden && window.width > 600) {
 				adjustLayout();
 			}
 		};
@@ -114,27 +115,11 @@ export default function TestimonialsSection({ data }) {
 		};
 	}, []);
 
-	// Interval for automatic scrolling
-	useEffect(() => {
-		let interval;
-		if (isInView && allowSwipe) {
-			interval = setInterval(() => {
-				const nextIndex = (activeIndex + 1) % testimonials.length;
-				setActiveIndex(nextIndex);
-
-				const offset = isScrollingRight ? itemWidth : -itemWidth;
-				setTranslateX(translateX.map((x) => x + offset));
-			}, 4000);
-		}
-
-		return () => clearInterval(interval);
-	}, [allowSwipe, isInView, activeIndex, testimonials.length]);
-
 	// Swipe handling
 	const handleSwipe = useSwipeable({
 		onSwipedLeft: () => {
 			if (!allowSwipe) return;
-			const nextIndex = (activeIndex + 1) % testimonials.length;
+			const nextIndex = (activeIndex + 1 + testimonials.length) % testimonials.length;
 			setActiveIndex(nextIndex);
 			setScrollingRight(false);
 			setTranslateX(translateX.map((x) => x - itemWidth));
@@ -161,7 +146,8 @@ export default function TestimonialsSection({ data }) {
 				<div
 					{...handleSwipe}
 					style={{ height: `${itemHeight}px` }}
-					className={`relative flex flex-row w-full`}>
+					id='testimonialContainer'
+					className={`relative flex flex-row w-full overflow-hidden`}>
 					{[0, 1].map((i) => (
 						<div
 							key={i}
@@ -173,12 +159,14 @@ export default function TestimonialsSection({ data }) {
 								transitionProperty: `${disableTransition[i] ? '' : 'transform'}`,
 							}}
 							onTransitionEnd={() => {
+								console.log('RECALC POS');
 								recalcPos();
 								setAllowSwipe(true);
 							}}
 							className={`absolute top-0 ease-in-out w-full flex flex-row`}>
 							{data.testimonials.map((testimonial, index) => (
 								<TestimonialItem
+									id={index}
 									key={`${i}-${index}`}
 									testimonial={testimonial}
 									borderColor={borderColors[index % borderColors.length]}
@@ -191,7 +179,8 @@ export default function TestimonialsSection({ data }) {
 
 				{/* <SeeMore /> */}
 			</div>
-			<div className='absolute null:-bottom-10 lg:-bottom-16 w-full flex space-x-1 justify-center'>
+			{/* INDICATOR DOTS */}
+			<div className='absolute -bottom-8 w-full flex space-x-1 justify-center'>
 				{[...Array(data.testimonials.length)].map((x, index) => (
 					<div
 						key={index}

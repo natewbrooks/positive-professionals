@@ -19,23 +19,25 @@ export default function CoreValuesItem({ text, Icon, modalId }) {
 				<span className='sans xbold null:text-xs md:text-sm text-dark'>{text}</span>
 			</div>
 			<Modal modalId={modalId}>
-				<div className='null:w-full xl:w-[600px] h-full flex flex-col text-dark dark:text-light/70 null:pb-8 md:pb-4 overflow-hidden'>
-					<div className='flex flex-col leading-tight pb-4'>
-						<span className='sans text-md text-dark/50 dark:text-light/80 xbold text-center'>
-							CORE VALUE
-						</span>
-						<span className='serif text-xxl text-center'>{text}</span>
+				<div className='null:w-full xxl:w-[600px] null:max-h-[800px] md:max-h-[400px] h-full flex null:flex-col sm:flex-row sm:space-x-4 xxl:flex-col justify-center items-center text-dark dark:text-light/70 null:py-2 md:py-4 overflow-hidden'>
+					<div className='flex flex-col w-full h-fit '>
+						<div className='flex flex-col leading-tight pb-2'>
+							<span className='sans text-sm sm:text-md text-dark/50 dark:text-light/80 xbold text-center'>
+								CORE VALUE
+							</span>
+							<span className='serif text-xl sm:text-xxl text-center'>{text}</span>
+						</div>
+						<div className='pb-2 sans text-sm sm:text-md text-center xxl:text-start'>
+							As executive coaches, "Persistence" is a core value that underpins our approach to
+							leadership development and professional growth. In the ever-evolving landscape of
+							business and leadership, persistence is not just about steadfastness or endurance;
+							it's about maintaining a consistent effort towards improvement and excellence, even in
+							the face of challenges and setbacks. We see persistence as a multi-dimensional trait
+							that encompasses several key aspects.
+						</div>
 					</div>
-					<div className='pb-2 sans text-md'>
-						As executive coaches, "Persistence" is a core value that underpins our approach to
-						leadership development and professional growth. In the ever-evolving landscape of
-						business and leadership, persistence is not just about steadfastness or endurance; it's
-						about maintaining a consistent effort towards improvement and excellence, even in the
-						face of challenges and setbacks. We see persistence as a multi-dimensional trait that
-						encompasses several key aspects:
-					</div>
-					<div className='null:h-full md:h-[400px] bg-dark/10 dark:bg-dark py-4 px-2 rounded-md rounded-b-md sans text-md overflow-y-auto'>
-						<div className='h-full px-4 flex flex-col space-y-4'>
+					<div className='null:h-[750px] sm:h-[600px] md:max-h-[350px] py-4 w-fit xxl:w-full bg-dark/10 dark:bg-dark sm:px-2 rounded-md rounded-b-md sans text-sm sm:text-md overflow-y-auto'>
+						<div className='h-full px-4 flex flex-col'>
 							<span className='xbold dark:text-light/80 '>1. Resilience in Adversity:</span> In the
 							fast-paced and often unpredictable business environment, challenges and obstacles are
 							inevitable. Persistence empowers leaders to navigate these with resilience, turning
