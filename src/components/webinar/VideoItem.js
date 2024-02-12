@@ -28,10 +28,11 @@ export default function VideoItem({ video, searchTerm }) {
 
 	if (video.videoURL) {
 		embedURL = video.videoURL.replace('watch?v=', 'embed/');
+		console.log(+'EMBED URL: ' + embedURL);
 	}
 
 	return (
-		<div className='px-2 w-full h-full flex flex-col'>
+		<div className='w-full h-full flex flex-col'>
 			<AnchorLink
 				to={video.slug}
 				className='md:hover:opacity-70 flex flex-col h-fit w-full rounded-b-md'>

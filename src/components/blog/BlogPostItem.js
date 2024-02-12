@@ -47,7 +47,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 	return (
 		<AnchorLink
 			to={post.slug}
-			className='group md:hover:opacity-80 w-full h-full justify-center items-center relative  duration-300 transition-colors px-2'>
+			className='group md:hover:opacity-80 w-full h-full justify-center items-center relative  duration-300 transition-colors'>
 			<div className='w-full h-full justify-center items-center flex flex-col'>
 				<div className='w-full h-full flex flex-col'>
 					<div className='h-fit cursor-pointer flex flex-col'>
@@ -61,7 +61,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 							<div
 								className={`${
 									post.featuredpost ? 'visible' : 'invisible'
-								} bg-tertiary rounded-md px-2 mb-1 text-xs sans xbold text-dark/70`}>
+								} bg-four rounded-md px-2 mb-1 text-xs sans xbold text-light/70`}>
 								FEATURED
 							</div>
 						</div>

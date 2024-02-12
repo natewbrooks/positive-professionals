@@ -46,7 +46,7 @@ const ResourcesGridLayout = ({ mediaItems }) => {
 			<div className='w-full null:text-center sm:text-end text-dark/50 dark:text-light/50 sans xbold text-md pb-4 sm:pb-2'>
 				SHOWING {showingCount} OF {mediaItems.length}
 			</div>
-			<div className='w-full h-full justify-items-center grid null:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4 null:gap-y-8 sm:gap-y-6 '>
+			<div className='w-full h-full justify-items-center grid null:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4 null:gap-y-8 sm:gap-y-6 gap-x-4 '>
 				{filteredItems.slice(0, itemsToShow).map((item, index) => {
 					return item.isVideo === false ? (
 						<BlogPostItem

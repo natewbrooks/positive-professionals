@@ -87,7 +87,7 @@ export const BlogPostTemplate = ({
 						className='h-[50%] aspect-video mb-4'
 					/>
 					<article
-						className='blog-post-container text-dark dark:text-light/70'
+						className='blog-post-container text-dark dark:text-light/70 px-2'
 						dangerouslySetInnerHTML={{ __html: body }}
 					/>
 				</div>
