@@ -19,8 +19,8 @@ export default function CoreValuesItem({ text, Icon, modalId }) {
 				<span className='sans xbold null:text-xs md:text-sm text-dark'>{text}</span>
 			</div>
 			<Modal modalId={modalId}>
-				<div className='null:w-full xxl:w-[600px] null:h-fit sm:h-full flex null:flex-col sm:flex-row sm:space-x-4 xxl:flex-col text-dark dark:text-light/70 null:py-2 md:py-4 overflow-hidden'>
-					<div className='flex flex-col w-full overflow-auto h-full '>
+				<div className='null:w-full xxl:w-[600px] null:max-h-[800px] md:max-h-[400px] h-full flex null:flex-col sm:flex-row sm:space-x-4 xxl:flex-col justify-center items-center text-dark dark:text-light/70 null:py-2 md:py-4 overflow-hidden'>
+					<div className='flex flex-col w-full h-fit '>
 						<div className='flex flex-col leading-tight pb-2'>
 							<span className='sans text-sm sm:text-md text-dark/50 dark:text-light/80 xbold text-center'>
 								CORE VALUE
@@ -36,8 +36,8 @@ export default function CoreValuesItem({ text, Icon, modalId }) {
 							that encompasses several key aspects.
 						</div>
 					</div>
-					<div className='null:h-full md:h-[400px] w-fit xxl:w-full bg-dark/10 dark:bg-dark py-4 sm:px-2 rounded-md rounded-b-md sans text-sm sm:text-md overflow-y-auto'>
-						<div className='h-full sm:px-4 flex flex-col space-y-4'>
+					<div className='null:h-[750px] sm:h-[600px] md:max-h-[350px] py-4 w-fit xxl:w-full bg-dark/10 dark:bg-dark sm:px-2 rounded-md rounded-b-md sans text-sm sm:text-md overflow-y-auto'>
+						<div className='h-full px-4 flex flex-col'>
 							<span className='xbold dark:text-light/80 '>1. Resilience in Adversity:</span> In the
 							fast-paced and often unpredictable business environment, challenges and obstacles are
 							inevitable. Persistence empowers leaders to navigate these with resilience, turning
