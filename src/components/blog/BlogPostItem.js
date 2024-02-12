@@ -46,7 +46,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 			to={post.slug}
 			className='group md:hover:opacity-80 w-full h-full justify-center items-center relative  duration-300 transition-colors pb-2 rounded-md '>
 			<div className='bg-light/30 dark:bg-dark/30 rounded-md w-full h-full justify-center items-center flex flex-col'>
-				<div className='w-full h-full flex flex-col p-6 rounded-t-md'>
+				<div className='w-full h-full flex flex-col sm:p-4 md:p-6 rounded-t-md'>
 					<div className='h-fit cursor-pointer flex flex-col'>
 						<div className='flex space-x-1 '>
 							{isNewPost() && (

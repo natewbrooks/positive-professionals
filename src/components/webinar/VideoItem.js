@@ -24,11 +24,11 @@ export default function VideoItem({ video, searchTerm }) {
 	const dateHighlighted = highlightSearchTerm(video.date.toUpperCase(), searchTerm);
 
 	return (
-		<div className='p-6 bg-light/30 dark:bg-dark/30 rounded-md w-full h-full flex flex-col'>
+		<div className='sm:p-4 md:p-6 bg-light/30 dark:bg-dark/30 rounded-md w-full h-full flex flex-col'>
 			<AnchorLink
 				to={video.slug}
 				className='md:hover:opacity-70 flex flex-col h-fit w-full rounded-b-md'>
-				<div className='pb-2 w-full flex flex-col   text-dark/50 dark:text-light/50'>
+				<div className='pb-2 w-full flex flex-col text-dark/50 dark:text-light/50'>
 					<span className='w-full sans text-sm xbold text-nowrap whitespace-nowrap'>
 						PUBLISHED {dateHighlighted}
 					</span>
