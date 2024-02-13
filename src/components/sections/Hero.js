@@ -9,7 +9,7 @@ export default function Hero({ data }) {
 				className='-z-10 absolute -translate-y- h-full lg:h-fit w-full ' // Adjust these properties
 				src={bkg}
 				alt='Marker Stripe Background'></img> */}
-			<div className='-translate-y-[20px] flex flex-col space-y-4 items-center justify-center h-full w-full'>
+			<div className='p-4 rounded-md -translate-y-[20px] flex flex-col space-y-4 items-center justify-center h-full w-fit'>
 				<div className='w-full items-center text-center flex flex-col'>
 					<div className='relative flex flex-col -space-y-8'>
 						<span className='drop-shadow-md z-10 break-words null:w-fit sm:w-[500px] lg:w-[740px] leading-none serif null:text-xxxl mobile:text-billboard text-center xbold text-dark dark:text-light/80  px-8 rounded-full'>
