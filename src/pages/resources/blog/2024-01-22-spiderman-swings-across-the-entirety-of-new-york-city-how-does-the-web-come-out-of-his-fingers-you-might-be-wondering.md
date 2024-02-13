@@ -1,14 +1,16 @@
 ---
 templateKey: blog-post
 featuredpost: true
-title: 5 Inspirational Quotes to Fuel Your Journey of Self-Improvement For The
-  New Year
+title: >-
+  5 Inspirational Quotes to Fuel Your Journey of Self-Improvement For The New
+  Year
 date: 2024-01-02T02:15:09.141Z
-description: In the journey of self-improvement and personal development, the
-  wisdom of those who've walked before us can light the way. Below are five
-  quotes that resonate deeply with me, each followed by a brief exploration of
-  how they can apply to your life.
-image: /img/quotes-blog-img.jpg
+description: >-
+  In the journey of self-improvement and personal development, the wisdom of
+  those who've walked before us can light the way. Below are five quotes that
+  resonate deeply with me, each followed by a brief exploration of how they can
+  apply to your life.
+image: /img/inspirational-blog-img.jpg
 authors:
   - Liz Brooks
 ---
