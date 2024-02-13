@@ -1,29 +1,36 @@
 import React from 'react';
 import purpleMarkerStripe from '../../img/overlays/purple-marker-stripe.svg';
+import bkg from '../../img/coral-reef-bg.webp';
 
 export default function Hero({ data }) {
 	return (
-		<header className='relative flex justify-center items-center w-full h-fit py-20 xl:py-40'>
-			<div className='pt-8 flex flex-col space-y-14 items-center justify-center h-full'>
-				<div className='text-center flex flex-col px-4'>
+		<header className='z-10 relative flex justify-center items-center w-full h-fit py-20 xl:py-40 null:mb-[4rem] md:mb-[6rem] lg:mb-[12rem]'>
+			<img
+				className='-z-10 absolute -translate-y- h-full lg:h-fit w-full ' // Adjust these properties
+				src={bkg}
+				alt='Marker Stripe Background'></img>
+			<div className='-translate-y-[20px] flex flex-col space-y-2 items-center justify-center h-full w-full'>
+				<div className='w-full bg-light/10 dark:bg-dark/10 items-center text-center flex flex-col'>
 					<div className='relative flex flex-col -space-y-8'>
-						<span className='z-10 break-words null:w-fit sm:w-[500px] lg:w-[740px] leading-none serif null:text-xxxl mobile:text-billboard text-center xbold text-dark dark:text-light/80  px-8 rounded-full'>
+						<span className='drop-shadow-md py-8 z-10 break-words null:w-fit sm:w-[500px] lg:w-[740px] leading-none serif null:text-xxxl mobile:text-billboard text-center xbold text-dark dark:text-light/80  px-8 rounded-full'>
 							{data.header}{' '}
 							<span className='relative w-fit h-fit inline-block'>
 								together.
-								<img
+								{/* <img
 									className='-z-10 absolute -bottom-1 right-3 opacity-80 dark:opacity-50 w-[105%] ' // Adjust these properties
 									src={purpleMarkerStripe}
-									alt='Marker Stripe Background'></img>
+									alt='Marker Stripe Background'></img> */}
 							</span>
 						</span>
 					</div>
-					<p className='pt-4 break-words sans null:text-md mobile:text-lg text-dark dark:text-light/70'>
+				</div>
+				<div className='w-full justify-center items-center flex flex-col space-y-8'>
+					<p className='drop-shadow-md xbold break-words sans null:text-md mobile:text-lg text-light dark:text-dark'>
 						{data.subtext}
 					</p>
-				</div>
-				<div className='sans null:text-md mobile:text-lg  xbold text-light dark:text-dark bg-dark dark:bg-four cursor-pointer select-none md:hover:opacity-50 active:scale-95 py-2 px-4 rounded-md'>
-					GET STARTED
+					<div className='sans null:text-md mobile:text-lg xbold text-secondary dark:bg-dark bg-light cursor-pointer select-none md:hover:opacity-90 active:scale-95 py-2 px-6 rounded-md'>
+						GET STARTED
+					</div>
 				</div>
 			</div>
 		</header>
