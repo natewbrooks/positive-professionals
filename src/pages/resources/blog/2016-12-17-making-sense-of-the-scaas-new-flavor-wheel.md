@@ -1,20 +1,18 @@
 ---
 templateKey: blog-post
 featuredpost: true
-title: "Embracing Change: The Journey to Resilience and Adaptability"
+title: 'Embracing Change: The Journey to Resilience and Adaptability'
 date: 2021-07-15T14:04:10.000Z
-authors:
-  - Angela Satchell
-tags:
-  - flavor
-  - tasting
-description: Change is an inevitable part of life, yet it often comes with its
-  set of challenges. Whether it's a career transition, a move to a new city, or
-  a change in personal relationships, navigating these waters can be daunting.
+description: >-
+  Change is an inevitable part of life, yet it often comes with its set of
+  challenges. Whether it's a career transition, a move to a new city, or a
+  change in personal relationships, navigating these waters can be daunting.
   However, with the right mindset and strategies, it's possible to embrace
   change with resilience and adaptability, leading to personal growth and
   improved well-being.
 image: /img/embrace-change-blog-img.jpg
+authors:
+  - Angela Satchell
 ---
 Change is an inevitable part of life, yet it often comes with its set of challenges. Whether it's a career transition, a move to a new city, or a change in personal relationships, navigating these waters can be daunting. However, with the right mindset and strategies, it's possible to embrace change with resilience and adaptability, leading to personal growth and improved well-being.
 
