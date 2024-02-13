@@ -50,6 +50,7 @@ module.exports = {
 				xxxl: '48px',
 				billboard: '64px',
 			},
+
 			backgroundImage: (theme) => ({
 				'hard-stop-gradient': `linear-gradient(
           to right,
@@ -62,6 +63,9 @@ module.exports = {
 					'colors.primary'
 				)} 25%, ${theme('colors.tertiary')} 50%, ${theme('colors.four')} 75%)`,
 			}),
+		},
+		backgroundImage: {
+			hero: "url('../img/coral-reef-bg.webp')",
 		},
 	},
 	plugins: [],

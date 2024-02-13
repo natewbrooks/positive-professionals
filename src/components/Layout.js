@@ -44,7 +44,7 @@ const TemplateWrapper = ({ children }) => {
 				<link
 					rel='apple-touch-icon'
 					sizes='180x180'
-					href={`${withPrefix('/')}img/apple-touch-icon.png`}
+					href={`${withPrefix('/')}img/favicon/apple-touch-icon.png`}
 				/>
 				<link
 					rel='icon'
@@ -70,9 +70,8 @@ const TemplateWrapper = ({ children }) => {
 				/>
 				<meta
 					name='theme-color'
-					content='#f2f2f2'
+					content='#fff'
 				/>
-
 				<meta
 					property='og:type'
 					content='business.business'
@@ -85,10 +84,10 @@ const TemplateWrapper = ({ children }) => {
 					property='og:url'
 					content='/'
 				/>
-				{/* <meta
+				<meta
 					property='og:image'
-					content={`${withPrefix('/')}img/og-image.jpg`}
-				/> */}
+					content={`${withPrefix('/')}img/pp-logo-bg.svg`}
+				/>
 			</Helmet>
 			<Navbar />
 
