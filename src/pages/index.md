@@ -60,7 +60,7 @@ team:
         who want to focus on growing their leadership abilities. Clients have
         described her approach as authentic, inquisitive, holistic,
         compassionate, and visionary.
-      pic: ""
+      pic: /img/liz-brooks.png
     - careerBackground: Liz is a former Senior Executive in the Department of Defense
         with 38 years of experience in conducting and leading high-stakes
         intelligence operations, information technology, cybersecurity, and
@@ -125,14 +125,140 @@ coreValues:
   subtext: WHAT WE BELIEVE IN
   values:
     - name: Persistence
+      reasons:
+        - reason: Resilience in Adversity
+          explanation: In the fast-paced and often unpredictable business environment,
+            challenges and obstacles are inevitable. Persistence empowers
+            leaders to navigate these with resilience, turning potential
+            setbacks into opportunities for learning and growth.
+        - reason: Long-Term Vision
+          explanation: Persistence is closely tied to having a long-term vision. It
+            involves staying committed to goals that may take years to achieve,
+            keeping the bigger picture in mind while managing day-to-day
+            responsibilities.
+        - reason: Continuous Learning
+          explanation: >-
+            The landscape of business is constantly changing. Persistence in the
+            context of executive
+
+            coaching means a commitment to continuous learning and adaptation. It's about
+
+            persistently upgrading one's skills and knowledge base to stay relevant and effective.
+        - reason: Consistency in Effort and Standards
+          explanation: Persistence translates into maintaining high standards of
+            performance consistently. It's about regular, disciplined effort
+            towards personal and professional development goals, not just in
+            bursts of enthusiasm.
+        - explanation: In leadership, it's easy to become complacent, especially after
+            achieving a certain level of success. Persistence involves pushing
+            oneself and one's team out of the comfort zone, striving for
+            continuous improvement.
+          reason: Overcoming Complacency
+        - reason: Motivation and Inspiration
+          explanation: As coaches, we use the principle of persistence to motivate and
+            inspire. By embodying this value, we set an example for leaders to
+            emulate, creating a culture of perseverance and dedication within
+            their organizations. In essence, persistence is a driving force in
+            our coaching philosophy. It's about more than just enduring; it's
+            about actively striving for excellence, learning and adapting, and
+            maintaining the discipline and motivation to achieve long-term
+            success. This value deeply influences how we guide leaders in
+            navigating their careers and organizations towards sustained growth
+            and effectiveness.
     - name: Innovation
+      reasons:
+        - reason: Fostering Creativity
+          explanation: Innovation thrives on creative thinking. It encourages individuals
+            and teams to explore new ideas, challenge conventional approaches,
+            and seek out novel solutions. This creative exploration is essential
+            for developing unique products, services, and processes that keep an
+            organization competitive and forward-thinking.
+        - reason: Adapting to Change
+          explanation: In a rapidly evolving market, the ability to innovate ensures
+            organizations can adapt swiftly to changes, seize new opportunities,
+            and meet emerging customer needs. Innovation is not just about
+            technology; it's about adopting a mindset that embraces change as an
+            opportunity for growth and improvement.
+        - reason: Driving Growth
+          explanation: Innovation is a key driver of growth. It opens new markets,
+            enhances customer experiences, and creates value that distinguishes
+            an organization from its competitors. By prioritizing innovation,
+            companies can expand their reach and impact, ensuring long-term
+            sustainability and success.
     - name: Integrity
+      reasons:
+        - reason: Building Trust
+          explanation: Integrity is foundational to building trust within and outside an
+            organization. When leaders and employees consistently act ethically
+            and honestly, they build strong relationships with colleagues,
+            customers, and stakeholders, fostering an environment of reliability
+            and confidence.
+        - reason: Ensuring Accountability
+          explanation: A commitment to integrity ensures that individuals take
+            responsibility for their actions. It promotes a culture where people
+            are accountable for their decisions and behaviors, which is crucial
+            for maintaining high ethical standards and organizational
+            excellence.
+        - reason: Guiding Ethical Decision-Making
+          explanation: Integrity serves as a moral compass, guiding individuals in making
+            ethical decisions. It ensures that even in challenging situations,
+            the choices made reflect the organization's values and principles,
+            protecting its reputation and maintaining public trust.
     - name: Excellence
+      reasons:
+        - reason: Achieving High Standards
+          explanation: Excellence motivates individuals and teams to achieve the highest
+            standards in their work. It involves a continuous commitment to
+            quality, encouraging everyone to strive for outstanding performance
+            and results in every project and task.
+        - reason: Promoting Continuous Improvement
+          explanation: A focus on excellence means never being complacent. It involves
+            regularly evaluating and improving processes, products, and
+            services, ensuring that the organization remains at the forefront of
+            quality and innovation.
+        - reason: Enhancing Competitiveness
+          explanation: Excellence positions an organization as a leader in its field. By
+            consistently delivering superior value, it builds a competitive
+            advantage that attracts customers, engages employees, and earns
+            respect from the industry.
     - name: Collaboration
+      reasons:
+        - reason: Accelerating Achievement of Goals
+          explanation: Collaboration enables teams to achieve goals more efficiently. By
+            pooling resources and expertise, organizations can tackle complex
+            projects more effectively, meet deadlines, and achieve objectives
+            faster than working independently.
+        - reason: Leveraging Diverse Perspectives
+          explanation: Collaboration brings together diverse perspectives, skills, and
+            experiences. This diversity fuels innovation and problem-solving,
+            leading to more effective and creative solutions than individuals
+            working in isolation.
+        - reason: Strengthening Team Bonds
+          explanation: Effective collaboration builds strong team relationships. Working
+            together towards common goals fosters a sense of community and
+            belonging, enhancing teamwork and communication across the
+            organization.
     - name: Respect
+      reasons:
+        - reason: Fostering Inclusivity
+          explanation: Respect is crucial for creating an inclusive workplace. It ensures
+            that all individuals feel valued and heard, regardless of their
+            background, role, or perspective. This inclusivity strengthens the
+            organizational culture and enhances employee engagement and
+            satisfaction.
+        - reason: Promoting Open Communication
+          explanation: Respect encourages open and honest communication. When individuals
+            feel respected, they are more likely to share their ideas and
+            feedback, contributing to a culture of transparency and continuous
+            improvement.
+        - reason: Encouraging Professional Development
+          explanation: A respectful environment supports professional growth and
+            development. Recognizing and valuing each person's contributions
+            motivates employees to pursue learning opportunities, take on new
+            challenges, and advance their careers within the organization.
 workedWith:
-  header: w
-  subtext: w
+  header: "!! Doesn't exist"
+  subtext: "!! Doesn't exist"
   testimonials:
     - company: CISCO CYBER OPERATIONS
       name: Theresa Clark
