@@ -46,6 +46,10 @@
         1px 1px 0 #000;
 }
 
+.gatsby-image-wrapper {
+    position: absolute;
+}
+
 @keyframes scroll {
     0% {
         transform: translateX(0);
