@@ -176,6 +176,11 @@ export const pageQuery = graphql`
 					header
 					subtext
 					members {
+						pic {
+							childImageSharp {
+								gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+							}
+						}
 						name
 						position
 						careerBackground

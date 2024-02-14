@@ -88,6 +88,13 @@ IndexPageTemplate.propTypes = {
 		values: PropTypes.arrayOf(
 			PropTypes.shape({
 				name: PropTypes.string,
+				about: PropTypes.string,
+				reasons: PropTypes.arrayOf(
+					PropTypes.shape({
+						reason: PropTypes.string,
+						explanation: PropTypes.string,
+					})
+				),
 			})
 		),
 	}),
@@ -177,6 +184,11 @@ export const pageQuery = graphql`
 					header
 					subtext
 					members {
+						pic {
+							childImageSharp {
+								gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+							}
+						}
 						name
 						position
 						careerBackground
@@ -192,6 +204,11 @@ export const pageQuery = graphql`
 					body
 					values {
 						name
+						about
+						reasons {
+							reason
+							explanation
+						}
 					}
 				}
 				workedWith {

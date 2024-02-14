@@ -13,10 +13,13 @@ export default function Hero({ data }) {
 					as='image'
 				/>
 			</Helmet>
-			<header className='z-10 relative flex justify-center items-center w-full h-fit pt-24 pb-12 null:mb-[4rem] mobile:mb-[8rem] bg-tertiary'>
-				<img
-					className='absolute bottom-0 w-full translate-y-[50%]'
-					src={primaryBottomWave}></img>
+			<header className='z-10 relative flex justify-center items-center w-full h-fit pt-24 pb-12 null:mb-[6rem] mobile:mb-[8rem] lg:mb-[12rem] xl:mb-[16rem] xxl:mb-[20rem] bg-primary'>
+				<div className='z-0 absolute w-full h-full left-0'>
+					<div className='absolute bg-primary w-full h-full -z-[1]'></div>
+					<img
+						className='-z-[10] absolute bottom-0 w-full translate-y-[65%]'
+						src={primaryBottomWave}></img>
+				</div>
 
 				<div className='p-4 rounded-md -translate-y-[20px] flex flex-col space-y-4 items-center justify-center h-full w-fit'>
 					<div className='w-full items-center text-center flex flex-col'>

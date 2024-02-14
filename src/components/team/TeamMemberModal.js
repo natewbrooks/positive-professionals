@@ -2,16 +2,28 @@ import React from 'react';
 import Modal from '../Modal';
 import { FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function TeamMemberModal({ member }) {
+	const imageData = member.pic ? getImage(member.pic) : null;
+
 	return (
 		<Modal modalId={member.name}>
 			<div className='text-dark dark:text-light/70 text-start flex w-full justify-between flex-col space-y-4 lg:flex-row lg:space-x-4 overflow-hidden'>
 				<div className='flex items-center border-b-2 border-dark/10 dark:border-light/10 pb-4 lg:border-none xl:pb-0'>
 					<div className='relative flex flex-col justify-center items-center space-y-4 w-full px-8'>
-						<FaUser
-							className={`w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] md:w-[140px] md:h-[140px] xxl:w-[200px] xxl:h-[200px]`}
-						/>
+						{imageData ? (
+							<GatsbyImage
+								image={imageData}
+								alt={member.name}
+								className='border-b-4 rounded-sm border-secondary w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] md:w-[140px] md:h-[140px] xxl:w-[200px] xxl:h-[200px]'
+							/>
+						) : (
+							<FaUser
+								className={`w-[150px] h-[150px] sm:w-[180px] sm:h-[180px] md:w-[140px] md:h-[140px] xxl:w-[200px] xxl:h-[200px]`}
+							/>
+						)}
+
 						<div className='flex flex-col items-center space-y-2'>
 							<div className='flex flex-col items-center text-center text-nowrap -space-y-1'>
 								<span className='sans dark:text-light/80 xbold text-lg'>{member.name}</span>

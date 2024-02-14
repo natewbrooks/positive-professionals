@@ -43,11 +43,6 @@ article {
     align-items: start;
 }
 
-.blog-post-container strong {
-    width: fit-content;
-    white-space: nowrap;
-}
-
 .blog-post-container img {
     width: max-content;
     max-height: 800px;
@@ -56,7 +51,7 @@ article {
 
 .blog-post-container ol,
 .blog-post-container ul {
-    padding: 2rem 0rem;
+    padding: 1.5rem 2rem;
     margin: 0 auto;
     /* Center the list */
     max-width: fit-content;
@@ -65,6 +60,12 @@ article {
     /* Remove the default list styling */
     text-align: center;
     /* Center text alignment for the list */
+
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .blog-post-container ol {
@@ -86,6 +87,7 @@ article {
 .blog-post-container ol li {
     display: block;
     position: relative;
+    padding: 0.5rem 0rem;
     /* Needed for positioning the pseudo-element */
 }
 
@@ -104,16 +106,17 @@ article {
 /* Style for unordered list items */
 .blog-post-container ul li {
     display: flex;
-    align-items: center;
     /* Center items vertically */
 }
 
 .blog-post-container ul li::before {
     content: '\2022';
+    transform: translateY(5px) scale(130%);
+    height: fit-content;
     /* Unicode character for bullet */
     display: inline-block;
     /* Allocate space for the bullet */
-    margin-right: 0.25em;
+    margin-right: 0.5em;
     /* Negative margin to pull bullet into its own column */
     text-align: right;
     /* Align the bullet to the right within their space */
@@ -131,6 +134,10 @@ article {
     margin: 1rem 0rem;
     padding: 1rem;
     border-radius: 4px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 
     blockquote p {
         color: var(--text-color);

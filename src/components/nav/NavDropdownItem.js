@@ -19,10 +19,10 @@ export default function NavDropdownItem({
 	const { currentModal } = useModal();
 
 	useEffect(() => {
-		if (currentModal) {
+		if (currentModal || !isBurgerNavShown) {
 			setIsOpen(false);
 		}
-	}, [currentModal]);
+	}, [currentModal, isBurgerNavShown]);
 
 	const toggleDropdown = (bool) => {
 		setIsOpen(bool);

@@ -42,7 +42,7 @@ export default function CoreValuesSection({ data }) {
 						{data.values.map((value, index) => (
 							<CoreValuesItem
 								key={index}
-								text={value.name.toUpperCase()}
+								value={value}
 								Icon={coreValues[index]}
 								modalId={'coreValue' + index}
 							/>

@@ -146,6 +146,7 @@ collections:
                     widget: list,
                     fields:
                       [
+                        { label: 'Member Picture', name: 'pic', widget: 'image' },
                         { label: 'Member Name', name: 'name', widget: 'string' },
                         { label: 'Member Position', name: 'position', widget: 'string' },
                         { label: 'Career Background', name: 'careerBackground', widget: 'text' },
@@ -174,7 +175,21 @@ collections:
                     label: Values,
                     name: values,
                     widget: list,
-                    field: { label: Name, name: name, widget: string },
+                    fields:
+                      [
+                        { label: Name, name: name, widget: string },
+                        { label: About, name: about, widget: text },
+                        {
+                          label: Reasons,
+                          name: reasons,
+                          widget: list,
+                          fields:
+                            [
+                              { label: Reason, name: reason, widget: string },
+                              { label: Explanation, name: explanation, widget: text },
+                            ],
+                        },
+                      ],
                   },
                 ],
             }

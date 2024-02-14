@@ -40,7 +40,7 @@ export default function ResourcesSection({ data }) {
 					alt='dark-purple-wave-bg-top'
 					style={{ transform: 'translateY(-90%)' }}
 					className='absolute w-full top-0'></img>
-				<div className='absolute bg-secondary w-full h-full'></div>
+				<div className='absolute bg-four w-full h-full'></div>
 			</div>
 
 			<div className='z-10 w-full h-full flex flex-col space-y-8 text-dark'>
@@ -62,7 +62,7 @@ export default function ResourcesSection({ data }) {
 						<span className={`sans text-sm `}>READ OUR STORIES</span>
 						<span className={`group-md:hover:opacity-50 text-xl serif`}>Blog posts</span>
 					</AnchorLink>
-					<div className='bg-secondary/50 outline outline-secondary/50 rounded-md w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
+					<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
 						{blogPosts.map((post, index) => (
 							<div className={`p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
 								<BlogPostItem
@@ -96,7 +96,7 @@ export default function ResourcesSection({ data }) {
 						<span className={`sans text-sm `}>SEE US IN ACTION</span>
 						<span className={`group-md:hover:opacity-50 text-xl serif`}>Video catalog</span>
 					</AnchorLink>
-					<div className='bg-secondary/50 outline outline-secondary/50 rounded-md w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
+					<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
 						{videoCatalog.map((video, index) => (
 							<div className={`p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
 								<VideoItem
@@ -129,7 +129,7 @@ export default function ResourcesSection({ data }) {
 						<span className={`sans text-sm `}>REVIEW OUR EXPANSIVE LIBRARY</span>
 						<span className={`group-md:hover:opacity-50 text-xl serif`}>Previous webinars</span>
 					</AnchorLink>
-					<div className='bg-secondary/50 outline outline-secondary/50 rounded-md w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
+					<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
 						{previousWebinars.map((video, index) => (
 							<div className={`p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
 								<VideoItem

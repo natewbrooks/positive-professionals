@@ -45,6 +45,10 @@ module.exports = {
 				name: 'images',
 			},
 		},
+		{
+			resolve: 'gatsby-plugin-netlify-cms-paths',
+			options: {},
+		},
 		`gatsby-plugin-image`,
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
