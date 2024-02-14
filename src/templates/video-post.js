@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import { Helmet } from 'react-helmet';
@@ -16,7 +16,19 @@ export const VideoPostTemplate = ({
 	featuredpost,
 	videoURL,
 }) => {
+	const [isExpanded, setIsExpanded] = useState(false);
 	const embedURL = videoURL.replace('watch?v=', 'embed/');
+
+	const toggleDescription = () => setIsExpanded(!isExpanded);
+
+	// CSS for truncating text to 3 lines
+	const truncateStyle = {
+		display: '-webkit-box',
+		WebkitLineClamp: 3,
+		WebkitBoxOrient: 'vertical',
+		overflow: 'hidden',
+		textOverflow: 'ellipsis',
+	};
 
 	const renderVideo = () => {
 		if (embedURL) {
@@ -83,9 +95,16 @@ export const VideoPostTemplate = ({
 									{title}
 								</div>
 							</div>
-							<div className='text-center null:text-sm md:text-md sans text-dark/50 py-2 dark:text-light/50'>
+							<div
+								className='text-center null:text-sm md:text-md sans text-dark/50 pt-2 dark:text-light/50'
+								style={isExpanded ? {} : truncateStyle}>
 								{description}
 							</div>
+							<button
+								onClick={toggleDescription}
+								className='text-end mt-2 text-secondary md:hover:opacity-90  dark:text-light sans text-md'>
+								{isExpanded ? 'View Less' : 'View More'}
+							</button>
 						</div>
 					</div>
 				</div>

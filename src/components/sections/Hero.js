@@ -25,14 +25,14 @@ export default function Hero({ data }) {
 					<div className='w-full items-center text-center flex flex-col'>
 						<div className='relative flex flex-col -space-y-8'>
 							<span className='drop-shadow-md z-10 break-words null:w-fit sm:w-[500px] lg:w-[740px] leading-none serif null:text-xxxl mobile:text-billboard text-center xbold text-dark dark:text-light/80  px-8 rounded-full'>
-								{data.header}{' '}
-								<span className='relative w-fit h-fit inline-block'>
+								{data.header}
+								{/* <span className='relative w-fit h-fit inline-block'>
 									together.
-									{/* <img
+									<img
 									className='-z-10 absolute -bottom-1 right-3 opacity-80 dark:opacity-50 w-[105%] ' // Adjust these properties
 									src={purpleMarkerStripe}
-									alt='Marker Stripe Background'></img> */}
-								</span>
+									alt='Marker Stripe Background'></img>
+								</span> */}
 							</span>
 						</div>
 					</div>
