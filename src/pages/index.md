@@ -165,6 +165,13 @@ coreValues:
             success. This value deeply influences how we guide leaders in
             navigating their careers and organizations towards sustained growth
             and effectiveness.
+      about: Persistence is a core value that underpins our approach to leadership
+        development and professional growth. In the ever-evolving landscape of
+        business and leadership, persistence is not just about steadfastness or
+        endurance; it's about maintaining a consistent effort towards
+        improvement and excellence, even in the face of challenges and setbacks.
+        We see persistence as a multi-dimensional trait that encompasses several
+        key aspects.
     - name: Innovation
       reasons:
         - reason: Fostering Creativity
@@ -185,6 +192,11 @@ coreValues:
             an organization from its competitors. By prioritizing innovation,
             companies can expand their reach and impact, ensuring long-term
             sustainability and success.
+      about: Innovation is at the heart of our approach, encouraging leaders to think
+        creatively and embrace change as an opportunity for growth. We believe
+        that fostering an innovative mindset is crucial for navigating the
+        complexities of today’s business environment and for driving
+        forward-thinking strategies.
     - name: Integrity
       reasons:
         - reason: Building Trust
@@ -204,6 +216,11 @@ coreValues:
             ethical decisions. It ensures that even in challenging situations,
             the choices made reflect the organization's values and principles,
             protecting its reputation and maintaining public trust.
+      about: Integrity is the foundation of trust and ethical leadership. It's about
+        doing the right thing, even when it's not the easiest path. We emphasize
+        integrity as a non-negotiable trait for leaders, ensuring decisions are
+        made with honesty and transparency, thereby building a culture of trust
+        within the organization.
     - name: Excellence
       reasons:
         - reason: Achieving High Standards
@@ -221,6 +238,11 @@ coreValues:
             consistently delivering superior value, it builds a competitive
             advantage that attracts customers, engages employees, and earns
             respect from the industry.
+      about: Excellence is our benchmark for performance and results. It's about
+        striving to be the best in all we do and pushing the limits of our
+        potential. This relentless pursuit of excellence ensures that our
+        clients not only meet but exceed their goals, setting new standards in
+        their respective industries.
     - name: Collaboration
       reasons:
         - reason: Accelerating Achievement of Goals
@@ -238,6 +260,11 @@ coreValues:
             together towards common goals fosters a sense of community and
             belonging, enhancing teamwork and communication across the
             organization.
+      about: Collaboration highlights the power of collective effort and the synergy
+        that arises from working together towards common goals. We advocate for
+        building strong teams where diverse ideas and perspectives are valued,
+        leading to innovative solutions and a more cohesive organizational
+        culture.
     - name: Respect
       reasons:
         - reason: Fostering Inclusivity
@@ -256,6 +283,12 @@ coreValues:
             development. Recognizing and valuing each person's contributions
             motivates employees to pursue learning opportunities, take on new
             challenges, and advance their careers within the organization.
+      about: Respect is fundamental to creating an inclusive and empowering
+        environment. It involves valuing each individual's contribution,
+        fostering mutual understanding, and appreciating the diversity of
+        thought and experience. Respect in leadership translates to a more
+        engaged and motivated workforce, where everyone feels valued and part of
+        the organization’s success.
 workedWith:
   header: "!! Doesn't exist"
   subtext: "!! Doesn't exist"
