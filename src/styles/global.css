@@ -48,6 +48,7 @@
 
 .gatsby-image-wrapper {
     position: static !important;
+    overflow: visible !important;
 }
 
 @keyframes scroll {
