@@ -60,7 +60,7 @@ team:
         who want to focus on growing their leadership abilities. Clients have
         described her approach as authentic, inquisitive, holistic,
         compassionate, and visionary.
-      pic: ""
+      pic: /img/liz-brooks.png
     - careerBackground: Liz is a former Senior Executive in the Department of Defense
         with 38 years of experience in conducting and leading high-stakes
         intelligence operations, information technology, cybersecurity, and
