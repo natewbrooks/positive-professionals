@@ -47,7 +47,7 @@
 }
 
 .gatsby-image-wrapper {
-    position: absolute;
+    position: static !important;
 }
 
 @keyframes scroll {
