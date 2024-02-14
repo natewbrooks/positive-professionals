@@ -3,7 +3,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import SigninButton from '../sign in/SigninButton';
 import NavDropdownItem from './NavDropdownItem';
 import { useLocation } from '@reach/router';
-import logo from '../../img/logo/pp-logo-bg.svg';
+import logo from '../../img/logo/pp-test-logo.svg';
 import { useModal } from '../ModalContext';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { func } from 'prop-types';

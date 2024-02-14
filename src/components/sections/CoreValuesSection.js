@@ -23,7 +23,7 @@ export default function CoreValuesSection({ data }) {
 					alt='blue-wave-bg-top'
 					style={{ transform: 'translateY(-80%)' }}
 					className='absolute w-full top-0 -z-[10]'></img>
-				<div className='absolute bg-tertiary w-full h-full -z-[1]'></div>
+				<div className='absolute bg-secondary w-full h-full -z-[1]'></div>
 				<img
 					src={bgBottom}
 					alt='blue-wave-bg-bottom'
@@ -38,7 +38,7 @@ export default function CoreValuesSection({ data }) {
 				</div>
 
 				<div className='null:w-full md:max-w-[80%] xl:max-w-[60%] flex flex-col space-y-4 justify-center items-center'>
-					<div className='bg-primary/50 outline outline-primary/50 rounded-md w-full grid grid-cols-3 gap-1 justify-items-center justify-center'>
+					<div className='w-full grid grid-cols-3 gap-1 justify-items-center justify-center'>
 						{data.values.map((value, index) => (
 							<CoreValuesItem
 								key={index}

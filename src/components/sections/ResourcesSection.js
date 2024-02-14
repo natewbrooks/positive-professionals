@@ -40,7 +40,7 @@ export default function ResourcesSection({ data }) {
 					alt='dark-purple-wave-bg-top'
 					style={{ transform: 'translateY(-90%)' }}
 					className='absolute w-full top-0'></img>
-				<div className='absolute bg-four w-full h-full'></div>
+				<div className='absolute bg-secondary w-full h-full'></div>
 			</div>
 
 			<div className='z-10 w-full h-full flex flex-col space-y-8 text-dark'>

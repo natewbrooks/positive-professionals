@@ -71,7 +71,7 @@ export default function ServicesSection({ content }) {
 					alt='purple-wave-bg-top'
 					style={{ transform: 'translateY(-80%)' }}
 					className='absolute w-full top-0 -z-[10] '></img>
-				<div className='absolute bg-secondary w-full h-full -z-[1]'></div>
+				<div className='absolute bg-tertiary w-full h-full -z-[1]'></div>
 				<img
 					src={bgBottom}
 					alt='purple-wave-bg-bottom'
