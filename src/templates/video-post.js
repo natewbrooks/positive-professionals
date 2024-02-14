@@ -102,7 +102,7 @@ export const VideoPostTemplate = ({
 							</div>
 							<button
 								onClick={toggleDescription}
-								className='text-end mt-2 text-secondary md:hover:opacity-90  dark:text-light sans text-md'>
+								className='text-end mt-2 xbold text-secondary md:hover:opacity-90 sans text-md'>
 								{isExpanded ? 'View Less' : 'View More'}
 							</button>
 						</div>
