@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 hero:
-  header: Transforming intentions into results,
+  header: Transforming intentions into results, together.
   subtext: Start actualizing your dreams today
 whoWeAre:
   body: "Positive Professionals is a group of experienced coaches with a diverse
