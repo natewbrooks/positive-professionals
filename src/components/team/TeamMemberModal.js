@@ -17,7 +17,7 @@ export default function TeamMemberModal({ member }) {
 								<GatsbyImage
 									image={imageData}
 									alt={member.name}
-									className='w-[300px] h-[300px]'
+									className='w-[200px] h-[200px] sm:w-[300px] sm:h-[300px]'
 								/>
 							) : (
 								<FaUser
