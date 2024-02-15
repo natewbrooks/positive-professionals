@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import { Helmet } from 'react-helmet';
@@ -6,6 +6,7 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import ResourcesNav from '../components/resources/ResourcesNav';
 import { PiMaskSadFill } from 'react-icons/pi';
+import SeeMore from '../components/pieces/SeeMore';
 
 export const WebinarPostTemplate = ({
 	description,
@@ -16,7 +17,18 @@ export const WebinarPostTemplate = ({
 	featuredpost,
 	videoURL,
 }) => {
+	const [isExpanded, setIsExpanded] = useState(false);
 	const embedURL = videoURL.replace('watch?v=', 'embed/');
+
+	const toggleDescription = () => setIsExpanded(!isExpanded);
+
+	const truncateStyle = {
+		display: '-webkit-box',
+		WebkitLineClamp: 3,
+		WebkitBoxOrient: 'vertical',
+		overflow: 'hidden',
+		textOverflow: 'ellipsis',
+	};
 
 	const renderVideo = () => {
 		if (embedURL) {
@@ -83,9 +95,17 @@ export const WebinarPostTemplate = ({
 									{title}
 								</div>
 							</div>
-							<div className='text-center null:text-sm md:text-md sans text-dark/50 py-2 dark:text-light/50'>
+
+							<div
+								style={isExpanded ? {} : truncateStyle}
+								className='text-center null:text-sm md:text-md sans text-dark/50 pt-2 dark:text-light/50'>
 								{description}
 							</div>
+							<SeeMore
+								colorClass='text-secondary'
+								onClick={toggleDescription}
+								text={isExpanded ? 'View Less' : 'View More'}
+							/>
 						</div>
 					</div>
 				</div>
