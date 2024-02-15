@@ -33,8 +33,9 @@ export default function CoreValuesItem({ value, Icon, modalId }) {
 						</div>
 						<div className='pb-2 sans text-sm sm:text-md text-center '>{value.about}</div>
 					</div>
-					<div className='max-h-[50vh] py-2 w-fit xxl:w-full bg-dark/10 dark:bg-dark sm:px-2 rounded-md rounded-b-md sans text-sm sm:text-md overflow-y-auto'>
+					<div className='max-h-[50vh] w-fit xxl:w-full bg-dark/10 dark:bg-dark sm:px-2 rounded-md rounded-b-md sans text-sm sm:text-md overflow-y-auto'>
 						<div className='h-full px-4 flex flex-col'>
+							<br />
 							{value.reasons.map((reason, index) => (
 								<React.Fragment key={value.name + reason + index}>
 									<span className='xbold dark:text-light/80 '>

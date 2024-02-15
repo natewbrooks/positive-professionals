@@ -9,7 +9,7 @@ export default function TeamMemberModal({ member }) {
 
 	return (
 		<Modal modalId={member.name}>
-			<div className='text-dark dark:text-light/70 text-start flex w-full justify-between flex-col space-y-4 lg:flex-row lg:space-x-4 overflow-hidden'>
+			<div className='text-dark dark:text-light/70 text-start flex w-full justify-between flex-col space-y-4 md:flex-row lg:space-x-4 overflow-hidden'>
 				<div className='flex items-center border-b-2 border-dark/10 dark:border-light/10 pb-4 lg:border-none xl:pb-0'>
 					<div className='relative flex flex-col justify-center items-center space-y-4 w-full px-8'>
 						<div className='w-fit h-fit bg-lightAccent dark:bg-dark/40  border-b-4 border-secondary rounded-t-full pt-4'>
@@ -17,7 +17,7 @@ export default function TeamMemberModal({ member }) {
 								<GatsbyImage
 									image={imageData}
 									alt={member.name}
-									className='w-[200px] h-[200px] sm:w-[300px] sm:h-[300px]'
+									className='null:w-[300px] null:h-[300px] mobile:w-[180px] mobile:h-[180px] md:w-[240px] md:h-[240px] xxl:w-[300px] xxl:h-[300px]'
 								/>
 							) : (
 								<FaUser
