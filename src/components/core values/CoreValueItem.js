@@ -11,7 +11,7 @@ export default function CoreValuesItem({ value, Icon, modalId }) {
 				onClick={() => {
 					openModal(modalId);
 				}}
-				className='transition-all duration-300 bg-light/30 dark:bg-dark/50 w-full select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center'>
+				className='rounded-sm transition-all duration-300 bg-light/30 dark:bg-dark/50 w-full select-none active:scale-95 md:hover:opacity-50 cursor-pointer p-2 flex flex-col space-y-2 items-center justify-center'>
 				<Icon
 					size={42}
 					className='text-dark dark:text-light/70'
@@ -21,7 +21,7 @@ export default function CoreValuesItem({ value, Icon, modalId }) {
 				</span>
 			</div>
 			<Modal modalId={modalId}>
-				<div className='z-30 w-full max-w-xxl max-h-[90vh] h-full flex flex-col md:flex-row sm:space-x-4 justify-center items-center text-dark dark:text-light/70 py-4 overflow-hidden'>
+				<div className='z-30 w-full xxl:max-w-[600px] max-h-[90vh] h-full flex flex-col md:flex-row xxl:flex-col xxl:space-x-0 sm:space-x-4 justify-center items-center text-dark dark:text-light/70 py-4 overflow-hidden'>
 					<div className='flex flex-col w-full h-fit'>
 						<div className='flex flex-col leading-tight pb-2'>
 							<span className='sans text-sm sm:text-md text-dark/50 dark:text-light/80 xbold text-center'>

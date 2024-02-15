@@ -64,7 +64,7 @@ export default function ResourcesSection({ data }) {
 					</AnchorLink>
 					<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
 						{blogPosts.map((post, index) => (
-							<div className={`p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
+							<div className={`rounded-sm p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
 								<BlogPostItem
 									key={index}
 									post={{
@@ -98,7 +98,7 @@ export default function ResourcesSection({ data }) {
 					</AnchorLink>
 					<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
 						{videoCatalog.map((video, index) => (
-							<div className={`p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
+							<div className={`rounded-sm p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
 								<VideoItem
 									key={index}
 									video={{
@@ -131,7 +131,7 @@ export default function ResourcesSection({ data }) {
 					</AnchorLink>
 					<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
 						{previousWebinars.map((video, index) => (
-							<div className={`p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
+							<div className={`rounded-sm p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
 								<VideoItem
 									key={index}
 									video={{

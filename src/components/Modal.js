@@ -43,8 +43,11 @@ export default function Modal({ children, modalId }) {
 			{currentModal === modalId && (
 				<div
 					id='modal'
+					onClick={(e) => closeModal()}
 					className='z-30 m-0 drop-shadow-lg fixed w-screen h-screen top-0 right-0 bg-dark/60 flex justify-center items-center select-none'>
-					<div className='flex flex-col max-h-screen w-full h-full md:max-w-[60%] md:max-h-[60%] md:w-fit md:h-fit bg-light dark:bg-darkAccent p-5 md:rounded-lg'>
+					<div
+						onClick={(e) => e.stopPropagation()}
+						className='flex flex-col max-h-screen w-full h-full md:max-w-[60%] md:max-h-[60%] md:w-fit md:h-fit bg-light dark:bg-darkAccent p-5 md:rounded-lg'>
 						<div className='w-full justify-end text-end'>
 							<button
 								onClick={() => closeModal()}
