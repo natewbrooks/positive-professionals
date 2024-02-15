@@ -12,10 +12,10 @@ export default function TeamMember({ member, color, modalId, className, isLastIt
 		<div
 			className={`${className} ${
 				isLastItem ? 'w-fit' : 'w-full'
-			} h-full justify-center items-center group mt-[8rem]`}>
+			} h-full justify-center items-center group null:mt-[5rem] md:mt-[8rem]`}>
 			<div
 				onClick={() => openModal(modalId)}
-				className={`relative justify-end items-end group-hover:cursor-pointer bg-dark/10 group-hover:bg-opacity-50 transition-all duration-300 ${color} flex items-center justify-center w-[320px] h-[250px] rounded-md aspect-square`}>
+				className={`relative justify-end items-end md:group-hover:cursor-pointer bg-dark/10 md:group-hover:bg-opacity-50 transition-all duration-300 ${color} flex items-center justify-center w-[320px] h-[250px] rounded-md aspect-square`}>
 				{imageData ? (
 					<GatsbyImage
 						image={imageData}
