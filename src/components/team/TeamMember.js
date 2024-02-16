@@ -12,28 +12,30 @@ export default function TeamMember({ member, color, modalId, className, isLastIt
 		<div
 			className={`${className} ${
 				isLastItem ? 'w-fit' : 'w-full'
-			} h-full justify-center items-center group null:mt-[5rem] md:mt-[8rem]`}>
+			} max-h-[420px] flex flex-col justify-end items-end group null:mt-[5rem] md:mt-[8rem] xl:mt-[10rem]`}>
 			<div
 				onClick={() => openModal(modalId)}
-				className={`relative justify-end items-end md:group-hover:cursor-pointer bg-dark/10 md:group-hover:bg-opacity-50 transition-all duration-300 ${color} flex items-center justify-center w-[320px] h-[250px] rounded-md aspect-square`}>
-				{imageData ? (
-					<GatsbyImage
-						image={imageData}
-						alt={member.name}
-						className='w-full h-fit -translate-y-[35px]'
-					/>
-				) : (
-					<FaUser
-						size={180}
-						className='text-dark'
-					/>
-				)}
-			</div>
-			<div
-				className='flex flex-col text-start py-1 leading-tight'
-				onClick={() => openModal(modalId)}>
-				<span className='sans xbold text-lg dark:text-light/80'>{member.name}</span>
-				<span className='sans text-sm'>{member.position}</span>
+				className={`justify-end items-end md:group-hover:cursor-pointer bg-dark/10 md:group-hover:bg-opacity-50 transition-all duration-300 ${color} flex flex-col items-center justify-end w-[320px] h-[240px] rounded-md aspect-square`}>
+				<div className='relative flex flex-col h-fit  w-full'>
+					{imageData ? (
+						<GatsbyImage
+							image={imageData}
+							alt={member.name}
+							className='absolute w-full h-fit bottom-0'
+						/>
+					) : (
+						<FaUser
+							size={180}
+							className='text-dark'
+						/>
+					)}
+				</div>
+				<div
+					className='bg-light w-full h-full flex flex-col text-start pt-2 leading-tight'
+					onClick={() => openModal(modalId)}>
+					<span className='sans xbold text-lg dark:text-light/80'>{member.name}</span>
+					<span className='sans text-sm'>{member.position}</span>
+				</div>
 			</div>
 
 			<TeamMemberModal member={member} />

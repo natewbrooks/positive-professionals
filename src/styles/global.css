@@ -46,6 +46,12 @@
         1px 1px 0 #000;
 }
 
+.clip-bottom {
+    width: 200px;
+    height: 200px;
+    clip-path: polygon(-1000% 0, 1000% 0, 1000% 100%, -1000% 100%);
+}
+
 .gatsby-image-wrapper {
     position: relative !important;
 }

@@ -7,7 +7,7 @@ export default function TeamMembers({ gridItems, colors }) {
 
 	return (
 		<div className='w-full h-full flex justify-center'>
-			<div className='flex flex-col md:grid md:grid-cols-2 null:gap-x-6 xxl:gap-x-20 md:gap-y-4 w-fit h-fit place-items-center justify-items-center '>
+			<div className='flex flex-col null:space-y-[12rem] md:space-y-[10rem] md:grid md:grid-cols-2 null:gap-x-6 xxl:gap-x-20 md:gap-y-[5rem] xl:gap-y-[3rem] w-fit h-fit place-items-center justify-items-center '>
 				{gridItems.map((item, index) => {
 					const lastItemClasses = isOdd && index === gridItems.length - 1 ? 'col-span-2' : '';
 					return (
