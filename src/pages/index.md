@@ -119,14 +119,6 @@ team:
       industryExperience: s
       certifications: s
       education: s
-    - name: Skliz Skrooks
-      position: Associate Certified Coach, SES (ret)
-      pic: /img/liz-brooks-alt-1-.png
-      careerBackground: d
-      specialities: d
-      certifications: d
-      industryExperience: d
-      education: d
   subtext: OVER 60 YEARS OF EXPERIENCE
 coreValues:
   body: Mental fitness is our capacity to handle life’s greatest challenges with a
