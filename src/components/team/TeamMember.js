@@ -12,7 +12,7 @@ export default function TeamMember({ member, color, modalId, className, isLastIt
 		<div
 			className={`${className} ${
 				isLastItem ? 'w-fit' : 'w-full'
-			} max-h-[420px] flex flex-col justify-end items-end group`}>
+			} max-h-[420px] null:scale-90 mobile:scale-100 flex flex-col justify-end items-end group`}>
 			<div
 				onClick={() => openModal(modalId)}
 				className={`justify-end items-end md:group-hover:cursor-pointer bg-dark/10 md:group-hover:bg-opacity-50 transition-all duration-300 bg-${color} flex flex-col w-[320px] h-[240px] rounded-md aspect-square`}>

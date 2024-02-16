@@ -1,19 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import primaryBottomWave from '../../img/bg-waves/light-blue-waves/primary-wave-bottom.svg';
-import bkg from '../../img/coral-reef-bg.webp';
-import heroWave from '../../img/bg-waves/hero.svg';
+import heroWave from '../../img/bg-waves/hero-waves/hero.svg';
 
 export default function Hero({ data }) {
 	return (
 		<>
-			<Helmet>
-				<link
-					rel='preload'
-					href={bkg}
-					as='image'
-				/>
-			</Helmet>
 			<header className='z-10 relative flex justify-center items-center w-full h-fit pt-24 pb-12 null:mb-[10rem] sm:mb-[10rem] md:mb-[14rem]  lg:mb-[12rem] xl:mb-[16rem] bg-tertiary'>
 				<img
 					className='absolute null:translate-y-[45%] lg:translate-y-[38%] bottom-0 w-full h-[300px] md:h-[450px] xxl:h-[500px]'

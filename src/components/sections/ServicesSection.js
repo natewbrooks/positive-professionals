@@ -12,8 +12,8 @@ import {
 } from 'react-icons/fa';
 import { FaPeopleGroup } from 'react-icons/fa6';
 import ServicesItem from '../services/ServicesItem';
-import bgTop from '../../img/bg-waves/purple-waves/purple-wave-top-2.svg';
-import bgBottom from '../../img/bg-waves/purple-waves/purple-wave-bottom-2.svg';
+import waveTop from '../../img/bg-waves/services-waves/wave-top.svg';
+import waveBottom from '../../img/bg-waves/services-waves/wave-bottom.svg';
 
 export default function ServicesSection({ content }) {
 	const services = [
@@ -67,15 +67,15 @@ export default function ServicesSection({ content }) {
 			className='relative w-full h-full'>
 			<div className='z-0 absolute w-full h-full left-0'>
 				<img
-					src={bgTop}
-					alt='purple-wave-bg-top'
+					src={waveTop}
+					alt='Services wave top bg'
 					style={{ transform: 'translateY(-80%)' }}
 					className='absolute w-full top-0 -z-[10] '></img>
 				<div className='absolute bg-tertiary w-full h-full -z-[1]'></div>
 				<img
-					src={bgBottom}
-					alt='purple-wave-bg-bottom'
-					className='null:translate-y-[70%] mobile:translate-y-[75%] absolute w-full h-fit bottom-0 -z-[10]'></img>
+					src={waveBottom}
+					alt='Services wave bottom bg'
+					className='translate-y-[75%] absolute w-full h-fit bottom-0 -z-[10]'></img>
 			</div>
 
 			<div className='z-10 text-dark w-full h-full flex flex-col space-y-4 null:py-8 md:py-0'>

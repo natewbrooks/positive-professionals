@@ -4,8 +4,7 @@ import SeeMore from '../pieces/SeeMore';
 import VideoItem from '../webinar/VideoItem';
 import BlogPostItem from '../blog/BlogPostItem';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
-import bgTop from '../../img/bg-waves/dark-purple-waves/dark-purple-wave-top-2.svg';
-import bgBottom from '../../img/bg-waves/dark-purple-waves/dark-purple-wave-bottom.svg';
+import waveTop from '../../img/bg-waves/resources-waves/wave-top.svg';
 
 export default function ResourcesSection({ data }) {
 	if (!data) {
@@ -36,8 +35,8 @@ export default function ResourcesSection({ data }) {
 			className='w-full h-full pb-10'>
 			<div className='z-0 absolute w-full h-full left-0'>
 				<img
-					src={bgTop}
-					alt='dark-purple-wave-bg-top'
+					src={waveTop}
+					alt='Resources wave top bg'
 					style={{ transform: 'translateY(-90%)' }}
 					className='absolute w-full top-0'></img>
 				<div className='absolute bg-four w-full h-full'></div>

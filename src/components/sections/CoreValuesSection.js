@@ -8,8 +8,8 @@ import {
 	FaBalanceScale,
 } from 'react-icons/fa';
 import CoreValuesItem from '../core values/CoreValueItem';
-import bgTop from '../../img/bg-waves/blue-waves/blue-wave-top-2.svg';
-import bgBottom from '../../img/bg-waves/blue-waves/blue-wave-bottom-2.svg';
+import waveTop from '../../img/bg-waves/core-value-waves/wave-top.svg';
+import waveBottom from '../../img/bg-waves/core-value-waves/wave-bottom.svg';
 
 const coreValues = [FaHammer, FaLightbulb, FaHandshake, FaTrophy, FaUsers, FaBalanceScale];
 export default function CoreValuesSection({ data }) {
@@ -19,14 +19,14 @@ export default function CoreValuesSection({ data }) {
 			className='w-full h-full relative flex justify-center items-center text-dark'>
 			<div className='z-0 absolute w-full h-full left-0'>
 				<img
-					src={bgTop}
-					alt='blue-wave-bg-top'
+					src={waveTop}
+					alt='Core values wave top'
 					style={{ transform: 'translateY(-80%)' }}
 					className='absolute w-full top-0 -z-[10]'></img>
 				<div className='absolute bg-secondary w-full h-full -z-[1]'></div>
 				<img
-					src={bgBottom}
-					alt='blue-wave-bg-bottom'
+					src={waveBottom}
+					alt='Core values wave bottom'
 					style={{ transform: 'translateY(85%)' }}
 					className='absolute w-full bottom-0 -z-[10]'></img>
 			</div>
