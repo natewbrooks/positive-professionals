@@ -117,7 +117,7 @@ export default function Navbar() {
 								}}
 								className={`${
 									hasScrolled ? 'max-h-0' : 'max-h-full'
-								} leading-none transform transition-all duration-500 ease-in-out sans text-sm text-light dark:text-dark xbold`}>
+								} leading-tight transform transition-all duration-500 ease-in-out sans text-xs text-light dark:text-dark xbold`}>
 								CONTACT US
 							</span>
 							<div className='flex w-fit h-fit justify-center items-center space-x-2'>
@@ -148,7 +148,7 @@ export default function Navbar() {
 								<img
 									src={logo}
 									alt='logo'
-									className='transition-all duration-[300ms] ease-in-out w-[48px] h-[48px] mobile:w-[52px] mobile:h-[52px] '
+									className='transition-all duration-[300ms] ease-in-out null:w-[40px] null:h-[40px] mobile:w-[42px] mobile:h-[42px] '
 								/>
 								<div
 									style={{
@@ -158,7 +158,7 @@ export default function Navbar() {
 										transform: hasScrolled ? 'translateY(-40px)' : 'translateY(0px)',
 										transform: hasScrolled ? 'scale(0%)' : 'scale(100%)',
 									}}
-									className={`relative transition-all duration-[500ms] ease-in-out flex text-sm text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
+									className={`relative transition-all duration-[600ms] ease-in-out flex text-xs text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
 									<span className='sans xbold'>POSITIVE</span>
 									<span className='sans'>PROFESSIONALS</span>
 								</div>
@@ -171,8 +171,8 @@ export default function Navbar() {
 									to={'/#' + link.hash}
 									title={`Go to ${link.title}`}
 									onAnchorLinkClick={() => setActiveHash(link.hash)}
-									className={`w-full h-full hidden lg:block sans transition-all duration-[300ms] text-dark dark:text-light/60 text-md px-2 ${
-										hasScrolled ? 'py-5' : 'py-8'
+									className={`w-full h-full hidden lg:block sans transition-all duration-[300ms] text-dark dark:text-light/60 text-sm px-2 ${
+										hasScrolled ? 'py-4' : 'py-6'
 									} border-b-[3px]  text-nowrap ${
 										isHashActive(link.hash)
 											? ' border-four hover:border-four'
@@ -194,7 +194,7 @@ export default function Navbar() {
 							</div>
 						</div>
 						<div className='lg:absolute right-0 py-0 null:-translate-x-0 lg:-translate-x-[8rem] xl:-translate-x-[14rem] xxl:-translate-x-[40rem] flex items-center w-fit space-x-4'>
-							<div className='flex space-x-2 items-center justify-center'>
+							<div className='scale-[80%] flex space-x-2 items-center justify-center'>
 								<button
 									aria-label='Hamburger Menu Button'
 									onClick={(e) => {
@@ -219,12 +219,12 @@ export default function Navbar() {
 							<span className='lg:hidden text-dark/50 dark:text-light/50'>|</span>
 							<FaSun
 								onClick={toggleDarkMode}
-								size={24}
+								size={20}
 								className='select-none dark:hidden text-dark cursor-pointer md:hover:opacity-50 active:scale-95'
 							/>
 							<FaMoon
 								onClick={toggleDarkMode}
-								size={20}
+								size={16}
 								className='select-none hidden dark:block text-light/70 cursor-pointer md:hover:opacity-50 active:scale-95'
 							/>
 							<SigninButton />
@@ -245,7 +245,7 @@ export default function Navbar() {
 								setActiveHash(link.hash);
 								setBurgerNavShown(false);
 							}}
-							className={`bg-dark border-b-[3px]  border-darkAccent w-full py-5 text-light text-sm flex px-4 justify-center items-center text-center ${
+							className={`bg-dark border-b-[3px]  border-darkAccent w-full py-4 text-light text-xs flex px-4 justify-center items-center text-center ${
 								isHashActive(link.hash)
 									? 'border-b-[3px]  border-b-primary hover:border-b-primary'
 									: ''

@@ -33,8 +33,8 @@ export default function NavDropdownItem({
 			<div className='hidden lg:block w-full'>
 				<div
 					onClick={() => toggleDropdown(!isOpen)}
-					className={`cursor-pointer w-full h-full hidden lg:flex items-center sans transition-all duration-[300ms] text-dark dark:text-light/60 text-md px-2  ${
-						hasScrolled ? 'py-5' : 'py-8'
+					className={`cursor-pointer w-full h-full hidden lg:flex items-center sans transition-all duration-[300ms] text-dark dark:text-light/60 text-sm px-2  ${
+						hasScrolled ? 'py-4' : 'py-6'
 					}  border-b-[3px]  text-nowrap ${
 						isHashActive(hash) ? ' border-four hover:border-four' : ' border-transparent'
 					}`}>
@@ -58,7 +58,7 @@ export default function NavDropdownItem({
 								setActiveHash('#' + label.toLowerCase());
 								toggleDropdown(false);
 							}}
-							className='sans xbold p-4 text-sm text-light dark:text-light/70 flex justify-center items-center border-b-[3px]  border-dark dark:border-darkAccent hover:md:text-light/50 dark:md:hover:text-light/40 hover:border-primary dark:hover:border-primary'>
+							className='sans xbold p-4 text-xs text-light dark:text-light/70 flex justify-center items-center border-b-[3px]  border-dark dark:border-darkAccent hover:md:text-light/50 dark:md:hover:text-light/40 hover:border-primary dark:hover:border-primary'>
 							{label.toUpperCase()}
 						</AnchorLink>
 					))}
@@ -71,7 +71,7 @@ export default function NavDropdownItem({
 				onClick={() => toggleDropdown(!isOpen)}
 				key={'#' + hash}
 				title={title}
-				className={`lg:hidden relative bg-dark border-b-[3px]  py-5 px-4 text-light border-light/10 text-sm flex w-full justify-center items-center text-center ${
+				className={`lg:hidden relative bg-dark border-b-[3px]  p-4 text-light border-light/10 text-xs flex w-full justify-center items-center text-center ${
 					isHashActive(hash) ? 'border-b-primary hover:border-b-primary' : ''
 				} `}>
 				<span className={`text-center sans xbold text-nowrap`}>{title.toUpperCase()}</span>
@@ -94,7 +94,7 @@ export default function NavDropdownItem({
 								setActiveHash('#' + label.toLowerCase());
 								toggleDropdown(false);
 							}}
-							className='sans xbold p-4 text-sm text-light flex justify-center items-center border-b-[3px]  border-light/10 hover:border-four'>
+							className='sans xbold p-4 text-xs text-light flex justify-center items-center border-b-[3px]  border-light/10 hover:border-four'>
 							{label.toUpperCase()}
 						</AnchorLink>
 					))}
