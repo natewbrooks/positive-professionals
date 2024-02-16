@@ -121,7 +121,7 @@ team:
       education: s
     - name: Skliz Skrooks
       position: Associate Certified Coach, SES (ret)
-      pic: /img/liz-brooks-alt.png
+      pic: /img/liz-brooks-alt-1-.png
       careerBackground: d
       specialities: d
       certifications: d
