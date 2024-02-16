@@ -38,7 +38,7 @@ team:
         Physics Laboratory, Council for State Governments, Loyola University
         Maryland, Virginia Tech, and corporate clients.
       name: Kim Harris
-      pic: /img/liz-brooks-alt-2-1-.png
+      pic: /img/liz-brooks-alt-2-2-1-.png
       position: 'Associate Certified Coach, SES (ret)'
       specialities: >-
         As an executive coach, Kim connects with motivated professionals who are
