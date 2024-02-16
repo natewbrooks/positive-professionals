@@ -16,12 +16,12 @@ export default function TeamMember({ member, color, modalId, className, isLastIt
 			<div
 				onClick={() => openModal(modalId)}
 				className={`justify-end items-end md:group-hover:cursor-pointer bg-dark/10 md:group-hover:bg-opacity-50 transition-all duration-300 ${color} flex flex-col items-center justify-end w-[320px] h-[240px] rounded-md aspect-square`}>
-				<div className='relative flex flex-col h-fit  w-full'>
+				<div className='relative flex flex-col h-fit w-full'>
 					{imageData ? (
 						<GatsbyImage
 							image={imageData}
 							alt={member.name}
-							className='absolute w-full h-fit bottom-0'
+							className='absolute bottom-0 w-full h-auto'
 						/>
 					) : (
 						<FaUser
