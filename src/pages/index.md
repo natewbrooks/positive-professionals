@@ -112,7 +112,7 @@ team:
         successfully, and enthusiastically celebrates their victories with them.
       pic: /img/liz-brooks.png
     - pic: /img/liz-brooks2.png
-      name: Liz Brooks
+      name: Biz Lrooks
       careerBackground: s
       position: Associate Certified Coach, SES (ret)
       specialities: s
