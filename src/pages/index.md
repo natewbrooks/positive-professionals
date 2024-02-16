@@ -114,7 +114,7 @@ team:
     - pic: /img/20240215_112123-removebg-preview-transformed.png
       name: Liz Brooks
       careerBackground: s
-      position: s
+      position: Associate Certified Coach, SES (ret)
       specialities: s
       industryExperience: s
       certifications: s
