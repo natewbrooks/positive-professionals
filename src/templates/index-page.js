@@ -72,6 +72,8 @@ IndexPageTemplate.propTypes = {
 		members: PropTypes.arrayOf(
 			PropTypes.shape({
 				name: PropTypes.string,
+				linkedIn: PropTypes.string,
+				email: PropTypes.string,
 				position: PropTypes.string,
 				careerBackground: PropTypes.string,
 				specialities: PropTypes.string,
@@ -190,6 +192,8 @@ export const pageQuery = graphql`
 							}
 						}
 						name
+						linkedIn
+						email
 						position
 						careerBackground
 						specialities

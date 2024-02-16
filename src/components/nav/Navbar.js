@@ -6,6 +6,8 @@ import { useLocation } from '@reach/router';
 import logo from '../../img/logo/pp-logo-bg.svg';
 import { useModal } from '../ModalContext';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import { FaLongArrowAltRight } from 'react-icons/fa';
+import { BsEnvelopeFill, BsArrowRight, BsMailbox2Flag } from 'react-icons/bs';
 import { func } from 'prop-types';
 
 export default function Navbar() {
@@ -104,6 +106,36 @@ export default function Navbar() {
 				role='navigation'
 				aria-label='main-navigation'>
 				<div className='flex flex-col items-center'>
+					<div
+						className={`transform transition-all duration-300 flex w-full h-fit justify-center items-center py-1 bg-secondary`}>
+						<div className='flex flex-col items-center cursor-pointer  group md:hover:opacity-50 md:active:scale-95 w-fit'>
+							<span
+								style={{
+									maxHeight: hasScrolled ? '0px' : '30px',
+									paddingTop: hasScrolled ? '0px' : '2px',
+									transform: hasScrolled ? 'translateY(-40px)' : 'translateY(0px)',
+								}}
+								className={`${
+									hasScrolled ? 'max-h-0' : 'max-h-full'
+								} leading-none transform transition-all duration-500 ease-in-out sans text-sm text-light dark:text-dark xbold`}>
+								CONTACT US
+							</span>
+							<div className='flex w-fit h-fit justify-center items-center space-x-2'>
+								<BsEnvelopeFill
+									size={14}
+									className='select-none text-light dark:text-dark'
+								/>
+								<FaLongArrowAltRight
+									size={16}
+									className='select-none text-light dark:text-dark'
+								/>
+								<BsMailbox2Flag
+									size={15}
+									className='select-none text-light dark:text-dark'
+								/>
+							</div>
+						</div>
+					</div>
 					<div
 						id='navMenu'
 						className={`relative flex py-0 md:px-0 lg:px-10 xl:px-40 xxl:px-80 bg-light dark:bg-dark items-center w-full h-full null:justify-around lg:justify-center`}>

@@ -62,7 +62,7 @@ export const VideoPostTemplate = ({
 			{helmet || ''}
 			<section
 				id='video-post'
-				className='mt-4'>
+				className='mt-[4rem]'>
 				<ResourcesNav
 					pageTitle={'Return'}
 					showTitle={false}
@@ -76,7 +76,7 @@ export const VideoPostTemplate = ({
 								</div>
 							</div>
 						)}
-						<div className='flex w-full h-full justify-between items-center'>
+						<div className='flex null:flex-col sm:flex-row w-full h-full justify-between sm:items-center'>
 							<div className='null:text-sm md:text-md sans xbold text-dark/50 dark:text-light/50'>
 								PUBLISHED {date.toUpperCase()}
 							</div>

@@ -33,8 +33,26 @@ export default function TeamMemberModal({ member }) {
 								<span className='sans text-sm'>{member.position}</span>
 							</div>
 							<div className='flex flex-row space-x-2'>
-								<FaLinkedin size={24} />
-								<FaEnvelope size={24} />
+								{member.linkedIn && (
+									<a
+										title={`View ${member.name}'s LinkedIn`}
+										onClick={() => window.open(member.linkedIn, '_blank')}>
+										<FaLinkedin
+											className='text-dark dark:text-light/70 cursor-pointer md:hover:opacity-50 md:active:scale-95'
+											size={24}
+										/>
+									</a>
+								)}
+								{member.email && (
+									<a
+										title={`Email ${member.name}`}
+										href={`mailto:${member.email}`}>
+										<FaEnvelope
+											size={24}
+											className='text-dark dark:text-light/70 cursor-pointer md:hover:opacity-50 md:active:scale-95'
+										/>
+									</a>
+								)}
 							</div>
 						</div>
 					</div>

@@ -42,7 +42,7 @@ export default function NavDropdownItem({
 					<MdOutlineKeyboardArrowDown
 						className={`relative left-1 top-0 ${
 							isOpen ? 'rotate-0' : 'rotate-180'
-						}  transition-all duration-300`}
+						}  transition-transform duration-300`}
 					/>
 				</div>
 				<div

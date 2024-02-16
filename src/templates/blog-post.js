@@ -37,7 +37,7 @@ export const BlogPostTemplate = ({
 			{helmet || ''}
 			<section
 				id='blog-post'
-				className='mt-4'>
+				className='mt-[4rem]'>
 				<ResourcesNav pageTitle={'Return'} />
 				<div className='justify-center items-center text-center flex w-full flex-col bg-dark/10 dark:bg-darkAccent rounded-md null:py-10 md:px-20'>
 					<div className='dark:text-light/80 max-w-[80%] w-full null:text-xxl md:text-xxxl serif xbold text-dark leading-tight'>

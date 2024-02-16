@@ -97,6 +97,8 @@ team:
         accessibility.
       name: Liz Brooks
       pic: /img/liz-brooks.png
+      linkedIn: https://www.linkedin.com/in/liz-brooks-870b5221a/
+      email: lizbrooks61@gmail.com
       position: 'Associate Certified Coach, SES (ret)'
       specialities: >-
         As an energetic mom of six, a people-focused senior executive in the
@@ -324,8 +326,8 @@ coreValues:
             challenges, and advance their careers within the organization.
           reason: Encouraging Professional Development
 workedWith:
-  header: '!! Doesn''t exist'
-  subtext: '!! Doesn''t exist'
+  header: "!! Doesn't exist"
+  subtext: "!! Doesn't exist"
   testimonials:
     - company: CISCO CYBER OPERATIONS
       name: Theresa Clark
@@ -406,4 +408,3 @@ getStarted:
       name: Create personalized plan
   subtext: Take your first steps and get involved with the betterment of your future.
 ---
-

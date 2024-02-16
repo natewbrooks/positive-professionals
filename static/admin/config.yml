@@ -74,27 +74,9 @@ collections:
           hint: '★ Enter video URL (e.g., YouTube, Vimeo) ★',
         }
       - { label: 'Featured Video', name: 'featuredpost', widget: 'boolean' }
-      - {
-          label: 'Title',
-          name: 'title',
-          widget: 'string',
-          required: true,
-          hint: 'If nothing is entered, it will attempt to automatically fetch the URLs title.',
-        }
-      - {
-          label: 'Publish Date',
-          name: 'date',
-          widget: 'datetime',
-          required: true,
-          hint: 'If nothing entered, it will attempt to automatically fetch the URLs publish date.',
-        }
-      - {
-          label: 'Description',
-          name: 'description',
-          widget: 'text',
-          required: false,
-          hint: 'If nothing is entered, it will attempt to automatically fetch the URLs description.',
-        }
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', required: true }
+      - { label: 'Description', name: 'description', widget: 'text', required: false }
       - {
           label: 'Presentors',
           name: 'presentors',
@@ -146,8 +128,10 @@ collections:
                     widget: list,
                     fields:
                       [
-                        { label: 'Member Picture', name: 'pic', widget: 'image' },
                         { label: 'Member Name', name: 'name', widget: 'string' },
+                        { label: 'Member Picture', name: 'pic', widget: 'image' },
+                        { label: 'LinkedIn URL', name: 'linkedIn', widget: 'string' },
+                        { label: 'Email', name: 'email', widget: 'string' },
                         { label: 'Member Position', name: 'position', widget: 'string' },
                         { label: 'Career Background', name: 'careerBackground', widget: 'text' },
                         { label: 'Specialities', name: 'specialities', widget: 'text' },
