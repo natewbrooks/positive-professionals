@@ -2,7 +2,7 @@ import React from 'react';
 import TeamMembers from '../../team/TeamMembers';
 import SeeMore from '../../pieces/SeeMore';
 
-const teamColors = ['bg-primary', 'bg-secondary', 'bg-tertiary', 'bg-four'];
+const teamColors = ['primary', 'secondary', 'tertiary', 'four'];
 
 export default function TeamSection({ data }) {
 	return (
