@@ -9,8 +9,8 @@ export default function TeamMemberModal({ member }) {
 
 	return (
 		<Modal modalId={member.name}>
-			<div className='text-dark dark:text-light/70 text-start flex w-full justify-between flex-col space-y-4 md:flex-row lg:space-x-4 overflow-hidden'>
-				<div className='flex items-center border-b-2 border-dark/10 dark:border-light/10 pb-4 lg:border-none xl:pb-0'>
+			<div className='text-dark dark:text-light/70 text-start flex w-full justify-between flex-col space-y-4 sm:flex-row sm:space-x-4 overflow-hidden'>
+				<div className='flex items-center border-b-2 border-dark/10 dark:border-light/10 pb-4 sm:border-none xl:pb-0'>
 					<div className='relative flex flex-col justify-center items-center space-y-4 w-full px-8'>
 						<div
 							className={`w-fit h-fit bg-lightAccent dark:bg-dark/40 rounded-t-full  rounded-b-md pt-4 pb-0`}>
@@ -18,7 +18,7 @@ export default function TeamMemberModal({ member }) {
 								<GatsbyImage
 									image={imageData}
 									alt={member.name}
-									className='null:w-[180px] null:h-[180px] md:w-[200px] md:h-[200px] xxl:w-[300px] xxl:h-[300px]'
+									className='null:w-[150px] null:h-[150px] sm:w-[180px] sm:h-[180px] md:w-[200px] md:h-[200px] xxl:w-[300px] xxl:h-[300px]'
 								/>
 							) : (
 								<FaUser
@@ -39,7 +39,7 @@ export default function TeamMemberModal({ member }) {
 						</div>
 					</div>
 				</div>
-				<div className='null:w-fit lg:w-[800px] flex flex-col overflow-y-auto'>
+				<div className='null:w-full lg:w-[800px] flex flex-col overflow-y-auto'>
 					<div className='flex flex-col space-y-1 border-l-4 p-4 border-primary'>
 						<span className='sans text-sm xbold dark:text-light/80 '>CAREER BACKGROUND</span>
 						<span className='sans text-md'>{member.careerBackground}</span>

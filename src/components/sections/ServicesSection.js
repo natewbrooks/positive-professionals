@@ -70,7 +70,7 @@ export default function ServicesSection({ content }) {
 					src={waveTop}
 					alt='Services wave top bg'
 					style={{ transform: 'translateY(-80%)' }}
-					className='absolute w-full top-0 -z-[10] '></img>
+					className='absolute w-full h-fit top-0 -z-[10] '></img>
 				<div className='absolute bg-tertiary w-full h-full -z-[1]'></div>
 				<img
 					src={waveBottom}

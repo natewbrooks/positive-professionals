@@ -38,7 +38,7 @@ export default function ResourcesSection({ data }) {
 					src={waveTop}
 					alt='Resources wave top bg'
 					style={{ transform: 'translateY(-90%)' }}
-					className='absolute w-full top-0'></img>
+					className='absolute w-full h-fit top-0'></img>
 				<div className='absolute bg-four w-full h-full'></div>
 			</div>
 

@@ -12,30 +12,32 @@ export default function TeamMember({ member, color, modalId, className, isLastIt
 		<div
 			className={`${className} ${
 				isLastItem ? 'w-fit' : 'w-full'
-			} max-h-[420px] null:scale-90 mobile:scale-100 flex flex-col justify-end items-end group`}>
-			<div
-				onClick={() => openModal(modalId)}
-				className={`justify-end items-end md:group-hover:cursor-pointer bg-dark/10 md:group-hover:bg-opacity-50 transition-all duration-300 bg-${color} flex flex-col w-[320px] h-[240px] rounded-md aspect-square`}>
-				<div className='relative flex flex-col h-fit w-full'>
-					{imageData ? (
-						<GatsbyImage
-							image={imageData}
-							alt={member.name}
-							className='absolute bottom-0 w-full h-auto'
-						/>
-					) : (
-						<FaUser
-							size={180}
-							className='text-dark'
-						/>
-					)}
+			} max-h-[420px] flex flex-col justify-end items-end group`}>
+			<div className='null:scale-[85%] mobile:scale-100 w-full flex flex-col space-y-2 justify-center items-center'>
+				<div
+					onClick={() => openModal(modalId)}
+					className={`justify-end items-end md:group-hover:cursor-pointer bg-dark/10 md:group-hover:bg-opacity-50 transition-all duration-300 bg-${color} flex flex-col w-[320px] h-[240px] rounded-md aspect-square`}>
+					<div className='relative flex flex-col h-fit w-full'>
+						{imageData ? (
+							<GatsbyImage
+								image={imageData}
+								alt={member.name}
+								className='absolute bottom-0 w-full h-auto'
+							/>
+						) : (
+							<FaUser
+								size={180}
+								className='text-dark'
+							/>
+						)}
+					</div>
 				</div>
-			</div>
-			<div
-				className={`w-full h-full flex flex-col text-start p-2 border-b-2 border-${color} leading-tight`}
-				onClick={() => openModal(modalId)}>
-				<span className='sans xbold text-lg dark:text-light/80'>{member.name}</span>
-				<span className='sans text-sm'>{member.position}</span>
+				<div
+					className={`w-full h-full flex flex-col text-start border-b-2 border-${color} leading-tight`}
+					onClick={() => openModal(modalId)}>
+					<span className='sans xbold text-lg dark:text-light/80'>{member.name}</span>
+					<span className='sans text-sm'>{member.position}</span>
+				</div>
 			</div>
 
 			<TeamMemberModal member={member} />

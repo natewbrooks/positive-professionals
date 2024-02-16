@@ -22,13 +22,13 @@ export default function CoreValuesSection({ data }) {
 					src={waveTop}
 					alt='Core values wave top'
 					style={{ transform: 'translateY(-80%)' }}
-					className='absolute w-full top-0 -z-[10]'></img>
+					className='absolute w-full h-fit top-0 -z-[10]'></img>
 				<div className='absolute bg-secondary w-full h-full -z-[1]'></div>
 				<img
 					src={waveBottom}
 					alt='Core values wave bottom'
 					style={{ transform: 'translateY(85%)' }}
-					className='absolute w-full bottom-0 -z-[10]'></img>
+					className='absolute w-full h-fit bottom-0 -z-[10]'></img>
 			</div>
 
 			<div className='z-10 flex flex-col space-y-4 items-center justify-center null:py-8 md:py-4'>
