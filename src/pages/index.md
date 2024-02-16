@@ -111,7 +111,7 @@ team:
         a variety of tools and techniques to help her clients move forward
         successfully, and enthusiastically celebrates their victories with them.
       pic: /img/liz-brooks.png
-    - pic: /img/20240215_112123-removebg-preview-transformed.png
+    - pic: /img/liz-brooks2.png
       name: Liz Brooks
       careerBackground: s
       position: Associate Certified Coach, SES (ret)
