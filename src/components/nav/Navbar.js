@@ -109,18 +109,15 @@ export default function Navbar() {
 					<div
 						className={`transform transition-all duration-300 flex w-full h-fit justify-center items-center py-1 bg-secondary`}>
 						<div className='flex flex-col items-center cursor-pointer  group md:hover:opacity-50 md:active:scale-95 w-fit'>
-							<span
+							<div
 								style={{
 									maxHeight: hasScrolled ? '0px' : '30px',
 									paddingTop: hasScrolled ? '0px' : '2px',
-									transform: hasScrolled ? 'translateY(-40px)' : 'translateY(0px)',
+									transform: hasScrolled ? 'translateY(-50px)' : 'translateY(0px)',
 								}}
 								className={`${
 									hasScrolled ? 'max-h-0' : 'max-h-full'
-								} leading-tight transform transition-all duration-500 ease-in-out sans text-xs text-light dark:text-dark xbold`}>
-								CONTACT US
-							</span>
-							<div className='flex w-fit h-fit justify-center items-center space-x-2'>
+								} transform transition-all duration-500 ease-in-out flex w-fit h-fit justify-center items-center space-x-2`}>
 								<BsEnvelopeFill
 									size={14}
 									className='select-none text-light dark:text-dark'
@@ -130,10 +127,13 @@ export default function Navbar() {
 									className='select-none text-light dark:text-dark'
 								/>
 								<BsMailbox2Flag
-									size={15}
+									size={16}
 									className='select-none text-light dark:text-dark'
 								/>
 							</div>
+							<span className={`leading-tight sans text-xs text-light dark:text-dark xbold`}>
+								CONTACT US
+							</span>
 						</div>
 					</div>
 					<div
@@ -148,15 +148,13 @@ export default function Navbar() {
 								<img
 									src={logo}
 									alt='logo'
-									className='transition-all duration-[300ms] ease-in-out null:w-[40px] null:h-[40px] mobile:w-[42px] mobile:h-[42px] '
+									className='null:w-[40px] null:h-[40px] mobile:w-[42px] mobile:h-[42px] '
 								/>
 								<div
 									style={{
 										maxHeight: hasScrolled ? '0px' : '30px',
 										width: '100px',
 										paddingTop: hasScrolled ? '0px' : '2px',
-										transform: hasScrolled ? 'translateY(-40px)' : 'translateY(0px)',
-										transform: hasScrolled ? 'scale(0%)' : 'scale(100%)',
 									}}
 									className={`relative transition-all duration-[600ms] ease-in-out flex text-xs text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
 									<span className='sans xbold'>POSITIVE</span>
@@ -172,7 +170,7 @@ export default function Navbar() {
 									title={`Go to ${link.title}`}
 									onAnchorLinkClick={() => setActiveHash(link.hash)}
 									className={`w-full h-full hidden lg:block sans transition-all duration-[300ms] text-dark dark:text-light/60 text-sm px-2 ${
-										hasScrolled ? 'py-4' : 'py-6'
+										hasScrolled ? 'null:py-4' : 'null:py-6'
 									} border-b-[3px]  text-nowrap ${
 										isHashActive(link.hash)
 											? ' border-four hover:border-four'
