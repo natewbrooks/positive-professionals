@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import SigninModal from '../sign in/SigninModal';
+import { useModal } from '../ModalContext';
 import { FaUserCircle } from 'react-icons/fa';
-import SigninModal from './SigninModal';
 
 export default function SigninButton({ isLoggedIn, userData, onLogin, onLogout }) {
 	const [isModalOpen, setModalOpen] = useState(false);
+	const { openModal } = useModal();
 
 	const handleLogin = () => {
 		try {
 			//
+			openModal('signIn');
 		} catch (error) {
 			console.error('Error during login:', error);
 		}
@@ -19,10 +22,6 @@ export default function SigninButton({ isLoggedIn, userData, onLogin, onLogout }
 		} catch (error) {
 			console.error('Error during logout:', error);
 		}
-	};
-
-	const toggleModal = () => {
-		setModalOpen(!isModalOpen);
 	};
 
 	return (
@@ -40,12 +39,6 @@ export default function SigninButton({ isLoggedIn, userData, onLogin, onLogout }
 					{!isLoggedIn ? 'SIGN IN' : 'SIGN OUT'}
 				</h2>
 			</div>
-
-			<SigninModal
-				isModalOpen={isModalOpen}
-				closeModal={toggleModal}
-				showSignin={!isLoggedIn}
-			/>
 		</>
 	);
 }

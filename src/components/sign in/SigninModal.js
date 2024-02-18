@@ -1,41 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import Modal from '../Modal';
 
-export default function SigninModal({ isModalOpen, setModalOpen, closeModal, showSignin }) {
+export default function SigninModal({ showSignin, modalId }) {
 	const [registerShown, setRegisterShown] = useState(!showSignin);
 	const [email, setEmail] = useState('');
-	const [phoneNumber, setPhoneNumber] = useState('');
 	const [password, setPassword] = useState('');
 	const [firstName, setFirstName] = useState('');
 	const [lastName, setLastName] = useState('');
-
-	const [isLoggedIn, setIsLoggedIn] = useState('');
-
-	const [errorMsgShown, setErrorMsgShown] = useState(false);
-	// const currentAuth = useState(getAuth());
-
-	const login = (e) => {
-		e.preventDefault();
-		//
-		closeModal();
-	};
-
-	const register = (e) => {
-		e.preventDefault();
-		//
-		closeModal();
-	};
+	const [phoneNumber, setPhoneNumber] = useState('');
 
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
-			// Firebase related code here
+			// Firebase or other initialization code here
 		}
 	}, []);
 
+	const handleLogin = (e) => {
+		e.preventDefault();
+		// Handle login logic here
+	};
+
+	const handleRegister = (e) => {
+		e.preventDefault();
+		// Handle registration logic here
+	};
+
 	return (
-		<Modal
-			isOpen={isModalOpen}
-			onClose={closeModal}>
+		<Modal modalId={modalId}>
 			<div className='flex flex-col space-y-4 w-full h-full justify-center items-center'>
 				{!registerShown && (
 					<>
@@ -43,7 +34,7 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 							<span className='serif text-xl'>Sign in</span>
 						</div>
 						<form
-							onSubmit={login}
+							onSubmit={handleLogin}
 							className='flex flex-col justify-start space-y-8 items-center'>
 							<div className='flex flex-col space-y-2'>
 								<div className='flex flex-col'>
@@ -72,7 +63,7 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 								SUBMIT
 							</button>
 						</form>
-						<div className='justify-center flex space-x-2 w-full border-t-2 border-dark/10 pt-5'>
+						<div className='justify-center items-center md:justify-start flex space-x-2 w-full border-t-2 border-dark/10 h-full'>
 							<span className='text-sm sans'>Don't have an account?</span>
 							<span
 								onClick={() => setRegisterShown(true)}
@@ -89,7 +80,7 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 							<span className='serif text-xl'>Register Account</span>
 						</div>
 						<form
-							onSubmit={register}
+							onSubmit={handleRegister}
 							className='w-fit flex flex-col justify-center space-y-8 items-center'>
 							<div className='w-[60%] flex flex-col space-y-2'>
 								<div className='flex space-x-2 justify-evenly'>
@@ -141,7 +132,7 @@ export default function SigninModal({ isModalOpen, setModalOpen, closeModal, sho
 								CREATE ACCOUNT
 							</button>
 						</form>
-						<div className='justify-center md:justify-start flex space-x-2 w-full border-t-2 border-dark/10 pt-5'>
+						<div className='justify-center items-center md:justify-start flex space-x-2 w-full border-t-2 border-dark/10 h-full'>
 							<span className='text-sm sans'>Already have an account?</span>
 							<span
 								onClick={() => setRegisterShown(false)}

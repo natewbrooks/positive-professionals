@@ -2,6 +2,7 @@ import React, { useState, useEffect, useLayoutEffect, useCallback } from 'react'
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import SigninButton from '../sign in/SigninButton';
 import NavDropdownItem from './NavDropdownItem';
+import SigninModal from '../sign in/SigninModal';
 import { useLocation } from '@reach/router';
 import logo from '../../img/logo/pp-logo-bg.svg';
 import { useModal } from '../ModalContext';
@@ -107,12 +108,13 @@ export default function Navbar() {
 				aria-label='main-navigation'>
 				<div className='flex flex-col -space-y-1'>
 					<div
-						className={`flex w-full h-fit justify-center items-center translate-y-[-2px] py-[.35rem] bg-secondary`}>
+						className={`flex w-full h-fit justify-center items-center translate-y-[-2px] py-[.45rem] bg-secondary`}>
 						<div className='flex flex-col items-center cursor-pointer  group md:hover:opacity-50 md:active:scale-95 w-fit'>
 							<div
 								style={{
 									maxHeight: hasScrolled ? '0px' : '20px',
 									transform: hasScrolled ? 'translateY(-4rem)' : 'translateY(0px)',
+									paddingBottom: hasScrolled ? '0px' : '4px',
 								}}
 								className={`transform transition-all duration-500 ease-in-out flex justify-center items-end space-x-2`}>
 								<BsEnvelopeFill
@@ -129,7 +131,12 @@ export default function Navbar() {
 								/>
 							</div>
 							<span className={`leading-tight sans text-xs text-light dark:text-dark xbold`}>
-								CONTACT US
+								READY TO SCHEDULE?{' '}
+								<span
+									className={`ml-1 px-1 leading-none bg-light dark:bg-dark text-secondary text-xs rounded-sm`}>
+									{' '}
+									CONTACT US.
+								</span>
 							</span>
 						</div>
 					</div>
@@ -153,7 +160,7 @@ export default function Navbar() {
 										width: '100px',
 									}}
 									className={`${
-										hasScrolled ? 'null:translate-y-10 md:translate-y-0' : 'pt-[0.1rem] '
+										hasScrolled ? 'null:translate-y-10' : 'pt-[0.1rem] '
 									} relative transition-all duration-[600ms] ease-in-out flex text-xs text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
 									<span className='sans xbold'>POSITIVE</span>
 									<span className='sans'>PROFESSIONALS</span>
@@ -168,7 +175,7 @@ export default function Navbar() {
 									title={`Go to ${link.title}`}
 									onAnchorLinkClick={() => setActiveHash(link.hash)}
 									className={`w-full h-full hidden lg:block sans transition-all duration-[300ms] text-dark dark:text-light/60 text-sm px-2 ${
-										hasScrolled ? 'null:py-4' : 'null:py-6'
+										hasScrolled ? 'null:py-4' : 'null:py-7'
 									} border-b-[3px]  text-nowrap ${
 										isHashActive(link.hash)
 											? ' border-four hover:border-four'
@@ -227,6 +234,7 @@ export default function Navbar() {
 						</div>
 					</div>
 				</div>
+				{/* MOBILE */}
 				<div
 					style={{
 						transform: isBurgerNavShown ? `translateY(0px)` : `translateY(-100%)`,
@@ -263,6 +271,7 @@ export default function Navbar() {
 					/>
 				</div>
 			</nav>
+			<SigninModal modalId={'signIn'} />
 		</>
 	);
 }

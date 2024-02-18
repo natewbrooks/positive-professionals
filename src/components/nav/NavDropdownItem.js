@@ -34,7 +34,7 @@ export default function NavDropdownItem({
 				<div
 					onClick={() => toggleDropdown(!isOpen)}
 					className={`cursor-pointer w-full h-full hidden lg:flex items-center sans transition-all duration-[300ms] text-dark dark:text-light/60 text-sm px-2  ${
-						hasScrolled ? 'null:py-4' : 'null:py-6'
+						hasScrolled ? 'null:py-4' : 'null:py-7'
 					}  border-b-[3px]  text-nowrap ${
 						isHashActive(hash) ? ' border-four hover:border-four' : ' border-transparent'
 					}`}>
