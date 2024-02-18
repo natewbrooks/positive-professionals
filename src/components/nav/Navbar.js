@@ -105,8 +105,9 @@ export default function Navbar() {
 				} transform transition-all duration-300 ease-in-out fixed bg-light dark:bg-dark w-full z-30 drop-shadow-md overflow-visible`}
 				role='navigation'
 				aria-label='main-navigation'>
-				<div className='flex flex-col'>
-					<div className={`flex w-full h-fit justify-center items-center py-1 bg-secondary`}>
+				<div className='flex flex-col -space-y-1'>
+					<div
+						className={`flex w-full h-fit justify-center items-center translate-y-[-2px] py-[.35rem] bg-secondary`}>
 						<div className='flex flex-col items-center cursor-pointer  group md:hover:opacity-50 md:active:scale-95 w-fit'>
 							<div
 								style={{
@@ -152,7 +153,7 @@ export default function Navbar() {
 										width: '100px',
 									}}
 									className={`${
-										hasScrolled ? 'null:translate-y-10 md:translate-y-0' : ''
+										hasScrolled ? 'null:translate-y-10 md:translate-y-0' : 'pt-[0.1rem] '
 									} relative transition-all duration-[600ms] ease-in-out flex text-xs text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
 									<span className='sans xbold'>POSITIVE</span>
 									<span className='sans'>PROFESSIONALS</span>
