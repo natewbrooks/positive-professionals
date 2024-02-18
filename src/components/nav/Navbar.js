@@ -105,16 +105,15 @@ export default function Navbar() {
 				} transform transition-all duration-300 ease-in-out fixed bg-light dark:bg-dark w-full z-30 drop-shadow-md overflow-visible`}
 				role='navigation'
 				aria-label='main-navigation'>
-				<div className='flex flex-col items-center'>
-					<div
-						className={`transform transition-all duration-300 flex w-full h-fit justify-center items-center py-1 bg-secondary`}>
+				<div className='flex flex-col'>
+					<div className={`flex w-full h-fit justify-center items-center py-1 bg-secondary`}>
 						<div className='flex flex-col items-center cursor-pointer  group md:hover:opacity-50 md:active:scale-95 w-fit'>
 							<div
 								style={{
-									maxHeight: hasScrolled ? '0px' : '30px',
+									maxHeight: hasScrolled ? '0px' : '20px',
 									transform: hasScrolled ? 'translateY(-4rem)' : 'translateY(0px)',
 								}}
-								className={`transform transition-all duration-500 ease-in-out flex w-fit h-fit justify-center items-end space-x-2`}>
+								className={`transform transition-all duration-500 ease-in-out flex justify-center items-end space-x-2`}>
 								<BsEnvelopeFill
 									size={14}
 									className='select-none text-light dark:text-dark'
@@ -124,7 +123,7 @@ export default function Navbar() {
 									className='select-none text-light dark:text-dark'
 								/>
 								<BsMailbox2Flag
-									size={16}
+									size={15}
 									className='select-none text-light dark:text-dark'
 								/>
 							</div>
