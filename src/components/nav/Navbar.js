@@ -112,12 +112,9 @@ export default function Navbar() {
 							<div
 								style={{
 									maxHeight: hasScrolled ? '0px' : '30px',
-									paddingTop: hasScrolled ? '0px' : '2px',
-									transform: hasScrolled ? 'translateY(-50px)' : 'translateY(0px)',
+									transform: hasScrolled ? 'translateY(-4rem)' : 'translateY(0px)',
 								}}
-								className={`${
-									hasScrolled ? 'max-h-0' : 'max-h-full'
-								} transform transition-all duration-500 ease-in-out flex w-fit h-fit justify-center items-center space-x-2`}>
+								className={`transform transition-all duration-500 ease-in-out flex w-fit h-fit justify-center items-end space-x-2`}>
 								<BsEnvelopeFill
 									size={14}
 									className='select-none text-light dark:text-dark'
