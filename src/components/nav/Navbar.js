@@ -154,9 +154,10 @@ export default function Navbar() {
 									style={{
 										maxHeight: hasScrolled ? '0px' : '30px',
 										width: '100px',
-										paddingTop: hasScrolled ? '0px' : '2px',
 									}}
-									className={`relative transition-all duration-[600ms] ease-in-out flex text-xs text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
+									className={`${
+										hasScrolled ? 'null:translate-y-10 md:translate-y-0' : ''
+									} relative transition-all duration-[600ms] ease-in-out flex text-xs text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
 									<span className='sans xbold'>POSITIVE</span>
 									<span className='sans'>PROFESSIONALS</span>
 								</div>
