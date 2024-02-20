@@ -1,34 +1,38 @@
-import React, { useState } from 'react';
-import SigninModal from '../sign in/SigninModal';
+import React, { useState, useEffect } from 'react';
 import { useModal } from '../ModalContext';
 import { FaUserCircle } from 'react-icons/fa';
+import useUserData from './useUserData';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-export default function SigninButton({ isLoggedIn, userData, onLogin, onLogout }) {
-	const [isModalOpen, setModalOpen] = useState(false);
+export default function SigninButton() {
+	const { userData } = useUserData();
 	const { openModal } = useModal();
+	const [user, setUser] = useState(null);
+
+	useEffect(() => {
+		const unsubscribe = onAuthStateChanged(getAuth(), (currentUser) => {
+			setUser(currentUser);
+		});
+
+		return () => unsubscribe();
+	}, []);
+
+	console.log(userData);
+	console.log(user);
 
 	const handleLogin = () => {
-		try {
-			//
-			openModal('signIn');
-		} catch (error) {
-			console.error('Error during login:', error);
-		}
+		openModal('logIn');
 	};
 
 	const handleLogout = () => {
-		try {
-			//
-		} catch (error) {
-			console.error('Error during logout:', error);
-		}
+		openModal('logOut');
 	};
 
 	return (
 		<>
 			<div
 				onClick={() => {
-					isLoggedIn ? handleLogout() : handleLogin();
+					user ? handleLogout() : handleLogin();
 				}}
 				className='cursor-pointer active:scale-95 select-none flex items-center w-fit space-x-2'>
 				<FaUserCircle
@@ -36,7 +40,9 @@ export default function SigninButton({ isLoggedIn, userData, onLogin, onLogout }
 					className='text-dark dark:text-light/60'
 				/>
 				<h2 className='sans text-dark dark:text-light/60 hidden sm:block text-xs text-nowrap xbold'>
-					{!isLoggedIn ? 'SIGN IN' : 'SIGN OUT'}
+					{user && userData
+						? userData.firstName[0].toUpperCase() + '. ' + userData.lastName.toUpperCase()
+						: 'SIGN IN'}
 				</h2>
 			</div>
 		</>

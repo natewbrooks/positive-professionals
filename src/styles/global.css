@@ -52,9 +52,12 @@
     clip-path: polygon(-1000% 0, 1000% 0, 1000% 100%, -1000% 100%);
 }
 
+
+
 .gatsby-image-wrapper {
     position: relative !important;
 }
+
 
 @keyframes scroll {
     0% {

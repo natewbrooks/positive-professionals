@@ -101,14 +101,12 @@ export default function Navbar() {
 	return (
 		<>
 			<nav
-				className={`${
-					isNavbarVisible ? 'null:translate-y-0' : 'null:-translate-y-full'
-				} transform transition-all duration-300 ease-in-out fixed bg-light dark:bg-dark w-full z-30 drop-shadow-md overflow-visible`}
+				className={`transform transition-all duration-300 ease-in-out fixed bg-light dark:bg-dark w-full z-30 drop-shadow-md overflow-visible`}
 				role='navigation'
 				aria-label='main-navigation'>
 				<div className='flex flex-col -space-y-1'>
 					<div
-						className={`flex w-full h-fit justify-center items-center translate-y-[-2px] py-[.45rem] bg-secondary`}>
+						className={`flex w-full h-fit justify-center items-center translate-y-[-2px] py-[.45rem] bg-four`}>
 						<div className='flex flex-col items-center cursor-pointer  group md:hover:opacity-50 md:active:scale-95 w-fit'>
 							<div
 								style={{
@@ -133,7 +131,7 @@ export default function Navbar() {
 							<span className={`leading-tight sans text-xs text-light dark:text-dark xbold`}>
 								READY TO SCHEDULE?{' '}
 								<span
-									className={`ml-1 px-1 leading-none bg-light dark:bg-dark text-secondary text-xs rounded-sm`}>
+									className={`ml-1 px-1 leading-none bg-light dark:bg-dark text-four text-xs rounded-sm`}>
 									{' '}
 									CONTACT US.
 								</span>

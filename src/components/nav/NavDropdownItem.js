@@ -46,7 +46,7 @@ export default function NavDropdownItem({
 					/>
 				</div>
 				<div
-					className={`-z-40 flex space-x-4 justify-center transition-all duration-300 w-full absolute bottom-0 left-0 ${
+					className={`-z-40 flex space-x-4 justify-center transition-all duration-300 w-full absolute bottom-1 left-0 ${
 						isOpen ? 'translate-y-full' : 'translate-y-0'
 					} bg-dark dark:bg-darkAccent rounded-b-md `}>
 					{items.map(({ label, href }, index) => (

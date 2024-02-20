@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useModal } from '../ModalContext';
-import Modal from '../Modal';
 
 export default function ServicesItem({ service, modalId }) {
 	const { openModal } = useModal();
@@ -25,13 +24,6 @@ export default function ServicesItem({ service, modalId }) {
 					</div>
 				</div>
 			</div>
-			<Modal modalId={modalId}>
-				<div className='flex w-full h-full text-dark dark:text-light/70 '>
-					<div className='flex flex-col'>
-						<span className='text-xl serif'>{service.title}</span>
-					</div>
-				</div>
-			</Modal>
 		</>
 	);
 }

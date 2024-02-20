@@ -1,7 +1,5 @@
 import React from 'react';
-import groupIcon from '../../img/services/groupIcon.svg';
-import oneononeIcon from '../../img/services/oneononeIcon.svg';
-import workshopIcon from '../../img/services/workshopIcon.svg';
+import Modal from '../Modal';
 import {
 	FaUserTie,
 	FaUsersCog,
@@ -65,20 +63,20 @@ export default function ServicesSection({ content }) {
 		<section
 			id='services'
 			className='relative w-full h-full'>
-			<div className='z-0 absolute w-full h-full left-0'>
+			<div className='z-[1] absolute w-full h-full left-0'>
 				<img
 					src={waveTop}
 					alt='Services wave top bg'
-					style={{ transform: 'translateY(-80%)' }}
-					className='absolute w-full h-fit top-0 -z-[10] '></img>
-				<div className='absolute bg-tertiary w-full h-full -z-[1]'></div>
+					style={{ transform: 'translateY(-90%)' }}
+					className='absolute w-full h-fit top-0 z-[-1] '></img>
+				<div className='absolute w-full h-full bg-tertiary '></div>
 				<img
 					src={waveBottom}
 					alt='Services wave bottom bg'
-					className='translate-y-[75%] absolute w-full h-fit bottom-0 -z-[10]'></img>
+					className='translate-y-[90%] absolute w-full h-fit bottom-0 z-[-1]'></img>
 			</div>
 
-			<div className='z-10 text-dark w-full h-full flex flex-col space-y-4 null:py-8 md:py-0'>
+			<div className='text-dark w-full h-full flex flex-col space-y-4 null:py-8 md:py-0'>
 				<div className='z-10 flex flex-col text-start -space-y-1 leading-tight'>
 					<span className='sans text-sm'>WHAT WE CAN DO FOR YOU</span>
 					<span className='serif text-xxl'>Our services</span>
@@ -91,19 +89,28 @@ export default function ServicesSection({ content }) {
 					Increase personal energy and resilience by aligning actions and values. Delight customers
 					with exceptional listening, collaboration, and innovation skills.
 				</span>
-				<div className='z-10 text-dark grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1 h-full'>
+				<div className='text-dark grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1 h-full'>
 					{services.map((service, index) => (
-						<div className={`rounded-sm bg-light/30 dark:bg-dark/50`}>
-							<ServicesItem
-								key={index}
-								service={service}
-								modalId={'service' + index}
-							/>
-						</div>
+						<>
+							<div className={`w-full h-full z-10 rounded-sm bg-light/30 dark:bg-dark/50`}>
+								<ServicesItem
+									key={index}
+									service={service}
+									modalId={'service' + index}
+								/>
+							</div>
+							<Modal modalId={'service' + index}>
+								<div className='flex w-full h-full text-dark dark:text-light/70 '>
+									<div className='flex flex-col'>
+										<span className='text-xl serif'>{service.title}</span>
+									</div>
+								</div>
+							</Modal>
+						</>
 					))}
 				</div>
 
-				<div className='w-full text-center'>
+				<div className='z-10 w-full text-center'>
 					<span className='text-dark/50 sans text-md select-none'>
 						Click a service to learn more!
 					</span>
