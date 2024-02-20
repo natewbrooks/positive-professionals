@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useModal } from '../ModalContext';
+import { useModal } from '../../contexts/ModalContext';
 
 export default function ServicesItem({ service, modalId }) {
 	const { openModal } = useModal();

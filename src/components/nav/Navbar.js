@@ -5,7 +5,7 @@ import NavDropdownItem from './NavDropdownItem';
 import SigninModal from '../sign in/SigninModal';
 import { useLocation } from '@reach/router';
 import logo from '../../img/logo/pp-logo-bg.svg';
-import { useModal } from '../ModalContext';
+import { useModal } from '../../contexts/ModalContext';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import { BsEnvelopeFill, BsArrowRight, BsMailbox2Flag } from 'react-icons/bs';

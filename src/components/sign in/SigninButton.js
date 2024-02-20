@@ -1,23 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useModal } from '../ModalContext';
+import { useModal } from '../../contexts/ModalContext';
 import { FaUserCircle } from 'react-icons/fa';
-import useUserData from './useUserData';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { navigate } from 'gatsby';
 import LocalModal from '../LocalModal';
+import { useUser } from '../../contexts/UserContext';
 
 export default function SigninButton({ hasScrolled }) {
-	const { userData } = useUserData();
+	const { user, userData } = useUser();
 	const { openModal, closeModal, currentModal } = useModal();
-	const [user, setUser] = useState(null);
-
-	useEffect(() => {
-		const unsubscribe = onAuthStateChanged(getAuth(), (currentUser) => {
-			setUser(currentUser);
-		});
-
-		return () => unsubscribe();
-	}, []);
 
 	const handleLogin = () => {
 		openModal('logIn');
@@ -56,7 +46,7 @@ export default function SigninButton({ hasScrolled }) {
 					size={18}
 					className='text-dark dark:text-light/60'
 				/>
-				<h2 className='sans text-dark dark:text-light/60 hidden sm:block text-xs text-nowrap xbold'>
+				<h2 className='sans text-dark dark:text-light/60 hidden sm:block text-sm text-nowrap xbold'>
 					{user && userData
 						? userData.firstName[0].toUpperCase() + '. ' + userData.lastName.toUpperCase()
 						: 'SIGN IN'}
@@ -75,7 +65,7 @@ export default function SigninButton({ hasScrolled }) {
 							<span
 								key={x + index}
 								onClick={() => handleModalAction(x.action)}
-								className={`border-b-[3px] border-transparent hover:border-primary py-2 px-1 sans xbold text-md text-dark dark:text-light/70 whitespace-nowrap md:hover:opacity-50 md:active:scale-95`}>
+								className={`border-b-[3px] border-transparent hover:border-primary py-2 px-1 sans xbold text-md text-dark dark:text-light/70 cursor-pointer whitespace-nowrap md:hover:opacity-50 md:active:scale-95`}>
 								{x.label.toUpperCase()}
 							</span>
 						))}

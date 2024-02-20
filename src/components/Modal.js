@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { FaXmark } from 'react-icons/fa6';
-import { useModal } from './ModalContext';
+import { useModal } from '../contexts/ModalContext';
 
 export default function Modal({ children, modalId }) {
 	const { currentModal, closeModal } = useModal();

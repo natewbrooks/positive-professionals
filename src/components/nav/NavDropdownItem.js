@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { useEffect } from 'react';
-import { useModal } from '../ModalContext';
+import { useModal } from '../../contexts/ModalContext';
 
 export default function NavDropdownItem({
 	index,

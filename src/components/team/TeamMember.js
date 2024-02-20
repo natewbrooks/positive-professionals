@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import TeamMemberModal from './TeamMemberModal';
-import { useModal } from '../ModalContext';
+import { useModal } from '../../contexts/ModalContext';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function TeamMember({ member, color, modalId, className, isLastItem }) {

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from '../Modal';
-import { useModal } from '../ModalContext';
-
+import { useModal } from '../../contexts/ModalContext';
 import app from 'gatsby-plugin-firebase-v9.0';
 import {
 	getAuth,
@@ -20,31 +19,15 @@ export default function SigninModal({ showSignin }) {
 	const [lastName, setLastName] = useState('');
 	const [phoneNumber, setPhoneNumber] = useState('');
 	const [passwordShown, setPasswordShown] = useState(false);
-
 	const [errorMsg, setErrorMsg] = useState('');
 
-	const usersDB = getFirestore();
-	const auth = getAuth();
 	const { openModal, closeModal, currentModal } = useModal();
+	const auth = getAuth();
+	const usersDB = getFirestore(app);
 
 	useEffect(() => {
 		setErrorMsg('');
 	}, [currentModal]);
-
-	useEffect(() => {
-		const unsubscribe = auth.onAuthStateChanged((user) => {
-			if (user) {
-				// User is signed in, you can use user object here
-				console.log(user.email);
-			} else {
-				// User is signed out
-				console.log('No user is signed in.');
-			}
-		});
-
-		// Cleanup subscription on component unmount
-		return () => unsubscribe();
-	}, []);
 
 	const handleLogin = async (e) => {
 		e.preventDefault();

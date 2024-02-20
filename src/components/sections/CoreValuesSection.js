@@ -10,7 +10,7 @@ import {
 import CoreValuesItem from '../core values/CoreValueItem';
 import waveTop from '../../img/bg-waves/core-value-waves/wave-top.svg';
 import waveBottom from '../../img/bg-waves/core-value-waves/wave-bottom.svg';
-import { useModal } from '../ModalContext';
+import { useModal } from '../../contexts/ModalContext';
 import Modal from '../Modal';
 
 const coreValues = [FaHammer, FaLightbulb, FaHandshake, FaTrophy, FaUsers, FaBalanceScale];
