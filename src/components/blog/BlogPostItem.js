@@ -49,11 +49,11 @@ export default function BlogPostItem({ post, searchTerm }) {
 			to={post.slug}
 			className='group md:hover:opacity-80 w-full h-full justify-center items-center relative  duration-300 transition-colors'>
 			<div className='w-full h-full justify-center items-center flex flex-col'>
-				<div className='w-full h-full flex flex-col'>
+				<div className='leading-snug w-full h-full flex flex-col'>
 					<div className='h-fit cursor-pointer flex flex-col'>
-						<div className='flex space-x-1 '>
+						<div className='flex space-x-1 pb-1'>
 							{isNewPost() && (
-								<div className='bg-secondary rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark'>
+								<div className='bg-four dark:bg-light rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark'>
 									NEW
 								</div>
 							)}
@@ -61,11 +61,11 @@ export default function BlogPostItem({ post, searchTerm }) {
 							<div
 								className={`${
 									post.featuredpost ? 'visible' : 'invisible'
-								} bg-four rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark`}>
+								} bg-secondary dark:bg-primary rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark`}>
 								FEATURED
 							</div>
 						</div>
-						<div className='flex flex-col w-full overflow-hidden '>
+						<div className='flex flex-col w-full overflow-hidden space-y-1'>
 							<div className='w-full flex flex-col text-dark/50 dark:text-light/50'>
 								<span className='w-full sans text-sm xbold text-nowrap'>
 									PUBLISHED {dateHighlighted}
@@ -77,7 +77,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 								)}
 							</div>
 							<span
-								className={`h-[54px] text-dark dark:text-light/70 overflow-hidden w-full sans text-lg xbold leading-snug xbold line-clamp-2`}>
+								className={`h-[52px] text-dark dark:text-light/70 overflow-hidden w-full sans text-lg xbold leading-snug xbold line-clamp-2`}>
 								{titleHighlighted}
 							</span>
 						</div>
@@ -98,7 +98,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 						</div>
 
 						<div
-							className={`max-h-[200px] transform transition-all duration-300 py-1  text-dark dark:text-light/50 w-fit sans text-sm line-clamp-4`}>
+							className={`max-h-[80px] transform transition-all duration-300 py-1  text-dark dark:text-light/50 w-fit sans text-sm line-clamp-4`}>
 							{descriptionHighlighted}
 						</div>
 					</div>

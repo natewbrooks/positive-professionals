@@ -70,12 +70,14 @@ export default function SigninModal({ showSignin }) {
 		try {
 			const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 			const user = userCredential.user;
+			const date = new Date();
 
 			await setDoc(doc(usersDB, 'users', user.uid), {
 				firstName: firstName,
 				lastName: lastName,
 				phoneNumber: phoneNumber,
 				email: email, // Storing email in Firestore as well, though it's already in Auth
+				creationDate: date, // Store account creation date
 			});
 
 			closeModal();

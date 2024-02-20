@@ -31,7 +31,7 @@ export default function TeamMember({ member, color, modalId, className, isLastIt
 					)}
 				</div>
 				<div
-					className={`bg-light dark:bg-dark pt-1 w-full h-full flex flex-col text-start pb-1 border-b-2 border-${color} leading-tight`}
+					className={`bg-light dark:bg-dark pt-1 w-full h-full flex flex-col text-start pb-1 border-b-2 border-${color} leading-snug`}
 					onClick={() => openModal(modalId)}>
 					<span className='sans xbold text-lg dark:text-light/80'>{member.name}</span>
 					<span className='sans text-sm'>{member.position}</span>

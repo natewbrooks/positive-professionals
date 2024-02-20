@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 hero:
-  header: 'Transforming intentions into results, together.'
+  header: 'Transforming intentions into results,'
   subtext: Start actualizing your dreams today
 whoWeAre:
   body: "Positive Professionals is a group of experienced coaches with a diverse set of backgrounds. Our team of seasoned coaches brings a wealth of diverse experiences to the table. We're not just a group of professionals; we're a close-knit team with backgrounds in senior executive roles, engineering, program management, and government. Diversity, Equity & Belonging (DEB) is our forte, and we're passionate about individual and team coaching.\n\nEach coach has tackled the challenges of building multidisciplinary teams, negotiated alliances, developed motivating visions, led large organizations, turned around poor performers, and driven change to achieve unprecedented mission successes. But our story is about more than professional achievements. Our\r proudest accomplishments and greatest joys center\r around our families.\n"
@@ -140,7 +140,7 @@ coreValues:
         improvement and excellence, even in the face of challenges and setbacks.
         We see persistence as a multi-dimensional trait that encompasses several
         key aspects.
-      name: Persistence
+      name: Collaboration
       reasons:
         - explanation: >-
             In the fast-paced and often unpredictable business environment,
@@ -194,7 +194,7 @@ coreValues:
         that fostering an innovative mindset is crucial for navigating the
         complexities of today’s business environment and for driving
         forward-thinking strategies.
-      name: Innovation
+      name: Curiosity
       reasons:
         - explanation: >-
             Innovation thrives on creative thinking. It encourages individuals
@@ -223,7 +223,7 @@ coreValues:
         integrity as a non-negotiable trait for leaders, ensuring decisions are
         made with honesty and transparency, thereby building a culture of trust
         within the organization.
-      name: Integrity
+      name: Growth
       reasons:
         - explanation: >-
             Integrity is foundational to building trust within and outside an
@@ -251,7 +251,7 @@ coreValues:
         potential. This relentless pursuit of excellence ensures that our
         clients not only meet but exceed their goals, setting new standards in
         their respective industries.
-      name: Excellence
+      name: Integrity
       reasons:
         - explanation: >-
             Excellence motivates individuals and teams to achieve the highest
@@ -277,7 +277,7 @@ coreValues:
         building strong teams where diverse ideas and perspectives are valued,
         leading to innovative solutions and a more cohesive organizational
         culture.
-      name: Collaboration
+      name: Respect
       reasons:
         - explanation: >-
             Collaboration enables teams to achieve goals more efficiently. By
@@ -304,7 +304,7 @@ coreValues:
         thought and experience. Respect in leadership translates to a more
         engaged and motivated workforce, where everyone feels valued and part of
         the organization’s success.
-      name: Respect
+      name: Well-being
       reasons:
         - explanation: >-
             Respect is crucial for creating an inclusive workplace. It ensures

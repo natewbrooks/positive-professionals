@@ -128,7 +128,7 @@ export default function Navbar() {
 									className='select-none text-light dark:text-dark'
 								/>
 							</div>
-							<span className={`leading-tight sans text-xs text-light dark:text-dark xbold`}>
+							<span className={`leading-snug sans text-xs text-light dark:text-dark xbold`}>
 								READY TO SCHEDULE?{' '}
 								<span
 									className={`ml-1 px-1 leading-none bg-light dark:bg-dark text-four text-xs rounded-sm`}>

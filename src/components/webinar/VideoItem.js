@@ -46,22 +46,20 @@ export default function VideoItem({ video, searchTerm }) {
 	}
 
 	return (
-		<div className='w-full h-full flex flex-col'>
+		<div className='leading-snug w-full h-full flex flex-col'>
 			<AnchorLink
 				to={video.slug}
 				className='md:hover:opacity-70 flex flex-col h-fit w-full rounded-b-md'>
 				<div className='pb-2 w-full flex flex-col text-dark/50 dark:text-light/50'>
 					<div className='flex space-x-1 '>
 						{isNewVideo() && (
-							<div className='bg-secondary rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark'>
-								NEW
-							</div>
+							<div className='bg-light rounded-md px-2 mb-1 text-xs sans xbold text-dark'>NEW</div>
 						)}
 
 						<div
 							className={`${
 								video.featuredpost ? 'visible' : 'invisible'
-							} bg-four rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark`}>
+							} bg-secondary dark:bg-primary rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark`}>
 							FEATURED
 						</div>
 					</div>
@@ -74,7 +72,7 @@ export default function VideoItem({ video, searchTerm }) {
 						</span>
 					)}
 					<span
-						className={`dark:text-light/70 text-dark h-[54px] sans text-lg xbold leading-snug line-clamp`}>
+						className={`pt-1 dark:text-light/70 text-dark h-[55px] sans text-lg xbold leading-snug line-clamp`}>
 						{titleHighlighted}
 					</span>
 				</div>

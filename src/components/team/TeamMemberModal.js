@@ -57,7 +57,7 @@ export default function TeamMemberModal({ member }) {
 						</div>
 					</div>
 				</div>
-				<div className='null:w-full lg:w-[800px] flex flex-col overflow-y-auto'>
+				<div className='leading-snug null:w-full lg:w-[800px] flex flex-col overflow-y-auto'>
 					<div className='flex flex-col space-y-1 border-l-4 p-4 border-primary'>
 						<span className='sans text-sm xbold dark:text-light/80 '>CAREER BACKGROUND</span>
 						<span className='sans text-md'>{member.careerBackground}</span>

@@ -77,11 +77,11 @@ export default function ServicesSection({ content }) {
 			</div>
 
 			<div className='text-dark w-full h-full flex flex-col space-y-4 null:py-8 md:py-0'>
-				<div className='z-10 flex flex-col text-start -space-y-1 leading-tight'>
+				<div className='z-10 flex flex-col text-start -space-y-1 leading-snug'>
 					<span className='sans text-sm'>WHAT WE CAN DO FOR YOU</span>
 					<span className='serif text-xxl'>Our services</span>
 				</div>
-				<span className='z-10 sans text-lg'>
+				<span className='z-10 sans text-lg leading-snug'>
 					We help you recognize and overcome self-sabotaging behaviors of self-doubt, worry,
 					perfectionism, overachievement, micromanagement, and imposter syndrome. Embrace
 					alternative perspectives, see new possibilities, and make value-centered decisions for
@@ -92,7 +92,8 @@ export default function ServicesSection({ content }) {
 				<div className='text-dark grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1 h-full'>
 					{services.map((service, index) => (
 						<>
-							<div className={`w-full h-full z-10 rounded-sm bg-light/30 dark:bg-dark/50`}>
+							<div
+								className={`md:group md:hover:opacity-80 transition-all duration-300 cursor-pointer select-none md:active:scale-95 flex justify-end items-end  w-full h-full z-10 rounded-sm bg-light/30 dark:bg-dark/50`}>
 								<ServicesItem
 									key={index}
 									service={service}

@@ -139,7 +139,7 @@ export default function TestimonialsSection({ data }) {
 	return (
 		<div className='relative w-full h-full pb-10'>
 			<div className='relative overflow-hidden w-full h-full flex justify-center items-center flex-col'>
-				<div className='w-full text-start py-2 leading-tight'>
+				<div className='w-full text-start py-2 leading-snug'>
 					<span className='sans text-sm text-dark dark:text-light/60'>TESTIMONIALS</span>
 				</div>
 

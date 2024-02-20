@@ -7,7 +7,7 @@ const TestimonialItem = forwardRef(({ id, testimonial, style, borderColor }, ref
 		<div
 			ref={ref}
 			id={'testimonial' + id}
-			className={`flex flex-col w-full h-full`}>
+			className={`leading-snug flex flex-col w-full h-full`}>
 			<div
 				style={style}
 				className={`w-full active:cursor-grabbing hover:cursor-grab ${borderColor} select-none rounded-l-sm h-full justify-center text-start relative flex flex-col -space-y-1 bg-dark/10 dark:bg-light/10 border-l-4 p-4 `}>

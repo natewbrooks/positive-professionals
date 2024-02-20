@@ -6,7 +6,7 @@ export default function WorkedWithSection({ content }) {
 		<div
 			id='workedWith'
 			className='flex flex-col space-y-4'>
-			<div className='flex flex-col leading-tight text-end'>
+			<div className='flex flex-col leading-snug text-end'>
 				<span className='text-dark dark:text-light/60 sans text-sm'>WHO WE'VE WORKED WITH</span>
 			</div>
 			<div className='flex justify-center w-full h-full p-4 rounded-md'>

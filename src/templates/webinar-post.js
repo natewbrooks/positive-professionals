@@ -62,7 +62,7 @@ export const WebinarPostTemplate = ({
 			{helmet || ''}
 			<section
 				id='video-post'
-				className='mt-[4rem]'>
+				className='leading-snug mt-[4rem]'>
 				<ResourcesNav
 					pageTitle={'Return'}
 					showTitle={false}
@@ -91,7 +91,7 @@ export const WebinarPostTemplate = ({
 						</div>
 						<div className='w-full h-full flex flex-col py-2'>
 							<div className='w-full flex flex-col border-b-2 border-dark/10 dark:border-light/10 pb-1'>
-								<div className='text-center null:text-lg md:text-xl sans xbold text-dark leading-tight dark:text-light/80 pb-2'>
+								<div className='text-center null:text-lg md:text-xl sans xbold text-dark leading-snug dark:text-light/80 pb-2'>
 									{title}
 								</div>
 							</div>

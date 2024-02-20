@@ -1,5 +1,6 @@
 import React from 'react';
 import heroWave from '../../img/bg-waves/hero-waves/hero.svg';
+import paintStroke from '../../img/paintStroke.svg';
 
 export default function Hero({ data }) {
 	return (
@@ -14,6 +15,12 @@ export default function Hero({ data }) {
 						<div className='relative flex flex-col -space-y-8'>
 							<span className='z-10 break-words null:w-fit sm:w-[500px] lg:w-[740px] leading-none serif null:text-xxxl mobile:text-billboard text-center xbold text-dark px-8 rounded-full'>
 								{data.header}
+								<span className='relative inline-block z-20 break-words null:w-fit leading-none serif null:text-xxxl mobile:text-billboard text-center xbold text-[#386975] py-1 px-8 rounded-full'>
+									<img
+										className='absolute w-full -scale-x-[160%] scale-y-[130%] h-full -translate-x-10 -z-[20]'
+										src={paintStroke}></img>
+									together.
+								</span>
 							</span>
 						</div>
 					</div>

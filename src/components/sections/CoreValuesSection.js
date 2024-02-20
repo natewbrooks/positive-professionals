@@ -35,7 +35,7 @@ export default function CoreValuesSection({ data }) {
 			</div>
 
 			<div className='flex flex-col space-y-4 items-center justify-center py-4'>
-				<div className='z-10 flex flex-col leading-tight w-full text-center'>
+				<div className='z-10 flex flex-col leading-snug w-full text-center'>
 					<span className='sans text-sm'>{data.subtext.toUpperCase()}</span>
 					<span className='serif text-xxl'>{data.header}</span>
 				</div>
@@ -53,10 +53,10 @@ export default function CoreValuesSection({ data }) {
 									/>
 								</div>
 								<Modal modalId={'coreValue' + index}>
-									<div className='z-30 w-full xxl:max-w-[600px] max-h-[90vh] h-full flex flex-col md:flex-row xxl:flex-col xxl:space-x-0 sm:space-x-4 justify-center items-center text-dark dark:text-light/70 py-4 overflow-hidden'>
+									<div className='leading-snug z-30 w-full xxl:max-w-[600px] max-h-[90vh] h-full flex flex-col md:flex-row xxl:flex-col xxl:space-x-0 sm:space-x-4 justify-center items-center text-dark dark:text-light/70 py-4 overflow-hidden'>
 										<div className='flex flex-col w-full h-fit'>
-											<div className='flex flex-col leading-tight pb-2'>
-												<span className='sans text-sm sm:text-md text-dark/50 dark:text-light/80 xbold text-center'>
+											<div className='flex flex-col -space-y-1 leading-snug pb-2'>
+												<span className='sans text-sm sm:text-md text-secondary xbold text-center'>
 													CORE VALUE
 												</span>
 												<span className='serif text-xl sm:text-xxl text-center'>
@@ -85,7 +85,7 @@ export default function CoreValuesSection({ data }) {
 						))}
 					</div>
 
-					<p className='z-10 sans text-lg text-center'>{data.body}</p>
+					<p className='z-10 sans text-lg text-center leading-snug'>{data.body}</p>
 				</div>
 			</div>
 		</section>
