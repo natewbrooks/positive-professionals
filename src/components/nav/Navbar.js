@@ -107,8 +107,8 @@ export default function Navbar() {
 				<div className='flex flex-col -space-y-1'>
 					<div
 						className={`flex w-full h-fit justify-center items-center translate-y-[-2px] py-[.45rem] bg-four`}>
-						<div className='flex flex-col items-center cursor-pointer  group md:hover:opacity-50 md:active:scale-95 w-fit'>
-							<div
+						<div className='flex flex-col items-center cursor-pointer group md:hover:opacity-50 md:active:scale-95 w-fit'>
+							{/* <div
 								style={{
 									maxHeight: hasScrolled ? '0px' : '20px',
 									transform: hasScrolled ? 'translateY(-4rem)' : 'translateY(0px)',
@@ -127,7 +127,7 @@ export default function Navbar() {
 									size={15}
 									className='select-none text-light dark:text-dark'
 								/>
-							</div>
+							</div> */}
 							<span className={`leading-snug sans text-xs text-light dark:text-dark xbold`}>
 								READY TO SCHEDULE?{' '}
 								<span
@@ -172,14 +172,14 @@ export default function Navbar() {
 									to={'/#' + link.hash}
 									title={`Go to ${link.title}`}
 									onAnchorLinkClick={() => setActiveHash(link.hash)}
-									className={`w-full h-full hidden lg:block sans transition-all duration-[300ms] text-dark dark:text-light/60 text-sm px-2 ${
+									className={`xbold w-full h-full hidden lg:block sans transition-all duration-[300ms] text-dark dark:text-light/60 text-sm px-2 ${
 										hasScrolled ? 'null:py-4' : 'null:py-7'
 									} border-b-[3px]  text-nowrap ${
 										isHashActive(link.hash)
 											? ' border-four hover:border-four'
 											: 'border-transparent hover:border-four/50'
 									}`}>
-									{link.title}
+									{link.title.toUpperCase()}
 								</AnchorLink>
 							))}
 							<div className='hidden lg:block'>
@@ -228,7 +228,7 @@ export default function Navbar() {
 								size={16}
 								className='select-none hidden dark:block text-light/70 cursor-pointer md:hover:opacity-50 active:scale-95'
 							/>
-							<SigninButton />
+							<SigninButton hasScrolled={hasScrolled} />
 						</div>
 					</div>
 				</div>

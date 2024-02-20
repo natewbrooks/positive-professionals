@@ -5,7 +5,7 @@ import paintStroke from '../../img/paintStroke.svg';
 export default function Hero({ data }) {
 	return (
 		<>
-			<header className='z-10 relative flex justify-center items-center w-full h-fit pt-24 pb-12 null:mb-[10rem] sm:mb-[10rem] md:mb-[14rem]  lg:mb-[12rem] xl:mb-[16rem] bg-tertiary'>
+			<header className='z-10 relative flex justify-center items-center w-full h-fit pt-32 pb-12 null:mb-[10rem] sm:mb-[10rem] md:mb-[14rem]  lg:mb-[12rem] xl:mb-[16rem] bg-tertiary'>
 				<img
 					className='absolute null:translate-y-[45%] lg:translate-y-[38%] bottom-0 w-full h-[300px] md:h-[450px] xxl:h-[500px]'
 					src={heroWave}></img>

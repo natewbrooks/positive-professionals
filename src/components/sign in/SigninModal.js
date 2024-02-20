@@ -10,7 +10,7 @@ import {
 	signOut,
 } from 'firebase/auth';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
-import { FaUserCircle } from 'react-icons/fa';
+import { FaUserCircle, FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function SigninModal({ showSignin }) {
 	const [registerShown, setRegisterShown] = useState(!showSignin);
@@ -19,6 +19,7 @@ export default function SigninModal({ showSignin }) {
 	const [firstName, setFirstName] = useState('');
 	const [lastName, setLastName] = useState('');
 	const [phoneNumber, setPhoneNumber] = useState('');
+	const [passwordShown, setPasswordShown] = useState(false);
 
 	const [errorMsg, setErrorMsg] = useState('');
 
@@ -47,7 +48,7 @@ export default function SigninModal({ showSignin }) {
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
-		console.log('EMAIL: ' + email + '\nPASSWORD: ' + password);
+		setPasswordShown(false);
 
 		try {
 			const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -66,6 +67,7 @@ export default function SigninModal({ showSignin }) {
 
 	const handleRegister = async (e) => {
 		e.preventDefault();
+		setPasswordShown(false);
 
 		try {
 			const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -91,6 +93,7 @@ export default function SigninModal({ showSignin }) {
 
 	const handleLogout = async (e) => {
 		e.preventDefault();
+		setPasswordShown(false);
 
 		try {
 			await signOut(auth);
@@ -123,11 +126,29 @@ export default function SigninModal({ showSignin }) {
 							</div>
 							<div className='flex flex-col'>
 								<span className='sans text-sm text-dark dark:text-light/80'>Password</span>
-								<input
-									type='password'
-									value={password}
-									onChange={(e) => setPassword(e.target.value)}
-									className='select-none dark:bg-light/10 bg-dark/10 rounded-md text-dark placeholder:text-dark dark:text-light/70 dark:placeholder:text-light/50 py-1 px-2 sans'></input>
+								<div className='flex w-full h-full items-center relative'>
+									<input
+										type={passwordShown ? 'text' : 'password'}
+										value={password}
+										onChange={(e) => setPassword(e.target.value)}
+										className='w-full select-none dark:bg-light/10 bg-dark/10 rounded-md text-dark placeholder:text-dark dark:text-light/70 dark:placeholder:text-light/50 py-1 pl-2 pr-10 sans'></input>
+
+									<div className='absolute inset-y-0 right-0 flex items-center pr-2'>
+										{passwordShown ? (
+											<FaEye
+												onClick={() => setPasswordShown(!passwordShown)}
+												size={20}
+												className='text-dark cursor-pointer dark:text-light/70 hover:opacity-50 active:scale-95'
+											/>
+										) : (
+											<FaEyeSlash
+												onClick={() => setPasswordShown(!passwordShown)}
+												size={20}
+												className='text-dark cursor-pointer dark:text-light/70 hover:opacity-50 active:scale-95'
+											/>
+										)}
+									</div>
+								</div>
 								<span className='text-end sans pt-1 text-xs xbold select-none cursor-pointer active:scale-95 text-secondary md:hover:opacity-50'>
 									FORGOT PASSWORD?
 								</span>
@@ -203,12 +224,31 @@ export default function SigninModal({ showSignin }) {
 									className='select-none dark:bg-light/10 bg-dark/10 rounded-md text-dark placeholder:text-dark dark:text-light/70 dark:placeholder:text-light/50 py-1 px-2 sans'></input>
 							</div>
 							<div className='flex flex-col'>
-								<span className='sans text-sm text-dark dark:text-light/80'>Password</span>
-								<input
-									type='password'
-									value={password}
-									onChange={(e) => setPassword(e.target.value)}
-									className='select-none dark:bg-light/10 bg-dark/10 rounded-md text-dark placeholder:text-dark dark:text-light/70 dark:placeholder:text-light/50 py-1 px-2 sans'></input>
+								<span className='sans text-sm text-dark dark:text-light/80 '>Password</span>
+
+								<div className='flex w-full h-full items-center relative'>
+									<input
+										type={passwordShown ? 'text' : 'password'}
+										value={password}
+										onChange={(e) => setPassword(e.target.value)}
+										className='w-full select-none dark:bg-light/10 bg-dark/10 rounded-md text-dark placeholder:text-dark dark:text-light/70 dark:placeholder:text-light/50 py-1 pl-2 pr-10 sans'></input>
+
+									<div className='absolute inset-y-0 right-0 flex items-center pr-2'>
+										{passwordShown ? (
+											<FaEye
+												onClick={() => setPasswordShown(!passwordShown)}
+												size={20}
+												className='text-dark cursor-pointer dark:text-light/70 hover:opacity-50 active:scale-95'
+											/>
+										) : (
+											<FaEyeSlash
+												onClick={() => setPasswordShown(!passwordShown)}
+												size={20}
+												className='text-dark cursor-pointer dark:text-light/70 hover:opacity-50 active:scale-95'
+											/>
+										)}
+									</div>
+								</div>
 							</div>
 						</div>
 						{errorMsg != '' && (
@@ -261,6 +301,7 @@ export default function SigninModal({ showSignin }) {
 								</span>
 							</div>
 						</div>
+
 						{errorMsg != '' && (
 							<div className='outline outline-2 max-w-[200px] text-center rounded-md outline-red-400 text-dark dark:text-light/70 xbold p-1 flex items-center justify-center sans text-xs'>
 								{errorMsg.toUpperCase()}

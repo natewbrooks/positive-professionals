@@ -33,21 +33,21 @@ export default function NavDropdownItem({
 			<div className='hidden lg:block w-full'>
 				<div
 					onClick={() => toggleDropdown(!isOpen)}
-					className={`cursor-pointer w-full h-full hidden lg:flex items-center sans transition-all duration-[300ms] text-dark dark:text-light/60 text-sm px-2  ${
+					className={`xbold cursor-pointer w-full h-full hidden lg:flex items-center sans transition-all duration-[300ms] text-dark dark:text-light/60 text-sm px-2  ${
 						hasScrolled ? 'null:py-4' : 'null:py-7'
 					}  border-b-[3px]  text-nowrap ${
 						isHashActive(hash) ? ' border-four hover:border-four' : ' border-transparent'
 					}`}>
-					{title}
+					{title.toUpperCase()}
 					<MdOutlineKeyboardArrowDown
-						className={`relative left-1 top-0 ${
+						className={`scale-[120%] relative left-1 top-0 ${
 							isOpen ? 'rotate-0' : 'rotate-180'
 						}  transition-transform duration-300`}
 					/>
 				</div>
 				<div
-					className={`-z-40 flex space-x-4 justify-center transition-all duration-300 w-full absolute bottom-1 left-0 ${
-						isOpen ? 'translate-y-full' : 'translate-y-0'
+					className={`-z-40 flex space-x-4 justify-center items-center transition-all duration-300 w-full absolute bottom-1 left-0 ${
+						isOpen ? 'translate-y-[105%]' : 'translate-y-0'
 					} bg-dark dark:bg-darkAccent rounded-b-md `}>
 					{items.map(({ label, href }, index) => (
 						<AnchorLink
@@ -58,8 +58,8 @@ export default function NavDropdownItem({
 								setActiveHash('#' + label.toLowerCase());
 								toggleDropdown(false);
 							}}
-							className='sans xbold p-4 text-xs text-light dark:text-light/70 flex justify-center items-center border-b-[3px]  border-dark dark:border-darkAccent hover:md:text-light/50 dark:md:hover:text-light/40 hover:border-primary dark:hover:border-primary'>
-							{label.toUpperCase()}
+							className='sans xbold p-4 text-xs text-light dark:text-light/70 flex justify-center items-center border-b-[3px]  border-dark dark:border-darkAccent hover:md:text-light/50 dark:md:hover:text-light/40 hover:border-secondary dark:hover:border-secondary'>
+							{label.toLowerCase()}
 						</AnchorLink>
 					))}
 				</div>
