@@ -38,7 +38,7 @@ const ResourcesGridLayout = ({ mediaItems }) => {
 					</div>
 					<input
 						type='text'
-						placeholder='SEARCH KEYWORDS...'
+						placeholder='Search keywords...'
 						value={searchTerm}
 						onChange={(e) => setSearchTerm(e.target.value)}
 						className='w-[180px] text-sm placeholder:text-sm text-start h-[30px] flex xbold sans px-2 border-2 border-l-0 border-dark dark:border-light/70 rounded-r-full outline-none bg-light dark:bg-dark text-dark placeholder:text-dark/50 dark:placeholder:text-light/50 dark:text-light/70'
