@@ -2,7 +2,6 @@ import React, { useState, useEffect, useLayoutEffect, useCallback } from 'react'
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import SigninButton from '../sign in/SigninButton';
 import NavDropdownItem from './NavDropdownItem';
-import SigninModal from '../sign in/SigninModal';
 import { useLocation } from '@reach/router';
 import logo from '../../img/logo/pp-logo-bg.svg';
 import { useModal } from '../../contexts/ModalContext';
@@ -104,7 +103,9 @@ export default function Navbar() {
 				className={`transform transition-all duration-300 ease-in-out fixed bg-light dark:bg-dark w-full z-30 drop-shadow-md overflow-visible`}
 				role='navigation'
 				aria-label='main-navigation'>
-				<div className='flex flex-col -space-y-1'>
+				<div
+					id='navbar'
+					className='flex flex-col -space-y-1'>
 					<div
 						className={`flex w-full h-fit justify-center items-center translate-y-[-2px] py-[.45rem] bg-four`}>
 						<div className='flex flex-col items-center cursor-pointer group md:hover:opacity-50 md:active:scale-95 w-fit'>
@@ -269,7 +270,6 @@ export default function Navbar() {
 					/>
 				</div>
 			</nav>
-			<SigninModal modalId={'signIn'} />
 		</>
 	);
 }

@@ -89,7 +89,7 @@ export default function SigninModal({ showSignin }) {
 	};
 
 	return (
-		<>
+		<div className='w-full h-full'>
 			<Modal modalId={'logIn'}>
 				<div className='flex flex-col null:space-y-12 md:space-y-4 w-full h-full justify-center items-center'>
 					<div className='flex flex-col text-center'>
@@ -298,6 +298,6 @@ export default function SigninModal({ showSignin }) {
 					</form>
 				</div>
 			</Modal>
-		</>
+		</div>
 	);
 }
