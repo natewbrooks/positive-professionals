@@ -53,7 +53,7 @@ export default function CoreValuesSection({ data }) {
 									/>
 								</div>
 								<Modal modalId={'coreValue' + index}>
-									<div className='leading-snug z-30 w-full xxl:max-w-[600px] max-h-[90vh] h-full flex flex-col md:flex-row xxl:flex-col xxl:space-x-0 sm:space-x-4 justify-center items-center text-dark dark:text-light/70 py-4 overflow-hidden'>
+									<div className='leading-snug z-30 w-full xxl:max-w-[600px] null:h-full md:max-h-[600px] flex flex-col md:flex-row xxl:flex-col xxl:space-x-0 sm:space-x-4 justify-center items-center text-dark dark:text-light/70 py-4 overflow-hidden'>
 										<div className='flex flex-col w-full h-fit'>
 											<div className='flex flex-col -space-y-1 leading-snug pb-2'>
 												<span className='sans text-sm sm:text-md text-secondary xbold text-center'>
