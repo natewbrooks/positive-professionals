@@ -19,14 +19,14 @@ export default function LocalModal({ children, modalId }) {
 					className='absolute z-50 flex justify-center items-center select-none'>
 					<div
 						onClick={(e) => e.stopPropagation()}
-						className='flex flex-col max-h-screen w-fit h-fit bg-light dark:bg-darkAccent p-5 md:rounded-lg'>
+						className='flex flex-col max-h-screen w-fit h-fit  bg-dark dark:bg-lightAccent p-5 rounded-lg'>
 						<div className='w-full justify-end text-end'>
 							<button
 								onClick={() => closeModal()}
 								className='serif text-md md:hover:opacity-50'>
 								<FaXmark
 									size={22}
-									className='text-dark dark:text-light/70'
+									className='text-light dark:text-dark'
 								/>
 							</button>
 						</div>

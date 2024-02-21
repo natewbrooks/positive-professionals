@@ -51,7 +51,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 			<div className='w-full h-full justify-center items-center flex flex-col'>
 				<div className='leading-snug w-full h-full flex flex-col'>
 					<div className='h-fit cursor-pointer flex flex-col'>
-						<div className='flex space-x-1 pb-1'>
+						<div className='flex space-x-1 pb-1 '>
 							{isNewPost() && (
 								<div className='bg-four dark:bg-light rounded-md px-2 mb-1 text-xs sans xbold text-light dark:text-dark'>
 									NEW
