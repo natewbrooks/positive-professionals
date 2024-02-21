@@ -15,6 +15,7 @@ export default function Modal({ children, modalId }) {
 
 			// Increase body's padding right by the scrollbar width to prevent layout shift
 			document.body.style.paddingRight = `${scrollbarWidth}px`;
+			document.getElementById('navbar').style.paddingRight = `${scrollbarWidth}px`;
 			if (modalElement) {
 				modalElement.style.transform = `translateX(-${scrollbarWidth}px)`;
 			}
@@ -25,6 +26,8 @@ export default function Modal({ children, modalId }) {
 			return () => {
 				if (currentModal === modalId) {
 					document.body.style.paddingRight = '0px';
+					document.getElementById('navbar').style.paddingRight = `0px`;
+
 					document.body.classList.remove('modalOpen');
 
 					document.documentElement.style.overflow = '';

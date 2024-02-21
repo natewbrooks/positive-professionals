@@ -7,6 +7,7 @@ import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
 import '/src/styles/global.css';
 import ContactSection from './sections/ContactSection';
+import SigninModal from './sign in/SigninModal';
 
 const TemplateWrapper = ({ children }) => {
 	const [navHeight, setNavHeight] = useState();
@@ -94,6 +95,8 @@ const TemplateWrapper = ({ children }) => {
 			<div
 				style={{ paddingTop: `${navHeight}px` }}
 				className='relative w-full h-full'>
+				<SigninModal modalId={'signIn'} />
+
 				{children}
 			</div>
 			<ContactSection />
