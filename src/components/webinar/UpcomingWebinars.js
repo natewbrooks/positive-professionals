@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
-import SigninModal from '../sign in/SigninModal';
+import React from 'react';
+import { useModal } from '../../contexts/ModalContext';
 import UpcomingWebinarItem from './UpcomingWebinarItem';
 import SeeMore from '../pieces/SeeMore';
 
 export default function UpcomingWebinars({ webinars }) {
-	const [isModalOpen, setModalOpen] = useState(false);
-
-	const openModal = () => setModalOpen(true);
-	const closeModal = () => {
-		setModalOpen(false);
-	};
+	const { openModal, closeModal, currentModal } = useModal();
 
 	return (
 		<>
@@ -19,7 +14,7 @@ export default function UpcomingWebinars({ webinars }) {
 					<span className='serif w-[480px] text-center'>next free weekly webinar.</span>
 				</div>
 				<div
-					onClick={() => openModal()}
+					onClick={() => openModal('register')}
 					className='null:text-md sm:text-lg bg-dark dark:bg-light/70 dark:text-darkAccent xbold select-none md:hover:opacity-50 active:scale-95 cursor-pointer text-light mt-20 p-2 rounded-md w-fit sans'>
 					REGISTER NOW
 				</div>
@@ -43,11 +38,6 @@ export default function UpcomingWebinars({ webinars }) {
 					))}
 				</div>
 			</div>
-			<SigninModal
-				isModalOpen={isModalOpen}
-				closeModal={closeModal}
-				showSignin={false}
-			/>
 		</>
 	);
 }
