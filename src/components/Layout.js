@@ -42,6 +42,28 @@ const TemplateWrapper = ({ children }) => {
 					content={description}
 				/>
 
+				{/* Preload Fonts */}
+				<link
+					rel='preload'
+					href='https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;700;800&display=swap'
+					as='style'
+				/>
+				<link
+					rel='preload'
+					href='https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@100;200;300;400;500;600;800&display=swap'
+					as='style'
+				/>
+
+				{/* Apply Fonts After Preload */}
+				<link
+					href='https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;700;800&display=swap'
+					rel='stylesheet'
+				/>
+				<link
+					href='https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@100;200;300;400;500;600;800&display=swap'
+					rel='stylesheet'
+				/>
+
 				<link
 					rel='apple-touch-icon'
 					sizes='180x180'

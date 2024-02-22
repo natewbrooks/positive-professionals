@@ -150,8 +150,8 @@ export default function Navbar() {
 							<div className='flex flex-col justify-center w-full h-full items-center'>
 								<img
 									src={logo}
-									alt='logo'
-									className='null:w-[40px] null:h-[40px] mobile:w-[42px] mobile:h-[42px] '
+									alt='positive professionals logo'
+									className='aspect-auto null:w-[40px] null:h-[40px] mobile:w-[42px] mobile:h-[42px] '
 								/>
 								<div
 									style={{

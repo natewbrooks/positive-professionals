@@ -33,7 +33,7 @@ export default function WhoWeAreSection({ data }) {
 			<div className='flex flex-col space-y-4'>
 				<div className='flex flex-col leading-snug '>
 					<span className='sans text-sm '>WHAT WE STAND FOR</span>
-					<span className='serif text-xxl dark:text-light/80'>Our mission</span>
+					<span className='serif text-xxl dark:text-light/80 leading-none'>Our mission</span>
 				</div>
 				<span className='leading-snug'>
 					{renderParagraphs(

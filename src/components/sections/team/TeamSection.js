@@ -10,7 +10,7 @@ export default function TeamSection({ data }) {
 			<div className='flex w-full flex-col leading-snug text-end'>
 				<span className='sans text-sm '>{data.subtext.toUpperCase()}</span>
 
-				<span className='text-xxl serif dark:text-light/80'>{data.header}</span>
+				<span className='text-xxl serif dark:text-light/80 leading-none'>{data.header}</span>
 			</div>
 
 			<TeamMembers
