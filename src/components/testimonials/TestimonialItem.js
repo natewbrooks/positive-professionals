@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react';
 import { FaUser } from 'react-icons/fa';
 
-const TestimonialItem = forwardRef(({ id, testimonial, style, borderColor, newId }, ref) => {
+const TestimonialItem = forwardRef(({ id, testimonial, style, borderColor }, ref) => {
 	// ${id === 0 ? testimonial.borderColorClass : 'border-red-400'}
 	return (
 		<div
 			ref={ref}
-			id={'testimonial' + newId}
+			id={'testimonial' + id}
 			className={`leading-snug flex flex-col w-full h-full`}>
 			<div
 				style={style}

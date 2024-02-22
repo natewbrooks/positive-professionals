@@ -27,7 +27,7 @@ const TemplateWrapper = ({ children }) => {
 			setNavHeight(navHeight);
 		}
 
-		return () => window.removeEventListener('resize', handleRefresh);
+		return window.removeEventListener('resize', handleRefresh);
 	}, [navHeight]);
 
 	const { title, description } = useSiteMetadata();
@@ -40,28 +40,6 @@ const TemplateWrapper = ({ children }) => {
 				<meta
 					name='description'
 					content={description}
-				/>
-
-				{/* Preload Fonts */}
-				<link
-					rel='preload'
-					href='https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;700;800&display=swap'
-					as='style'
-				/>
-				<link
-					rel='preload'
-					href='https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@100;200;300;400;500;600;800&display=swap'
-					as='style'
-				/>
-
-				{/* Apply Fonts After Preload */}
-				<link
-					href='https://fonts.googleapis.com/css2?family=Alegreya:wght@100;200;300;400;500;700;800&display=swap'
-					rel='stylesheet'
-				/>
-				<link
-					href='https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@100;200;300;400;500;600;800&display=swap'
-					rel='stylesheet'
 				/>
 
 				<link
@@ -87,7 +65,6 @@ const TemplateWrapper = ({ children }) => {
 					href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
 					color='#ff4400'
 				/>
-
 				<meta
 					name='viewport'
 					content='width=device-width, initial-scale=1'

@@ -167,7 +167,7 @@ export default function TestimonialsSection({ data }) {
 							{data.testimonials.map((testimonial, index) => (
 								<TestimonialItem
 									id={index}
-									newId={`${i}-${index}`}
+									key={`${i}-${index}`}
 									testimonial={testimonial}
 									borderColor={borderColors[index % borderColors.length]}
 									style={{ width: `${itemWidth}px`, height: '100%' }}

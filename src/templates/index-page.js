@@ -13,7 +13,6 @@ import CoreValuesSection from '../components/sections/CoreValuesSection';
 import FirstStepsSection from '../components/sections/FirstStepsSection';
 import Hero from '../components/sections/Hero';
 import WhoWeAreSection from '../components/sections/team/WhoWeAreSection';
-import MissionStatementSection from '../components/sections/MissionStatementSection';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -32,25 +31,25 @@ export const IndexPageTemplate = ({
 			className='relative w-full h-full'>
 			<Hero data={hero} />
 
-			<div className='w-full h-full flex flex-col null:space-y-[10rem] sm:space-y-[10rem] md:space-y-[12rem] lg:space-y-[14rem] xxl:space-y-[16rem]'>
+			<div className='w-full h-full flex flex-col null:space-y-[10rem] sm:space-y-[10rem] md:space-y-[12rem] lg:space-y-[14rem] xxl:space-y-[24rem]'>
 				<section
 					id='team'
-					className='w-full h-full flex flex-col space-y-20 justify-center items-center xxl:items-start xxl:flex-row xxl:space-x-20'>
+					className='w-full h-full flex flex-col space-y-40 justify-center items-center xxl:items-start xxl:flex-row xxl:space-x-20'>
 					<WhoWeAreSection data={whoWeAre} />
 					<TeamSection data={team} />
 				</section>
 
 				<CoreValuesSection data={coreValues} />
 
-				<MissionStatementSection />
-
-				<ServicesSection data={services} />
 				<section
 					id='testimonials'
 					className='flex flex-col'>
 					<WorkedWithSection />
 					<TestimonialsSection data={workedWith} />
 				</section>
+
+				<ServicesSection data={services} />
+				<FirstStepsSection data={getStarted} />
 				<ResourcesSection data={resources} />
 			</div>
 		</div>
