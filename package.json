@@ -5,6 +5,7 @@
 	"author": "Austin Green",
 	"dependencies": {
 		"bulma": "^0.9.0",
+		"events": "^3.3.0",
 		"firebase": "^10.8.0",
 		"gatsby": "^4.25.8",
 		"gatsby-plugin-anchor-links": "^1.2.1",
@@ -35,6 +36,8 @@
 		"react-icons": "^4.12.0",
 		"react-swipeable": "^7.0.1",
 		"sass": "^1.71.1",
+		"stream-browserify": "^3.0.0",
+		"util": "^0.12.5",
 		"uuid": "^8.0.0"
 	},
 	"keywords": [

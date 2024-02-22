@@ -3,6 +3,8 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
+const webpack = require('webpack');
+
 exports.createPages = ({ actions, graphql }) => {
 	const { createPage } = actions;
 
@@ -82,4 +84,30 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 			value,
 		});
 	}
+};
+
+exports.onCreateWebpackConfig = ({ actions, plugins, ...args }) => {
+	const buildWebpackConfig =
+		args.stage === 'build-html'
+			? {
+					resolve: {
+						// Handle Uncaught TypeError: util.inherits is not a function - https://github.com/webpack/webpack/issues/1019
+						mainFields: ['browser', 'module', 'main'],
+						// Handle unsupported node scheme - https://github.com/webpack/webpack/issues/13290#issuecomment-987880453
+						fallback: {
+							util: require.resolve('util'),
+							stream: require.resolve('stream-browserify'),
+						},
+					},
+			  }
+			: {};
+	actions.setWebpackConfig({
+		plugins: [
+			// Handle unsupported node scheme - https://github.com/webpack/webpack/issues/13290#issuecomment-987880453
+			new webpack.NormalModuleReplacementPlugin(/^node:/, (resource) => {
+				resource.request = resource.request.replace(/^node:/, '');
+			}),
+		],
+		...buildWebpackConfig,
+	});
 };
