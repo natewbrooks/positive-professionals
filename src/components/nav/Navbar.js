@@ -151,7 +151,7 @@ export default function Navbar() {
 								<img
 									src={logo}
 									alt='logo'
-									className='null:w-[40px] null:h-[40px] mobile:w-[42px] mobile:h-[42px] '
+									className='aspect-auto null:w-[40px] null:h-[40px] mobile:w-[42px] mobile:h-[42px] '
 								/>
 								<div
 									style={{

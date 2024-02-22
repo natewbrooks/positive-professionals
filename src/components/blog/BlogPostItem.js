@@ -87,13 +87,13 @@ export default function BlogPostItem({ post, searchTerm }) {
 								<GatsbyImage
 									image={imageData}
 									alt={post.title}
-									className='max-h-[320px]'
+									className='h-[280px]'
 								/>
 							)}
 							{!imageData && (
 								<img
 									src={pic}
-									className='max-h-[320px]'></img>
+									className='h-[280px]'></img>
 							)}
 						</div>
 

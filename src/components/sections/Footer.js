@@ -16,6 +16,8 @@ export default function Footer({}) {
 							src={logo}
 							alt='logo'
 							style={{ width: '84px', height: '84px' }}
+							loading='lazy'
+							className='aspect-auto'
 						/>
 						{/* <div className='relative flex z-10'>
 							<div className='z-50 bg-primary p-4 rotate-45'></div>

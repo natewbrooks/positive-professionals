@@ -77,9 +77,9 @@ export default function ServicesSection({ content }) {
 			</div>
 
 			<div className='text-dark w-full h-full flex flex-col space-y-4 null:py-8 md:py-0'>
-				<div className='z-10 flex flex-col text-start -space-y-1 leading-snug'>
+				<div className='z-10 flex flex-col text-start -space-y-1'>
 					<span className='sans text-sm'>WHAT WE CAN DO FOR YOU</span>
-					<span className='serif text-xxl'>Our services</span>
+					<span className='serif text-xxl leading-none '>Our services</span>
 				</div>
 				<span className='z-10 sans text-lg leading-snug'>
 					We help you recognize and overcome self-sabotaging behaviors of self-doubt, worry,

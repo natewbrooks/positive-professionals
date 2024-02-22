@@ -7,7 +7,8 @@ export default function Hero({ data }) {
 		<>
 			<header className='z-10 relative flex justify-center items-center w-full h-fit pt-32 pb-12 null:mb-[10rem] sm:mb-[10rem] md:mb-[14rem]  lg:mb-[12rem] xl:mb-[16rem] bg-tertiary'>
 				<img
-					className='absolute null:translate-y-[45%] lg:translate-y-[38%] bottom-0 w-full h-[300px] md:h-[450px] xxl:h-[500px]'
+					className='aspect-auto absolute null:translate-y-[45%] lg:translate-y-[38%] bottom-0 w-full h-[300px] md:h-[450px] xxl:h-[500px]'
+					alt='hero background waves'
 					src={heroWave}></img>
 
 				<div className='relative p-4 rounded-md flex flex-col space-y-4 items-center justify-center h-full w-fit'>
@@ -17,7 +18,8 @@ export default function Hero({ data }) {
 								{data.header}
 								<span className='relative inline-block z-20 break-words null:w-fit leading-none serif null:text-xxxl mobile:text-billboard text-center xbold text-[#386975] py-1 px-8 rounded-full'>
 									<img
-										className='absolute w-full -scale-x-[160%] scale-y-[130%] h-full -translate-x-10 -z-[20]'
+										className='aspect-auto absolute w-full -scale-x-[160%] scale-y-[130%] h-full -translate-x-10 -z-[20]'
+										alt='paint stroke bg element'
 										src={paintStroke}></img>
 									together.
 								</span>
