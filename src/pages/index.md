@@ -121,32 +121,16 @@ team:
   subtext: OVER 60 YEARS OF EXPERIENCE
 coreValues:
   body: >-
-    Mental fitness is our capacity to handle life’s greatest challenges with a
-    positive mindset rather than getting stressed or upset. When it comes to
-    physical fitness, we are unlikely to be able to climb a mountain if we have
-    not strengthened our muscles and built our stamina in advance. Mental
-    fitness is similar; if we want to overcome stressful situations and view
-    life through a positive mindset, we need to learn and practice the skills
-    that will enable us to do so. In other words, we need to build our mental
-    fitness.
+    At Positive Professionals, we envision a world where every individual, especially women in transition, harnesses the power of personal and professional growth to reshape their destinies. through the intricate journey of overcoming imposter syndrome, advancing in their careers, and harmoniously integrating family and career commitments.
   header: Our core values
   subtext: WHAT WE BELIEVE IN
   values:
     - about: >-
-        Persistence is a core value that underpins our approach to leadership
-        development and professional growth. In the ever-evolving landscape of
-        business and leadership, persistence is not just about steadfastness or
-        endurance; it's about maintaining a consistent effort towards
-        improvement and excellence, even in the face of challenges and setbacks.
-        We see persistence as a multi-dimensional trait that encompasses several
-        key aspects.
+        Lastly, collaboration is the thread that binds us, highlighting the power of teamwork and shared knowledge in achieving collective goals. Together, these values not only shape our professional identity but also guide us in nurturing and inspiring effective, empathetic, and visionary leaders.
       name: Collaboration
       reasons:
         - explanation: >-
-            In the fast-paced and often unpredictable business environment,
-            challenges and obstacles are inevitable. Persistence empowers
-            leaders to navigate these with resilience, turning potential
-            setbacks into opportunities for learning and growth.
+            Lastly, collaboration is the thread that binds us, highlighting the power of teamwork and shared knowledge in achieving collective goals.
           reason: Resilience in Adversity
         - explanation: >-
             Persistence is closely tied to having a long-term vision. It
@@ -189,19 +173,11 @@ coreValues:
             and effectiveness.
           reason: Motivation and Inspiration
     - about: >-
-        Innovation is at the heart of our approach, encouraging leaders to think
-        creatively and embrace change as an opportunity for growth. We believe
-        that fostering an innovative mindset is crucial for navigating the
-        complexities of today’s business environment and for driving
-        forward-thinking strategies.
+        Curiosity drives our quest for knowledge and understanding, fueling our passion to explore new ideas and perspectives that enhance our coaching methods
       name: Curiosity
       reasons:
         - explanation: >-
-            Innovation thrives on creative thinking. It encourages individuals
-            and teams to explore new ideas, challenge conventional approaches,
-            and seek out novel solutions. This creative exploration is essential
-            for developing unique products, services, and processes that keep an
-            organization competitive and forward-thinking.
+            Curiosity drives our quest for knowledge and understanding, fueling our passion to explore new ideas and perspectives that enhance our coaching methods
           reason: Fostering Creativity
         - explanation: >-
             In a rapidly evolving market, the ability to innovate ensures
@@ -218,19 +194,11 @@ coreValues:
             sustainability and success.
           reason: Driving Growth
     - about: >-
-        Integrity is the foundation of trust and ethical leadership. It's about
-        doing the right thing, even when it's not the easiest path. We emphasize
-        integrity as a non-negotiable trait for leaders, ensuring decisions are
-        made with honesty and transparency, thereby building a culture of trust
-        within the organization.
+        Growth underpins our commitment to continuous improvement, both in ourselves and in those we coach, fostering a culture where progress and development are paramount.
       name: Growth
       reasons:
         - explanation: >-
-            Integrity is foundational to building trust within and outside an
-            organization. When leaders and employees consistently act ethically
-            and honestly, they build strong relationships with colleagues,
-            customers, and stakeholders, fostering an environment of reliability
-            and confidence.
+            Growth underpins our commitment to continuous improvement, both in ourselves and in those we coach, fostering a culture where progress and development are paramount.
           reason: Building Trust
         - explanation: >-
             A commitment to integrity ensures that individuals take
@@ -246,18 +214,11 @@ coreValues:
             protecting its reputation and maintaining public trust.
           reason: Guiding Ethical Decision-Making
     - about: >-
-        Excellence is our benchmark for performance and results. It's about
-        striving to be the best in all we do and pushing the limits of our
-        potential. This relentless pursuit of excellence ensures that our
-        clients not only meet but exceed their goals, setting new standards in
-        their respective industries.
+        Integrity anchors our actions and decisions, ensuring that we operate with honesty and ethical principles, thereby earning the trust and confidence of those we guide.
       name: Integrity
       reasons:
         - explanation: >-
-            Excellence motivates individuals and teams to achieve the highest
-            standards in their work. It involves a continuous commitment to
-            quality, encouraging everyone to strive for outstanding performance
-            and results in every project and task.
+            Integrity anchors our actions and decisions, ensuring that we operate with honesty and ethical principles, thereby earning the trust and confidence of those we guide.
           reason: Achieving High Standards
         - explanation: >-
             A focus on excellence means never being complacent. It involves
@@ -272,18 +233,11 @@ coreValues:
             respect from the industry.
           reason: Enhancing Competitiveness
     - about: >-
-        Collaboration highlights the power of collective effort and the synergy
-        that arises from working together towards common goals. We advocate for
-        building strong teams where diverse ideas and perspectives are valued,
-        leading to innovative solutions and a more cohesive organizational
-        culture.
+        Respect is the lens through which we view and value each person's unique qualities and contributions, fostering an environment of inclusivity and understanding.
       name: Respect
       reasons:
         - explanation: >-
-            Collaboration enables teams to achieve goals more efficiently. By
-            pooling resources and expertise, organizations can tackle complex
-            projects more effectively, meet deadlines, and achieve objectives
-            faster than working independently.
+            Respect is the lens through which we view and value each person's unique qualities and contributions, fostering an environment of inclusivity and understanding.
           reason: Accelerating Achievement of Goals
         - explanation: >-
             Collaboration brings together diverse perspectives, skills, and
@@ -298,20 +252,11 @@ coreValues:
             organization.
           reason: Strengthening Team Bonds
     - about: >-
-        Respect is fundamental to creating an inclusive and empowering
-        environment. It involves valuing each individual's contribution,
-        fostering mutual understanding, and appreciating the diversity of
-        thought and experience. Respect in leadership translates to a more
-        engaged and motivated workforce, where everyone feels valued and part of
-        the organization’s success.
+        Wellbeing is central to our approach, emphasizing the importance of maintaining a healthy balance in all aspects of life, recognizing that a sound mind and body are critical for effective leadership.
       name: Well-being
       reasons:
         - explanation: >-
-            Respect is crucial for creating an inclusive workplace. It ensures
-            that all individuals feel valued and heard, regardless of their
-            background, role, or perspective. This inclusivity strengthens the
-            organizational culture and enhances employee engagement and
-            satisfaction.
+            Wellbeing is central to our approach, emphasizing the importance of maintaining a healthy balance in all aspects of life, recognizing that a sound mind and body are critical for effective leadership.
           reason: Fostering Inclusivity
         - explanation: >-
             Respect encourages open and honest communication. When individuals

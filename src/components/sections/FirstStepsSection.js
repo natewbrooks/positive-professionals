@@ -9,7 +9,7 @@ export default function FirstStepsSection({ data }) {
 	const icons = [BsMailbox2Flag, IoChatbubbles, BsCalendar2WeekFill];
 
 	return (
-		<div
+		<section
 			id='firstSteps'
 			className='w-full h-full'>
 			<div className='flex flex-col -space-y-1 mb-8 items-center text-center justify-center text-dark dark:text-light/70'>
@@ -50,6 +50,6 @@ export default function FirstStepsSection({ data }) {
 					);
 				})}
 			</div>
-		</div>
+		</section>
 	);
 }

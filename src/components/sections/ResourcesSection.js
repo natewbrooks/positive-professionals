@@ -5,6 +5,7 @@ import VideoItem from '../webinar/VideoItem';
 import BlogPostItem from '../blog/BlogPostItem';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import waveTop from '../../img/bg-waves/resources-waves/wave-top.svg';
+import waveBottom from '../../img/bg-waves/resources-waves/wave-bottom.svg';
 
 export default function ResourcesSection({ data }) {
 	if (!data) {
@@ -40,6 +41,10 @@ export default function ResourcesSection({ data }) {
 					style={{ transform: 'translateY(-90%)' }}
 					className='absolute w-full h-fit top-0'></img>
 				<div className='absolute bg-four w-full h-full'></div>
+				<img
+					src={waveBottom}
+					alt='Resources wave bottom bg'
+					className='translate-y-[90%] absolute w-full h-fit bottom-0 z-[-1]'></img>
 			</div>
 
 			<div className='z-10 w-full h-full flex flex-col space-y-8 text-dark'>

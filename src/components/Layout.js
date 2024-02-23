@@ -8,6 +8,7 @@ import { withPrefix } from 'gatsby';
 import '/src/styles/global.css';
 import ContactSection from './sections/ContactSection';
 import SigninModal from './sign in/SigninModal';
+import UpcomingWebinars from './sections/UpcomingWebinarsSection';
 
 const TemplateWrapper = ({ children }) => {
 	const [navHeight, setNavHeight] = useState();
@@ -121,7 +122,44 @@ const TemplateWrapper = ({ children }) => {
 
 				{children}
 			</div>
-			<ContactSection />
+			<div className='w-full h-full flex flex-col'>
+				<ContactSection />
+				<UpcomingWebinars
+					webinars={[
+						{
+							date: 'JAN 8, 2024 @ 12:30 PM EST',
+							title: 'Learning About Our Infinite Universe',
+							description: 'Exploring possibilities surrounding how we ended up here.',
+						},
+						{
+							date: 'JAN 15, 2024 @ 1:00 PM EST',
+							title: 'The Secrets of Effective Leadership',
+							description: 'Discover key strategies to improve your leadership skills.',
+						},
+						{
+							date: 'JAN 22, 2024 @ 2:00 PM EST',
+							title: 'Innovations in Technology',
+							description: 'A look at the latest technological advancements and their impact.',
+						},
+						{
+							date: 'JAN 8, 2024 @ 12:30 PM EST',
+							title: 'Learning About Our Infinite Universe',
+							description: 'Exploring possibilities surrounding how we ended up here.',
+						},
+						{
+							date: 'JAN 15, 2024 @ 1:00 PM EST',
+							title: 'The Secrets of Effective Leadership',
+							description: 'Discover key strategies to improve your leadership skills.',
+						},
+						{
+							date: 'JAN 22, 2024 @ 2:00 PM EST',
+							title: 'Innovations in Technology',
+							description: 'A look at the latest technological advancements and their impact.',
+						},
+						// Add more webinar objects as needed
+					]}
+				/>
+			</div>
 			<Footer />
 		</div>
 	);

@@ -62,7 +62,7 @@ export const VideoPostTemplate = ({
 			{helmet || ''}
 			<section
 				id='video-post'
-				className='leading-snug mt-[4rem]'>
+				className='leading-snug mt-[4rem] mb-[14rem]'>
 				<ResourcesNav
 					pageTitle={'Return'}
 					showTitle={false}

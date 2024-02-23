@@ -44,7 +44,7 @@ export default function CoreValuesSection({ data }) {
 					<div className='w-full grid grid-cols-3 gap-1 justify-items-center'>
 						{data.values.map((value, index) => (
 							<>
-								<div className='w-full h-full z-10'>
+								<div className='w-full h-fit z-10'>
 									<CoreValuesItem
 										key={index}
 										value={value}

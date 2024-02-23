@@ -30,7 +30,7 @@ export default function WhoWeAreSection({ data }) {
 				<span className='leading-snug'>{renderParagraphs(data.body)}</span>
 			</div>
 
-			<div className='flex flex-col space-y-4'>
+			{/* <div className='flex flex-col space-y-4'>
 				<div className='flex flex-col leading-snug '>
 					<span className='sans text-sm '>WHAT WE STAND FOR</span>
 					<span className='serif text-xxl dark:text-light/80 leading-none'>Our mission</span>
@@ -42,7 +42,7 @@ export default function WhoWeAreSection({ data }) {
 							'\nWe are committed to changing the world one leader at a time, guiding them through the intricate journey of overcoming imposter syndrome, advancing in their careers, and harmoniously integrating family and career commitments.'
 					)}
 				</span>
-			</div>
+			</div> */}
 		</div>
 	);
 }

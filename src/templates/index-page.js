@@ -32,7 +32,7 @@ export const IndexPageTemplate = ({
 			className='relative w-full h-full'>
 			<Hero data={hero} />
 
-			<div className='w-full h-full flex flex-col null:space-y-[10rem] sm:space-y-[10rem] md:space-y-[12rem] lg:space-y-[14rem] xxl:space-y-[16rem]'>
+			<div className='w-full h-full flex flex-col null:pb-[10rem] sm:pb-[10rem] md:pb-[12rem] lg:pb-[14rem] xxl:pb-[16rem] null:space-y-[10rem] sm:space-y-[10rem] md:space-y-[12rem] lg:space-y-[14rem] xxl:space-y-[16rem]'>
 				<section
 					id='team'
 					className='w-full h-full flex flex-col space-y-20 justify-center items-center xxl:items-start xxl:flex-row xxl:space-x-20'>
@@ -52,6 +52,7 @@ export const IndexPageTemplate = ({
 					<TestimonialsSection data={workedWith} />
 				</section>
 				<ResourcesSection data={resources} />
+				<FirstStepsSection data={getStarted} />
 			</div>
 		</div>
 	);

@@ -61,8 +61,8 @@ export const WebinarPostTemplate = ({
 		<>
 			{helmet || ''}
 			<section
-				id='video-post'
-				className='leading-snug mt-[4rem]'>
+				id='webinar-post'
+				className='leading-snug mt-[4rem] mb-[14rem]'>
 				<ResourcesNav
 					pageTitle={'Return'}
 					showTitle={false}
