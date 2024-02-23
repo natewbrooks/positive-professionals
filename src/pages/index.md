@@ -121,12 +121,12 @@ team:
   subtext: OVER 60 YEARS OF EXPERIENCE
 coreValues:
   body: >-
-    At Positive Professionals, we envision a world where every individual, especially women in transition, harnesses the power of personal and professional growth to reshape their destinies. through the intricate journey of overcoming imposter syndrome, advancing in their careers, and harmoniously integrating family and career commitments.
+    In our collective journey as leadership coaches, the core values of growth, curiosity, wellbeing, integrity, respect, and collaboration form the bedrock of our professional ethos and personal development. We envision a world where every individual, especially women in transition, harnesses the power of personal and professional growth to reshape their destinies. Through the intricate journey of overcoming imposter syndrome, advancing in their careers, and harmoniously integrating family and career commitments. Together, these values not only shape our professional identity but also guide us in nurturing and inspiring effective, empathetic, and visionary leaders.
   header: Our core values
   subtext: WHAT WE BELIEVE IN
   values:
     - about: >-
-        Lastly, collaboration is the thread that binds us, highlighting the power of teamwork and shared knowledge in achieving collective goals. Together, these values not only shape our professional identity but also guide us in nurturing and inspiring effective, empathetic, and visionary leaders.
+        Lastly, collaboration is the thread that binds us, highlighting the power of teamwork and shared knowledge in achieving collective goals.
       name: Collaboration
       reasons:
         - explanation: >-

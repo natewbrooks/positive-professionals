@@ -24,25 +24,27 @@ function Account() {
 			{user && userData ? (
 				<section
 					id='account'
-					className='py-24 flex w-full h-full items-center justify-center'>
+					className='mt-[4rem] mb-[14rem] flex w-full h-full items-center justify-center'>
 					<div className='flex flex-col text-center leading-none'>
 						<div className=' text-md sans xbold text-dark dark:text-light/70'>ACCOUNT</div>
-						<div className=' text-xxxl serif xbold text-dark dark:text-light/70'>
+						<div className=' text-xxxl serif xbold text-secondary'>
 							{userData.firstName + ' ' + userData.lastName}
 						</div>
 
-						<div className='flex flex-col space-y-4 pt-8 text-start'>
-							<div className='flex flex-col w-fit'>
-								<span className='sans text-secondary text-sm xbold '>ACCOUNT CREATED: </span>
-								<span className='sans text-dark text-md'>{formattedDate}</span>
+						<div className='flex flex-col space-y-4 pt-8 text-center w-full'>
+							<div className='flex space-x-2 items-center'>
+								<span className='sans text-four text-sm xbold '>ACCOUNT CREATED: </span>
+								<span className='sans text-dark dark:text-light/70  text-md'>{formattedDate}</span>
 							</div>
-							<div className='flex flex-col w-fit'>
-								<span className='sans text-secondary text-sm xbold'>EMAIL: </span>
-								<span className='sans text-dark text-md'>{userData.email}</span>
+							<div className='flex space-x-2 items-center'>
+								<span className='sans text-four text-sm xbold'>EMAIL: </span>
+								<span className='sans text-dark dark:text-light/70  text-md'>{userData.email}</span>
 							</div>
-							<div className='flex flex-col w-fit'>
-								<span className='sans text-secondary text-sm xbold '>PHONE NUMBER: </span>
-								<span className='sans text-dark text-md '>{userData.phoneNumber}</span>
+							<div className='flex space-x-2 items-center'>
+								<span className='sans text-four text-sm xbold '>PHONE NUMBER: </span>
+								<span className='sans text-dark dark:text-light/70 text-md '>
+									{userData.phoneNumber}
+								</span>
 							</div>
 						</div>
 					</div>

@@ -12,13 +12,13 @@ export default function MissionStatementSection({ data }) {
 			className='w-full h-full'>
 			<div className='flex flex-col -space-y-1 mb-8 items-center text-center justify-center text-dark dark:text-light/70'>
 				<span className='w-[280px] mobile:w-full sans text-sm'>WHAT WE WANT TO ACHIEVE</span>
-				<span className='serif null:text-xxl dark:text-light/80 leading-none pb-4'>
+				<span className='serif null:text-xxxl dark:text-light/80 leading-none pb-4'>
 					Our mission
 				</span>
 			</div>
 
 			<div className='flex flex-col justify-center items-center text-center'>
-				<span className='sans xbold text-xxxl w-full text-dark dark:text-light/70'>
+				<span className='sans  text-xxl w-full text-dark dark:text-light/70'>
 					Our mission is to cultivate a generation of authentic, resilient leaders who are equipped
 					to navigate life's complexities, inspiring a ripple effect of positive change in
 					communities and organizations worldwide.
