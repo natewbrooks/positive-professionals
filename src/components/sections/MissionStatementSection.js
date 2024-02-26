@@ -12,7 +12,7 @@ export default function MissionStatementSection({ data }) {
 			className='w-full h-full'>
 			<div className='flex flex-col -space-y-1 mb-8 items-center text-center justify-center text-dark dark:text-light/70'>
 				<span className='w-[280px] mobile:w-full sans text-sm'>WHAT WE WANT TO ACHIEVE</span>
-				<span className='serif null:text-xxxl dark:text-light/80 leading-none pb-4'>
+				<span className='serif null:text-xxl dark:text-light/80 leading-none pb-4'>
 					Our mission
 				</span>
 			</div>
