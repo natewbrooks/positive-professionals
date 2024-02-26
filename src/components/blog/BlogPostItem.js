@@ -87,7 +87,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 								<GatsbyImage
 									image={imageData}
 									alt={post.title}
-									className='h-[280px]'
+									className='w-full null:h-[240px] lg:h-[280px]'
 								/>
 							)}
 							{!imageData && (
