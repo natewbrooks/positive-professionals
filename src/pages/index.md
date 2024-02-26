@@ -121,7 +121,7 @@ team:
   subtext: OVER 60 YEARS OF EXPERIENCE
 coreValues:
   body: >-
-    In our collective journey as leadership coaches, the core values of growth, curiosity, wellbeing, integrity, respect, and collaboration form the bedrock of our professional ethos and personal development. We envision a world where every individual, especially women in transition, harnesses the power of personal and professional growth to reshape their destinies. Through the intricate journey of overcoming imposter syndrome, advancing in their careers, and harmoniously integrating family and career commitments. Together, these values not only shape our professional identity but also guide us in nurturing and inspiring effective, empathetic, and visionary leaders.
+    Our core values of growth, curiosity, wellbeing, integrity, respect, and collaboration form the bedrock of our professional ethos, shape our vision, and drive our actions. As leadership coaches, we envision a world where every individual harnesses the power of personal and professional growth to shape their destinies. We are committed to helping leaders from all backgrounds and at all levels explore options, navigate challenges, and take positive action to experience more fulfilled lives and lasting joy.
   header: Our core values
   subtext: WHAT WE BELIEVE IN
   values:
