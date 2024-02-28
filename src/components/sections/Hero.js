@@ -14,11 +14,12 @@ export default function Hero({ data }) {
 				<div className='relative p-4 rounded-md flex flex-col space-y-4 items-center justify-center h-full w-fit'>
 					<div className='-translate-y-[20px] w-full items-center text-center flex flex-col'>
 						<div className='relative flex flex-col -space-y-8'>
-							<span className='z-10 break-words null:w-fit sm:w-[500px] lg:w-[740px] leading-none serif null:text-xxxl mobile:text-billboard text-center xbold text-dark px-8 rounded-full'>
+							<span className='transition-all duration-300 break-words null:w-fit sm:w-[500px] lg:w-[740px] leading-none serif null:text-xxxl mobile:text-billboard text-center xbold text-dark px-8 rounded-full'>
 								{data.header}
-								<span className='relative inline-block z-20 break-words null:w-fit leading-none serif null:text-xxxl mobile:text-billboard text-center xbold text-[#386975] py-1 px-8 rounded-full'>
+								<span className='relative inline-block z-20 break-words null:w-fit leading-none serif null:text-xxxl mobile:text-billboard text-center xbold text-light dark:text-dark py-1 px-8 rounded-full'>
 									<img
-										className='absolute w-full -scale-x-[160%] scale-y-[130%] h-full -translate-x-10 -z-[20]'
+										className='absolute w-full -scale-x-[160%] scale-y-[130%] h-full -translate-x-10'
+										style={{ zIndex: '-1' }}
 										src={paintStroke}></img>
 									together.
 								</span>
@@ -28,7 +29,7 @@ export default function Hero({ data }) {
 					<p className='-translate-y-[20px] tracking-[0.1rem] rounded-md px-2 xbold break-words sans null:w-[240px] md:w-full text-center null:text-md mobile:text-lg text-dark'>
 						{data.subtext}
 					</p>
-					<div className='null:hidden md:block md:translate-y-[80px] xl:translate-y-[55px] xxl:translate-y-[50px] sans null:text-xxl xbold text-dark/60  cursor-pointer select-none md:hover:opacity-90 md:active:scale-95 py-2 px-6 rounded-md'>
+					<div className='null:hidden md:block md:translate-y-[80px] xl:translate-y-[55px] xxl:translate-y-[50px] sans null:text-xxl xbold text-[#386975]  cursor-pointer select-none md:hover:opacity-90 md:active:scale-95 py-2 px-6 rounded-md'>
 						GET STARTED
 					</div>
 				</div>
