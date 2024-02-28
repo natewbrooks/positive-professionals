@@ -11,33 +11,34 @@ team:
   header: The Team
   members:
     - careerBackground: >-
-        As a highly accomplished Senior Executive (SES) and engineer, Jennifer
-        brings unique experience, perspective, and drive to her coaching
-        clients. During her 30 years with the U.S. Department of Defense, she
-        directed complex technical development efforts and 24/7 operational
-        activities for the Intelligence Community’s premier cyber and
-        cybersecurity organizations. She is results-oriented, decisive, and
-        experienced in strategic planning, problem solving, team building, and
-        program execution for challenging missions. Jennifer is an effective
-        negotiator with proven interpersonal skills capable of influencing and
-        uniting domestic and international partners toward common goals. She
-        thrives under stressful situations and in dynamic environments while
-        remaining calm, logical, and focused.
+        In addition to coaching, Kim has 35 years of experience in the U.S.
+        Department of Defense. As a member of the Defense Intelligence Senior
+        Executive Service, she served both overseas and within the United
+        States, as well as across the Intelligence Community, to accomplish her
+        agency’s goals. Kim has worked with both civilian and military leaders
+        at all levels of her agency and brings first-hand knowledge of working
+        successfully in a high stress environment to move mission forward.
       certifications: >-
-        ACT Leadership and Performance Coaching; Professional Certified Coach
-        (PCC) through the International Coaching Federation (ICF); Hogan
-        Assessment; Emotional Intelligence Assessment (EQ-i 2.0 & EQ 360);
-        Positive Intelligence Saboteur Assessment®.
+        Kim is an accredited coach through ACT Performance and Leadership
+        Coaching and is credentialed as an Associate Certified Coach (ACC)
+        through the International Coaching Federation. She is also certified in
+        the Hogan Assessment, the Positive Intelligence Saboteur Assessment
+        (PQ)®, and Global DISC™ Cultural Intelligence Assessment.
       education: >-
-        MS in Electrical and Electronics Engineering from Johns Hopkins, BS in
-        Electrical Engineering from Virginia Tech.
+        Master of Business Administration (MBA) from Johns Hopkins University,
+        Bachelor of Arts in Russian Studies and Economics, Minor in History,
+        from University of Virginia.
       email: kimharris@feartofiercecoach.com
       industryExperience: >-
-        Jennifer has coached organizations such as the U.S. Navy (Flag Officers,
-        SES), U.S. Army (Command Course Candidates), Department of Defense
-        (civilian and military personnel), Johns Hopkins University Applied
-        Physics Laboratory, Council for State Governments, Loyola University
-        Maryland, Virginia Tech, and corporate clients.
+        Kim provided coaching services in the Intelligence Community for over 15
+        years, focusing on individuals serving as first-line through mid-level
+        leaders. She helped grow the next generation of senior leaders,
+        especially within her agency. She turned her focus to women of color
+        over the course of the last 5 years, providing coaching to prepare them
+        to successfully rise through the leadership ranks in an equitable
+        fashion. Kim has also been successful coaching in the private sector,
+        working with individuals from the automotive, engineering, software,
+        healthcare, and business/finance industries.
       linkedIn: 'https://www.linkedin.com/in/kim-harris-feartofiercecoach/'
       name: Kim Harris
       pic: /img/kim-harris-cropped.png
