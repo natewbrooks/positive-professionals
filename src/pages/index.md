@@ -8,7 +8,7 @@ whoWeAre:
   header: Our story
   subtext: WHO WE ARE
 team:
-  header: The Team
+  header: The team
   members:
     - careerBackground: >-
         In addition to coaching, Kim has 35 years of experience in the U.S.
