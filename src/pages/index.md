@@ -38,7 +38,7 @@ team:
         Physics Laboratory, Council for State Governments, Loyola University
         Maryland, Virginia Tech, and corporate clients.
       name: Kim Harris
-      pic: /img/liz-brooks-alt-2-2-1-1-.png
+      pic: /img/kim-harris.png
       position: 'Associate Certified Coach, SES (ret)'
       specialities: >-
         As an executive coach, Kim connects with motivated professionals who are
@@ -82,6 +82,7 @@ team:
       education: >-
         Liz is a graduate of Virginia Tech with a Bachelor of Science in
         Marketing and minor in German.
+      email: lizbrooks61@gmail.com
       industryExperience: >-
         Liz has over 17 years of experience coaching and mentoring at all levels
         - from junior employee to mid-level leader to senior executives at the
@@ -95,10 +96,9 @@ team:
         succeed. In keeping with that, she particularly loves to coach women,
         people of color and advocates for diversity, equality, inclusion and
         accessibility.
+      linkedIn: 'https://www.linkedin.com/in/liz-brooks-870b5221a/'
       name: Liz Brooks
       pic: /img/liz-brooks.png
-      linkedIn: https://www.linkedin.com/in/liz-brooks-870b5221a/
-      email: lizbrooks61@gmail.com
       position: 'Associate Certified Coach, SES (ret)'
       specialities: >-
         As an energetic mom of six, a people-focused senior executive in the
@@ -110,27 +110,28 @@ team:
         achieving goals. Known for her calm and engaging approach, she uses a
         variety of tools and techniques to help her clients move forward
         successfully, and enthusiastically celebrates their victories with them.
-    - careerBackground: s
-      certifications: s
-      education: s
-      industryExperience: s
-      name: Biz Lrooks
-      pic: /img/liz-brooks2.png
-      position: 'Associate Certified Coach, SES (ret)'
-      specialities: s
   subtext: OVER 60 YEARS OF EXPERIENCE
 coreValues:
   body: >-
-    Our core values of growth, curiosity, wellbeing, integrity, respect, and collaboration form the bedrock of our professional ethos, shape our vision, and drive our actions. As leadership coaches, we envision a world where every individual harnesses the power of personal and professional growth to shape their destinies. We are committed to helping leaders from all backgrounds and at all levels explore options, navigate challenges, and take positive action to experience more fulfilled lives and lasting joy.
+    Our core values of growth, curiosity, wellbeing, integrity, respect, and
+    collaboration form the bedrock of our professional ethos, shape our vision,
+    and drive our actions. As leadership coaches, we envision a world where
+    every individual harnesses the power of personal and professional growth to
+    shape their destinies. We are committed to helping leaders from all
+    backgrounds and at all levels explore options, navigate challenges, and take
+    positive action to experience more fulfilled lives and lasting joy.
   header: Our core values
   subtext: WHAT WE BELIEVE IN
   values:
     - about: >-
-        Lastly, collaboration is the thread that binds us, highlighting the power of teamwork and shared knowledge in achieving collective goals.
+        Lastly, collaboration is the thread that binds us, highlighting the
+        power of teamwork and shared knowledge in achieving collective goals.
       name: Collaboration
       reasons:
         - explanation: >-
-            Lastly, collaboration is the thread that binds us, highlighting the power of teamwork and shared knowledge in achieving collective goals.
+            Lastly, collaboration is the thread that binds us, highlighting the
+            power of teamwork and shared knowledge in achieving collective
+            goals.
           reason: Resilience in Adversity
         - explanation: >-
             Persistence is closely tied to having a long-term vision. It
@@ -173,11 +174,15 @@ coreValues:
             and effectiveness.
           reason: Motivation and Inspiration
     - about: >-
-        Curiosity drives our quest for knowledge and understanding, fueling our passion to explore new ideas and perspectives that enhance our coaching methods
+        Curiosity drives our quest for knowledge and understanding, fueling our
+        passion to explore new ideas and perspectives that enhance our coaching
+        methods
       name: Curiosity
       reasons:
         - explanation: >-
-            Curiosity drives our quest for knowledge and understanding, fueling our passion to explore new ideas and perspectives that enhance our coaching methods
+            Curiosity drives our quest for knowledge and understanding, fueling
+            our passion to explore new ideas and perspectives that enhance our
+            coaching methods
           reason: Fostering Creativity
         - explanation: >-
             In a rapidly evolving market, the ability to innovate ensures
@@ -194,11 +199,15 @@ coreValues:
             sustainability and success.
           reason: Driving Growth
     - about: >-
-        Growth underpins our commitment to continuous improvement, both in ourselves and in those we coach, fostering a culture where progress and development are paramount.
+        Growth underpins our commitment to continuous improvement, both in
+        ourselves and in those we coach, fostering a culture where progress and
+        development are paramount.
       name: Growth
       reasons:
         - explanation: >-
-            Growth underpins our commitment to continuous improvement, both in ourselves and in those we coach, fostering a culture where progress and development are paramount.
+            Growth underpins our commitment to continuous improvement, both in
+            ourselves and in those we coach, fostering a culture where progress
+            and development are paramount.
           reason: Building Trust
         - explanation: >-
             A commitment to integrity ensures that individuals take
@@ -214,11 +223,15 @@ coreValues:
             protecting its reputation and maintaining public trust.
           reason: Guiding Ethical Decision-Making
     - about: >-
-        Integrity anchors our actions and decisions, ensuring that we operate with honesty and ethical principles, thereby earning the trust and confidence of those we guide.
+        Integrity anchors our actions and decisions, ensuring that we operate
+        with honesty and ethical principles, thereby earning the trust and
+        confidence of those we guide.
       name: Integrity
       reasons:
         - explanation: >-
-            Integrity anchors our actions and decisions, ensuring that we operate with honesty and ethical principles, thereby earning the trust and confidence of those we guide.
+            Integrity anchors our actions and decisions, ensuring that we
+            operate with honesty and ethical principles, thereby earning the
+            trust and confidence of those we guide.
           reason: Achieving High Standards
         - explanation: >-
             A focus on excellence means never being complacent. It involves
@@ -233,11 +246,15 @@ coreValues:
             respect from the industry.
           reason: Enhancing Competitiveness
     - about: >-
-        Respect is the lens through which we view and value each person's unique qualities and contributions, fostering an environment of inclusivity and understanding.
+        Respect is the lens through which we view and value each person's unique
+        qualities and contributions, fostering an environment of inclusivity and
+        understanding.
       name: Respect
       reasons:
         - explanation: >-
-            Respect is the lens through which we view and value each person's unique qualities and contributions, fostering an environment of inclusivity and understanding.
+            Respect is the lens through which we view and value each person's
+            unique qualities and contributions, fostering an environment of
+            inclusivity and understanding.
           reason: Accelerating Achievement of Goals
         - explanation: >-
             Collaboration brings together diverse perspectives, skills, and
@@ -252,11 +269,15 @@ coreValues:
             organization.
           reason: Strengthening Team Bonds
     - about: >-
-        Wellbeing is central to our approach, emphasizing the importance of maintaining a healthy balance in all aspects of life, recognizing that a sound mind and body are critical for effective leadership.
+        Wellbeing is central to our approach, emphasizing the importance of
+        maintaining a healthy balance in all aspects of life, recognizing that a
+        sound mind and body are critical for effective leadership.
       name: Well-being
       reasons:
         - explanation: >-
-            Wellbeing is central to our approach, emphasizing the importance of maintaining a healthy balance in all aspects of life, recognizing that a sound mind and body are critical for effective leadership.
+            Wellbeing is central to our approach, emphasizing the importance of
+            maintaining a healthy balance in all aspects of life, recognizing
+            that a sound mind and body are critical for effective leadership.
           reason: Fostering Inclusivity
         - explanation: >-
             Respect encourages open and honest communication. When individuals
@@ -271,8 +292,8 @@ coreValues:
             challenges, and advance their careers within the organization.
           reason: Encouraging Professional Development
 workedWith:
-  header: "!! Doesn't exist"
-  subtext: "!! Doesn't exist"
+  header: '!! Doesn''t exist'
+  subtext: '!! Doesn''t exist'
   testimonials:
     - company: CISCO CYBER OPERATIONS
       name: Theresa Clark
@@ -353,3 +374,4 @@ getStarted:
       name: Create personalized plan
   subtext: Take your first steps and get involved with the betterment of your future.
 ---
+
