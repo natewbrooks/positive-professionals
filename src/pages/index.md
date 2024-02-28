@@ -31,12 +31,14 @@ team:
       education: >-
         MS in Electrical and Electronics Engineering from Johns Hopkins, BS in
         Electrical Engineering from Virginia Tech.
+      email: kimharris@feartofiercecoach.com
       industryExperience: >-
         Jennifer has coached organizations such as the U.S. Navy (Flag Officers,
         SES), U.S. Army (Command Course Candidates), Department of Defense
         (civilian and military personnel), Johns Hopkins University Applied
         Physics Laboratory, Council for State Governments, Loyola University
         Maryland, Virginia Tech, and corporate clients.
+      linkedIn: 'https://www.linkedin.com/in/kim-harris-feartofiercecoach/'
       name: Kim Harris
       pic: /img/kim-harris-cropped.png
       position: 'Associate Certified Coach, SES (ret)'
