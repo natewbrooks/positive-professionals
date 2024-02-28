@@ -6,7 +6,7 @@ const teamColors = ['four', 'tertiary', 'secondary', 'primary'];
 
 export default function TeamSection({ data }) {
 	return (
-		<div className='text-dark dark:text-light/60 flex flex-col items-center justify-center w-full space-y-4'>
+		<div className='text-dark dark:text-light/60 flex flex-col items-center justify-center w-full null:space-y-12 sm:space-y-8'>
 			<div className='flex w-full flex-col leading-snug text-end'>
 				<span className='sans text-sm '>{data.subtext.toUpperCase()}</span>
 
