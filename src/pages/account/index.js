@@ -72,7 +72,7 @@ function Account() {
 										<span className='sans text-four text-sm xbold '>PHONE NUMBER: </span>
 										<span className='sans text-dark dark:text-light/70 text-md '>
 											{infoShown
-												? userData.phoneNumber
+												? userData.phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3')
 												: userData.phoneNumber.split('').map((letter) => '*')}
 										</span>
 									</div>
