@@ -6,6 +6,40 @@ import waveTop from '../../img/bg-waves/contact-waves/wave-top.svg';
 export default function ContactSection({ content }) {
 	const { openModal, closeModal, currentModal } = useModal();
 
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		// Extract form data
+		const formData = new FormData(e.target);
+		const data = {
+			name: formData.get('Name'),
+			email: formData.get('Email'),
+			message: formData.get('Message'),
+		};
+
+		// Send data to the serverless function
+		try {
+			const response = await fetch('/.netlify/functions/sendMail', {
+				method: 'POST',
+				body: JSON.stringify(data),
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+
+			if (response.ok) {
+				console.log('Form submission successful');
+				// Handle successful submission (e.g., show a thank you message)
+			} else {
+				console.error('Form submission failed');
+				// Handle errors
+			}
+		} catch (error) {
+			console.error('An error occurred:', error);
+			// Handle errors
+		}
+	};
+
 	return (
 		<section
 			id='contact'
@@ -25,7 +59,7 @@ export default function ContactSection({ content }) {
 				<div className='z-10 flex items-center null:flex-col md:flex-row space-y-14 md:space-y-0 justify-center w-full h-full'>
 					<div className='flex flex-col justify-between items-center w-full h-full'>
 						<div className='flex flex-col items-center text-center text-dark space-y-2'>
-							<span className='null:w-[280px] sm:w-[400px] md:w-[400px] xxl:w-fit xxl:text-nowrap text-xxl sm:text-xxxl serif leading-none'>
+							<span className='null:w-[280px] sm:w-[400px] md:w-[400px] xl:w-fit xl:text-nowrap text-xxl sm:text-xxxl serif leading-none'>
 								Start your journey to success
 							</span>
 							<span className='sans null:text-sm sm:text-md null:w-[240px] sm:w-[320px] xl:w-[300px] xxl:w-[420px]'>
@@ -33,39 +67,47 @@ export default function ContactSection({ content }) {
 								schedule a free consultation!
 							</span>
 						</div>
-						<form className='flex flex-col bg-transparent pt-6 rounded-md justify-center items-center space-y-8'>
-							<div className='flex flex-col space-y-2'>
+						<form
+							onSubmit={handleSubmit}
+							className='flex flex-col bg-transparent pt-4 rounded-md justify-center items-center space-y-8'>
+							<div className='text-start flex flex-col space-y-2'>
 								<div className='flex flex-col'>
-									<span className='sans text-sm text-dark xbold'>
+									<label
+										for='Name'
+										className='sans text-sm text-dark xbold'>
 										<span className='text-primary'>* </span>Name
-									</span>
+									</label>
 									<input
 										type='text'
 										aria-label='Name Input'
 										className='select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'></input>
 								</div>
 								<div className='flex flex-col'>
-									<span className='sans text-sm text-dark xbold'>
+									<label
+										for='Email'
+										className='sans text-sm text-dark xbold'>
 										<span className='text-primary'>* </span>Email
-									</span>
+									</label>
 									<input
 										type='email'
 										aria-label='Email Input'
 										className='select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'></input>
 								</div>
 								<div className='flex flex-col'>
-									<span className='sans text-sm text-dark xbold'>
-										<span className='text-primary'>* </span>Phone Number
-									</span>
-									<input
-										type='tel'
-										aria-label='Phone Number Input'
-										className='select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'></input>
+									<label
+										for='Message'
+										className='sans text-sm text-dark xbold'>
+										<span className='text-primary'>* </span>Message
+									</label>
+									<textarea
+										type='text'
+										maxLength={200}
+										aria-label='Contact Us Message Input'
+										className='resize-none h-[100px] select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'></textarea>
 								</div>
 							</div>
 							<button
 								type='submit'
-								onClick={(e) => e.preventDefault()}
 								className='null:text-md sm:text-lg md:hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-[#aa89f5] text-dark p-1 items-center flex justify-center sans w-[50%] rounded-md'>
 								SUBMIT
 							</button>

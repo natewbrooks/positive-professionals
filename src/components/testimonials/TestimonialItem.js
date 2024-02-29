@@ -43,10 +43,13 @@ const TestimonialItem = forwardRef(({ id, testimonial, style, borderColor, newID
 						{testimonial.quote}
 					</span>
 					{isClamped && (
-						<div className='absolute bottom-1 right-2'>
+						<div className='absolute bottom-1 right-4'>
 							<SeeMore
 								text='Read more'
-								colorClass={'text-' + borderColor.split('-')[1]}
+								colorClass={
+									'text-' +
+									(borderColor.split('-')[1] === 'primary' ? 'tertiary' : borderColor.split('-')[1])
+								}
 								onClick={() => openModal('testimonial' + id)}
 							/>
 						</div>
