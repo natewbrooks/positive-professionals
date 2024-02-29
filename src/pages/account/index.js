@@ -82,24 +82,24 @@ function Account() {
 										<FaEye
 											onClick={() => setInfoShown(!infoShown)}
 											size={32}
-											className='text-dark cursor-pointer dark:text-light/70 hover:opacity-50 active:scale-95'
+											className='text-dark cursor-pointer dark:text-light/70 md:hover:opacity-50 md:active:scale-95'
 										/>
 									) : (
 										<FaEyeSlash
 											onClick={() => setInfoShown(!infoShown)}
 											size={32}
-											className='text-dark cursor-pointer dark:text-light/70 hover:opacity-50 active:scale-95'
+											className='text-dark cursor-pointer dark:text-light/70 md:hover:opacity-50 md:active:scale-95'
 										/>
 									)}
 								</div>
 							</div>
 
-							<div className='select-none w-full justify-end flex space-x-2 text-dark dark:text-light/70'>
-								<div className='cursor-pointer md:hover:opacity-50 md:active:scale-95 w-fit items-center flex space-x-2 bg-dark/10 dark:bg-light/10 p-2 rounded-md'>
+							<div className='select-none w-full null:justify-center md:justify-end flex space-x-2 text-dark dark:text-light/70'>
+								<div className='cursor-pointer md:hover:opacity-50 md:active:scale-95 null:w-full md:w-fit items-center flex space-x-2 bg-dark/10 dark:bg-light/10 p-2 rounded-md'>
 									<FaVideo size={20} />
 									<span className='sans text-sm xbold'>ACCESS WEBINARS</span>
 								</div>
-								<div className='cursor-pointer md:hover:opacity-50 md:active:scale-95 w-fit items-center flex space-x-2 bg-dark/10 dark:bg-light/10 p-2 rounded-md'>
+								<div className='cursor-pointer md:hover:opacity-50 md:active:scale-95 null:w-full md:w-fit items-center flex space-x-2 bg-dark/10 dark:bg-light/10 p-2 rounded-md'>
 									<FaEdit size={20} />
 									<span className='sans text-sm xbold'>EDIT ACCOUNT</span>
 								</div>

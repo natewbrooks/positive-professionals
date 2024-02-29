@@ -121,13 +121,13 @@ export default function SigninModal({ showSignin }) {
 											<FaEye
 												onClick={() => setPasswordShown(!passwordShown)}
 												size={20}
-												className='text-dark cursor-pointer dark:text-light/70 hover:opacity-50 active:scale-95'
+												className='text-dark cursor-pointer dark:text-light/70 md:hover:opacity-50 md:active:scale-95'
 											/>
 										) : (
 											<FaEyeSlash
 												onClick={() => setPasswordShown(!passwordShown)}
 												size={20}
-												className='text-dark cursor-pointer dark:text-light/70 hover:opacity-50 active:scale-95'
+												className='text-dark cursor-pointer dark:text-light/70 md:hover:opacity-50 md:active:scale-95'
 											/>
 										)}
 									</div>
@@ -221,13 +221,13 @@ export default function SigninModal({ showSignin }) {
 											<FaEye
 												onClick={() => setPasswordShown(!passwordShown)}
 												size={20}
-												className='text-dark cursor-pointer dark:text-light/70 hover:opacity-50 active:scale-95'
+												className='text-dark cursor-pointer dark:text-light/70 md:hover:opacity-50 md:active:scale-95'
 											/>
 										) : (
 											<FaEyeSlash
 												onClick={() => setPasswordShown(!passwordShown)}
 												size={20}
-												className='text-dark cursor-pointer dark:text-light/70 hover:opacity-50 active:scale-95'
+												className='text-dark cursor-pointer dark:text-light/70 md:hover:opacity-50 md:active:scale-95'
 											/>
 										)}
 									</div>
