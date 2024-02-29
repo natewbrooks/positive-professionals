@@ -295,15 +295,33 @@ coreValues:
             challenges, and advance their careers within the organization.
           reason: Encouraging Professional Development
 workedWith:
-  header: "!! Doesn't exist"
-  subtext: "!! Doesn't exist"
+  header: '!! Doesn''t exist'
+  subtext: '!! Doesn''t exist'
   testimonials:
-    - company: CISCO CYBER OPERATIONS
-      name: Theresa Clark
+    - company: Company Name
+      name: Katherine T.
       quote: >-
-        I loved working with these beautiful gals. So incredibly knowledgeable
-        about coaching and wise beyond their years. They solved my mental health
-        and manifested $50,000 from thin air!
+        Engaging in the PQ program and training has been a transformative
+        journey for me, significantly enhancing my emotional intelligence.
+        Through consistent practice, I've learned to observe my thoughts and
+        emotions without judgment, allowing me to develop a deeper understanding
+        of my own inner workings.
+
+
+        PQ training has granted me the ability to stay present in the moment,
+        fostering better self-awareness and emotional regulation. This newfound
+        awareness enables me to respond to situations more thoughtfully, rather
+        than reacting impulsively based on my emotions. I've noticed a positive
+        shift in my interpersonal relationships, as I now approach interactions
+        with greater empathy and understanding.
+
+
+        In moments of stress or challenge, techniques learned from PQ training
+        serve as an anchor, helping me maintain composure and make informed
+        decisions. It has become an invaluable tool in navigating the
+        complexities of daily life, contributing not only to my personal
+        well-being but also to the quality of my connections with others. I am
+        grateful for the positive impact it has had on my life.
     - company: Quantum Secure Corp
       name: Samantha Wright
       quote: >-
@@ -376,3 +394,4 @@ getStarted:
       name: Create personalized plan
   subtext: Take your first steps and get involved with the betterment of your future.
 ---
+
