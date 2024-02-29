@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import TestimonialItem from '../../testimonials/TestimonialItem';
 import { useSwipeable } from 'react-swipeable';
+import Modal from '../../Modal';
+import { FaUser } from 'react-icons/fa';
 
 export default function TestimonialsSection({ data }) {
 	const borderColors = ['border-primary', 'border-secondary', 'border-tertiary', 'border-four'];
@@ -137,62 +139,86 @@ export default function TestimonialsSection({ data }) {
 	});
 
 	return (
-		<div className='relative w-full h-full pb-10'>
-			<div className='relative overflow-hidden w-full h-full flex justify-center items-center flex-col'>
-				<div className='w-full text-start py-2 leading-snug'>
-					<span className='sans text-sm text-dark dark:text-light/60'>TESTIMONIALS</span>
-				</div>
+		<>
+			<div className='relative w-full h-full pb-10'>
+				<div className='relative overflow-hidden w-full h-full flex justify-center items-center flex-col'>
+					<div className='w-full text-start py-2 leading-snug'>
+						<span className='sans text-sm text-dark dark:text-light/60'>TESTIMONIALS</span>
+					</div>
 
-				<div
-					{...handleSwipe}
-					style={{ height: `${itemHeight}px` }}
-					id='testimonialContainer'
-					className={`relative flex flex-row w-full overflow-hidden`}>
-					{[0, 1].map((i) => (
+					<div
+						{...handleSwipe}
+						style={{ height: `${itemHeight}px` }}
+						id='testimonialContainer'
+						className={`relative flex flex-row w-full overflow-hidden`}>
+						{[0, 1].map((i) => (
+							<div
+								key={i}
+								ref={i === 0 ? rowRef : undefined}
+								style={{
+									transform: `translateX(${translateX[i]}px)`,
+									height: `${itemHeight}px`,
+									transitionDuration: `${disableTransition[i] ? '0ms' : '500ms'}`,
+									transitionProperty: `${disableTransition[i] ? '' : 'transform'}`,
+								}}
+								onTransitionEnd={() => {
+									console.log('RECALC POS');
+									recalcPos();
+									setAllowSwipe(true);
+								}}
+								className={`absolute top-0 ease-in-out w-full flex flex-row`}>
+								{data.testimonials.map((testimonial, index) => (
+									<TestimonialItem
+										id={index}
+										newID={`${i}-${index}`}
+										testimonial={testimonial}
+										borderColor={borderColors[index % borderColors.length]}
+										style={{ width: `${itemWidth}px`, height: '100%' }}
+									/>
+								))}
+							</div>
+						))}
+					</div>
+				</div>
+				{/* INDICATOR DOTS */}
+				<div className='absolute -bottom-8 w-full flex space-x-1 justify-center'>
+					{[...Array(data.testimonials.length)].map((x, index) => (
 						<div
-							key={i}
-							ref={i === 0 ? rowRef : undefined}
-							style={{
-								transform: `translateX(${translateX[i]}px)`,
-								height: `${itemHeight}px`,
-								transitionDuration: `${disableTransition[i] ? '0ms' : '500ms'}`,
-								transitionProperty: `${disableTransition[i] ? '' : 'transform'}`,
-							}}
-							onTransitionEnd={() => {
-								console.log('RECALC POS');
-								recalcPos();
-								setAllowSwipe(true);
-							}}
-							className={`absolute top-0 ease-in-out w-full flex flex-row`}>
-							{data.testimonials.map((testimonial, index) => (
-								<TestimonialItem
-									id={index}
-									newID={`${i}-${index}`}
-									testimonial={testimonial}
-									borderColor={borderColors[index % borderColors.length]}
-									style={{ width: `${itemWidth}px`, height: '100%' }}
-								/>
-							))}
+							key={index}
+							className={`text-xxxl transform transition-all duration-[500ms] ease-in-out cursor-default select-none ${
+								index === activeIndex
+									? 'text-dark dark:text-light/70'
+									: 'text-dark/20 dark:text-light/20'
+							}`}>
+							•
 						</div>
 					))}
 				</div>
-
-				{/* <SeeMore /> */}
 			</div>
-			{/* INDICATOR DOTS */}
-			<div className='absolute -bottom-8 w-full flex space-x-1 justify-center'>
-				{[...Array(data.testimonials.length)].map((x, index) => (
-					<div
-						key={index}
-						className={`text-xxxl transform transition-all duration-[500ms] ease-in-out cursor-default select-none ${
-							index === activeIndex
-								? 'text-dark dark:text-light/70'
-								: 'text-dark/20 dark:text-light/20'
-						}`}>
-						•
+			{data.testimonials.map((testimonial, index) => (
+				<Modal modalId={'testimonial' + index}>
+					<div className='md:w-[600px] xxl:w-[800px]'>
+						<div
+							className={`text-center sans xbold text-sm text-${
+								borderColors[index % 4].split('-')[1]
+							}`}>
+							TESTIMONIAL
+						</div>
+						<div className='pb-2 h-fit w-full justify-center flex items-center space-x-2 py-2'>
+							<div className='flex flex-col -space-y-1 text-dark dark:text-light/60 leading-snug'>
+								<span className='sans text-xl text-nowrap xbold text-center'>
+									{testimonial.name}
+								</span>
+								<span className='sans text-lg text-center'>{testimonial.company}</span>
+							</div>
+						</div>
+						<div
+							className={`overflow-y-auto relative active:cursor-grabbing hover:cursor-grab w-full ${borderColors[index]} select-none rounded-l-sm h-full justify-center text-start relative flex flex-col -space-y-1 bg-dark/10 dark:bg-light/10 border-l-4 p-4 `}>
+							<span className='sans text-md text-dark dark:text-light/60'>{testimonial.quote}</span>
+						</div>
 					</div>
-				))}
-			</div>
-		</div>
+				</Modal>
+			))}
+		</>
 	);
 }
