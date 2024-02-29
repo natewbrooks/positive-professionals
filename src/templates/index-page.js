@@ -35,7 +35,7 @@ export const IndexPageTemplate = ({
 			<div className='w-full h-full flex flex-col null:pb-[10rem] sm:pb-[10rem] md:pb-[12rem] lg:pb-[14rem] xxl:pb-[16rem] null:space-y-[10rem] sm:space-y-[10rem] md:space-y-[12rem] lg:space-y-[14rem] xxl:space-y-[18rem]'>
 				<section
 					id='team'
-					className='w-full h-full flex flex-col space-y-20 justify-center items-center xxl:items-start xxl:flex-row xxl:space-x-20'>
+					className='w-full h-full flex flex-col null:space-y-20 justify-center items-center xxl:space-y-0 xxl:items-start xxl:flex-row xxl:space-x-20'>
 					<WhoWeAreSection data={whoWeAre} />
 					<TeamSection data={team} />
 				</section>
