@@ -295,8 +295,8 @@ coreValues:
             challenges, and advance their careers within the organization.
           reason: Encouraging Professional Development
 workedWith:
-  header: '!! Doesn''t exist'
-  subtext: '!! Doesn''t exist'
+  header: "!! Doesn't exist"
+  subtext: "!! Doesn't exist"
   testimonials:
     - company: CISCO CYBER OPERATIONS
       name: Theresa Clark
@@ -341,8 +341,7 @@ services:
     syndrome. Embrace alternative perspectives, see new possibilities, and make
     value-centered decisions for yourself and your team. Reframe negative
     experiences into gifts and opportunities. Increase personal energy and
-    resilience by aligning actions and values. Delight customers with
-    exceptional listening, collaboration, and innovation skills.
+    resilience by aligning actions and values.
   header: Our services
   services:
     - description: Attend a workshop to develop and find meaningful solutions among peers.
@@ -377,4 +376,3 @@ getStarted:
       name: Create personalized plan
   subtext: Take your first steps and get involved with the betterment of your future.
 ---
-

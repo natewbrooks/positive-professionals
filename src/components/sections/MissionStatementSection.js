@@ -20,7 +20,7 @@ export default function MissionStatementSection({ data }) {
 			</div>
 
 			<div className='flex flex-col justify-center items-center text-center'>
-				<span className='sans  text-xxl w-full text-dark dark:text-light/70'>
+				<span className='sans null:text-xl md:text-xxl w-full text-dark dark:text-light/70'>
 					Our <span className='xbold dark:text-light/80'>mission</span> is to cultivate a generation
 					of authentic, resilient leaders who are equipped to navigate life's complexities,
 					inspiring a ripple effect of positive change in communities and organizations worldwide.

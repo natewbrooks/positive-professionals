@@ -77,9 +77,9 @@ export default function VideoItem({ video, searchTerm }) {
 					</span>
 				</div>
 			</AnchorLink>
-			<div className='bg-dark/10 aspect-video w-full h-fit max-h-[320px]'>
+			<div className='bg-dark/10 w-full h-fit max-h-[320px]'>
 				<iframe
-					className='w-full null:h-[240px] lg:h-[280px]'
+					className='w-full null:h-[240px] lg:h-[280px] aspect-video'
 					src={embedURL}
 					title={titleHighlighted}
 					allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'

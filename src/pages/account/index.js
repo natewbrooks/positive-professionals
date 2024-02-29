@@ -35,7 +35,7 @@ function Account() {
 							</div>
 						</div>
 
-						<div className='null:w-fit xl:w-1/2 h-full flex flex-col space-y-4'>
+						<div className='null:w-fit xxl:w-1/2 h-full flex flex-col space-y-4'>
 							<div className='relative null:space-y-2 md:space-y-0 md:space-x-4 w-full h-full items-center justify-between flex null:flex-col md:flex-row bg-dark/10 dark:bg-light/10 rounded-md'>
 								<div className='flex flex-col items-center justify-center space-y-2 null:px-4 null:pb-2 null:pt-4 md:p-4 null:border-b-[3px] md:border-b-0 md:border-r-[3px] border-dark/10 dark:border-light/10 sans xbold text-xl text-dark dark:text-light/70 w-fit h-full'>
 									<span className=''>ACCOUNT INFORMATION</span>
