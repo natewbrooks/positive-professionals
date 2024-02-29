@@ -23,9 +23,9 @@ export default function ContactSection({ content }) {
 
 				{/* Journey to Success */}
 				<div className='z-10 flex items-center null:flex-col md:flex-row space-y-14 md:space-y-0 justify-center w-full h-full'>
-					<div className='flex flex-col justify-between items-center w-fit h-full'>
+					<div className='flex flex-col justify-between items-center w-full h-full'>
 						<div className='flex flex-col items-center text-center text-dark space-y-2'>
-							<span className='null:w-[280px] sm:w-[400px] md:w-[400px] text-xxl sm:text-xxxl serif leading-none'>
+							<span className='null:w-[280px] sm:w-[400px] md:w-[400px] xxl:w-fit xxl:text-nowrap text-xxl sm:text-xxxl serif leading-none'>
 								Start your journey to success
 							</span>
 							<span className='sans null:text-sm sm:text-md null:w-[240px] sm:w-[320px] xl:w-[300px] xxl:w-[420px]'>
@@ -33,7 +33,7 @@ export default function ContactSection({ content }) {
 								schedule a free consultation!
 							</span>
 						</div>
-						<form className='flex flex-col bg-transparent pt-4 rounded-md justify-center items-center space-y-8'>
+						<form className='flex flex-col bg-transparent pt-6 rounded-md justify-center items-center space-y-8'>
 							<div className='flex flex-col space-y-2'>
 								<div className='flex flex-col'>
 									<span className='sans text-sm text-dark xbold'>
@@ -63,9 +63,12 @@ export default function ContactSection({ content }) {
 										className='select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'></input>
 								</div>
 							</div>
-							<div className='null:text-md sm:text-lg md:hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-[#aa89f5] text-dark p-1 items-center flex justify-center sans w-[50%] rounded-md'>
+							<button
+								type='submit'
+								onClick={(e) => e.preventDefault()}
+								className='null:text-md sm:text-lg md:hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-[#aa89f5] text-dark p-1 items-center flex justify-center sans w-[50%] rounded-md'>
 								SUBMIT
-							</div>
+							</button>
 						</form>
 					</div>
 					<div className='w-full h-full flex justify-center items-center'>
