@@ -18,7 +18,7 @@ const TemplateWrapper = ({ children }) => {
 		if (newNavHeight) {
 			setNavHeight(newNavHeight);
 		} else {
-			setNavHeight(83.6);
+			setNavHeight(83);
 		}
 	}
 
@@ -30,11 +30,11 @@ const TemplateWrapper = ({ children }) => {
 		document.body.classList.add('bg-light');
 		document.body.classList.add('dark:bg-dark');
 
-		// Setup event listener
-		window.addEventListener('resize', handleResize);
+		// // Setup event listener
+		// window.addEventListener('resize', handleResize);
 
-		// Cleanup on component unmount
-		return () => window.removeEventListener('resize', handleResize);
+		// // Cleanup on component unmount
+		// return () => window.removeEventListener('resize', handleResize);
 	}, []); // Empty dependency array means this effect runs once on mount and cleanup on unmount
 
 	const { title, description } = useSiteMetadata();
