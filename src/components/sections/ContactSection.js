@@ -86,92 +86,90 @@ export default function ContactSection({ content }) {
 							</span>
 						</div>
 
-						<form
-							onSubmit={handleSubmit}
-							className='flex flex-col bg-transparent pt-4 rounded-md justify-center items-center space-y-8'>
-							{formSubmitted ? (
-								<div className='flex flex-col'>
-									<svg
-										className='checkmark w-[120px] h-[120px]'
-										xmlns='http://www.w3.org/2000/svg'
-										viewBox='0 0 52 52'>
-										<circle
-											className='checkmark__circle stroke-dark'
-											cx='26'
-											cy='26'
-											r='25'
-											fill='none'
-										/>
-										<path
-											className='checkmark__check stroke-dark'
-											fill='none'
-											d='M14.1 27.2l7.1 7.2 16.7-16.8'
-										/>
-									</svg>
-									<span className='null:w-[280px] text-center text-dark  text-lg sans xbold leading-none'>
-										EMAIL SENT! WE WILL REACH OUT TO YOU SHORTLY.
-									</span>
-								</div>
-							) : (
-								<div className='w-full flex flex-col space-y-4 justify-center items-center'>
-									<div className='text-start flex flex-col space-y-2'>
-										<div className='flex flex-col'>
-											<label
-												for='Name'
-												className='sans text-sm text-dark xbold'>
-												<span className='text-primary'>* </span>Name
-											</label>
-											<input
-												type='text'
-												name='Name'
-												aria-label='Name Input'
-												className='select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'
-												required></input>
-										</div>
-										<div className='flex flex-col'>
-											<label
-												for='Email'
-												className='sans text-sm text-dark xbold'>
-												<span className='text-primary'>* </span>Email
-											</label>
-											<input
-												type='email'
-												name='Email'
-												aria-label='Email Input'
-												className='select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'
-												required></input>
-										</div>
-										<div className='flex flex-col'>
-											<label
-												for='Message'
-												className='sans text-sm text-dark xbold'>
-												Message
-											</label>
-											<textarea
-												type='text'
-												name='Message'
-												maxLength={500}
-												aria-label='Contact Us Message Input'
-												className='resize-none h-[100px] select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'></textarea>
-										</div>
+						{formSubmitted ? (
+							<div className='flex flex-col'>
+								<svg
+									className='checkmark w-[120px] h-[120px]'
+									xmlns='http://www.w3.org/2000/svg'
+									viewBox='0 0 52 52'>
+									<circle
+										className='checkmark__circle stroke-dark'
+										cx='26'
+										cy='26'
+										r='25'
+										fill='none'
+									/>
+									<path
+										className='checkmark__check stroke-dark'
+										fill='none'
+										d='M14.1 27.2l7.1 7.2 16.7-16.8'
+									/>
+								</svg>
+								<span className='null:w-[280px] text-center text-dark  text-lg sans xbold leading-none'>
+									EMAIL SENT! WE WILL REACH OUT TO YOU SHORTLY.
+								</span>
+							</div>
+						) : (
+							<form
+								onSubmit={handleSubmit}
+								className='flex flex-col bg-transparent pt-4 rounded-md justify-center items-center space-y-8'>
+								<div className='text-start flex flex-col space-y-2'>
+									<div className='flex flex-col'>
+										<label
+											for='Name'
+											className='sans text-sm text-dark xbold'>
+											<span className='text-primary'>* </span>Name
+										</label>
+										<input
+											type='text'
+											name='Name'
+											aria-label='Name Input'
+											className='select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'
+											required></input>
 									</div>
-
-									<button
-										type='submit'
-										className='null:text-md sm:text-lg md:hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-[#aa89f5] text-dark p-1 items-center flex justify-center sans w-[50%] rounded-md'>
-										SUBMIT
-									</button>
+									<div className='flex flex-col'>
+										<label
+											for='Email'
+											className='sans text-sm text-dark xbold'>
+											<span className='text-primary'>* </span>Email
+										</label>
+										<input
+											type='email'
+											name='Email'
+											aria-label='Email Input'
+											className='select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'
+											required></input>
+									</div>
+									<div className='flex flex-col'>
+										<label
+											for='Message'
+											className='sans text-sm text-dark xbold'>
+											Message
+										</label>
+										<textarea
+											type='text'
+											name='Message'
+											maxLength={500}
+											aria-label='Contact Us Message Input'
+											className='resize-none h-[100px] select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'></textarea>
+									</div>
 								</div>
-							)}
-							<ReCAPTCHA
-								ref={recaptchaRef}
-								sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY} // Replace with your actual site key
-								size='invisible'
-								className='invisible absolute'
-								onChange={onReCAPTCHAChange}
-								badge='inline' // Position can be 'inline', 'bottomright', or 'bottomleft'
-							/>
-						</form>
+
+								<button
+									type='submit'
+									className='null:text-md sm:text-lg md:hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-[#aa89f5] text-dark p-1 items-center flex justify-center sans w-[50%] rounded-md'>
+									SUBMIT
+								</button>
+								<ReCAPTCHA
+									ref={recaptchaRef}
+									sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY} // Replace with your actual site key
+									size='invisible'
+									className='invisible absolute'
+									onChange={onReCAPTCHAChange}
+									badge='inline' // Position can be 'inline', 'bottomright', or 'bottomleft'
+								/>
+							</form>
+						)}
 					</div>
 					<div className='w-full h-full flex justify-center items-center'>
 						<div className='null:border-y-[3px] null:border-light/30 xxl:border-none w-full text-center'>

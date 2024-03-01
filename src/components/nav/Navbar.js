@@ -106,7 +106,9 @@ export default function Navbar() {
 				<div
 					id='navbar'
 					className='flex flex-col -space-y-1'>
-					<div
+					<AnchorLink
+						to={'/#contact'}
+						title='Contact section link'
 						className={`flex w-full h-fit justify-center items-center translate-y-[-2px] py-[.45rem] bg-four`}>
 						<div className='flex flex-col items-center cursor-pointer group md:hover:opacity-50 md:active:scale-95 w-fit'>
 							{/* <div
@@ -138,7 +140,7 @@ export default function Navbar() {
 								</span>
 							</span>
 						</div>
-					</div>
+					</AnchorLink>
 					<div
 						id='navMenu'
 						className={`relative flex py-0 md:px-0 lg:px-10 xl:px-40 xxl:px-80 bg-light dark:bg-dark items-center w-full h-full null:justify-around lg:justify-center`}>

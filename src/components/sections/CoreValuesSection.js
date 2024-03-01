@@ -1,19 +1,20 @@
 import React from 'react';
-import {
-	FaHammer,
-	FaLightbulb,
-	FaHandshake,
-	FaTrophy,
-	FaUsers,
-	FaBalanceScale,
-} from 'react-icons/fa';
+import { FaSeedling, FaHandshake, FaUserShield, FaUsers, FaBalanceScale } from 'react-icons/fa';
+import { BsFillPatchQuestionFill } from 'react-icons/bs';
 import CoreValuesItem from '../core values/CoreValueItem';
 import waveTop from '../../img/bg-waves/core-value-waves/wave-top.svg';
 import waveBottom from '../../img/bg-waves/core-value-waves/wave-bottom.svg';
 import { useModal } from '../../contexts/ModalContext';
 import Modal from '../Modal';
 
-const coreValues = [FaHammer, FaLightbulb, FaHandshake, FaTrophy, FaUsers, FaBalanceScale];
+const coreValues = [
+	FaSeedling,
+	BsFillPatchQuestionFill,
+	FaBalanceScale,
+	FaUserShield,
+	FaHandshake,
+	FaUsers,
+];
 export default function CoreValuesSection({ data }) {
 	const { currentModal } = useModal();
 
@@ -54,7 +55,7 @@ export default function CoreValuesSection({ data }) {
 								</div>
 								<Modal modalId={'coreValue' + index}>
 									<div className='leading-snug z-30 w-full xxl:max-w-[600px] null:h-full md:max-h-[600px] flex flex-col md:flex-row xxl:flex-col xxl:space-x-0 sm:space-x-4 justify-center items-center text-dark dark:text-light/70 py-4 overflow-hidden'>
-										<div className='flex flex-col w-full h-fit'>
+										<div className={`flex flex-col w-[600px] h-fit`}>
 											<div className='flex flex-col -space-y-1 leading-snug pb-2'>
 												<span className='sans text-sm sm:text-md text-secondary xbold text-center'>
 													CORE VALUE
@@ -63,22 +64,24 @@ export default function CoreValuesSection({ data }) {
 													{value.name.toUpperCase()}
 												</span>
 											</div>
-											<div className='pb-2 sans text-sm sm:text-md text-center '>{value.about}</div>
+											<div className='pb-2 sans text-lg sm:text-lg text-center '>{value.about}</div>
 										</div>
-										<div className='max-h-[50vh] w-fit xxl:w-full bg-dark/10 dark:bg-dark sm:px-2 rounded-md rounded-b-md sans text-sm sm:text-md overflow-y-auto'>
-											<div className='h-full px-4 flex flex-col'>
-												<br />
-												{value.reasons.map((reason, index) => (
-													<React.Fragment key={value.name + reason + index}>
-														<span className='xbold dark:text-light/80 '>
-															{index + 1}. {reason.reason}:
-														</span>
-														<span>{reason.explanation}</span>
-														<br />
-													</React.Fragment>
-												))}
+										{/* {value.reasons.length !== 0 && (
+											<div className='max-h-[50vh] w-fit xxl:w-full bg-dark/10 dark:bg-dark sm:px-2 rounded-md rounded-b-md sans text-sm sm:text-md overflow-y-auto'>
+												<div className='h-full px-4 flex flex-col'>
+													<br />
+													{value.reasons.map((reason, index) => (
+														<React.Fragment key={value.name + reason + index}>
+															<span className='xbold dark:text-light/80 '>
+																{index + 1}. {reason.reason}:
+															</span>
+															<span>{reason.explanation}</span>
+															<br />
+														</React.Fragment>
+													))}
+												</div>
 											</div>
-										</div>
+										)} */}
 									</div>
 								</Modal>
 							</>

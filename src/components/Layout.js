@@ -65,6 +65,23 @@ const TemplateWrapper = ({ children }) => {
 					rel='stylesheet'
 				/>
 
+				{/* PRELOAD HERO BG IMAGES */}
+				<link
+					rel='preload'
+					href='../img/hero-wave.svg'
+					as='image'
+				/>
+				<link
+					rel='preload'
+					href='../img/paintStroke.svg'
+					as='image'
+				/>
+
+				<script
+					src='https://www.google.com/recaptcha/api.js'
+					async
+					defer></script>
+
 				<link
 					rel='apple-touch-icon'
 					sizes='180x180'
@@ -124,7 +141,7 @@ const TemplateWrapper = ({ children }) => {
 			</div>
 			<div className='w-full h-full flex flex-col'>
 				<ContactSection />
-				<UpcomingWebinars
+				{/* <UpcomingWebinars
 					webinars={[
 						{
 							date: 'JAN 8, 2024 @ 12:30 PM EST',
@@ -158,7 +175,7 @@ const TemplateWrapper = ({ children }) => {
 						},
 						// Add more webinar objects as needed
 					]}
-				/>
+				/> */}
 			</div>
 			<Footer />
 		</div>

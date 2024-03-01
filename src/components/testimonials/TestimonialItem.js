@@ -1,13 +1,14 @@
 import React, { forwardRef, useRef, useState, useEffect } from 'react';
 import { FaUser } from 'react-icons/fa';
 import { useModal } from '../../contexts/ModalContext';
-import SeeMore from '../pieces/SeeMore';
 
 const TestimonialItem = forwardRef(({ id, testimonial, style, borderColor, newID }, ref) => {
 	// ${id === 0 ? testimonial.borderColorClass : 'border-red-400'}
 	const { openModal, closeModal, currentModal } = useModal();
 	const [isClamped, setIsClamped] = useState(false);
 	const textRef = useRef(null);
+
+	const color = borderColor.split('-')[1];
 
 	useEffect(() => {
 		// Check if the text is being clamped
@@ -42,15 +43,15 @@ const TestimonialItem = forwardRef(({ id, testimonial, style, borderColor, newID
 						{testimonial.quote}
 					</span>
 					{isClamped && (
-						<div className='absolute bottom-1 right-4'>
-							<SeeMore
-								text='Read more'
-								colorClass={
-									'text-' +
-									(borderColor.split('-')[1] === 'primary' ? 'tertiary' : borderColor.split('-')[1])
-								}
+						<div className={`absolute bottom-1 right-4 bg-${color} rounded-md px-2`}>
+							<div
 								onClick={() => openModal('testimonial' + id)}
-							/>
+								className='group cursor-pointer relative flex items-center select-none'>
+								<span
+									className={`text-dark dark:text-darkAccent sans group-md:hover:opacity-50 xbold text-sm text-nowrap`}>
+									Read more
+								</span>
+							</div>
 						</div>
 					)}
 				</div>

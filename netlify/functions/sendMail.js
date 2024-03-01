@@ -4,29 +4,8 @@ const fetch = require('node-fetch'); // Ensure 'node-fetch' is available if you'
 sgMail.setApiKey(process.env.GATSBY_SENDGRID_API_KEY);
 
 exports.handler = async (event) => {
-	const { name, email, message, 'g-recaptcha-response': recaptchaToken } = JSON.parse(event.body);
+	const { name, email, message } = JSON.parse(event.body);
 
-	// // Verify the reCAPTCHA token first
-	// const recaptchaVerifyResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-	// 	method: 'POST',
-	// 	headers: {
-	// 		'Content-Type': 'application/x-www-form-urlencoded',
-	// 	},
-	// 	body: `secret=${encodeURIComponent(
-	// 		process.env.GATSBY_RECAPTCHA_SECRET_KEY
-	// 	)}&response=${encodeURIComponent(recaptchaToken)}`,
-	// });
-	// const recaptchaVerifyData = await recaptchaVerifyResponse.json();
-
-	// if (!recaptchaVerifyData.success) {
-	// 	// reCAPTCHA verification failed
-	// 	return {
-	// 		statusCode: 400,
-	// 		body: JSON.stringify({ error: 'reCAPTCHA verification failed' }),
-	// 	};
-	// }
-
-	// reCAPTCHA verification passed, proceed with sending email
 	const msg = {
 		to: ['natewbrooks@gmail.com', 'mistercrabman07@gmail.com'],
 		from: 'natewbrooks@gmail.com',
@@ -60,7 +39,9 @@ exports.handler = async (event) => {
                 </tr>
                 <tr>
                     <td align="center" style="padding-top: 12px;">
-                        <span><strong>Client message:</strong> ${message}</span>
+                        <span><strong>Client message:</strong> ${
+													message.length > 0 ? message : 'N/A'
+												}</span>
                     </td>
                 </tr>
             </table>

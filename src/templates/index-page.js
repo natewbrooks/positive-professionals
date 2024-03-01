@@ -211,10 +211,6 @@ export const pageQuery = graphql`
 					values {
 						name
 						about
-						reasons {
-							reason
-							explanation
-						}
 					}
 				}
 				workedWith {

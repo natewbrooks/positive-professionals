@@ -197,12 +197,10 @@ export default function TestimonialsSection({ data }) {
 			</div>
 			{data.testimonials.map((testimonial, index) => (
 				<Modal modalId={'testimonial' + index}>
-					<div className='md:w-[600px] xxl:w-[800px]'>
+					<div className='md:w-[600px] xxl:w-[800px] h-full'>
 						<div
 							className={`text-center sans xbold text-sm text-${
-								borderColors[index % 4].split('-')[1] === 'primary'
-									? 'tertiary'
-									: borderColors[index % 4].split('-')[1]
+								borderColors[index % 4].split('-')[1]
 							}`}>
 							TESTIMONIAL
 						</div>
@@ -215,7 +213,7 @@ export default function TestimonialsSection({ data }) {
 							</div>
 						</div>
 						<div
-							className={`overflow-y-auto relative active:cursor-grabbing hover:cursor-grab w-full ${borderColors[index]} select-none rounded-l-sm rounded-r-md h-full justify-center text-start relative flex flex-col -space-y-1 bg-dark/10 dark:bg-light/10 border-l-4 p-4 `}>
+							className={`py-4 overflow-y-auto h-3/4 relative active:cursor-grabbing hover:cursor-grab w-full ${borderColors[index]} select-none rounded-l-sm rounded-r-md h-full text-start relative flex flex-col -space-y-1 bg-dark/10 dark:bg-light/10 border-l-4 p-4 `}>
 							<span className='sans text-md text-dark dark:text-light/60'>{testimonial.quote}</span>
 						</div>
 					</div>
