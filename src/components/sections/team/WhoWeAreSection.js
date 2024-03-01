@@ -1,5 +1,5 @@
 import React from 'react';
-import TeamMembers from '../../team/TeamMembers';
+import TeamMembers from './TeamMembers';
 import SeeMore from '../../pieces/SeeMore';
 
 export default function WhoWeAreSection({ data }) {
@@ -8,7 +8,7 @@ export default function WhoWeAreSection({ data }) {
 			return (
 				<>
 					<p
-						key={key}
+						key={key + item}
 						className='sans text-lg'>
 						{item}
 					</p>

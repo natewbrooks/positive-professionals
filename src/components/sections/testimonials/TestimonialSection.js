@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import TestimonialItem from '../../testimonials/TestimonialItem';
+import TestimonialItem from './TestimonialItem';
 import { useSwipeable } from 'react-swipeable';
 import Modal from '../../Modal';
-import { FaUser } from 'react-icons/fa';
 
 export default function TestimonialsSection({ data }) {
 	const borderColors = ['border-primary', 'border-secondary', 'border-tertiary', 'border-four'];
@@ -153,7 +152,7 @@ export default function TestimonialsSection({ data }) {
 						className={`relative flex flex-row w-full overflow-hidden`}>
 						{[0, 1].map((i) => (
 							<div
-								key={i}
+								key={i + 'testimonialContainer'}
 								ref={i === 0 ? rowRef : undefined}
 								style={{
 									transform: `translateX(${translateX[i]}px)`,
@@ -169,6 +168,7 @@ export default function TestimonialsSection({ data }) {
 								className={`absolute top-0 ease-in-out w-full flex flex-row`}>
 								{data.testimonials.map((testimonial, index) => (
 									<TestimonialItem
+										key={index + testimonial.name}
 										id={index}
 										newID={`${i}-${index}`}
 										testimonial={testimonial}
@@ -184,7 +184,7 @@ export default function TestimonialsSection({ data }) {
 				<div className='absolute -bottom-8 w-full flex space-x-1 justify-center'>
 					{[...Array(data.testimonials.length)].map((x, index) => (
 						<div
-							key={index}
+							key={index + x + 'indicator'}
 							className={`text-xxxl transform transition-all duration-[500ms] ease-in-out cursor-default select-none ${
 								index === activeIndex
 									? 'text-dark dark:text-light/70'
@@ -196,7 +196,9 @@ export default function TestimonialsSection({ data }) {
 				</div>
 			</div>
 			{data.testimonials.map((testimonial, index) => (
-				<Modal modalId={'testimonial' + index}>
+				<Modal
+					key={testimonial.name + index + 'modal'}
+					modalId={'testimonial' + index}>
 					<div className='md:w-[600px] xxl:w-[800px] h-full'>
 						<div
 							className={`text-center sans xbold text-sm text-${

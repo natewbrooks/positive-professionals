@@ -8,7 +8,7 @@ import { withPrefix } from 'gatsby';
 import '/src/styles/global.css';
 import ContactSection from './sections/ContactSection';
 import SigninModal from './sign in/SigninModal';
-import UpcomingWebinars from './sections/UpcomingWebinarsSection';
+import UpcomingWebinars from './sections/webinar/UpcomingWebinarsSection';
 
 const TemplateWrapper = ({ children }) => {
 	const [navHeight, setNavHeight] = useState();
@@ -68,12 +68,12 @@ const TemplateWrapper = ({ children }) => {
 				{/* PRELOAD HERO BG IMAGES */}
 				<link
 					rel='preload'
-					href='../img/hero-wave.svg'
+					href={`${withPrefix('/')}img/bg-waves/hero-waves/hero-wave.svg`}
 					as='image'
 				/>
 				<link
 					rel='preload'
-					href='../img/paintStroke.svg'
+					href={`${withPrefix('/')}img/bg-waves/hero-waves/heroPaintStroke.svg`}
 					as='image'
 				/>
 

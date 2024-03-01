@@ -1,11 +1,10 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import SeeMore from '../pieces/SeeMore';
-import VideoItem from '../webinar/VideoItem';
-import BlogPostItem from '../blog/BlogPostItem';
+import VideoItem from '../media/VideoItem';
+import BlogPostItem from '../media/BlogPostItem';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
-import waveTop from '../../img/bg-waves/resources-waves/wave-top.svg';
-import waveBottom from '../../img/bg-waves/resources-waves/wave-bottom.svg';
+import waveTop from '../../../static/img/bg-waves/resources-waves/wave-top.svg';
+import waveBottom from '../../../static/img/bg-waves/resources-waves/wave-bottom.svg';
 
 export default function ResourcesSection({ data }) {
 	if (!data) {
@@ -70,7 +69,7 @@ export default function ResourcesSection({ data }) {
 						{blogPosts.map((post, index) => (
 							<div className={`rounded-sm p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
 								<BlogPostItem
-									key={index}
+									key={index + post.title}
 									post={{
 										title: post.frontmatter.title,
 										date: post.frontmatter.date,

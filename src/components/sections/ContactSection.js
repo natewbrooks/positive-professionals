@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useModal } from '../../contexts/ModalContext';
 import { FaUserPlus } from 'react-icons/fa';
-import waveTop from '../../img/bg-waves/contact-waves/wave-top.svg';
+import waveTop from '../../../static/img/bg-waves/contact-waves/wave-top.svg';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function ContactSection({ content }) {
@@ -115,9 +115,7 @@ export default function ContactSection({ content }) {
 								className='flex flex-col bg-transparent pt-4 rounded-md justify-center items-center space-y-8'>
 								<div className='text-start flex flex-col space-y-2'>
 									<div className='flex flex-col'>
-										<label
-											for='Name'
-											className='sans text-sm text-dark xbold'>
+										<label className='sans text-sm text-dark xbold'>
 											<span className='text-primary'>* </span>Name
 										</label>
 										<input
@@ -128,9 +126,7 @@ export default function ContactSection({ content }) {
 											required></input>
 									</div>
 									<div className='flex flex-col'>
-										<label
-											for='Email'
-											className='sans text-sm text-dark xbold'>
+										<label className='sans text-sm text-dark xbold'>
 											<span className='text-primary'>* </span>Email
 										</label>
 										<input
@@ -141,11 +137,7 @@ export default function ContactSection({ content }) {
 											required></input>
 									</div>
 									<div className='flex flex-col'>
-										<label
-											for='Message'
-											className='sans text-sm text-dark xbold'>
-											Message
-										</label>
+										<label className='sans text-sm text-dark xbold'>Message</label>
 										<textarea
 											type='text'
 											name='Message'

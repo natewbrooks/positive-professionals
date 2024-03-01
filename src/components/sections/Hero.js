@@ -1,6 +1,6 @@
 import React from 'react';
-import heroWave from '../../img/bg-waves/hero-waves/hero.svg';
-import paintStroke from '../../img/paintStroke.svg';
+import heroWave from '../../../static/img/bg-waves/hero-waves/hero.svg';
+import heroPaintStroke from '../../../static/img/bg-waves/hero-waves/heroPaintStroke.svg';
 
 export default function Hero({ data }) {
 	return (
@@ -20,7 +20,7 @@ export default function Hero({ data }) {
 									<img
 										className='absolute w-full -scale-x-[160%] scale-y-[130%] h-full -translate-x-10'
 										style={{ zIndex: '-1' }}
-										src={paintStroke}></img>
+										src={heroPaintStroke}></img>
 									together.
 								</span>
 							</span>

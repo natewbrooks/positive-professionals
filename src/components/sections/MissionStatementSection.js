@@ -1,9 +1,4 @@
 import React from 'react';
-import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
-import SeeMore from '../pieces/SeeMore';
-import newEmail from '../../img/first-steps/new-email.png';
-import { BsMailbox2Flag, BsCalendar2WeekFill } from 'react-icons/bs';
-import { IoChatbubbles } from 'react-icons/io5';
 
 export default function MissionStatementSection({ data }) {
 	return (

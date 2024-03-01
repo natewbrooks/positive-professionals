@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { FaLinkedin } from 'react-icons/fa';
-import logo from '../../img/logo/pp-logo-outline.svg';
+import logo from '../../../static/img/logo/pp-logo-outline.svg';
 
 export default function Footer({}) {
 	return (

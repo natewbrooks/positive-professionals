@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import BlogPostItem from '../blog/BlogPostItem';
-import VideoItem from '../webinar/VideoItem';
+import BlogPostItem from '../media/BlogPostItem';
+import VideoItem from '../media/VideoItem';
 import SeeMore from '../pieces/SeeMore';
 import { FaSearch } from 'react-icons/fa';
 

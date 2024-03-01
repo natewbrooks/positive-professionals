@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" preserveAspectRatio="none" viewBox="0 0 960 115" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-66.6841,-798.637)">
+        <g id="layered-waves-haikei--28-.svg" serif:id="layered-waves-haikei (28).svg" transform="matrix(1,0,0,1,546.684,792.661)">
+            <g transform="matrix(1,0,0,1,-480,-120)">
+                <clipPath id="_clip1">
+                    <rect x="0" y="0" width="960" height="240"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <path d="M0,141L20,146C40,151 80,161 120,161.7C160,162.3 200,153.7 240,152.8C280,152 320,159 360,158.5C400,158 440,150 480,149.7C520,149.3 560,156.7 600,157.7C640,158.7 680,153.3 720,147.8C760,142.3 800,136.7 840,134.7C880,132.7 920,134.3 940,135.2L960,136L960,241L0,241L0,141Z" style="fill:#8e90f1;fill-rule:nonzero;"/>
+                    <path d="M0,184L20,188.8C40,193.7 80,203.3 120,205C160,206.7 200,200.3 240,195C280,189.7 320,185.3 360,187.7C400,190 440,199 480,205C520,211 560,214 600,207.5C640,201 680,185 720,183.5C760,182 800,195 840,198.2C880,201.3 920,194.7 940,191.3L960,188L960,241L0,241L0,184Z" style="fill:#6366f1;fill-rule:nonzero;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -5,11 +5,11 @@ import { getImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
 import TeamSection from '../components/sections/team/TeamSection';
-import ServicesSection from '../components/sections/ServicesSection';
+import ServicesSection from '../components/sections/services/ServicesSection';
 import ResourcesSection from '../components/sections/ResourcesSection';
 import TestimonialsSection from '../components/sections/testimonials/TestimonialSection';
 import WorkedWithSection from '../components/sections/testimonials/WorkedWithSection';
-import CoreValuesSection from '../components/sections/CoreValuesSection';
+import CoreValuesSection from '../components/sections/core values/CoreValuesSection';
 import FirstStepsSection from '../components/sections/FirstStepsSection';
 import Hero from '../components/sections/Hero';
 import WhoWeAreSection from '../components/sections/team/WhoWeAreSection';

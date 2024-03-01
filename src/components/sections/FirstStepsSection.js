@@ -1,7 +1,5 @@
 import React from 'react';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
-import SeeMore from '../pieces/SeeMore';
-import newEmail from '../../img/first-steps/new-email.png';
 import { BsMailbox2Flag, BsCalendar2WeekFill } from 'react-icons/bs';
 import { IoChatbubbles } from 'react-icons/io5';
 
@@ -25,7 +23,7 @@ export default function FirstStepsSection({ data }) {
 					return (
 						<>
 							<div
-								key={index}
+								key={index + step}
 								className='flex flex-row items-center'>
 								<div className='flex flex-col space-y-4 items-center justify-center text-dark dark:text-light/70'>
 									<div className='bg-dark/10 dark:bg-light/10 rounded-full null:p-4 sm:p-6 lg:p-8'>
@@ -42,7 +40,9 @@ export default function FirstStepsSection({ data }) {
 								</div>
 							</div>
 							{index !== data.steps.length - 1 && (
-								<div className='hidden md:block'>
+								<div
+									key={index + step}
+									className='hidden md:block'>
 									<MdOutlineKeyboardArrowRight size={32} />
 								</div>
 							)}

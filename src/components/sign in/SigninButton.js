@@ -63,7 +63,7 @@ export default function SigninButton({ hasScrolled }) {
 							{ label: 'Sign out', action: 'signOut' },
 						].map((x, index) => (
 							<span
-								key={x + index}
+								key={x.action + index}
 								onClick={() => handleModalAction(x.action)}
 								className={`border-b-[3px] border-transparent hover:border-primary py-2 px-1 sans xbold text-md text-light dark:text-dark cursor-pointer whitespace-nowrap md:hover:opacity-50 md:active:scale-95`}>
 								{x.label.toUpperCase()}

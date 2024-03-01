@@ -1,6 +1,5 @@
 import React from 'react';
-import TeamMembers from '../../team/TeamMembers';
-import SeeMore from '../../pieces/SeeMore';
+import TeamMembers from './TeamMembers';
 
 const teamColors = ['four', 'tertiary', 'secondary', 'primary'];
 

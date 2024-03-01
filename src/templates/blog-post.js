@@ -6,9 +6,9 @@ import Layout from '../components/Layout';
 import ResourcesNav from '../components/resources/ResourcesNav';
 import '../styles/blog-post.css';
 import { useModal } from '../contexts/ModalContext';
-import TeamMemberModal from '../components/team/TeamMemberModal';
+import TeamMemberModal from '../components/sections/team/TeamMemberModal';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import pic from '../img/bkg.png';
+import pic from '../../static/img/bkg.png';
 
 export const BlogPostTemplate = ({
 	description,
@@ -59,6 +59,7 @@ export const BlogPostTemplate = ({
 									return (
 										<>
 											<span
+												key={index + author}
 												onClick={() => {
 													if (infoExists) {
 														openModal(author);
