@@ -4,7 +4,22 @@ hero:
   header: 'Transforming intentions into results,'
   subtext: Start actualizing your dreams today
 whoWeAre:
-  body: "Positive Professionals is a group of experienced coaches with a diverse set of backgrounds. Our team of seasoned coaches brings a wealth of diverse experiences to the table. We're not just a group of professionals; we're a close-knit team with backgrounds in senior executive roles, engineering, program management, and government. Diversity, Equity & Belonging (DEB) is our forte, and we're passionate about individual and team coaching.\n\nEach coach has tackled the challenges of building multidisciplinary teams, negotiated alliances, developed motivating visions, led large organizations, turned around poor performers, and driven change to achieve unprecedented mission successes. But our story is about more than professional achievements. Our\r proudest accomplishments and greatest joys center\r around our families.\n"
+  body: >-
+    Positive Professionals is a group of experienced coaches with a diverse set
+    of backgrounds. Our team of seasoned coaches brings a wealth of diverse
+    experiences to the table. We're not just a group of professionals; we're a
+    close-knit team with backgrounds in senior executive roles, program
+    management, and government. Diversity, Equity & Belonging (DEB) is our
+    forte, and we're passionate about individual and team coaching.
+
+
+    Each coach has tackled the challenges of building multidisciplinary teams,
+    negotiated alliances, developed motivating visions, led large organizations,
+    turned around poor performers, and driven change to achieve unprecedented
+    mission successes. But our story is about more than professional
+    achievements. Our
+     proudest accomplishments and greatest joys center
+     around our families.
   header: Our story
   subtext: WHO WE ARE
 team:
