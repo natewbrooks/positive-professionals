@@ -1,6 +1,7 @@
 import React from 'react';
 import heroWave from '../../../static/img/bg-waves/hero-waves/hero.svg';
 import heroPaintStroke from '../../../static/img/bg-waves/hero-waves/heroPaintStroke.svg';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 export default function Hero({ data }) {
 	return (
@@ -29,9 +30,12 @@ export default function Hero({ data }) {
 					<p className='-translate-y-[20px] tracking-[0.1rem] rounded-md px-2 xbold break-words sans null:w-[240px] md:w-full text-center null:text-md mobile:text-lg text-dark'>
 						{data.subtext}
 					</p>
-					<div className='null:hidden md:block md:translate-y-[80px] xl:translate-y-[55px] xxl:translate-y-[50px] sans null:text-xxl xbold text-[#386975]  cursor-pointer select-none md:hover:opacity-90 md:active:scale-95 py-2 px-6 rounded-md'>
+					<AnchorLink
+						to='/#contact'
+						title={'Get Started'}
+						className='null:hidden md:block md:translate-y-[80px] xl:translate-y-[55px] xxl:translate-y-[50px] sans null:text-xxl xbold text-[#386975]  cursor-pointer select-none md:hover:opacity-90 md:active:scale-95 py-2 px-6 rounded-md'>
 						GET STARTED
-					</div>
+					</AnchorLink>
 				</div>
 			</header>
 		</>

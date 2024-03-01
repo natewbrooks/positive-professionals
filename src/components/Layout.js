@@ -13,23 +13,26 @@ import UpcomingWebinars from './sections/webinar/UpcomingWebinarsSection';
 const TemplateWrapper = ({ children }) => {
 	const [navHeight, setNavHeight] = useState();
 
-	function handleRefresh() {
-		setNavHeight(document.getElementById('navMenu').offsetHeight);
-	}
-
 	useEffect(() => {
 		document.body.classList.add('bg-light');
 		document.body.classList.add('dark:bg-dark');
 
-		window.addEventListener('resize', handleRefresh);
-
-		const navHeight = document.getElementById('navMenu').offsetHeight;
-		if (navHeight) {
-			setNavHeight(navHeight);
+		function handleResize() {
+			const newNavHeight = document.getElementById('navMenu')?.offsetHeight;
+			if (newNavHeight) {
+				setNavHeight(newNavHeight);
+			}
 		}
 
-		return window.removeEventListener('resize', handleRefresh);
-	}, [navHeight]);
+		// Initial calculation
+		handleResize();
+
+		// Setup event listener
+		window.addEventListener('resize', handleResize);
+
+		// Cleanup on component unmount
+		return () => window.removeEventListener('resize', handleResize);
+	}, []); // Empty dependency array means this effect runs once on mount and cleanup on unmount
 
 	const { title, description } = useSiteMetadata();
 
