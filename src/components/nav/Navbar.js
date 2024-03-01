@@ -89,8 +89,8 @@ export default function Navbar() {
 
 	const navLinks = [
 		{ title: 'Team', hash: 'team', colorClass: 'primary' },
-		{ title: 'Testimonials', hash: 'testimonials', colorClass: 'tertiary' },
 		{ title: 'Services', hash: 'services', colorClass: 'four' },
+		{ title: 'Testimonials', hash: 'testimonials', colorClass: 'tertiary' },
 	];
 
 	useLayoutEffect(() => {

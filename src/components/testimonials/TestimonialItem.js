@@ -16,7 +16,6 @@ const TestimonialItem = forwardRef(({ id, testimonial, style, borderColor, newID
 				const lineHeight = 1.3;
 				const maxTextHeight = 16 * lineHeight * (window.offsetWidth < 580 ? 8 : 6); // 6 lines of text
 				const isTextClamped = textRef.current.offsetHeight > maxTextHeight;
-				console.log('HEIGHT:' + textRef.current.offsetHeight + 'NOT HEIGHT: ' + maxTextHeight);
 				setIsClamped(isTextClamped);
 			}
 		};

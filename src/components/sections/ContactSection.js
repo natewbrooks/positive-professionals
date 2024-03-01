@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useModal } from '../../contexts/ModalContext';
 import { FaUserPlus } from 'react-icons/fa';
 import waveTop from '../../img/bg-waves/contact-waves/wave-top.svg';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function ContactSection({ content }) {
-	const { openModal, closeModal, currentModal } = useModal();
+	const { openModal } = useModal(); // Assuming openModal is used elsewhere
+	const recaptchaRef = useRef(null);
+	const [captchaValidated, setCaptchaValidated] = useState(false);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+
+		if (!captchaValidated) {
+			recaptchaRef.current.execute(); // Trigger reCAPTCHA on form submit
+			return; // Prevent form submission until captcha is validated
+		}
 
 		// Extract form data
 		const formData = new FormData(e.target);
@@ -17,26 +25,14 @@ export default function ContactSection({ content }) {
 			message: formData.get('Message'),
 		};
 
-		// Send data to the serverless function
-		try {
-			const response = await fetch('/.netlify/functions/sendMail', {
-				method: 'POST',
-				body: JSON.stringify(data),
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			});
+		// Your existing email validation and fetch logic
+	};
 
-			if (response.ok) {
-				console.log('Form submission successful');
-				// Handle successful submission (e.g., show a thank you message)
-			} else {
-				console.error('Form submission failed');
-				// Handle errors
-			}
-		} catch (error) {
-			console.error('An error occurred:', error);
-			// Handle errors
+	const onReCAPTCHAChange = (token) => {
+		// Token is provided by reCAPTCHA upon successful validation
+		if (token) {
+			setCaptchaValidated(true);
+			handleSubmit(new Event('submit')); // Programmatically trigger handleSubmit again
 		}
 	};
 
@@ -79,8 +75,10 @@ export default function ContactSection({ content }) {
 									</label>
 									<input
 										type='text'
+										name='Name'
 										aria-label='Name Input'
-										className='select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'></input>
+										className='select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'
+										required></input>
 								</div>
 								<div className='flex flex-col'>
 									<label
@@ -90,8 +88,10 @@ export default function ContactSection({ content }) {
 									</label>
 									<input
 										type='email'
+										name='Email'
 										aria-label='Email Input'
-										className='select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'></input>
+										className='select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'
+										required></input>
 								</div>
 								<div className='flex flex-col'>
 									<label
@@ -101,11 +101,19 @@ export default function ContactSection({ content }) {
 									</label>
 									<textarea
 										type='text'
-										maxLength={200}
+										name='Message'
+										maxLength={500}
 										aria-label='Contact Us Message Input'
 										className='resize-none h-[100px] select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'></textarea>
 								</div>
 							</div>
+							<ReCAPTCHA
+								ref={recaptchaRef}
+								sitekey='process.env.RECAPTCHA_SITE_KEY' // Replace with your actual site key
+								size='invisible'
+								onChange={onReCAPTCHAChange}
+								badge='inline' // Position can be 'inline', 'bottomright', or 'bottomleft'
+							/>
 							<button
 								type='submit'
 								className='null:text-md sm:text-lg md:hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-[#aa89f5] text-dark p-1 items-center flex justify-center sans w-[50%] rounded-md'>
