@@ -107,18 +107,19 @@ export default function ContactSection({ content }) {
 										className='resize-none h-[100px] select-none bg-dark rounded-md text-light placeholder:text-light py-1 px-2 sans'></textarea>
 								</div>
 							</div>
-							<ReCAPTCHA
-								ref={recaptchaRef}
-								sitekey='process.env.RECAPTCHA_SITE_KEY' // Replace with your actual site key
-								size='invisible'
-								onChange={onReCAPTCHAChange}
-								badge='inline' // Position can be 'inline', 'bottomright', or 'bottomleft'
-							/>
+
 							<button
 								type='submit'
 								className='null:text-md sm:text-lg md:hover:opacity-50 active:scale-95 cursor-pointer xbold text-center select-none bg-[#aa89f5] text-dark p-1 items-center flex justify-center sans w-[50%] rounded-md'>
 								SUBMIT
 							</button>
+							<ReCAPTCHA
+								ref={recaptchaRef}
+								sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY} // Replace with your actual site key
+								className='invisible absolute'
+								onChange={onReCAPTCHAChange}
+								badge='inline' // Position can be 'inline', 'bottomright', or 'bottomleft'
+							/>
 						</form>
 					</div>
 					<div className='w-full h-full flex justify-center items-center'>

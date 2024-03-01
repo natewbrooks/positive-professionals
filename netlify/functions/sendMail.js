@@ -1,7 +1,7 @@
 const sgMail = require('@sendgrid/mail');
 const fetch = require('node-fetch'); // Ensure 'node-fetch' is available if you're using Node.js version < 17.5.0
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setApiKey(process.env.GATSBY_SENDGRID_API_KEY);
 
 exports.handler = async (event) => {
 	const { name, email, message, 'g-recaptcha-response': recaptchaToken } = JSON.parse(event.body);
@@ -12,7 +12,7 @@ exports.handler = async (event) => {
 		headers: {
 			'Content-Type': 'application/x-www-form-urlencoded',
 		},
-		body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+		body: `secret=${process.env.GATSBY_RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
 	});
 	const recaptchaVerifyData = await recaptchaVerifyResponse.json();
 
