@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useLayoutEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from './sections/Footer';
 import Navbar from './nav/Navbar';
@@ -13,19 +13,22 @@ import UpcomingWebinars from './sections/webinar/UpcomingWebinarsSection';
 const TemplateWrapper = ({ children }) => {
 	const [navHeight, setNavHeight] = useState();
 
+	function handleResize() {
+		const newNavHeight = document.getElementById('navMenu')?.offsetHeight;
+		if (newNavHeight) {
+			setNavHeight(newNavHeight);
+		} else {
+			setNavHeight(83.6);
+		}
+	}
+
+	useLayoutEffect(() => {
+		handleResize();
+	}, []);
+
 	useEffect(() => {
 		document.body.classList.add('bg-light');
 		document.body.classList.add('dark:bg-dark');
-
-		function handleResize() {
-			const newNavHeight = document.getElementById('navMenu')?.offsetHeight;
-			if (newNavHeight) {
-				setNavHeight(newNavHeight);
-			}
-		}
-
-		// Initial calculation
-		handleResize();
 
 		// Setup event listener
 		window.addEventListener('resize', handleResize);
