@@ -90,9 +90,8 @@ export default function ServicesSection({ content }) {
 				</span>
 				<div className='text-dark grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1 h-full'>
 					{services.map((service, index) => (
-						<>
+						<React.Fragment key={service.title + index}>
 							<div
-								key={service.title + index}
 								className={`md:group md:hover:opacity-80 transition-all duration-300 cursor-pointer select-none md:active:scale-95 flex justify-end items-end  w-full h-full z-10 rounded-sm bg-light/30 dark:bg-dark/50`}>
 								<ServicesItem
 									key={index}
@@ -100,16 +99,14 @@ export default function ServicesSection({ content }) {
 									modalId={'service' + index}
 								/>
 							</div>
-							<Modal
-								key={service.title + index}
-								modalId={'service' + index}>
+							<Modal modalId={'service' + index}>
 								<div className='flex w-full h-full text-dark dark:text-light/70 '>
 									<div className='flex flex-col'>
 										<span className='text-xl serif'>{service.title}</span>
 									</div>
 								</div>
 							</Modal>
-						</>
+						</React.Fragment>
 					))}
 				</div>
 

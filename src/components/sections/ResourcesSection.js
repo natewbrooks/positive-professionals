@@ -26,7 +26,6 @@ export default function ResourcesSection({ data }) {
 	});
 
 	const videoCatalog = data.videos;
-	console.log(videoCatalog);
 	const previousWebinars = data.webinars;
 
 	return (
@@ -67,9 +66,10 @@ export default function ResourcesSection({ data }) {
 					</AnchorLink>
 					<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
 						{blogPosts.map((post, index) => (
-							<div className={`rounded-sm p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
+							<div
+								key={index + 'blog'}
+								className={`rounded-sm p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
 								<BlogPostItem
-									key={index + post.title}
 									post={{
 										title: post.frontmatter.title,
 										date: post.frontmatter.date,
@@ -103,9 +103,10 @@ export default function ResourcesSection({ data }) {
 					</AnchorLink>
 					<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
 						{videoCatalog.map((video, index) => (
-							<div className={`rounded-sm p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
+							<div
+								key={index + 'video'}
+								className={`rounded-sm p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
 								<VideoItem
-									key={index}
 									video={{
 										title: video.frontmatter.title,
 										date: video.frontmatter.date,

@@ -11,16 +11,15 @@ export default function TeamMembers({ gridItems, colors }) {
 				{gridItems.map((item, index) => {
 					const lastItemClasses = isOdd && index === gridItems.length - 1 ? 'col-span-2' : '';
 					return (
-						<>
+						<React.Fragment key={index + item.name}>
 							<TeamMember
-								key={index + item.name}
 								member={item}
 								color={colors[index % colors.length]}
 								modalId={item.name}
 								className={lastItemClasses}
 								isLastItem={isOdd && index === gridItems.length - 1}
 							/>
-						</>
+						</React.Fragment>
 					);
 				})}
 			</div>

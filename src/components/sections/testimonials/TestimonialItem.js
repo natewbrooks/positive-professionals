@@ -43,7 +43,8 @@ const TestimonialItem = forwardRef(({ id, testimonial, style, borderColor, newID
 						{testimonial.quote}
 					</span>
 					{isClamped && (
-						<div className={`absolute bottom-1 right-4 bg-${color} rounded-md px-2`}>
+						<div
+							className={`absolute null:bottom-2 lg:bottom-1 right-4 bg-${color} rounded-md px-2`}>
 							<div
 								onClick={() => openModal('testimonial' + id)}
 								className='group cursor-pointer relative flex items-center select-none'>

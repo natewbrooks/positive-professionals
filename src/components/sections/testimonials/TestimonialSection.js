@@ -168,7 +168,7 @@ export default function TestimonialsSection({ data }) {
 								className={`absolute top-0 ease-in-out w-full flex flex-row`}>
 								{data.testimonials.map((testimonial, index) => (
 									<TestimonialItem
-										key={index + testimonial.name}
+										key={index + testimonial.name + 'testimonial'}
 										id={index}
 										newID={`${i}-${index}`}
 										testimonial={testimonial}
@@ -184,7 +184,7 @@ export default function TestimonialsSection({ data }) {
 				<div className='absolute -bottom-8 w-full flex space-x-1 justify-center'>
 					{[...Array(data.testimonials.length)].map((x, index) => (
 						<div
-							key={index + x + 'indicator'}
+							key={index + 'indicator'}
 							className={`text-xxxl transform transition-all duration-[500ms] ease-in-out cursor-default select-none ${
 								index === activeIndex
 									? 'text-dark dark:text-light/70'
@@ -199,7 +199,7 @@ export default function TestimonialsSection({ data }) {
 				<Modal
 					key={testimonial.name + index + 'modal'}
 					modalId={'testimonial' + index}>
-					<div className='md:w-[600px] xxl:w-[800px] h-full'>
+					<div className='null:w-full md:w-[600px] xxl:w-[800px]'>
 						<div
 							className={`text-center sans xbold text-sm text-${
 								borderColors[index % 4].split('-')[1]
@@ -214,10 +214,10 @@ export default function TestimonialsSection({ data }) {
 								<span className='sans text-lg text-center'>{testimonial.company}</span>
 							</div>
 						</div>
-						<div
-							className={`py-4 overflow-y-auto h-3/4 relative active:cursor-grabbing hover:cursor-grab w-full ${borderColors[index]} select-none rounded-l-sm rounded-r-md h-full text-start relative flex flex-col -space-y-1 bg-dark/10 dark:bg-light/10 border-l-4 p-4 `}>
-							<span className='sans text-md text-dark dark:text-light/60'>{testimonial.quote}</span>
-						</div>
+					</div>
+					<div
+						className={`p-4 overflow-y-auto relative active:cursor-grabbing hover:cursor-grab w-full ${borderColors[index]} select-none rounded-l-sm rounded-r-md h-full text-start relative flex flex-col bg-dark/10 dark:bg-light/10 border-l-4`}>
+						<span className='sans text-md text-dark dark:text-light/60'>{testimonial.quote}</span>
 					</div>
 				</Modal>
 			))}

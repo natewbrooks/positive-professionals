@@ -21,15 +21,11 @@ export default function FirstStepsSection({ data }) {
 				{data.steps.map((step, index) => {
 					const IconComponent = icons[index];
 					return (
-						<>
-							<div
-								key={index + step}
-								className='flex flex-row items-center'>
+						<React.Fragment key={step.name + index + 'step'}>
+							<div className='flex flex-row items-center'>
 								<div className='flex flex-col space-y-4 items-center justify-center text-dark dark:text-light/70'>
 									<div className='bg-dark/10 dark:bg-light/10 rounded-full null:p-4 sm:p-6 lg:p-8'>
-										{
-											<IconComponent className='h-[36px] w-[36px] sm:w-[40px] sm:h-[40px] lg:w-[48px] lg:h-[48px]' />
-										}
+										<IconComponent className='h-[36px] w-[36px] sm:w-[40px] sm:h-[40px] lg:w-[48px] lg:h-[48px]' />
 									</div>
 									<div className='flex flex-col items-center justify-center text-center'>
 										<span className='sans text-md xbold'>{step.name}</span>
@@ -40,13 +36,11 @@ export default function FirstStepsSection({ data }) {
 								</div>
 							</div>
 							{index !== data.steps.length - 1 && (
-								<div
-									key={index + step}
-									className='hidden md:block'>
+								<div className='hidden md:block'>
 									<MdOutlineKeyboardArrowRight size={32} />
 								</div>
 							)}
-						</>
+						</React.Fragment>
 					);
 				})}
 			</div>

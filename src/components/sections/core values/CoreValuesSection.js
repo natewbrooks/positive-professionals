@@ -44,20 +44,17 @@ export default function CoreValuesSection({ data }) {
 				<div className='w-full md:max-w-[80%] xl:max-w-[60%] flex flex-col space-y-4 justify-center items-center'>
 					<div className='w-full grid grid-cols-3 gap-1 justify-items-center'>
 						{data.values.map((value, index) => (
-							<>
+							<React.Fragment key={index + value.name}>
 								<div className='w-full h-fit z-10'>
 									<CoreValuesItem
-										key={index + value}
 										value={value}
 										Icon={coreValues[index]}
 										modalId={'coreValue' + index}
 									/>
 								</div>
-								<Modal
-									key={index + value}
-									modalId={'coreValue' + index}>
+								<Modal modalId={'coreValue' + index}>
 									<div className='leading-snug z-30 w-full xxl:max-w-[600px] null:h-full md:max-h-[600px] flex flex-col md:flex-row xxl:flex-col xxl:space-x-0 sm:space-x-4 justify-center items-center text-dark dark:text-light/70 py-4 overflow-hidden'>
-										<div className={`flex flex-col w-[600px] h-fit`}>
+										<div className={`flex flex-col null:w-fit md:w-[600px] h-fit`}>
 											<div className='flex flex-col -space-y-1 leading-snug pb-2'>
 												<span className='sans text-sm sm:text-md text-secondary xbold text-center'>
 													CORE VALUE
@@ -66,7 +63,7 @@ export default function CoreValuesSection({ data }) {
 													{value.name.toUpperCase()}
 												</span>
 											</div>
-											<div className='pb-2 sans text-lg sm:text-lg text-center '>{value.about}</div>
+											<div className='pb-2 sans text-lg text-center '>{value.about}</div>
 										</div>
 										{/* {value.reasons.length !== 0 && (
 											<div className='max-h-[50vh] w-fit xxl:w-full bg-dark/10 dark:bg-dark sm:px-2 rounded-md rounded-b-md sans text-sm sm:text-md overflow-y-auto'>
@@ -86,7 +83,7 @@ export default function CoreValuesSection({ data }) {
 										)} */}
 									</div>
 								</Modal>
-							</>
+							</React.Fragment>
 						))}
 					</div>
 
