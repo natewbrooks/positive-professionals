@@ -27,7 +27,7 @@ export default function SigninButton({ hasScrolled }) {
 				handleLogout();
 				break;
 			default:
-				console.log('No action');
+				break;
 		}
 	};
 

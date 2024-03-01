@@ -142,8 +142,6 @@ const IndexPage = ({ data }) => {
 	const { markdownRemark, blogs, videos, webinars } = data;
 	const frontmatter = markdownRemark.frontmatter;
 
-	console.log('VIDEOS: ' + videos.nodes);
-
 	return (
 		<Layout>
 			<IndexPageTemplate

@@ -161,7 +161,6 @@ export default function TestimonialsSection({ data }) {
 									transitionProperty: `${disableTransition[i] ? '' : 'transform'}`,
 								}}
 								onTransitionEnd={() => {
-									console.log('RECALC POS');
 									recalcPos();
 									setAllowSwipe(true);
 								}}

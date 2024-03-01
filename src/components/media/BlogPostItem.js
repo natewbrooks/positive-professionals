@@ -92,6 +92,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 							)}
 							{!imageData && (
 								<img
+									alt='no image'
 									src={pic}
 									className='h-[280px]'></img>
 							)}

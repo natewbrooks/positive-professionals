@@ -35,8 +35,6 @@ export default function Modal({ children, modalId }) {
 				}
 			};
 		}
-
-		console.log('CURRENT MODAL 2: ' + currentModal);
 	}, [currentModal, modalId]); // Re-run effect only if currentModal or modalId changes
 
 	if (currentModal !== modalId) return null;

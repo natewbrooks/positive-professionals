@@ -94,6 +94,7 @@ export const BlogPostTemplate = ({
 					)}
 					{!imageData && (
 						<img
+							alt='no image'
 							src={pic}
 							className='max-h-[50%] aspect-video mb-4'></img>
 					)}

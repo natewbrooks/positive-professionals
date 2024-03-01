@@ -36,12 +36,10 @@ export default function ContactSection({ content }) {
 			});
 
 			if (response.ok) {
-				console.log('Form submission successful');
 				setFormSubmitted(true);
 				// Handle successful submission (e.g., show a thank you message)
 			} else {
 				console.error('Form submission failed');
-				setFormSubmitted(false);
 				// Handle errors
 			}
 		} catch (error) {

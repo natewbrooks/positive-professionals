@@ -19,6 +19,7 @@ export default function Hero({ data }) {
 								{data.header}
 								<span className='relative inline-block z-20 break-words null:w-fit leading-none serif null:text-xxxl mobile:text-billboard text-center xbold text-light dark:text-dark py-1 px-8 rounded-full'>
 									<img
+										alt='hero background paint stroke'
 										className='absolute w-full -scale-x-[160%] scale-y-[130%] h-full -translate-x-10'
 										style={{ zIndex: '-1' }}
 										src={heroPaintStroke}></img>

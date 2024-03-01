@@ -40,7 +40,6 @@ export default function SigninModal({ showSignin }) {
 			closeModal();
 			setErrorMsg('');
 		} catch (error) {
-			console.log(error);
 			const errorCode = error.code;
 			const errorMessage = error.message;
 			setErrorMsg('ERROR: INVALID EMAIL OR PASSWORD. TRY AGAIN.');
