@@ -127,173 +127,40 @@ coreValues:
   subtext: WHAT WE BELIEVE IN
   values:
     - about: >-
-        Lastly, collaboration is the thread that binds us, highlighting the
-        power of teamwork and shared knowledge in achieving collective goals.
-      name: Collaboration
-      reasons:
-        - explanation: >-
-            Lastly, collaboration is the thread that binds us, highlighting the
-            power of teamwork and shared knowledge in achieving collective
-            goals.
-          reason: Resilience in Adversity
-        - explanation: >-
-            Persistence is closely tied to having a long-term vision. It
-            involves staying committed to goals that may take years to achieve,
-            keeping the bigger picture in mind while managing day-to-day
-            responsibilities.
-          reason: Long-Term Vision
-        - explanation: >-
-            The landscape of business is constantly changing. Persistence in the
-            context of executive
-
-            coaching means a commitment to continuous learning and adaptation.
-            It's about
-
-            persistently upgrading one's skills and knowledge base to stay
-            relevant and effective.
-          reason: Continuous Learning
-        - explanation: >-
-            Persistence translates into maintaining high standards of
-            performance consistently. It's about regular, disciplined effort
-            towards personal and professional development goals, not just in
-            bursts of enthusiasm.
-          reason: Consistency in Effort and Standards
-        - explanation: >-
-            In leadership, it's easy to become complacent, especially after
-            achieving a certain level of success. Persistence involves pushing
-            oneself and one's team out of the comfort zone, striving for
-            continuous improvement.
-          reason: Overcoming Complacency
-        - explanation: >-
-            As coaches, we use the principle of persistence to motivate and
-            inspire. By embodying this value, we set an example for leaders to
-            emulate, creating a culture of perseverance and dedication within
-            their organizations. In essence, persistence is a driving force in
-            our coaching philosophy. It's about more than just enduring; it's
-            about actively striving for excellence, learning and adapting, and
-            maintaining the discipline and motivation to achieve long-term
-            success. This value deeply influences how we guide leaders in
-            navigating their careers and organizations towards sustained growth
-            and effectiveness.
-          reason: Motivation and Inspiration
+        Growth underpins our commitment to continuous improvement, both in
+        ourselves and in those we coach, fostering a culture where progress and
+        development are paramount.
+      name: Growth
+      reasons: []
     - about: >-
         Curiosity drives our quest for knowledge and understanding, fueling our
         passion to explore new ideas and perspectives that enhance our coaching
         methods
       name: Curiosity
-      reasons:
-        - explanation: >-
-            Curiosity drives our quest for knowledge and understanding, fueling
-            our passion to explore new ideas and perspectives that enhance our
-            coaching methods
-          reason: Fostering Creativity
-        - explanation: >-
-            In a rapidly evolving market, the ability to innovate ensures
-            organizations can adapt swiftly to changes, seize new opportunities,
-            and meet emerging customer needs. Innovation is not just about
-            technology; it's about adopting a mindset that embraces change as an
-            opportunity for growth and improvement.
-          reason: Adapting to Change
-        - explanation: >-
-            Innovation is a key driver of growth. It opens new markets, enhances
-            customer experiences, and creates value that distinguishes an
-            organization from its competitors. By prioritizing innovation,
-            companies can expand their reach and impact, ensuring long-term
-            sustainability and success.
-          reason: Driving Growth
-    - about: >-
-        Growth underpins our commitment to continuous improvement, both in
-        ourselves and in those we coach, fostering a culture where progress and
-        development are paramount.
-      name: Growth
-      reasons:
-        - explanation: >-
-            Growth underpins our commitment to continuous improvement, both in
-            ourselves and in those we coach, fostering a culture where progress
-            and development are paramount.
-          reason: Building Trust
-        - explanation: >-
-            A commitment to integrity ensures that individuals take
-            responsibility for their actions. It promotes a culture where people
-            are accountable for their decisions and behaviors, which is crucial
-            for maintaining high ethical standards and organizational
-            excellence.
-          reason: Ensuring Accountability
-        - explanation: >-
-            Integrity serves as a moral compass, guiding individuals in making
-            ethical decisions. It ensures that even in challenging situations,
-            the choices made reflect the organization's values and principles,
-            protecting its reputation and maintaining public trust.
-          reason: Guiding Ethical Decision-Making
-    - about: >-
-        Integrity anchors our actions and decisions, ensuring that we operate
-        with honesty and ethical principles, thereby earning the trust and
-        confidence of those we guide.
-      name: Integrity
-      reasons:
-        - explanation: >-
-            Integrity anchors our actions and decisions, ensuring that we
-            operate with honesty and ethical principles, thereby earning the
-            trust and confidence of those we guide.
-          reason: Achieving High Standards
-        - explanation: >-
-            A focus on excellence means never being complacent. It involves
-            regularly evaluating and improving processes, products, and
-            services, ensuring that the organization remains at the forefront of
-            quality and innovation.
-          reason: Promoting Continuous Improvement
-        - explanation: >-
-            Excellence positions an organization as a leader in its field. By
-            consistently delivering superior value, it builds a competitive
-            advantage that attracts customers, engages employees, and earns
-            respect from the industry.
-          reason: Enhancing Competitiveness
-    - about: >-
-        Respect is the lens through which we view and value each person's unique
-        qualities and contributions, fostering an environment of inclusivity and
-        understanding.
-      name: Respect
-      reasons:
-        - explanation: >-
-            Respect is the lens through which we view and value each person's
-            unique qualities and contributions, fostering an environment of
-            inclusivity and understanding.
-          reason: Accelerating Achievement of Goals
-        - explanation: >-
-            Collaboration brings together diverse perspectives, skills, and
-            experiences. This diversity fuels innovation and problem-solving,
-            leading to more effective and creative solutions than individuals
-            working in isolation.
-          reason: Leveraging Diverse Perspectives
-        - explanation: >-
-            Effective collaboration builds strong team relationships. Working
-            together towards common goals fosters a sense of community and
-            belonging, enhancing teamwork and communication across the
-            organization.
-          reason: Strengthening Team Bonds
+      reasons: []
     - about: >-
         Wellbeing is central to our approach, emphasizing the importance of
         maintaining a healthy balance in all aspects of life, recognizing that a
         sound mind and body are critical for effective leadership.
       name: Well-being
-      reasons:
-        - explanation: >-
-            Wellbeing is central to our approach, emphasizing the importance of
-            maintaining a healthy balance in all aspects of life, recognizing
-            that a sound mind and body are critical for effective leadership.
-          reason: Fostering Inclusivity
-        - explanation: >-
-            Respect encourages open and honest communication. When individuals
-            feel respected, they are more likely to share their ideas and
-            feedback, contributing to a culture of transparency and continuous
-            improvement.
-          reason: Promoting Open Communication
-        - explanation: >-
-            A respectful environment supports professional growth and
-            development. Recognizing and valuing each person's contributions
-            motivates employees to pursue learning opportunities, take on new
-            challenges, and advance their careers within the organization.
-          reason: Encouraging Professional Development
+      reasons: []
+    - about: >-
+        Integrity anchors our actions and decisions, ensuring that we operate
+        with honesty and ethical principles, thereby earning the trust and
+        confidence of those we guide.
+      name: Integrity
+      reasons: []
+    - about: >-
+        Respect is the lens through which we view and value each person's unique
+        qualities and contributions, fostering an environment of inclusivity and
+        understanding.
+      name: Respect
+      reasons: []
+    - about: >-
+        Lastly, collaboration is the thread that binds us, highlighting the
+        power of teamwork and shared knowledge in achieving collective goals.
+      name: Collaboration
+      reasons: []
 workedWith:
   header: '!! Doesn''t exist'
   subtext: '!! Doesn''t exist'
