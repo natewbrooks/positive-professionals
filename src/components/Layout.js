@@ -11,7 +11,7 @@ import SigninModal from './sign in/SigninModal';
 import UpcomingWebinars from './sections/webinar/UpcomingWebinarsSection';
 
 const TemplateWrapper = ({ children }) => {
-	const [navHeight, setNavHeight] = useState();
+	const [navHeight, setNavHeight] = useState(83.6);
 
 	function handleResize() {
 		const newNavHeight = document.getElementById('navMenu')?.offsetHeight;

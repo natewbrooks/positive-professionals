@@ -216,7 +216,7 @@ export default function TestimonialsSection({ data }) {
 						</div>
 					</div>
 					<div
-						className={`p-4 overflow-y-auto relative active:cursor-grabbing hover:cursor-grab w-full ${borderColors[index]} select-none rounded-l-sm rounded-r-md h-full text-start relative flex flex-col bg-dark/10 dark:bg-light/10 border-l-4`}>
+						className={`p-4 overflow-y-auto relative active:cursor-grabbing hover:cursor-grab null:w-full md:w-[600px] xxl:w-[800px] ${borderColors[index]} select-none rounded-l-sm rounded-r-md h-full text-start relative flex flex-col bg-dark/10 dark:bg-light/10 border-l-4`}>
 						<span className='sans text-md text-dark dark:text-light/60'>{testimonial.quote}</span>
 					</div>
 				</Modal>
