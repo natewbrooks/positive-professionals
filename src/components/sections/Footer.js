@@ -6,15 +6,20 @@ import waveTop from '../../../static/img/bg-waves/upcoming-webinar-waves/wave-to
 
 export default function Footer({}) {
 	return (
-		<footer className={`relative mt-2 w-full h-full`}>
-			<div className='z-0 absolute w-full h-full left-0'>
+		<footer className='relative mt-2 w-full h-full'>
+			<div
+				className='select-none z-0 absolute w-full h-full left-0'
+				style={{ position: 'relative' }}>
 				<img
 					src={waveTop}
 					alt='Footer wave top bg'
-					style={{ transform: 'translateY(-90%)' }}
-					className='absolute w-full h-[50px] top-0'></img>
+					style={{ transform: 'translateY(-90%)', position: 'absolute', zIndex: -1 }} // Ensure this is behind everything else
+					className='w-full h-[50px] top-0'
+				/>
 			</div>
-			<div className='z-10 bg-dark w-full h-full px-12 pb-6 pt-2	 flex-col sm:flex-row  flex justify-around'>
+			<div
+				className='z-20 bg-dark w-full h-full px-12 pb-6 pt-2 flex-col sm:flex-row flex justify-around'
+				style={{ position: 'relative' }}>
 				<div className='flex flex-col space-y-4 items-center justify-center'>
 					<div className='flex items-center justify-center'>
 						<div
@@ -26,14 +31,8 @@ export default function Footer({}) {
 								alt='logo'
 								style={{ width: '84px', height: '84px' }}
 								loading='lazy'
-								className='aspect-auto'
+								className='aspect-auto cursor-pointer'
 							/>
-							{/* <div className='relative flex z-10'>
-							<div className='z-50 bg-primary p-4 rotate-45'></div>
-							<div className='z-20 absolute -left-2 top-0 bg-secondary p-4 rotate-45'></div>
-							<div className='z-40 absolute -right-2 bg-tertiary p-4 rotate-45'></div>
-							<div className='z-10 absolute -right-4 bg-four p-4 rotate-45'></div>
-						</div> */}
 						</div>
 					</div>
 					<span className='sans text-sm text-center text-light/50 xbold'>
