@@ -8,30 +8,35 @@ export default function ContactSection({ content }) {
 	const { openModal } = useModal(); // Assuming openModal is used elsewhere
 	const recaptchaRef = useRef(null);
 	const [captchaValidated, setCaptchaValidated] = useState(false);
-	const [formSubmitted, setFormSubmitted] = useState(
-		localStorage.getItem('formSubmitted') === 'true'
-	);
+	const [formSubmitted, setFormSubmitted] = useState(false);
 
 	useEffect(() => {
-		// Check if the form was submitted more than 10 minutes ago
+		// Access localStorage only after the component has mounted
+		const submitted = localStorage.getItem('formSubmitted') === 'true';
+		setFormSubmitted(submitted);
+
+		// Check if more than 5 minutes have passed since the last submission
 		const submissionTime = localStorage.getItem('submissionTime');
 		if (submissionTime) {
 			const timePassed = new Date().getTime() - new Date(parseInt(submissionTime)).getTime();
-			if (timePassed >= 600000) {
-				// 600000 milliseconds = 10 minutes
+			if (timePassed >= 300000) {
+				// 300000 milliseconds = 5 minutes
 				setFormSubmitted(false);
 				localStorage.setItem('formSubmitted', 'false');
 			}
 		}
+	}, []);
 
-		// Set a timeout to reset formSubmitted after 10 minutes of the last submission
+	useEffect(() => {
+		// Anytime formSubmitted changes, reflect it in localStorage
+		localStorage.setItem('formSubmitted', formSubmitted.toString());
+
 		if (formSubmitted) {
+			// Schedule to reset formSubmitted after 5 minutes
 			const timeoutId = setTimeout(() => {
 				setFormSubmitted(false);
 				localStorage.setItem('formSubmitted', 'false');
-			}, 300000); // Reset after 5 minutes
-
-			// Clear the timeout if the component unmounts
+			}, 300000); // 5 minutes
 			return () => clearTimeout(timeoutId);
 		}
 	}, [formSubmitted]);
