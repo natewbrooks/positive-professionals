@@ -6,7 +6,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 export default function Hero({ data }) {
 	return (
 		<>
-			<header className='z-10 relative flex justify-center items-center w-full h-fit pt-32 pb-12 null:mb-[10rem] sm:mb-[10rem] md:mb-[14rem]  lg:mb-[12rem] xl:mb-[16rem] bg-tertiary'>
+			<header className='z-10 relative flex justify-center items-center w-full h-fit null:pt-24 lg:pt-32 pb-12 null:mb-[10rem] sm:mb-[10rem] md:mb-[14rem]  lg:mb-[12rem] xl:mb-[16rem] bg-tertiary'>
 				<img
 					className='aspect-auto absolute null:translate-y-[45%] lg:translate-y-[38%] bottom-0 w-full h-[300px] md:h-[450px] xxl:h-[500px]'
 					alt='hero background waves'
