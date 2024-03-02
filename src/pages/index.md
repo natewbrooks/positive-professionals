@@ -17,9 +17,8 @@ whoWeAre:
     negotiated alliances, developed motivating visions, led large organizations,
     turned around poor performers, and driven change to achieve unprecedented
     mission successes. But our story is about more than professional
-    achievements. Our
-     proudest accomplishments and greatest joys center
-     around our families.
+    achievements. Our proudest accomplishments and greatest joys center around
+    our families.
   header: Our story
   subtext: WHO WE ARE
 team:
