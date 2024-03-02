@@ -20,7 +20,7 @@ In the journey of self-improvement and personal development, the wisdom of those
 
 This quote underscores the profound impact of passion on our work's quality and our personal satisfaction. When we engage in work we love, it doesn't feel like work. Reflect on what brings you joy and strive to incorporate more of that into your professional life.
 
-> **"The best time to plant a tree was 20 years ago. The second best time is now." **- Chinese Proverb
+> **"The best time to plant a tree was 20 years ago. The second best time is now."** - Chinese Proverb
 
 Procrastination and regret can stifle growth. This proverb encourages us to take action now, regardless of past hesitations. Whether it's a career move, personal project, or learning opportunity, the right time to start is always the present.
 
