@@ -55,7 +55,7 @@ export default function SigninButton({ hasScrolled }) {
 			<div
 				className={`absolute transition-all duration-300 ${
 					hasScrolled ? '-bottom-7' : '-bottom-10'
-				}  null:-left-12 mobile:-left-10 sm:left-8  lg:-left-4`}>
+				}  null:left-4 mobile:left-10 sm:left-8  lg:-left-4`}>
 				<LocalModal modalId={'accessAccountModal'}>
 					<div className='flex flex-col w-fit text-center'>
 						{[
