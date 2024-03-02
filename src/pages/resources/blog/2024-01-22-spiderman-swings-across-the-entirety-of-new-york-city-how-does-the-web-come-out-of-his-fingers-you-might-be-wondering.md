@@ -16,7 +16,7 @@ authors:
 ---
 In the journey of self-improvement and personal development, the wisdom of those who've walked before us can light the way. Below are five quotes that resonate deeply with me, each followed by a brief exploration of how they can apply to your life.
 
-> **"The only way to do great work is to love what you do." **- Steve Jobs
+> **"The only way to do great work is to love what you do."** - Steve Jobs
 
 This quote underscores the profound impact of passion on our work's quality and our personal satisfaction. When we engage in work we love, it doesn't feel like work. Reflect on what brings you joy and strive to incorporate more of that into your professional life.
 
@@ -24,11 +24,11 @@ This quote underscores the profound impact of passion on our work's quality and 
 
 Procrastination and regret can stifle growth. This proverb encourages us to take action now, regardless of past hesitations. Whether it's a career move, personal project, or learning opportunity, the right time to start is always the present.
 
-> **"Whether you think you can, or you think you can't – you're right." **- Henry Ford
+> **"Whether you think you can, or you think you can't – you're right."** - Henry Ford
 
 Our beliefs shape our reality. Adopting a positive, can-do mindset enhances our ability to tackle challenges and achieve our goals. Conversely, a self-limiting belief system can hinder our progress. Cultivate a mindset that empowers you to succeed.
 
-> **"To handle yourself, use your head; to handle others, use your heart." **- Eleanor Roosevelt
+> **"To handle yourself, use your head; to handle others, use your heart."** - Eleanor Roosevelt
 
 Emotional intelligence is vital for personal and interpersonal success. This wisdom reminds us to approach our own challenges with logic and others' needs with empathy and compassion. Balancing intellect and emotion leads to more meaningful connections and decisions.
 
