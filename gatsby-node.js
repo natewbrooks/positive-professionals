@@ -16,7 +16,6 @@ exports.createPages = ({ actions, graphql }) => {
 							slug
 						}
 						frontmatter {
-							tags
 							templateKey
 						}
 					}
@@ -35,35 +34,10 @@ exports.createPages = ({ actions, graphql }) => {
 			const id = edge.node.id;
 			createPage({
 				path: edge.node.fields.slug,
-				tags: edge.node.frontmatter.tags,
 				component: path.resolve(`src/templates/${String(edge.node.frontmatter.templateKey)}.js`),
 				// additional data can be passed via context
 				context: {
 					id,
-				},
-			});
-		});
-
-		// Tag pages:
-		let tags = [];
-		// Iterate through each post, putting all found tags into `tags`
-		posts.forEach((edge) => {
-			if (_.get(edge, `node.frontmatter.tags`)) {
-				tags = tags.concat(edge.node.frontmatter.tags);
-			}
-		});
-		// Eliminate duplicate tags
-		tags = _.uniq(tags);
-
-		// Make tag pages
-		tags.forEach((tag) => {
-			const tagPath = `/tags/${_.kebabCase(tag)}/`;
-
-			createPage({
-				path: tagPath,
-				component: path.resolve(`src/templates/tags.js`),
-				context: {
-					tag,
 				},
 			});
 		});
@@ -91,13 +65,10 @@ exports.onCreateWebpackConfig = ({ actions, ...args }) => {
 		args.stage === 'build-html'
 			? {
 					resolve: {
-						// Handle Uncaught TypeError: util.inherits is not a function - https://github.com/webpack/webpack/issues/1019
 						mainFields: ['browser', 'module', 'main'],
-						// Extend the fallback configuration here
 						fallback: {
 							util: require.resolve('util'),
 							stream: require.resolve('stream-browserify'),
-							// Add the additional fallbacks
 							'stream/web': require.resolve('stream-browserify'),
 							'util/types': require.resolve('util'),
 							diagnostics_channel: require.resolve('diagnostics_channel'),
@@ -108,7 +79,6 @@ exports.onCreateWebpackConfig = ({ actions, ...args }) => {
 
 	actions.setWebpackConfig({
 		plugins: [
-			// Handle unsupported node scheme - https://github.com/webpack/webpack/issues/13290#issuecomment-987880453
 			new webpack.NormalModuleReplacementPlugin(/^node:/, (resource) => {
 				resource.request = resource.request.replace(/^node:/, '');
 			}),
