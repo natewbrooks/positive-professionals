@@ -116,7 +116,7 @@ team:
         accessibility.
       linkedIn: 'https://www.linkedin.com/in/liz-brooks-870b5221a/'
       name: Liz Brooks
-      pic: /img/liz-brooks-alt-2-cropped.png
+      pic: /img/liz-brooks-cropped.png
       position: 'Associate Certified Coach, SES (ret)'
       specialities: >-
         As an energetic mom of six, a people-focused senior executive in the
