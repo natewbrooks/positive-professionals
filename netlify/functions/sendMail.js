@@ -8,8 +8,8 @@ exports.handler = async (event) => {
 
 	const msg = {
 		to: ['natewbrooks@gmail.com', 'mistercrabman07@gmail.com'],
-		from: 'natewbrooks@gmail.com',
-		subject: `Positive Professionals | New consultation request from ${name}`,
+		from: 'Positive Professionals <no-reply@positiveprofessionals.net>',
+		subject: `✦ New consultation request from ${name} ✦`,
 		text: `Message from ${name} (${email}): ${message}`,
 		html: `<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
     <tr>
@@ -27,7 +27,7 @@ exports.handler = async (event) => {
                 </tr>
                 <!-- This row will have the border under the email, spanning full width -->
                 <tr>
-                    <td style="border-bottom: 3px solid #121212; padding-bottom: 12px;">
+                    <td style="border-bottom: 3px solid rgba(18, 18, 18, 0.1); padding-bottom: 12px;">
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td align="center">

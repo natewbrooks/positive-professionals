@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useModal } from '../../contexts/ModalContext';
 import { FaUserPlus } from 'react-icons/fa';
 import waveTop from '../../../static/img/bg-waves/contact-waves/wave-top.svg';
@@ -8,17 +8,41 @@ export default function ContactSection({ content }) {
 	const { openModal } = useModal(); // Assuming openModal is used elsewhere
 	const recaptchaRef = useRef(null);
 	const [captchaValidated, setCaptchaValidated] = useState(false);
-	const [formSubmitted, setFormSubmitted] = useState(false);
+	const [formSubmitted, setFormSubmitted] = useState(
+		localStorage.getItem('formSubmitted') === 'true'
+	);
+
+	useEffect(() => {
+		// Check if the form was submitted more than 10 minutes ago
+		const submissionTime = localStorage.getItem('submissionTime');
+		if (submissionTime) {
+			const timePassed = new Date().getTime() - new Date(parseInt(submissionTime)).getTime();
+			if (timePassed >= 600000) {
+				// 600000 milliseconds = 10 minutes
+				setFormSubmitted(false);
+				localStorage.setItem('formSubmitted', 'false');
+			}
+		}
+
+		// Set a timeout to reset formSubmitted after 10 minutes of the last submission
+		if (formSubmitted) {
+			const timeoutId = setTimeout(() => {
+				setFormSubmitted(false);
+				localStorage.setItem('formSubmitted', 'false');
+			}, 300000); // Reset after 5 minutes
+
+			// Clear the timeout if the component unmounts
+			return () => clearTimeout(timeoutId);
+		}
+	}, [formSubmitted]);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		if (!captchaValidated) {
-			recaptchaRef.current.execute(); // Trigger reCAPTCHA on form submit
-			return; // Prevent form submission until captcha is validated
+			recaptchaRef.current.execute();
 		}
 
-		// Extract form data
 		const formData = new FormData(e.target);
 		const data = {
 			name: formData.get('Name'),
@@ -37,22 +61,28 @@ export default function ContactSection({ content }) {
 
 			if (response.ok) {
 				setFormSubmitted(true);
-				// Handle successful submission (e.g., show a thank you message)
+				localStorage.setItem('formSubmitted', 'true');
+				localStorage.setItem('submissionTime', new Date().getTime().toString());
+				openModal('success');
+
+				// Reset formSubmitted after 10 minutes
+				setTimeout(() => {
+					setFormSubmitted(false);
+					localStorage.setItem('formSubmitted', 'false');
+				}, 600000);
 			} else {
 				console.error('Form submission failed');
-				// Handle errors
 			}
 		} catch (error) {
 			console.error('An error occurred:', error);
-			// Handle errors
 		}
 	};
 
 	const onReCAPTCHAChange = (token) => {
-		// Token is provided by reCAPTCHA upon successful validation
 		if (token) {
 			setCaptchaValidated(true);
-			handleSubmit(new Event('submit')); // Programmatically trigger handleSubmit again
+		} else {
+			setCaptchaValidated(false);
 		}
 	};
 
@@ -79,8 +109,9 @@ export default function ContactSection({ content }) {
 								Start your journey to success
 							</span>
 							<span className='sans null:text-sm sm:text-md null:w-[240px] sm:w-[320px] xl:w-[300px] xxl:w-[420px]'>
-								Interested in working with us? Fill in your information and we will reach out to
-								schedule a free consultation!
+								{formSubmitted
+									? 'Thank you! A team member will email you to setup your consultation. To prevent spamming, you will be able to resubmit a form in 5 minutes.'
+									: 'Interested in working with us? Fill in your information and we will reach out to schedule a free consultation!'}
 							</span>
 						</div>
 

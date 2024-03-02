@@ -100,7 +100,7 @@ team:
       education: >-
         Liz is a graduate of Virginia Tech with a Bachelor of Science in
         Marketing and minor in German.
-      email: lizbrooks61@gmail.com
+      email: lizbrooks@breakthroughcoaching.pro
       industryExperience: >-
         Liz has over 17 years of experience coaching and mentoring at all levels
         - from junior employee to mid-level leader to senior executives at the
@@ -177,8 +177,8 @@ coreValues:
       name: Collaboration
       reasons: []
 workedWith:
-  header: '!! Doesn''t exist'
-  subtext: '!! Doesn''t exist'
+  header: "!! Doesn't exist"
+  subtext: "!! Doesn't exist"
   testimonials:
     - company: Company Name
       name: Katherine T.
@@ -276,4 +276,3 @@ getStarted:
       name: Create personalized plan
   subtext: Take your first steps and get involved with the betterment of your future.
 ---
-
