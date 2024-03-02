@@ -46,7 +46,7 @@ export default function SigninButton({ hasScrolled }) {
 					size={18}
 					className='text-dark dark:text-light/60'
 				/>
-				<h2 className='sans text-dark dark:text-light/60 hidden sm:block text-sm text-nowrap xbold'>
+				<h2 className='sans text-dark dark:text-light/60  text-sm text-nowrap xbold'>
 					{user && userData
 						? userData.firstName[0].toUpperCase() + '. ' + userData.lastName.toUpperCase()
 						: 'SIGN IN'}

@@ -150,16 +150,17 @@ export default function Navbar() {
 								<img
 									src={logo}
 									alt='positive professionals logo'
-									className='aspect-auto null:w-[40px] null:h-[40px] mobile:w-[42px] mobile:h-[42px] '
+									className=' aspect-auto null:w-[40px] null:h-[40px] mobile:w-[42px] mobile:h-[42px] '
 								/>
 								<div
 									style={{
 										maxHeight: hasScrolled ? '0px' : '30px',
-										width: '100px',
 									}}
 									className={`${
-										hasScrolled ? 'null:translate-y-10' : 'pt-[0.1rem] '
-									} relative transition-all duration-[600ms] ease-in-out flex text-xs text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
+										hasScrolled
+											? 'null:-translate-x-20 sm:translate-y-10 sm:translate-x-0 null:max-w-[0px] sm:max-w-[100px]'
+											: 'pt-[0.1rem] max-w-[100px]'
+									} relative transition-all duration-[600ms] ease-out flex text-xs text-dark dark:text-light/60 flex-col text-center w-fit leading-none`}>
 									<span className='sans xbold'>POSITIVE</span>
 									<span className='sans'>PROFESSIONALS</span>
 								</div>
