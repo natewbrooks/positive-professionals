@@ -188,7 +188,7 @@ export default function ContactSection({ content }) {
 								</button>
 								<ReCAPTCHA
 									ref={recaptchaRef}
-									sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY} // Replace with your actual site key
+									sitekey='6LfwjIUpAAAAAH6plARu62uTaoXz9D3igNzzOPQ-'
 									size='invisible'
 									className='invisible absolute'
 									onChange={onReCAPTCHAChange}

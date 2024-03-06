@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { BlogPostTemplate } from '../../templates/blog-post';
 
 const BlogPostPreview = ({ entry, widgetFor }) => {
-	const tags = entry.getIn(['data', 'tags']);
 	const title = entry.getIn(['data', 'title']);
 	const description = entry.getIn(['data', 'description']);
 	const authors = entry.getIn(['data', 'authors']);
@@ -16,7 +15,6 @@ const BlogPostPreview = ({ entry, widgetFor }) => {
 		<BlogPostTemplate
 			content={widgetFor('body')}
 			description={description}
-			tags={tags && tags.toJS()}
 			title={title}
 			helmet={null} // Since this is a preview, Helmet is not needed
 			date={date}
