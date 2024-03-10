@@ -127,7 +127,7 @@ team:
         achieving goals. Known for her calm and engaging approach, she uses a
         variety of tools and techniques to help her clients move forward
         successfully, and enthusiastically celebrates their victories with them.
-  subtext: OVER 60 YEARS OF EXPERIENCE
+  subtext: OVER 70 YEARS OF EXPERIENCE
 coreValues:
   body: >-
     Our core values of growth, curiosity, wellbeing, integrity, respect, and
@@ -176,8 +176,8 @@ coreValues:
       name: Collaboration
       reasons: []
 workedWith:
-  header: '!! Doesn''t exist'
-  subtext: '!! Doesn''t exist'
+  header: "!! Doesn't exist"
+  subtext: "!! Doesn't exist"
   testimonials:
     - company: Company Name
       name: Katherine T.
@@ -275,4 +275,3 @@ getStarted:
       name: Create personalized plan
   subtext: Take your first steps and get involved with the betterment of your future.
 ---
-

@@ -5,6 +5,8 @@ import BlogPostItem from '../media/BlogPostItem';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import waveTop from '../../../static/img/bg-waves/resources-waves/wave-top.svg';
 import waveBottom from '../../../static/img/bg-waves/resources-waves/wave-bottom.svg';
+import BlogPostListItem from '../media/BlogPostListItem ';
+import VideoListItem from '../media/VideoListItem';
 
 export default function ResourcesSection({ data }) {
 	if (!data) {
@@ -64,12 +66,12 @@ export default function ResourcesSection({ data }) {
 						<span className={`sans text-sm `}>READ OUR STORIES</span>
 						<span className={`group-md:hover:opacity-50 text-xl serif`}>Blog posts</span>
 					</AnchorLink>
-					<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
+					<div className='w-full flex flex-col space-y-[3px]'>
 						{blogPosts.map((post, index) => (
 							<div
 								key={index + 'blog'}
-								className={`rounded-sm p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
-								<BlogPostItem
+								className={`rounded-md p-2 md:p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
+								<BlogPostListItem
 									post={{
 										title: post.frontmatter.title,
 										date: post.frontmatter.date,
@@ -101,12 +103,12 @@ export default function ResourcesSection({ data }) {
 						<span className={`sans text-sm `}>SEE US IN ACTION</span>
 						<span className={`group-md:hover:opacity-50 text-xl serif`}>Video catalog</span>
 					</AnchorLink>
-					<div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1 gap-y-1'>
+					<div className='w-full flex flex-col space-y-[3px]'>
 						{videoCatalog.map((video, index) => (
 							<div
 								key={index + 'video'}
-								className={`rounded-sm p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
-								<VideoItem
+								className={`rounded-md p-2 md:p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
+								<VideoListItem
 									video={{
 										title: video.frontmatter.title,
 										date: video.frontmatter.date,

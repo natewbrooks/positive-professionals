@@ -104,7 +104,8 @@ html.dark {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
+    height: 4px;
 }
 
 /* Track */

@@ -50,7 +50,7 @@
 	"main": "n/a",
 	"scripts": {
 		"clean": "gatsby clean",
-		"start": "npm run dev",
+		"start": "npm run develop",
 		"build": "npm run clean && gatsby build",
 		"develop": "npm run clean && gatsby develop",
 		"serve": "gatsby serve",

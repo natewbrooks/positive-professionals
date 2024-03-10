@@ -7,7 +7,9 @@ import {
 	FaLightbulb,
 	FaBrain,
 	FaVideo,
+	FaCheck,
 } from 'react-icons/fa';
+import { MdArrowRight, MdArrowLeft } from 'react-icons/md';
 import ServicesItem from '../services/ServicesItem';
 import waveTop from '../../../../static/img/bg-waves/services-waves/wave-top.svg';
 import waveBottom from '../../../../static/img/bg-waves/services-waves/wave-bottom.svg';
@@ -58,6 +60,27 @@ export default function ServicesSection({ content }) {
 		},
 	];
 
+	const benefits = [
+		'Personalized approach to development',
+		'One-on-one sessions with a coach',
+		'Helps achieve specific goals',
+		'Overcomes challenges',
+		'Maximizes potential',
+		'Tailored to unique needs and aspirations',
+		'Provides dedicated support and guidance',
+		'Facilitates growth and improvement',
+	];
+
+	const timeline = [
+		'Initial Assessment',
+		'Goal Setting',
+		'Personalized Plan Development',
+		'Skill Building Activities',
+		'Progress Evaluation',
+		'Strategy Optimization',
+		'Final Review & Future Planning',
+	];
+
 	return (
 		<section
 			id='services'
@@ -100,9 +123,79 @@ export default function ServicesSection({ content }) {
 								/>
 							</div>
 							<Modal modalId={'service' + index}>
-								<div className='flex w-full h-full text-dark dark:text-light/70 '>
-									<div className='flex flex-col'>
-										<span className='text-xl serif'>{service.title}</span>
+								<div className='md:max-w-[600px] flex flex-col w-full h-full text-dark dark:text-light/70 overflow-hidden'>
+									<div className={`flex flex-col leading-none pb-4`}>
+										<span className='text-sm text-four xbold sans w-full text-center'>SERVICE</span>
+										<span className='text-xxl serif w-full text-center'>{service.title}</span>
+									</div>
+									<div className='w-full overflow-x-hidden overflow-y-auto flex flex-col space-y-4 mt-4'>
+										<div className='flex flex-col'>
+											<span className='text-sm xbold sans'>OVERVIEW</span>
+											<span className='text-md sans'>
+												Individual coaching is a personalized and focused approach to personal and
+												professional development. It is tailored to the unique needs, aspirations,
+												and circumstances of each client, providing them with dedicated support and
+												guidance on their journey of growth and improvement.
+											</span>
+										</div>
+										<div className='flex flex-col w-full'>
+											<span className='text-sm font-bold sans pb-2'>BENEFITS</span>
+											<div className='grid grid-cols-2 text-center xl:text-start xl:grid-cols-4 gap-1 justify-center items-center pr-4 overflow-x-auto overflow-y-hidden h-fit'>
+												{benefits.map((benefit, index) => (
+													<div
+														key={`serviceBenefit${index}`}
+														className='flex items-center h-full  space-x-4 bg-dark/10 dark:bg-light/10 text-dark dark:text-light/70 xbold p-2 rounded-md'>
+														{/* Icon size set using a style prop to ensure consistency */}
+														<div className={`bg-dark dark:bg-light/70 rounded-full p-1`}>
+															<FaCheck
+																className={`text-lightAccent dark:text-darkAccent`}
+																size={10}
+															/>
+														</div>
+														<span className='text-sm sans w-full leading-none'>{benefit}</span>
+													</div>
+												))}
+											</div>
+										</div>
+										<div className='flex flex-col w-full h-full pb-4'>
+											<span className='text-sm xbold sans pb-2'>TIMELINE</span>
+											<div className='relative h-[140px] w-full flex justify-center pb-4'>
+												<div className='h-[8px] z-50 bg-dark dark:bg-lightAccent w-[96%] mx-auto absolute top-1/2 transform -translate-y-1/2'>
+													<MdArrowLeft
+														size={60}
+														className='dark:text-lightAccent absolute top-[50%] -translate-y-[50%] -left-[30px]'
+													/>
+													<MdArrowRight
+														size={60}
+														className='dark:text-lightAccent absolute top-[50%] -translate-y-[50%] -right-[30px]'
+													/>
+												</div>
+												<div className='flex justify-center translate-y-[40%] null:px-4 xl:px-10 w-full h-full items-center'>
+													{timeline.map((step, index) => (
+														<div
+															key={'serviceTimeline' + index}
+															className='flex-grow text-center min-w-0 h-full'>
+															<div
+																className={`relative text-sm sans xbold max-w-[120px] flex justify-center z-50 ${
+																	index % 2 === 0 ? 'translate-y-[34px]' : '-translate-y-[40px]'
+																} px-4 py-1 rounded-md text-light bg-four inline-block`}>
+																{step}
+															</div>
+														</div>
+													))}
+												</div>
+											</div>
+										</div>
+
+										<div className='flex flex-col'>
+											<span className='text-sm xbold sans'>PRICING</span>
+											<span className='text-md sans'>
+												Individual coaching is a personalized and focused approach to personal and
+												professional development. It is tailored to the unique needs, aspirations,
+												and circumstances of each client, providing them with dedicated support and
+												guidance on their journey of growth and improvement.
+											</span>
+										</div>
 									</div>
 								</div>
 							</Modal>
