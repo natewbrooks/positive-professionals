@@ -144,7 +144,7 @@ export default function ServicesSection({ content }) {
 												{benefits.map((benefit, index) => (
 													<div
 														key={`serviceBenefit${index}`}
-														className='flex items-center h-full  space-x-4 bg-dark/10 dark:bg-light/10 text-dark dark:text-light/70 xbold p-2 rounded-md'>
+														className='flex items-center h-full text-center space-x-2 bg-dark/10 dark:bg-light/10 text-dark dark:text-light/70 xbold p-2 rounded-md'>
 														{/* Icon size set using a style prop to ensure consistency */}
 														<div className={`bg-dark dark:bg-light/70 rounded-full p-1`}>
 															<FaCheck
