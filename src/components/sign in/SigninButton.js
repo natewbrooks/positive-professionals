@@ -49,7 +49,7 @@ export default function SigninButton({ hasScrolled }) {
 				<h2 className='sans text-dark dark:text-light/60  text-sm text-nowrap xbold'>
 					{user && userData
 						? userData.firstName[0].toUpperCase() + '. ' + userData.lastName.toUpperCase()
-						: 'SIGN IN'}
+						: ''}
 				</h2>
 			</div>
 			<div

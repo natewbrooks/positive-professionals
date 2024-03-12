@@ -33,7 +33,7 @@ const Videos = ({ data }) => {
 	return (
 		<>
 			<Layout>
-				<div className='pt-[4rem] pb-[10rem] null:px-4 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
+				<div className='pt-[6rem] pb-[18rem] null:px-4 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full text-center dark:text-light/70'>
 					<ResourcesNav
 						pageTitle={'Video Catalog'}
 						showTitle={true}

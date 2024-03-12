@@ -59,32 +59,6 @@ collections:
           required: false,
         }
 
-  - label: 'Webinars'
-    name: 'webinars'
-    folder: 'src/pages/resources/webinars'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    fields:
-      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'webinar-post' }
-      - {
-          label: 'Video URL',
-          name: 'videoURL',
-          widget: 'string',
-          required: true,
-          hint: '★ Enter video URL (e.g., YouTube, Vimeo) ★',
-        }
-      - { label: 'Featured Video', name: 'featuredpost', widget: 'boolean' }
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime', required: true }
-      - { label: 'Description', name: 'description', widget: 'text', required: false }
-      - {
-          label: 'Presentors',
-          name: 'presentors',
-          widget: 'list',
-          field: { label: 'Presentor Name', name: 'name', widget: 'string' },
-          required: false,
-        }
-
   - name: 'pages'
     label: 'Pages'
     files:

@@ -28,7 +28,6 @@ export default function ResourcesSection({ data }) {
 	});
 
 	const videoCatalog = data.videos;
-	const previousWebinars = data.webinars;
 
 	return (
 		<section

@@ -96,12 +96,12 @@ export default function ContactSection({ content }) {
 			id='contact'
 			className='relative w-full h-fit flex flex-col mt-8 pb-10 bg-secondary'>
 			{/* Container for the First Steps Section and Journey to Success, displayed as a row */}
-			<div className='h-full w-full pb-10 flex flex-col xxl:flex-row justify-evenly items-center xxl:items-center space-y-10 xxl:space-y-0 xxl:space-x-10 px-20'>
+			<div className='h-full w-full pb-14 flex flex-col xxl:flex-row justify-evenly items-center xxl:items-center space-y-10 xxl:space-y-0 xxl:space-x-10 px-20'>
 				<div className='z-[1] absolute w-full h-full left-0'>
 					<img
 						src={waveTop}
 						alt='Services wave top bg'
-						style={{ transform: 'translateY(-80%)' }}
+						style={{ transform: 'translateY(-70%)' }}
 						className='absolute w-full h-fit top-0 '></img>
 					<div className='absolute w-full h-full dark:bg-secondary bg-secondary z-0'></div>
 				</div>
@@ -197,7 +197,7 @@ export default function ContactSection({ content }) {
 							</form>
 						)}
 					</div>
-					<div className='w-full h-full flex justify-center items-center'>
+					{/* <div className='w-full h-full flex justify-center items-center'>
 						<div className='null:border-y-[3px] null:border-light/30 xxl:border-none w-full text-center'>
 							<span className='text-dark serif text-xxl xxl:border-y-[3px] border-light/30'>
 								OR
@@ -225,7 +225,7 @@ export default function ContactSection({ content }) {
 							className='null:text-md sm:text-lg bg-[#aa89f5] text-dark xbold select-none md:hover:opacity-50 active:scale-95 cursor-pointer py-1 px-2 rounded-md w-fit sans'>
 							REGISTER NOW
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</section>

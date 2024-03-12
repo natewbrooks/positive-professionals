@@ -78,10 +78,9 @@ export default function Navbar() {
 	}
 
 	const resourcesDropdown = [
-		{ label: 'Timeline', href: '/resources/' },
+		{ label: 'Recent', href: '/resources/' },
 		{ label: 'Blog', href: '/resources/blog/' },
 		{ label: 'Videos', href: '/resources/videos/' },
-		{ label: 'Webinars', href: '/resources/webinars/' },
 	];
 
 	const navLinks = [

@@ -6,7 +6,7 @@ import {
 	FaChalkboardTeacher,
 	FaLightbulb,
 	FaBrain,
-	FaVideo,
+	FaHourglassStart,
 	FaCheck,
 } from 'react-icons/fa';
 import { MdArrowRight, MdArrowLeft } from 'react-icons/md';
@@ -49,13 +49,6 @@ export default function ServicesSection({ content }) {
 			title: 'Positive Intelligence™ Bootcamp',
 			description:
 				'A mental fitness program to boost resilience, improve performance, and enhance well-being.',
-			colorClass: 'bg-four',
-		},
-		{
-			Icon: FaVideo,
-			title: 'Webinars',
-			description:
-				'Engaging online seminars covering the latest trends and insights in leadership and performance.',
 			colorClass: 'bg-four',
 		},
 	];
@@ -157,7 +150,7 @@ export default function ServicesSection({ content }) {
 												))}
 											</div>
 										</div>
-										<div className='flex flex-col w-full h-full pb-4'>
+										{/* <div className='flex flex-col w-full h-full pb-4'>
 											<span className='text-sm xbold sans pb-2'>TIMELINE</span>
 											<div className='relative h-[140px] w-full flex justify-center pb-4'>
 												<div className='h-[8px] z-50 bg-dark dark:bg-lightAccent w-[96%] mx-auto absolute top-1/2 transform -translate-y-1/2'>
@@ -185,7 +178,7 @@ export default function ServicesSection({ content }) {
 													))}
 												</div>
 											</div>
-										</div>
+										</div> */}
 
 										<div className='flex flex-col'>
 											<span className='text-sm xbold sans'>PRICING</span>
@@ -201,6 +194,17 @@ export default function ServicesSection({ content }) {
 							</Modal>
 						</React.Fragment>
 					))}
+					<div
+						className={`select-none flex justify-end items-end  w-full h-full z-10 rounded-sm bg-light/30 dark:bg-dark/50`}>
+						<ServicesItem
+							service={{
+								Icon: FaHourglassStart,
+								title: 'COMING SOON...',
+								description: '',
+								colorClass: 'bg-four',
+							}}
+						/>
+					</div>
 				</div>
 
 				<div className='z-10 w-full text-center'>

@@ -95,10 +95,10 @@ function Account() {
 							</div>
 
 							<div className='select-none w-full null:justify-center sm:justify-end flex space-x-2 text-dark dark:text-light/70'>
-								<div className='cursor-pointer md:hover:opacity-50 md:active:scale-95 null:w-full sm:w-fit items-center flex space-x-2 bg-dark/10 dark:bg-light/10 p-2 rounded-md'>
+								{/* <div className='cursor-pointer md:hover:opacity-50 md:active:scale-95 null:w-full sm:w-fit items-center flex space-x-2 bg-dark/10 dark:bg-light/10 p-2 rounded-md'>
 									<FaVideo size={20} />
 									<span className='sans text-sm xbold w-full text-center'>ACCESS WEBINARS</span>
-								</div>
+								</div> */}
 								<div className='cursor-pointer md:hover:opacity-50 md:active:scale-95 null:w-full sm:w-fit items-center flex space-x-2 bg-dark/10 dark:bg-light/10 p-2 rounded-md'>
 									<FaEdit size={20} />
 									<span className='sans text-sm xbold w-full text-center'>EDIT ACCOUNT</span>

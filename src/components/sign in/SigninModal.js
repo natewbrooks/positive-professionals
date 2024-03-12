@@ -131,9 +131,9 @@ export default function SigninModal({ showSignin }) {
 										)}
 									</div>
 								</div>
-								<span className='text-end sans pt-1 text-xs xbold select-none cursor-pointer active:scale-95 text-secondary md:hover:opacity-50'>
+								{/* <span className='text-end sans pt-1 text-xs xbold select-none cursor-pointer active:scale-95 text-secondary md:hover:opacity-50'>
 									FORGOT PASSWORD?
-								</span>
+								</span> */}
 							</div>
 						</div>
 						{errorMsg != '' && (
@@ -148,7 +148,7 @@ export default function SigninModal({ showSignin }) {
 						</button>
 					</form>
 					<div className='justify-center items-center md:justify-start pt-5 flex space-x-2 w-full border-t-2 dark:border-light/10 border-dark/10 h-fit'>
-						<span className='text-sm sans text-dark dark:text-light/50'>
+						{/* <span className='text-sm sans text-dark dark:text-light/50'>
 							Don't have an account?
 						</span>
 						<span
@@ -158,6 +158,9 @@ export default function SigninModal({ showSignin }) {
 							}}
 							className='md:hover:opacity-50 cursor-pointer select-none active:scale-95 text-sm text-four sans xbold'>
 							REGISTER NOW
+						</span> */}
+						<span className={`text-center w-full text-sm sans text-dark dark:text-light/50`}>
+							Only verified users can login.
 						</span>
 					</div>
 				</div>

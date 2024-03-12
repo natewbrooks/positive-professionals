@@ -48,23 +48,6 @@ const Resources = ({}) => {
 					}
 				}
 			}
-			allMarkdownRemarkWebinar: allMarkdownRemark(
-				filter: { frontmatter: { templateKey: { eq: "webinar-post" } } }
-			) {
-				nodes {
-					frontmatter {
-						title
-						date(formatString: "DD MMM YYYY")
-						description
-						featuredpost
-						presentors
-						videoURL
-					}
-					fields {
-						slug
-					}
-				}
-			}
 		}
 	`);
 
@@ -94,19 +77,7 @@ const Resources = ({}) => {
 			isWebinar: false,
 		}));
 
-		const webinars = data.allMarkdownRemarkWebinar.nodes.map((node) => ({
-			title: node.frontmatter.title,
-			date: node.frontmatter.date,
-			description: node.frontmatter.description,
-			featuredpost: node.frontmatter.featuredpost,
-			presentors: node.frontmatter.presentors,
-			videoURL: node.frontmatter.videoURL,
-			slug: node.fields.slug,
-			isVideo: true,
-			isWebinar: true,
-		}));
-
-		const combinedMedia = [...blogPosts, ...videos, ...webinars];
+		const combinedMedia = [...blogPosts, ...videos];
 
 		const featured = combinedMedia
 			.filter((post) => post.featuredpost)
@@ -121,7 +92,7 @@ const Resources = ({}) => {
 	return (
 		<>
 			<Layout>
-				<div className='pt-[4rem] pb-[10rem] null:px-4 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full'>
+				<div className='pt-[6rem] pb-[18rem] null:px-4 mobile:px-6 sm:px-8 md:px-10 lg:px-20 xl:px-60 2xl:px-80 w-full h-full text-center dark:text-light/70'>
 					<ResourcesNav
 						pageTitle={'All Media'}
 						showTitle={true}

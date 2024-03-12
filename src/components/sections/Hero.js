@@ -34,7 +34,7 @@ export default function Hero({ data }) {
 					<AnchorLink
 						to='/#contact'
 						title={'Get Started'}
-						className='null:hidden md:block md:translate-y-[80px] xl:translate-y-[55px] xxl:translate-y-[50px] sans null:text-xxl xbold text-[#386975]  cursor-pointer select-none md:hover:opacity-90 md:active:scale-95 py-2 px-6 rounded-md'>
+						className='null:hidden md:block md:translate-y-[80px] xl:translate-y-[55px] xxl:translate-y-[50px] sans null:text-xxl xbold text-[#386975]  cursor-pointer select-none md:hover:opacity-50 md:active:scale-95 py-2 px-6 rounded-md'>
 						GET STARTED
 					</AnchorLink>
 				</div>

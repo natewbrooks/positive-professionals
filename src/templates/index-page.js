@@ -152,7 +152,7 @@ const IndexPage = ({ data }) => {
 				workedWith={frontmatter.workedWith}
 				services={frontmatter.services}
 				getStarted={frontmatter.getStarted}
-				resources={{ blogs: blogs.nodes, videos: videos.nodes, webinars: webinars.nodes }}
+				resources={{ blogs: blogs.nodes, videos: videos.nodes }}
 			/>
 		</Layout>
 	);
@@ -265,25 +265,6 @@ export const pageQuery = graphql`
 		}
 		videos: allMarkdownRemark(
 			filter: { frontmatter: { templateKey: { eq: "video-post" } } }
-			sort: { fields: [frontmatter___date], order: DESC }
-			limit: 3
-		) {
-			nodes {
-				frontmatter {
-					title
-					date(formatString: "DD MMM YYYY")
-					description
-					featuredpost
-					presentors
-					videoURL
-				}
-				fields {
-					slug
-				}
-			}
-		}
-		webinars: allMarkdownRemark(
-			filter: { frontmatter: { templateKey: { eq: "webinar-post" } } }
 			sort: { fields: [frontmatter___date], order: DESC }
 			limit: 3
 		) {
