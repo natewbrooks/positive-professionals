@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from '../../Modal';
 import {
 	FaUserTie,
@@ -15,6 +15,20 @@ import waveTop from '../../../../static/img/bg-waves/services-waves/wave-top.svg
 import waveBottom from '../../../../static/img/bg-waves/services-waves/wave-bottom.svg';
 
 export default function ServicesSection({ content }) {
+	const [shownWorkshopInfos, setShownWorkshopInfos] = useState(new Set());
+
+	const toggleWorkshopInfo = (title) => {
+		setShownWorkshopInfos((prevShownWorkshopInfos) => {
+			const newShownWorkshopInfos = new Set(prevShownWorkshopInfos);
+			if (newShownWorkshopInfos.has(title)) {
+				newShownWorkshopInfos.delete(title);
+			} else {
+				newShownWorkshopInfos.add(title);
+			}
+			return newShownWorkshopInfos;
+		});
+	};
+
 	const services = [
 		{
 			Icon: FaUserTie,
@@ -62,6 +76,12 @@ export default function ServicesSection({ content }) {
 		'Tailored to unique needs and aspirations',
 		'Provides dedicated support and guidance',
 		'Facilitates growth and improvement',
+	];
+
+	const workshopTypes = [
+		{ title: '2 hour workshop', info: '2 hour workshop extended information' },
+		{ title: '4 hour workshop', info: '4 hour workshop extended information' },
+		{ title: '8 hour workshop', info: '8 hour workshop extended information' },
 	];
 
 	const timeline = [
@@ -117,7 +137,7 @@ export default function ServicesSection({ content }) {
 							</div>
 							<Modal modalId={'service' + index}>
 								<div className='md:max-w-[600px] flex flex-col w-full h-full text-dark dark:text-light/70 overflow-hidden'>
-									<div className={`flex flex-col leading-none pb-4`}>
+									<div className={`flex flex-col leading-none pb-2`}>
 										<span className='text-sm text-four xbold sans w-full text-center'>SERVICE</span>
 										<span className='text-xxl serif w-full text-center'>{service.title}</span>
 									</div>
@@ -145,40 +165,42 @@ export default function ServicesSection({ content }) {
 																size={10}
 															/>
 														</div>
-														<span className='text-sm sans w-full leading-none'>{benefit}</span>
+														<span className='text-xs sans xbold w-full leading-none flex items-center justify-center h-[38px]'>
+															{benefit}
+														</span>
 													</div>
 												))}
 											</div>
 										</div>
-										{/* <div className='flex flex-col w-full h-full pb-4'>
-											<span className='text-sm xbold sans pb-2'>TIMELINE</span>
-											<div className='relative h-[140px] w-full flex justify-center pb-4'>
-												<div className='h-[8px] z-50 bg-dark dark:bg-lightAccent w-[96%] mx-auto absolute top-1/2 transform -translate-y-1/2'>
-													<MdArrowLeft
-														size={60}
-														className='dark:text-lightAccent absolute top-[50%] -translate-y-[50%] -left-[30px]'
-													/>
-													<MdArrowRight
-														size={60}
-														className='dark:text-lightAccent absolute top-[50%] -translate-y-[50%] -right-[30px]'
-													/>
-												</div>
-												<div className='flex justify-center translate-y-[40%] null:px-4 xl:px-10 w-full h-full items-center'>
-													{timeline.map((step, index) => (
+										<div
+											className={`${
+												service.title === 'Workshops' ? 'flex flex-col' : 'hidden'
+											} w-full`}>
+											<span className='text-sm font-bold sans pb-2'>WORKSHOPS</span>
+											<div className='flex flex-col space-y-1'>
+												{workshopTypes.map((workshop, index) => (
+													<div
+														key={`serviceWorkshops${index}`}
+														className='w-full text-sm pr-4'>
 														<div
-															key={'serviceTimeline' + index}
-															className='flex-grow text-center min-w-0 h-full'>
-															<div
-																className={`relative text-sm sans xbold max-w-[120px] flex justify-center z-50 ${
-																	index % 2 === 0 ? 'translate-y-[34px]' : '-translate-y-[40px]'
-																} px-4 py-1 rounded-md text-light bg-four inline-block`}>
-																{step}
-															</div>
+															className='cursor-pointer flex items-center text-center bg-dark/10 dark:bg-light/10 text-dark dark:text-light/70 xbold p-2 rounded-md'
+															onClick={() => toggleWorkshopInfo(workshop.title)}>
+															<span className='py-2 sans xbold w-full'>{workshop.title}</span>
 														</div>
-													))}
-												</div>
+														<div
+															style={{
+																maxHeight: shownWorkshopInfos.has(workshop.title) ? '500px' : '0px',
+																transition: 'max-height 0.5s ease-in-out',
+															}}
+															className='overflow-hidden transition-all w-full text-center'>
+															<span className={`sans text-dark dark:text-light/50`}>
+																{workshop.info}
+															</span>
+														</div>
+													</div>
+												))}
 											</div>
-										</div> */}
+										</div>
 
 										<div className='flex flex-col'>
 											<span className='text-sm xbold sans'>PRICING</span>
@@ -195,7 +217,7 @@ export default function ServicesSection({ content }) {
 						</React.Fragment>
 					))}
 					<div
-						className={`select-none flex justify-end items-end  w-full h-full z-10 rounded-sm bg-light/30 dark:bg-dark/50`}>
+						className={`opacity-50 select-none flex justify-end items-end  w-full h-full z-10 rounded-sm bg-light/30 dark:bg-dark/50`}>
 						<ServicesItem
 							service={{
 								Icon: FaHourglassStart,

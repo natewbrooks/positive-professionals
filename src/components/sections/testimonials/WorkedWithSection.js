@@ -39,13 +39,13 @@ export default function WorkedWithSection({ content }) {
 				</span>
 			</div>
 			<div className='flex justify-center w-full h-full py-4 rounded-md'>
-				<div className='grid grid-cols-2 sm:grid-cols-4 justify-items-center gap-y-10 null:gap-x-10 sm:gap-x-0 w-full'>
+				<div className='grid grid-cols-2 sm:grid-cols-4 justify-items-center gap-y-4 null:gap-x-10 sm:gap-x-0 w-full'>
 					{industries.map((industry, index) => {
 						const Icon = icons[index];
 						return (
 							<div
 								key={index}
-								className='flex flex-col justify-center items-center text-center space-y-4 text-dark dark:text-light/70'>
+								className='flex flex-col justify-center items-center w-full text-center space-y-2 text-dark dark:text-light/70'>
 								<Icon
 									className={`bg-dark dark:bg-light/70 p-4 rounded-md text-light dark:text-dark null:w-[120px] null:h-[80px] md:w-[180px] md:h-[90px]`}
 								/>
