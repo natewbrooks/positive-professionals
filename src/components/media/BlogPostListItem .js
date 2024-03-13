@@ -64,7 +64,7 @@ export default function BlogPostListItem({ post, searchTerm }) {
 							className='h-[100px]'></img>
 					)}
 				</div>
-				<div className={`flex flex-col w-full h-full md:px-4 relative top-0`}>
+				<div className={`pl-4 flex flex-col w-full h-full relative top-0`}>
 					<div className='relative flex flex-col w-full overflow-hidden space-y-1'>
 						<div className='flex space-x-1 '>
 							{isNewPost() && (
