@@ -21,7 +21,7 @@ export default function TeamMember({ member, color, modalId, className, isLastIt
 						<GatsbyImage
 							image={imageData}
 							alt={member.name}
-							className='absolute bottom-0 w-full h-auto'
+							className='absolute bottom-0 w-full h-auto max-h-[520px]'
 						/>
 					) : (
 						<FaUser
