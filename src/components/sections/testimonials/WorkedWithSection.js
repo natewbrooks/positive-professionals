@@ -31,16 +31,6 @@ export default function WorkedWithSection({ content }) {
 
 	const colors = ['primary', 'secondary', 'tertiary', 'four'];
 
-	// Function to check if dark mode is enabled and select a random color
-	const getRandomColorClassName = () => {
-		const isDarkMode = document.documentElement.classList.contains('dark');
-		if (isDarkMode) {
-			const randomColor = colors[Math.floor(Math.random() * colors.length)];
-			return `text-${randomColor}`;
-		}
-		return 'text-dark';
-	};
-
 	return (
 		<div
 			id='workedWith'
@@ -54,7 +44,6 @@ export default function WorkedWithSection({ content }) {
 				<div className='grid grid-cols-2 sm:grid-cols-4 justify-items-center gap-y-8 null:gap-x-10 sm:gap-x-0 w-full'>
 					{industries.map((industry, index) => {
 						const Icon = icons[index];
-						const colorClassName = getRandomColorClassName();
 						return (
 							<div
 								key={index}
