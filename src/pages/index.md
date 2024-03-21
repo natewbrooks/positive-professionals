@@ -263,11 +263,12 @@ getStarted:
         or any of our other services.
       name: Reach out
     - explanation: >-
-        Good coaching involves more than great skills. It also involves good
-        connections. This meeting provides an opportunity to learn more about
-        your potential coach and decide whether they are the right coach for you
-        or your team at this time.
+        This meeting provides an opportunity to learn more about your potential
+        coach and decide whether they are the right coach for you or your team
+        at this time.
       name: Schedule free consultation
+    - explanation: Develop your development plan with your coach!
+      name: Create personalized plan
   subtext: Take your first steps on a journey of discovery and transformation.
 ---
 
