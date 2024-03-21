@@ -203,36 +203,49 @@ workedWith:
         complexities of daily life, contributing not only to my personal
         well-being but also to the quality of my connections with others. I am
         grateful for the positive impact it has had on my life.
-    - company: Quantum Secure Corp
-      name: Samantha Wright
+    - company: ' '
+      name: ' '
       quote: >-
-        Revolutionized our approach to cybersecurity, setting new industry
-        standards.
-    - company: Global Defense Network
-      name: Michael Torres
+        For me what I learned the most was turning off my saboteurs and using
+        the thrive side of my brain to better handle people and certain
+        situations that arise daily in work and life. Kim was amazing and her
+        ability to extract and expand my own thinking was incredible!
+    - company: ' '
+      name: ' '
       quote: >-
-        Exceptional skills in system architecture, leading to groundbreaking
-        advancements.
-    - company: Advanced Network Strategies
-      name: Leslie Chen
+        I enjoyed how Kim was able to weave Positive Intelligence principles
+        into our weekly discussions. We covered the areas that my manager and I
+        selected but the cherry on top was the PI. I believe that not only will
+        I be better equipped to continue developing managerial skills but,
+        thanks to the Grown Space program, I can apply what I learned to my
+        current role as well.
+    - company: ' '
+      name: ' '
       quote: >-
-        Transformed our system integration processes, achieving unprecedented
-        efficiency.
-    - company: National Security Agency
-      name: Emily Grant
+        My coach was amazing. She had a great approach enabling meaningful
+        discussions on different aspects.
+    - company: ' '
+      name: ' '
       quote: >-
-        Their expertise in managing federal security systems is unparalleled in
-        the industry.
-    - company: TechGuardian Ltd.
-      name: Aaron Smith
+        Learning how to quiet my inner critic -The discussions that Kim and I
+        had around to let go and empower my team take ownership and not try to
+        micro-manage them -Having difficult conversations with the individuals
+        that report to me.
+    - company: ' '
+      name: ' '
       quote: >-
-        Innovative and strategic approach to cybersecurity, always ahead of the
-        curve.
-    - company: SecureNet Technologies
-      name: Nicole Lee
+        The PQ Bootcamp was phenomenal! I learned so much about myself and how
+        to manage my thoughts and emotions more effectively. I thoroughly
+        enjoyed the discussions and relationships I developed with my group. I
+        will continue to practice these new skills well into the future.
+    - company: ' '
+      name: ' '
       quote: >-
-        Strategic and effective in network security, consistently delivering
-        top-tier results.
+        You came into my life at just the right moment. I am not sure what fate
+        brought us together, but I would not be the person or leader I am today
+        without you. Our coaching sessions were so life changing - I know you
+        credit me with doing the work, but you provided me the safe space to DO
+        the work.
 services:
   body: >-
     We help you recognize and overcome self-sabotaging behaviors of self-doubt,
