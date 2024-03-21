@@ -102,12 +102,12 @@ export default function ResourcesSection({ data }) {
 						<span className={`sans text-sm `}>SEE US IN ACTION</span>
 						<span className={`group-md:hover:opacity-50 text-xl serif`}>Video catalog</span>
 					</AnchorLink>
-					<div className='w-full flex flex-col space-y-[3px]'>
+					<div className=' w-full grid null:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1'>
 						{videoCatalog.map((video, index) => (
 							<div
 								key={index + 'video'}
 								className={`rounded-md p-2 md:p-4 bg-light/30 dark:bg-dark/50 w-full h-full`}>
-								<VideoListItem
+								<VideoItem
 									video={{
 										title: video.frontmatter.title,
 										date: video.frontmatter.date,

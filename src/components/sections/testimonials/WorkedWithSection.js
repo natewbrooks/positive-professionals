@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
 	FaShieldAlt,
 	FaHospitalAlt,
@@ -29,6 +29,18 @@ export default function WorkedWithSection({ content }) {
 	const industries = industryIconPairs.map((pair) => pair.industry);
 	const icons = industryIconPairs.map((pair) => pair.icon);
 
+	const colors = ['primary', 'secondary', 'tertiary', 'four'];
+
+	// Function to check if dark mode is enabled and select a random color
+	const getRandomColorClassName = () => {
+		const isDarkMode = document.documentElement.classList.contains('dark');
+		if (isDarkMode) {
+			const randomColor = colors[Math.floor(Math.random() * colors.length)];
+			return `text-${randomColor}`;
+		}
+		return 'text-dark';
+	};
+
 	return (
 		<div
 			id='workedWith'
@@ -39,15 +51,16 @@ export default function WorkedWithSection({ content }) {
 				</span>
 			</div>
 			<div className='flex justify-center w-full h-full py-4 rounded-md'>
-				<div className='grid grid-cols-2 sm:grid-cols-4 justify-items-center gap-y-4 null:gap-x-10 sm:gap-x-0 w-full'>
+				<div className='grid grid-cols-2 sm:grid-cols-4 justify-items-center gap-y-8 null:gap-x-10 sm:gap-x-0 w-full'>
 					{industries.map((industry, index) => {
 						const Icon = icons[index];
+						const colorClassName = getRandomColorClassName();
 						return (
 							<div
 								key={index}
 								className='flex flex-col justify-center items-center w-full text-center space-y-2 text-dark dark:text-light/70'>
 								<Icon
-									className={`bg-dark dark:bg-light/70 p-4 rounded-md text-light dark:text-dark null:w-[120px] null:h-[80px] md:w-[180px] md:h-[90px]`}
+									className={`p-2 rounded-md text-dark dark:text-light/10 null:w-[120px] null:h-[80px] md:w-[180px] md:h-[90px]`}
 								/>
 								<span className='text-nowrap sans xbold text-sm text-dark dark:text-light/50 leading-none'>
 									{industry}

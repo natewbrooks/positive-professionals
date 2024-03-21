@@ -201,7 +201,7 @@ export default function TestimonialsSection({ data }) {
 					<div className='null:w-full md:w-[600px] xxl:w-[800px]'>
 						<div
 							className={`text-center sans xbold text-sm text-${
-								borderColors[index % 4].split('-')[1]
+								borderColors[index % borderColors.length].split('-')[1]
 							}`}>
 							TESTIMONIAL
 						</div>
@@ -215,8 +215,11 @@ export default function TestimonialsSection({ data }) {
 						</div>
 					</div>
 					<div
-						className={`p-4 overflow-y-auto relative active:cursor-grabbing hover:cursor-grab null:w-full md:w-[600px] xxl:w-[800px] ${borderColors[index]} select-none rounded-l-sm rounded-r-md h-full text-start relative flex flex-col bg-dark/10 dark:bg-light/10 border-l-4`}>
-						<span className='sans text-md text-dark dark:text-light/60'>{testimonial.quote}</span>
+						className={`overflow-y-auto relative active:cursor-grabbing hover:cursor-grab null:w-full md:w-[600px] xxl:w-[800px] select-none rounded-l-sm rounded-r-md h-full text-start relative flex flex-col`}>
+						<div
+							className={`sans text-md text-dark dark:text-light/60 bg-dark/10 dark:bg-light/10 ${borderColors[index]} p-4 border-l-4`}>
+							{testimonial.quote}
+						</div>
 					</div>
 				</Modal>
 			))}

@@ -37,6 +37,12 @@
     font-weight: 900;
 }
 
+.collapsible-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+}
+
 .stroke {
     text-shadow:
         -1px -1px 0 #000,
