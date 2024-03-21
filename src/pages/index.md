@@ -179,7 +179,7 @@ workedWith:
   header: '!! Doesn''t exist'
   subtext: '!! Doesn''t exist'
   testimonials:
-    - company: Company Name
+    - company: ' '
       name: Katherine T.
       quote: >-
         Engaging in the PQ program and training has been a transformative
