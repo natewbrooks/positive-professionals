@@ -35,7 +35,7 @@ module.exports = {
 				// secondary: '#7753FF',
 				// tertiary: '#0ea5e9',
 				// four: '#8D65FF',
-				light: '#f2f2f2',
+				light: '#ffffff',
 				lightAccent: '#dbdbdb',
 				dark: '#121212',
 				darkAccent: '#292929',
