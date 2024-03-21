@@ -259,20 +259,15 @@ getStarted:
   header: Let's get started.
   steps:
     - explanation: >-
-        This is the explanation for step one and it could be very long
-        potentially. This is the explanation for step one and it could be very
-        long potentially.
+        Feel free to contact us with any questions you might have about coaching
+        or any of our other services.
       name: Reach out
     - explanation: >-
-        This is the explanation for step one and it could be very long
-        potentially. This is the explanation for step one and it could be very
-        long potentially.
+        Good coaching involves more than great skills. It also involves good
+        connections. This meeting provides an opportunity to learn more about
+        your potential coach and decide whether they are the right coach for you
+        or your team at this time.
       name: Schedule free consultation
-    - explanation: >-
-        This is the explanation for step one and it could be very long
-        potentially. This is the explanation for step one and it could be very
-        long potentially.
-      name: Create personalized plan
-  subtext: Take your first steps and get involved with the betterment of your future.
+  subtext: Take your first steps on a journey of discovery and transformation.
 ---
 
