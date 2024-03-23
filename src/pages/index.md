@@ -216,9 +216,8 @@ workedWith:
         I enjoyed how Kim was able to weave Positive Intelligence principles
         into our weekly discussions. We covered the areas that my manager and I
         selected but the cherry on top was the PI. I believe that not only will
-        I be better equipped to continue developing managerial skills but,
-        thanks to the Grown Space program, I can apply what I learned to my
-        current role as well.
+        I be better equipped to continue developing managerial skills but I can
+        apply what I learned to my current role as well.
     - company: ' '
       name: ' '
       quote: >-
