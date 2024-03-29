@@ -49,7 +49,7 @@ export default function ServicesSection({ content }) {
 			overview:
 				'Individual coaching is a personalized and focused approach to personal and professional development. It is tailored to the unique needs, aspirations, and circumstances of each client, providing them with dedicated support and guidance on their journey of growth and improvement.',
 			benefits: ['Tailored to your needs', 'One-on-one coaching', 'Flexible scheduling'],
-			pricing: '4-session packages - $600. Additional options available',
+			pricingHTML: '4-session packages - $600. Additional options available',
 			colorClass: 'bg-tertiary',
 		},
 		{
@@ -87,8 +87,17 @@ export default function ServicesSection({ content }) {
 					<p>The LVI© is a 360-degree assessment of the behaviors required for effective leadership today. It characterizes the versatility you demonstrate in both how you lead (forceful/enabling) and what you lead (strategic/operational). It is a great way to identify opportunities for more effective leadership.</p>`,
 				},
 			],
-			pricing:
-				'Includes assessment + 3 hours of coaching: EQi-2.0® - $1,000/person, EQi 360® - $1,200/person, Global DiSC™ - $600/person, Hogan - $750/person, LVI© - $1,000/person',
+			pricingHTML: `
+					Includes assessment + 3 hours of coaching: 
+					<br>
+					<div style="list-style-position: outside; width: fit-content; text-align: left; padding: 0px 4px; display: flex; flex-direction: column; justify-content: left; align-items: left;">
+						<li margin-bottom: 0.15rem;"><strong>EQi-2.0®</strong> - $1,000/person</li>
+						<li style="" margin-bottom: 0.15rem;"><strong>EQi 360®</strong> - $1,200/person</li>
+						<li style=""><strong>Global DiSC™</strong> - $600/person</li>
+						<li style=""><strong>Hogan</strong> - $750/person</li>
+						<li style=""><strong>LVI©</strong> - $1,000/person</li>
+					</div>
+					`,
 			colorClass: 'bg-four',
 		},
 		{
@@ -108,7 +117,7 @@ export default function ServicesSection({ content }) {
 				'Teaches sustainable team skills',
 				'Improves communication, collaboration, and cohesion',
 			],
-			pricing:
+			pricingHTML:
 				'Starting at $3000 – includes intake and set-up with Team Leader, informal team assessment, 4 team coaching engagements, and final check-in. Formal team assessments available as well for a fee.',
 			colorClass: 'bg-primary',
 		},
@@ -156,7 +165,7 @@ export default function ServicesSection({ content }) {
 						'This transformative workshop will equip leaders with essential tools and strategies for leading with a diversity mindset. Participants will delve into the fundamentals of Diversity, Equity, and Inclusion (DEI) and explore how to create inclusive environments that celebrate diversity and promote belonging. Through interactive discussions, case studies, and experiential exercises, attendees will gain insights into recognizing and addressing bias, fostering empathy, and leading inclusively. Leaders will learn to leverage their influence to create a workplace that enjoys the success that comes with embracing differences and unleashing the power of a highly engaged workforce.',
 				},
 			],
-			pricing:
+			pricingHTML:
 				'2-hour workshop $500, 4-hour workshop $1500, 8-hour workshop $3000. Prices may vary depending on special requests.',
 			colorClass: 'bg-four',
 		},
@@ -176,7 +185,7 @@ export default function ServicesSection({ content }) {
 				'Builds connections with other pod members',
 				'Includes weekly group coaching',
 			],
-			pricing:
+			pricingHTML:
 				' $1200 per person – includes PQ Saboteur Assessment, weekly training videos, access to a mobile app for daily guided practice, an e-book copy of Positive Intelligence by Shirzad Chamine, and weekly group-coaching',
 			colorClass: 'bg-four',
 		},
@@ -327,10 +336,12 @@ export default function ServicesSection({ content }) {
 											</div>
 										)}
 
-										{service.pricing && (
+										{service.pricingHTML && (
 											<div className='flex flex-col'>
 												<span className='text-sm xbold sans'>PRICING</span>
-												<span className='text-md sans'>{service.pricing}</span>
+												<span
+													className='text-md sans'
+													dangerouslySetInnerHTML={{ __html: service.pricingHTML }}></span>
 											</div>
 										)}
 									</div>

@@ -3,22 +3,22 @@ import { FaUser } from 'react-icons/fa';
 import { useModal } from '../../../contexts/ModalContext';
 import SeeMore from '../../pieces/SeeMore';
 
-const TestimonialItem = forwardRef(({ id, testimonial, style, borderColor, newID }, ref) => {
-	// ${id === 0 ? testimonial.borderColorClass : 'border-red-400'}
+const TestimonialItem = forwardRef(({ id, testimonial, style, color }, ref) => {
 	const { openModal, closeModal, currentModal } = useModal();
 	const [isClamped, setIsClamped] = useState(false);
 	const textRef = useRef(null);
-
-	const color = borderColor.split('-')[1];
 
 	useEffect(() => {
 		// Check if the text is being clamped
 		const checkIfClamped = () => {
 			if (textRef.current) {
-				const lineHeight = 1.3;
-				const maxTextHeight = 16 * lineHeight * (window.offsetWidth < 580 ? 8 : 6); // 6 lines of text
-				const isTextClamped = textRef.current.offsetHeight > maxTextHeight;
-				setIsClamped(isTextClamped);
+				// Assuming the font size is 16px and the line height is 1.3
+				const fontSize = 16; // Adjust to your actual font size
+				const lineHeight = 1.375; // Adjust to your actual line height
+				const maxLines = window.innerWidth < 640 ? 8 : 6;
+				const maxTextHeight = fontSize * lineHeight * maxLines;
+
+				setIsClamped(textRef.current.scrollHeight > maxTextHeight);
 			}
 		};
 
@@ -33,18 +33,20 @@ const TestimonialItem = forwardRef(({ id, testimonial, style, borderColor, newID
 		<>
 			<div
 				ref={ref}
-				id={'testimonial' + newID}
+				id={'testimonial' + id}
 				className={`leading-snug flex flex-col w-full h-full`}>
 				<div
 					style={style}
-					className={`relative active:cursor-grabbing hover:cursor-grab w-full ${borderColor} select-none rounded-l-sm h-full justify-center text-start relative flex flex-col -space-y-1 bg-dark/10 dark:bg-light/10 border-l-4 p-4 `}>
+					className={`relative active:cursor-grabbing hover:cursor-grab w-full border-${color} select-none rounded-l-sm h-full justify-center text-start relative flex flex-col -space-y-1 bg-dark/10 dark:bg-light/10 border-l-4 px-4 pt-4 ${
+						isClamped ? 'pb-[1.65rem]' : 'pb-4'
+					} `}>
 					<span
 						ref={textRef}
 						className='sans text-md text-dark dark:text-light/60 null:line-clamp-[8] sm:line-clamp-6'>
 						{testimonial.quote}
 					</span>
 					{isClamped && (
-						<div className={`absolute null:bottom-2 lg:bottom-1 right-4 px-2`}>
+						<div className={`absolute bottom-1 right-4 px-2`}>
 							<SeeMore
 								text={'READ MORE'}
 								colorClass={`text-dark dark:text-light/70 xbold`}

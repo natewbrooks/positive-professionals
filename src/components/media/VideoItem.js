@@ -46,7 +46,7 @@ export default function VideoItem({ video, searchTerm }) {
 	}
 
 	return (
-		<div className='leading-snug w-full h-full flex flex-col'>
+		<div className='leading-snug w-full h-full flex flex-col text-start'>
 			<AnchorLink
 				to={video.slug}
 				className='md:hover:opacity-70 flex flex-col h-fit w-full rounded-b-md'>

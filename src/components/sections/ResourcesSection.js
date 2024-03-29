@@ -95,7 +95,7 @@ export default function ResourcesSection({ data }) {
 				</div>
 				{/* VIDEOS */}
 
-				<div className='z-10 flex flex-col text-start justify-center'>
+				{/* <div className='z-10 flex flex-col text-start justify-center'>
 					<AnchorLink
 						to='/resources/videos/'
 						className='group flex flex-col -space-y-1 my-4 text-end'>
@@ -128,7 +128,8 @@ export default function ResourcesSection({ data }) {
 						to='/resources/videos/'>
 						<SeeMore />
 					</AnchorLink>
-				</div>
+				</div> */}
+
 				{/* WEBINARS */}
 
 				{/* <div className='z-10 flex flex-col text-start justify-center'>

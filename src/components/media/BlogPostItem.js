@@ -47,7 +47,7 @@ export default function BlogPostItem({ post, searchTerm }) {
 	return (
 		<AnchorLink
 			to={post.slug}
-			className='group md:hover:opacity-80 w-full h-full justify-center items-center relative  duration-300 transition-colors'>
+			className='group md:hover:opacity-80 w-full h-full justify-center items-center text-start relative  duration-300 transition-colors'>
 			<div className='w-full h-full justify-center items-center flex flex-col'>
 				<div className='leading-snug w-full h-full flex flex-col'>
 					<div className='h-fit cursor-pointer flex flex-col'>
