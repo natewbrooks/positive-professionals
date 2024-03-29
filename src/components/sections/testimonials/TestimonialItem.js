@@ -55,16 +55,19 @@ const TestimonialItem = forwardRef(({ id, testimonial, style, color }, ref) => {
 						</div>
 					)}
 				</div>
-				<div className='h-fit flex items-center space-x-2 py-2'>
+				<div
+					className={`h-fit flex items-center ${
+						testimonial.company !== ' ' ? '-space-y-1' : ''
+					} space-x-2 py-2`}>
 					<FaUser
-						size={24}
+						size={testimonial.company !== ' ' ? 24 : 30}
 						className={`text-dark dark:text-light/60 ${
 							testimonial.name.trim() === '' && testimonial.company.trim() === ''
 								? 'invisible'
 								: 'visible'
 						}`}
 					/>
-					<div className='flex flex-col -space-y-1 text-dark dark:text-light/60 '>
+					<div className='flex flex-col  text-dark dark:text-light/60 '>
 						<span className='sans text-md text-nowrap xbold'>{testimonial.name}</span>
 						<span className='sans text-sm '>{testimonial.company}</span>
 					</div>

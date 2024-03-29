@@ -47,7 +47,7 @@ export const IndexPageTemplate = ({
 				<ServicesSection data={services} />
 				<section
 					id='testimonials'
-					className='flex flex-col space-y-4'>
+					className='flex flex-col space-y-12'>
 					<WorkedWithSection />
 					<TestimonialsSection data={workedWith} />
 				</section>

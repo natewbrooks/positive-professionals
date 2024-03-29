@@ -101,7 +101,7 @@ export default function TestimonialsSection({ data }) {
 					))}
 				</div>
 			</div>
-			<div className='absolute -bottom-14 left-0 right-0 flex justify-center p-4'>
+			<div className='absolute null:-bottom-14 sm:-bottom-10 left-0 right-0 flex justify-center p-4'>
 				{data.testimonials.map((_, index) => {
 					if (index < data.testimonials.length - (itemsToShow - 1)) {
 						return (

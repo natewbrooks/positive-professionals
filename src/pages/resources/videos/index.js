@@ -38,7 +38,8 @@ const Videos = ({ data }) => {
 						pageTitle={'Video Catalog'}
 						showTitle={true}
 					/>
-					<ResourcesGridLayout mediaItems={sortedVideos} />
+					{/* <ResourcesGridLayout mediaItems={sortedVideos} /> */}
+					<div className={`sans text-dark/50 text-xl xbold`}>COMING SOON...</div>
 				</div>
 			</Layout>
 		</>

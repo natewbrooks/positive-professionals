@@ -144,8 +144,8 @@ section {
     height: 100%;
     /* This assumes your custom class is used within a flex or grid container */
     /* This also assumes your custom class is used within a flex or grid container */
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 

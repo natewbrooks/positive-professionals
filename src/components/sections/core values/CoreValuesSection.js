@@ -42,7 +42,7 @@ export default function CoreValuesSection({ data }) {
 				</div>
 
 				<div className='w-full md:max-w-[80%] xl:max-w-[60%] flex flex-col space-y-4 justify-center items-center'>
-					<div className='w-full grid grid-cols-3 gap-1 justify-items-center'>
+					<div className='w-full grid null:grid-cols-2 mobile:grid-cols-3 gap-1 justify-items-center'>
 						{data.values.map((value, index) => (
 							<React.Fragment key={index + value.name}>
 								<div className='w-full h-fit z-10'>

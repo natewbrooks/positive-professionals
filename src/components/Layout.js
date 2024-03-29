@@ -71,6 +71,11 @@ const TemplateWrapper = ({ children }) => {
 					rel='stylesheet'
 				/>
 
+				<link
+					rel='manifest'
+					href='/manifest.json'
+				/>
+
 				{/* PRELOAD HERO BG IMAGES */}
 				<link
 					rel='preload'

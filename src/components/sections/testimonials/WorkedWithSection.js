@@ -34,13 +34,13 @@ export default function WorkedWithSection({ content }) {
 	return (
 		<div
 			id='workedWith'
-			className='flex flex-col space-y-4'>
+			className='flex flex-col space-y-2'>
 			<div className='flex flex-col leading-snug text-end'>
 				<span className='text-dark dark:text-light/60 sans text-sm'>
 					INDUSTRIES WE'VE WORKED WITH
 				</span>
 			</div>
-			<div className='flex justify-center w-full h-full py-4 rounded-md'>
+			<div className='flex justify-center w-full h-full rounded-md'>
 				<div className='grid grid-cols-2 sm:grid-cols-4 justify-items-center gap-y-8 null:gap-x-10 sm:gap-x-0 w-full'>
 					{industries.map((industry, index) => {
 						const Icon = icons[index];

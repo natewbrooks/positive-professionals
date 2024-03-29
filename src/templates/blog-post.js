@@ -35,9 +35,9 @@ export const BlogPostTemplate = ({
 	return (
 		<>
 			{helmet || ''}
-			<section
+			<div
 				id='blog-post'
-				className='leading-snug mt-[4rem] mb-[14rem]'>
+				className='null:px-2 sm:px-8 md:px-20 lg:px-40 xxl:px-80 leading-snug mt-[4rem] mb-[14rem]'>
 				<ResourcesNav pageTitle={'Return'} />
 				<div className='justify-center items-center text-center flex w-full flex-col bg-dark/10 dark:bg-darkAccent rounded-md null:py-10 md:px-20'>
 					<div className='dark:text-light/80 max-w-[80%] w-full null:text-xxl md:text-xxxl serif xbold text-dark leading-snug'>
@@ -72,7 +72,7 @@ export const BlogPostTemplate = ({
 											</span>
 											{infoExists && (
 												<TeamMemberModal
-													key={index}
+													key={'teamMemberModal' + index}
 													member={membersInfo[memberIndex]}
 												/>
 											)}
@@ -99,11 +99,11 @@ export const BlogPostTemplate = ({
 							className='max-h-[50%] aspect-video mb-4'></img>
 					)}
 					<article
-						className='blog-post-container text-dark dark:text-light/70 px-2'
+						className='blog-post-container  text-dark dark:text-light/70 px-2'
 						dangerouslySetInnerHTML={{ __html: body }}
 					/>
 				</div>
-			</section>
+			</div>
 		</>
 	);
 };

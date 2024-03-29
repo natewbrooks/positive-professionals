@@ -88,7 +88,7 @@ export default function ResourcesSection({ data }) {
 						))}
 					</div>
 					<AnchorLink
-						title='Navigate to Blog'
+						title='View Blog Post collection'
 						to='/resources/blog/'>
 						<SeeMore />
 					</AnchorLink>

@@ -62,7 +62,7 @@ export default function VideoItem({ video, searchTerm }) {
 						allowFullScreen
 					/>
 				</div>
-				<div className='pl-4 flex flex-col w-full h-full relative top-0'>
+				<div className='sm:pl-2 md:pl-4 flex flex-col w-full h-full relative top-0'>
 					<div className='relative flex flex-col w-full overflow-hidden space-y-1'>
 						<div className='flex space-x-1'>
 							{isNewVideo() && (
