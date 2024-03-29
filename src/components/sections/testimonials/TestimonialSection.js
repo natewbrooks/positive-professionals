@@ -61,13 +61,6 @@ export default function TestimonialsSection({ data }) {
 	const testimonialsLength = data.testimonials.length;
 	const clampIndex = testimonialsLength - itemsToShow;
 
-	const swipeConfig = {
-		trackMouse: true,
-		trackTouch: true,
-		preventDefaultTouchmoveEvent: true,
-		delta: 10,
-	};
-
 	const handlers = useSwipeable({
 		onSwipedLeft: () => {
 			setActiveIndex((prev) => {
@@ -81,7 +74,10 @@ export default function TestimonialsSection({ data }) {
 				return prev - 1;
 			});
 		},
-		...swipeConfig,
+		delta: 10,
+		preventScrollOnSwipe: true,
+		trackTouch: true,
+		trackMouse: true,
 	});
 
 	return (
