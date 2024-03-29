@@ -75,6 +75,9 @@ export default function TestimonialsSection({ data }) {
 			});
 		},
 		trackMouse: true,
+		trackTouch: true,
+		preventDefaultTouchmoveEvent: true,
+		delta: 10,
 	});
 
 	return (
