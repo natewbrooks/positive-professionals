@@ -260,7 +260,7 @@ export default function ServicesSection({ content }) {
 																	size={8}
 																/>
 															</div>
-															<span className='cursor-text select-text sans text-sm text-dark  w-full leading-none flex items-center h-[38px]'>
+															<span className='cursor-text select-text sans text-sm text-dark dark:text-light/70 w-full leading-none flex items-center h-[38px]'>
 																{benefit}
 															</span>
 														</div>
@@ -289,7 +289,7 @@ export default function ServicesSection({ content }) {
 																		overflow: 'hidden',
 																		transition: 'height 0.5s ease-in-out',
 																	}}
-																	className={`collapsible-content w-full bg-light dark:bg-dark rounded-md`}>
+																	className={`collapsible-content w-full bg-light dark:bg-darkAccent rounded-md`}>
 																	<div className='p-2 sans text-dark dark:text-light/50'>
 																		{workshop.description}
 																	</div>
@@ -322,7 +322,7 @@ export default function ServicesSection({ content }) {
 																		overflow: 'hidden',
 																		transition: 'height 0.5s ease-in-out',
 																	}}
-																	className={`collapsible-content w-full bg-light dark:bg-dark rounded-md`}>
+																	className={`collapsible-content w-full bg-light dark:bg-darkAccent rounded-md`}>
 																	<div
 																		dangerouslySetInnerHTML={{
 																			__html: assessment.descriptionHTML,

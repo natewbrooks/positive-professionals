@@ -108,6 +108,10 @@ html.dark {
     --scrollbar-thumb: #dbdbdb;
 }
 
+html.dark strong {
+    color: var(--four);
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 4px;

@@ -49,7 +49,7 @@ export default function WorkedWithSection({ content }) {
 								key={index}
 								className='flex flex-col justify-center items-center w-full text-center space-y-2 text-dark dark:text-light/70'>
 								<Icon
-									className={`p-2 rounded-md text-dark dark:text-light/10 null:w-[120px] null:h-[80px] md:w-[180px] md:h-[90px]`}
+									className={`p-2 rounded-md text-dark dark:text-light/70 null:w-[120px] null:h-[80px] md:w-[180px] md:h-[90px]`}
 								/>
 								<span className='text-nowrap sans xbold text-sm text-dark dark:text-light/50 leading-none'>
 									{industry}
