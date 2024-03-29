@@ -78,7 +78,7 @@ export default function TestimonialsSection({ data }) {
 
 	return (
 		<div className='mb-4'>
-			<div className={`sans text-dark text-sm pb-2`}>TESTIMONIALS</div>
+			<div className={`sans text-dark dark:text-light/60 text-sm pb-2`}>TESTIMONIALS</div>
 			<div
 				className='testimonial-section relative overflow-hidden'
 				{...handlers}
