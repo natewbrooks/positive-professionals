@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import TestimonialItem from './TestimonialItem';
 import { useSwipeable } from 'react-swipeable';
@@ -42,7 +43,7 @@ export default function TestimonialsSection({ data }) {
 		}
 	};
 
-	const [itemWidth, setItemWidth] = useState(calculateItemWidth());
+	const [itemWidth, setItemWidth] = useState(300);
 	const [itemHeight, setItemHeight] = useState(200);
 
 	useEffect(() => {
