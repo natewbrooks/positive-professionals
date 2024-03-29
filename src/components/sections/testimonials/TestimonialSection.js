@@ -85,9 +85,9 @@ export default function TestimonialsSection({ data }) {
 			<div className={`sans text-dark dark:text-light/60 text-sm pb-2`}>TESTIMONIALS</div>
 			<div
 				className='testimonial-section relative overflow-hidden'
-				{...handlers}
 				ref={carouselRef}>
 				<div
+					{...handlers}
 					className='flex transition-transform duration-500 ease-in-out'
 					style={{ transform: `translateX(-${activeIndex * itemWidth}px)` }}>
 					{data.testimonials.map((testimonial, index) => (
