@@ -89,14 +89,14 @@ export const BlogPostTemplate = ({
 						<GatsbyImage
 							image={imageData}
 							alt={title}
-							className='max-h-[50%] aspect-video mb-4'
+							className='max-h-[30%] aspect-video mb-4'
 						/>
 					)}
 					{!imageData && (
 						<img
 							alt='no image'
 							src={pic}
-							className='max-h-[50%] aspect-video mb-4'></img>
+							className='max-h-[30%] aspect-video mb-4'></img>
 					)}
 					<article
 						className='blog-post-container  text-dark dark:text-light/70 px-2'

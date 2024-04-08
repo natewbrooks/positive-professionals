@@ -65,19 +65,20 @@ const Resources = ({}) => {
 			isWebinar: false,
 		}));
 
-		const videos = data.allMarkdownRemarkVideo.nodes.map((node) => ({
-			title: node.frontmatter.title,
-			date: node.frontmatter.date,
-			description: node.frontmatter.description,
-			featuredpost: node.frontmatter.featuredpost,
-			presentors: node.frontmatter.presentors,
-			videoURL: node.frontmatter.videoURL,
-			slug: node.fields.slug,
-			isVideo: true,
-			isWebinar: false,
-		}));
+		// const videos = data.allMarkdownRemarkVideo.nodes.map((node) => ({
+		// 	title: node.frontmatter.title,
+		// 	date: node.frontmatter.date,
+		// 	description: node.frontmatter.description,
+		// 	featuredpost: node.frontmatter.featuredpost,
+		// 	presentors: node.frontmatter.presentors,
+		// 	videoURL: node.frontmatter.videoURL,
+		// 	slug: node.fields.slug,
+		// 	isVideo: true,
+		// 	isWebinar: false,
+		// }));
 
-		const combinedMedia = [...blogPosts, ...videos];
+		// const combinedMedia = [...blogPosts, ...videos];
+		const combinedMedia = [...blogPosts];
 
 		const featured = combinedMedia
 			.filter((post) => post.featuredpost)

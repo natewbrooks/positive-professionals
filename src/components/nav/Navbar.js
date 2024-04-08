@@ -228,7 +228,7 @@ export default function Navbar() {
 								size={16}
 								className='select-none hidden dark:block text-light/70 cursor-pointer md:hover:opacity-50 active:scale-95'
 							/>
-							<SigninButton hasScrolled={hasScrolled} />
+							{/* <SigninButton hasScrolled={hasScrolled} /> */}
 						</div>
 					</div>
 				</div>
