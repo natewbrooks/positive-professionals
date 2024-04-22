@@ -9,7 +9,7 @@ export default function TeamMemberModal({ member }) {
 
 	return (
 		<Modal modalId={member.name}>
-			<div className='text-dark dark:text-light/70 text-start flex w-full justify-between flex-col space-y-4 sm:flex-row sm:space-x-4 overflow-hidden'>
+			<div className='text-dark dark:text-light/70 text-start flex w-full justify-between flex-col space-y-4 xl:flex-row xl:space-x-4 overflow-hidden'>
 				<div className='flex items-center border-b-2 border-dark/10 dark:border-light/10 pb-4 sm:border-none xl:pb-0'>
 					<div className='relative flex flex-col justify-center items-center space-y-4 w-full px-8'>
 						<div

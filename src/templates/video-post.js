@@ -95,16 +95,20 @@ export const VideoPostTemplate = ({
 									{title}
 								</div>
 							</div>
-							<div
-								className='text-center null:text-sm md:text-md sans text-dark/50 pt-2 dark:text-light/50'
-								style={isExpanded ? {} : truncateStyle}>
-								{description}
-							</div>
-							<button
-								onClick={toggleDescription}
-								className='text-end mt-2 xbold text-secondary md:hover:opacity-90 sans text-md'>
-								{isExpanded ? 'View Less' : 'View More'}
-							</button>
+							{description != '' && (
+								<>
+									<div
+										className='text-center null:text-sm md:text-md sans text-dark/50 pt-2 dark:text-light/50'
+										style={isExpanded ? {} : truncateStyle}>
+										{description}
+									</div>
+									<button
+										onClick={toggleDescription}
+										className='text-end mt-2 xbold text-secondary md:hover:opacity-90 sans text-md'>
+										{isExpanded ? 'View Less' : 'View More'}
+									</button>
+								</>
+							)}
 						</div>
 					</div>
 				</div>
