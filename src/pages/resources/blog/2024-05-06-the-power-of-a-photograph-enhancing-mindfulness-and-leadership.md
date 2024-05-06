@@ -14,11 +14,8 @@ image: /img/ehageman-picture.jpg
 authors:
   - KIM HARRIS
 ---
-```
-	
-```
-
 <sub><sup>Photo credit to EricHagemannfineart.com </sup></sub>
+
 
 In the digital age, where screens flood our senses and distractions abound, the concept of mindfulness has gained significant traction. But amidst the hustle and bustle of daily life, finding moments of stillness and awareness can be challenging. However, what if I told you that a simple photograph could serve as a gateway to enhance mindfulness and, in turn, cultivate effective leadership skills?
 
