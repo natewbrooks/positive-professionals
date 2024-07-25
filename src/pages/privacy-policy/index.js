@@ -6,11 +6,11 @@ import { marked } from 'marked';
 const privacyPolicyMarkdown = `
 # Privacy Policy
 
-Protecting your private information is our priority. This Statement of Privacy applies to https://breakthroughcoaching.pro, and Liz Brooks Breakthrough Coaching LLC and governs data collection and usage. For the purposes of this Privacy Policy, unless otherwise noted, all references to Liz Brooks Breakthrough Coaching LLC include https://breakthroughcoaching.pro and Breakthrough Coaching & Consulting. The Breakthrough Coaching & Consulting website is a small business site. By using the Breakthrough Coaching & Consulting website, you consent to the data practices described in this statement.
+Protecting your private information is our priority. This Statement of Privacy applies to https://positiveprofessionals.net, and Positive Professionals and governs data collection and usage. For the purposes of this Privacy Policy, unless otherwise noted, all references to Positive Professionals include https://positiveprofessionals.net and Positive Professionals. The Positive Professionals website is a small business site. By using the Positive Professionals website, you consent to the data practices described in this statement.
 
 ## Collection of your Personal Information
 
-In order to better provide you with products and services offered, Breakthrough Coaching & Consulting may collect personally identifiable information, such as your:
+In order to better provide you with products and services offered, Positive Professionals may collect personally identifiable information, such as your:
 
 - First and Last Name
 - E-mail Address
@@ -27,28 +27,28 @@ To wit, we will use your information for, but not limited to, communicating with
 
 ## Use of your Personal Information
 
-Breakthrough Coaching & Consulting collects and uses your personal information to operate and deliver the services you have requested. Breakthrough Coaching & Consulting may also use your personally identifiable information to inform you of other products or services available from Breakthrough Coaching & Consulting and its affiliates.
+Positive Professionals collects and uses your personal information to operate and deliver the services you have requested. Positive Professionals may also use your personally identifiable information to inform you of other products or services available from Positive Professionals and its affiliates.
 
 ## Sharing Information with Third Parties
 
-Breakthrough Coaching & Consulting does not sell, rent, or lease its customer lists to third parties. Breakthrough Coaching & Consulting may share data with trusted partners to help perform statistical analysis, send you email or postal mail, provide customer support, or arrange for deliveries. All such third parties are prohibited from using your personal information except to provide these services to Breakthrough Coaching & Consulting, and they are required to maintain the confidentiality of your information.
+Positive Professionals does not sell, rent, or lease its customer lists to third parties. Positive Professionals may share data with trusted partners to help perform statistical analysis, send you email or postal mail, provide customer support, or arrange for deliveries. All such third parties are prohibited from using your personal information except to provide these services to Positive Professionals, and they are required to maintain the confidentiality of your information.
 
-Breakthrough Coaching & Consulting may disclose your personal information, without notice, if required to do so by law or in the good faith belief that such action is necessary to:
-- Conform to the edicts of the law or comply with legal process served on Breakthrough Coaching & Consulting or the site
-- Protect and defend the rights or property of Breakthrough Coaching & Consulting
-- Act under exigent circumstances to protect the personal safety of users of Breakthrough Coaching & Consulting, or the public
+Positive Professionals may disclose your personal information, without notice, if required to do so by law or in the good faith belief that such action is necessary to:
+- Conform to the edicts of the law or comply with legal process served on Positive Professionals or the site
+- Protect and defend the rights or property of Positive Professionals
+- Act under exigent circumstances to protect the personal safety of users of Positive Professionals, or the public
 
 ## Tracking User Behavior
 
-Breakthrough Coaching & Consulting may keep track of the websites and pages our users visit within Breakthrough Coaching & Consulting, in order to determine what Breakthrough Coaching & Consulting services are the most popular. This data is used to deliver customized content and advertising within Breakthrough Coaching & Consulting to customers whose behavior indicates that they are interested in a particular subject area.
+Positive Professionals may keep track of the websites and pages our users visit within Positive Professionals, in order to determine what Positive Professionals services are the most popular. This data is used to deliver customized content and advertising within Positive Professionals to customers whose behavior indicates that they are interested in a particular subject area.
 
 ## Automatically Collected Information
 
-Information about your computer hardware and software may be automatically collected by Breakthrough Coaching & Consulting. This information can include: your IP address, browser type, domain names, access times, and referring website addresses. This information is used for the operation of the service, to maintain quality of the service, and to provide general statistics regarding use of the Breakthrough Coaching & Consulting website.
+Information about your computer hardware and software may be automatically collected by Positive Professionals. This information can include: your IP address, browser type, domain names, access times, and referring website addresses. This information is used for the operation of the service, to maintain quality of the service, and to provide general statistics regarding use of the Positive Professionals website.
 
 ## Security of your Personal Information
 
-Breakthrough Coaching & Consulting secures your personal information from unauthorized access, use, or disclosure. Breakthrough Coaching & Consulting uses the following methods for this purpose:
+Positive Professionals secures your personal information from unauthorized access, use, or disclosure. Positive Professionals uses the following methods for this purpose:
 - SSL Protocol
 
 When personal information (such as a credit card number) is transmitted to other websites, it is protected through the use of encryption, such as the Secure Sockets Layer (SSL) protocol.
@@ -76,35 +76,17 @@ Please note that we may not be able to comply with requests to delete your perso
 
 ## Children Under Thirteen
 
-Breakthrough Coaching & Consulting does not knowingly collect personally identifiable information from children under the age of thirteen. If you are under the age of thirteen, you must ask your parent or guardian for permission to use this website.
+Positive Professionals does not knowingly collect personally identifiable information from children under the age of thirteen. If you are under the age of thirteen, you must ask your parent or guardian for permission to use this website.
 
 ## E-mail Communications
 
-From time to time, Breakthrough Coaching & Consulting may contact you via email for the purpose of providing announcements, promotional offers, alerts, confirmations, surveys, and/or other general communication.
+From time to time, Positive Professionals may contact you via email for the purpose of providing announcements, promotional offers, alerts, confirmations, surveys, and/or other general communication.
 
 ## Changes to this Statement
 
-Breakthrough Coaching & Consulting reserves the right to change this Privacy Policy from time to time. We will notify you about significant changes in the way we treat personal information by sending a notice to the primary email address specified in your account, by placing a prominent notice on our website, and/or by updating any privacy information. Your continued use of the website and/or Services available after such modifications will constitute your:
+Positive Professionals reserves the right to change this Privacy Policy from time to time. We will notify you about significant changes in the way we treat personal information by sending a notice to the primary email address specified in your account, by placing a prominent notice on our website, and/or by updating any privacy information. Your continued use of the website and/or Services available after such modifications will constitute your:
 - Acknowledgment of the modified Privacy Policy
 - Agreement to abide and be bound by that Policy
-
-## Contact Information
-
-Breakthrough Coaching & Consulting welcomes your questions or comments regarding this Statement of Privacy. If you believe that Breakthrough Coaching & Consulting has not adhered to this Statement, please contact Breakthrough Coaching & Consulting at:
-
-Liz Brooks Breakthrough Coaching LLC  
-5914 Grace Lee Ave  
-Sykesville, Maryland 21784  
-
-Email Address:  
-lizbrooks61@gmail.com  
-
-Telephone number:  
-4432803681  
-
-Effective as of April 14, 2022
-
-*This is a RocketLawyer.com document.*
 `;
 
 function PrivacyPolicy() {
