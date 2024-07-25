@@ -56,7 +56,7 @@ team:
       linkedIn: 'https://www.linkedin.com/in/kim-harris-feartofiercecoach/'
       name: Kim Harris
       pic: /img/kim-harris-cropped.png
-      position: 'Associate Certified Coach, SES (ret)'
+      position: 'Associate Certified Coach, Senior Executive Service (ret.)'
       specialities: >-
         As an executive coach, Kim connects with motivated professionals who are
         ready to build new paths to accomplish their goals. For her, it is all
@@ -116,7 +116,7 @@ team:
       linkedIn: 'https://www.linkedin.com/in/liz-brooks-870b5221a/'
       name: Liz Brooks
       pic: /img/lbrooks-cropped.png
-      position: 'Associate Certified Coach, SES (ret)'
+      position: 'Associate Certified Coach, Senior Executive Service (ret.)'
       specialities: >-
         As an energetic mom of six, a people-focused senior executive in the
         Department of Defense, and a committed church and school volunteer, Liz
@@ -176,8 +176,8 @@ coreValues:
       name: Collaboration
       reasons: []
 workedWith:
-  header: '!! Doesn''t exist'
-  subtext: '!! Doesn''t exist'
+  header: "!! Doesn't exist"
+  subtext: "!! Doesn't exist"
   testimonials:
     - company: ' '
       name: Katherine T.
@@ -283,4 +283,3 @@ getStarted:
       name: Create personalized plan
   subtext: Take your first steps on a journey of discovery and transformation.
 ---
-
