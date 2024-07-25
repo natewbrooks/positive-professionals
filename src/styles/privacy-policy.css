@@ -22,7 +22,7 @@ html.dark {
     --border: #dbdbdb;
 }
 
-.blog-post-container p {
+.privacy-policy-container p {
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 600;
     font-size: 20px;
@@ -36,43 +36,29 @@ article {
     align-items: center;
 }
 
-.blog-post-container {
+.privacy-policy-container {
     display: flex;
     list-style-type: decimal;
     margin: 0px 12rem;
     align-items: start;
+    text-align: start;
 }
 
-.blog-post-container img {
-    width: max-content;
-    max-height: 800px;
-    align-self: center;
-}
-
-.blog-post-container ol,
-.blog-post-container ul {
+.privacy-policy-container ol,
+.privacy-policy-container ul {
     padding: 1.5rem 2rem;
-    margin: 0 auto;
-    /* Center the list */
-    max-width: fit-content;
-    /* Fit the width to its content */
     list-style: none;
-    /* Remove the default list styling */
-    text-align: center;
-    /* Center text alignment for the list */
+    text-align: start;
 
-    width: max-content;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
-.blog-post-container ol {
+.privacy-policy-container ol {
     counter-reset: list-counter;
 }
 
-.blog-post-container li {
+.privacy-policy-container li {
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 600;
     font-size: 20px;
@@ -84,14 +70,14 @@ article {
 }
 
 /* Style for ordered list items */
-.blog-post-container ol li {
+.privacy-policy-container ol li {
     display: block;
     position: relative;
     padding: 0.5rem 0rem;
     /* Needed for positioning the pseudo-element */
 }
 
-.blog-post-container ol li::before {
+.privacy-policy-container ol li::before {
     counter-increment: list-counter;
     content: counter(list-counter) ". ";
     /* Add a period and space after the number */
@@ -104,15 +90,15 @@ article {
 }
 
 /* Style for unordered list items */
-.blog-post-container ul li {
+.privacy-policy-container ul li {
     display: flex;
     text-align: left;
     /* Center items vertically */
 }
 
-.blog-post-container ul li::before {
+.privacy-policy-container ul li::before {
     content: '\2022';
-    transform: translateY(5px) scale(130%);
+    transform: translateY(0px) scale(120%);
     height: fit-content;
     /* Unicode character for bullet */
     display: inline-block;
@@ -125,12 +111,12 @@ article {
 }
 
 /* Center the list within the blog post container */
-.blog-post-container {
+.privacy-policy-container {
     display: flex;
     justify-content: center;
 }
 
-.blog-post-container blockquote {
+.privacy-policy-container blockquote {
     background-color: var(--accent);
     border-left: 4px solid var(--border);
     margin: 1rem 0rem;
@@ -146,29 +132,29 @@ article {
     }
 }
 
-.blog-post-container h1,
-.blog-post-container h2,
-.blog-post-container h3 {
+.privacy-policy-container h1,
+.privacy-policy-container h2,
+.privacy-policy-container h3 {
     font-family: 'Source Sans 3', sans-serif;
     font-weight: 800;
     line-height: 1.25;
     padding-top: 1rem;
 }
 
-.blog-post-container h1 {
+.privacy-policy-container h1 {
     font-size: 46px;
 }
 
-.blog-post-container h2 {
+.privacy-policy-container h2 {
     font-size: 32px;
 }
 
-.blog-post-container h3 {
+.privacy-policy-container h3 {
     font-size: 24px;
 }
 
 @media (min-width: 0px) {
-    .blog-post-container {
+    .privacy-policy-container {
         margin: 0px 0rem;
     }
 }
@@ -176,13 +162,13 @@ article {
 @media (min-width: 798px) {}
 
 @media (min-width: 1300px) {
-    .blog-post-container {
+    .privacy-policy-container {
         margin: 0px 4rem;
     }
 }
 
 @media (min-width: 1620px) {
-    .blog-post-container {
+    .privacy-policy-container {
         margin: 0px 12rem;
     }
 }

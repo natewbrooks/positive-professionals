@@ -38,6 +38,12 @@ export default function Footer({}) {
 					<span className='sans text-sm text-center text-light/50 xbold'>
 						COPYRIGHT @ 2024 <br></br>POSITIVE PROFESSIONALS
 					</span>
+					<AnchorLink
+						to='/privacy-policy'
+						className='sans text-center text-[10px] text-light/30 xbold'
+						title='View the privacy policy'>
+						PRIVACY POLICY
+					</AnchorLink>
 				</div>
 				<div className='flex space-x-10 justify-center py-8 sm:justify-normal sm:py-0'>
 					<div className='flex flex-col space-y-4'>
