@@ -115,7 +115,7 @@ team:
         accessibility.
       linkedIn: 'https://www.linkedin.com/in/liz-brooks-870b5221a/'
       name: Liz Brooks
-      pic: /img/lbrooks-cropped.png
+      pic: /img/lbrooks-newphoto.png
       position: 'Associate Certified Coach, Senior Executive Service (ret.)'
       specialities: >-
         As an energetic mom of six, a people-focused senior executive in the
@@ -176,8 +176,8 @@ coreValues:
       name: Collaboration
       reasons: []
 workedWith:
-  header: "!! Doesn't exist"
-  subtext: "!! Doesn't exist"
+  header: '!! Doesn''t exist'
+  subtext: '!! Doesn''t exist'
   testimonials:
     - company: ' '
       name: Katherine T.
@@ -283,3 +283,4 @@ getStarted:
       name: Create personalized plan
   subtext: Take your first steps on a journey of discovery and transformation.
 ---
+
